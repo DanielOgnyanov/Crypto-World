@@ -1,9 +1,7 @@
 package com.example.cryptoworld.models.entities;
 
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "users")
@@ -14,7 +12,7 @@ public class UserEntity extends BaseEntity{
     private String fullName;
     private String password;
     private String email;
-    private String country;
+    private CountryEntity country;
 
     public UserEntity() {
     }
@@ -56,11 +54,12 @@ public class UserEntity extends BaseEntity{
     }
 
     @Column(name = "country")
-    public String getCountry() {
+    @ManyToOne
+    public CountryEntity getCountry() {
         return country;
     }
 
-    public void setCountry(String country) {
+    public void setCountry(CountryEntity country) {
         this.country = country;
     }
 }
