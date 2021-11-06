@@ -30,7 +30,6 @@ public class CountryServiceImpl implements CountryService {
 
                         countryRepository.save(countryEntity);
 
-
                     });
         }
     }
