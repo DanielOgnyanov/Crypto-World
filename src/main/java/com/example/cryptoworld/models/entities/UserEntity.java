@@ -53,8 +53,8 @@ public class UserEntity extends BaseEntity{
         this.email = email;
     }
 
-    @Column(name = "country")
     @ManyToOne
+    @JoinColumn(name = "county_name", referencedColumnName = "name")
     public CountryEntity getCountry() {
         return country;
     }
