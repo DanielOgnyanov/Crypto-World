@@ -51,4 +51,15 @@ public enum EnumCountry {
     Ukraine,
     Kosovo,
     United_Kingdom;
+
+    private String value;
+
+
+    EnumCountry(String value) {
+        this.value = value;
+    }
+
+    public String getValue() {
+        return value;
+    }
 }
