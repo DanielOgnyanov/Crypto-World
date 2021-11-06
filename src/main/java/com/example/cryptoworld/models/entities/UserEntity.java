@@ -9,20 +9,17 @@ import javax.persistence.Table;
 @Table(name = "users")
 public class UserEntity extends BaseEntity{
 
-    @Column(name = "username", unique = true)
+
     private String username;
-    @Column(name = "full_name")
     private String fullName;
-    @Column(name = "password")
     private String password;
-    @Column(name = "email", unique = true)
     private String email;
-    @Column(name = "country")
     private String country;
 
     public UserEntity() {
     }
 
+    @Column(name = "username", unique = true)
     public String getUsername() {
         return username;
     }
@@ -31,6 +28,7 @@ public class UserEntity extends BaseEntity{
         this.username = username;
     }
 
+    @Column(name = "full_name")
     public String getFullName() {
         return fullName;
     }
@@ -39,6 +37,7 @@ public class UserEntity extends BaseEntity{
         this.fullName = fullName;
     }
 
+    @Column(name = "password")
     public String getPassword() {
         return password;
     }
@@ -47,6 +46,7 @@ public class UserEntity extends BaseEntity{
         this.password = password;
     }
 
+    @Column(name = "email", unique = true)
     public String getEmail() {
         return email;
     }
@@ -55,6 +55,7 @@ public class UserEntity extends BaseEntity{
         this.email = email;
     }
 
+    @Column(name = "country")
     public String getCountry() {
         return country;
     }
