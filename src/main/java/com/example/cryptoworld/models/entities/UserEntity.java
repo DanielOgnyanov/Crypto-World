@@ -2,6 +2,7 @@ package com.example.cryptoworld.models.entities;
 
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "users")
@@ -62,5 +63,15 @@ public class UserEntity extends BaseEntity{
 
     public void setCountry(CountryEntity country) {
         this.country = country;
+    }
+
+
+    @ManyToMany(fetch = FetchType.EAGER)
+    public List<RoleEntity> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(List<RoleEntity> roles) {
+        this.roles = roles;
     }
 }
