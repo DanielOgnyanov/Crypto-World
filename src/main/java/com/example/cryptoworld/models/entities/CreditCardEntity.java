@@ -1,8 +1,7 @@
 package com.example.cryptoworld.models.entities;
 
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "credit_cards")
@@ -12,5 +11,26 @@ public class CreditCardEntity extends BaseEntity{
     private UserEntity owner;
 
 
+    public CreditCardEntity() {
+    }
 
+
+    @Column(name = "iban", unique = true, updatable = false)
+    public String getIban() {
+        return iban;
+    }
+
+    public void setIban(String iban) {
+        this.iban = iban;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "owner_name", referencedColumnName = "fullName")
+    public UserEntity getOwner() {
+        return owner;
+    }
+
+    public void setOwner(UserEntity owner) {
+        this.owner = owner;
+    }
 }
