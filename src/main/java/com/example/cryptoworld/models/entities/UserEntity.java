@@ -13,6 +13,7 @@ public class UserEntity extends BaseEntity{
     private String password;
     private String email;
     private CountryEntity country;
+    private List<RoleEntity> roles;
 
     public UserEntity() {
     }
