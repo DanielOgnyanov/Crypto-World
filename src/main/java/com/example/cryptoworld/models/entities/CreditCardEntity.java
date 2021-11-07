@@ -25,7 +25,7 @@ public class CreditCardEntity extends BaseEntity{
     }
 
     @ManyToOne
-    @JoinColumn(name = "owner_name", referencedColumnName = "fullName")
+    @JoinColumn(name = "owner_name", referencedColumnName = "full_name")
     public UserEntity getOwner() {
         return owner;
     }
