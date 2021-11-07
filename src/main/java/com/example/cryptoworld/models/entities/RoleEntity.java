@@ -4,6 +4,8 @@ package com.example.cryptoworld.models.entities;
 import com.example.cryptoworld.models.enums.EnumRole;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.Table;
 
 @Entity
@@ -12,7 +14,7 @@ public class RoleEntity extends BaseEntity{
 
     private EnumRole role;
 
-
+    @Enumerated(EnumType.STRING)
     public EnumRole getRole() {
         return role;
     }
