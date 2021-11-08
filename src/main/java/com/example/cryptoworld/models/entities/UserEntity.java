@@ -15,7 +15,7 @@ public class UserEntity extends BaseEntity{
     private String email;
     private CountryEntity country;
     private List<RoleEntity> roles;
-    private String address;
+    private String walletAddress;
 
     public UserEntity() {
     }
@@ -77,11 +77,11 @@ public class UserEntity extends BaseEntity{
     }
 
     @Column(name = "address")
-    public String getAddress() {
-        return address;
+    public String getWalletAddress() {
+        return walletAddress;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setWalletAddress(String walletAddress) {
+        this.walletAddress = walletAddress;
     }
 }
