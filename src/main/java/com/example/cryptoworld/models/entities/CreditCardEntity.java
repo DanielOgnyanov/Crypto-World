@@ -9,6 +9,7 @@ public class CreditCardEntity extends BaseEntity{
 
     private String iban;
     private UserEntity owner;
+    private int expirationYear;
 
 
     public CreditCardEntity() {
@@ -32,5 +33,15 @@ public class CreditCardEntity extends BaseEntity{
 
     public void setOwner(UserEntity owner) {
         this.owner = owner;
+    }
+
+
+    @Column(name = "expiration_year")
+    public int getExpirationYear() {
+        return expirationYear;
+    }
+
+    public void setExpirationYear(int expirationYear) {
+        this.expirationYear = expirationYear;
     }
 }
