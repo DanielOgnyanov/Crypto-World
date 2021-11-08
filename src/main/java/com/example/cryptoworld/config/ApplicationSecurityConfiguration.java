@@ -1,6 +1,7 @@
 package com.example.cryptoworld.config;
 
 
+import com.example.cryptoworld.models.enums.EnumRole;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
@@ -27,6 +28,8 @@ public class ApplicationSecurityConfiguration extends WebSecurityConfigurerAdapt
         http.authorizeRequests()
 
                 .antMatchers("/", "/users/login", "/users/register").permitAll()
+                .antMatchers("/admin/general").hasRole(EnumRole.ADMIN.name())
+
 
 
 
