@@ -47,13 +47,14 @@ public class ApplicationSecurityConfiguration extends WebSecurityConfigurerAdapt
                 .deleteCookies("JSESSIONID");
 
 
-
     }
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 
-
+        auth.
+                userDetailsService(userDetailsService).
+                passwordEncoder(passwordEncoder);
 
     }
 }
