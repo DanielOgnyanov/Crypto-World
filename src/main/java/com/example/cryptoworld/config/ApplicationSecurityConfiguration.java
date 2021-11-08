@@ -14,5 +14,10 @@ public class ApplicationSecurityConfiguration extends WebSecurityConfigurerAdapt
     private final PasswordEncoder passwordEncoder;
 
 
+    public ApplicationSecurityConfiguration(UserDetailsService userDetailsService, PasswordEncoder passwordEncoder) {
+        this.userDetailsService = userDetailsService;
+        this.passwordEncoder = passwordEncoder;
+    }
+
 
 }
