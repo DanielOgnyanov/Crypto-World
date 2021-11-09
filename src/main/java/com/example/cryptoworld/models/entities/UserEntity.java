@@ -3,6 +3,7 @@ package com.example.cryptoworld.models.entities;
 
 import javax.persistence.*;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "users")
@@ -16,6 +17,7 @@ public class UserEntity extends BaseEntity{
     private CountryEntity country;
     private List<RoleEntity> roles;
     private String walletAddress;
+    private Set<LogDeposit> depositSet;
 
     public UserEntity() {
     }
@@ -83,5 +85,15 @@ public class UserEntity extends BaseEntity{
 
     public void setWalletAddress(String walletAddress) {
         this.walletAddress = walletAddress;
+    }
+
+
+    @OneToMany(mappedBy = "depositPerson")
+    public Set<LogDeposit> getDepositSet() {
+        return depositSet;
+    }
+
+    public void setDepositSet(Set<LogDeposit> depositSet) {
+        this.depositSet = depositSet;
     }
 }
