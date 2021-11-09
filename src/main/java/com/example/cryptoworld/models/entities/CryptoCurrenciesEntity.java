@@ -22,4 +22,21 @@ public class CryptoCurrenciesEntity extends BaseEntity{
         this.currencies = currencies;
         this.price = price;
     }
+
+
+    public EnumCryptoTop10 getCurrencies() {
+        return currencies;
+    }
+
+    public void setCurrencies(EnumCryptoTop10 currencies) {
+        this.currencies = currencies;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
 }
