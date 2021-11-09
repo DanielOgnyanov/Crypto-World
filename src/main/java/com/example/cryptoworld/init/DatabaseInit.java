@@ -1,7 +1,7 @@
 package com.example.cryptoworld.init;
 
 import com.example.cryptoworld.service.CountryService;
-import com.example.cryptoworld.service.CryptoSrvice;
+import com.example.cryptoworld.service.CryptoService;
 import com.example.cryptoworld.service.RoleService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -11,17 +11,19 @@ public class DatabaseInit implements CommandLineRunner {
 
     private final CountryService countryService;
     private final RoleService roleService;
-    private final CryptoSrvice cryptoSrvice;
+    private final CryptoService cryptoService;
 
-    public DatabaseInit(CountryService countryService, RoleService roleService, CryptoSrvice cryptoSrvice) {
+    public DatabaseInit(CountryService countryService, RoleService roleService, CryptoService cryptoService) {
         this.countryService = countryService;
         this.roleService = roleService;
-        this.cryptoSrvice = cryptoSrvice;
+        this.cryptoService = cryptoService;
     }
 
     @Override
     public void run(String... args) throws Exception {
         countryService.InitCountryInDb();
         roleService.InitRoleInDb();
+        cryptoService.InitCryptoInDb();
+
     }
 }
