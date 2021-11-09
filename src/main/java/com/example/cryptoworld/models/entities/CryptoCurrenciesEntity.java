@@ -6,5 +6,5 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "crypto_currencies")
-public class CryptoCurrenciesEntity {
+public class CryptoCurrenciesEntity extends BaseEntity{
 }
