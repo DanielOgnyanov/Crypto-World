@@ -14,5 +14,12 @@ public class CryptoCurrenciesEntity extends BaseEntity{
     private double price;
 
 
+    public CryptoCurrenciesEntity() {
+    }
 
+
+    public CryptoCurrenciesEntity(EnumCryptoTop10 currencies, double price) {
+        this.currencies = currencies;
+        this.price = price;
+    }
 }
