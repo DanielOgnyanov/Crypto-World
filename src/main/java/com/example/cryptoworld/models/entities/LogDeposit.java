@@ -1,8 +1,7 @@
 package com.example.cryptoworld.models.entities;
 
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.math.BigDecimal;
 
 @Entity
@@ -17,6 +16,8 @@ public class LogDeposit extends BaseEntity{
     public LogDeposit() {
     }
 
+    @ManyToOne
+    @JoinColumn(name = "deposit_person", referencedColumnName = "full_name")
     public UserEntity getDepositPerson() {
         return depositPerson;
     }
@@ -25,6 +26,7 @@ public class LogDeposit extends BaseEntity{
         this.depositPerson = depositPerson;
     }
 
+    @Column(name = "fiat_money")
     public BigDecimal getFiatMoney() {
         return fiatMoney;
     }
@@ -32,7 +34,7 @@ public class LogDeposit extends BaseEntity{
     public void setFiatMoney(BigDecimal fiatMoney) {
         this.fiatMoney = fiatMoney;
     }
-
+    @Column(name = "crypto_value")
     public BigDecimal getCryptoValue() {
         return cryptoValue;
     }
