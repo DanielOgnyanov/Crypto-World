@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 
 
 
@@ -30,7 +30,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
                 <ul class="nav navbar-nav navbar-center d-flex me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
+                    <li sec:authorize="isAuthenticated()" class="nav-item">
                         <a class="nav-link active text-white" aria-current="page" href="#">Home</a>
                     </li>
                     <li class="nav-item">
@@ -40,7 +40,7 @@
                     <li class="nav-item">
                         <a class="nav-link text-white" href="#">Create account</a>
                     </li>
-                    <li class="nav-item dropdown">
+                    <li sec:authorize="isAuthenticated()" class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button"
                            data-bs-toggle="dropdown" aria-expanded="false">
                             Admin
