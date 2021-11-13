@@ -29,7 +29,7 @@ public class ApplicationSecurityConfiguration extends WebSecurityConfigurerAdapt
 
         http.authorizeRequests()
 
-                .antMatchers("/", "/users/login", "/users/register").permitAll()
+                .antMatchers("/", "/users/sign", "/users/create").permitAll()
                 .antMatchers("/admin/general").hasRole(EnumRole.ADMIN.name())
                 .antMatchers("/**").authenticated()
                 .and()
