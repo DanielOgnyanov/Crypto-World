@@ -9,7 +9,7 @@
 
 <header th:replace="fragments/fragment :: navigation"></header>
 
-<main role="main" class="bg-secondary">
+<main class="p-5 align-content-center">
     <div class="jumbotron">
         <div class="container text-light ">
             <h1 class="display-3 ">
@@ -19,24 +19,21 @@
         <div class="container bg-blur rounded p-5 mt-5 w-75">
 
 
-            <form th:action="@{/users/create}" method=""
+            <form th:action="@{/users/create}" method="" style="background-color: transparent"
                   class=" text-center text-light">
+
                 <div class="form-group row">
                     <label for="username" class="col-sm-2 col-form-label">Username</label>
-                    <div class="col-sm-10">
-
-
+                    <div class="col-sm-10" style="margin-right:5px">
                         <input  type="text" class="form-control" id="username"
                                aria-describedby="usernameHelpInline" placeholder="Username">
-
-
                     </div>
                 </div>
 
 
                 <div class="form-group row">
                     <label for="firstName" class="col-sm-2 col-form-label">Full name</label>
-                    <div class="col-sm-10">
+                    <div class="col-sm-10" style="margin-right:5px">
                         <input type="text" class="form-control" id="firstName"
                                aria-describedby="firstNameHelpInline" placeholder="First name">
                     </div>
@@ -45,7 +42,7 @@
 
                 <div class="form-group row">
                     <label for="email" class="col-sm-2 col-form-label">Email</label>
-                    <div class="col-sm-10">
+                    <div class="col-sm-10" style="margin-right:5px">
 
 
 
@@ -59,7 +56,7 @@
                 </div>
                 <div class="form-group row">
                     <label for="password" class="col-sm-2 col-form-label">Password</label>
-                    <div class="col-sm-10">
+                    <div class="col-sm-10" style="margin-right:5px">
 
 
 
@@ -72,7 +69,7 @@
                 </div>
                 <div class="form-group row">
                     <label for="confirmPassword" class="col-sm-2 col-form-label">Confirm Password</label>
-                    <div class="col-sm-10">
+                    <div class="col-sm-10" style="margin-right:5px">
 
 
 
@@ -83,7 +80,7 @@
 
                     </div>
                 </div>
-                <button class="btn btn-info w-50" type="submit" >Create Account</button>
+                <button class="btn btn-info w-50" type="submit" style="background-color: green">Create Account</button>
             </form>
             <hr class="bg-light">
         </div>
