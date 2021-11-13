@@ -57,17 +57,17 @@
                     </th:block>
 
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="#">Sign up</a>
+                        <a class="nav-link text-white" href="/users/sign">Sign up</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="#">Create account</a>
+                        <a class="nav-link text-white" href="/users/create">Create Account</a>
                     </li>
 
 
                 </ul>
 
-                <button sec:authorize="isAuthenticated()" type="button" class="btn btn-primary btn-sm pull-right btn-danger">
+                <button sec:authorize="isAuthenticated()" th:href="/users/exit" type="button" class="btn btn-primary btn-sm pull-right btn-danger">
                     Exit
                 </button>
 
