@@ -16,4 +16,12 @@ public class UserController {
 
         return "create-account";
     }
+
+    @GetMapping("/sign")
+    public String sign(Model model) {
+
+
+        return "sign-in";
+    }
+
 }
