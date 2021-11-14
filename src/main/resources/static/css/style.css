@@ -1,8 +1,11 @@
-body {
-    background-image: url(/image/back.jpg);
+.jumbotron {
+    background-image: url(static/image/back.jpg);
     background-position: center;
     background-attachment: scroll;
     background-size: cover;
 
 }
 
+.bg-blur {
+    background-color: rgba(0, 0, 0, 0.7); /* Black w/opacity/see-through */
+}
