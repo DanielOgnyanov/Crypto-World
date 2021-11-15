@@ -2,6 +2,7 @@ package com.example.cryptoworld.web;
 
 
 import com.example.cryptoworld.models.binding.UserRegistrationBindingModel;
+import com.example.cryptoworld.models.service.UserRegistrationServiceModel;
 import com.example.cryptoworld.service.UserService;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Controller;
@@ -76,6 +77,14 @@ public class UserController {
 
             return "redirect:/users/create-account";
         }
+
+
+
+        UserRegistrationServiceModel userServiceModel = modelMapper
+                .map(registrationBindingModel, UserRegistrationServiceModel.class);
+
+
+
 
     }
 
