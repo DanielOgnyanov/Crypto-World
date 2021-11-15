@@ -1,5 +1,6 @@
 package com.example.cryptoworld.service.Impl;
 
+import com.example.cryptoworld.models.entities.RoleEntity;
 import com.example.cryptoworld.models.entities.UserEntity;
 import com.example.cryptoworld.models.service.UserRegistrationServiceModel;
 import com.example.cryptoworld.repository.UserRepository;
@@ -36,6 +37,8 @@ public class UserServiceImpl implements UserService {
         currUser.setPassword(passwordEncoder.encode(serviceModel.getPassword()));
 
 
+        RoleEntity roleUser = userRepository
+                .
 
     }
 }
