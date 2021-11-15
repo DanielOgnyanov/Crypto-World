@@ -1,5 +1,6 @@
 package com.example.cryptoworld.models.binding;
 
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 
@@ -35,7 +36,8 @@ public class UserRegistrationBindingModel {
     public void setFullName(String fullName) {
         this.fullName = fullName;
     }
-
+    @NotEmpty
+    @Email
     public String getEmail() {
         return email;
     }
