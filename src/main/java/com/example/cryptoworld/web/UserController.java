@@ -6,6 +6,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -22,6 +23,8 @@ public class UserController {
     }
 
 
+    // GetMapping
+
     @GetMapping("/create")
     public String create(Model model) {
 
@@ -35,5 +38,20 @@ public class UserController {
 
         return "sign-in";
     }
+
+
+    //PostMapping
+
+    @PostMapping("/create")
+    public String createAccount(){
+
+
+
+
+
+
+
+    }
+
 
 }
