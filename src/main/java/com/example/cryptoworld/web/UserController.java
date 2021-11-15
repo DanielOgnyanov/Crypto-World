@@ -70,7 +70,12 @@ public class UserController {
         }
 
 
+        if (userService.userNameExists(registrationBindingModel.getUsername())) {
+            redirectAttributes.addFlashAttribute("registrationBindingModel", registrationBindingModel);
+            redirectAttributes.addFlashAttribute("userExistsError", true);
 
+            return "redirect:/users/create-account";
+        }
 
     }
 
