@@ -17,7 +17,7 @@ public class UserRegistrationBindingModel {
     }
 
     @NotEmpty
-    @Size(min = 3)
+    @Size(min = 3, max = 20)
     public String getUsername() {
         return username;
     }
@@ -26,6 +26,8 @@ public class UserRegistrationBindingModel {
         this.username = username;
     }
 
+    @NotEmpty
+    @Size(min = 3, max = 30)
     public String getFullName() {
         return fullName;
     }
