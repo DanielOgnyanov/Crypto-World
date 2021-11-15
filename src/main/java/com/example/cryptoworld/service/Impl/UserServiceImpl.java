@@ -46,7 +46,14 @@ public class UserServiceImpl implements UserService {
 
 
 
-        currUser
+        currUser.addRole(roleUser);
+
+
+        userRepository.save(currUser);
+
+
+
+
 
     }
 }
