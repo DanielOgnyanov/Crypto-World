@@ -46,6 +46,8 @@ public class UserRegistrationBindingModel {
         this.email = email;
     }
 
+    @NotEmpty
+    @Size(min = 5, max = 20)
     public String getPassword() {
         return password;
     }
@@ -54,6 +56,8 @@ public class UserRegistrationBindingModel {
         this.password = password;
     }
 
+    @NotEmpty
+    @Size(min = 5, max = 20)
     public String getConfirmPassword() {
         return confirmPassword;
     }
