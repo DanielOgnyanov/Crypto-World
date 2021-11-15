@@ -19,7 +19,7 @@
         <div class="container bg-blur rounded p-5 mt-5 w-75">
 
 
-            <form th:action="@{/users/create}" method="POST"
+            <form th:action="@{/users/create}" method="POST" th:object="${registrationBindingModel}"
                   class=" text-center text-light">
                 <div class="form-group row">
                     <label for="username" class="col-sm-2 col-form-label">Username</label>
