@@ -44,5 +44,9 @@ public class UserServiceImpl implements UserService {
                 .findByRole(EnumRole.USER).orElseThrow(
                         () -> new IllegalStateException("USER role not found. Please seed the roles."));
 
+
+
+        currUser
+
     }
 }

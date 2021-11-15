@@ -96,4 +96,9 @@ public class UserEntity extends BaseEntity{
     public void setDepositSet(Set<LogDeposit> depositSet) {
         this.depositSet = depositSet;
     }
+
+    public UserEntity addRole(RoleEntity roleEntity) {
+        this.roles.add(roleEntity);
+        return this;
+    }
 }
