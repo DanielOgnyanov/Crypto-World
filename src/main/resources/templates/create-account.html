@@ -26,15 +26,15 @@
                     <div class="col-sm-10">
 
 
-                        <input  type="text" class="form-control" id="username"
+                        <input  th:value="*{username}" th:errorclass="is-invalid"  required minlength="3" maxlength="20" type="text" class="form-control" id="username"
                                aria-describedby="usernameHelpInline" placeholder="Username">
 
 
-                        <small  id="usernameHelpInline" class="bg-danger text-light rounded">
-                            Username length must be between 5 and 20 characters.
-
-
+                        <small  id="usernameHelpInline" class="bg-danger text-light rounded invalid-feedback">
+                            Username length must be between 3 and 20 characters.
                         </small>
+
+
                     </div>
                 </div>
 
@@ -43,11 +43,11 @@
                     <div class="col-sm-10">
 
 
-                        <input  type="text" class="form-control" id="lastName"
+                        <input  th:value="*{fullName}" th:errorclass="is-invalid" required minlength="5" maxlength="20" type="text" class="form-control" id="lastName"
                                aria-describedby="lastNameHelpInline" placeholder="Last name">
 
 
-                        <small  id="lastNameHelpInline" class="bg-danger text-light rounded">
+                        <small  id="lastNameHelpInline" class="bg-danger text-light rounded invalid-feedback">
                             Full name length must be between 5 and 20 characters.
                         </small>
 
@@ -60,11 +60,11 @@
 
 
 
-                        <input  type="text" class="form-control" id="email"
+                        <input  th:value="*{email}" th:errorclass="is-invalid" required type="email" class="form-control" id="email"
                                aria-describedby="emailHelpInline" placeholder="email@example.com">
 
 
-                        <small  id="emailHelpInline" class="bg-danger text-light rounded">
+                        <small  id="emailHelpInline" class="bg-danger text-light rounded invalid-feedback">
                             Enter valid email address.
                         </small>
 
@@ -78,7 +78,7 @@
 
 
 
-                        <input  class="form-control" id="password"
+                        <input  th:errorclass="is-invalid" required minlength="5" maxlength="20" type="password" class="form-control" id="password"
                                aria-describedby="passwordHelpInline" placeholder="Password">
 
 
