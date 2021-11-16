@@ -8,6 +8,7 @@ import com.example.cryptoworld.repository.RoleRepository;
 import com.example.cryptoworld.repository.UserRepository;
 import com.example.cryptoworld.service.UserService;
 import org.modelmapper.ModelMapper;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -19,12 +20,14 @@ public class UserServiceImpl implements UserService {
     private final ModelMapper modelMapper;
     private final PasswordEncoder passwordEncoder;
     private final RoleRepository roleRepository;
+    private final CryptoWorldUserService cryptoWorldUserService;
 
-    public UserServiceImpl(UserRepository userRepository, ModelMapper modelMapper, PasswordEncoder passwordEncoder, RoleRepository roleRepository) {
+    public UserServiceImpl(UserRepository userRepository, ModelMapper modelMapper, PasswordEncoder passwordEncoder, RoleRepository roleRepository, CryptoWorldUserService cryptoWorldUserService) {
         this.userRepository = userRepository;
         this.modelMapper = modelMapper;
         this.passwordEncoder = passwordEncoder;
         this.roleRepository = roleRepository;
+        this.cryptoWorldUserService = cryptoWorldUserService;
     }
 
 
@@ -51,6 +54,8 @@ public class UserServiceImpl implements UserService {
 
 
         userRepository.save(currUser);
+
+        UserDetails principal =cryptoWorldUserService.loadUserByUsername(currUser.getUsername());
 
 
 
