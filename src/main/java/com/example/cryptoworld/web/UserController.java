@@ -84,6 +84,9 @@ public class UserController {
                 .map(registrationBindingModel, UserRegistrationServiceModel.class);
 
 
+        userService.registerAndLoginUser(userServiceModel);
+
+        return "redirect:/home";
 
 
     }
