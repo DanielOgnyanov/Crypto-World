@@ -8,6 +8,8 @@ import com.example.cryptoworld.repository.RoleRepository;
 import com.example.cryptoworld.repository.UserRepository;
 import com.example.cryptoworld.service.UserService;
 import org.modelmapper.ModelMapper;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -57,7 +59,11 @@ public class UserServiceImpl implements UserService {
 
         UserDetails principal =cryptoWorldUserService.loadUserByUsername(currUser.getUsername());
 
-
+        Authentication authentication = new UsernamePasswordAuthenticationToken(
+                principal,
+                currUser.getPassword(),
+                principal.getAuthorities()
+        );
 
 
 
