@@ -5,6 +5,7 @@ import com.example.cryptoworld.models.binding.UserRegistrationBindingModel;
 import com.example.cryptoworld.models.service.UserRegistrationServiceModel;
 import com.example.cryptoworld.service.UserService;
 import org.modelmapper.ModelMapper;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -89,6 +90,18 @@ public class UserController {
         return "redirect:/home";
 
 
+    }
+
+
+    @PostMapping("/login-error")
+    public String failedLogin(@ModelAttribute(UsernamePasswordAuthenticationFilter.SPRING_SECURITY_FORM_USERNAME_KEY)
+                                      String username,
+                              RedirectAttributes attributes) {
+
+        attributes.addFlashAttribute("bad_credentials", true);
+        attributes.addFlashAttribute("username", username);
+
+        return "redirect:/users/sing-in";
     }
 
 
