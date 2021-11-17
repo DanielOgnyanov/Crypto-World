@@ -2,7 +2,9 @@ package com.example.cryptoworld.web;
 
 
 import com.example.cryptoworld.models.binding.UserRegistrationBindingModel;
+import com.example.cryptoworld.models.entities.UserEntity;
 import com.example.cryptoworld.models.service.UserRegistrationServiceModel;
+import com.example.cryptoworld.repository.UserRepository;
 import com.example.cryptoworld.service.UserService;
 import org.modelmapper.ModelMapper;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
@@ -43,13 +45,15 @@ public class UserController {
     @GetMapping("/create")
     public String create(Model model) {
 
+        if (!model.containsAttribute("registrationBindingModel")) {
+            model.addAttribute("registrationBindingModel", new UserRegistrationBindingModel());
+        }
 
         return "create-account";
     }
 
     @GetMapping("/sign")
     public String sign(Model model) {
-
 
         return "sign-in";
     }
@@ -68,7 +72,7 @@ public class UserController {
             redirectAttributes.addFlashAttribute(
                     "org.springframework.validation.BindingResult.registrationBindingModel", bindingResult);
 
-            return "redirect:/users/create-account";
+            return "redirect:create-account";
         }
 
 
@@ -76,18 +80,23 @@ public class UserController {
             redirectAttributes.addFlashAttribute("registrationBindingModel", registrationBindingModel);
             redirectAttributes.addFlashAttribute("userExistsError", true);
 
-            return "redirect:/users/create-account";
+            return "redirect:create-account";
         }
 
+        if (!registrationBindingModel.getPassword().equals(registrationBindingModel.getConfirmPassword())) {
+            redirectAttributes.addFlashAttribute("registrationBindingModel", registrationBindingModel);
+            return "redirect:create-account";
+        }
 
 
         UserRegistrationServiceModel userServiceModel = modelMapper
                 .map(registrationBindingModel, UserRegistrationServiceModel.class);
 
 
+
         userService.registerAndLoginUser(userServiceModel);
 
-        return "redirect:/home";
+        return "redirect:sign-in";
 
 
     }

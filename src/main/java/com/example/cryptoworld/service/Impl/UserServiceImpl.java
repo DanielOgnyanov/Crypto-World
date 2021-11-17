@@ -67,7 +67,10 @@ public class UserServiceImpl implements UserService {
         );
 
 
-        SecurityContextHolder.getContext().setAuthentication(authentication);
+
+            SecurityContextHolder.getContext().setAuthentication(authentication);
+
+
 
     }
 }
