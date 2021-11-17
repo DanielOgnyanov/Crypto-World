@@ -2,12 +2,12 @@ package com.example.cryptoworld.config;
 
 
 import com.example.cryptoworld.models.enums.EnumRole;
+import com.example.cryptoworld.service.Impl.CryptoWorldUserService;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
@@ -16,12 +16,11 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 public class ApplicationSecurityConfiguration extends WebSecurityConfigurerAdapter {
 
 
-    private final UserDetailsService userDetailsService;
+    private final CryptoWorldUserService cryptoWorldUserService;
     private final PasswordEncoder passwordEncoder;
 
-
-    public ApplicationSecurityConfiguration(UserDetailsService userDetailsService, PasswordEncoder passwordEncoder) {
-        this.userDetailsService = userDetailsService;
+    public ApplicationSecurityConfiguration(CryptoWorldUserService cryptoWorldUserService, PasswordEncoder passwordEncoder) {
+        this.cryptoWorldUserService = cryptoWorldUserService;
         this.passwordEncoder = passwordEncoder;
     }
 
