@@ -54,7 +54,7 @@ public class ApplicationSecurityConfiguration extends WebSecurityConfigurerAdapt
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 
         auth.
-                userDetailsService(userDetailsService).
+                userDetailsService(cryptoWorldUserService).
                 passwordEncoder(passwordEncoder);
 
     }
