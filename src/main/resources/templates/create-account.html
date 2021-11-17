@@ -19,14 +19,14 @@
         <div class="container bg-blur rounded p-5 mt-5 w-75">
 
 
-            <form th:action="@{/users/create}" method="POST" th:object="${registrationBindingModel}"
+            <form action="/users/create" method="POST" th:object="${registrationBindingModel}"
                   class=" text-center text-light">
                 <div class="form-group row">
                     <label for="username" class="col-sm-2 col-form-label">Username</label>
                     <div class="col-sm-10">
 
 
-                        <input  th:value="*{username}" th:errorclass="is-invalid"  required minlength="3" maxlength="20" type="text" class="form-control" id="username"
+                        <input name="username" th:value="*{username}" th:errorclass="is-invalid" required minlength="5" maxlength="20"   type="text" class="form-control" id="username"
                                aria-describedby="usernameHelpInline" placeholder="Username">
 
 
@@ -43,7 +43,7 @@
                     <div class="col-sm-10">
 
 
-                        <input  th:value="*{fullName}" th:errorclass="is-invalid" required minlength="5" maxlength="20" type="text" class="form-control" id="lastName"
+                        <input name="fullName"   th:value="*{fullName}" th:errorclass="is-invalid" required minlength="5" maxlength="20" type="text" class="form-control" id="lastName"
                                aria-describedby="lastNameHelpInline" placeholder="Last name">
 
 
@@ -60,7 +60,7 @@
 
 
 
-                        <input  th:value="*{email}" th:errorclass="is-invalid" required type="email" class="form-control" id="email"
+                        <input name="email"  th:value="*{email}" th:errorclass="is-invalid" required  type="email" class="form-control" id="email"
                                aria-describedby="emailHelpInline" placeholder="email@example.com">
 
 
@@ -78,7 +78,7 @@
 
 
 
-                        <input  th:errorclass="is-invalid" required minlength="5" maxlength="20" type="password" class="form-control" id="password"
+                        <input name="password" th:errorclass="is-invalid" required minlength="5" maxlength="20"  type="password" class="form-control" id="password"
                                aria-describedby="passwordHelpInline" placeholder="Password">
 
 
@@ -96,7 +96,7 @@
 
 
 
-                        <input  th:errorclass="is-invalid" required minlength="5" maxlength="20" type="password" class="form-control" id="confirmPassword"
+                        <input name="confirmPassword" th:errorclass="is-invalid" required minlength="5" maxlength="20" type="password" class="form-control" id="confirmPassword"
                                aria-describedby="confirmPasswordHelpInline" placeholder="Confirm Password">
 
 
