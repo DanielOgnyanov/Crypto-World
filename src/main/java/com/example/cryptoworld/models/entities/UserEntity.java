@@ -21,11 +21,10 @@ public class UserEntity extends BaseEntity{
     private Set<LogDeposit> depositSet;
 
     public UserEntity() {
-    }
-
-    public UserEntity(List<RoleEntity> roles) {
         this.roles = new ArrayList<>();
     }
+
+
 
     @Column(name = "username", unique = true)
     public String getUsername() {
