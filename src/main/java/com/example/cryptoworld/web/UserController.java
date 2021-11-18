@@ -72,7 +72,7 @@ public class UserController {
             redirectAttributes.addFlashAttribute(
                     "org.springframework.validation.BindingResult.registrationBindingModel", bindingResult);
 
-            return "redirect:create-account";
+            return "redirect:/create";
         }
 
 
@@ -80,12 +80,12 @@ public class UserController {
             redirectAttributes.addFlashAttribute("registrationBindingModel", registrationBindingModel);
             redirectAttributes.addFlashAttribute("userExistsError", true);
 
-            return "redirect:create-account";
+            return "redirect:/create";
         }
 
         if (!registrationBindingModel.getPassword().equals(registrationBindingModel.getConfirmPassword())) {
             redirectAttributes.addFlashAttribute("registrationBindingModel", registrationBindingModel);
-            return "redirect:create-account";
+            return "redirect:/create";
         }
 
 
@@ -96,7 +96,7 @@ public class UserController {
 
         userService.registerAndLoginUser(userServiceModel);
 
-        return "redirect:sign-in";
+        return "redirect:/sign";
 
 
     }
