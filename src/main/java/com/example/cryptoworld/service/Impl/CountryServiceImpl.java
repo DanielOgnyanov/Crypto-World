@@ -35,7 +35,9 @@ public class CountryServiceImpl implements CountryService {
     }
 
     @Override
-    public CountryEntity getCountryByName(String country) {
+    public CountryEntity getCountryByName(EnumCountry country) {
         return countryRepository.findByName(country).orElse(null);
     }
+
+
 }

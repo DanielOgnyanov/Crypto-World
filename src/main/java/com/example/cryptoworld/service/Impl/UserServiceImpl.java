@@ -1,6 +1,7 @@
 package com.example.cryptoworld.service.Impl;
 
 import com.example.cryptoworld.models.entities.UserEntity;
+import com.example.cryptoworld.models.enums.EnumCountry;
 import com.example.cryptoworld.models.service.UserRegistrationServiceModel;
 import com.example.cryptoworld.repository.RoleRepository;
 import com.example.cryptoworld.repository.UserRepository;
@@ -54,7 +55,9 @@ public class UserServiceImpl implements UserService {
         }
 
 
-        userEntity.setCountry(countryService.getCountryByName(userRegistrationServiceModel.getCountry()));
+        userEntity
+                .setCountry(countryService.getCountryByName
+                (EnumCountry.valueOf(userRegistrationServiceModel.getCountry())));
 
         userRepository.save(userEntity);
 
