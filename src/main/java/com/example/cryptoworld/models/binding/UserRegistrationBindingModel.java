@@ -12,6 +12,7 @@ public class UserRegistrationBindingModel {
     private String email;
     private String password;
     private String confirmPassword;
+    private String country;
 
 
     public UserRegistrationBindingModel() {
@@ -64,5 +65,14 @@ public class UserRegistrationBindingModel {
 
     public void setConfirmPassword(String confirmPassword) {
         this.confirmPassword = confirmPassword;
+    }
+
+    @NotEmpty
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
     }
 }
