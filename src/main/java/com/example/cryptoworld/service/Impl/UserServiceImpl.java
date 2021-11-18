@@ -1,17 +1,12 @@
 package com.example.cryptoworld.service.Impl;
 
-import com.example.cryptoworld.models.entities.RoleEntity;
 import com.example.cryptoworld.models.entities.UserEntity;
-import com.example.cryptoworld.models.enums.EnumRole;
 import com.example.cryptoworld.models.service.UserRegistrationServiceModel;
 import com.example.cryptoworld.repository.RoleRepository;
 import com.example.cryptoworld.repository.UserRepository;
+import com.example.cryptoworld.service.RoleService;
 import com.example.cryptoworld.service.UserService;
 import org.modelmapper.ModelMapper;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -24,13 +19,15 @@ public class UserServiceImpl implements UserService {
     private final PasswordEncoder passwordEncoder;
     private final RoleRepository roleRepository;
     private final CryptoWorldUserService cryptoWorldUserService;
+    private final RoleService roleService;
 
-    public UserServiceImpl(UserRepository userRepository, ModelMapper modelMapper, PasswordEncoder passwordEncoder, RoleRepository roleRepository, CryptoWorldUserService cryptoWorldUserService) {
+    public UserServiceImpl(UserRepository userRepository, ModelMapper modelMapper, PasswordEncoder passwordEncoder, RoleRepository roleRepository, CryptoWorldUserService cryptoWorldUserService, RoleService roleService) {
         this.userRepository = userRepository;
         this.modelMapper = modelMapper;
         this.passwordEncoder = passwordEncoder;
         this.roleRepository = roleRepository;
         this.cryptoWorldUserService = cryptoWorldUserService;
+        this.roleService = roleService;
     }
 
 
@@ -45,6 +42,10 @@ public class UserServiceImpl implements UserService {
         UserEntity userEntity = modelMapper.map(userRegistrationServiceModel , UserEntity.class);
 
         userEntity.setPassword(passwordEncoder.encode(userRegistrationServiceModel.getPassword()));
+
+        if (userRepository.count() == 0) {
+            userEntity.addRole();
+        }
 
         userRepository.save(userEntity);
 
