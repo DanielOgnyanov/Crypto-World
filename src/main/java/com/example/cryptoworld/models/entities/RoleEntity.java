@@ -3,10 +3,8 @@ package com.example.cryptoworld.models.entities;
 
 import com.example.cryptoworld.models.enums.EnumRole;
 
-import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "roles")
@@ -30,4 +28,6 @@ public class RoleEntity extends BaseEntity{
     public void setRole(EnumRole role) {
         this.role = role;
     }
+
+
 }
