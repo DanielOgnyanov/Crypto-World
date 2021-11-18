@@ -113,7 +113,7 @@
                     <label class="col-sm-2 col-form-label">Country</label>
 
 
-                    <select class="col-form-label col-sm-3" >
+                    <select th:value="*{country}" th:errorclass="is-invalid" class="col-form-label col-sm-3" >
                         <option value="" selected>Select Country</option>
 
                         <option th:each="c : ${T(com.example.cryptoworld.models.enums.EnumCountry).values()}"
