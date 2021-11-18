@@ -116,7 +116,8 @@
                     <select class="col-form-label col-sm-3" >
                         <option value="" selected>Select Country</option>
 
-                        <option>Albania</option>
+                        <option th:each="c : ${T(com.example.cryptoworld.models.enums.EnumCountry).values()}"
+                                th:text="${c}" th:value="${c}">Albania</option>
                     </select>
 
 
