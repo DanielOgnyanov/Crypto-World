@@ -1,10 +1,10 @@
 package com.example.cryptoworld.service.Impl;
 
 import com.example.cryptoworld.models.entities.UserEntity;
-import com.example.cryptoworld.models.enums.EnumRole;
 import com.example.cryptoworld.models.service.UserRegistrationServiceModel;
 import com.example.cryptoworld.repository.RoleRepository;
 import com.example.cryptoworld.repository.UserRepository;
+import com.example.cryptoworld.service.CountryService;
 import com.example.cryptoworld.service.RoleService;
 import com.example.cryptoworld.service.UserService;
 import org.modelmapper.ModelMapper;
@@ -21,14 +21,16 @@ public class UserServiceImpl implements UserService {
     private final RoleRepository roleRepository;
     private final CryptoWorldUserService cryptoWorldUserService;
     private final RoleService roleService;
+    private final CountryService countryService;
 
-    public UserServiceImpl(UserRepository userRepository, ModelMapper modelMapper, PasswordEncoder passwordEncoder, RoleRepository roleRepository, CryptoWorldUserService cryptoWorldUserService, RoleService roleService) {
+    public UserServiceImpl(UserRepository userRepository, ModelMapper modelMapper, PasswordEncoder passwordEncoder, RoleRepository roleRepository, CryptoWorldUserService cryptoWorldUserService, RoleService roleService, CountryService countryService) {
         this.userRepository = userRepository;
         this.modelMapper = modelMapper;
         this.passwordEncoder = passwordEncoder;
         this.roleRepository = roleRepository;
         this.cryptoWorldUserService = cryptoWorldUserService;
         this.roleService = roleService;
+        this.countryService = countryService;
     }
 
 
@@ -50,6 +52,8 @@ public class UserServiceImpl implements UserService {
         } else {
             userEntity.addRole(roleService.getRole(2L));
         }
+
+        userEntity.setCountry();
 
         userRepository.save(userEntity);
 
