@@ -45,9 +45,9 @@ public class UserServiceImpl implements UserService {
         userEntity.setPassword(passwordEncoder.encode(userRegistrationServiceModel.getPassword()));
 
         if (userRepository.count() == 0) {
-            userEntity.addRole(roleService.getRole(EnumRole.ADMIN.name()));
+            userEntity.addRole(roleService.getRole(1L));
         } else {
-            userEntity.addRole(roleService.getRole(EnumRole.USER.name()));
+            userEntity.addRole(roleService.getRole(2L));
         }
 
         userRepository.save(userEntity);

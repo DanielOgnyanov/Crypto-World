@@ -4,5 +4,5 @@ import com.example.cryptoworld.models.entities.RoleEntity;
 
 public interface RoleService {
     void InitRoleInDb();
-    RoleEntity  getRole(String roleName);
+    RoleEntity  getRole(Long id);
 }
