@@ -46,6 +46,7 @@ public class UserServiceImpl implements UserService {
 
 
         if (userRepository.count() == 0) {
+            System.out.println();
             userEntity.addRole(roleService.getRole(1L));
         } else {
             userEntity.addRole(roleService.getRole(2L));
