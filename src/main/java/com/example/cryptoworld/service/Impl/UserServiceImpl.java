@@ -1,6 +1,7 @@
 package com.example.cryptoworld.service.Impl;
 
 import com.example.cryptoworld.models.entities.UserEntity;
+import com.example.cryptoworld.models.enums.EnumRole;
 import com.example.cryptoworld.models.service.UserRegistrationServiceModel;
 import com.example.cryptoworld.repository.RoleRepository;
 import com.example.cryptoworld.repository.UserRepository;
@@ -44,7 +45,9 @@ public class UserServiceImpl implements UserService {
         userEntity.setPassword(passwordEncoder.encode(userRegistrationServiceModel.getPassword()));
 
         if (userRepository.count() == 0) {
-            userEntity.addRole(roleService);
+            userEntity.addRole(roleService.getRole(EnumRole.ADMIN.name()));
+        } else {
+            userEntity.addRole(roleService.getRole(EnumRole.USER.name()));
         }
 
         userRepository.save(userEntity);
