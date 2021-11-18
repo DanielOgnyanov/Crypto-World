@@ -46,6 +46,8 @@ public class UserServiceImpl implements UserService {
 
         userEntity.setPassword(passwordEncoder.encode(userRegistrationServiceModel.getPassword()));
 
+        userRepository.save(userEntity);
+
     }
 
 
