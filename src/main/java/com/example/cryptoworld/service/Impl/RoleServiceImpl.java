@@ -38,6 +38,6 @@ public class RoleServiceImpl implements RoleService {
 
     @Override
     public RoleEntity getRole(String roleName) {
-        return null;
+        return roleRepository.findByRole(roleName).orElse(null);
     }
 }
