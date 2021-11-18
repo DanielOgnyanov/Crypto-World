@@ -9,7 +9,7 @@
     <nav th:replace="fragments/fragment :: navigation"></nav>
 </header>
 
-<main >
+<main>
     <div class="jumbotron">
         <div class="container text-light ">
             <h1 class="display-3 ">
@@ -26,11 +26,12 @@
                     <div class="col-sm-10">
 
 
-                        <input name="username" th:value="*{username}" th:errorclass="is-invalid" required minlength="5" maxlength="20"   type="text" class="form-control" id="username"
+                        <input name="username" th:value="*{username}" th:errorclass="is-invalid" required minlength="5"
+                               maxlength="20" type="text" class="form-control" id="username"
                                aria-describedby="usernameHelpInline" placeholder="Username">
 
 
-                        <small  id="usernameHelpInline" class="bg-danger text-light rounded invalid-feedback">
+                        <small id="usernameHelpInline" class="bg-danger text-light rounded invalid-feedback">
                             Username length must be between 3 and 20 characters.
                         </small>
 
@@ -43,11 +44,12 @@
                     <div class="col-sm-10">
 
 
-                        <input name="fullName"   th:value="*{fullName}" th:errorclass="is-invalid" required minlength="5" maxlength="20" type="text" class="form-control" id="lastName"
+                        <input name="fullName" th:value="*{fullName}" th:errorclass="is-invalid" required minlength="5"
+                               maxlength="20" type="text" class="form-control" id="lastName"
                                aria-describedby="lastNameHelpInline" placeholder="Last name">
 
 
-                        <small  id="lastNameHelpInline" class="bg-danger text-light rounded invalid-feedback">
+                        <small id="lastNameHelpInline" class="bg-danger text-light rounded invalid-feedback">
                             Full name length must be between 5 and 20 characters.
                         </small>
 
@@ -59,15 +61,14 @@
                     <div class="col-sm-10">
 
 
-
-                        <input name="email"  th:value="*{email}" th:errorclass="is-invalid" required  type="email" class="form-control" id="email"
+                        <input name="email" th:value="*{email}" th:errorclass="is-invalid" required type="email"
+                               class="form-control" id="email"
                                aria-describedby="emailHelpInline" placeholder="email@example.com">
 
 
-                        <small  id="emailHelpInline" class="bg-danger text-light rounded invalid-feedback">
+                        <small id="emailHelpInline" class="bg-danger text-light rounded invalid-feedback">
                             Enter valid email address.
                         </small>
-
 
 
                     </div>
@@ -77,15 +78,14 @@
                     <div class="col-sm-10">
 
 
-
-                        <input name="password" th:errorclass="is-invalid" required minlength="5" maxlength="20"  type="password" class="form-control" id="password"
+                        <input name="password" th:errorclass="is-invalid" required minlength="5" maxlength="20"
+                               type="password" class="form-control" id="password"
                                aria-describedby="passwordHelpInline" placeholder="Password">
 
 
-                        <small  id="passwordHelpInline" class="invalid-feedback bg-danger text-light rounded">
+                        <small id="passwordHelpInline" class="invalid-feedback bg-danger text-light rounded">
                             Password length must be more than 5 characters long.
                         </small>
-
 
 
                     </div>
@@ -95,15 +95,14 @@
                     <div class="col-sm-10">
 
 
-
-                        <input name="confirmPassword" th:errorclass="is-invalid" required minlength="5" maxlength="20" type="password" class="form-control" id="confirmPassword"
+                        <input name="confirmPassword" th:errorclass="is-invalid" required minlength="5" maxlength="20"
+                               type="password" class="form-control" id="confirmPassword"
                                aria-describedby="confirmPasswordHelpInline" placeholder="Confirm Password">
 
 
-                        <small  id="confirmPasswordHelpInline" class="invalid-feedback bg-danger text-light rounded">
+                        <small id="confirmPasswordHelpInline" class="invalid-feedback bg-danger text-light rounded">
                             Password length must be more than 5 characters long.
                         </small>
-
 
 
                     </div>
@@ -112,23 +111,23 @@
 
                 <div class="form-group row">
                     <label class="col-sm-2 col-form-label">Country</label>
-                    <div class="col-sm-10">
 
 
+                    <select class="col-form-label col-sm-3">
+                        <option value="" selected>Select Country</option>
 
-                        <input  type="text" class="form-control" placeholder="Country">
-
-
-                        <small   class="invalid-feedback bg-danger text-light rounded">
-                            Country cannot be empty!
-                        </small>
+                        <option>Albania</option>
+                    </select>
 
 
+                    <small class="invalid-feedback bg-danger text-light rounded">
+                        Country cannot be empty!
+                    </small>
 
-                    </div>
+
                 </div>
 
-                <button class="btn btn-info w-50" type="submit" >Create Account</button>
+                <button class="btn btn-info w-50" type="submit">Create Account</button>
             </form>
             <hr class="bg-light">
         </div>
