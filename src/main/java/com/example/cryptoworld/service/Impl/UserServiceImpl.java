@@ -53,7 +53,7 @@ public class UserServiceImpl implements UserService {
             userEntity.addRole(roleService.getRole(2L));
         }
 
-        userEntity.setCountry();
+        userEntity.setCountry(countryService.getCountryByName(userRegistrationServiceModel.getCountry()));
 
         userRepository.save(userEntity);
 

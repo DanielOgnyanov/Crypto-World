@@ -33,4 +33,9 @@ public class CountryServiceImpl implements CountryService {
                     });
         }
     }
+
+    @Override
+    public CountryEntity getCountryByName(String country) {
+        return null;
+    }
 }
