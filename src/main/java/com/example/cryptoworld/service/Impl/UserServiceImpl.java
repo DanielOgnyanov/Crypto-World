@@ -44,7 +44,7 @@ public class UserServiceImpl implements UserService {
 
         UserEntity userEntity = modelMapper.map(userRegistrationServiceModel , UserEntity.class);
 
-
+        userEntity.setPassword(passwordEncoder.encode(userRegistrationServiceModel.getPassword()));
 
     }
 
