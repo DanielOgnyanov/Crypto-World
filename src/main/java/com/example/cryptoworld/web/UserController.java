@@ -89,12 +89,8 @@ public class UserController {
         }
 
 
-        UserRegistrationServiceModel userServiceModel = modelMapper
-                .map(registrationBindingModel, UserRegistrationServiceModel.class);
-
-
-
-        userService.registerAndLoginUser(userServiceModel);
+        userService.register
+                (modelMapper.map(registrationBindingModel, UserRegistrationServiceModel.class));
 
         return "redirect:/sign";
 

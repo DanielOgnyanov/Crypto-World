@@ -40,37 +40,9 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void registerAndLoginUser(UserRegistrationServiceModel serviceModel) {
-
-        UserEntity currUser = modelMapper.map(serviceModel, UserEntity.class);
-
-        currUser.setPassword(passwordEncoder.encode(serviceModel.getPassword()));
-
-
-        RoleEntity roleUser = roleRepository
-                .findByRole(EnumRole.USER).orElseThrow(
-                        () -> new IllegalStateException("USER role not found. Please seed the roles."));
-
-
-
-        currUser.addRole(roleUser);
-
-
-        userRepository.save(currUser);
-
-        UserDetails principal =cryptoWorldUserService.loadUserByUsername(currUser.getUsername());
-
-        Authentication authentication = new UsernamePasswordAuthenticationToken(
-                principal,
-                currUser.getPassword(),
-                principal.getAuthorities()
-        );
-
-
-
-            SecurityContextHolder.getContext().setAuthentication(authentication);
-
-
+    public void register(UserRegistrationServiceModel userRegistrationServiceModel) {
 
     }
+
+
 }
