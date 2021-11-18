@@ -37,7 +37,7 @@ public class UserRegistrationBindingModel {
         this.fullName = fullName;
     }
     @NotEmpty
-    @Email(regexp = "^([\\\\w-\\\\.]+){1,64}@([\\\\w&&[^_]]+){2,255}.[a-z]{2,}$")
+    @Email
     public String getEmail() {
         return email;
     }
