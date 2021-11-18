@@ -42,6 +42,10 @@ public class UserServiceImpl implements UserService {
     @Override
     public void register(UserRegistrationServiceModel userRegistrationServiceModel) {
 
+        UserEntity userEntity = modelMapper.map(userRegistrationServiceModel , UserEntity.class);
+
+
+
     }
 
 
