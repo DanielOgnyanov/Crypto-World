@@ -103,7 +103,7 @@ public class UserController {
         if (userService.existByEmail(registrationBindingModel.getEmail())) {
             redirectAttributes.addFlashAttribute("registrationBindingModel", registrationBindingModel);
             redirectAttributes.addFlashAttribute("emailExist", true);
-
+            return "redirect:create";
         }
 
         if (!registrationBindingModel.getPassword().equals(registrationBindingModel.getConfirmPassword())) {
