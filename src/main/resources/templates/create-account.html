@@ -35,7 +35,7 @@
                             Username length must be between 3 and 20 characters.
                         </small>
 
-                        <small th:if="${}" class="bg-danger text-light rounded invalid-feedback">
+                        <small th:if="${userNameExist}" class="bg-danger text-light rounded invalid-feedback">
                             Username is already occupied !
                         </small>
 
