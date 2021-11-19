@@ -22,24 +22,29 @@ public class UserServiceImpl implements UserService {
     private final ModelMapper modelMapper;
     private final PasswordEncoder passwordEncoder;
     private final RoleRepository roleRepository;
-    private final CryptoWorldUserService cryptoWorldUserService;
+
     private final RoleService roleService;
     private final CountryService countryService;
 
-    public UserServiceImpl(UserRepository userRepository, ModelMapper modelMapper, PasswordEncoder passwordEncoder, RoleRepository roleRepository, CryptoWorldUserService cryptoWorldUserService, RoleService roleService, CountryService countryService) {
+    public UserServiceImpl(UserRepository userRepository,
+                           ModelMapper modelMapper,
+                           PasswordEncoder passwordEncoder,
+                           RoleRepository roleRepository,
+                           RoleService roleService,
+                           CountryService countryService) {
         this.userRepository = userRepository;
         this.modelMapper = modelMapper;
         this.passwordEncoder = passwordEncoder;
         this.roleRepository = roleRepository;
-        this.cryptoWorldUserService = cryptoWorldUserService;
+
         this.roleService = roleService;
         this.countryService = countryService;
     }
 
 
     @Override
-    public boolean userNameExists(String username) {
-        return userRepository.findByUsername(username);
+    public boolean existByUsername(String username) {
+        return userRepository.existsByUsername(username);
     }
 
     @Override

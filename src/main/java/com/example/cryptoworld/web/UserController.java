@@ -86,7 +86,8 @@ public class UserController {
         }
 
 
-        if (userService.userNameExists(registrationBindingModel.getUsername())) {
+
+        if (userService.existByUsername(registrationBindingModel.getUsername())) {
             redirectAttributes.addFlashAttribute("registrationBindingModel", registrationBindingModel);
             redirectAttributes.addFlashAttribute("userNameExist", true);
 
@@ -102,6 +103,7 @@ public class UserController {
 
         userService.register
                 (modelMapper.map(registrationBindingModel, UserRegistrationServiceModel.class));
+
 
         return "redirect:sign";
 
