@@ -21,11 +21,11 @@
 
 
 
-            <form  th:action=@{/users/sign} method="POST"
+            <form  th:action= "@{/users/sign}" method="POST"
                   class="text-center text-light">
 
 
-                <h3  class="mt-5 text-center">
+                <h3 th:value="${username}" class="mt-5 text-center">
                     <strong  class="bg-blur rounded text-danger">
                         Wrong username and password combination.
                     </strong>
