@@ -74,7 +74,7 @@ public class UserServiceImpl implements UserService {
         StringBuilder sb = new StringBuilder(lenAddress);
 
         for (int i = 0; i < lenAddress; i++) {
-            sb.append()
+            sb.append(allChar.charAt(random.nextInt(allChar.length())));
         }
 
     }
