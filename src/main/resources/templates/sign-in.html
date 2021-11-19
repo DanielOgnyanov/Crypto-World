@@ -37,7 +37,7 @@
                     <div class="col-sm-10">
 
 
-                        <input th:value="${username}" type="text" class="form-control"
+                        <input th:value="${username}" th:errorclass="is-invalid" type="text" class="form-control"
                                id="username"
                                aria-describedby="usernameHelpInline" placeholder="Username">
 
@@ -62,7 +62,7 @@
                                aria-describedby="passwordHelpInline" placeholder="Password">
 
                         <small  id="passwordHelpInline"
-                               class="bg-danger text-light rounded">
+                               class="bg-danger text-light rounded invalid-feedback">
                             Password length must be more than 3 characters.
                         </small>
 
