@@ -56,6 +56,11 @@ public class UserController {
 
         if(!model.containsAttribute("registrationBindingModel")) {
             model.addAttribute("registrationBindingModel", new UserRegistrationBindingModel());
+            model.addAttribute("emailExist", false);
+        }
+
+        if(!model.containsAttribute("registrationBindingModel")) {
+            model.addAttribute("registrationBindingModel", new UserRegistrationBindingModel());
             model.addAttribute("passwordIsNotEqual", false);
         }
 
