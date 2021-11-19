@@ -68,7 +68,7 @@
                                aria-describedby="emailHelpInline" placeholder="email@example.com">
 
 
-                        <small id="emailHelpInline" class="bg-danger text-light rounded invalid-feedback">
+                        <small th:if="${emailExist}"  class="bg-danger text-light rounded">
                             Enter valid email address.
                         </small>
 
