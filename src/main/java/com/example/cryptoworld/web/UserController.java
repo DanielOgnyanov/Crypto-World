@@ -54,6 +54,11 @@ public class UserController {
             model.addAttribute("userNameExist", false);
         }
 
+        if(!model.containsAttribute("registrationBindingModel")) {
+            model.addAttribute("registrationBindingModel", new UserRegistrationBindingModel());
+            model.addAttribute("passwordIsNotEqual", false);
+        }
+
         return "create-account";
     }
 
@@ -77,7 +82,7 @@ public class UserController {
             redirectAttributes.addFlashAttribute(
                     "org.springframework.validation.BindingResult.registrationBindingModel", bindingResult);
 
-            return "redirect:/create";
+            return "redirect:create";
         }
 
 
@@ -85,19 +90,20 @@ public class UserController {
             redirectAttributes.addFlashAttribute("registrationBindingModel", registrationBindingModel);
             redirectAttributes.addFlashAttribute("userNameExist", true);
 
-            return "redirect:/create";
+            return "redirect:create";
         }
 
         if (!registrationBindingModel.getPassword().equals(registrationBindingModel.getConfirmPassword())) {
             redirectAttributes.addFlashAttribute("registrationBindingModel", registrationBindingModel);
-            return "redirect:/create";
+            redirectAttributes.addFlashAttribute("passwordIsNotEqual", true);
+            return "redirect:create";
         }
 
 
         userService.register
                 (modelMapper.map(registrationBindingModel, UserRegistrationServiceModel.class));
 
-        return "redirect:/sign";
+        return "redirect:sign";
 
 
     }

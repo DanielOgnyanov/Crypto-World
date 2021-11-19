@@ -66,6 +66,7 @@ public class UserEntity extends BaseEntity{
 
 
     @Column(name = "county_name")
+    @Enumerated(EnumType.STRING)
     public EnumCountry getCountry() {
         return country;
     }

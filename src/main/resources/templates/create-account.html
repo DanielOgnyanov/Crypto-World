@@ -31,8 +31,8 @@
                                aria-describedby="usernameHelpInline" placeholder="Username">
 
 
-                        <small th:if="${userNameExist}" id="usernameHelpInline" class="bg-danger text-light rounded invalid-feedback">
-                            Username length must be between 3 and 20 characters.
+                        <small th:if="${userNameExist}"  class="bg-danger text-light rounded">
+                            Username is taken by another person!
                         </small>
 
 
@@ -80,12 +80,12 @@
                     <div class="col-sm-10">
 
 
-                        <input name="password" th:errorclass="is-invalid" required minlength="5" maxlength="20"
+                        <input th:field="*{password}" th:errorclass = "bg-danger" name="password"
                                type="password" class="form-control" id="password"
                                aria-describedby="passwordHelpInline" placeholder="Password">
 
 
-                        <small id="passwordHelpInline" class="invalid-feedback bg-danger text-light rounded">
+                        <small th:if = "${#fields.hasErrors('password')}" th:errors = "*{password}" id="passwordHelpInline" class="bg-danger text-light rounded">
                             Password length must be more than 5 characters long.
                         </small>
 
@@ -97,13 +97,17 @@
                     <div class="col-sm-10">
 
 
-                        <input name="confirmPassword" th:errorclass="is-invalid" required minlength="5" maxlength="20"
+                        <input th:field="*{confirmPassword}" th:errorclass = "bg-danger" name="confirmPassword"
                                type="password" class="form-control" id="confirmPassword"
                                aria-describedby="confirmPasswordHelpInline" placeholder="Confirm Password">
 
 
-                        <small id="confirmPasswordHelpInline" class="invalid-feedback bg-danger text-light rounded">
+                        <small th:if = "${#fields.hasErrors('confirmPassword')}" th:errors = "*{confirmPassword}" id="confirmPasswordHelpInline" class="bg-danger text-light rounded">
                             Password length must be more than 5 characters long.
+                        </small>
+
+                        <small  th:if="${passwordIsNotEqual}"  class="bg-danger text-light rounded">
+                            Password not matching !
                         </small>
 
 
@@ -115,7 +119,7 @@
                     <label class="col-sm-2 col-form-label">Country</label>
 
 
-                    <select th:value="*{country}" th:errorclass="is-invalid" name="country" class="col-form-label col-sm-3" >
+                    <select th:value="*{country}" th:errorclass="bg-danger" name="country" class="col-form-label col-sm-3" >
                         <option value="" selected>Select Country</option>
 
                         <option th:each="c : ${T(com.example.cryptoworld.models.enums.EnumCountry).values()}"
@@ -123,7 +127,7 @@
                     </select>
 
 
-                    <small class="invalid-feedback bg-danger text-light rounded">
+                    <small th:if = "${#fields.hasErrors('country')}" th:errors = "*{country}" class="invalid-feedback bg-danger text-light rounded">
                         Country cannot be empty!
                     </small>
 

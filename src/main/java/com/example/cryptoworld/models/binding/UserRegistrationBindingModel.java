@@ -4,6 +4,7 @@ import com.example.cryptoworld.models.enums.EnumCountry;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 public class UserRegistrationBindingModel {
@@ -69,7 +70,7 @@ public class UserRegistrationBindingModel {
         this.confirmPassword = confirmPassword;
     }
 
-    @NotEmpty
+    @NotNull
     public EnumCountry getCountry() {
         return country;
     }
