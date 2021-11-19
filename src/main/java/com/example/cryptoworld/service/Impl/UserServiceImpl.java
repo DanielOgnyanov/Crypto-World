@@ -77,6 +77,7 @@ public class UserServiceImpl implements UserService {
             sb.append(allChar.charAt(random.nextInt(allChar.length())));
         }
 
+        return sb.toString();
     }
 
 
