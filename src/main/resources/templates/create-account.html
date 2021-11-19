@@ -26,7 +26,7 @@
                     <div class="col-sm-10">
 
 
-                        <input name="username" th:value="*{username}" th:errorclass="is-invalid" required minlength="5"
+                        <input th:field="*{username}" th:errorclass = "bg-danger" name="username"  required minlength="5"
                                maxlength="20" type="text" class="form-control" id="username"
                                aria-describedby="usernameHelpInline" placeholder="Username">
 
