@@ -1,6 +1,8 @@
 package com.example.cryptoworld.models.entities;
 
 
+import com.example.cryptoworld.models.enums.EnumCountry;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -15,7 +17,7 @@ public class UserEntity extends BaseEntity{
     private String fullName;
     private String password;
     private String email;
-    private CountryEntity country;
+    private EnumCountry country;
     private List<RoleEntity> roles;
     private String walletAddress;
     private Set<LogDeposit> depositSet;
@@ -62,13 +64,13 @@ public class UserEntity extends BaseEntity{
         this.email = email;
     }
 
-    @ManyToOne
-    @JoinColumn(name = "county_name", referencedColumnName = "name")
-    public CountryEntity getCountry() {
+
+    @Column(name = "county_name")
+    public EnumCountry getCountry() {
         return country;
     }
 
-    public void setCountry(CountryEntity country) {
+    public void setCountry(EnumCountry country) {
         this.country = country;
     }
 

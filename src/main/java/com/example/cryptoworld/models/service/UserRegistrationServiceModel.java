@@ -1,5 +1,7 @@
 package com.example.cryptoworld.models.service;
 
+import com.example.cryptoworld.models.enums.EnumCountry;
+
 public class UserRegistrationServiceModel {
 
 
@@ -7,7 +9,7 @@ public class UserRegistrationServiceModel {
     private String fullName;
     private String email;
     private String password;
-    private String country;
+    private EnumCountry country;
 
 
     public UserRegistrationServiceModel() {
@@ -45,11 +47,11 @@ public class UserRegistrationServiceModel {
         this.password = password;
     }
 
-    public String getCountry() {
+    public EnumCountry getCountry() {
         return country;
     }
 
-    public void setCountry(String country) {
+    public void setCountry(EnumCountry country) {
         this.country = country;
     }
 }
