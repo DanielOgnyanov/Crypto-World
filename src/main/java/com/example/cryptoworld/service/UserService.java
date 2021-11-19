@@ -6,6 +6,7 @@ import com.example.cryptoworld.models.service.UserRegistrationServiceModel;
 public interface UserService {
 
     boolean existByUsername(String username);
+    boolean existByEmail(String email);
 
     void register(UserRegistrationServiceModel userRegistrationServiceModel);
 }

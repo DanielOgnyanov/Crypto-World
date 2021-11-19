@@ -48,6 +48,11 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public boolean existByEmail(String email) {
+        return userRepository.existsByEmail(email);
+    }
+
+    @Override
     public void register(UserRegistrationServiceModel userRegistrationServiceModel) {
 
         UserEntity userEntity = modelMapper.map(userRegistrationServiceModel , UserEntity.class);
