@@ -49,6 +49,11 @@ public class UserController {
             model.addAttribute("registrationBindingModel", new UserRegistrationBindingModel());
         }
 
+        if(!model.containsAttribute("registrationBindingModel")) {
+            model.addAttribute("registrationBindingModel", new UserRegistrationBindingModel());
+            model.addAttribute("userNameExist", false);
+        }
+
         return "create-account";
     }
 
@@ -78,7 +83,7 @@ public class UserController {
 
         if (userService.userNameExists(registrationBindingModel.getUsername())) {
             redirectAttributes.addFlashAttribute("registrationBindingModel", registrationBindingModel);
-            redirectAttributes.addFlashAttribute("userExistsError", true);
+            redirectAttributes.addFlashAttribute("userNameExist", true);
 
             return "redirect:/create";
         }
