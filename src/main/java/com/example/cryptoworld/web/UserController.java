@@ -94,6 +94,8 @@ public class UserController {
             return "redirect:create";
         }
 
+
+
         if (!registrationBindingModel.getPassword().equals(registrationBindingModel.getConfirmPassword())) {
             redirectAttributes.addFlashAttribute("registrationBindingModel", registrationBindingModel);
             redirectAttributes.addFlashAttribute("passwordIsNotEqual", true);
