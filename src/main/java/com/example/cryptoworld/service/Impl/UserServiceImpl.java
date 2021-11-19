@@ -12,6 +12,8 @@ import org.modelmapper.ModelMapper;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.security.SecureRandom;
+
 @Service
 public class UserServiceImpl implements UserService {
 
@@ -60,6 +62,20 @@ public class UserServiceImpl implements UserService {
                 (EnumCountry.valueOf(userRegistrationServiceModel.getCountry())));
 
         userRepository.save(userEntity);
+
+    }
+    
+    
+    private String generateWalletAddress() {
+
+        String allChar = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+        SecureRandom random = new SecureRandom();
+        int lenAddress = 10;
+        StringBuilder sb = new StringBuilder(lenAddress);
+
+        for (int i = 0; i < lenAddress; i++) {
+            sb.append()
+        }
 
     }
 
