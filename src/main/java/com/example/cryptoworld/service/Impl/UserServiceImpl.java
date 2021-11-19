@@ -61,6 +61,8 @@ public class UserServiceImpl implements UserService {
                 .setCountry(countryService.getCountryByName
                 (EnumCountry.valueOf(userRegistrationServiceModel.getCountry())));
 
+        userEntity.setWalletAddress(generateWalletAddress());
+
         userRepository.save(userEntity);
 
     }
