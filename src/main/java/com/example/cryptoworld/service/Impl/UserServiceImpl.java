@@ -73,8 +73,7 @@ public class UserServiceImpl implements UserService {
         userEntity.addRole(userRole);
 
 
-        userEntity
-                .setCountry(userRegistrationServiceModel.getCountry());
+        userEntity.setCountry(userRegistrationServiceModel.getCountry());
 
         userEntity.setWalletAddress(generateWalletAddress());
 

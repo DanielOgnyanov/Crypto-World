@@ -1,9 +1,7 @@
 package com.example.cryptoworld.repository;
 
 import com.example.cryptoworld.models.entities.UserEntity;
-import com.fasterxml.jackson.databind.introspect.AnnotationCollector;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
@@ -14,5 +12,5 @@ public interface UserRepository extends JpaRepository<UserEntity, Long> {
     boolean existsByEmail(String email);
 
 
-    Optional<UserEntity> getUserEntitiesByUsername(String username);
+    Optional<UserEntity> findByUsername(String username);
 }
