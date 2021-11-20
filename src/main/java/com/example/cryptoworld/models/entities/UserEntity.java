@@ -4,6 +4,7 @@ package com.example.cryptoworld.models.entities;
 import com.example.cryptoworld.models.enums.EnumCountry;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -11,7 +12,7 @@ import java.util.Set;
 
 @Entity
 @Table(name = "users")
-public class UserEntity extends BaseEntity{
+public class UserEntity extends BaseEntity implements Serializable {
 
 
     private String username;

@@ -34,7 +34,8 @@ public class CryptoWorldUserService implements UserDetailsService {
 
 
         UserEntity userEntity =
-                userRepository.findById(1L).orElse(null);
+                userRepository.findByUsername(username)
+        .orElseThrow(() -> new UsernameNotFoundException("User with username " + username + " was not found."));
 
 
 
