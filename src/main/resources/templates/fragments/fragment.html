@@ -59,13 +59,18 @@
 
                     </th:block>
 
-                    <li class="nav-item">
-                        <a class="nav-link text-white" th:href="@{/users/sign}">Sign up</a>
-                    </li>
+                    <th:block sec:authorize = "isAnonymous()">
+                        <li class="nav-item">
+                            <a class="nav-link text-white" th:href="@{/users/sign}">Sign up</a>
+                        </li>
 
-                    <li  class="nav-item">
-                        <a class="nav-link text-white" th:href="@{/users/create}">Create Account</a>
-                    </li>
+                        <li  class="nav-item">
+                            <a class="nav-link text-white" th:href="@{/users/create}">Create Account</a>
+                        </li>
+
+                    </th:block>
+
+
 
 
                 </ul>
