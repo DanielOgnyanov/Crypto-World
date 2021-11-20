@@ -70,11 +70,13 @@ public class UserController {
     }
 
     @GetMapping("/sign")
-    public String sign(@ModelAttribute("username") String username, Model model) {
+    public String sign(Model model) {
 
         if(!model.containsAttribute("notLogged")){
             model.addAttribute("notLogged", false);
         }
+
+
         return "sign-in";
     }
 

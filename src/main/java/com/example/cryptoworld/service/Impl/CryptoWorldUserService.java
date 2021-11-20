@@ -25,8 +25,9 @@ public class CryptoWorldUserService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+
         UserEntity userEntity = userRepository.
-                findByUsername(username).
+                getByUsername(username).
                 orElseThrow(() -> new UsernameNotFoundException("User with name " + username + " was not found!"));
 
         return mapToUserDetails(userEntity);
