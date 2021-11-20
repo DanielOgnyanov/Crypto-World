@@ -135,7 +135,6 @@ public class UserController {
                                       String username,
                               RedirectAttributes attributes) {
 
-        attributes.addFlashAttribute("bad_credentials", true);
         attributes.addFlashAttribute("username", username);
 
         return "redirect:/users/sing-in";
