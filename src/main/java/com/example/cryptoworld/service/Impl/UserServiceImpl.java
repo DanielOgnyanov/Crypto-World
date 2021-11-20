@@ -130,7 +130,7 @@ public class UserServiceImpl implements UserService {
             user.setWalletAddress(generateWalletAddress());
             user.setDepositSet(new HashSet<>());
 
-
+            userRepository.save(user);
         }
     }
 }
