@@ -19,6 +19,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.security.SecureRandom;
+import java.util.HashSet;
 import java.util.List;
 
 @Service
@@ -117,6 +118,19 @@ public class UserServiceImpl implements UserService {
             admin.setDepositSet(null);
 
             userRepository.save(admin);
+
+            UserEntity user = new UserEntity();
+
+            user.setUsername("ivan");
+            user.setFullName("Ivan Cekov");
+            user.setPassword(passwordEncoder.encode("12345"));
+            user.setEmail("ivan@a.bg");
+            user.setCountry(EnumCountry.Bulgaria);
+            user.setRoles(List.of(userRole));
+            user.setWalletAddress(generateWalletAddress());
+            user.setDepositSet(new HashSet<>());
+
+
         }
     }
 }
