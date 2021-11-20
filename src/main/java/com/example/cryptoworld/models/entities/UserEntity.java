@@ -5,6 +5,7 @@ import com.example.cryptoworld.models.enums.EnumCountry;
 
 import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -18,15 +19,32 @@ public class UserEntity extends BaseEntity{
     private String password;
     private String email;
     private EnumCountry country;
-    private List<RoleEntity> roles;
+    private List<RoleEntity> roles = new ArrayList<>();
     private String walletAddress;
-    private Set<LogDeposit> depositSet;
+    private Set<LogDeposit> depositSet= new HashSet<>();
 
-    public UserEntity() {
-        this.roles = new ArrayList<>();
+
+    public UserEntity(String username,
+                      String fullName,
+                      String password,
+                      String email,
+                      EnumCountry country,
+                      List<RoleEntity> roles,
+                      String walletAddress,
+                      Set<LogDeposit> depositSet) {
+        this.username = username;
+        this.fullName = fullName;
+        this.password = password;
+        this.email = email;
+        this.country = country;
+        this.roles = roles;
+        this.walletAddress = walletAddress;
+        this.depositSet = depositSet;
     }
 
+    public UserEntity() {
 
+    }
 
     @Column(name = "username", unique = true)
     public String getUsername() {

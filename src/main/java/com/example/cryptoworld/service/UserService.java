@@ -4,7 +4,7 @@ import com.example.cryptoworld.models.entities.UserEntity;
 import com.example.cryptoworld.models.service.UserRegistrationServiceModel;
 
 public interface UserService {
-
+    void initializeUsers();
     boolean existByUsername(String username);
     boolean existByEmail(String email);
 

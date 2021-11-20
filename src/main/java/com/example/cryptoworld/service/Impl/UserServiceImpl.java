@@ -1,6 +1,9 @@
 package com.example.cryptoworld.service.Impl;
 
+import com.example.cryptoworld.models.entities.RoleEntity;
 import com.example.cryptoworld.models.entities.UserEntity;
+import com.example.cryptoworld.models.enums.EnumCountry;
+import com.example.cryptoworld.models.enums.EnumRole;
 import com.example.cryptoworld.models.service.UserRegistrationServiceModel;
 import com.example.cryptoworld.repository.RoleRepository;
 import com.example.cryptoworld.repository.UserRepository;
@@ -16,6 +19,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.security.SecureRandom;
+import java.util.List;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -59,16 +63,14 @@ public class UserServiceImpl implements UserService {
     @Override
     public void register(UserRegistrationServiceModel userRegistrationServiceModel) {
 
-        UserEntity userEntity = modelMapper.map(userRegistrationServiceModel , UserEntity.class);
+        RoleEntity userRole = roleRepository.findByRole(EnumRole.USER).orElse(null);
+
+        UserEntity userEntity = modelMapper.map(userRegistrationServiceModel, UserEntity.class);
 
         userEntity.setPassword(passwordEncoder.encode(userRegistrationServiceModel.getPassword()));
 
 
-        if (userRepository.count() == 0) {
-            userEntity.addRole(roleService.getRole(1L));
-        } else {
-            userEntity.addRole(roleService.getRole(2L));
-        }
+        userEntity.addRole(userRole);
 
 
         userEntity
@@ -79,10 +81,9 @@ public class UserServiceImpl implements UserService {
         userRepository.save(userEntity);
 
 
-
     }
-    
-    
+
+
     private String generateWalletAddress() {
 
         String allChar = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
@@ -98,4 +99,25 @@ public class UserServiceImpl implements UserService {
     }
 
 
+    public void initializeUsers() {
+        if (userRepository.count() == 0) {
+
+            RoleEntity adminRole = roleRepository.findByRole(EnumRole.ADMIN).orElse(null);
+            RoleEntity userRole = roleRepository.findByRole(EnumRole.USER).orElse(null);
+
+            UserEntity admin = new UserEntity();
+
+
+            admin.setUsername("admin");
+            admin.setFullName("Admin Adminov");
+            admin.setPassword(passwordEncoder.encode("test_2021"));
+            admin.setEmail("admin@test.bg");
+            admin.setCountry(EnumCountry.Bulgaria);
+            admin.setRoles(List.of(adminRole, userRole));
+            admin.setWalletAddress("test");
+            admin.setDepositSet(null);
+
+            userRepository.save(admin);
+        }
+    }
 }
