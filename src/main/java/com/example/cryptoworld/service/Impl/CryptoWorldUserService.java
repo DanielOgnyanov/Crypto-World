@@ -2,6 +2,7 @@ package com.example.cryptoworld.service.Impl;
 
 import com.example.cryptoworld.models.entities.UserEntity;
 import com.example.cryptoworld.repository.UserRepository;
+import org.modelmapper.ModelMapper;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
@@ -17,9 +18,11 @@ import java.util.stream.Collectors;
 public class CryptoWorldUserService implements UserDetailsService {
 
     private final UserRepository userRepository;
+    private final ModelMapper modelMapper;
 
-    public CryptoWorldUserService(UserRepository userRepository) {
+    public CryptoWorldUserService(UserRepository userRepository, ModelMapper modelMapper) {
         this.userRepository = userRepository;
+        this.modelMapper = modelMapper;
     }
 
 
@@ -30,8 +33,8 @@ public class CryptoWorldUserService implements UserDetailsService {
 
 
 
-        UserEntity userEntity = userRepository
-                .findByUsername(username).orElse(null);
+        UserEntity userEntity =
+                userRepository.findById(1L).orElse(null);
 
 
 
