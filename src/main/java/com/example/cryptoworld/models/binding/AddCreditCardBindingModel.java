@@ -16,7 +16,7 @@ public class AddCreditCardBindingModel {
     public AddCreditCardBindingModel() {
     }
 
-    @NotEmpty
+    @NotNull
     @Min(100)
     public BigDecimal getBalance() {
         return balance;
@@ -27,7 +27,7 @@ public class AddCreditCardBindingModel {
     }
 
     @NotEmpty
-    @Min(2010)
+    @Min(2021)
     @Max(2030)
     public int getExpirationYear() {
         return expirationYear;
