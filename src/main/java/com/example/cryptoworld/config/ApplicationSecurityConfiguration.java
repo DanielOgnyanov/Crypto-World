@@ -32,7 +32,7 @@ public class ApplicationSecurityConfiguration extends WebSecurityConfigurerAdapt
         http.authorizeRequests()
 
                 .antMatchers("/", "/users/login", "/users/create").permitAll()
-                .antMatchers("/admin/general").hasRole(EnumRole.ADMIN.name())
+                .antMatchers("/admin").hasRole(EnumRole.ADMIN.name())
                 .antMatchers("/**").authenticated()
                 .and()
                 .formLogin()
