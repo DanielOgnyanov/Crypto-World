@@ -26,7 +26,7 @@ public class AddCreditCardBindingModel {
         this.balance = balance;
     }
 
-    @NotEmpty
+    @NotNull
     @Min(2021)
     @Max(2030)
     public int getExpirationYear() {
