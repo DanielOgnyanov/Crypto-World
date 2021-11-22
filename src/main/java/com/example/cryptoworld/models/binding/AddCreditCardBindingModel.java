@@ -38,7 +38,7 @@ public class AddCreditCardBindingModel {
     }
 
     @NotEmpty
-    @Size(min = 20, max = 20)
+    @Size(min = 15, max = 20)
     public String getIban() {
         return Iban;
     }
