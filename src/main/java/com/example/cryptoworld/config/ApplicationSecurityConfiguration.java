@@ -31,20 +31,20 @@ public class ApplicationSecurityConfiguration extends WebSecurityConfigurerAdapt
 
         http.authorizeRequests()
 
-                .antMatchers("/", "/users/sign", "/users/create").permitAll()
+                .antMatchers("/", "/users/login", "/users/create").permitAll()
                 .antMatchers("/admin/general").hasRole(EnumRole.ADMIN.name())
                 .antMatchers("/**").authenticated()
                 .and()
                 .formLogin()
-                .loginPage("/users/sign")
+                .loginPage("/users/login")
                 .usernameParameter("username")
                 .passwordParameter(UsernamePasswordAuthenticationFilter.SPRING_SECURITY_FORM_PASSWORD_KEY)
                 .defaultSuccessUrl("/home")
                 .failureForwardUrl("/users/login-error")
                 .and()
                 .logout()
-                .logoutUrl("/users/exit")
-                .logoutSuccessUrl("/")
+                .logoutUrl("/users/logout")
+                .logoutSuccessUrl("/users/login")
                 .invalidateHttpSession(true);
 
 

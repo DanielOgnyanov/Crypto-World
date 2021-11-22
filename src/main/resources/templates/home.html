@@ -2,8 +2,10 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head th:replace="fragments/fragment :: head">
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript" src="/static/js/chart.js"></script>
+    <script type="text/javascript" th:src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" th:src="/static/js/chart.js">
+
+    </script>
 </head>
 
 <body style="background-image: url(https://www.teahub.io/photos/full/304-3040935_crypto-going-up.jpg); background-repeat: no-repeat">
