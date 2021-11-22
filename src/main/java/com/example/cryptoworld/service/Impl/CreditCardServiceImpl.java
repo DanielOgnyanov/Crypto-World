@@ -1,5 +1,6 @@
 package com.example.cryptoworld.service.Impl;
 
+import com.example.cryptoworld.models.entities.CreditCardEntity;
 import com.example.cryptoworld.models.entities.UserEntity;
 import com.example.cryptoworld.models.service.AddCreditCardServiceModel;
 import com.example.cryptoworld.repository.CreditCardRepository;
@@ -34,14 +35,14 @@ public class CreditCardServiceImpl implements CreditCartService {
         UserEntity userEntity = userRepository.findByUsername(username).orElse(null);
 
 
+        CreditCardEntity cardEntity = new CreditCardEntity();
+
+        cardEntity.setBalance(addCreditCardServiceModel.getBalance());
+        cardEntity.setExpirationYear(addCreditCardServiceModel.getExpirationYear());
+        cardEntity.setIban(addCreditCardServiceModel.getIban());
+        cardEntity.setOwner(userEntity);
 
 
-
-
-
-
-
-        System.out.println();
-
+        creditCardRepository.save(cardEntity);
     }
 }
