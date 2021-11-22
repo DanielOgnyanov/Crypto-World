@@ -2,12 +2,9 @@ package com.example.cryptoworld.web;
 
 
 import com.example.cryptoworld.models.binding.UserRegistrationBindingModel;
-import com.example.cryptoworld.models.entities.UserEntity;
 import com.example.cryptoworld.models.service.UserRegistrationServiceModel;
-import com.example.cryptoworld.repository.UserRepository;
 import com.example.cryptoworld.service.UserService;
 import org.modelmapper.ModelMapper;
-import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -40,6 +37,7 @@ public class UserController {
         return new UserRegistrationBindingModel();
     }
 
+    // END
 
 
     // GetMapping
@@ -51,17 +49,17 @@ public class UserController {
             model.addAttribute("registrationBindingModel", new UserRegistrationBindingModel());
         }
 
-        if(!model.containsAttribute("registrationBindingModel")) {
+        if (!model.containsAttribute("registrationBindingModel")) {
             model.addAttribute("registrationBindingModel", new UserRegistrationBindingModel());
             model.addAttribute("userNameExist", false);
         }
 
-        if(!model.containsAttribute("registrationBindingModel")) {
+        if (!model.containsAttribute("registrationBindingModel")) {
             model.addAttribute("registrationBindingModel", new UserRegistrationBindingModel());
             model.addAttribute("emailExist", false);
         }
 
-        if(!model.containsAttribute("registrationBindingModel")) {
+        if (!model.containsAttribute("registrationBindingModel")) {
             model.addAttribute("registrationBindingModel", new UserRegistrationBindingModel());
             model.addAttribute("passwordIsNotEqual", false);
         }
@@ -69,18 +67,18 @@ public class UserController {
         return "create-account";
     }
 
-    @GetMapping("/sign")
+    @GetMapping("/login")
     public String sign(Model model) {
 
-        if(!model.containsAttribute("notLogged")){
+        if (!model.containsAttribute("notLogged")) {
             model.addAttribute("notLogged", false);
         }
 
 
-        return "sign-in";
+        return "login";
     }
 
-
+    // END
 
 
     //PostMapping
@@ -88,7 +86,7 @@ public class UserController {
     @PostMapping("/create")
     public String createAccount(@Valid UserRegistrationBindingModel registrationBindingModel,
                                 BindingResult bindingResult,
-                                RedirectAttributes redirectAttributes){
+                                RedirectAttributes redirectAttributes) {
 
 
         if (bindingResult.hasErrors()) {
@@ -98,7 +96,6 @@ public class UserController {
 
             return "redirect:create";
         }
-
 
 
         if (userService.existByUsername(registrationBindingModel.getUsername())) {
@@ -126,7 +123,7 @@ public class UserController {
                 (modelMapper.map(registrationBindingModel, UserRegistrationServiceModel.class));
 
 
-        return "redirect:sign";
+        return "redirect:login";
 
 
     }
@@ -138,9 +135,9 @@ public class UserController {
                               RedirectAttributes attributes) {
 
         attributes.addFlashAttribute("username", username);
+        attributes.addFlashAttribute("notLogged", true);
+        return "redirect:login";
 
-        return "redirect:/users/sing-in";
+
     }
-
-
 }
