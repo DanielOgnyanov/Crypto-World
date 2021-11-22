@@ -9,6 +9,63 @@
     <nav th:replace="fragments/fragment :: navigation"></nav>
 </header>
 
+<main>
+    <div class="jumbotron">
+        <div class="container text-light ">
+            <h1 class="display-3">
+                <strong class="bg-blur rounded border-left border-white pl-3 border-bottom">Add Credit Card</strong>
+            </h1>
+        </div>
+        <div class="container bg-blur rounded p-5 mt-5 w-75 ">
+
+
+            <form  method="POST"
+                  class="text-center text-light">
+
+
+                <div class="form-group row" style="padding-bottom: 10px">
+                    <label class="col-sm-2 col-form-label">Balance</label>
+                    <div class="col-sm-10">
+
+
+                        <input type="text" class="form-control">
+
+
+                    </div>
+                </div>
+
+
+                <div class="form-group row" style="padding-bottom: 10px">
+                    <label class="col-sm-2 col-form-label">Expiration Year</label>
+                    <div class="col-sm-10">
+
+
+                        <input type="text" class="form-control">
+
+                    </div>
+                </div>
+
+
+                <div class="form-group row" style="padding-bottom: 10px">
+                    <label class="col-sm-2 col-form-label">Iban</label>
+                    <div class="col-sm-10">
+
+
+                        <input type="text" class="form-control">
+
+
+                    </div>
+                </div>
+
+
+                <button type="submit" class="btn btn-info w-50">Add Credit Card</button>
+            </form>
+            <hr class="bg-light">
+        </div>
+    </div>
+</main>
+
+
 <footer th:replace="fragments/fragment :: footer"></footer>
 </body>
 </html>
