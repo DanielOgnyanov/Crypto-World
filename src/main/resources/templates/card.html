@@ -30,7 +30,7 @@
 
                         <input th:field="*{balance}"  th:errorclass = "bg-danger" type="text" class="form-control">
 
-                        <small th:if = "${#fields.hasErrors('balance')}"   class="bg-danger text-light rounded">
+                        <small th:if = "${#fields.hasErrors('balance')}" th:errors = "*{balance}"  class="bg-danger text-light rounded">
                             Balance must be Positive !
                         </small>
 
@@ -45,7 +45,7 @@
 
                         <input  th:field="*{expirationYear}"  th:errorclass = "bg-danger" type="text" class="form-control">
 
-                        <small th:if = "${#fields.hasErrors('expirationYear')}"   class="bg-danger text-light rounded">
+                        <small th:if = "${#fields.hasErrors('expirationYear')}"  th:errors = "*{expirationYear}" class="bg-danger text-light rounded">
                             Expiration year maximum is 2030 !
                         </small>
                     </div>
@@ -59,7 +59,7 @@
 
                         <input th:field="*{iban}"  th:errorclass = "bg-danger" type="text" class="form-control">
 
-                        <small th:if = "${#fields.hasErrors('iban')}"   class="bg-danger text-light rounded">
+                        <small th:if = "${#fields.hasErrors('iban')}" th:errors = "*{iban}"  class="bg-danger text-light rounded">
                             Iban must be between 15 and 20 characters !
                         </small>
                     </div>
@@ -78,7 +78,7 @@
                     </select>
 
 
-                    <small th:if = "${#fields.hasErrors('typeCard')}"  class="invalid-feedback bg-danger text-light rounded">
+                    <small th:if = "${#fields.hasErrors('typeCard')}" th:errors = "*{typeCard}" class="invalid-feedback bg-danger text-light rounded">
                         Type card cannot be empty !
                     </small>
 

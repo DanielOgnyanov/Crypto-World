@@ -17,7 +17,7 @@ public class AddCreditCardBindingModel {
     }
 
     @NotNull
-    @Min(100)
+    @Min(value = 100, message = "Balance must be Positive and over 100!")
     public BigDecimal getBalance() {
         return balance;
     }
@@ -28,7 +28,7 @@ public class AddCreditCardBindingModel {
 
     @NotNull
     @Min(2021)
-    @Max(2030)
+    @Max(value = 2030, message = "Expiration year maximum is 2030 !")
     public int getExpirationYear() {
         return expirationYear;
     }
@@ -38,7 +38,7 @@ public class AddCreditCardBindingModel {
     }
 
     @NotEmpty
-    @Size(min = 15, max = 20)
+    @Size(min = 15, max = 20, message = "Iban must be between 15 and 20 characters !")
     public String getIban() {
         return Iban;
     }
@@ -47,7 +47,7 @@ public class AddCreditCardBindingModel {
         Iban = iban;
     }
 
-    @NotNull
+    @NotNull(message = "Type card cannot be empty !")
     public EnumCard getTypeCard() {
         return typeCard;
     }
