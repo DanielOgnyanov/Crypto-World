@@ -53,7 +53,7 @@ public class CreditCardController {
         creditCartService.addCreditCard(modelMapper.map(addCreditCardBindingModel, AddCreditCardServiceModel.class));
 
 
-        return "redirect:home";
+        return "redirect:/home";
     }
 
 

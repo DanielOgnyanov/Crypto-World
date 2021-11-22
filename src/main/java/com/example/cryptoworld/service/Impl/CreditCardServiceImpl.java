@@ -40,6 +40,7 @@ public class CreditCardServiceImpl implements CreditCartService {
         cardEntity.setBalance(addCreditCardServiceModel.getBalance());
         cardEntity.setExpirationYear(addCreditCardServiceModel.getExpirationYear());
         cardEntity.setIban(addCreditCardServiceModel.getIban());
+        cardEntity.setTypeCard(addCreditCardServiceModel.getTypeCard());
         cardEntity.setOwner(userEntity);
 
 
