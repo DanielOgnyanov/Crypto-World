@@ -1,9 +1,8 @@
 package com.example.cryptoworld.models.binding;
 
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.Size;
+import com.example.cryptoworld.models.enums.EnumCard;
+
+import javax.validation.constraints.*;
 import java.math.BigDecimal;
 
 public class AddCreditCardBindingModel {
@@ -11,6 +10,7 @@ public class AddCreditCardBindingModel {
     private BigDecimal balance;
     private int expirationYear;
     private String Iban;
+    private EnumCard typeCard;
 
 
     public AddCreditCardBindingModel() {
@@ -45,5 +45,14 @@ public class AddCreditCardBindingModel {
 
     public void setIban(String iban) {
         Iban = iban;
+    }
+
+    @NotNull
+    public EnumCard getTypeCard() {
+        return typeCard;
+    }
+
+    public void setTypeCard(EnumCard typeCard) {
+        this.typeCard = typeCard;
     }
 }
