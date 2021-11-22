@@ -21,7 +21,7 @@ public class CreditCardEntity extends BaseEntity{
     }
 
 
-    @Column(name = "iban", unique = true, updatable = false)
+    @Column(name = "iban")
     public String getIban() {
         return iban;
     }
