@@ -1,6 +1,8 @@
 package com.example.cryptoworld.models.entities;
 
 
+import com.example.cryptoworld.models.enums.EnumCard;
+
 import javax.persistence.*;
 import java.math.BigDecimal;
 
@@ -12,6 +14,7 @@ public class CreditCardEntity extends BaseEntity{
     private UserEntity owner;
     private int expirationYear;
     private BigDecimal balance;
+    private EnumCard typeCard;
 
 
     public CreditCardEntity() {
@@ -55,5 +58,15 @@ public class CreditCardEntity extends BaseEntity{
 
     public void setBalance(BigDecimal balance) {
         this.balance = balance;
+    }
+
+    @Column(name = "type_card")
+    @Enumerated(EnumType.STRING)
+    public EnumCard getTypeCard() {
+        return typeCard;
+    }
+
+    public void setTypeCard(EnumCard typeCard) {
+        this.typeCard = typeCard;
     }
 }
