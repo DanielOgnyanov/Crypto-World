@@ -46,7 +46,7 @@ public class CreditCardController {
             redirectAttributes.addFlashAttribute(
                     "org.springframework.validation.BindingResult.addCreditCardBindingModel", bindingResult);
 
-            return "redirect:create";
+            return "redirect:add";
         }
 
 

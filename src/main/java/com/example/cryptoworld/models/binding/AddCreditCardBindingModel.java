@@ -16,8 +16,8 @@ public class AddCreditCardBindingModel {
     public AddCreditCardBindingModel() {
     }
 
-    @NotNull
-    @Min(value = 100, message = "Balance must be Positive and over 100!")
+    @NotNull(message = "Balance cannot be empty !")
+    @DecimalMin(value = "100", message = "Balance must be Positive and over 100!")
     public BigDecimal getBalance() {
         return balance;
     }
@@ -26,9 +26,10 @@ public class AddCreditCardBindingModel {
         this.balance = balance;
     }
 
-    @NotNull
-    @Min(2021)
-    @Max(value = 2030, message = "Expiration year maximum is 2030 !")
+    @NotNull(message = "Expiration year cannot be empty !")
+    @Min(value = 2022, message = "Expiration year must be after 2021")
+    @Max(value = 2030,  message = "Expiration year maximum is 2030 !")
+
     public int getExpirationYear() {
         return expirationYear;
     }
@@ -37,7 +38,8 @@ public class AddCreditCardBindingModel {
         this.expirationYear = expirationYear;
     }
 
-    @NotEmpty
+    @NotNull(message = "Iban cannot be empty !")
+    @NotEmpty(message = "Iban cannot be empty !")
     @Size(min = 15, max = 20, message = "Iban must be between 15 and 20 characters !")
     public String getIban() {
         return Iban;
