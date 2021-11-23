@@ -9,4 +9,6 @@ public interface UserService {
     boolean existByEmail(String email);
 
     void register(UserRegistrationServiceModel userRegistrationServiceModel);
+
+    UserEntity findByUsername(String username);
 }

@@ -83,6 +83,11 @@ public class UserServiceImpl implements UserService {
 
     }
 
+    @Override
+    public UserEntity findByUsername(String username) {
+        return userRepository.findByUsername(username).orElse(null);
+    }
+
 
     private String generateWalletAddress() {
 
