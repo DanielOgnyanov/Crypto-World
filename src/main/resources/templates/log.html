@@ -53,6 +53,10 @@
                         <small th:if = "${#fields.hasErrors('deposit')}"  th:errors = "*{deposit}" class="bg-danger text-light rounded">
                             Deposit must be Positive and over 10!
                         </small>
+
+                        <small th:if="${depositCheck}"  class="bg-danger text-light rounded">
+                            Deposit is not sufficient !
+                        </small>
                     </div>
                 </div>
 
