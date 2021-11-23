@@ -13,7 +13,7 @@ public enum EnumCryptoTop10 {
     XRP(1.26),
     Polkadot(51),
     Dogecoin(0.27),
-    usdcoin(1);
+    Usdcoin(1);
 
 
     private double price;
