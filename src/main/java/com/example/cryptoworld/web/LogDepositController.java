@@ -1,6 +1,7 @@
 package com.example.cryptoworld.web;
 
 import com.example.cryptoworld.models.binding.LogDepositBindingModel;
+import com.example.cryptoworld.models.entities.CreditCardEntity;
 import com.example.cryptoworld.models.entities.UserEntity;
 import com.example.cryptoworld.models.service.LogDepositServiceModel;
 import com.example.cryptoworld.service.CreditCartService;
@@ -80,8 +81,13 @@ public class LogDepositController {
         UserEntity userEntity =
                 userService.findByUsername(logDepositBindingModel.getUsernameConfirm());
 
-        if (creditCartService.getByOwner(userEntity.getFullName()).getBalance().doubleValue()
-                <= logDepositBindingModel.getDeposit()) {
+
+
+
+        double check = userEntity.getCard().get(0).getBalance().doubleValue();
+
+
+        if ( check <= logDepositBindingModel.getDeposit()) {
 
             redirectAttributes.addFlashAttribute("logDepositBindingModel", logDepositBindingModel);
             redirectAttributes.addFlashAttribute("depositCheck", true);

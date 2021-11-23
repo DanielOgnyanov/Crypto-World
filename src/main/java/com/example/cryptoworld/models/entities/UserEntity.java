@@ -2,6 +2,8 @@ package com.example.cryptoworld.models.entities;
 
 
 import com.example.cryptoworld.models.enums.EnumCountry;
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -116,6 +118,7 @@ public class UserEntity extends BaseEntity implements Serializable {
 
 
     @OneToMany(mappedBy = "depositPerson")
+    @LazyCollection(LazyCollectionOption.FALSE)
     public List<LogDeposit> getDepositSet() {
         return depositSet;
     }
@@ -130,6 +133,7 @@ public class UserEntity extends BaseEntity implements Serializable {
     }
 
     @OneToMany(mappedBy = "owner")
+    @LazyCollection(LazyCollectionOption.FALSE)
     public List<CreditCardEntity> getCard() {
         return card;
     }
