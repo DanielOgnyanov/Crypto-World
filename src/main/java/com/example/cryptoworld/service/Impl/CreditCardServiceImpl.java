@@ -46,4 +46,11 @@ public class CreditCardServiceImpl implements CreditCartService {
 
         creditCardRepository.save(cardEntity);
     }
+
+    @Override
+    public CreditCardEntity getByOwner(String owner) {
+        return creditCardRepository.findByOwner(owner);
+    }
+
+
 }
