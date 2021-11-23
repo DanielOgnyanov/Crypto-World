@@ -38,7 +38,7 @@ public class LogDepositController {
 
         if (!model.containsAttribute("registrationBindingModel")) {
             model.addAttribute("registrationBindingModel", new UserRegistrationBindingModel());
-            model.addAttribute("userNameExist", false);
+            model.addAttribute("userCheckIfIsPresent", false);
         }
         return "log";
     }
@@ -59,9 +59,9 @@ public class LogDepositController {
             return "redirect:add";
         }
 
-        if (userService.existByUsername(logDepositBindingModel.getUsernameConfirm())) {
+        if (!userService.existByUsername(logDepositBindingModel.getUsernameConfirm())) {
             redirectAttributes.addFlashAttribute("logDepositBindingModel", logDepositBindingModel);
-            redirectAttributes.addFlashAttribute("userNameExist", true);
+            redirectAttributes.addFlashAttribute("userCheckIfIsPresent", true);
 
             return "redirect:add";
         }
