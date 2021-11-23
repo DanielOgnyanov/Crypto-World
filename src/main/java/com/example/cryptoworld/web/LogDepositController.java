@@ -70,6 +70,6 @@ public class LogDepositController {
 
 
 
-
+        return "redirect:/home";
     }
 }
