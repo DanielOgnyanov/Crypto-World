@@ -1,6 +1,8 @@
 package com.example.cryptoworld.models.entities;
 
 
+import com.example.cryptoworld.models.enums.EnumCryptoTop10;
+
 import javax.persistence.*;
 import java.math.BigDecimal;
 
@@ -11,6 +13,7 @@ public class LogDeposit extends BaseEntity{
     private UserEntity depositPerson;
     private BigDecimal fiatMoney;
     private BigDecimal cryptoValue;
+    private EnumCryptoTop10 crypto;
 
 
     public LogDeposit() {
@@ -41,5 +44,15 @@ public class LogDeposit extends BaseEntity{
 
     public void setCryptoValue(BigDecimal cryptoValue) {
         this.cryptoValue = cryptoValue;
+    }
+
+
+    @Column(name = "crypto_name")
+    public EnumCryptoTop10 getCrypto() {
+        return crypto;
+    }
+
+    public void setCrypto(EnumCryptoTop10 crypto) {
+        this.crypto = crypto;
     }
 }
