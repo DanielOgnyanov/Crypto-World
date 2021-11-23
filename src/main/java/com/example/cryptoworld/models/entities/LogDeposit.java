@@ -11,8 +11,8 @@ import java.math.BigDecimal;
 public class LogDeposit extends BaseEntity{
 
     private UserEntity depositPerson;
-    private BigDecimal fiatMoney;
-    private BigDecimal cryptoValue;
+    private double fiatMoney;
+    private double cryptoValue;
     private EnumCryptoTop10 crypto;
 
 
@@ -30,19 +30,20 @@ public class LogDeposit extends BaseEntity{
     }
 
     @Column(name = "fiat_money")
-    public BigDecimal getFiatMoney() {
+    public double getFiatMoney() {
         return fiatMoney;
     }
 
-    public void setFiatMoney(BigDecimal fiatMoney) {
+    public void setFiatMoney(double fiatMoney) {
         this.fiatMoney = fiatMoney;
     }
+
     @Column(name = "crypto_value")
-    public BigDecimal getCryptoValue() {
+    public double getCryptoValue() {
         return cryptoValue;
     }
 
-    public void setCryptoValue(BigDecimal cryptoValue) {
+    public void setCryptoValue(double cryptoValue) {
         this.cryptoValue = cryptoValue;
     }
 
