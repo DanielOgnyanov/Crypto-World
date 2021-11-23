@@ -1,8 +1,9 @@
 package com.example.cryptoworld.web;
 
-import com.example.cryptoworld.models.binding.AddCreditCardBindingModel;
 import com.example.cryptoworld.models.binding.LogDepositBindingModel;
+import com.example.cryptoworld.models.binding.UserRegistrationBindingModel;
 import com.example.cryptoworld.service.LogDepositService;
+import com.example.cryptoworld.service.UserService;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,10 +21,12 @@ public class LogDepositController {
 
     private final ModelMapper modelMapper;
     private final LogDepositService logDepositService;
+    private final UserService userService;
 
-    public LogDepositController(ModelMapper modelMapper, LogDepositService logDepositService) {
+    public LogDepositController(ModelMapper modelMapper, LogDepositService logDepositService, UserService userService) {
         this.modelMapper = modelMapper;
         this.logDepositService = logDepositService;
+        this.userService = userService;
     }
 
     @GetMapping("/add")
@@ -32,15 +35,39 @@ public class LogDepositController {
         if (!model.containsAttribute("logDepositBindingModel")) {
             model.addAttribute("logDepositBindingModel", new LogDepositBindingModel());
         }
+
+        if (!model.containsAttribute("registrationBindingModel")) {
+            model.addAttribute("registrationBindingModel", new UserRegistrationBindingModel());
+            model.addAttribute("userNameExist", false);
+        }
         return "log";
     }
 
 
 
     @PostMapping("/add")
-    public String addDepositConfirm(@Valid AddCreditCardBindingModel addCreditCardBindingModel,
+    public String addDepositConfirm(@Valid LogDepositBindingModel logDepositBindingModel,
                                  BindingResult bindingResult,
                                  RedirectAttributes redirectAttributes) {
+
+
+        if (bindingResult.hasErrors()) {
+            redirectAttributes.addFlashAttribute("logDepositBindingModel", logDepositBindingModel);
+            redirectAttributes.addFlashAttribute(
+                    "org.springframework.validation.BindingResult.logDepositBindingModel", bindingResult);
+
+            return "redirect:add";
+        }
+
+        if (userService.existByUsername(logDepositBindingModel.getUsernameConfirm())) {
+            redirectAttributes.addFlashAttribute("logDepositBindingModel", logDepositBindingModel);
+            redirectAttributes.addFlashAttribute("userNameExist", true);
+
+            return "redirect:add";
+        }
+
+
+
 
 
 
