@@ -1,5 +1,6 @@
 package com.example.cryptoworld.service.Impl;
 
+import com.example.cryptoworld.models.entities.CreditCardEntity;
 import com.example.cryptoworld.models.entities.CryptoCurrenciesEntity;
 import com.example.cryptoworld.models.entities.LogDeposit;
 import com.example.cryptoworld.models.entities.UserEntity;
@@ -7,13 +8,13 @@ import com.example.cryptoworld.models.enums.EnumCryptoTop10;
 import com.example.cryptoworld.models.service.LogDepositServiceModel;
 import com.example.cryptoworld.repository.CreditCardRepository;
 import com.example.cryptoworld.repository.CryptoRepository;
+import com.example.cryptoworld.repository.LogDepositRepository;
 import com.example.cryptoworld.repository.UserRepository;
 import com.example.cryptoworld.service.LogDepositService;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
-import java.util.Optional;
 
 @Service
 public class LogDepositServiceImpl implements LogDepositService {
@@ -23,14 +24,16 @@ public class LogDepositServiceImpl implements LogDepositService {
     private final ModelMapper modelMapper;
     private final CreditCardRepository creditCardRepository;
     private final CryptoRepository cryptoRepository;
+    private final LogDepositRepository logDepositRepository;
 
     public LogDepositServiceImpl(UserRepository userRepository,
                                  ModelMapper modelMapper,
-                                 CreditCardRepository creditCardRepository, CryptoRepository cryptoRepository) {
+                                 CreditCardRepository creditCardRepository, CryptoRepository cryptoRepository, LogDepositRepository logDepositRepository) {
         this.userRepository = userRepository;
         this.modelMapper = modelMapper;
         this.creditCardRepository = creditCardRepository;
         this.cryptoRepository = cryptoRepository;
+        this.logDepositRepository = logDepositRepository;
     }
 
 
@@ -48,6 +51,16 @@ public class LogDepositServiceImpl implements LogDepositService {
         logDeposit.setCryptoValue(calcCryptoValue(
                 logDepositServiceModel.getCrypto(),logDepositServiceModel.getDeposit()
         ));
+
+        CreditCardEntity cardEntity =
+                creditCardRepository.findById(userEntity.getId()).orElse(null);
+
+        double newBalance =
+                logDepositServiceModel.getDeposit() - cardEntity.getBalance().doubleValue();
+
+        cardEntity.setBalance(BigDecimal.valueOf(newBalance));
+
+        logDepositRepository.save(logDeposit);
 
     }
 
