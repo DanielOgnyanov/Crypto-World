@@ -1,5 +1,7 @@
 package com.example.cryptoworld.models.binding;
 
+import com.example.cryptoworld.models.enums.EnumCryptoTop10;
+
 import javax.validation.constraints.DecimalMin;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
@@ -11,6 +13,7 @@ public class LogDepositBindingModel {
 
     private String usernameConfirm;
     private BigDecimal deposit;
+    private EnumCryptoTop10 crypto;
 
 
     public LogDepositBindingModel() {
@@ -34,5 +37,14 @@ public class LogDepositBindingModel {
 
     public void setDeposit(BigDecimal deposit) {
         this.deposit = deposit;
+    }
+
+    @NotNull(message = "Crypto card cannot be empty !")
+    public EnumCryptoTop10 getCrypto() {
+        return crypto;
+    }
+
+    public void setCrypto(EnumCryptoTop10 crypto) {
+        this.crypto = crypto;
     }
 }
