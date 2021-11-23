@@ -49,6 +49,7 @@ public class LogDeposit extends BaseEntity{
 
 
     @Column(name = "crypto_name")
+    @Enumerated(EnumType.STRING)
     public EnumCryptoTop10 getCrypto() {
         return crypto;
     }
