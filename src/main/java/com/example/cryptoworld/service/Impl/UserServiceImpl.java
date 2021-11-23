@@ -19,6 +19,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.security.SecureRandom;
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 
@@ -133,7 +134,7 @@ public class UserServiceImpl implements UserService {
             user.setCountry(EnumCountry.Bulgaria);
             user.setRoles(List.of(userRole));
             user.setWalletAddress(generateWalletAddress());
-            user.setDepositSet(new HashSet<>());
+            user.setDepositSet(new ArrayList<>());
 
             userRepository.save(user);
         }
