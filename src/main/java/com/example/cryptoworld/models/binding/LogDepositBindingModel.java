@@ -12,7 +12,7 @@ public class LogDepositBindingModel {
 
 
     private String usernameConfirm;
-    private BigDecimal deposit;
+    private double deposit;
     private EnumCryptoTop10 crypto;
 
 
@@ -31,11 +31,11 @@ public class LogDepositBindingModel {
 
     @NotNull(message = "Deposit cannot be empty !")
     @DecimalMin(value = "10", message = "Deposit must be Positive and over 10!")
-    public BigDecimal getDeposit() {
+    public double getDeposit() {
         return deposit;
     }
 
-    public void setDeposit(BigDecimal deposit) {
+    public void setDeposit(double deposit) {
         this.deposit = deposit;
     }
 

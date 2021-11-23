@@ -7,7 +7,7 @@ import java.math.BigDecimal;
 public class LogDepositServiceModel {
 
     private String usernameConfirm;
-    private BigDecimal deposit;
+    private double deposit;
     private EnumCryptoTop10 crypto;
 
 
@@ -23,11 +23,11 @@ public class LogDepositServiceModel {
         this.usernameConfirm = usernameConfirm;
     }
 
-    public BigDecimal getDeposit() {
+    public double getDeposit() {
         return deposit;
     }
 
-    public void setDeposit(BigDecimal deposit) {
+    public void setDeposit(double deposit) {
         this.deposit = deposit;
     }
 
