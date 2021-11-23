@@ -2,6 +2,7 @@ package com.example.cryptoworld.web;
 
 import com.example.cryptoworld.models.binding.LogDepositBindingModel;
 import com.example.cryptoworld.models.binding.UserRegistrationBindingModel;
+import com.example.cryptoworld.models.service.LogDepositServiceModel;
 import com.example.cryptoworld.service.LogDepositService;
 import com.example.cryptoworld.service.UserService;
 import org.modelmapper.ModelMapper;
@@ -65,6 +66,8 @@ public class LogDepositController {
 
             return "redirect:add";
         }
+
+        logDepositService.addLogDeposit(modelMapper.map(logDepositBindingModel, LogDepositServiceModel.class));
 
 
 
