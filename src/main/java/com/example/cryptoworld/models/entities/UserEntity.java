@@ -22,7 +22,7 @@ public class UserEntity extends BaseEntity implements Serializable {
     private EnumCountry country;
     private List<RoleEntity> roles = new ArrayList<>();
     private String walletAddress;
-    private Set<LogDeposit> depositSet= new HashSet<>();
+    private List<LogDeposit> depositSet= new ArrayList<>();
 
 
     public UserEntity(String username,
@@ -32,7 +32,7 @@ public class UserEntity extends BaseEntity implements Serializable {
                       EnumCountry country,
                       List<RoleEntity> roles,
                       String walletAddress,
-                      Set<LogDeposit> depositSet) {
+                      List<LogDeposit> depositSet) {
         this.username = username;
         this.fullName = fullName;
         this.password = password;
@@ -115,11 +115,11 @@ public class UserEntity extends BaseEntity implements Serializable {
 
 
     @OneToMany(mappedBy = "depositPerson")
-    public Set<LogDeposit> getDepositSet() {
+    public List<LogDeposit> getDepositSet() {
         return depositSet;
     }
 
-    public void setDepositSet(Set<LogDeposit> depositSet) {
+    public void setDepositSet(List<LogDeposit> depositSet) {
         this.depositSet = depositSet;
     }
 
