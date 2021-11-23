@@ -23,6 +23,7 @@ public class UserEntity extends BaseEntity implements Serializable {
     private List<RoleEntity> roles = new ArrayList<>();
     private String walletAddress;
     private List<LogDeposit> depositSet= new ArrayList<>();
+    private List<CreditCardEntity> card;
 
 
     public UserEntity(String username,
@@ -126,5 +127,14 @@ public class UserEntity extends BaseEntity implements Serializable {
     public UserEntity addRole(RoleEntity roleEntity) {
         this.roles.add(roleEntity);
         return this;
+    }
+
+    @OneToMany(mappedBy = "owner")
+    public List<CreditCardEntity> getCard() {
+        return card;
+    }
+
+    public void setCard(List<CreditCardEntity> card) {
+        this.card = card;
     }
 }
