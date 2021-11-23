@@ -1,8 +1,9 @@
 package com.example.cryptoworld.web;
 
 import com.example.cryptoworld.models.binding.LogDepositBindingModel;
-import com.example.cryptoworld.models.binding.UserRegistrationBindingModel;
+import com.example.cryptoworld.models.entities.UserEntity;
 import com.example.cryptoworld.models.service.LogDepositServiceModel;
+import com.example.cryptoworld.service.CreditCartService;
 import com.example.cryptoworld.service.LogDepositService;
 import com.example.cryptoworld.service.UserService;
 import org.modelmapper.ModelMapper;
@@ -23,11 +24,16 @@ public class LogDepositController {
     private final ModelMapper modelMapper;
     private final LogDepositService logDepositService;
     private final UserService userService;
+    private final CreditCartService creditCartService;
 
-    public LogDepositController(ModelMapper modelMapper, LogDepositService logDepositService, UserService userService) {
+
+    public LogDepositController(ModelMapper modelMapper,
+                                LogDepositService logDepositService,
+                                UserService userService, CreditCartService creditCartService) {
         this.modelMapper = modelMapper;
         this.logDepositService = logDepositService;
         this.userService = userService;
+        this.creditCartService = creditCartService;
     }
 
     @GetMapping("/add")
@@ -37,19 +43,23 @@ public class LogDepositController {
             model.addAttribute("logDepositBindingModel", new LogDepositBindingModel());
         }
 
-        if (!model.containsAttribute("registrationBindingModel")) {
-            model.addAttribute("registrationBindingModel", new UserRegistrationBindingModel());
+        if (!model.containsAttribute("logDepositBindingModel")) {
+            model.addAttribute("logDepositBindingModel", new LogDepositBindingModel());
             model.addAttribute("userCheckIfIsPresent", false);
+        }
+
+        if (!model.containsAttribute("logDepositBindingModel")) {
+            model.addAttribute("logDepositBindingModel", new LogDepositBindingModel());
+            model.addAttribute("depositCheck", false);
         }
         return "log";
     }
 
 
-
     @PostMapping("/add")
     public String addDepositConfirm(@Valid LogDepositBindingModel logDepositBindingModel,
-                                 BindingResult bindingResult,
-                                 RedirectAttributes redirectAttributes) {
+                                    BindingResult bindingResult,
+                                    RedirectAttributes redirectAttributes) {
 
 
         if (bindingResult.hasErrors()) {
@@ -67,10 +77,20 @@ public class LogDepositController {
             return "redirect:add";
         }
 
+        UserEntity userEntity =
+                userService.findByUsername(logDepositBindingModel.getUsernameConfirm());
+
+        if (creditCartService.getByOwner(userEntity.getFullName()).getBalance().doubleValue()
+                <= logDepositBindingModel.getDeposit()) {
+
+            redirectAttributes.addFlashAttribute("logDepositBindingModel", logDepositBindingModel);
+            redirectAttributes.addFlashAttribute("depositCheck", true);
+
+            return "redirect:add";
+        }
+
+
         logDepositService.addLogDeposit(modelMapper.map(logDepositBindingModel, LogDepositServiceModel.class));
-
-
-
 
 
         return "redirect:/home";
