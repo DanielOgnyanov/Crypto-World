@@ -2,8 +2,9 @@ package com.example.cryptoworld.web;
 
 import com.example.cryptoworld.models.binding.LogDepositBindingModel;
 import com.example.cryptoworld.models.binding.SellCryptoBindingModel;
-import com.example.cryptoworld.models.entities.UserEntity;
+import com.example.cryptoworld.models.service.SellCryptoServiceModel;
 import com.example.cryptoworld.service.CreditCartService;
+import com.example.cryptoworld.service.LogSellService;
 import com.example.cryptoworld.service.UserService;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Controller;
@@ -24,11 +25,13 @@ public class LogSellController {
     private final ModelMapper modelMapper;
     private final UserService userService;
     private final CreditCartService creditCartService;
+    private final LogSellService logSellService;
 
-    public LogSellController(ModelMapper modelMapper, UserService userService, CreditCartService creditCartService) {
+    public LogSellController(ModelMapper modelMapper, UserService userService, CreditCartService creditCartService, LogSellService logSellService) {
         this.modelMapper = modelMapper;
         this.userService = userService;
         this.creditCartService = creditCartService;
+        this.logSellService = logSellService;
     }
 
 
@@ -75,7 +78,20 @@ public class LogSellController {
         }
 
 
-        userService.getUserCryptoValue(sellCryptoBindingModel.getUsernameConfirm(), sellCryptoBindingModel.getCrypto().name());
+        double findCryptoValue = userService
+                .getUserCryptoValue
+                        (sellCryptoBindingModel.getUsernameConfirm(), sellCryptoBindingModel.getCrypto().name());
+
+        if (findCryptoValue < sellCryptoBindingModel.getSellValue()) {
+
+            redirectAttributes.addFlashAttribute("sellCryptoBindingModel", sellCryptoBindingModel);
+            redirectAttributes.addFlashAttribute("sellValueCheck", true);
+
+            return "redirect:add";
+        }
+
+        logSellService.sellLog(modelMapper.map(sellCryptoBindingModel, SellCryptoServiceModel.class));
+
 
         return "redirect:/home";
     }
