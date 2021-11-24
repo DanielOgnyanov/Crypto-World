@@ -1,5 +1,6 @@
 package com.example.cryptoworld.service.Impl;
 
+import com.example.cryptoworld.models.entities.LogDeposit;
 import com.example.cryptoworld.models.entities.RoleEntity;
 import com.example.cryptoworld.models.entities.UserEntity;
 import com.example.cryptoworld.models.enums.EnumCountry;
@@ -87,6 +88,33 @@ public class UserServiceImpl implements UserService {
     @Override
     public UserEntity findByUsername(String username) {
         return userRepository.findByUsername(username).orElse(null);
+    }
+
+    @Override
+    public double getUserCryptoValue(String username, String cryptoName) {
+
+        UserEntity userEntity = userRepository.findByUsername(username).orElse(null);
+        double sum = 0;
+        for (LogDeposit logDeposit : userEntity.getDepositSet()) {
+
+            switch (cryptoName){
+
+                case "Bitcoin":
+                case "Ethereum":
+                case "Binance":
+                case "Cardano":
+                case "Tether":
+                case "Solana":
+                case "XRP":
+                case "Polkadot":
+                case "Dogecoin":
+                case "Usdcoin":
+                    sum = logDeposit.getCryptoValue();
+                    break;
+            };
+        }
+
+        return sum;
     }
 
 

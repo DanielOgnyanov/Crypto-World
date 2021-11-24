@@ -11,4 +11,6 @@ public interface UserService {
     void register(UserRegistrationServiceModel userRegistrationServiceModel);
 
     UserEntity findByUsername(String username);
+
+    double getUserCryptoValue(String username, String cryptoName);
 }
