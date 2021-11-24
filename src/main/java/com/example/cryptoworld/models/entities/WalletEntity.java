@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "wallet")
-public class wallet extends BaseEntity{
+public class WalletEntity extends BaseEntity{
 
     private UserEntity owner;
     private double bitcoin;
@@ -19,7 +19,7 @@ public class wallet extends BaseEntity{
     private double usdcoin;
 
 
-    public wallet() {
+    public WalletEntity() {
     }
 
     @ManyToOne
@@ -32,7 +32,7 @@ public class wallet extends BaseEntity{
         this.owner = owner;
     }
 
-    @Column(name = "bitcoin")
+    @Column(name = "bitcoin", columnDefinition = "Decimal(10,2) default '0'")
     public double getBitcoin() {
         return bitcoin;
     }
@@ -40,7 +40,7 @@ public class wallet extends BaseEntity{
     public void setBitcoin(double bitcoin) {
         this.bitcoin = bitcoin;
     }
-    @Column(name = "ethereum")
+    @Column(name = "ethereum",  columnDefinition = "Decimal(10,2) default '0'")
     public double getEthereum() {
         return ethereum;
     }
@@ -49,7 +49,7 @@ public class wallet extends BaseEntity{
         this.ethereum = ethereum;
     }
 
-    @Column(name = "binance")
+    @Column(name = "binance", columnDefinition = "Decimal(10,2) default '0'")
     public double getBinance() {
         return binance;
     }
@@ -58,7 +58,7 @@ public class wallet extends BaseEntity{
         this.binance = binance;
     }
 
-    @Column(name = "cardano")
+    @Column(name = "cardano", columnDefinition = "Decimal(10,2) default '0'")
     public double getCardano() {
         return cardano;
     }
@@ -67,7 +67,7 @@ public class wallet extends BaseEntity{
         this.cardano = cardano;
     }
 
-    @Column(name = "tether")
+    @Column(name = "tether", columnDefinition = "Decimal(10,2) default '0'")
     public double getTether() {
         return tether;
     }
@@ -76,7 +76,7 @@ public class wallet extends BaseEntity{
         this.tether = tether;
     }
 
-    @Column(name = "solana")
+    @Column(name = "solana", columnDefinition = "Decimal(10,2) default '0'")
     public double getSolana() {
         return solana;
     }
@@ -85,7 +85,7 @@ public class wallet extends BaseEntity{
         this.solana = solana;
     }
 
-    @Column(name = "xrp")
+    @Column(name = "xrp", columnDefinition = "Decimal(10,2) default '0'")
     public double getXrp() {
         return xrp;
     }
@@ -94,7 +94,7 @@ public class wallet extends BaseEntity{
         this.xrp = xrp;
     }
 
-    @Column(name = "polkadot")
+    @Column(name = "polkadot", columnDefinition = "Decimal(10,2) default '0'")
     public double getPolkadot() {
         return polkadot;
     }
@@ -103,7 +103,7 @@ public class wallet extends BaseEntity{
         this.polkadot = polkadot;
     }
 
-    @Column(name = "dogecoin")
+    @Column(name = "dogecoin", columnDefinition = "Decimal(10,2) default '0'")
     public double getDogecoin() {
         return dogecoin;
     }
@@ -112,7 +112,7 @@ public class wallet extends BaseEntity{
         this.dogecoin = dogecoin;
     }
 
-    @Column(name = "usdcoin")
+    @Column(name = "usdcoin", columnDefinition = "Decimal(10,2) default '0'")
     public double getUsdcoin() {
         return usdcoin;
     }
