@@ -59,6 +59,7 @@ public class LogDepositServiceImpl implements LogDepositService {
                 cardEntity.getBalance().doubleValue() - logDepositServiceModel.getDeposit();
 
         cardEntity.setBalance(BigDecimal.valueOf(newBalance));
+        creditCardRepository.save(cardEntity);
 
         logDepositRepository.save(logDeposit);
 
