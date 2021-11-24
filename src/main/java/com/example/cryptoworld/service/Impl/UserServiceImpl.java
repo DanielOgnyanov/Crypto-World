@@ -117,6 +117,15 @@ public class UserServiceImpl implements UserService {
         return sum;
     }
 
+    @Override
+    public boolean checkIfUserHaveThisCrypto(String username, String cryptoName) {
+
+        UserEntity userEntity = userRepository.findByUsername(username).orElse(null);
+
+
+        return false;
+    }
+
 
     private String generateWalletAddress() {
 

@@ -52,6 +52,11 @@ public class LogSellController {
             model.addAttribute("sellValueCheck", false);
         }
 
+        if (!model.containsAttribute("sellCryptoBindingModel")) {
+            model.addAttribute("sellCryptoBindingModel", new LogDepositBindingModel());
+            model.addAttribute("cryptoCheck", false);
+        }
+
         return "sell";
     }
 
@@ -75,6 +80,10 @@ public class LogSellController {
             redirectAttributes.addFlashAttribute("userCheckIfIsPresent", true);
 
             return "redirect:add";
+        }
+
+        if (userService.existByUsername(sellCryptoBindingModel.getUsernameConfirm())){
+
         }
 
 

@@ -54,6 +54,7 @@ public class LogSellServiceImpl implements LogSellService {
 
         logSell.setCryptoToSell(sellCryptoServiceModel.getSellValue());
 
+        logSell.setCrypto(sellCryptoServiceModel.getCrypto());
 
         CreditCardEntity cardEntity =
                 creditCardRepository.findById(userEntity.getId()).orElse(null);
@@ -63,6 +64,8 @@ public class LogSellServiceImpl implements LogSellService {
                 cardEntity.getBalance().doubleValue() + profit;
 
         cardEntity.setBalance(BigDecimal.valueOf(newBalance));
+
+        creditCardRepository.save(cardEntity);
 
         logSellRepository.save(logSell);
 
