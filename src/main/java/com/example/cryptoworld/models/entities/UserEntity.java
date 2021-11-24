@@ -24,8 +24,9 @@ public class UserEntity extends BaseEntity implements Serializable {
     private EnumCountry country;
     private List<RoleEntity> roles = new ArrayList<>();
     private String walletAddress;
-    private List<LogDeposit> depositSet= new ArrayList<>();
+    private List<LogDeposit> depositSet = new ArrayList<>();
     private List<CreditCardEntity> card;
+    private List<LogSell> sellList;
 
 
     public UserEntity(String username,
@@ -116,6 +117,20 @@ public class UserEntity extends BaseEntity implements Serializable {
         this.walletAddress = walletAddress;
     }
 
+    // BIDIRECTIONAL RELATIONS WITH CREDIT_CARD ENTITY
+
+    @OneToMany(mappedBy = "owner")
+    @LazyCollection(LazyCollectionOption.FALSE)
+    public List<CreditCardEntity> getCard() {
+        return card;
+    }
+
+    public void setCard(List<CreditCardEntity> card) {
+        this.card = card;
+    }
+
+
+    // BIDIRECTIONAL RELATIONS WITH LOG_DEPOSIT ENTITY
 
     @OneToMany(mappedBy = "depositPerson")
     @LazyCollection(LazyCollectionOption.FALSE)
@@ -127,18 +142,22 @@ public class UserEntity extends BaseEntity implements Serializable {
         this.depositSet = depositSet;
     }
 
+
+    // BIDIRECTIONAL RELATIONS WITH LOG_SELL ENTITY
+
+    @OneToMany(mappedBy = "sellPerson")
+    @LazyCollection(LazyCollectionOption.FALSE)
+    public List<LogSell> getSellList() {
+        return sellList;
+    }
+
+    public void setSellList(List<LogSell> sellList) {
+        this.sellList = sellList;
+    }
+
+
     public UserEntity addRole(RoleEntity roleEntity) {
         this.roles.add(roleEntity);
         return this;
-    }
-
-    @OneToMany(mappedBy = "owner")
-    @LazyCollection(LazyCollectionOption.FALSE)
-    public List<CreditCardEntity> getCard() {
-        return card;
-    }
-
-    public void setCard(List<CreditCardEntity> card) {
-        this.card = card;
     }
 }
