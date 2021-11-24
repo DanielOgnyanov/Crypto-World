@@ -9,7 +9,7 @@ import javax.persistence.*;
 @Table(name = "log_sell")
 public class LogSell  extends BaseEntity{
 
-    private UserEntity depositPerson;
+    private UserEntity sellPerson;
     private double profit;
     private double cryptoToSell;
     private EnumCryptoTop10 crypto;
@@ -20,12 +20,12 @@ public class LogSell  extends BaseEntity{
 
     @ManyToOne
     @JoinColumn(name = "deposit_person", referencedColumnName = "full_name")
-    public UserEntity getDepositPerson() {
-        return depositPerson;
+    public UserEntity getSellPerson() {
+        return sellPerson;
     }
 
-    public void setDepositPerson(UserEntity depositPerson) {
-        this.depositPerson = depositPerson;
+    public void setSellPerson(UserEntity depositPerson) {
+        this.sellPerson = depositPerson;
     }
 
     @Column(name = "profit")
