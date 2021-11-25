@@ -28,11 +28,9 @@ public class WalletServiceImpl implements WalletService {
     }
 
     @Override
-    public void setValue(double deposit, String crypto, String username) {
+    public void setValue(double cryptoValue, String crypto, String username) {
 
-        UserEntity userEntity = userService.findByUsername(username);
-
-        WalletEntity walletEntity = walletRepository.findByOwner(userEntity.getFullName());
+        WalletEntity walletEntity = walletRepository.findByUsername(username);
 
         double oldValue = 0;
 
@@ -43,7 +41,7 @@ public class WalletServiceImpl implements WalletService {
                 oldValue = walletEntity.getBitcoin();
 
 
-                walletEntity.setBitcoin(oldValue + deposit);
+                walletEntity.setBitcoin(oldValue + cryptoValue);
 
                 walletRepository.save(walletEntity);
                 break;
@@ -52,7 +50,7 @@ public class WalletServiceImpl implements WalletService {
 
                 oldValue = walletEntity.getBinance();
 
-                walletEntity.setBinance(oldValue + deposit);
+                walletEntity.setBinance(oldValue + cryptoValue);
 
                 walletRepository.save(walletEntity);
 
@@ -62,7 +60,7 @@ public class WalletServiceImpl implements WalletService {
 
                 oldValue = walletEntity.getEthereum();
 
-                walletEntity.setEthereum(oldValue + deposit);
+                walletEntity.setEthereum(oldValue + cryptoValue);
 
                 walletRepository.save(walletEntity);
 
@@ -72,7 +70,7 @@ public class WalletServiceImpl implements WalletService {
 
                 oldValue = walletEntity.getCardano();
 
-                walletEntity.setCardano(oldValue + deposit);
+                walletEntity.setCardano(oldValue + cryptoValue);
 
                 walletRepository.save(walletEntity);
 
@@ -82,7 +80,7 @@ public class WalletServiceImpl implements WalletService {
 
                 oldValue = walletEntity.getTether();
 
-                walletEntity.setTether(oldValue + deposit);
+                walletEntity.setTether(oldValue + cryptoValue);
 
                 walletRepository.save(walletEntity);
 
@@ -92,7 +90,7 @@ public class WalletServiceImpl implements WalletService {
 
                 oldValue = walletEntity.getSolana();
 
-                walletEntity.setSolana(oldValue + deposit);
+                walletEntity.setSolana(oldValue + cryptoValue);
 
                 walletRepository.save(walletEntity);
 
@@ -103,7 +101,7 @@ public class WalletServiceImpl implements WalletService {
 
                 oldValue = walletEntity.getXrp();
 
-                walletEntity.setXrp(oldValue + deposit);
+                walletEntity.setXrp(oldValue + cryptoValue);
 
                 walletRepository.save(walletEntity);
 
@@ -114,7 +112,7 @@ public class WalletServiceImpl implements WalletService {
 
                 oldValue = walletEntity.getPolkadot();
 
-                walletEntity.setPolkadot(oldValue + deposit);
+                walletEntity.setPolkadot(oldValue + cryptoValue);
 
                 walletRepository.save(walletEntity);
 
@@ -125,7 +123,7 @@ public class WalletServiceImpl implements WalletService {
 
                 oldValue = walletEntity.getDogecoin();
 
-                walletEntity.setDogecoin(oldValue + deposit);
+                walletEntity.setDogecoin(oldValue + cryptoValue);
 
                 walletRepository.save(walletEntity);
 
@@ -136,7 +134,7 @@ public class WalletServiceImpl implements WalletService {
 
                 oldValue = walletEntity.getUsdcoin();
 
-                walletEntity.setUsdcoin(oldValue + deposit);
+                walletEntity.setUsdcoin(oldValue + cryptoValue);
 
                 walletRepository.save(walletEntity);
 

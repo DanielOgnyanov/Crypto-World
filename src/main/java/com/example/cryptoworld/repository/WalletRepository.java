@@ -10,5 +10,5 @@ public interface WalletRepository extends JpaRepository<WalletEntity, Long> {
 
     boolean existsByUsername(String username);
 
-    WalletEntity findByOwner (String owner);
+    WalletEntity findByUsername (String username);
 }

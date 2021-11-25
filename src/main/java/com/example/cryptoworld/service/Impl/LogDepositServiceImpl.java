@@ -3,10 +3,7 @@ package com.example.cryptoworld.service.Impl;
 import com.example.cryptoworld.models.entities.*;
 import com.example.cryptoworld.models.enums.EnumCryptoTop10;
 import com.example.cryptoworld.models.service.LogDepositServiceModel;
-import com.example.cryptoworld.repository.CreditCardRepository;
-import com.example.cryptoworld.repository.CryptoRepository;
-import com.example.cryptoworld.repository.LogDepositRepository;
-import com.example.cryptoworld.repository.UserRepository;
+import com.example.cryptoworld.repository.*;
 import com.example.cryptoworld.service.LogDepositService;
 import com.example.cryptoworld.service.WalletService;
 import org.modelmapper.ModelMapper;
@@ -24,16 +21,18 @@ public class LogDepositServiceImpl implements LogDepositService {
     private final CryptoRepository cryptoRepository;
     private final LogDepositRepository logDepositRepository;
     private final WalletService walletService;
+    private final WalletRepository walletRepository;
 
     public LogDepositServiceImpl(UserRepository userRepository,
                                  ModelMapper modelMapper,
-                                 CreditCardRepository creditCardRepository, CryptoRepository cryptoRepository, LogDepositRepository logDepositRepository, WalletService walletService) {
+                                 CreditCardRepository creditCardRepository, CryptoRepository cryptoRepository, LogDepositRepository logDepositRepository, WalletService walletService, WalletRepository walletRepository) {
         this.userRepository = userRepository;
         this.modelMapper = modelMapper;
         this.creditCardRepository = creditCardRepository;
         this.cryptoRepository = cryptoRepository;
         this.logDepositRepository = logDepositRepository;
         this.walletService = walletService;
+        this.walletRepository = walletRepository;
     }
 
 
@@ -51,8 +50,10 @@ public class LogDepositServiceImpl implements LogDepositService {
         logDeposit.setFiatMoney(logDepositServiceModel.getDeposit());
         logDeposit.setCrypto(logDepositServiceModel.getCrypto());
         logDeposit.setCryptoValue(calcCryptoValue(
-                logDepositServiceModel.getCrypto(),logDepositServiceModel.getDeposit()
+                logDepositServiceModel.getCrypto(), logDepositServiceModel.getDeposit()
         ));
+
+        logDepositRepository.save(logDeposit);
 
         // END
 
@@ -60,9 +61,13 @@ public class LogDepositServiceImpl implements LogDepositService {
         // CHECK IF THE USER DEPOSIT FOR FIRST TIME AND SET THE DEPOSIT VALUE IN THE WALLET
         // ELSE CREATE THE WALLET AND SET THE VALUE
 
+        double cryptoValue =
+                calcCryptoValue(logDepositServiceModel.getCrypto(),
+                        logDepositServiceModel.getDeposit());
+
         if (walletService.findUsersWallet(logDepositServiceModel.getUsernameConfirm())) {
 
-            walletService.setValue(logDepositServiceModel.getDeposit(),
+            walletService.setValue(cryptoValue,
                     logDepositServiceModel.getCrypto().name(), logDepositServiceModel.getUsernameConfirm());
 
         } else {
@@ -73,8 +78,11 @@ public class LogDepositServiceImpl implements LogDepositService {
             WalletEntity walletEntity = new WalletEntity();
 
             walletEntity.setOwner(currUser);
+            walletEntity.setUsername(logDepositServiceModel.getUsernameConfirm());
 
-            walletService.setValue(logDepositServiceModel.getDeposit(),
+            walletRepository.save(walletEntity);
+
+            walletService.setValue(cryptoValue,
                     logDepositServiceModel.getCrypto().name(),
                     logDepositServiceModel.getUsernameConfirm());
         }
@@ -89,15 +97,10 @@ public class LogDepositServiceImpl implements LogDepositService {
         double newBalance =
                 cardEntity.getBalance().doubleValue() - logDepositServiceModel.getDeposit();
 
-        // END
-
-
-        // SAVE INTO REPO
-
         cardEntity.setBalance(BigDecimal.valueOf(newBalance));
         creditCardRepository.save(cardEntity);
+        // END
 
-        logDepositRepository.save(logDeposit);
 
     }
 
