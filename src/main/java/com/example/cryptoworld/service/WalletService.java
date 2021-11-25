@@ -8,4 +8,6 @@ public interface WalletService {
     void setValue(double cryptoValue, String crypto, String username);
 
     double sellValueCheck(String usernameConfirm, String cryptoName);
+
+    void sell(double cryptoValue, String crypto, String username);
 }

@@ -11,6 +11,7 @@ import com.example.cryptoworld.repository.CryptoRepository;
 import com.example.cryptoworld.repository.LogSellRepository;
 import com.example.cryptoworld.repository.UserRepository;
 import com.example.cryptoworld.service.LogSellService;
+import com.example.cryptoworld.service.WalletService;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
@@ -24,17 +25,19 @@ public class LogSellServiceImpl implements LogSellService {
     private final CreditCardRepository creditCardRepository;
     private final CryptoRepository cryptoRepository;
     private final LogSellRepository logSellRepository;
+    private final WalletService walletService;
 
     public LogSellServiceImpl(UserRepository userRepository,
                               ModelMapper modelMapper,
                               CreditCardRepository creditCardRepository,
                               CryptoRepository cryptoRepository,
-                              LogSellRepository logSellRepository) {
+                              LogSellRepository logSellRepository, WalletService walletService) {
         this.userRepository = userRepository;
         this.modelMapper = modelMapper;
         this.creditCardRepository = creditCardRepository;
         this.cryptoRepository = cryptoRepository;
         this.logSellRepository = logSellRepository;
+        this.walletService = walletService;
     }
 
 
@@ -52,7 +55,11 @@ public class LogSellServiceImpl implements LogSellService {
 
         logSell.setSellPerson(userEntity);
 
-        double profit = getProfit(sellCryptoServiceModel.getCrypto(),sellCryptoServiceModel.getSellValue());
+        double profit =
+                getProfit(sellCryptoServiceModel.getCrypto(),
+                        sellCryptoServiceModel.getSellValue());
+
+
         logSell.setProfit(profit);
 
         logSell.setCryptoToSell(sellCryptoServiceModel.getSellValue());
@@ -60,6 +67,14 @@ public class LogSellServiceImpl implements LogSellService {
         logSell.setCrypto(sellCryptoServiceModel.getCrypto());
 
         logSellRepository.save(logSell);
+
+        // END
+
+        // WALLET SET NEW BALANCE
+
+        walletService.sell(sellCryptoServiceModel.getSellValue(),
+                sellCryptoServiceModel.getCrypto().name(),
+                sellCryptoServiceModel.getUsernameConfirm());
 
         // END
 
