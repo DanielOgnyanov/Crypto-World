@@ -12,7 +12,7 @@ public interface UserService {
 
     UserEntity findByUsername(String username);
 
-    double getUserCryptoValue(String username, String cryptoName);
 
-    boolean checkIfUserHaveThisCrypto(String username, String cryptoName);
+
+
 }

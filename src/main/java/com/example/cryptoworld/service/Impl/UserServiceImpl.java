@@ -90,42 +90,6 @@ public class UserServiceImpl implements UserService {
         return userRepository.findByUsername(username).orElse(null);
     }
 
-    @Override
-    public double getUserCryptoValue(String username, String cryptoName) {
-
-        UserEntity userEntity = userRepository.findByUsername(username).orElse(null);
-        double sum = 0;
-        for (LogDeposit logDeposit : userEntity.getDepositSet()) {
-
-            switch (cryptoName){
-
-                case "Bitcoin":
-                case "Ethereum":
-                case "Binance":
-                case "Cardano":
-                case "Tether":
-                case "Solana":
-                case "XRP":
-                case "Polkadot":
-                case "Dogecoin":
-                case "Usdcoin":
-                    sum = logDeposit.getCryptoValue();
-                    break;
-            };
-        }
-
-        return sum;
-    }
-
-    @Override
-    public boolean checkIfUserHaveThisCrypto(String username, String cryptoName) {
-
-        UserEntity userEntity = userRepository.findByUsername(username).orElse(null);
-
-
-        return false;
-    }
-
 
     private String generateWalletAddress() {
 
