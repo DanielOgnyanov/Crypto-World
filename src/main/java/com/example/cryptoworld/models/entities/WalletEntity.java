@@ -7,6 +7,7 @@ import javax.persistence.*;
 public class WalletEntity extends BaseEntity{
 
     private UserEntity owner;
+    private String username;
     private double bitcoin;
     private double ethereum;
     private double binance;
@@ -30,6 +31,16 @@ public class WalletEntity extends BaseEntity{
 
     public void setOwner(UserEntity owner) {
         this.owner = owner;
+    }
+
+
+    @Column(name = "username")
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     @Column(name = "bitcoin", columnDefinition = "Decimal(10,2) default '0'")

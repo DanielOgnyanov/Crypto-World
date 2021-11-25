@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface WalletRepository extends JpaRepository<WalletEntity, Long> {
 
-    boolean existsByOwner(String owner);
+    boolean existsByUsername(String username);
 
     WalletEntity findByOwner (String owner);
 }

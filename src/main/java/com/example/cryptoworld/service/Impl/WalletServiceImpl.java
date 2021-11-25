@@ -24,9 +24,7 @@ public class WalletServiceImpl implements WalletService {
     @Override
     public boolean findUsersWallet(String usernameConfirm) {
 
-        UserEntity userEntity = userService.findByUsername(usernameConfirm);
-
-        return walletRepository.existsByOwner(userEntity.getFullName());
+        return walletRepository.existsByUsername(usernameConfirm);
     }
 
     @Override
