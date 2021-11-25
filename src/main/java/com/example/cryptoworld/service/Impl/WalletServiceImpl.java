@@ -35,7 +35,7 @@ public class WalletServiceImpl implements WalletService {
         double oldValue = 0;
 
 
-        switch (crypto){
+        switch (crypto) {
 
             case "Bitcoin":
                 oldValue = walletEntity.getBitcoin();
@@ -140,5 +140,76 @@ public class WalletServiceImpl implements WalletService {
 
                 break;
         }
+    }
+
+    @Override
+    public double sellValueCheck(String usernameConfirm, String cryptoName) {
+
+        WalletEntity walletEntity = walletRepository.findByUsername(usernameConfirm);
+
+        double valueToReturn = 0;
+        switch (cryptoName) {
+            case "Bitcoin":
+                valueToReturn = walletEntity.getBitcoin();
+                break;
+
+            case "Binance":
+
+                valueToReturn = walletEntity.getBinance();
+
+                break;
+
+            case "Ethereum":
+
+                valueToReturn = walletEntity.getEthereum();
+
+                break;
+
+            case "Cardano":
+
+                valueToReturn = walletEntity.getCardano();
+
+                break;
+
+            case "Tether":
+
+                valueToReturn = walletEntity.getTether();
+
+                break;
+
+            case "Solana":
+
+                valueToReturn = walletEntity.getSolana();
+
+                break;
+
+
+            case "XRP":
+                valueToReturn = walletEntity.getXrp();
+
+                break;
+
+
+            case "Polkadot":
+
+                valueToReturn = walletEntity.getPolkadot();
+
+                break;
+
+
+            case "Dogecoin":
+
+                valueToReturn = walletEntity.getDogecoin();
+
+                break;
+
+
+            case "Usdcoin":
+
+                valueToReturn = walletEntity.getUsdcoin();
+
+                break;
+        }
+        return 0;
     }
 }

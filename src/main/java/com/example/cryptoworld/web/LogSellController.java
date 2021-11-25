@@ -6,6 +6,7 @@ import com.example.cryptoworld.models.service.SellCryptoServiceModel;
 import com.example.cryptoworld.service.CreditCartService;
 import com.example.cryptoworld.service.LogSellService;
 import com.example.cryptoworld.service.UserService;
+import com.example.cryptoworld.service.WalletService;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -26,12 +27,14 @@ public class LogSellController {
     private final UserService userService;
     private final CreditCartService creditCartService;
     private final LogSellService logSellService;
+    private final WalletService walletService;
 
-    public LogSellController(ModelMapper modelMapper, UserService userService, CreditCartService creditCartService, LogSellService logSellService) {
+    public LogSellController(ModelMapper modelMapper, UserService userService, CreditCartService creditCartService, LogSellService logSellService, WalletService walletService) {
         this.modelMapper = modelMapper;
         this.userService = userService;
         this.creditCartService = creditCartService;
         this.logSellService = logSellService;
+        this.walletService = walletService;
     }
 
 
@@ -86,12 +89,14 @@ public class LogSellController {
 
         }
 
+        double sellValueCheck =
+                walletService
+                .sellValueCheck(sellCryptoBindingModel.getUsernameConfirm(),
+                        sellCryptoBindingModel.getCrypto().name());
 
-        double findCryptoValue = userService
-                .getUserCryptoValue
-                        (sellCryptoBindingModel.getUsernameConfirm(), sellCryptoBindingModel.getCrypto().name());
 
-        if (findCryptoValue < sellCryptoBindingModel.getSellValue()) {
+
+        if (sellValueCheck < sellCryptoBindingModel.getSellValue()) {
 
             redirectAttributes.addFlashAttribute("sellCryptoBindingModel", sellCryptoBindingModel);
             redirectAttributes.addFlashAttribute("sellValueCheck", true);

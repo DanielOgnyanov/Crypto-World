@@ -6,4 +6,6 @@ public interface WalletService {
     boolean findUsersWallet(String usernameConfirm);
 
     void setValue(double cryptoValue, String crypto, String username);
+
+    double sellValueCheck(String usernameConfirm, String cryptoName);
 }
