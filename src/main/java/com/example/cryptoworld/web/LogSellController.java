@@ -85,15 +85,18 @@ public class LogSellController {
             return "redirect:add";
         }
 
-        if (userService.existByUsername(sellCryptoBindingModel.getUsernameConfirm())){
 
+        if (!walletService.findUsersWallet(sellCryptoBindingModel.getUsernameConfirm())) {
+            redirectAttributes.addFlashAttribute("sellCryptoBindingModel", sellCryptoBindingModel);
+            redirectAttributes.addFlashAttribute("sellValueCheck", true);
+
+            return "redirect:add";
         }
 
         double sellValueCheck =
                 walletService
-                .sellValueCheck(sellCryptoBindingModel.getUsernameConfirm(),
-                        sellCryptoBindingModel.getCrypto().name());
-
+                        .sellValueCheck(sellCryptoBindingModel.getUsernameConfirm(),
+                                sellCryptoBindingModel.getCrypto().name());
 
 
         if (sellValueCheck < sellCryptoBindingModel.getSellValue()) {
