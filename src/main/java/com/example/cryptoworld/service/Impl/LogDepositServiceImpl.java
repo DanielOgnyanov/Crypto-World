@@ -40,7 +40,8 @@ public class LogDepositServiceImpl implements LogDepositService {
     public void addLogDeposit(LogDepositServiceModel logDepositServiceModel) {
 
 
-        // LOG DEPOSIT SET VALUR INTO
+        // LOG DEPOSIT SET VALUE INTO
+
         LogDeposit logDeposit = new LogDeposit();
 
         UserEntity userEntity = userRepository.findByUsername
@@ -91,6 +92,7 @@ public class LogDepositServiceImpl implements LogDepositService {
 
 
         // UPDATE CREDIT CARD BALANCE
+
         CreditCardEntity cardEntity =
                 creditCardRepository.findById(userEntity.getId()).orElse(null);
 
@@ -99,6 +101,7 @@ public class LogDepositServiceImpl implements LogDepositService {
 
         cardEntity.setBalance(BigDecimal.valueOf(newBalance));
         creditCardRepository.save(cardEntity);
+
         // END
 
 

@@ -41,6 +41,9 @@ public class LogSellServiceImpl implements LogSellService {
     @Override
     public void sellLog(SellCryptoServiceModel sellCryptoServiceModel) {
 
+        // LOG SELL START
+
+
         LogSell logSell = new LogSell();
 
         UserEntity userEntity = userRepository.findByUsername
@@ -56,6 +59,13 @@ public class LogSellServiceImpl implements LogSellService {
 
         logSell.setCrypto(sellCryptoServiceModel.getCrypto());
 
+        logSellRepository.save(logSell);
+
+        // END
+
+
+        // CREDIT CARD START
+
         CreditCardEntity cardEntity =
                 creditCardRepository.findById(userEntity.getId()).orElse(null);
 
@@ -67,8 +77,8 @@ public class LogSellServiceImpl implements LogSellService {
 
         creditCardRepository.save(cardEntity);
 
-        logSellRepository.save(logSell);
 
+        // END
     }
 
 
