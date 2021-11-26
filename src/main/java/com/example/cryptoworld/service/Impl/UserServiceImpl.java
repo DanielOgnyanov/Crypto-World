@@ -105,6 +105,14 @@ public class UserServiceImpl implements UserService {
         return true;
     }
 
+    @Override
+    public String checkUsernameOfLoggedUser() {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+
+        String username = authentication.getName();
+        return username;
+    }
+
 
     private String generateWalletAddress() {
 

@@ -14,4 +14,6 @@ public interface UserService {
 
 
     boolean creditCardCheckIfIsPresent(String usernameConfirm);
+
+    String checkUsernameOfLoggedUser();
 }

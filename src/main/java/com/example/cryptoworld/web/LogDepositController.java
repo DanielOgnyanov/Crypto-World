@@ -58,6 +58,12 @@ public class LogDepositController {
             model.addAttribute("logDepositBindingModel", new LogDepositBindingModel());
             model.addAttribute("creditCardCheck", false);
         }
+
+        if (!model.containsAttribute("logDepositBindingModel")) {
+            model.addAttribute("logDepositBindingModel", new LogDepositBindingModel());
+            model.addAttribute("findIfUserInsertPersonalUsernameCheck", false);
+        }
+
         return "log";
     }
 
@@ -83,6 +89,18 @@ public class LogDepositController {
 
             return "redirect:add";
         }
+
+
+
+        if (!logDepositBindingModel.getUsernameConfirm()
+                .equals(userService.checkUsernameOfLoggedUser())) {
+            redirectAttributes.addFlashAttribute("logDepositBindingModel", logDepositBindingModel);
+            redirectAttributes.addFlashAttribute("findIfUserInsertPersonalUsernameCheck", true);
+
+            return "redirect:add";
+        }
+
+
 
         if (!userService.creditCardCheckIfIsPresent(logDepositBindingModel.getUsernameConfirm())) {
             redirectAttributes.addFlashAttribute("logDepositBindingModel", logDepositBindingModel);
