@@ -62,6 +62,10 @@
                         <small th:if = "${#fields.hasErrors('iban')}" th:errors = "*{iban}"  class="bg-danger text-light rounded">
                             Iban must be between 15 and 20 characters !
                         </small>
+
+                        <small th:if = "${addOneCardCheck}"  class="bg-danger text-light rounded">
+                            You can add one card to your account !
+                        </small>
                     </div>
                 </div>
 
