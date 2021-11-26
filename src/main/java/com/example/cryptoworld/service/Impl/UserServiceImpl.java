@@ -90,6 +90,21 @@ public class UserServiceImpl implements UserService {
         return userRepository.findByUsername(username).orElse(null);
     }
 
+    @Override
+    public boolean creditCardCheckIfIsPresent(String usernameConfirm) {
+
+        UserEntity userEntity =
+                userRepository.findByUsername(usernameConfirm).orElse(null);
+
+
+
+       if (userEntity.getCard().size() == 0 || userEntity.getCard() == null){
+           return false;
+       }
+
+        return true;
+    }
+
 
     private String generateWalletAddress() {
 

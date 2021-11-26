@@ -13,6 +13,5 @@ public interface UserService {
     UserEntity findByUsername(String username);
 
 
-
-
+    boolean creditCardCheckIfIsPresent(String usernameConfirm);
 }

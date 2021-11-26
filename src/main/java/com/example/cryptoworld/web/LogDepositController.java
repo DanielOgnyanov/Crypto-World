@@ -53,6 +53,11 @@ public class LogDepositController {
             model.addAttribute("logDepositBindingModel", new LogDepositBindingModel());
             model.addAttribute("depositCheck", false);
         }
+
+        if (!model.containsAttribute("logDepositBindingModel")) {
+            model.addAttribute("logDepositBindingModel", new LogDepositBindingModel());
+            model.addAttribute("creditCardCheck", false);
+        }
         return "log";
     }
 
@@ -71,6 +76,7 @@ public class LogDepositController {
             return "redirect:add";
         }
 
+
         if (!userService.existByUsername(logDepositBindingModel.getUsernameConfirm())) {
             redirectAttributes.addFlashAttribute("logDepositBindingModel", logDepositBindingModel);
             redirectAttributes.addFlashAttribute("userCheckIfIsPresent", true);
@@ -78,10 +84,16 @@ public class LogDepositController {
             return "redirect:add";
         }
 
+        if (!userService.creditCardCheckIfIsPresent(logDepositBindingModel.getUsernameConfirm())) {
+            redirectAttributes.addFlashAttribute("logDepositBindingModel", logDepositBindingModel);
+            redirectAttributes.addFlashAttribute("creditCardCheck", true);
+
+            return "redirect:add";
+        }
+
+
         UserEntity userEntity =
                 userService.findByUsername(logDepositBindingModel.getUsernameConfirm());
-
-
 
 
         double check = userEntity.getCard().get(0).getBalance().doubleValue();
