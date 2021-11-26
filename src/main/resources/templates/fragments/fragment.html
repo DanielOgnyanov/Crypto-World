@@ -40,8 +40,8 @@
                             <a class="nav-link active text-white" aria-current="page" th:href="@{/}">Home</a>
                         </li>
 
-                        <li  class="nav-item">
-                            <a class="nav-link text-white" href="#">Admin</a>
+                        <li sec:authorize="hasRole('ADMIN')"  class="nav-item">
+                            <a class="nav-link text-white" th:href="@{/admin/setting}">Admin</a>
                         </li>
 
                         <li  class="nav-item">
