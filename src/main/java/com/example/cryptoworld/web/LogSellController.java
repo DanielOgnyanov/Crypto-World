@@ -46,18 +46,22 @@ public class LogSellController {
         }
 
         if (!model.containsAttribute("sellCryptoBindingModel")) {
-            model.addAttribute("logDepositBindingModel", new LogDepositBindingModel());
+            model.addAttribute("logDepositBindingModel", new SellCryptoBindingModel());
             model.addAttribute("userCheckIfIsPresent", false);
         }
 
         if (!model.containsAttribute("sellCryptoBindingModel")) {
-            model.addAttribute("sellCryptoBindingModel", new LogDepositBindingModel());
+            model.addAttribute("sellCryptoBindingModel", new SellCryptoBindingModel());
             model.addAttribute("sellValueCheck", false);
         }
 
         if (!model.containsAttribute("sellCryptoBindingModel")) {
-            model.addAttribute("sellCryptoBindingModel", new LogDepositBindingModel());
+            model.addAttribute("sellCryptoBindingModel", new SellCryptoBindingModel());
             model.addAttribute("cryptoCheck", false);
+        }
+        if (!model.containsAttribute("sellCryptoBindingModel")) {
+            model.addAttribute("sellCryptoBindingModel", new SellCryptoBindingModel());
+            model.addAttribute("findIfUserInsertPersonalUsernameCheck", false);
         }
 
         return "sell";
@@ -81,6 +85,14 @@ public class LogSellController {
         if (!userService.existByUsername(sellCryptoBindingModel.getUsernameConfirm())) {
             redirectAttributes.addFlashAttribute("sellCryptoBindingModel", sellCryptoBindingModel);
             redirectAttributes.addFlashAttribute("userCheckIfIsPresent", true);
+
+            return "redirect:add";
+        }
+
+        if (!sellCryptoBindingModel.getUsernameConfirm()
+                .equals(userService.checkUsernameOfLoggedUser())) {
+            redirectAttributes.addFlashAttribute("sellCryptoBindingModel", sellCryptoBindingModel);
+            redirectAttributes.addFlashAttribute("findIfUserInsertPersonalUsernameCheck", true);
 
             return "redirect:add";
         }
