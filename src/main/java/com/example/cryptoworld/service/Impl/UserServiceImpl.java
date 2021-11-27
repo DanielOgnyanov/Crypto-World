@@ -1,5 +1,6 @@
 package com.example.cryptoworld.service.Impl;
 
+import com.example.cryptoworld.models.binding.ChangeRoleBindingModel;
 import com.example.cryptoworld.models.entities.LogDeposit;
 import com.example.cryptoworld.models.entities.RoleEntity;
 import com.example.cryptoworld.models.entities.UserEntity;
@@ -111,6 +112,23 @@ public class UserServiceImpl implements UserService {
 
         String username = authentication.getName();
         return username;
+    }
+
+    @Override
+    public boolean checkIfUserHasRoleOrNot(ChangeRoleBindingModel changeRoleBindingModel) {
+
+        UserEntity userEntity =
+                userRepository.findByUsername(changeRoleBindingModel.getUsername()).orElse(null);
+
+        RoleEntity roleEntity = roleService.getRole(1L);
+
+
+        for (RoleEntity role : userEntity.getRoles()) {
+            if(role.getRole().name().equals("ADMIN")) {
+                return true;
+            }
+        }
+        return false;
     }
 
 

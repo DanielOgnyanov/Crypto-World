@@ -1,5 +1,6 @@
 package com.example.cryptoworld.models.binding;
 
+import com.example.cryptoworld.models.enums.EnumAddOrRemove;
 import com.example.cryptoworld.models.enums.EnumRole;
 
 import javax.validation.constraints.NotEmpty;
@@ -10,7 +11,7 @@ public class ChangeRoleBindingModel {
 
 
     private String username;
-    private EnumRole enumRole;
+    private EnumAddOrRemove addOrRemove;
 
     public ChangeRoleBindingModel() {
     }
@@ -26,12 +27,13 @@ public class ChangeRoleBindingModel {
         this.username = username;
     }
 
-    @NotNull(message = "Role cannot be empty !")
-    public EnumRole getEnumRole() {
-        return enumRole;
+    @NotNull(message = "Select add or remove !")
+    public EnumAddOrRemove getAddOrRemove() {
+        return addOrRemove;
     }
 
-    public void setEnumRole(EnumRole enumRole) {
-        this.enumRole = enumRole;
+    public void setAddOrRemove(EnumAddOrRemove addOrRemove) {
+        this.addOrRemove = addOrRemove;
     }
+
 }

@@ -1,5 +1,6 @@
 package com.example.cryptoworld.service;
 
+import com.example.cryptoworld.models.binding.ChangeRoleBindingModel;
 import com.example.cryptoworld.models.entities.UserEntity;
 import com.example.cryptoworld.models.service.UserRegistrationServiceModel;
 
@@ -16,4 +17,6 @@ public interface UserService {
     boolean creditCardCheckIfIsPresent(String usernameConfirm);
 
     String checkUsernameOfLoggedUser();
+
+    boolean checkIfUserHasRoleOrNot(ChangeRoleBindingModel changeRoleBindingModel);
 }

@@ -160,4 +160,9 @@ public class UserEntity extends BaseEntity implements Serializable {
         this.roles.add(roleEntity);
         return this;
     }
+
+    public UserEntity removeRole(RoleEntity roleEntity) {
+        this.roles.remove(roleEntity);
+        return this;
+    }
 }
