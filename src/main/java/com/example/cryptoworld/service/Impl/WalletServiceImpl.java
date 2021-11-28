@@ -1,12 +1,15 @@
 package com.example.cryptoworld.service.Impl;
 
-import com.example.cryptoworld.models.entities.UserEntity;
+import com.example.cryptoworld.models.WalletViewModel;
 import com.example.cryptoworld.models.entities.WalletEntity;
-import com.example.cryptoworld.models.enums.EnumCryptoTop10;
 import com.example.cryptoworld.repository.WalletRepository;
 import com.example.cryptoworld.service.UserService;
 import com.example.cryptoworld.service.WalletService;
+import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class WalletServiceImpl implements WalletService {
@@ -14,10 +17,12 @@ public class WalletServiceImpl implements WalletService {
 
     private final WalletRepository walletRepository;
     private final UserService userService;
+    private final ModelMapper modelMapper;
 
-    public WalletServiceImpl(WalletRepository walletRepository, UserService userService) {
+    public WalletServiceImpl(WalletRepository walletRepository, UserService userService, ModelMapper modelMapper) {
         this.walletRepository = walletRepository;
         this.userService = userService;
+        this.modelMapper = modelMapper;
     }
 
 
@@ -326,5 +331,13 @@ public class WalletServiceImpl implements WalletService {
                 break;
         }
 
+    }
+
+    @Override
+    public List<WalletViewModel> getAll() {
+        return walletRepository.findAll()
+                .stream()
+                .map(wallet -> modelMapper.map(wallet, WalletViewModel.class))
+                .collect(Collectors.toList());
     }
 }
