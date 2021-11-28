@@ -1,7 +1,6 @@
 package com.example.cryptoworld.service;
 
-import com.example.cryptoworld.models.WalletViewModel;
-import com.example.cryptoworld.models.enums.EnumCryptoTop10;
+import com.example.cryptoworld.models.view.WalletViewModel;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.example.cryptoworld.models;
+package com.example.cryptoworld.models.view;
 
 public class WalletViewModel {
 

@@ -1,6 +1,6 @@
 package com.example.cryptoworld.service.Impl;
 
-import com.example.cryptoworld.models.WalletViewModel;
+import com.example.cryptoworld.models.view.WalletViewModel;
 import com.example.cryptoworld.models.entities.WalletEntity;
 import com.example.cryptoworld.repository.WalletRepository;
 import com.example.cryptoworld.service.UserService;
