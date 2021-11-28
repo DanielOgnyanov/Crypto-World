@@ -3,7 +3,7 @@
 
 <head th:replace="fragments/fragment :: head"></head>
 
-<body style="background-image: url(https://www.teahub.io/photos/full/304-3040935_crypto-going-up.jpg); background-repeat: no-repeat">
+<body style="background-image: url(https://www.teahub.io/photos/full/304-3040935_crypto-going-up.jpg); background-repeat: no-repeat; height: 100%;">
 
 <header>
     <nav th:replace="fragments/fragment :: navigation"></nav>
@@ -17,7 +17,7 @@
 </div>
 
 
-<div style="padding-bottom: 100px; margin-right:150px; margin-left: 150px; background: transparent">
+<div th:each="w : ${wallet}" th:object="${w}" style="padding-bottom: 100px; margin-right:150px; margin-left: 150px; background: transparent">
 
     <table class="table table-dark table-striped">
         <thead class="table-light">
@@ -29,9 +29,54 @@
         </thead>
         <tbody>
         <tr>
-            <th scope="row">1</th>
+            <td>1</td>
             <td>Bitcoin</td>
-            <td>0</td>
+            <td th:text="*{bitcoin}"></td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Ethereum</td>
+            <td th:text="*{ethereum}"></td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Binance</td>
+            <td th:text="*{binance}"></td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Cardano</td>
+            <td th:text="*{cardano}"></td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>Tether</td>
+            <td th:text="*{tether}"></td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>Solana</td>
+            <td th:text="*{solana}"></td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>XRP</td>
+            <td th:text="*{xrp}"></td>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td>Polkadot</td>
+            <td th:text="*{polkadot}"></td>
+        </tr>
+        <tr>
+            <td>9</td>
+            <td>Dogecoin</td>
+            <td th:text="*{dogecoin}"></td>
+        </tr>
+        <tr>
+            <td>10</td>
+            <td>Usdcoin</td>
+            <td th:text="*{usdcoin}"></td>
         </tr>
         </tbody>
     </table>
