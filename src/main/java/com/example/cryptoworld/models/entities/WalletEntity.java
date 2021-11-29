@@ -43,7 +43,7 @@ public class WalletEntity extends BaseEntity{
         this.username = username;
     }
 
-    @Column(name = "bitcoin", columnDefinition = "Decimal(10,2) default '0'")
+    @Column(name = "bitcoin", columnDefinition = "Decimal(10,5) default '0.00000'")
     public double getBitcoin() {
         return bitcoin;
     }
@@ -51,7 +51,7 @@ public class WalletEntity extends BaseEntity{
     public void setBitcoin(double bitcoin) {
         this.bitcoin = bitcoin;
     }
-    @Column(name = "ethereum",  columnDefinition = "Decimal(10,2) default '0'")
+    @Column(name = "ethereum",  columnDefinition = "Decimal(10,5) default '0.00000'")
     public double getEthereum() {
         return ethereum;
     }
@@ -60,7 +60,7 @@ public class WalletEntity extends BaseEntity{
         this.ethereum = ethereum;
     }
 
-    @Column(name = "binance", columnDefinition = "Decimal(10,2) default '0'")
+    @Column(name = "binance", columnDefinition = "Decimal(10,5) default '0.00000'")
     public double getBinance() {
         return binance;
     }
@@ -69,7 +69,7 @@ public class WalletEntity extends BaseEntity{
         this.binance = binance;
     }
 
-    @Column(name = "cardano", columnDefinition = "Decimal(10,2) default '0'")
+    @Column(name = "cardano", columnDefinition = "Decimal(10,5) default '0.00000'")
     public double getCardano() {
         return cardano;
     }
@@ -78,7 +78,7 @@ public class WalletEntity extends BaseEntity{
         this.cardano = cardano;
     }
 
-    @Column(name = "tether", columnDefinition = "Decimal(10,2) default '0'")
+    @Column(name = "tether", columnDefinition = "Decimal(10,5) default '0.00000'")
     public double getTether() {
         return tether;
     }
@@ -87,7 +87,7 @@ public class WalletEntity extends BaseEntity{
         this.tether = tether;
     }
 
-    @Column(name = "solana", columnDefinition = "Decimal(10,2) default '0'")
+    @Column(name = "solana", columnDefinition = "Decimal(10,5) default '0.00000'")
     public double getSolana() {
         return solana;
     }
@@ -96,7 +96,7 @@ public class WalletEntity extends BaseEntity{
         this.solana = solana;
     }
 
-    @Column(name = "xrp", columnDefinition = "Decimal(10,2) default '0'")
+    @Column(name = "xrp", columnDefinition = "Decimal(10,5) default '0.00000'")
     public double getXrp() {
         return xrp;
     }
@@ -105,7 +105,7 @@ public class WalletEntity extends BaseEntity{
         this.xrp = xrp;
     }
 
-    @Column(name = "polkadot", columnDefinition = "Decimal(10,2) default '0'")
+    @Column(name = "polkadot", columnDefinition = "Decimal(10,5) default '0.00000'")
     public double getPolkadot() {
         return polkadot;
     }
@@ -114,7 +114,7 @@ public class WalletEntity extends BaseEntity{
         this.polkadot = polkadot;
     }
 
-    @Column(name = "dogecoin", columnDefinition = "Decimal(10,2) default '0'")
+    @Column(name = "dogecoin", columnDefinition = "Decimal(10,5) default '0.00000'")
     public double getDogecoin() {
         return dogecoin;
     }
@@ -123,7 +123,7 @@ public class WalletEntity extends BaseEntity{
         this.dogecoin = dogecoin;
     }
 
-    @Column(name = "usdcoin", columnDefinition = "Decimal(10,2) default '0'")
+    @Column(name = "usdcoin", columnDefinition = "Decimal(10,5) default '0.00000'")
     public double getUsdcoin() {
         return usdcoin;
     }

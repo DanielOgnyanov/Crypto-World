@@ -45,8 +45,9 @@ public class WalletServiceImpl implements WalletService {
             case "Bitcoin":
                 oldValue = walletEntity.getBitcoin();
 
+                double result = oldValue + cryptoValue;
 
-                walletEntity.setBitcoin(oldValue + cryptoValue);
+                walletEntity.setBitcoin(cryptoValue);
 
                 walletRepository.save(walletEntity);
                 break;
@@ -335,7 +336,10 @@ public class WalletServiceImpl implements WalletService {
 
     @Override
     public List<WalletViewModel> getAll() {
-        return walletRepository.findAll()
+
+        String username = userService.checkUsernameOfLoggedUser();
+
+        return walletRepository.findByUsernameMethod(username)
                 .stream()
                 .map(wallet -> modelMapper.map(wallet, WalletViewModel.class))
                 .collect(Collectors.toList());
