@@ -1,28 +1,26 @@
 package com.example.cryptoworld.service.Impl;
 
 import com.example.cryptoworld.models.binding.ChangeRoleBindingModel;
-import com.example.cryptoworld.models.entities.LogDeposit;
 import com.example.cryptoworld.models.entities.RoleEntity;
 import com.example.cryptoworld.models.entities.UserEntity;
+import com.example.cryptoworld.models.entities.WalletEntity;
 import com.example.cryptoworld.models.enums.EnumCountry;
 import com.example.cryptoworld.models.enums.EnumRole;
 import com.example.cryptoworld.models.service.UserRegistrationServiceModel;
 import com.example.cryptoworld.repository.RoleRepository;
 import com.example.cryptoworld.repository.UserRepository;
+import com.example.cryptoworld.repository.WalletRepository;
 import com.example.cryptoworld.service.CountryService;
 import com.example.cryptoworld.service.RoleService;
 import com.example.cryptoworld.service.UserService;
 import org.modelmapper.ModelMapper;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.security.SecureRandom;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
 
 @Service
@@ -36,13 +34,14 @@ public class UserServiceImpl implements UserService {
     private final CryptoWorldUserService cryptoWorldUserService;
     private final RoleService roleService;
     private final CountryService countryService;
+    private final WalletRepository walletRepository;
 
     public UserServiceImpl(UserRepository userRepository,
                            ModelMapper modelMapper,
                            PasswordEncoder passwordEncoder,
                            RoleRepository roleRepository,
                            CryptoWorldUserService cryptoWorldUserService, RoleService roleService,
-                           CountryService countryService) {
+                           CountryService countryService, WalletRepository walletRepository) {
         this.userRepository = userRepository;
         this.modelMapper = modelMapper;
         this.passwordEncoder = passwordEncoder;
@@ -51,6 +50,7 @@ public class UserServiceImpl implements UserService {
 
         this.roleService = roleService;
         this.countryService = countryService;
+        this.walletRepository = walletRepository;
     }
 
 
@@ -67,6 +67,8 @@ public class UserServiceImpl implements UserService {
     @Override
     public void register(UserRegistrationServiceModel userRegistrationServiceModel) {
 
+        // User init
+
         RoleEntity userRole = roleRepository.findByRole(EnumRole.USER).orElse(null);
 
         UserEntity userEntity = modelMapper.map(userRegistrationServiceModel, UserEntity.class);
@@ -82,6 +84,19 @@ public class UserServiceImpl implements UserService {
         userEntity.setWalletAddress(generateWalletAddress());
 
         userRepository.save(userEntity);
+
+
+        // wallet init
+
+
+        WalletEntity  walletInitWhenUserRegister = new WalletEntity();
+
+        walletInitWhenUserRegister.setOwner(userEntity);
+        walletInitWhenUserRegister.setUsername(userEntity.getUsername());
+
+
+        walletRepository.save(walletInitWhenUserRegister);
+
 
 
     }
@@ -167,6 +182,13 @@ public class UserServiceImpl implements UserService {
 
             userRepository.save(admin);
 
+            WalletEntity adminWallet = new WalletEntity();
+
+            adminWallet.setOwner(admin);
+            adminWallet.setUsername(admin.getUsername());
+
+            walletRepository.save(adminWallet);
+
             UserEntity user = new UserEntity();
 
             user.setUsername("ivan");
@@ -179,6 +201,13 @@ public class UserServiceImpl implements UserService {
             user.setDepositSet(new ArrayList<>());
 
             userRepository.save(user);
+
+            WalletEntity userWallet = new WalletEntity();
+
+            userWallet.setOwner(user);
+            userWallet.setUsername(user.getUsername());
+
+            walletRepository.save(userWallet);
         }
     }
 }
