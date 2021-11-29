@@ -1,20 +1,22 @@
 package com.example.cryptoworld.models.view;
 
+import com.example.cryptoworld.models.entities.UserEntity;
+
 public class CreditCardViewModel {
 
-    private String owner;
+    private UserEntity owner;
     private int expirationYear;
+    private double balance;
     private String typeCard;
 
     public CreditCardViewModel() {
     }
 
-
-    public String getOwner() {
+    public UserEntity getOwner() {
         return owner;
     }
 
-    public void setOwner(String owner) {
+    public void setOwner(UserEntity owner) {
         this.owner = owner;
     }
 
@@ -24,6 +26,14 @@ public class CreditCardViewModel {
 
     public void setExpirationYear(int expirationYear) {
         this.expirationYear = expirationYear;
+    }
+
+    public double getBalance() {
+        return balance;
+    }
+
+    public void setBalance(double balance) {
+        this.balance = balance;
     }
 
     public String getTypeCard() {

@@ -1,6 +1,7 @@
 package com.example.cryptoworld.web;
 
 
+import com.example.cryptoworld.service.CreditCartService;
 import com.example.cryptoworld.service.CryptoService;
 import com.example.cryptoworld.service.WalletService;
 import org.springframework.stereotype.Controller;
@@ -12,10 +13,12 @@ public class HomeController {
 
     private final WalletService walletService;
     private final CryptoService cryptoService;
+    private final CreditCartService creditCartService;
 
-    public HomeController(WalletService walletService, CryptoService cryptoService) {
+    public HomeController(WalletService walletService, CryptoService cryptoService, CreditCartService creditCartService) {
         this.walletService = walletService;
         this.cryptoService = cryptoService;
+        this.creditCartService = creditCartService;
     }
 
     @GetMapping("/")
@@ -29,6 +32,7 @@ public class HomeController {
 
         model.addAttribute("wallet" , walletService.getAll());
         model.addAttribute("crypto", cryptoService.getAllCrypto());
+        model.addAttribute("card",creditCartService.getCardByOwner());
         return "home";
     }
 }
