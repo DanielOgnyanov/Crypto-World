@@ -52,7 +52,7 @@
                     <div class="col-sm-10">
 
 
-                        <input  th:field="*{deposit}"  th:errorclass = "bg-danger" type="text" class="form-control">
+                        <input  th:field="*{deposit}"  th:errorclass = "bg-danger" type="number" class="form-control">
 
                         <small th:if = "${#fields.hasErrors('deposit')}"  th:errors = "*{deposit}" class="bg-danger text-light rounded">
                             Deposit must be Positive and over 10!
