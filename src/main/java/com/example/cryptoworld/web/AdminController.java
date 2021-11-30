@@ -1,10 +1,9 @@
 package com.example.cryptoworld.web;
 
 import com.example.cryptoworld.models.binding.ChangeRoleBindingModel;
-import com.example.cryptoworld.models.entities.RoleEntity;
-import com.example.cryptoworld.models.entities.UserEntity;
 import com.example.cryptoworld.models.service.ChangeRoleServiceModel;
 import com.example.cryptoworld.service.AdminService;
+import com.example.cryptoworld.service.LogDepositService;
 import com.example.cryptoworld.service.RoleService;
 import com.example.cryptoworld.service.UserService;
 import org.modelmapper.ModelMapper;
@@ -26,12 +25,14 @@ public class AdminController {
     private final UserService userService;
     private final AdminService adminService;
     private final RoleService roleService;
+    private final LogDepositService logDepositService;
 
-    public AdminController(ModelMapper modelMapper, UserService userService, AdminService adminService, RoleService roleService) {
+    public AdminController(ModelMapper modelMapper, UserService userService, AdminService adminService, RoleService roleService, LogDepositService logDepositService) {
         this.modelMapper = modelMapper;
         this.userService = userService;
         this.adminService = adminService;
         this.roleService = roleService;
+        this.logDepositService = logDepositService;
     }
 
     @GetMapping("/setting")
@@ -56,6 +57,11 @@ public class AdminController {
             model.addAttribute("changeRoleBindingModel", new ChangeRoleBindingModel());
             model.addAttribute("removeRoleCheck", false);
         }
+
+
+        // view add
+
+        model.addAttribute("logDeposit", logDepositService.getAllDepositOrderedDesc());
 
 
         return "admin";

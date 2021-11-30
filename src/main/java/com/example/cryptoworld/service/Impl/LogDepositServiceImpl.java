@@ -3,6 +3,7 @@ package com.example.cryptoworld.service.Impl;
 import com.example.cryptoworld.models.entities.*;
 import com.example.cryptoworld.models.enums.EnumCryptoTop10;
 import com.example.cryptoworld.models.service.LogDepositServiceModel;
+import com.example.cryptoworld.models.view.LogDepositView;
 import com.example.cryptoworld.repository.*;
 import com.example.cryptoworld.service.LogDepositService;
 import com.example.cryptoworld.service.WalletService;
@@ -10,6 +11,8 @@ import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class LogDepositServiceImpl implements LogDepositService {
@@ -105,6 +108,15 @@ public class LogDepositServiceImpl implements LogDepositService {
         // END
 
 
+    }
+
+    @Override
+    public List<LogDepositView> getAllDepositOrderedDesc() {
+        return logDepositRepository
+                .findAllDepositOrderedDesc()
+                .stream()
+                .map(log -> modelMapper.map(log, LogDepositView.class))
+                .collect(Collectors.toList());
     }
 
 
