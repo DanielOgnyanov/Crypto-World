@@ -64,6 +64,8 @@ public class AdminController {
 
         model.addAttribute("logSell", logSellService.getAllSellOrderDesc());
 
+        model.addAttribute("user", userService.getAllUsersOrderedByUsername());
+
         return "admin";
     }
 

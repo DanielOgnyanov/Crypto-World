@@ -7,6 +7,7 @@ import com.example.cryptoworld.models.entities.WalletEntity;
 import com.example.cryptoworld.models.enums.EnumCountry;
 import com.example.cryptoworld.models.enums.EnumRole;
 import com.example.cryptoworld.models.service.UserRegistrationServiceModel;
+import com.example.cryptoworld.models.view.UserView;
 import com.example.cryptoworld.repository.RoleRepository;
 import com.example.cryptoworld.repository.UserRepository;
 import com.example.cryptoworld.repository.WalletRepository;
@@ -22,6 +23,7 @@ import org.springframework.stereotype.Service;
 import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -144,6 +146,15 @@ public class UserServiceImpl implements UserService {
             }
         }
         return false;
+    }
+
+    @Override
+    public List<UserView> getAllUsersOrderedByUsername() {
+        return userRepository
+                .findAllOrderedByUsername()
+                .stream()
+                .map(user -> modelMapper.map(user, UserView.class))
+                .collect(Collectors.toList());
     }
 
 

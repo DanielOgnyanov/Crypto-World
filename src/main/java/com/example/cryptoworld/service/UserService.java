@@ -3,6 +3,9 @@ package com.example.cryptoworld.service;
 import com.example.cryptoworld.models.binding.ChangeRoleBindingModel;
 import com.example.cryptoworld.models.entities.UserEntity;
 import com.example.cryptoworld.models.service.UserRegistrationServiceModel;
+import com.example.cryptoworld.models.view.UserView;
+
+import java.util.List;
 
 public interface UserService {
     void initializeUsers();
@@ -19,4 +22,7 @@ public interface UserService {
     String checkUsernameOfLoggedUser();
 
     boolean checkIfUserHasRoleOrNot(ChangeRoleBindingModel changeRoleBindingModel);
+
+
+    List<UserView> getAllUsersOrderedByUsername();
 }
