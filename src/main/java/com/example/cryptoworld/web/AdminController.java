@@ -2,10 +2,7 @@ package com.example.cryptoworld.web;
 
 import com.example.cryptoworld.models.binding.ChangeRoleBindingModel;
 import com.example.cryptoworld.models.service.ChangeRoleServiceModel;
-import com.example.cryptoworld.service.AdminService;
-import com.example.cryptoworld.service.LogDepositService;
-import com.example.cryptoworld.service.RoleService;
-import com.example.cryptoworld.service.UserService;
+import com.example.cryptoworld.service.*;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -26,13 +23,15 @@ public class AdminController {
     private final AdminService adminService;
     private final RoleService roleService;
     private final LogDepositService logDepositService;
+    private final LogSellService logSellService;
 
-    public AdminController(ModelMapper modelMapper, UserService userService, AdminService adminService, RoleService roleService, LogDepositService logDepositService) {
+    public AdminController(ModelMapper modelMapper, UserService userService, AdminService adminService, RoleService roleService, LogDepositService logDepositService, LogSellService logSellService) {
         this.modelMapper = modelMapper;
         this.userService = userService;
         this.adminService = adminService;
         this.roleService = roleService;
         this.logDepositService = logDepositService;
+        this.logSellService = logSellService;
     }
 
     @GetMapping("/setting")
@@ -63,6 +62,7 @@ public class AdminController {
 
         model.addAttribute("logDeposit", logDepositService.getAllDepositOrderedDesc());
 
+        model.addAttribute("logSell", logSellService.getAllSellOrderDesc());
 
         return "admin";
     }

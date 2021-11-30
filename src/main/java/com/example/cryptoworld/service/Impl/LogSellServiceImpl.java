@@ -6,6 +6,7 @@ import com.example.cryptoworld.models.entities.LogSell;
 import com.example.cryptoworld.models.entities.UserEntity;
 import com.example.cryptoworld.models.enums.EnumCryptoTop10;
 import com.example.cryptoworld.models.service.SellCryptoServiceModel;
+import com.example.cryptoworld.models.view.LogSellView;
 import com.example.cryptoworld.repository.CreditCardRepository;
 import com.example.cryptoworld.repository.CryptoRepository;
 import com.example.cryptoworld.repository.LogSellRepository;
@@ -16,6 +17,8 @@ import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class LogSellServiceImpl implements LogSellService {
@@ -94,6 +97,15 @@ public class LogSellServiceImpl implements LogSellService {
 
 
         // END
+    }
+
+    @Override
+    public List<LogSellView> getAllSellOrderDesc() {
+        return logSellRepository
+                .getAllLogSellOrderDesc()
+                .stream()
+                .map(sell -> modelMapper.map(sell, LogSellView.class))
+                .collect(Collectors.toList());
     }
 
 
