@@ -34,17 +34,20 @@ public class AdminServiceImpl implements AdminService {
 
         if (changeRoleServiceModel.getAddOrRemove().name().equals("ADD")) {
             userEntity.addRole(roleEntity);
+            userRepository.save(userEntity);
         } else {
             for (RoleEntity role : userEntity.getRoles()) {
                 if(role.getRole().name().equals("ADMIN")) {
                     userEntity.removeRole(role);
+                    userRepository.save(userEntity);
+                    return;
                 }
             }
 
         }
 
 
-        userRepository.save(userEntity);
+
 
 
     }
