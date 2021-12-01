@@ -121,7 +121,7 @@
 </div>
 
 
-<div th:each="ca : ${card}" th:object="${ca}" style="padding-bottom: 100px; margin-right:250px; margin-left: 250px; background: transparent">
+<div style="padding-bottom: 100px; margin-right:250px; margin-left: 250px; background: transparent">
 
     <table class="table table-dark table-striped">
         <thead class="table-light">
@@ -133,8 +133,8 @@
         </tr>
         </thead>
         <tbody>
-        <tr>
-            <th scope="row" th:text="*{owner.fullName}"></th>
+        <tr th:each="ca : ${card}" th:object="${ca}">
+            <th th:text="*{owner.fullName}"></th>
             <td th:text="*{balance}"></td>
             <td th:text="*{expirationYear}"></td>
             <td th:text="*{typeCard}"></td>

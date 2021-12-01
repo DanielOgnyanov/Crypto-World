@@ -37,7 +37,7 @@
                     <th:block sec:authorize="isAuthenticated()" >
 
                         <li  class="nav-item">
-                            <a class="nav-link active text-white" aria-current="page" th:href="@{/}">Home</a>
+                            <a class="nav-link active text-white" aria-current="page" th:href="@{/home}">Home</a>
                         </li>
 
                         <li sec:authorize="hasRole('ADMIN')"  class="nav-item">
