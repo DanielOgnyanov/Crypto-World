@@ -97,7 +97,7 @@ public class LogDepositServiceImpl implements LogDepositService {
         // UPDATE CREDIT CARD BALANCE
 
         CreditCardEntity cardEntity =
-                creditCardRepository.findById(userEntity.getId()).orElse(null);
+                creditCardRepository.findByUsernameMethod(userEntity.getUsername());
 
         double newBalance =
                 cardEntity.getBalance().doubleValue() - logDepositServiceModel.getDeposit();

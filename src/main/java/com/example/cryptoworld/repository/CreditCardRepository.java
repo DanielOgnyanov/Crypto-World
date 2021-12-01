@@ -11,6 +11,7 @@ import java.util.List;
 @Repository
 public interface CreditCardRepository extends JpaRepository<CreditCardEntity, Long> {
 
+
     CreditCardEntity findByOwner(String owner);
 
     @Query("select c from CreditCardEntity  as c where c.owner.username like :username")
@@ -19,4 +20,8 @@ public interface CreditCardRepository extends JpaRepository<CreditCardEntity, Lo
 
     @Query("select ca from CreditCardEntity as ca order by ca.balance desc ")
     List<CreditCardEntity> getAllCardOrderedByBalance();
+
+
+    @Query("select cr from CreditCardEntity as cr where cr.owner.username like :username")
+    CreditCardEntity findByUsernameMethod(String username);
 }

@@ -47,7 +47,7 @@ public class WalletServiceImpl implements WalletService {
 
                 double result = oldValue + cryptoValue;
 
-                walletEntity.setBitcoin(cryptoValue);
+                walletEntity.setBitcoin(result);
 
                 walletRepository.save(walletEntity);
                 break;

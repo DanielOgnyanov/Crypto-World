@@ -85,7 +85,7 @@ public class LogSellServiceImpl implements LogSellService {
         // CREDIT CARD START
 
         CreditCardEntity cardEntity =
-                creditCardRepository.findById(userEntity.getId()).orElse(null);
+                creditCardRepository.findByUsernameMethod(userEntity.getUsername());
 
 
         double newBalance =

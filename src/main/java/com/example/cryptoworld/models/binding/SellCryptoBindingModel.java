@@ -30,7 +30,7 @@ public class SellCryptoBindingModel {
     }
 
     @NotNull(message = "Sell value cannot be empty !")
-    @DecimalMin(value = "0.009", message = "Sell value must be Positive and over 0.009!")
+    @DecimalMin(value = "0.001", message = "Sell value must be Positive and over 0.001!")
     public double getSellValue() {
         return sellValue;
     }
