@@ -180,6 +180,36 @@
     </div>
 
 
+    <div class="container text-light" style="margin-top: 20px; padding-bottom: 15px;">
+        <h1 class="display-3">
+            <strong class="bg-blur rounded border-left border-white pl-3 border-bottom">User By Balance</strong>
+        </h1>
+    </div>
+
+
+    <div style="padding-bottom: 100px; margin-right:300px; margin-left: 300px; background: transparent">
+
+        <table class="table table-dark table-striped">
+            <thead class="table-light">
+            <tr>
+                <th scope="col">Full Name</th>
+                <th scope="col">Balance</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="us : ${userByCardBalance}" th:object="${us}">
+                <th th:text="*{owner.fullName}"></th>
+                <td th:text="*{balance}"></td>
+
+            </tr>
+            </tbody>
+        </table>
+
+
+    </div>
+
+
+
 </main>
 
 

@@ -15,4 +15,8 @@ public interface CreditCardRepository extends JpaRepository<CreditCardEntity, Lo
 
     @Query("select c from CreditCardEntity  as c where c.owner.username like :username")
     List<CreditCardEntity> getCardByOwner(String username);
+
+
+    @Query("select ca from CreditCardEntity as ca order by ca.balance desc ")
+    List<CreditCardEntity> getAllCardOrderedByBalance();
 }

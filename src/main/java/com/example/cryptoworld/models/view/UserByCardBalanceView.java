@@ -1,19 +1,22 @@
 package com.example.cryptoworld.models.view;
 
+import com.example.cryptoworld.models.entities.UserEntity;
+
 public class UserByCardBalanceView {
 
-    private String owner;
+    private UserEntity owner;
     private double balance;
 
 
     public UserByCardBalanceView() {
     }
 
-    public String getOwner() {
+
+    public UserEntity getOwner() {
         return owner;
     }
 
-    public void setOwner(String owner) {
+    public void setOwner(UserEntity owner) {
         this.owner = owner;
     }
 

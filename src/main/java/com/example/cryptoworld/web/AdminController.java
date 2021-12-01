@@ -24,14 +24,16 @@ public class AdminController {
     private final RoleService roleService;
     private final LogDepositService logDepositService;
     private final LogSellService logSellService;
+    private final CreditCartService creditCartService;
 
-    public AdminController(ModelMapper modelMapper, UserService userService, AdminService adminService, RoleService roleService, LogDepositService logDepositService, LogSellService logSellService) {
+    public AdminController(ModelMapper modelMapper, UserService userService, AdminService adminService, RoleService roleService, LogDepositService logDepositService, LogSellService logSellService, CreditCartService creditCartService) {
         this.modelMapper = modelMapper;
         this.userService = userService;
         this.adminService = adminService;
         this.roleService = roleService;
         this.logDepositService = logDepositService;
         this.logSellService = logSellService;
+        this.creditCartService = creditCartService;
     }
 
     @GetMapping("/setting")
@@ -65,6 +67,8 @@ public class AdminController {
         model.addAttribute("logSell", logSellService.getAllSellOrderDesc());
 
         model.addAttribute("user", userService.getAllUsersOrderedByUsername());
+
+        model.addAttribute("userByCardBalance", creditCartService.getAllUserOrderedByBalance());
 
         return "admin";
     }

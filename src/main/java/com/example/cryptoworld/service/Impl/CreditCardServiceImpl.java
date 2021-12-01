@@ -4,6 +4,7 @@ import com.example.cryptoworld.models.entities.CreditCardEntity;
 import com.example.cryptoworld.models.entities.UserEntity;
 import com.example.cryptoworld.models.service.AddCreditCardServiceModel;
 import com.example.cryptoworld.models.view.CreditCardViewModel;
+import com.example.cryptoworld.models.view.UserByCardBalanceView;
 import com.example.cryptoworld.repository.CreditCardRepository;
 import com.example.cryptoworld.repository.UserRepository;
 import com.example.cryptoworld.service.CreditCartService;
@@ -68,6 +69,15 @@ public class CreditCardServiceImpl implements CreditCartService {
                 .getCardByOwner(username)
                 .stream()
                 .map(card -> modelMapper.map(card, CreditCardViewModel.class))
+                .collect(Collectors.toList());
+    }
+
+    @Override
+    public List<UserByCardBalanceView> getAllUserOrderedByBalance() {
+        return creditCardRepository
+                .getAllCardOrderedByBalance()
+                .stream()
+                .map(card -> modelMapper.map(card, UserByCardBalanceView.class))
                 .collect(Collectors.toList());
     }
 
