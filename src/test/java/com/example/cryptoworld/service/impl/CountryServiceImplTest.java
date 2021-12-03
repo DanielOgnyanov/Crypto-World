@@ -11,6 +11,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
 import java.util.List;
 import java.util.Optional;
@@ -23,18 +24,12 @@ public class CountryServiceImplTest {
 
 
     @Mock
-    CountryRepository mockCountryRepo;
+    private CountryRepository mockCountryRepo;
 
-
-    @BeforeEach
-
-    public void init() {
-       serviceCountry = new CountryServiceImpl(mockCountryRepo);
-    }
 
 
     @Test
-    public void testSize() {
+    public void testName() {
 
         countryEntity = new CountryEntity();
 
@@ -43,5 +38,19 @@ public class CountryServiceImplTest {
         Assertions.assertEquals("Bulgaria", countryEntity.getName().name());
 
     }
+
+    @Test
+    public void testSize() {
+
+        CountryEntity entity = new CountryEntity();
+
+        entity.setName(EnumCountry.Bulgaria);
+
+        CountryEntity save = mockCountryRepo.save(entity);
+
+        Assertions.assertTrue(save.getId() > 0);
+
+    }
+
 
 }
