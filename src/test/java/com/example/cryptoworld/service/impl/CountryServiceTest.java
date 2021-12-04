@@ -9,11 +9,9 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
 import java.util.List;
 import java.util.Optional;
@@ -30,7 +28,7 @@ public class CountryServiceTest {
 
 
     @BeforeEach
-    public void  init () {
+    public void init() {
 
         this.countryEntity = new CountryEntity();
         this.countryEntity.setName(EnumCountry.Bulgaria);
@@ -61,15 +59,17 @@ public class CountryServiceTest {
     @Test
     public void testInitCountryInDb() {
 
-        Mockito.when(mockCountryRepo.findByName(EnumCountry.Bulgaria)).thenReturn(Optional.of(this.countryEntity));
+        Mockito.when(mockCountryRepo.findAll()).thenReturn(List.of(this.countryEntity));
 
         CountryService countryService = new CountryServiceImpl(this.mockCountryRepo);
 
-        long expected = 1;
 
-        long actual = mockCountryRepo.count();
+        countryService.InitCountryInDb();
 
-        Assertions.assertEquals(expected, actual);
+
+        Assertions.assertEquals(1, this.mockCountryRepo.findAll().size());
+
+
     }
 
 
