@@ -44,12 +44,19 @@ public class RoleServiceTest {
     public void testInitRoleInDb() {
 
         Mockito.when(roleRepository.findAll()).thenReturn(List.of(this.roleEntity));
+        Mockito.when(roleRepository.findById(1L)).thenReturn(java.util.Optional.ofNullable(roleEntity));
 
         RoleService roleService = new RoleServiceImpl(this.roleRepository);
 
         roleService.InitRoleInDb();
 
+        RoleEntity actual = roleService.getRole(1L);
+
+        RoleEntity expected = roleEntity;
+
         Assertions.assertEquals(1, this.roleRepository.findAll().size());
+
+        Assertions.assertEquals(expected.getRole().name(), actual.getRole().name());
 
 
     }
