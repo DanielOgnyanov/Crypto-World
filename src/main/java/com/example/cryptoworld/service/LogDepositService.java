@@ -9,4 +9,6 @@ public interface LogDepositService {
     void addLogDeposit(LogDepositServiceModel logDepositServiceModel);
 
     List<LogDepositView> getAllDepositOrderedDesc();
+
+    void deleteLowestDeposit();
 }

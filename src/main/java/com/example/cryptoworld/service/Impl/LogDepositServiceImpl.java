@@ -119,6 +119,11 @@ public class LogDepositServiceImpl implements LogDepositService {
                 .collect(Collectors.toList());
     }
 
+    @Override
+    public void deleteLowestDeposit() {
+        logDepositRepository
+    }
+
 
     protected double calcCryptoValue(EnumCryptoTop10 cryptoName, double depositValue) {
 

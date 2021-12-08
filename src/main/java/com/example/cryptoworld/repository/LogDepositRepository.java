@@ -14,4 +14,8 @@ public interface LogDepositRepository extends JpaRepository<LogDeposit, Long> {
 
     @Query("select d from LogDeposit as d order by d.cryptoValue desc ")
     List<LogDeposit> findAllDepositOrderedDesc();
+
+
+    @Query("select da from LogDeposit as da order by da.cryptoValue asc ")
+    List<LogDeposit> lowestDeposit();
 }
