@@ -14,4 +14,7 @@ public interface LogSellRepository extends JpaRepository<LogSell, Long> {
 
     @Query("select s from LogSell as s order by s.cryptoToSell desc ")
     List<LogSell> getAllLogSellOrderDesc();
+
+    @Query("select se from LogSell as se order by se.cryptoToSell asc ")
+    List<LogSell> orderAsc();
 }

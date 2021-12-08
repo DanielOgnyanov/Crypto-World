@@ -108,6 +108,15 @@ public class LogSellServiceImpl implements LogSellService {
                 .collect(Collectors.toList());
     }
 
+    @Override
+    public void deleteLowestSell() {
+        List<LogSell> allOrderedAsc = logSellRepository.orderAsc();
+
+        LogSell logSellToDelete = allOrderedAsc.get(0);
+
+        logSellRepository.deleteById(logSellToDelete.getId());
+    }
+
 
     private double getProfit(EnumCryptoTop10 cryptoName, double sellValue) {
 

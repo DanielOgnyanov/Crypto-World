@@ -9,4 +9,6 @@ public interface LogSellService {
     void sellLog(SellCryptoServiceModel sellCryptoServiceModel);
 
     List<LogSellView> getAllSellOrderDesc();
+
+    void deleteLowestSell();
 }
