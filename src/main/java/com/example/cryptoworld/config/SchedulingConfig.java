@@ -17,6 +17,6 @@ public class SchedulingConfig {
 
     @Scheduled(cron = "0 0 0 25 12 ?")
     public void deleteLogDeposit(){
-
+        logDepositService.deleteLowestDeposit();
     }
 }
