@@ -121,7 +121,11 @@ public class LogDepositServiceImpl implements LogDepositService {
 
     @Override
     public void deleteLowestDeposit() {
-        logDepositRepository
+       List<LogDeposit> allOrderedAsc = logDepositRepository.lowestDeposit();
+
+       LogDeposit logToDelete = allOrderedAsc.get(0);
+
+       logDepositRepository.deleteById(logToDelete.getId());
     }
 
 
