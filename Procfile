@@ -1,0 +1,1 @@
+web: java -jar target/Crypto-World-0.0.1-SNAPSHOT.jar
