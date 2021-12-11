@@ -4,11 +4,13 @@ import com.example.cryptoworld.service.CountryService;
 import com.example.cryptoworld.service.CryptoService;
 import com.example.cryptoworld.service.RoleService;
 import com.example.cryptoworld.service.UserService;
+import com.example.cryptoworld.utils.event.initEvent;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;
 
 @Component
-public class DatabaseInit implements CommandLineRunner {
+public class DatabaseInit  {
 
     private final CountryService countryService;
     private final RoleService roleService;
@@ -22,12 +24,24 @@ public class DatabaseInit implements CommandLineRunner {
         this.userService = userService;
     }
 
-    @Override
-    public void run(String... args) throws Exception {
+    //extends CommandLineRunner
+    // @Override
+    //    public void run(String... args) throws Exception {
+    //        countryService.InitCountryInDb();
+    //        roleService.InitRoleInDb();
+    //        cryptoService.InitCryptoInDb();
+    //        userService.initializeUsers();
+    //
+    //    }
+
+
+    @EventListener(initEvent.class)
+    public void run () {
         countryService.InitCountryInDb();
         roleService.InitRoleInDb();
         cryptoService.InitCryptoInDb();
         userService.initializeUsers();
 
     }
+
 }
