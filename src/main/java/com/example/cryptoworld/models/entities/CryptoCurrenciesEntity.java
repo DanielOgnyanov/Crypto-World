@@ -9,7 +9,7 @@ import javax.persistence.*;
 @Table(name = "crypto_currencies")
 public class CryptoCurrenciesEntity extends BaseEntity{
 
-    private EnumCryptoTop10 currencies;
+    private EnumCryptoTop10 name;
     private double price;
 
 
@@ -18,18 +18,18 @@ public class CryptoCurrenciesEntity extends BaseEntity{
 
 
     public CryptoCurrenciesEntity(EnumCryptoTop10 currencies, double price) {
-        this.currencies = currencies;
+        this.name = currencies;
         this.price = price;
     }
 
     @Column(name = "name")
     @Enumerated(EnumType.STRING)
-    public EnumCryptoTop10 getCurrencies() {
-        return currencies;
+    public EnumCryptoTop10 getName() {
+        return name;
     }
 
-    public void setCurrencies(EnumCryptoTop10 currencies) {
-        this.currencies = currencies;
+    public void setName(EnumCryptoTop10 currencies) {
+        this.name = currencies;
     }
 
     @Column(name = "price")
