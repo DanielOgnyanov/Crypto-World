@@ -1,14 +1,13 @@
 package com.example.cryptoworld.service.Impl;
 
-import com.example.cryptoworld.models.entities.CryptoCurrenciesEntity;
-import com.example.cryptoworld.models.enums.EnumCryptoTop10;
 import com.example.cryptoworld.models.view.CryptoViewModel;
 import com.example.cryptoworld.repository.CryptoRepository;
 import com.example.cryptoworld.service.CryptoService;
+import com.example.cryptoworld.service.RealTimeCryptoPriceService;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
-import java.util.Arrays;
+import java.io.IOException;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -18,29 +17,32 @@ public class CryptoServiceImpl implements CryptoService {
 
     private final CryptoRepository cryptoRepository;
     private final ModelMapper modelMapper;
+    private final RealTimeCryptoPriceService realTimeCryptoPriceService;
 
-    public CryptoServiceImpl(CryptoRepository cryptoRepository, ModelMapper modelMapper) {
+    public CryptoServiceImpl(CryptoRepository cryptoRepository, ModelMapper modelMapper, RealTimeCryptoPriceService realTimeCryptoPriceService) {
         this.cryptoRepository = cryptoRepository;
         this.modelMapper = modelMapper;
+        this.realTimeCryptoPriceService = realTimeCryptoPriceService;
     }
 
 
     @Override
-    public void InitCryptoInDb() {
+    public void InitCryptoInDb() throws IOException {
 
         if (cryptoRepository.count() == 0) {
 
-            Arrays.stream(EnumCryptoTop10.values())
-                    .forEach(currentValue -> {
+            // Arrays.stream(EnumCryptoTop10.values())
+            //                    .forEach(currentValue -> {
+            //
+            //                        CryptoCurrenciesEntity currCrypto =
+            //                                new CryptoCurrenciesEntity(currentValue, currentValue.getPrice());
+            //
+            //                        cryptoRepository.save(currCrypto);
+            //
+            //
+            //                    });
 
-                        CryptoCurrenciesEntity currCrypto =
-                                new CryptoCurrenciesEntity(currentValue, currentValue.getPrice());
-
-                        cryptoRepository.save(currCrypto);
-
-
-                    });
-
+            realTimeCryptoPriceService.getRealTimePrice();
 
         }
     }

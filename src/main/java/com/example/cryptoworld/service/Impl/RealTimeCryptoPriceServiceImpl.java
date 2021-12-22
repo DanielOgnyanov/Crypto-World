@@ -1,6 +1,8 @@
 package com.example.cryptoworld.service.Impl;
 
 
+import com.example.cryptoworld.models.entities.CryptoCurrenciesEntity;
+import com.example.cryptoworld.repository.CryptoRepository;
 import com.example.cryptoworld.service.RealTimeCryptoPriceService;
 import com.squareup.okhttp.OkHttpClient;
 import com.squareup.okhttp.Request;
@@ -15,6 +17,11 @@ import java.math.BigDecimal;
 @Service
 public class RealTimeCryptoPriceServiceImpl implements RealTimeCryptoPriceService {
 
+    private final CryptoRepository cryptoRepository;
+
+    public RealTimeCryptoPriceServiceImpl(CryptoRepository cryptoRepository) {
+        this.cryptoRepository = cryptoRepository;
+    }
 
     @Override
     public void getRealTimePrice() throws IOException {
@@ -40,6 +47,11 @@ public class RealTimeCryptoPriceServiceImpl implements RealTimeCryptoPriceServic
             String assetId = (String) currentCryptoObject.get("asset_id");
 
             BigDecimal price = currentCryptoObject.getBigDecimal("price_usd");
+
+            CryptoCurrenciesEntity currenciesEntity =
+                    new CryptoCurrenciesEntity(name,assetId,price.doubleValue());
+
+            cryptoRepository.save(currenciesEntity);
         }
     }
 }

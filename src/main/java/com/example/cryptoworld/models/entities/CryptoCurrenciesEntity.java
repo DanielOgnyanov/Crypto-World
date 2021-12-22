@@ -1,15 +1,15 @@
 package com.example.cryptoworld.models.entities;
 
 
-import com.example.cryptoworld.models.enums.EnumCryptoTop10;
-
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
 @Entity
 @Table(name = "crypto_currencies")
 public class CryptoCurrenciesEntity extends BaseEntity{
 
-    private EnumCryptoTop10 name;
+    private String name;
     private String assetStringId;
     private double price;
 
@@ -17,24 +17,23 @@ public class CryptoCurrenciesEntity extends BaseEntity{
     public CryptoCurrenciesEntity() {
     }
 
-    public CryptoCurrenciesEntity(EnumCryptoTop10 name, String assetStringId, double price) {
+    public CryptoCurrenciesEntity(String name, String assetStringId, double price) {
         this.name = name;
         this.assetStringId = assetStringId;
         this.price = price;
     }
 
-    public CryptoCurrenciesEntity(EnumCryptoTop10 currencies, double price) {
+    public CryptoCurrenciesEntity(String currencies, double price) {
         this.name = currencies;
         this.price = price;
     }
 
     @Column(name = "name")
-    @Enumerated(EnumType.STRING)
-    public EnumCryptoTop10 getName() {
+    public String getName() {
         return name;
     }
 
-    public void setName(EnumCryptoTop10 currencies) {
+    public void setName(String currencies) {
         this.name = currencies;
     }
 
