@@ -31,17 +31,6 @@ public class CryptoServiceImpl implements CryptoService {
 
         if (cryptoRepository.count() == 0) {
 
-            // Arrays.stream(EnumCryptoTop10.values())
-            //                    .forEach(currentValue -> {
-            //
-            //                        CryptoCurrenciesEntity currCrypto =
-            //                                new CryptoCurrenciesEntity(currentValue, currentValue.getPrice());
-            //
-            //                        cryptoRepository.save(currCrypto);
-            //
-            //
-            //                    });
-
             realTimeCryptoPriceService.getRealTimePrice();
 
         }
