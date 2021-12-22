@@ -3,7 +3,7 @@ package com.example.cryptoworld.models.view;
 public class CryptoViewModel {
 
     private Long id;
-    private String currencies;
+    private String name;
     private double price;
 
 
@@ -19,12 +19,12 @@ public class CryptoViewModel {
         this.id = id;
     }
 
-    public String getCurrencies() {
-        return currencies;
+    public String getName() {
+        return name;
     }
 
-    public void setCurrencies(String currencies) {
-        this.currencies = currencies;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public double getPrice() {
