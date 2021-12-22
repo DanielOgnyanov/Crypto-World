@@ -122,7 +122,7 @@ public class LogSellServiceImpl implements LogSellService {
 
 
         CryptoCurrenciesEntity currCrypto =
-                cryptoRepository.findByCurrencies(cryptoName).orElse(null);
+                cryptoRepository.findByName(cryptoName).orElse(null);
 
 
         double result = 0;

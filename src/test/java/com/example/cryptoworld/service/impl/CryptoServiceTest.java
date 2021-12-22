@@ -31,7 +31,7 @@ public class CryptoServiceTest {
     public void init() {
 
         this.cryptoCurrenciesEntity = new CryptoCurrenciesEntity();
-        this.cryptoCurrenciesEntity.setCurrencies(EnumCryptoTop10.Bitcoin);
+        this.cryptoCurrenciesEntity.setName(EnumCryptoTop10.Bitcoin);
         this.cryptoCurrenciesEntity.setPrice(66000);
 
         this.cryptoRepository = Mockito.mock(CryptoRepository.class);

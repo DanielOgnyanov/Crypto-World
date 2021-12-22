@@ -37,6 +37,8 @@ public class RealTimeCryptoPriceServiceImpl implements RealTimeCryptoPriceServic
 
             String name = (String) currentCryptoObject.get("name");
 
+            String assetId = (String) currentCryptoObject.get("asset_id");
+
             BigDecimal price = currentCryptoObject.getBigDecimal("price_usd");
         }
     }

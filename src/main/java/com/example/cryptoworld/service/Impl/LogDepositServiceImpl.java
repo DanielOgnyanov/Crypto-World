@@ -132,7 +132,7 @@ public class LogDepositServiceImpl implements LogDepositService {
     protected double calcCryptoValue(EnumCryptoTop10 cryptoName, double depositValue) {
 
         CryptoCurrenciesEntity currCrypto =
-                cryptoRepository.findByCurrencies(cryptoName).orElse(null);
+                cryptoRepository.findByName(cryptoName).orElse(null);
 
         double result = 0;
 

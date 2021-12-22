@@ -10,5 +10,5 @@ import java.util.Optional;
 @Repository
 public interface CryptoRepository extends JpaRepository<CryptoCurrenciesEntity, Long> {
 
-    Optional<CryptoCurrenciesEntity> findByCurrencies(EnumCryptoTop10 cryptoName);
+    Optional<CryptoCurrenciesEntity> findByName(EnumCryptoTop10 cryptoName);
 }
