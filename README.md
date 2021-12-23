@@ -8,7 +8,3 @@ for example Bitcoin, Ethereum, Binance , Solana and more.
 
 The application is build from scratch with  java 11, html 5 and css. If you want check the src folder for more info about the source code, and the different
 implementation of the functionality.
-
-The aplication is deployed on Heroku. 
-
-----Link: https://crypto--world.herokuapp.com/ 
