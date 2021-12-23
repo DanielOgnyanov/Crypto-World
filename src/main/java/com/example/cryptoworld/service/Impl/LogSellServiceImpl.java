@@ -4,7 +4,6 @@ import com.example.cryptoworld.models.entities.CreditCardEntity;
 import com.example.cryptoworld.models.entities.CryptoCurrenciesEntity;
 import com.example.cryptoworld.models.entities.LogSell;
 import com.example.cryptoworld.models.entities.UserEntity;
-import com.example.cryptoworld.models.enums.EnumCryptoTop10;
 import com.example.cryptoworld.models.service.SellCryptoServiceModel;
 import com.example.cryptoworld.models.view.LogSellView;
 import com.example.cryptoworld.repository.CreditCardRepository;
@@ -59,7 +58,7 @@ public class LogSellServiceImpl implements LogSellService {
         logSell.setSellPerson(userEntity);
 
         double profit =
-                getProfit(sellCryptoServiceModel.getCrypto(),
+                getProfit(sellCryptoServiceModel.getCrypto().toString(),
                         sellCryptoServiceModel.getSellValue());
 
 
@@ -118,7 +117,7 @@ public class LogSellServiceImpl implements LogSellService {
     }
 
 
-    private double getProfit(EnumCryptoTop10 cryptoName, double sellValue) {
+    private double getProfit(String cryptoName, double sellValue) {
 
 
         CryptoCurrenciesEntity currCrypto =

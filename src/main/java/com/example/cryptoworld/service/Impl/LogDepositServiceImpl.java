@@ -1,7 +1,6 @@
 package com.example.cryptoworld.service.Impl;
 
 import com.example.cryptoworld.models.entities.*;
-import com.example.cryptoworld.models.enums.EnumCryptoTop10;
 import com.example.cryptoworld.models.service.LogDepositServiceModel;
 import com.example.cryptoworld.models.view.LogDepositView;
 import com.example.cryptoworld.repository.*;
@@ -54,7 +53,7 @@ public class LogDepositServiceImpl implements LogDepositService {
         logDeposit.setFiatMoney(logDepositServiceModel.getDeposit());
         logDeposit.setCrypto(logDepositServiceModel.getCrypto());
         logDeposit.setCryptoValue(calcCryptoValue(
-                logDepositServiceModel.getCrypto(), logDepositServiceModel.getDeposit()
+                logDepositServiceModel.getCrypto().toString(), logDepositServiceModel.getDeposit()
         ));
 
         logDepositRepository.save(logDeposit);
@@ -66,7 +65,7 @@ public class LogDepositServiceImpl implements LogDepositService {
         // ELSE CREATE THE WALLET AND SET THE VALUE
 
         double cryptoValue =
-                calcCryptoValue(logDepositServiceModel.getCrypto(),
+                calcCryptoValue(logDepositServiceModel.getCrypto().toString(),
                         logDepositServiceModel.getDeposit());
 
         if (walletService.findUsersWallet(logDepositServiceModel.getUsernameConfirm())) {
@@ -129,7 +128,7 @@ public class LogDepositServiceImpl implements LogDepositService {
     }
 
 
-    protected double calcCryptoValue(EnumCryptoTop10 cryptoName, double depositValue) {
+    protected double calcCryptoValue(String cryptoName, double depositValue) {
 
         CryptoCurrenciesEntity currCrypto =
                 cryptoRepository.findByName(cryptoName).orElse(null);
