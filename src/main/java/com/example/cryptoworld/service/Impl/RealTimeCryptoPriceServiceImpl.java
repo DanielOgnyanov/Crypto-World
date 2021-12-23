@@ -48,23 +48,32 @@ public class RealTimeCryptoPriceServiceImpl implements RealTimeCryptoPriceServic
 
             BigDecimal price = currentCryptoObject.getBigDecimal("price_usd");
 
-            if (cryptoRepository.count() > 0) {
+            if (cryptoRepository.count() == 10) {
 
-                switch (name) {
-
-                     // todo
-
-                }
+                setNewPriceToCrypto(name,assetId,price);
 
             } else {
+
+                CryptoCurrenciesEntity currenciesEntity =
+                        new CryptoCurrenciesEntity(name,assetId,price.doubleValue());
+
+                cryptoRepository.save(currenciesEntity);
 
             }
 
 
-            CryptoCurrenciesEntity currenciesEntity =
-                    new CryptoCurrenciesEntity(name,assetId,price.doubleValue());
 
-            cryptoRepository.save(currenciesEntity);
         }
+    }
+
+    private void setNewPriceToCrypto(String name, String assetId, BigDecimal price) {
+
+        CryptoCurrenciesEntity curr =
+                cryptoRepository.getCryptoByAssetStringId(assetId);
+
+        curr.setPrice(price.doubleValue());
+
+        cryptoRepository.save(curr);
+
     }
 }
