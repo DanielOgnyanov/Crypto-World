@@ -54,7 +54,7 @@ public class RealTimeCryptoPriceServiceImpl implements RealTimeCryptoPriceServic
 
                 setNewPriceToCrypto(name,assetId,volume24Hour ,price);
 
-            } else {
+            } else if(cryptoRepository.count() >= 0 && cryptoRepository.count() < 10) {
 
                 CryptoCurrenciesEntity currenciesEntity =
                         new CryptoCurrenciesEntity(name,assetId,volume24Hour,price.doubleValue());
