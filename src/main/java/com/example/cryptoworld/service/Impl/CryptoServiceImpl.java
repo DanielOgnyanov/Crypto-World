@@ -29,11 +29,10 @@ public class CryptoServiceImpl implements CryptoService {
     @Override
     public void InitCryptoInDb() throws IOException {
 
-        if (cryptoRepository.count() == 0) {
 
-            realTimeCryptoPriceService.getRealTimePrice();
+        realTimeCryptoPriceService.getRealTimePrice();
 
-        }
+
     }
 
     @Override
