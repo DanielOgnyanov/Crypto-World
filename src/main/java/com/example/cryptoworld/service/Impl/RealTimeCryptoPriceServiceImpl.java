@@ -46,16 +46,18 @@ public class RealTimeCryptoPriceServiceImpl implements RealTimeCryptoPriceServic
 
             String assetId = (String) currentCryptoObject.get("asset_id");
 
+            BigDecimal volume24Hour = currentCryptoObject.getBigDecimal("volume_1day_usd");
+
             BigDecimal price = currentCryptoObject.getBigDecimal("price_usd");
 
             if (cryptoRepository.count() == 10) {
 
-                setNewPriceToCrypto(name,assetId,price);
+                setNewPriceToCrypto(name,assetId,volume24Hour ,price);
 
             } else {
 
                 CryptoCurrenciesEntity currenciesEntity =
-                        new CryptoCurrenciesEntity(name,assetId,price.doubleValue());
+                        new CryptoCurrenciesEntity(name,assetId,volume24Hour,price.doubleValue());
 
                 cryptoRepository.save(currenciesEntity);
 
@@ -66,7 +68,7 @@ public class RealTimeCryptoPriceServiceImpl implements RealTimeCryptoPriceServic
         }
     }
 
-    private void setNewPriceToCrypto(String name, String assetId, BigDecimal price) {
+    private void setNewPriceToCrypto(String name, String assetId,BigDecimal volume24Hour, BigDecimal price) {
 
         CryptoCurrenciesEntity curr =
                 cryptoRepository.getCryptoByAssetStringId(assetId);
