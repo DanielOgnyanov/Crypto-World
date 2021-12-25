@@ -92,7 +92,7 @@ public class WalletServiceImpl implements WalletService {
 
                 break;
 
-            case "Solana":
+            case "SOL":
 
                 oldValue = walletEntity.getSolana();
 
@@ -103,7 +103,7 @@ public class WalletServiceImpl implements WalletService {
                 break;
 
 
-            case "XRP":
+            case "Ripple":
 
                 oldValue = walletEntity.getXrp();
 
@@ -114,7 +114,7 @@ public class WalletServiceImpl implements WalletService {
                 break;
 
 
-            case "Polkadot":
+            case "Dotcoin":
 
                 oldValue = walletEntity.getPolkadot();
 
@@ -125,7 +125,7 @@ public class WalletServiceImpl implements WalletService {
                 break;
 
 
-            case "Dogecoin":
+            case "DogeCoin":
 
                 oldValue = walletEntity.getDogecoin();
 
@@ -136,7 +136,7 @@ public class WalletServiceImpl implements WalletService {
                 break;
 
 
-            case "Usdcoin":
+            case "USDC":
 
                 oldValue = walletEntity.getUsdcoin();
 
