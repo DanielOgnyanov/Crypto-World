@@ -44,6 +44,10 @@ public class RealTimeCryptoPriceServiceImpl implements RealTimeCryptoPriceServic
 
             String name = (String) currentCryptoObject.get("name");
 
+            if(name.equals("Binance Coin")) {
+                name = "Binance";
+            }
+
             String assetId = (String) currentCryptoObject.get("asset_id");
 
             BigDecimal volume24Hour = currentCryptoObject.getBigDecimal("volume_1day_usd");
