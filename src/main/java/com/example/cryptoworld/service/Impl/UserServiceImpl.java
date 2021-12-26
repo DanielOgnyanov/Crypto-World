@@ -162,7 +162,7 @@ public class UserServiceImpl implements UserService {
 
         String allChar = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
         SecureRandom random = new SecureRandom();
-        int lenAddress = 10;
+        int lenAddress = 20;
         StringBuilder sb = new StringBuilder(lenAddress);
 
         for (int i = 0; i < lenAddress; i++) {
