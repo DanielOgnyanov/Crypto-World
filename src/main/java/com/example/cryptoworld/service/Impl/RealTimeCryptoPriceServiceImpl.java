@@ -1,6 +1,7 @@
 package com.example.cryptoworld.service.Impl;
 
 
+import com.example.cryptoworld.config.InfoUtils;
 import com.example.cryptoworld.models.entities.CryptoCurrenciesEntity;
 import com.example.cryptoworld.repository.CryptoRepository;
 import com.example.cryptoworld.service.RealTimeCryptoPriceService;
@@ -18,10 +19,14 @@ import java.math.BigDecimal;
 public class RealTimeCryptoPriceServiceImpl implements RealTimeCryptoPriceService {
 
     private final CryptoRepository cryptoRepository;
+    private final InfoUtils infoUtils;
 
-    public RealTimeCryptoPriceServiceImpl(CryptoRepository cryptoRepository) {
+    public RealTimeCryptoPriceServiceImpl(CryptoRepository cryptoRepository, InfoUtils infoUtils) {
         this.cryptoRepository = cryptoRepository;
+
+        this.infoUtils = infoUtils;
     }
+
 
     @Override
     public void getRealTimePrice() throws IOException {
@@ -30,8 +35,8 @@ public class RealTimeCryptoPriceServiceImpl implements RealTimeCryptoPriceServic
         OkHttpClient client = new OkHttpClient();
 
         Request request = new Request.Builder()
-                .url("https://rest.coinapi.io/v1/assets?filter_asset_id=BTC;ETH;BNB;USDT;SOL;XRP;ADA;USDC;DOT;DOGE")
-                .addHeader("X-CoinAPI-Key", "C32D27DA-45FA-4F89-9F2A-68F45DEB5A1F")
+                .url(infoUtils.getAPI_URL())
+                .addHeader(infoUtils.getAPI_NAME(), infoUtils.getPRIVATE_KEY())
                 .build();
 
         Response response = client.newCall(request).execute();
@@ -47,11 +52,11 @@ public class RealTimeCryptoPriceServiceImpl implements RealTimeCryptoPriceServic
 
         for (Object value : jsonArray) {
 
-            JSONObject currentCryptoObject =  new JSONObject(value.toString());
+            JSONObject currentCryptoObject = new JSONObject(value.toString());
 
             String name = (String) currentCryptoObject.get("name");
 
-            if(name.equals("Binance Coin")) {
+            if (name.equals("Binance Coin")) {
                 name = "Binance";
             }
 
@@ -63,23 +68,22 @@ public class RealTimeCryptoPriceServiceImpl implements RealTimeCryptoPriceServic
 
             if (cryptoRepository.count() == 10) {
 
-                setNewPriceToCrypto(name,assetId,volume24Hour ,price);
+                setNewPriceToCrypto(name, assetId, volume24Hour, price);
 
-            } else if(cryptoRepository.count() >= 0 && cryptoRepository.count() < 10) {
+            } else if (cryptoRepository.count() >= 0 && cryptoRepository.count() < 10) {
 
                 CryptoCurrenciesEntity currenciesEntity =
-                        new CryptoCurrenciesEntity(name,assetId,volume24Hour,price.doubleValue());
+                        new CryptoCurrenciesEntity(name, assetId, volume24Hour, price.doubleValue());
 
                 cryptoRepository.save(currenciesEntity);
 
             }
 
 
-
         }
     }
 
-    private void setNewPriceToCrypto(String name, String assetId,BigDecimal volume24Hour, BigDecimal price) {
+    private void setNewPriceToCrypto(String name, String assetId, BigDecimal volume24Hour, BigDecimal price) {
 
         CryptoCurrenciesEntity curr =
                 cryptoRepository.getCryptoByAssetStringId(assetId);
