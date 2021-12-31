@@ -35,8 +35,8 @@ public class RealTimeCryptoPriceServiceImpl implements RealTimeCryptoPriceServic
         OkHttpClient client = new OkHttpClient();
 
         Request request = new Request.Builder()
-                .url(infoUtils.getAPI_URL())
-                .addHeader(infoUtils.getAPI_NAME(), infoUtils.getPRIVATE_KEY())
+                .url(infoUtils.getApiUrl())
+                .addHeader(infoUtils.getApiName(), infoUtils.getPrivateKey())
                 .build();
 
         Response response = client.newCall(request).execute();
