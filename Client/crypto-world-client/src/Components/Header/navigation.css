@@ -10,3 +10,8 @@ nav.navbar {
     font-size: x-large;
     font-family: cursive;
 }
+
+.logo img{
+    float:left;
+    background-image: url(../../../public/logoNavbar.jpg);
+}

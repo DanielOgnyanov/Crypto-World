@@ -23,10 +23,10 @@ const Header = () => {
     return (
         <header id="site-header">
              <nav className="navbar">
+                 <div className='logo'> <img src=''></img></div>
+b              <a className='navbar-brand'>Crypt World</a>
 
-              <a className='navbar-brand'>Crypt World</a>
 
-              
              
        
              </nav>
