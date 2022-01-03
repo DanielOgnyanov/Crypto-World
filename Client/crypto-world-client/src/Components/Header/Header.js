@@ -14,7 +14,6 @@ const Header = () => {
 
     let userNavigation = (
         <div id="user">
-            <span>Welcome, Ivan </span>
             <Link className="button" to="/">Home</Link>
             <Link className="button" to="/create">Add Credit Card</Link>
             <Link className="button" to="/logout">Logout</Link>
@@ -25,13 +24,9 @@ const Header = () => {
         <header id="site-header">
              <nav className="navbar">
 
-             <section className="navbar-dashboard">
-             
-                         userNavigation
-                         guestNavigation
-                    
-             
-             </section>
+              <a className='navbar-brand'>Crypt World</a>
+
+              
              
        
              </nav>
