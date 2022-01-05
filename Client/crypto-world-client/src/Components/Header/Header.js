@@ -11,12 +11,13 @@ const Header = () => {
            
              
             <div class="topnav">
+                <p>Crypto World</p>
                <a href="#home">Home</a>
                <a href="#news">Admin</a>
                <a href="#contact">Add Credit Card</a>
                <a href="#about">Buy Crypto</a>
                <a href="#about">Sell Crypto</a>
-               <a className = "active"href="#about">Logout</a>
+               <a href="#about">Logout</a>
             </div>
               
 
