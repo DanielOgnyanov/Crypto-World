@@ -12,12 +12,19 @@ const Header = () => {
              
             <div class="topnav">
                <p>Crypto World</p>
-               <a href="#home">Home</a>
-               <a href="#news">Admin</a>
-               <a href="#contact">Add Credit Card</a>
-               <a href="#about">Buy Crypto</a>
-               <a href="#about">Sell Crypto</a>
-               <a href="#about">Logout</a>
+               <div className='userNavigation'>
+               <a href="#">Admin</a>
+               <a href="#">Add Credit Card</a>
+               <a href="#">Buy Crypto</a>
+               <a href="#">Sell Crypto</a>
+               </div>
+
+               <div className='guestNavigation'>
+
+               <span href="#">Sign In</span>
+
+
+               </div>
             </div>
               
 

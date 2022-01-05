@@ -1,7 +1,7 @@
 /* Add a black background color to the top navigation */
 .topnav {
   background-color: rgb(255, 255, 255);
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid rgb(201, 196, 196);
   overflow: hidden;
 }
 
@@ -37,4 +37,24 @@
   text-decoration: none;
   font-size: 20px;
   font-family: CoinbaseSans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+}
+
+.topnav span:hover  {
+color: rgb(10, 70, 228);
+
+}
+
+.topnav span {
+  float: left;
+  margin-top: 8px;
+  margin-left: 200px;
+  color:rgb(5, 15, 25);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 14px;
+  font-family:CoinbaseSans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-weight: 650;
+
+
 }
