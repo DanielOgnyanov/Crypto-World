@@ -11,7 +11,7 @@ const Header = () => {
            
              
             <div class="topnav">
-                <p>Crypto World</p>
+               <p>Crypto World</p>
                <a href="#home">Home</a>
                <a href="#news">Admin</a>
                <a href="#contact">Add Credit Card</a>

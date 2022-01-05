@@ -22,8 +22,10 @@
   color: black;
 }
 
+/*nav bran style*/
 .topnav p {
   float: left;
+  margin-top: 16px;
   padding-left: 8px;
   padding-right: 30px;
   color: rgb(89, 95, 175);
