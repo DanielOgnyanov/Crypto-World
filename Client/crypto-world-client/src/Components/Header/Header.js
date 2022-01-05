@@ -1,40 +1,33 @@
-import './navigation.css'
-import { Link } from 'react-router-dom';
-
-
+import './header.css'
+import { Link } from 'react-router-dom'
 const Header = () => {
 
-    let guestNavigation = (
-        <div id="guest">
-            <Link to="/login"    className="button">Sign In</Link>
-            <Link to="/register" className="button">Create Account</Link>
-        </div>
-    );
 
-
-    let userNavigation = (
-        <div id="user">
-            <Link className="button" to="/">Home</Link>
-            <Link className="button" to="/create">Add Credit Card</Link>
-            <Link className="button" to="/logout">Logout</Link>
-        </div>
-    );
 
     return (
-        <header id="site-header">
-             <nav className="navbar">
-                 <div className='logo'> <img src=''></img></div>
-b              <a className='navbar-brand'>Crypt World</a>
+        <header>
+            <nav>
 
-
+           
              
-       
-             </nav>
+            <div class="topnav">
+               <a href="#home">Home</a>
+               <a href="#news">Admin</a>
+               <a href="#contact">Add Credit Card</a>
+               <a href="#about">Buy Crypto</a>
+               <a href="#about">Sell Crypto</a>
+               <a className = "active"href="#about">Logout</a>
+            </div>
+              
+
+
+
+
+
+            </nav>
 
 
         </header>
-        
-
     );
 }
 
