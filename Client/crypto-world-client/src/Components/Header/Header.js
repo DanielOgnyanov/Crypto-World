@@ -11,6 +11,9 @@ const Header = () => {
            
              
             <div class="topnav">
+                   <div class="logo-image">
+                      <img src="logoBit.jpg" class="img-fluid"/>
+                   </div>
                <p>Crypto World</p>
                <div className='userNavigation'>
                <a href="#">Admin</a>

@@ -58,3 +58,13 @@ color: rgb(10, 70, 228);
 
 
 }
+
+.logo-image{
+  margin-top: 5px;
+  margin-left: 5px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  overflow: hidden;
+  
+}
