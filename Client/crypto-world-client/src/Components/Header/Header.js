@@ -12,7 +12,7 @@ const Header = () => {
              
             <div class="topnav">
                    <div class="logo-image">
-                      <img src="logoBit.jpg" class="img-fluid"/>
+                      <img src="" class="img-fluid"/>
                    </div>
                <p>Crypto World</p>
                <div className='userNavigation'>
