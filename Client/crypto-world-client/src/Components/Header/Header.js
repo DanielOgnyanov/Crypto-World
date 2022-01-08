@@ -25,7 +25,7 @@ const Header = () => {
                <div className='guestNavigation'>
 
                <a href="#">Sign In</a>
-               <button href = "#">Create Account</button>
+               <button className= "active" href = "#">Create Account</button>
 
 
                </div>

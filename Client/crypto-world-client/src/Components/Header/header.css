@@ -22,7 +22,7 @@
 /* Change the color of links on hover */
 .topnav a:hover {
   border-bottom: 3px solid rgb(10, 70, 228);
-  color: rgb(10, 70, 228);
+  color: rgb(92, 132, 233);
 }
 
 /*nav bran style*/
@@ -55,8 +55,6 @@
   font-family: CoinbaseSans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;;
   font-weight: 500;
 } 
-
-
 
 
 
