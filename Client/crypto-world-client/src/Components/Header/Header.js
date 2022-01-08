@@ -24,7 +24,8 @@ const Header = () => {
 
                <div className='guestNavigation'>
 
-               <span href="#">Sign In</span>
+               <a href="#">Sign In</a>
+               <button href = "#">Create Account</button>
 
 
                </div>

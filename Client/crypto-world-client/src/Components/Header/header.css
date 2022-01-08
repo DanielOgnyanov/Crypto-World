@@ -1,7 +1,7 @@
 /* Add a black background color to the top navigation */
 .topnav {
-  background-color: rgb(255, 255, 255);
-  border-bottom: 1px solid rgb(201, 196, 196);
+  background-color: transparent;
+  border-bottom: 2px solid rgb(201, 196, 196);
   overflow: hidden;
 }
 
@@ -10,7 +10,7 @@
   float: left;
   margin-top: 8px;
   margin-left: 30px;
-  color:rgb(5, 15, 25);
+  color:rgb(255, 255, 255);
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -22,7 +22,7 @@
 /* Change the color of links on hover */
 .topnav a:hover {
   border-bottom: 3px solid rgb(10, 70, 228);
-  color: black;
+  color: rgb(10, 70, 228);
 }
 
 /*nav bran style*/
@@ -39,25 +39,26 @@
   font-family: CoinbaseSans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 }
 
-.topnav span:hover  {
-color: rgb(10, 70, 228);
+.topnav button {
+  float: right;
+  padding: 6px;
+  margin-top: 12px;
+  margin-right: 110px;
+  background: #ddd;
+  font-size: 17px;
+  border: 1px solid rgb(10, 70, 228);
+  cursor: pointer;
+  background-image: linear-gradient(to right, #25aae1, #4481eb, #04befe, #3f86ed);
+  border-radius: 50px;
+  
+  color: white;
+  font-family: CoinbaseSans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;;
+  font-weight: 500;
+} 
 
-}
-
-.topnav span {
-  float: left;
-  margin-top: 8px;
-  margin-left: 200px;
-  color:rgb(5, 15, 25);
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 14px;
-  font-family:CoinbaseSans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-  font-weight: 650;
 
 
-}
+
 
 .logo-image{
   margin-top: 5px;
@@ -67,4 +68,24 @@ color: rgb(10, 70, 228);
   border-radius: 50%;
   overflow: hidden;
   
+}
+
+
+
+/* Add responsiveness - On small screens, display the navbar vertically instead of horizontally */
+@media screen and (max-width: 600px) {
+  .topnav .search-container {
+    float: none;
+  }
+  .topnav a, .topnav input[type=text], .topnav .search-container button {
+    float: none;
+    display: block;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    padding: 14px;
+  }
+  .topnav input[type=text] {
+    border: 1px solid #ccc;
+  }
 }
