@@ -4,6 +4,7 @@
 }
 
 html, body {
+  overflow: scroll;
   width: 100vw;
   height: 100vh;
   background-image: url('./Images/World-Crypto-Data_Background.jpg');
