@@ -4,7 +4,7 @@ import './Footer.css'
 const Footer = () => {
     return (
         <footer >
-            <p>Crypto Wolrd</p>
+            <p>cryptoworld.com</p>
            <ul >
                 <li>Home</li>
                 <li>Services</li>
