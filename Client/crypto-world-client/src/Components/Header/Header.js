@@ -1,8 +1,11 @@
 import './Header.css'
 import { Link } from 'react-router-dom'
+import { useNavigate } from "react-router-dom";
+
+
 const Header = () => {
-
-
+    const history = useNavigate();
+    const navigateTo = () => history.push('/register');
 
     return (
         <header>
@@ -25,7 +28,7 @@ const Header = () => {
                <div className='guestNavigation'>
 
                <a href="#">Sign In</a>
-               <button className= "active" href = "#">Create Account</button>
+               <button onClick={navigateTo} type='button'>Create Account</button>
 
 
                </div>
