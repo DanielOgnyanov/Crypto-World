@@ -5,13 +5,11 @@ import { useNavigate } from "react-router-dom";
 
 const Header = () => {
 
+    const history = useNavigate();
+    function handleClick ()  {
     
-    
-      
-    
-    
-    
-    
+        history('/register');
+    }
 
    
 
