@@ -1,8 +1,8 @@
 form {
     height: 500px;
-    width: 300px;
+    width: 400px;
     margin-top: 80px;
-    margin-left: 550px;
+    margin-left: 500px;
     text-align: center;
 
     border-radius: 20px;
@@ -17,7 +17,8 @@ form {
 
 form input {
 
-    padding-bottom: 5px;
+    padding-bottom: 10px;
+    width: 300px;
     font-size: 14px;
     font-weight: bold;
     
