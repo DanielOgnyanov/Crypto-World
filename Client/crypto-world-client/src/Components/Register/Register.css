@@ -4,6 +4,8 @@ form {
     margin-top: 80px;
     margin-left: 550px;
     text-align: center;
+
+    border-radius: 20px;
     
     background-color: rgb(40, 40, 77);
     color: white;
