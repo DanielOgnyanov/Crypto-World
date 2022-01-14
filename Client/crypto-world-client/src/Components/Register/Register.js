@@ -32,6 +32,8 @@ const Register = () => {
       
       <label for="confirmPassword">Confirm Password</label>
       <input name='confirmPassword' placeholder='Confirm Password' type="password" id='text4'></input>
+
+      <button>Create</button>
     </form>
 
 
