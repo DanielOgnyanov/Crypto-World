@@ -14,12 +14,12 @@ const Register = () => {
 
     <form>
       <p for="name">Create Account</p>
-      <div >
-      <span className='icon'><i className='fa fa-user icon'></i></span>
-      <label for="username" >Username</label>
-      <input name='username' placeholder='Username' type="text"></input>
       
-      </div>
+      
+      <label for="username" >Username</label>
+      <input name='username' placeholder='Username' type="text" id='text1'></input>
+      
+      
       
       <label for="fullname">Full Name</label>
       <input name='fullname' placeholder='Full Name' type="text"></input>
