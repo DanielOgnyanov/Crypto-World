@@ -25,7 +25,7 @@ const Register = () => {
       <input name='fullname' placeholder='Full Name' type="text" id='text2'></input>
       
       <label for="email">Email</label>
-      <input name='email' placeholder='Email' type="text"></input>
+      <input name='email' placeholder='Email' type="text" id='text3'></input>
       
       <label for="password">Password</label>
       <input name='password' placeholder='Password' type="password"></input>

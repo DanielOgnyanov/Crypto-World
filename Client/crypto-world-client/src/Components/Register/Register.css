@@ -61,3 +61,14 @@ form p {
     
     background-size: 45px;
 } 
+
+
+#text3 {
+
+    background-image: url('../../Images/email-icon.png');
+    background-repeat: no-repeat;
+    background-position: left 9px top 2px;
+    padding-left: 45px;
+    
+    background-size: 28px;
+} 
