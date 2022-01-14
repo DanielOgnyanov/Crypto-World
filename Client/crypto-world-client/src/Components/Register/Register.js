@@ -28,10 +28,10 @@ const Register = () => {
       <input name='email' placeholder='Email' type="text" id='text3'></input>
       
       <label for="password">Password</label>
-      <input name='password' placeholder='Password' type="password"></input>
+      <input name='password' placeholder='Password' type="password" id='text4'></input>
       
       <label for="confirmPassword">Confirm Password</label>
-      <input name='confirmPassword' placeholder='Confirm Password' type="password"></input>
+      <input name='confirmPassword' placeholder='Confirm Password' type="password" id='text4'></input>
     </form>
 
 
