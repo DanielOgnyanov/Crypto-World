@@ -39,3 +39,12 @@ form p {
     font-weight: bold;
     font-size: 20px;
 } 
+
+#text1 {
+
+    background-image: url('../../Images/user-icon.png');
+    background-repeat: no-repeat;
+    padding-left: 30px;
+    background-size: 25px;
+    border-radius: 8px;
+} 
