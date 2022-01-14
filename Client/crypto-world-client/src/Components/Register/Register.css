@@ -42,9 +42,11 @@ form p {
 
 #text1 {
 
-    background-image: url('../../Images/user-icon.png');
+    background-image: url('../../Images/user-icon-1.png');
     background-repeat: no-repeat;
-    padding-left: 30px;
-    background-size: 25px;
+    background-position: left 8px top 2px;
+    padding-left: 45px;
+    
+    background-size: 22px;
     border-radius: 8px;
 } 
