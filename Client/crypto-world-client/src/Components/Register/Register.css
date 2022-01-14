@@ -20,6 +20,7 @@ form input {
     height: 30px;
     width: 300px;
     font-size: 18px;
+    border-radius: 8px;
     
     
 }    
@@ -48,5 +49,15 @@ form p {
     padding-left: 45px;
     
     background-size: 22px;
-    border-radius: 8px;
+} 
+
+
+#text2 {
+
+    background-image: url('../../Images/full-name-icon.jpg');
+    background-repeat: no-repeat;
+    background-position: left 0px top 2px;
+    padding-left: 45px;
+    
+    background-size: 45px;
 } 
