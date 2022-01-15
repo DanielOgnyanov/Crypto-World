@@ -8,7 +8,7 @@
 /* Style the links inside the navigation bar */
 .topnav a {
   float: left;
-  margin-top: 8px;
+  margin-top: 18px;
   margin-left: 30px;
   color:rgb(255, 255, 255);
   text-align: center;
@@ -21,16 +21,17 @@
 
 /* Change the color of links on hover */
 .topnav a:hover {
-  border-bottom: 3px solid rgb(10, 70, 228);
   color: rgb(92, 132, 233);
 }
+
+
 
 
 
 .topnav button {
   float: right;
   padding: 6px;
-  margin-top: 12px;
+  margin-top: 24px;
   margin-right: 110px;
   background: #ddd;
   font-size: 17px;
@@ -50,10 +51,11 @@
 
   display: inline;
   margin-left: 5px;
-  width: 170px;
+  width: 180px;
   background-size: contain;
   cursor: pointer;
   padding-right: 70px;
+  
  
 }
 
