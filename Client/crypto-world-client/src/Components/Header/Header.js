@@ -1,4 +1,5 @@
 import './Header.css'
+import logoImg from "../../Images/logo-nav-1.png"
 import { Link } from 'react-router-dom'
 import { useNavigate } from "react-router-dom";
 
@@ -17,8 +18,8 @@ const Header = () => {
         
         <header>
             <nav className="topnav">
-
-                <p>Crypto World</p>
+            <a><img src={logoImg} alt=""></img></a>
+                
 
 
                <div className='userNavigation'>
