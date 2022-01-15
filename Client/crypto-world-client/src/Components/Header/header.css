@@ -1,6 +1,6 @@
 /* Add a black background color to the top navigation */
 .topnav {
-  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.5);
   border-bottom: 2px solid rgb(201, 196, 196);
   overflow: hidden;
 }
@@ -31,7 +31,7 @@
 .topnav button {
   float: right;
   padding: 6px;
-  margin-top: 24px;
+  margin-top: 27px;
   margin-right: 110px;
   background: #ddd;
   font-size: 17px;
@@ -50,6 +50,7 @@
 .topnav img {
 
   display: inline;
+  margin-top: 0px;
   margin-left: 5px;
   width: 180px;
   background-size: contain;
