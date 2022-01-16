@@ -7,10 +7,13 @@ import { useNavigate } from "react-router-dom";
 const Header = () => {
 
     const history = useNavigate();
+    
     function handleClick ()  {
     
         history('/register');
     }
+
+    
 
    
 
@@ -18,7 +21,7 @@ const Header = () => {
         
         <header>
             <nav className="topnav">
-            <a><img src={logoImg} alt=""></img></a>
+           <a href='/'><img src={logoImg} alt=""></img></a> 
                 
 
 
@@ -33,7 +36,7 @@ const Header = () => {
 
                <a href="#">Sign In</a>
             
-               <button onClick={handleClick} type='submit'>Create Account</button>
+               <button  onClick={handleClick} type='submit'>Create Account</button>
 
 
                </div>
