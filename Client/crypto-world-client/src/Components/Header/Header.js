@@ -21,15 +21,16 @@ const Header = () => {
         
         <header>
             <nav className="topnav">
-           <a href='/'><img src={logoImg} alt=""></img></a> 
+          <Link className='button' to="/"><img src={logoImg} alt=""></img></Link> 
                 
 
 
                <div className='userNavigation'>
-               <a href="#">Admin</a>
-               <a href="#">Add Credit Card</a>
-               <a href="#">Buy Crypto</a>
-               <a href="#">Sell Crypto</a>
+               <Link className='button' to="#">Admin</Link> 
+               <Link className='button' to="#">Add Credit Card</Link> 
+               <Link className='button' to="#">Buy Crypto</Link> 
+               <Link className='button' to="#">Sell Crypto</Link> 
+               
                </div>
 
                <div className='guestNavigation'>
