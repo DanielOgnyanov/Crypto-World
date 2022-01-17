@@ -7,42 +7,44 @@ import { useNavigate } from "react-router-dom";
 const Header = () => {
 
     const history = useNavigate();
-    
-    function handleClick ()  {
-    
+
+    function handleClick() {
+
         history('/register');
     }
 
-    
 
-   
+
+
 
     return (
-        
+
         <header>
             <nav className="topnav">
-          <Link className='button' to="/"><img src={logoImg} alt=""></img></Link> 
-                
+                <Link className='button' to="/"><img src={logoImg} alt=""></img></Link>
 
 
-               <div className='userNavigation'>
-               <Link className='button' to="#">Admin</Link> 
-               <Link className='button' to="#">Add Credit Card</Link> 
-               <Link className='button' to="#">Buy Crypto</Link> 
-               <Link className='button' to="#">Sell Crypto</Link> 
-               
-               </div>
 
-               <div className='guestNavigation'>
+                <div className='userNavigation'>
 
-               <Link className='button' to="#">Sign In</Link> 
-            
-               <button  onClick={handleClick} type='submit'>Create Account</button>
+                    <Link className='button' to="#">Admin</Link>
+
+                    <Link className='button' to="#">Add Credit Card</Link>
+                    <Link className='button' to="#">Buy Crypto</Link>
+                    <Link className='button' to="#">Sell Crypto</Link>
+
+                </div>
+
+                <div className='guestNavigation'>
+
+                    <Link className='button' to="#">Sign In</Link>
+
+                    <button onClick={handleClick} type='submit'>Create Account</button>
 
 
-               </div>
-            
-              
+                </div>
+
+
 
 
 
