@@ -1,4 +1,3 @@
-/* Add a black background color to the top navigation */
 .topnav {
   background-color: rgba(0, 0, 0, 0.5);
   border-bottom: 2px solid rgb(201, 196, 196);
@@ -6,43 +5,46 @@
   min-width: 1210px;
 }
 
-/* Style the links inside the navigation bar */
+
+.topnav img {
+
+  display: inline;
+  margin-top: 0px;
+  margin-left: 0px;
+  
+  width: 180px;
+  height: 40px;
+
+  padding: 0px 0px;
+  
+  cursor: pointer;
+  padding-right: 50px;
+  border-radius: 8px;
+
+
+
+}
+
+.topnav a:hover {
+  
+  background-color: rgb(27, 168, 250);
+  color: white;
+  
+}
+
 .topnav a {
   float: left;
   margin-top: 18px;
   margin-left: 30px;
   color:rgb(255, 255, 255);
   text-align: center;
-  padding: 14px 16px;
+  padding: 10px 14px;
   text-decoration: none;
   font-size: 14px;
   font-family:CoinbaseSans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   font-weight: 650;
+  border-radius: 8px;
 }
-
-/* Change the color of links on hover */
-.topnav a:hover {
-  color: rgb(92, 132, 233);
-}
-
-
-.topnav li {
-  float: left;
-  margin-top: 18px;
-  margin-left: 30px;
-  color:rgb(255, 255, 255);
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 14px;
-  font-family:CoinbaseSans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-  font-weight: 650;
-}
-
-.topnav li:hover {
-  color: rgb(92, 132, 233);
-}
-
 
 
 
@@ -72,18 +74,16 @@ opacity: 0.9;
 } 
 
 
-.topnav img {
 
-  display: inline;
-  margin-top: 0px;
-  margin-left: 0px;
-  width: 150px;
-  background-size: contain;
-  cursor: pointer;
-  padding-right: 70px;
-  
- 
-}
+
+
+
+
+
+
+
+
+
 
 
 

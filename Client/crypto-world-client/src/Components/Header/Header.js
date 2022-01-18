@@ -1,5 +1,5 @@
 import './Header.css'
-import logoImg from "../../Images/logo-nav-1.png"
+import logoImg from "../../Images/logo-nav-2.png"
 import { Link } from 'react-router-dom'
 import { useNavigate } from "react-router-dom";
 
@@ -21,13 +21,14 @@ const Header = () => {
 
         <header>
             <nav className="topnav">
-                <Link className='button' to="/"><img src={logoImg} alt=""></img></Link>
+                <Link className='button' to="/" ><img src={logoImg} alt=""></img></Link>
 
 
 
                 <div className='userNavigation'>
 
-                    <Link className='button' to="#">Admin</Link>
+                
+                    <Link className='button' to="#" data-toggle="collapse">Admin</Link>
 
                     <Link className='button' to="#">Add Credit Card</Link>
                     <Link className='button' to="#">Buy Crypto</Link>
