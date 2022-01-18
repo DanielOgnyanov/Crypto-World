@@ -38,7 +38,7 @@ const Header = () => {
 
                 <div className='guestNavigation'>
 
-                    <Link className='button' to="#">Sign In</Link>
+                    <Link className='button' to="/login">Sign In</Link>
 
                     <button onClick={handleClick} type='submit'>Create Account</button>
 
