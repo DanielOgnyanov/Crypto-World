@@ -21,7 +21,7 @@ const Login = () => {
             <label for="password">Password</label>
             <input name='password' placeholder='Password' type="password" id='text4'></input>
 
-            <button>Create</button>
+            <button>Sign In</button>
         </form>
 
 
