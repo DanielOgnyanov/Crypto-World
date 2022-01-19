@@ -1,7 +1,16 @@
+#container {
+    display: flex;
+
+}   
+
+
 #getStarted-div  {
 
-    margin-top: 80px;
-    margin-left: 50px;
+    margin-top: 150px;
+    margin-left: 60px;
+    padding-bottom: 200px;
+    flex: 0 0 50%;
+   
     color: white;
 
     font-size:larger;

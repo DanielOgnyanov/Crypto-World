@@ -1,5 +1,6 @@
 import './GetStarted.css'
 import { Link } from 'react-router-dom'
+import IndexPageBg from '../IndexPageBg/IndexPageBg';
 
 
 
@@ -11,8 +12,10 @@ const GetStarted = () => {
     return (
 
 
+        <div id='container'>
+            
         <div className='getStarted' id='getStarted-div'>
-
+             
             <h1>Buy Bitcoin & Crypto Asset</h1>
 
             <p>Sign up today and
@@ -29,6 +32,8 @@ const GetStarted = () => {
 
 
 
+        </div>
+        <IndexPageBg/>
         </div>
 
 
