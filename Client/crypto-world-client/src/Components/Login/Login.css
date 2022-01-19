@@ -78,7 +78,7 @@ form button {
   border: 1px solid rgb(10, 70, 228);
   border-radius: 8px;
   cursor: pointer;
-  background-image: linear-gradient(to right, #119cd8, #4481eb, #12acdf, #3f86ed);
+  background-color: rgb(13, 164, 252);
    
   
   color: white;
