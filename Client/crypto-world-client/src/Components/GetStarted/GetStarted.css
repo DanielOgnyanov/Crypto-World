@@ -1,6 +1,6 @@
 #container {
     display: flex;
-
+    
 }   
 
 
@@ -8,10 +8,12 @@
 
     margin-top: 150px;
     margin-left: 60px;
-    padding-bottom: 200px;
+    padding-bottom: 100px;
+    height: 200px;
     flex: 0 0 50%;
    
     color: white;
+    
 
     font-size:larger;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
