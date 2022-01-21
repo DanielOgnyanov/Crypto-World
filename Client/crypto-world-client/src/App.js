@@ -6,6 +6,7 @@ import Footer from './Components/Footer/Footer';
 import Register from './Components/Register/Register';
 import Login from './Components/Login/Login'
 import GetStarted from './Components/GetStarted/GetStarted'
+import HomePage from './Components/HomePage/HomePage'
 
 
 
@@ -18,6 +19,7 @@ function App() {
         <Route exact path="/" exact element={<GetStarted />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/home" element={<HomePage />} />
 
 
 
