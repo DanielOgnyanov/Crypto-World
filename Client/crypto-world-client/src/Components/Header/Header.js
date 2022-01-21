@@ -27,7 +27,7 @@ const Header = () => {
 
                 <div className='userNavigation'>
 
-                
+                    <Link className='button' to="#" data-toggle="collapse">Home</Link>
                     <Link className='button' to="#" data-toggle="collapse">Admin</Link>
 
                     <Link className='button' to="#">Add Credit Card</Link>
