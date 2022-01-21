@@ -13,24 +13,24 @@ const Register = () => {
 
 
     <form>
-      <p for="name">Create Account</p>
+      <p htmlFor="name">Create Account</p>
       
       
-      <label for="username" >Username</label>
+      <label htmlFor="username" >Username</label>
       <input name='username' placeholder='Username' type="text" id='text1'></input>
       
       
       
-      <label for="fullname">Full Name</label>
+      <label htmlFor="fullname">Full Name</label>
       <input name='fullname' placeholder='Full Name' type="text" id='text2'></input>
       
-      <label for="email">Email</label>
+      <label htmlFor="email">Email</label>
       <input name='email' placeholder='Email' type="email" id='text3'></input>
       
-      <label for="password">Password</label>
+      <label htmlFor="password">Password</label>
       <input name='password' placeholder='Password' type="password" id='text4'></input>
       
-      <label for="confirmPassword">Confirm Password</label>
+      <label htmlFor="confirmPassword">Confirm Password</label>
       <input name='confirmPassword' placeholder='Confirm Password' type="password" id='text4'></input>
 
       <button>Create</button>
