@@ -19,16 +19,16 @@ const Login = () => {
     return (
 
 
-        <form id='login-form' onSubmit={onLoginFormSubmitHandler}>
+        <form  id='login-form' onSubmit={onLoginFormSubmitHandler}>
             <p htmlFor="name">Sign In</p>
 
 
             <label htmlFor="username" >Username</label>
-            <input name='username' placeholder='Username' type="text" id='text1' />
+            <input name='username' autoComplete="on" placeholder='Username' type="text" id='login-username' />
 
 
             <label htmlFor="password">Password</label>
-            <input name='password' placeholder='Password' type="password" id='text4' />
+            <input name='password' autoComplete="on" placeholder='Password' type="password" id='login-password' />
 
             <button className="button" type="submit">Sign In</button>
         </form>

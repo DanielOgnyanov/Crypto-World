@@ -46,7 +46,7 @@ form p {
     font-size: 20px;
 } 
 
-#text1 {
+#login-username {
 
     background-image: url('../../Images/user-icon-1.png');
     background-repeat: no-repeat;
@@ -57,7 +57,7 @@ form p {
 } 
 
 
-#text4 {
+#login-password {
 
     background-image: url('../../Images/pass-icon.png');
     background-repeat: no-repeat;
