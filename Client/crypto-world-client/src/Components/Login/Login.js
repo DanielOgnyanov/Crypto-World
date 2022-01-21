@@ -6,36 +6,31 @@ import './Login.css'
 
 const Login = () => {
 
-    const [username, setUsername] = useState("");
-    const [password, setPassword] = useState("");
+    const onLoginFormSubmitHandler = (e) => {
+        e.preventDefault();
 
-    const history = useNavigate();
+        const username = e.target.username.value;
+        const password = e.target.password.value;
 
+        console.log(username, password);
 
-
-    function login() {
-
-        history('/home');
-        console.log(username);
-    }
+    };
 
     return (
 
 
-        <form id='login-form'>
+        <form id='login-form' onSubmit={onLoginFormSubmitHandler}>
             <p htmlFor="name">Sign In</p>
 
 
             <label htmlFor="username" >Username</label>
-            <input name='username' placeholder='Username' type="text" id='text1'
-                onChange={(e) => setUsername(e.target.value)} />
+            <input name='username' placeholder='Username' type="text" id='text1' />
 
 
             <label htmlFor="password">Password</label>
-            <input name='password' placeholder='Password' type="password" id='text4'
-                onChange={(e) => setPassword(e.target.value)} />
+            <input name='password' placeholder='Password' type="password" id='text4' />
 
-            <button onClick={login}>Sign In</button>
+            <button className="button" type="submit">Sign In</button>
         </form>
 
 
