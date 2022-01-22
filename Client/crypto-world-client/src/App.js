@@ -19,6 +19,8 @@ function App() {
         <Route exact path="/" exact element={<GetStarted />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
+
+
         <Route path="/home" element={<HomePage />} />
 
 
