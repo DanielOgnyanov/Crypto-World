@@ -12,7 +12,11 @@ const Login = () => {
         const username = e.target.username.value;
         const password = e.target.password.value;
 
-        console.log(username, password);
+        function login ()  {
+
+
+        }
+
 
     };
 
