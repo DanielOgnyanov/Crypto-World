@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
 import './Login.css'
 
@@ -12,11 +12,33 @@ const Login = () => {
         const username = e.target.username.value;
         const password = e.target.password.value;
 
-        function login ()  {
+        
+
+        function login () {
 
 
-        }
+            let item = {username, password}
 
+            
+            console.log(item.username)
+
+
+            let result =  fetch ("http://localhost:5000/users", {
+                method: 'POST',
+                body: JSON.stringify(item),
+                headers: {
+
+                    "Content-Type": 'application/json',
+                    "Accept": 'application/json'
+
+                }
+            });
+
+            result = result.json();
+            console.warn("result", result);
+
+
+        }     
 
     };
 
