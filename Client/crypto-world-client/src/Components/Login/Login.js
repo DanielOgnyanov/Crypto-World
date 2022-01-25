@@ -12,40 +12,27 @@ const Login = () => {
         const username = e.target.username.value;
         const password = e.target.password.value;
 
-        
 
-        function login () {
-
-
-            let item = {username, password}
-
-            
-            console.log(item.username)
+        let item = { username, password }
 
 
-            let result =  fetch ("http://localhost:5000/users", {
-                method: 'POST',
-                body: JSON.stringify(item),
-                headers: {
-
-                    "Content-Type": 'application/json',
-                    "Accept": 'application/json'
-
-                }
-            });
-
-            result = result.json();
-            console.warn("result", result);
+        let result = fetch("http://localhost:5000/users/" + username)
+            .then((response) => response.json)
+            .then((data) => console.log(data))
 
 
-        }     
+        console.log(result)
+
+
+
+
 
     };
 
     return (
 
 
-        <form  id='login-form' onSubmit={onLoginFormSubmitHandler}>
+        <form id='login-form' onSubmit={onLoginFormSubmitHandler}>
             <p htmlFor="name">Sign In</p>
 
 
