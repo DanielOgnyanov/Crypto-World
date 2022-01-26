@@ -2,7 +2,7 @@ import './HomePage.css'
 
 
 
-const Login = () => {
+const HomePage = () => {
 
   
     
@@ -17,4 +17,4 @@ const Login = () => {
 }
 
 
-export default Login;
+export default HomePage;
