@@ -6,22 +6,39 @@ import './Login.css'
 
 const Login = () => {
 
+    const history = useNavigate();
+
     const onLoginFormSubmitHandler = (e) => {
         e.preventDefault();
 
         const username = e.target.username.value;
         const password = e.target.password.value;
 
+        
+
 
         let item = { username, password }
 
 
-        let result = fetch("http://localhost:5000/users/" + username)
-            .then((response) => response.json)
+        let result = fetch("http://localhost:5000/users?username_like=" + username)
+            .then((response) => {
+
+                if(response.ok) {
+                    
+                } else {
+
+                    
+                }
+            })
             .then((data) => console.log(data))
 
+            console.log(result)
+            
 
-        console.log(result)
+
+        
+
+        
 
 
 
