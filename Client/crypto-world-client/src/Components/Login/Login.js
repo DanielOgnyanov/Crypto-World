@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import * as authService from '../Services/authService'
 import { useNavigate } from "react-router-dom";
 import './Login.css'
 
@@ -14,35 +14,18 @@ const Login = () => {
         const username = e.target.username.value;
         const password = e.target.password.value;
 
-        
+        authService
+            .login(username, password)
+            .then((authData) => {
 
 
-        let item = { username, password }
-
-
-        let result = fetch("http://localhost:5000/users?username_like=" + username)
-            .then((response) => {
-
-                if(response.ok) {
-                    
-                } else {
-
-                    
-                }
+                history('/home')
             })
-            .then((data) => console.log(data))
+            .catch(error => {
 
-            console.log(result)
+                console.log(error);
             
-
-
-        
-
-        
-
-
-
-
+            })
 
     };
 
