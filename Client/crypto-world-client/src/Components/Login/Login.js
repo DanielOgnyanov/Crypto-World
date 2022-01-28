@@ -1,11 +1,13 @@
-import * as authService from '../Services/authService'
+import * as authService from '../../Services/authService'
 import { useNavigate } from "react-router-dom";
+import { useAuthContext } from '../../Context/AuthContext';
 import './Login.css'
 
 
 
 const Login = () => {
 
+    const { login } = useAuthContext();
     const history = useNavigate();
 
     const onLoginFormSubmitHandler = (e) => {
@@ -18,6 +20,8 @@ const Login = () => {
             .login(username, password)
             .then((authData) => {
 
+                login(authData);
+                
 
                 history('/home')
             })
