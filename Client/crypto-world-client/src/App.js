@@ -15,23 +15,23 @@ function App() {
   return (
     <div className='container' >
       <AuthProvider>
-      <Header />
+        <Header />
 
-      <Routes>
-        <Route exact path="/" exact element={<GetStarted />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/login" element={<Login />} />
-
-
-        <Route path="/home" element={<HomePage />} />
+        <Routes>
+          <Route exact path="/" exact element={<GetStarted />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
 
 
+          <Route path="/home" element={<HomePage />} />
 
 
-      </Routes>
 
 
-      <Footer />
+        </Routes>
+
+
+        <Footer />
       </AuthProvider>
 
     </div>

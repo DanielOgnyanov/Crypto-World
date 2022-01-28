@@ -13,13 +13,16 @@ const Login = () => {
     const onLoginFormSubmitHandler = (e) => {
         e.preventDefault();
 
-        const username = e.target.username.value;
-        const password = e.target.password.value;
+        let formData = new FormData(e.currentTarget);
+
+        let username = formData.get('username');
+        let password = formData.get('password');
 
         authService
             .login(username, password)
             .then((authData) => {
 
+                login(authData);
                 
 
 
