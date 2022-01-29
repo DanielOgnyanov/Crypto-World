@@ -1,33 +1,55 @@
 package com.example.cryptoworld.web;
 
 
+import com.example.cryptoworld.models.binding.LoginDto;
 import com.example.cryptoworld.models.binding.UserRegistrationBindingModel;
 import com.example.cryptoworld.models.service.UserRegistrationServiceModel;
 import com.example.cryptoworld.service.UserService;
 import org.modelmapper.ModelMapper;
-import org.springframework.stereotype.Controller;
+import org.springframework.http.ResponseEntity;
+import org.springframework.http.HttpStatus;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.validation.Valid;
 
-@Controller
-@RequestMapping("/users")
+@RestController
+@RequestMapping("/api/auth")
 public class UserController {
 
 
     private final ModelMapper modelMapper;
     private final UserService userService;
+    private final AuthenticationManager authenticationManager;
 
-    public UserController(ModelMapper modelMapper, UserService userService) {
+    public UserController(ModelMapper modelMapper, UserService userService, AuthenticationManager authenticationManager) {
         this.modelMapper = modelMapper;
         this.userService = userService;
+        this.authenticationManager = authenticationManager;
     }
+
+
+    @PostMapping("/login")
+    public ResponseEntity<String> authenticateUser(@RequestBody LoginDto loginDto){
+
+        Authentication authentication =
+                authenticationManager
+                        .authenticate
+                                (new UsernamePasswordAuthenticationToken
+                                        (loginDto.getUsername(), loginDto.getPassword()));
+
+        SecurityContextHolder.getContext().setAuthentication(authentication);
+
+        return new ResponseEntity<>("User signed-in successfully!.", HttpStatus.OK);
+
+    }
+
 
 
     // Model Attribute
