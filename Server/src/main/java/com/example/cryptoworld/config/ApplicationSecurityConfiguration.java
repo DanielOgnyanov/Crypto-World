@@ -2,7 +2,9 @@ package com.example.cryptoworld.config;
 
 
 import com.example.cryptoworld.models.enums.EnumRole;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -31,12 +33,12 @@ public class ApplicationSecurityConfiguration extends WebSecurityConfigurerAdapt
 
         http.authorizeRequests()
 
-                .antMatchers("/", "/users/login", "/users/create").permitAll()
+                .antMatchers("/", "/api/auth/login").permitAll()
                 .antMatchers("/admin").hasRole(EnumRole.ADMIN.name())
                 .antMatchers("/**").authenticated()
                 .and()
                 .formLogin()
-                .loginPage("/users/login")
+                .loginPage("/api/auth/login")
                 .usernameParameter("username")
                 .passwordParameter(UsernamePasswordAuthenticationFilter.SPRING_SECURITY_FORM_PASSWORD_KEY)
                 .defaultSuccessUrl("/home")
@@ -58,6 +60,13 @@ public class ApplicationSecurityConfiguration extends WebSecurityConfigurerAdapt
                 passwordEncoder(passwordEncoder);
 
 
+    }
+
+
+    @Bean
+    @Override
+    public AuthenticationManager authenticationManagerBean() throws Exception {
+        return super.authenticationManagerBean();
     }
 
 
