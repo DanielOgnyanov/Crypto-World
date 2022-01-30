@@ -28,6 +28,7 @@ public class RealTimeCryptoPriceServiceImpl implements RealTimeCryptoPriceServic
     }
 
 
+
     @Override
     public void getRealTimePrice() throws IOException {
 
@@ -35,8 +36,8 @@ public class RealTimeCryptoPriceServiceImpl implements RealTimeCryptoPriceServic
         OkHttpClient client = new OkHttpClient();
 
         Request request = new Request.Builder()
-                .url(infoUtils.getApiUrl())
-                .addHeader(infoUtils.getApiName(), infoUtils.getPrivateKey())
+                .url(infoUtils.getAPI_URL())
+                .addHeader(infoUtils.getAPI_NAME(), infoUtils.getPRIVATE_KEY())
                 .build();
 
         Response response = client.newCall(request).execute();
