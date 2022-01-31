@@ -31,23 +31,11 @@ public class ApplicationSecurityConfiguration extends WebSecurityConfigurerAdapt
     @Override
     protected void configure(HttpSecurity http) throws Exception {
 
-        http.authorizeRequests()
-
-                .antMatchers("/", "/api/auth/login").permitAll()
-                .antMatchers("/admin").hasRole(EnumRole.ADMIN.name())
-                .antMatchers("/**").authenticated()
+        http
+                .csrf().disable()
+                .authorizeRequests().anyRequest().authenticated()
                 .and()
-                .formLogin()
-                .loginPage("/api/auth/login")
-                .usernameParameter("username")
-                .passwordParameter(UsernamePasswordAuthenticationFilter.SPRING_SECURITY_FORM_PASSWORD_KEY)
-                .defaultSuccessUrl("/home")
-                .failureForwardUrl("/users/login-error")
-                .and()
-                .logout()
-                .logoutUrl("/users/logout")
-                .logoutSuccessUrl("/users/login")
-                .invalidateHttpSession(true);
+                .httpBasic();
 
 
     }
