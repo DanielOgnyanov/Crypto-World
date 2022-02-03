@@ -32,11 +32,15 @@ public class ApplicationSecurityConfiguration extends WebSecurityConfigurerAdapt
     @Override
     protected void configure(HttpSecurity http) throws Exception {
 
+        http.csrf().disable();
         http
-                .csrf().disable()
                 .authorizeRequests()
-                .anyRequest().authenticated()
-                .and().httpBasic();
+                .antMatchers("/api/auth/login").permitAll()
+                .antMatchers("/api/auth/register").permitAll()
+                .anyRequest()
+                .authenticated()
+                .and()
+                .httpBasic();
 
 
     }
