@@ -1,4 +1,4 @@
-const baseUrl = 'http://localhost:5000';
+const baseUrl = 'http://localhost:8000';
 
 export const login = async (username, password) => {
     let res = await fetch(`${baseUrl}/api/auth/login`, {
