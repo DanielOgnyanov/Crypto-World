@@ -12,6 +12,12 @@ import { AuthProvider } from './Context/AuthContext';
 
 
 function App() {
+  const [user, setUser] = useState(null);
+
+  const authInfo = {
+    isAuthenticated = Boolean(user),
+    username: user?.username
+  }
   return (
     <div className='container' >
       <AuthProvider>
