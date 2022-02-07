@@ -5,8 +5,11 @@ import { useNavigate } from "react-router-dom";
 
 
 const Header = () => {
+    
+    const {isAuthenticated, username} = useContext(AuthContext);
 
     const history = useNavigate();
+    
 
     function handleClick() {
 
