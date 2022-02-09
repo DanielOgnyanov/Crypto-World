@@ -19,7 +19,6 @@ const Header = () => {
 
     let userNavigation = (
 
-
         <div className='userNavigation'>
 
             <Link className='button' to="/home" data-toggle="collapse">Home</Link>
@@ -44,14 +43,7 @@ const Header = () => {
 
 
         </div>
-
-
-
-
     );
-
-
-
 
 
     return (
@@ -60,16 +52,12 @@ const Header = () => {
             <nav className="topnav">
                 <Link className='button' to="/" ><img src={logoImg} alt=""></img></Link>
 
+                {user.username
 
-                { user.username
-                
-                ? userNavigation
-                : guestNavigation
-                
-                
+                    ? userNavigation
+                    : guestNavigation
+
                 }
-
-
             </nav>
 
 

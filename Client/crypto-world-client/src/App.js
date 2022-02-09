@@ -12,7 +12,7 @@ import { AuthProvider } from './Context/AuthContext';
 
 
 function App() {
-  
+
   return (
     <div className='container' >
       <AuthProvider>
@@ -25,9 +25,6 @@ function App() {
 
 
           <Route path="/home" element={<HomePage />} />
-
-
-
 
         </Routes>
 
