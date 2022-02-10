@@ -4,13 +4,23 @@ import './HomePage.css'
 
 const HomePage = () => {
 
-  
-    
+
+
 
     return (
 
 
-        <h3>Homepage</h3>
+        <table className='table'>
+            <thead >
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Crypto Name</th>
+                    <th scope="col">Current Price</th>
+                </tr>
+
+            </thead>
+
+        </table>
 
 
     );
