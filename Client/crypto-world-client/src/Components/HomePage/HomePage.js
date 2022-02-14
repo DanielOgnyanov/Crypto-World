@@ -20,6 +20,19 @@ const HomePage = () => {
 
             </thead>
 
+
+            <tbody>
+            <tr>
+            <td>1</td>
+            <td>Bitcoin</td>
+            <td>42000</td>
+        </tr>
+
+
+
+
+            </tbody>
+
         </table>
 
 
