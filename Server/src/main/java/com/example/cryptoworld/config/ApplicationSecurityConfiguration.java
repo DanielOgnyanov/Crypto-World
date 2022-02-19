@@ -37,6 +37,7 @@ public class ApplicationSecurityConfiguration extends WebSecurityConfigurerAdapt
                 .authorizeRequests()
                 .antMatchers("/api/auth/login").permitAll()
                 .antMatchers("/api/auth/register").permitAll()
+                .antMatchers("/api/home/cryptoPrice").permitAll()
                 .anyRequest()
                 .authenticated()
                 .and()

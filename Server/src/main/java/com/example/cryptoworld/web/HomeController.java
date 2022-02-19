@@ -35,6 +35,8 @@ public class HomeController {
         return cryptoService.getAllCrypto();
     }
 
+
+    // old code
     @GetMapping("/")
     public String index() {
 
