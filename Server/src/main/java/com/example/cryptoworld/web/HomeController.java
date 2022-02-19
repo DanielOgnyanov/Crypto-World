@@ -7,8 +7,11 @@ import com.example.cryptoworld.service.WalletService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
+@RestController
+@RequestMapping("/api/home/")
 public class HomeController {
 
     private final WalletService walletService;
@@ -20,6 +23,9 @@ public class HomeController {
         this.cryptoService = cryptoService;
         this.creditCartService = creditCartService;
     }
+
+
+
 
     @GetMapping("/")
     public String index() {
