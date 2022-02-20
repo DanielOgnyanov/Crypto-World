@@ -5,6 +5,7 @@ import com.example.cryptoworld.models.binding.LoginDto;
 import com.example.cryptoworld.models.binding.UserRegistrationBindingModel;
 import com.example.cryptoworld.models.service.UserRegistrationServiceModel;
 import com.example.cryptoworld.service.UserService;
+import com.example.cryptoworld.service.WalletService;
 import org.modelmapper.ModelMapper;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.HttpStatus;
@@ -20,18 +21,20 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import javax.validation.Valid;
 
 @RestController
-@RequestMapping("/api/auth")
+@RequestMapping("/api/user")
 public class UserController {
 
 
     private final ModelMapper modelMapper;
     private final UserService userService;
     private final AuthenticationManager authenticationManager;
+    private final WalletService walletService;
 
-    public UserController(ModelMapper modelMapper, UserService userService, AuthenticationManager authenticationManager) {
+    public UserController(ModelMapper modelMapper, UserService userService, AuthenticationManager authenticationManager, WalletService walletService) {
         this.modelMapper = modelMapper;
         this.userService = userService;
         this.authenticationManager = authenticationManager;
+        this.walletService = walletService;
     }
 
 
@@ -50,7 +53,18 @@ public class UserController {
 
     }
 
+    @GetMapping("/wallet")
+    public String getUserWallet() {
 
+
+
+
+        return
+    }
+
+
+
+    // OLD CODE
 
     // Model Attribute
 
