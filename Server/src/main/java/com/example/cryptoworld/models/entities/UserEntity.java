@@ -166,4 +166,12 @@ public class UserEntity extends BaseEntity implements Serializable {
         this.roles.remove(roleEntity);
         return this;
     }
+
+    public boolean isLogged() {
+        return isLogged;
+    }
+
+    public void setLogged(boolean logged) {
+        isLogged = logged;
+    }
 }

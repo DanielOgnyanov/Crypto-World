@@ -6,10 +6,13 @@ import com.example.cryptoworld.models.service.UserRegistrationServiceModel;
 import com.example.cryptoworld.models.view.UserView;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface UserService {
     void initializeUsers();
+
     boolean existByUsername(String username);
+
     boolean existByEmail(String email);
 
     void register(UserRegistrationServiceModel userRegistrationServiceModel);

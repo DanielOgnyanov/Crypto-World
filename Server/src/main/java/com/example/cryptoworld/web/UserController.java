@@ -4,6 +4,7 @@ package com.example.cryptoworld.web;
 import com.example.cryptoworld.models.binding.LoginCheckDto;
 import com.example.cryptoworld.models.binding.LoginDto;
 import com.example.cryptoworld.models.binding.UserRegistrationBindingModel;
+import com.example.cryptoworld.models.entities.UserEntity;
 import com.example.cryptoworld.models.service.UserRegistrationServiceModel;
 import com.example.cryptoworld.service.UserService;
 import com.example.cryptoworld.service.WalletService;
@@ -57,7 +58,8 @@ public class UserController {
     @GetMapping("/wallet")
     public String getUserWallet(@RequestBody LoginCheckDto loginCheckDto) {
 
-
+        UserEntity user = userService.findByUsername(loginCheckDto.getUsername());
+        if(user.g)
 
 
         return
