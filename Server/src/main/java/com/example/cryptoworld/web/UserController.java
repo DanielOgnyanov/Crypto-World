@@ -59,7 +59,10 @@ public class UserController {
     public String getUserWallet(@RequestBody LoginCheckDto loginCheckDto) {
 
         UserEntity user = userService.findByUsername(loginCheckDto.getUsername());
-        if(user.g)
+
+        if(!user.isLogged()) {
+            return
+        }
 
 
         return
