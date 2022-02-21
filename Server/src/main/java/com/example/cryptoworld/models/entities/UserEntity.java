@@ -25,6 +25,7 @@ public class UserEntity extends BaseEntity implements Serializable {
     private List<LogDeposit> depositSet = new ArrayList<>();
     private List<CreditCardEntity> card;
     private List<LogSell> sellList;
+    private boolean isLogged;
 
 
     public UserEntity(String username,
@@ -34,7 +35,8 @@ public class UserEntity extends BaseEntity implements Serializable {
                       EnumCountry country,
                       List<RoleEntity> roles,
                       String walletAddress,
-                      List<LogDeposit> depositSet) {
+                      List<LogDeposit> depositSet,
+                      boolean isLogged) {
         this.username = username;
         this.fullName = fullName;
         this.password = password;
@@ -43,6 +45,7 @@ public class UserEntity extends BaseEntity implements Serializable {
         this.roles = roles;
         this.walletAddress = walletAddress;
         this.depositSet = depositSet;
+        this.isLogged = false;
     }
 
     public UserEntity() {
