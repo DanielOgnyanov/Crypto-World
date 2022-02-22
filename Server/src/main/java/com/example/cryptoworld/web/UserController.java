@@ -56,12 +56,12 @@ public class UserController {
     }
 
     @GetMapping("/wallet")
-    public String getUserWallet(@RequestBody LoginCheckDto loginCheckDto) {
+    public ResponseEntity<String> getUserWallet(@RequestBody LoginCheckDto loginCheckDto) {
 
         UserEntity user = userService.findByUsername(loginCheckDto.getUsername());
 
         if(!user.isLogged()) {
-            return
+            return new ResponseEntity<>("User is not logged !", HttpStatus.UNAUTHORIZED);
         }
 
 
