@@ -344,4 +344,9 @@ public class WalletServiceImpl implements WalletService {
                 .map(wallet -> modelMapper.map(wallet, WalletViewModel.class))
                 .collect(Collectors.toList());
     }
+
+    @Override
+    public WalletEntity getUserWallet(String username) {
+        return walletRepository.findByUsername(username);
+    }
 }
