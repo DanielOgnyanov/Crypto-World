@@ -5,6 +5,7 @@ import com.example.cryptoworld.models.binding.LoginCheckDto;
 import com.example.cryptoworld.models.binding.LoginDto;
 import com.example.cryptoworld.models.binding.UserRegistrationBindingModel;
 import com.example.cryptoworld.models.entities.UserEntity;
+import com.example.cryptoworld.models.entities.WalletEntity;
 import com.example.cryptoworld.models.service.UserRegistrationServiceModel;
 import com.example.cryptoworld.service.UserService;
 import com.example.cryptoworld.service.WalletService;
@@ -56,16 +57,17 @@ public class UserController {
     }
 
     @GetMapping("/wallet")
-    public ResponseEntity<String> getUserWallet(@RequestBody LoginCheckDto loginCheckDto) {
+    public ResponseEntity<WalletEntity> getUserWallet(@RequestBody LoginCheckDto loginCheckDto) {
 
         UserEntity user = userService.findByUsername(loginCheckDto.getUsername());
+        WalletEntity wallet = walletService.getUserWallet(loginCheckDto.getUsername());
 
         if(!user.isLogged()) {
-            return new ResponseEntity<>("User is not logged !", HttpStatus.UNAUTHORIZED);
+            return new ResponseEntity<>(wallet, HttpStatus.UNAUTHORIZED);
         }
 
 
-        return
+        return new ResponseEntity<>(wallet, HttpStatus.OK);
     }
 
 
