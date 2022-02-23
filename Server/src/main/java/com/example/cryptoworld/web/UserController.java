@@ -66,7 +66,6 @@ public class UserController {
             return new ResponseEntity<>(wallet, HttpStatus.UNAUTHORIZED);
         }
 
-
         return new ResponseEntity<>(wallet, HttpStatus.OK);
     }
 
