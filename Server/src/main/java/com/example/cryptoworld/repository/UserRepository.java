@@ -20,4 +20,7 @@ public interface UserRepository extends JpaRepository<UserEntity, Long> {
     @Query("select u from UserEntity as u order by u.username")
     List<UserEntity> findAllOrderedByUsername();
 
+    @Query("select u from UserEntity  as u where u.logged = true ")
+    List<UserEntity> getLoggedUsers();
+
 }
