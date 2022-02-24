@@ -5,6 +5,8 @@ import com.example.cryptoworld.models.entities.UserEntity;
 import com.example.cryptoworld.models.service.ChangeRoleServiceModel;
 import com.example.cryptoworld.service.*;
 import org.modelmapper.ModelMapper;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -41,12 +43,11 @@ public class AdminController {
 
     @GetMapping("/logged")
 
-    public List<UserEntity> getAllLoggedUser() {
+    public ResponseEntity<List<UserEntity>> getAllLoggedUser() {
 
+        List<UserEntity> allLoggedUsers = adminService.getAllLoggedUser();
 
-
-
-
+        return new ResponseEntity<>(allLoggedUsers, HttpStatus.OK);
 
     }
 
