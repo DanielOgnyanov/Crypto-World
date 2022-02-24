@@ -1,6 +1,7 @@
 package com.example.cryptoworld.web;
 
 import com.example.cryptoworld.models.binding.ChangeRoleBindingModel;
+import com.example.cryptoworld.models.entities.UserEntity;
 import com.example.cryptoworld.models.service.ChangeRoleServiceModel;
 import com.example.cryptoworld.service.*;
 import org.modelmapper.ModelMapper;
@@ -10,12 +11,14 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.validation.Valid;
+import java.util.List;
 
-@Controller
-@RequestMapping("/admin")
+@RestController
+@RequestMapping("/api/admin")
 public class AdminController {
 
     private final ModelMapper modelMapper;
@@ -35,6 +38,21 @@ public class AdminController {
         this.logSellService = logSellService;
         this.creditCartService = creditCartService;
     }
+
+    @GetMapping("/logged")
+
+    public List<UserEntity> getAllLoggedUser() {
+
+
+
+
+
+
+    }
+
+
+
+    // OLD CODE
 
     @GetMapping("/setting")
 
