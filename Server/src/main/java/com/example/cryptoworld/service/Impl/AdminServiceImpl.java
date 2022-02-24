@@ -9,6 +9,8 @@ import com.example.cryptoworld.service.RoleService;
 import com.example.cryptoworld.service.UserService;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class AdminServiceImpl implements AdminService {
 
@@ -45,5 +47,10 @@ public class AdminServiceImpl implements AdminService {
             }
 
         }
+    }
+
+    @Override
+    public List<UserEntity> getAllLoggedUser() {
+        return null;
     }
 }
