@@ -51,6 +51,6 @@ public class AdminServiceImpl implements AdminService {
 
     @Override
     public List<UserEntity> getAllLoggedUser() {
-        return null;
+        return userRepository.getLoggedUsers();
     }
 }
