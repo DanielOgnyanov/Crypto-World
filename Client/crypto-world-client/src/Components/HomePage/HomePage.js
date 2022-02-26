@@ -5,7 +5,7 @@ import * as cryptoService from '../../Services/CryptoService'
 
 const HomePage = () => {
 
-    
+    let cryptoPrices = cryptoService.getCryptoPrice;
 
 
 
