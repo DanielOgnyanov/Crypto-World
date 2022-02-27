@@ -7,7 +7,10 @@ const HomePage = () => {
 
     let cryptoPrices = cryptoService.getCryptoPrice;
 
+    let jsonCryptoPrices = JSON.stringify(cryptoPrices);
 
+
+    
 
     return (
 
