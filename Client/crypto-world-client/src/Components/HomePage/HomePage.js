@@ -7,7 +7,9 @@ const HomePage = () => {
 
     let cryptoPrices = cryptoService.getCryptoPrice;
 
-    let jsonCryptoPrices = JSON.parse(cryptoPrices);
+    let objCryptoPrices = JSON.parse(cryptoPrices);
+
+    
 
     
 
@@ -27,9 +29,9 @@ const HomePage = () => {
         </thead>
         <tbody>
         <tr>
-            <th scope="row" >1</th>
-            <td >Bitcoin</td>
-            <td >42 000</td>
+            <th scope="row" >objCryptoPrices.id</th>
+            <td >objCryptoPrices.name</td>
+            <td >objCryptoPrices.price</td>
         </tr>
         </tbody>
     </table>
