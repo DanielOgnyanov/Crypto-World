@@ -7,7 +7,7 @@ const HomePage = () => {
 
     let cryptoPrices = cryptoService.getCryptoPrice;
 
-    let objCryptoPrices = JSON.parse(cryptoPrices);
+    let objCryptoPrices = JSON.parse({id: 1, name: "Bitcoin", price: 45000});
 
     
 
