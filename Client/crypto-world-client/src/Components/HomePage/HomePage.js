@@ -5,41 +5,48 @@ import * as cryptoService from '../../Services/CryptoService'
 
 const HomePage = () => {
 
-    let cryptoPrices = cryptoService.getCryptoPrice;
+    const cryptoPrices = cryptoService.getCryptoPrice;
 
-    let objCryptoPrices = JSON.parse({id: 1, name: "Bitcoin", price: 45000});
-
-    
-
-    
+    const cryptoItem = [{ id: 1, name: "Bitcoin", price: 45000 }];
 
 
-    
+
+
+
+
+
+
 
     return (
 
 
         <table className="table">
-        <thead className="table-light">
-        <tr>
-            <th scope="col">#</th>
-            <th scope="col">Crypto Name</th>
-            <th scope="col">Current Price</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <th scope="row" >objCryptoPrices.id</th>
-            <td >objCryptoPrices.name</td>
-            <td >objCryptoPrices.price</td>
-        </tr>
-        </tbody>
-    </table>
+            <thead className="table-light">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Crypto Name</th>
+                    <th scope="col">Current Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                {cryptoItem.map(Item => (
+
+                    <tr>
+                        <th scope="row" >{Item.id}</th>
+                        <td >{Item.name}</td>
+                        <td >{Item.price}</td>
+                    </tr>
+
+
+                ))}
+
+            </tbody>
+        </table>
 
 
 
 
-           
+
 
     );
 }
