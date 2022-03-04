@@ -4,6 +4,7 @@ import Chart from '../Chart/Chart';
 
 
 
+
 const HomePage = () => {
 
     const cryptoPrices = cryptoService.getCryptoPrice;
@@ -27,7 +28,7 @@ const HomePage = () => {
 
         <div className='home'>
             <div className='chart'>
-                <Chart></Chart>
+                <Chart/>
             </div>
 
             <table className="table">
