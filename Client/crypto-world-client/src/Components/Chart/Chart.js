@@ -1,40 +1,51 @@
+import 'chart.js/auto';
 import { Doughnut } from 'react-chartjs-2'
 
 
 const Chart = () => {
 
-    const data = {
-        labels: [
-          'Red',
-          'Blue',
-          'Yellow'
-        ],
-        datasets: [{
-          label: 'Dataset',
-          data: [300, 50, 100],
-          backgroundColor: [
-            'rgb(255, 99, 132)',
-            'rgb(54, 162, 235)',
-            'rgb(255, 205, 86)'
-          ],
-          hoverOffset: 4
-        }]
-      };
+  const data = {
+    labels: ["Bitcoin", "Ethereum", "BNB"],
+    datasets: [
+      {
+        data: [2, 3, 5],
+        backgroundColor: ["#FF6384", "#36A2EB", "#FFCE56"],
+        hoverBackgroundColor: ["red", "#36A2EB", "#FFCE56"],
+        borderWidth: 1
+      }
+    ],
+    text: "25%"
+  };
+  
+  const options1 = {
+    responsive: true,
+    cutoutPercentage: 85,
+    maintainAspectRatio: false,
+    legend: {
+      display: true,
+      position: "bottom",
+      usePointStyle: "true",
+      labels: {
+        fontSize: 12,
+        padding: 25,
+        fontColor: "#6D7278",
+        fontFamily: "kanit light"
+      }
+    }
+  };
 
 
-    return (
+  return (
 
-
-        <div>
-            <Doughnut>
-       
-
-
-            </Doughnut>
-
-        </div>
-
-    );
+    <>
+    <Doughnut
+      data={data}
+      options={options1}
+      height={250}
+     
+    />
+  </>
+  );
 
 
 }
