@@ -42,6 +42,7 @@ const Chart = () => {
       data={data}
       options={options1}
       height={250}
+      width={800}
      
     />
   </>
