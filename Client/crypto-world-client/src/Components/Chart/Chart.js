@@ -25,11 +25,13 @@ const Chart = () => {
       display: true,
       position: "bottom",
       usePointStyle: "true",
+      
       labels: {
         fontSize: 12,
         padding: 25,
-        fontColor: "#6D7278",
+        fontColor: "white",
         fontFamily: "kanit light"
+        
       }
     }
   };
