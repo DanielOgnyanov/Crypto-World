@@ -4,7 +4,7 @@ import { Doughnut } from 'react-chartjs-2'
 
 const Chart = () => {
 
-  const data = {
+  const chartData = {
     labels: ["Bitcoin", "Ethereum", "BNB"],
     datasets: [
       {
@@ -17,7 +17,7 @@ const Chart = () => {
     text: "25%"
   };
   
-  const options1 = {
+  const chartOptions = {
     responsive: true,
     cutoutPercentage: 85,
     maintainAspectRatio: false,
@@ -33,6 +33,10 @@ const Chart = () => {
         fontFamily: "kanit light"
         
       }
+    },
+    title: {
+      display: true,
+      title: "Portfolio"
     }
   };
 
@@ -41,8 +45,9 @@ const Chart = () => {
 
     <>
     <Doughnut
-      data={data}
-      options={options1}
+      data={chartData}
+      options={chartOptions}
+      
       height={250}
       width={800}
      
