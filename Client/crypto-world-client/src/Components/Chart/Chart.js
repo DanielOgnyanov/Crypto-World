@@ -15,44 +15,58 @@ const Chart = () => {
       }
     ],
     text: "25%"
+
+
   };
-  
+
   const chartOptions = {
     responsive: true,
     cutoutPercentage: 85,
     maintainAspectRatio: false,
-    legend: {
-      display: true,
-      position: "bottom",
-      usePointStyle: "true",
-      
-      labels: {
-        fontSize: 12,
-        padding: 25,
-        fontColor: "white",
-        fontFamily: "kanit light"
-        
+
+    
+      plugins: {
+
+        legend: {
+          display: true,
+          position: "bottom",
+         
+
+          labels: {
+            usePointStyle: "true",
+            fontSize: 12,
+            padding: 25,
+            fontColor: '#333',
+            fontFamily: "kanit light"
+
+          }
+        },
+
+        title: {
+          display: true,
+          fontColor: "white",
+          title: "Portfolio"
+        }
       }
-    },
-    title: {
-      display: true,
-      title: "Portfolio"
-    }
+    
+
+
+
   };
 
 
   return (
 
-    <>
+
     <Doughnut
       data={chartData}
       options={chartOptions}
-      
+
       height={250}
       width={800}
-     
+
     />
-  </>
+
   );
 
 
