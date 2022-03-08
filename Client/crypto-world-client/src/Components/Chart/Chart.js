@@ -9,9 +9,11 @@ const Chart = () => {
     datasets: [
       {
         data: [2, 3, 5],
-        backgroundColor: ["#FF6384", "#36A2EB", "#FFCE56"],
-        hoverBackgroundColor: ["red", "#36A2EB", "#FFCE56"],
+        backgroundColor: ["red", "blue", "yellow"],
+        hoverBackgroundColor: ["red", "blue", "yellow"],
         borderWidth: 1
+
+
       }
     ],
     text: "25%"
@@ -24,31 +26,37 @@ const Chart = () => {
     cutoutPercentage: 85,
     maintainAspectRatio: false,
 
-    
-      plugins: {
 
-        legend: {
-          display: true,
-          position: "bottom",
-         
 
-          labels: {
-            usePointStyle: "true",
-            fontSize: 12,
-            padding: 25,
-            fontColor: '#333',
-            fontFamily: "kanit light"
 
-          }
-        },
+    legend: {
+      display: true,
+      position: 'bottom'
+    },
 
-        title: {
-          display: true,
-          fontColor: "white",
-          title: "Portfolio"
-        }
-      }
-    
+
+
+
+
+    labels: {
+      usePointStyle: "true",
+      fontSize: 12,
+      padding: 25,
+      fontColor: "blue",
+      fontFamily: "kanit light"
+
+    },
+
+
+    title: {
+      display: true,
+      fontColor: "white",
+      title: "Portfolio"
+    }
+
+
+
+
 
 
 
