@@ -26,18 +26,22 @@ const Chart = () => {
     cutoutPercentage: 85,
     maintainAspectRatio: false,
     color: "white",
-    
+
     plugins: {
       title: {
         display: true,
         text: "Portfolio",
-        color: "white"
+        color: "white",
+        font:{
+          size: 30
+        }
+        
       },
-     legend: { 
-        display: true, 
+      legend: {
+        display: true,
         position: "bottom"
       }
-  }
+    }
 
   };
 
@@ -47,7 +51,7 @@ const Chart = () => {
 
     <Doughnut
       data={chartData}
-      options = {chartOptions}
+      options={chartOptions}
 
       height={250}
       width={800}
