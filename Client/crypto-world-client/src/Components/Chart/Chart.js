@@ -5,12 +5,12 @@ import { Doughnut } from 'react-chartjs-2'
 const Chart = () => {
 
   const chartData = {
-    labels: ["Bitcoin", "Ethereum", "BNB"],
+    labels: ["Bitcoin", "Ethereum", "BNB","Cardano", "Tether", "Solana", "Xrp", "Polkadot", "Dogecoin", "Usdcoin"],
     datasets: [
       {
-        data: [2, 3, 5],
-        backgroundColor: ["yellow", "blue", "#E9C80D"],
-        hoverBackgroundColor: ["yellow", "blue", "#E9C80D"],
+        data: [2, 3, 5, 1, 1, 1 ],
+        backgroundColor: ["yellow", "blue", "#E9C80D", "#0D7EEE", "#07B009", "#E865D8 "],
+        hoverBackgroundColor: ["yellow", "blue", "#E9C80D", "#0D7EEE", "#07B009", "#E865D8 "],
         borderWidth: 1
 
 
