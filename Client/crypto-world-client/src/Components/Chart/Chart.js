@@ -25,15 +25,16 @@ const Chart = () => {
     responsive: true,
     cutoutPercentage: 85,
     maintainAspectRatio: false,
-    color: "white",
+    
 
     plugins: {
       title: {
         display: true,
         text: "Portfolio",
-        color: "white",
+        
         font:{
           size: 30
+        
         }
         
       },
@@ -42,7 +43,9 @@ const Chart = () => {
         position: "bottom",
         labels:{
           font:{
-            size: 15
+            size: 17,
+            color: "black",
+
           }
         }
         
@@ -59,8 +62,8 @@ const Chart = () => {
       data={chartData}
       options={chartOptions}
 
-      height={250}
-      width={800}
+      height= "450px"
+      
 
     />
 
