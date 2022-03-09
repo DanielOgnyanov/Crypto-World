@@ -8,9 +8,9 @@ const Chart = () => {
     labels: ["Bitcoin", "Ethereum", "BNB","Cardano", "Tether", "Solana", "Xrp", "Polkadot", "Dogecoin", "Usdcoin"],
     datasets: [
       {
-        data: [2, 3, 5, 1, 1, 1 ],
-        backgroundColor: ["yellow", "blue", "#E9C80D", "#0D7EEE", "#07B009", "#E865D8 "],
-        hoverBackgroundColor: ["yellow", "blue", "#E9C80D", "#0D7EEE", "#07B009", "#E865D8 "],
+        data: [2, 3, 5, 1, 1, 1, 1, 1, 1, 1 ],
+        backgroundColor: ["yellow", "blue", "#E9C80D", "#0D7EEE", "#07B009", "#E865D8", "#4EB1E7", "#B01D95", "#A18D1B", "#1A7A46"],
+        hoverBackgroundColor: ["yellow", "blue", "#E9C80D", "#0D7EEE", "#07B009", "#E865D8", "#4EB1E7", "#B01D95", "#A18D1B", "#1A7A46"],
         borderWidth: 1
 
 
