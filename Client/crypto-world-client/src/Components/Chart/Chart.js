@@ -9,8 +9,8 @@ const Chart = () => {
     datasets: [
       {
         data: [2, 3, 5],
-        backgroundColor: ["red", "blue", "yellow"],
-        hoverBackgroundColor: ["red", "blue", "yellow"],
+        backgroundColor: ["yellow", "blue", "#E9C80D"],
+        hoverBackgroundColor: ["yellow", "blue", "#E9C80D"],
         borderWidth: 1
 
 
