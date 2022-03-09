@@ -5,10 +5,10 @@ import { Doughnut } from 'react-chartjs-2'
 const Chart = () => {
 
   const chartData = {
-    labels: ["Bitcoin", "Ethereum", "BNB","Cardano", "Tether", "Solana", "Xrp", "Polkadot", "Dogecoin", "Usdcoin"],
+    labels: ["Bitcoin", "Ethereum", "BNB", "Cardano", "Tether", "Solana", "Xrp", "Polkadot", "Dogecoin", "Usdcoin"],
     datasets: [
       {
-        data: [2, 3, 5, 1, 1, 1, 1, 1, 1, 1 ],
+        data: [2, 3, 5, 1, 1, 1, 1, 1, 1, 1],
         backgroundColor: ["yellow", "blue", "#E9C80D", "#0D7EEE", "#07B009", "#E865D8", "#4EB1E7", "#B01D95", "#A18D1B", "#1A7A46"],
         hoverBackgroundColor: ["yellow", "blue", "#E9C80D", "#0D7EEE", "#07B009", "#E865D8", "#4EB1E7", "#B01D95", "#A18D1B", "#1A7A46"],
         borderWidth: 1
@@ -25,30 +25,33 @@ const Chart = () => {
     responsive: true,
     cutoutPercentage: 85,
     maintainAspectRatio: false,
-    
+    color: "black",
 
     plugins: {
       title: {
         display: true,
         text: "Portfolio",
-        
-        font:{
-          size: 30
-        
+        color: "white",
+        font: {
+          size: 30,
+
         }
-        
+
       },
       legend: {
         display: true,
         position: "bottom",
-        labels:{
-          font:{
+        
+        labels: {
+          font: {
             size: 17,
-            color: "black",
+            
+            
+            
 
           }
         }
-        
+
       }
     }
 
@@ -62,8 +65,8 @@ const Chart = () => {
       data={chartData}
       options={chartOptions}
 
-      height= "450px"
-      
+      height="450px"
+
 
     />
 
