@@ -39,7 +39,13 @@ const Chart = () => {
       },
       legend: {
         display: true,
-        position: "bottom"
+        position: "bottom",
+        labels:{
+          font:{
+            size: 15
+          }
+        }
+        
       }
     }
 
