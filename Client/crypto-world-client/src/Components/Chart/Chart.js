@@ -25,40 +25,19 @@ const Chart = () => {
     responsive: true,
     cutoutPercentage: 85,
     maintainAspectRatio: false,
-
-
-
-
-    legend: {
-      display: true,
-      position: 'bottom'
-    },
-
-
-
-
-
-    labels: {
-      usePointStyle: "true",
-      fontSize: 12,
-      padding: 25,
-      fontColor: "blue",
-      fontFamily: "kanit light"
-
-    },
-
-
-    title: {
-      display: true,
-      fontColor: "white",
-      title: "Portfolio"
-    }
-
-
-
-
-
-
+    color: "white",
+    
+    plugins: {
+      title: {
+        display: true,
+        text: "Portfolio",
+        color: "white"
+      },
+     legend: { 
+        display: true, 
+        position: "bottom"
+      }
+  }
 
   };
 
@@ -68,7 +47,7 @@ const Chart = () => {
 
     <Doughnut
       data={chartData}
-      options={chartOptions}
+      options = {chartOptions}
 
       height={250}
       width={800}
