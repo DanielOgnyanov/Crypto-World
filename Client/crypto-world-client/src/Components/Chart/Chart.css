@@ -1,3 +1,15 @@
 #chart-div{
-    background-color:  rgb(40, 40, 77);;
+    background-color:  rgb(40, 40, 77);
+    
+    border-radius: 20px;
+    border-bottom: 2px solid white;
+    border-top: 2px solid white;
+    border-right: 2px solid white;
+    border-left: 2px solid white;
+
+
+    margin-top: 50px;
+    margin-right: 50px;
+    margin-left: 50px;
+
 }
