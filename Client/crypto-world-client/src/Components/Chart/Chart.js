@@ -26,7 +26,7 @@ const Chart = () => {
     responsive: true,
     cutoutPercentage: 85,
     maintainAspectRatio: false,
-    color: "black",
+    color: "white",
 
     plugins: {
       title: {
@@ -45,11 +45,7 @@ const Chart = () => {
 
         labels: {
           font: {
-            size: 17,
-
-
-
-
+            size: 17
           }
         }
 
@@ -62,15 +58,12 @@ const Chart = () => {
   return (
 
 
-    <div id='chart-div'>
-      <Doughnut
-        data={chartData}
-        options={chartOptions}
-
-        height="450px"
+    <div className='chart-div' id='chart-div'>
 
 
-      />
+      <Doughnut data={chartData} options={chartOptions} height="450px" />
+
+
     </div>
 
 
