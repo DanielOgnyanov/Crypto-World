@@ -1,5 +1,6 @@
 import 'chart.js/auto';
 import { Doughnut } from 'react-chartjs-2'
+import './Chart.css'
 
 
 const Chart = () => {
@@ -41,13 +42,13 @@ const Chart = () => {
       legend: {
         display: true,
         position: "bottom",
-        
+
         labels: {
           font: {
             size: 17,
-            
-            
-            
+
+
+
 
           }
         }
@@ -61,14 +62,17 @@ const Chart = () => {
   return (
 
 
-    <Doughnut
-      data={chartData}
-      options={chartOptions}
+    <div >
+      <Doughnut
+        data={chartData}
+        options={chartOptions}
 
-      height="450px"
+        height="450px"
 
 
-    />
+      />
+    </div>
+
 
   );
 
