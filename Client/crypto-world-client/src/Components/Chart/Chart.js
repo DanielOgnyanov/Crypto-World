@@ -62,7 +62,7 @@ const Chart = () => {
   return (
 
 
-    <div >
+    <div id='chart-div'>
       <Doughnut
         data={chartData}
         options={chartOptions}
