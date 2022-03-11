@@ -58,13 +58,18 @@ const Chart = () => {
   return (
 
 
-    <div className='chart-div' id='chart-div'>
+    <div className='container' id='chart'>
+
+      <div id='details'>
+        <p>bitcoin</p>
+      </div>
 
 
-      <Doughnut data={chartData} options={chartOptions} height="450px" />
-
-
+      <div className='chart-div' >
+        <Doughnut data={chartData} options={chartOptions} height="450px" />
+      </div>
     </div>
+
 
 
   );

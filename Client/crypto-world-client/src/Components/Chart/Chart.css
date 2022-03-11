@@ -1,4 +1,4 @@
-#chart-div{
+#chart{
     background-color:  rgb(40, 40, 77);
     
     border-radius: 20px;
@@ -11,5 +11,11 @@
     margin-top: 50px;
     margin-right: 50px;
     margin-left: 50px;
+
+}
+
+#details{
+    margin-top: 90px;
+    margin-right: 90px;
 
 }
