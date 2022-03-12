@@ -61,7 +61,7 @@ const Chart = () => {
     <div className='container' id='chart'>
 
       <div id='details'>
-        <p>Bitcoin</p>
+        <p>Total Value:</p>
       </div>
 
 
