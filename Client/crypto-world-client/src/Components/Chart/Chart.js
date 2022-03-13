@@ -62,6 +62,7 @@ const Chart = () => {
 
       <div id='details'>
         <p>Total Value:</p>
+        <p>Last Buy:</p>
       </div>
 
 
