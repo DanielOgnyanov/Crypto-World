@@ -1,6 +1,7 @@
 import 'chart.js/auto';
 import { Doughnut } from 'react-chartjs-2'
 import './Chart.css'
+import * as userWalletService from '../../Services/UserWalletService'
 
 
 const Chart = () => {
