@@ -7,7 +7,11 @@ import * as userWalletService from '../../Services/UserWalletService'
 const Chart = () => {
 
 
-  const usersWallet = userWalletService.getUserWallet;
+  const usersWalletJson = userWalletService.getUserWallet;
+
+  const userWalletObj = JSON.parse(usersWalletJson);
+
+  const bitcoin = userWalletObj.Bitcoin;
 
   const chartData = {
     labels: ["Bitcoin", "Ethereum", "BNB", "Cardano", "Tether", "Solana", "Xrp", "Polkadot", "Dogecoin", "Usdcoin"],
