@@ -13,6 +13,8 @@ const Chart = () => {
 
   const bitcoin = userWalletObj.Bitcoin;
 
+  const ethereum = userWalletObj.Ethereum;
+
   const chartData = {
     labels: ["Bitcoin", "Ethereum", "BNB", "Cardano", "Tether", "Solana", "Xrp", "Polkadot", "Dogecoin", "Usdcoin"],
     datasets: [
