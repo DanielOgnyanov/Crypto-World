@@ -7,14 +7,14 @@ import * as userWalletService from '../../Services/UserWalletService'
 const Chart = () => {
 
 
-  const usersWalletJson = [{ id: 1, name: "Bitcoin", price: 45000 },
+  const usersWalletJson = [{ id: 1, name: "Bitcoin", price: 4 },
   
                            { id: 2, name: "Ethereum", price: 3000 }];
   
-  // userWalletService.getUserWallet;
+  
 
 
-  const userWalletObj = JSON.parse(usersWalletJson);
+  const userWalletObj = JSON.stringify(usersWalletJson);
 
   const bitcoin = userWalletObj.Bitcoin;
 
@@ -79,8 +79,7 @@ const Chart = () => {
     <div className='container' id='chart'>
 
       <div id='details'>
-        <p>Total Value:</p>
-        <p>Last Buy:</p>
+        <p>Total Value: </p>
       </div>
 
 
