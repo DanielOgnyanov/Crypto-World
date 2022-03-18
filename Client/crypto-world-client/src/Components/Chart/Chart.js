@@ -8,20 +8,21 @@ const Chart = () => {
 
 
   const usersWalletJson = [{ id: 1, name: "Bitcoin", price: 4 },
-  
-                           { id: 2, name: "Ethereum", price: 3000 }];
-  
-  
+
+  { id: 2, name: "Ethereum", price: 3000 }];
+
+
 
 
   const userWalletObj = JSON.stringify(usersWalletJson);
 
   const bitcoin = 2;
 
-  
   const ethereum = 1;
 
-  const dataArr = [bitcoin,ethereum]
+  const bnb = 3;
+
+  const dataArr = [bitcoin, ethereum, bnb]
 
   const chartData = {
     labels: ["Bitcoin", "Ethereum", "BNB", "Cardano", "Tether", "Solana", "Xrp", "Polkadot", "Dogecoin", "Usdcoin"],
