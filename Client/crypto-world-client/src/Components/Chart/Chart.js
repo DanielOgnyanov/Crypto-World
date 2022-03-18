@@ -16,7 +16,7 @@ const Chart = () => {
 
   const userWalletObj = JSON.stringify(usersWalletJson);
 
-  const portfolioValue = 0;
+  let portfolioValue = 0;
 
   const bitcoin = 2;
 
@@ -25,6 +25,11 @@ const Chart = () => {
   const bnb = 3;
 
   const dataArr = [bitcoin, ethereum, bnb]
+
+  for(let i = 0; i < dataArr.length; i++){
+    portfolioValue += dataArr[i];
+
+  }
 
   const chartData = {
     labels: ["Bitcoin", "Ethereum", "BNB", "Cardano", "Tether", "Solana", "Xrp", "Polkadot", "Dogecoin", "Usdcoin"],
