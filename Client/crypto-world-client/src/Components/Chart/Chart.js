@@ -90,7 +90,7 @@ const Chart = () => {
     <div className='container' id='chart'>
 
       <div id='details'>
-        <p>Total Value: </p>
+        <p>Total Value: {portfolioValue}</p>
       </div>
 
 
