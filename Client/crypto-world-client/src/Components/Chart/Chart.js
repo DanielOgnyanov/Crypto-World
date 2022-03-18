@@ -16,6 +16,8 @@ const Chart = () => {
 
   const userWalletObj = JSON.stringify(usersWalletJson);
 
+  const portfolioValue = 0;
+
   const bitcoin = 2;
 
   const ethereum = 1;
