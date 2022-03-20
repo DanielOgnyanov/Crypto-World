@@ -17,9 +17,9 @@ const Chart = () => {
 
   const bitcoin =  usersWalletJson[1].price;
 
-  const ethereum = 1;
+  const ethereum = usersWalletJson[2].price;
 
-  const bnb = 3;
+  
 
   const dataArr = [bitcoin, ethereum, bnb]
 
