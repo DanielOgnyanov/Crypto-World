@@ -21,7 +21,7 @@ const Chart = () => {
 
   
 
-  const dataArr = [bitcoin, ethereum, bnb]
+  const dataArr = [bitcoin, ethereum]
 
   for(let i = 0; i < dataArr.length; i++){
     portfolioValue += dataArr[i];
