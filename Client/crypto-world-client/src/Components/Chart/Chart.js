@@ -15,7 +15,7 @@ const Chart = () => {
 
   let portfolioValue = 0;
 
-  const bitcoin =  1;
+  const bitcoin =  usersWalletJson[1].price;
 
   const ethereum = 1;
 
