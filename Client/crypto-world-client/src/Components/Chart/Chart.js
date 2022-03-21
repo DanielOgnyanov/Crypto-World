@@ -7,7 +7,7 @@ import * as userWalletService from '../../Services/UserWalletService'
 const Chart = () => {
 
 
-  const usersWalletJson = [{ id: 1, name: "Bitcoin", price: 4 },
+  const usersWalletJson = [{ id: 1, name: "Bitcoin", price: 45000 },
 
   { id: 2, name: "Ethereum", price: 3000 }];
 
@@ -15,9 +15,10 @@ const Chart = () => {
 
   let portfolioValue = 0;
 
-  const bitcoin =  usersWalletJson[1].price;
+  let bitcoin =  usersWalletJson[0]['price'];
+  
 
-  const ethereum = usersWalletJson[2].price;
+  let ethereum = usersWalletJson[1]['price'];
 
   
 
