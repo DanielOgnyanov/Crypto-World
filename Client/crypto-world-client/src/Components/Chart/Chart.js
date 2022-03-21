@@ -9,7 +9,8 @@ const Chart = () => {
 
   const usersWalletJson = [{ id: 1, name: "Bitcoin", price: 45000 },
 
-  { id: 2, name: "Ethereum", price: 3000 }];
+  { id: 2, name: "Ethereum", price: 3000 },
+  {id: 3, name: "BNB", price: 300}];
 
   
 
@@ -20,9 +21,11 @@ const Chart = () => {
 
   let ethereum = usersWalletJson[1]['price'];
 
+  let bnb = usersWalletJson[2]['price']
+
   
 
-  const dataArr = [bitcoin, ethereum]
+  const dataArr = [bitcoin, ethereum, bnb]
 
   for(let i = 0; i < dataArr.length; i++){
     portfolioValue += dataArr[i];
