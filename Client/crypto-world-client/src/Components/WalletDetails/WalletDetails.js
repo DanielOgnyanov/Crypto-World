@@ -3,6 +3,10 @@ const WalletDetails = () => {
 
     return (
 
+        <div className="wallet-details">
+
+
+        </div>
 
 
     );
