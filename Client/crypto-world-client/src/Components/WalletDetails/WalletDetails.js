@@ -1,9 +1,14 @@
+import './WalletDetails.css'
+
+
+
+
 const WalletDetails = () => {
 
 
     return (
 
-        <div className="wallet-details">
+        <div id='div-wallet-details'>
 
             <p>Portfolio create date: </p>
             
