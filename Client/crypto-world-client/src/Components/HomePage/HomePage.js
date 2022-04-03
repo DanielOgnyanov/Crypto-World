@@ -1,6 +1,7 @@
 import './HomePage.css'
 import * as cryptoService from '../../Services/CryptoService'
 import Chart from '../Chart/Chart';
+import WalletDetails  from '../WalletDetails/WalletDetails';
 
 
 
@@ -29,6 +30,10 @@ const HomePage = () => {
         <div className='home'>
             <div className='chart'>
                 <Chart/>
+            </div>
+
+            <div className='wallet-details'>
+                <WalletDetails/>
             </div>
 
             <table className="table">
