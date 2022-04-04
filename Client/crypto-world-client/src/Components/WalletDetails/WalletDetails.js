@@ -10,12 +10,18 @@ const WalletDetails = () => {
 
         <div id='div-wallet-details'>
 
-            <p>Details</p>
+            <h2 id='title'>Details</h2>
 
-            <h5>Portfolio create date: </h5>
+            <div id='info-row'>
+            <h4>Portfolio create date: </h4>
             
-            <h5>Last Sell: </h5>
-            <h5>Last Buy: </h5>
+            <h4>Last Sell: </h4>
+            <h4>Last Buy: </h4>
+
+            </div>
+
+
+            
 
 
 
