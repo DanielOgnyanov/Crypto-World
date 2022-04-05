@@ -14,6 +14,8 @@ const WalletDetails = () => {
 
             <div id='info-row'>
             <h4>Portfolio create date: </h4>
+
+            <h4>Credit Card Name:</h4>
             
             <h4>Last Sell: </h4>
             <h4>Last Buy: </h4>
