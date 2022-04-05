@@ -13,7 +13,7 @@ const WalletDetails = () => {
             <h2 id='title'>Details</h2>
 
             <div id='info-row'>
-            <h4>Portfolio create date: </h4>
+            <h4>Portfolio Create Date: </h4>
 
             <h4>Credit Card Name:</h4>
             
