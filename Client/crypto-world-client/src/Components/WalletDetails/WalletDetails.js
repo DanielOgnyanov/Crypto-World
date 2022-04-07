@@ -15,10 +15,10 @@ const WalletDetails = () => {
             <div id='info-row'>
             <h4>Portfolio Create Date: </h4>
 
-            <h4>Credit Card Name:</h4>
+            <h4>Credit Card Name: </h4>
             
-            <h4>Last Sell: </h4>
-            <h4>Last Buy: </h4>
+            <h4>Last Sell:      Value: </h4>
+            <h4>Last Buy:       Value: </h4>
 
             </div>
 
