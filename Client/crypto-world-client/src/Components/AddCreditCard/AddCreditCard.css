@@ -18,3 +18,14 @@
     
     background-size: 28px;
 } 
+
+
+#balance{
+    background-image: url('../../Images/money-icon.png');
+    background-repeat: no-repeat;
+    background-position: left 9px top 2px;
+    padding-left: 45px;
+    
+    background-size: 28px;
+
+}

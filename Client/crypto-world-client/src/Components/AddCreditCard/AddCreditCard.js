@@ -20,6 +20,7 @@ const AddCreditCard = () => {
             <input name='expiration-year' autoComplete="on" placeholder='Expiration Year' type="number" id='expiration-year' />
 
             <label htmlFor="balance">Balance</label>
+            <input name='balance' autoComplete="on" placeholder='Balance' type="number" id='balance' />
 
             
 
