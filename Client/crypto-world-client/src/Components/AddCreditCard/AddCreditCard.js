@@ -6,8 +6,16 @@ import './AddCreditCard.css'
 const AddCreditCard = () => {
 
 
+    const cardEnum = Object.freeze(
 
-    
+        'PAYPAL',
+        'SKRILL',
+        'REVOLUT',
+        'BINANCE'
+
+    );
+
+
 
     return (
 
@@ -22,7 +30,10 @@ const AddCreditCard = () => {
             <label htmlFor="balance">Balance</label>
             <input name='balance' autoComplete="on" placeholder='Balance' type="number" id='balance' />
 
-            
+            <label htmlFor="credit-card">Credit Card</label>
+            <input name='credit-card' autoComplete="on" placeholder='Credit Card'  id='credit-card' />
+
+
 
         </form>
 
@@ -31,4 +42,4 @@ const AddCreditCard = () => {
 }
 
 
-export default AddCreditCard ;
+export default AddCreditCard;
