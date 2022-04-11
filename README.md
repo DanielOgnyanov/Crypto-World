@@ -7,4 +7,4 @@ Project that permit to register and adding credit card to your account, buying a
 for example Bitcoin, Ethereum, Binance , Solana and more.
 
 The application is build from scratch with BE in Java and FE build in ReactJs. If you want check the src folder for more info about the source code, and the different
-implementation of the functionality.
+implementation of the functionality.  I’m currently working on it.
