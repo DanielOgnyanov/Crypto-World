@@ -30,7 +30,7 @@ const AddCreditCard = () => {
 
             <label htmlFor="credit-card">Credit Card</label>
 
-            {cardEnum.map(card => 
+            {cardEnum.map(card  => 
             
             <input name='credit-card' autoComplete="on" placeholder='Credit Card' id='credit-card' >{card}</input>
             
