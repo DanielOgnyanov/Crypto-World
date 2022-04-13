@@ -6,14 +6,12 @@ import './AddCreditCard.css'
 const AddCreditCard = () => {
 
 
-    const cardEnum = Object.freeze(
-
+    const cardEnum = [
         'PAYPAL',
         'SKRILL',
         'REVOLUT',
         'BINANCE'
-
-    );
+    ];
 
 
 
@@ -31,7 +29,21 @@ const AddCreditCard = () => {
             <input name='balance' autoComplete="on" placeholder='Balance' type="number" id='balance' />
 
             <label htmlFor="credit-card">Credit Card</label>
-            <input name='credit-card' autoComplete="on" placeholder='Credit Card'  id='credit-card' />
+
+            {cardEnum.map(card => 
+            
+            <input name='credit-card' autoComplete="on" placeholder='Credit Card' id='credit-card' >{card}</input>
+            
+            
+            
+            )}
+
+
+
+            
+
+
+
 
 
 
