@@ -32,7 +32,7 @@ const AddCreditCard = () => {
 
             {cardEnum.map(card  => 
             
-            <input name='credit-card' autoComplete="on" placeholder='Credit Card' id='credit-card' >{card}</input>
+            <input name='credit-card' autoComplete="on" placeholder='Credit Card' id='credit-card' ></input>
             
             
             
