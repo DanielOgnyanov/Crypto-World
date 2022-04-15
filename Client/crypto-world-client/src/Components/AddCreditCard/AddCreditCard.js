@@ -28,9 +28,10 @@ const AddCreditCard = () => {
             <label htmlFor="balance">Balance</label>
             <input name='balance' autoComplete="on" placeholder='Balance' type="number" id='balance' />
 
-            <label htmlFor="credit-card">Credit Card
+            <label htmlFor="credit-card">Credit Card</label>
 
-                <select>
+            
+            <select className='credit-card' id='credit-card'>
                     {cardEnum.map(card => (
                         <option>{card.name}</option>
 
@@ -38,12 +39,6 @@ const AddCreditCard = () => {
 
 
                 </select>
-
-
-
-
-
-            </label>
 
 
 
