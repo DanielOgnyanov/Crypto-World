@@ -7,10 +7,10 @@ const AddCreditCard = () => {
 
 
     const cardEnum = [
-        'PAYPAL',
-        'SKRILL',
-        'REVOLUT',
-        'BINANCE'
+        { name: 'PAYPAL' },
+        { name: 'SKRILL' },
+        { name: 'REVOLUT' },
+        { name: 'BINANCE' }
     ];
 
 
@@ -28,19 +28,34 @@ const AddCreditCard = () => {
             <label htmlFor="balance">Balance</label>
             <input name='balance' autoComplete="on" placeholder='Balance' type="number" id='balance' />
 
-            <label htmlFor="credit-card">Credit Card</label>
+            <label htmlFor="credit-card">Credit Card
 
-            {cardEnum.map(card  => 
-            
-            <input name='credit-card' autoComplete="on" placeholder='Credit Card' id='credit-card' ></input>
-            
-            
-            
-            )}
+                <select>
+                    {cardEnum.map(card => (
+                        <option>{card.name}</option>
+
+                    ))}
 
 
+                </select>
 
-            
+
+
+
+
+            </label>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
