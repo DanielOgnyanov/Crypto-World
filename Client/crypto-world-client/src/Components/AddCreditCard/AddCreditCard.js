@@ -33,7 +33,7 @@ const AddCreditCard = () => {
             
             <select className='credit-card' id='credit-card'>
                     {cardEnum.map(card => (
-                        <option>{card.name}</option>
+                        <option id='credit-card-option'>{card.name}</option>
 
                     ))}
 

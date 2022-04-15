@@ -38,9 +38,13 @@
     background-position: left 5px top 2px;
     padding-left: 130px;
     padding-right: 130px;
-    padding-bottom: 17px;
+    padding-bottom: 16px;
     border-radius: 8px;
     
-    background-size: 38px;
+    background-size: 44px;
 
+}
+
+#credit-card-option{
+    font-size: 15px;
 }
