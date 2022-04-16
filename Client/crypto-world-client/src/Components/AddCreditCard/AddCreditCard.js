@@ -30,32 +30,17 @@ const AddCreditCard = () => {
 
             <label htmlFor="credit-card">Credit Card</label>
 
-            
+
             <select className='credit-card' id='credit-card'>
-                    {cardEnum.map(card => (
-                        <option id='credit-card-option'>{card.name}</option>
+                {cardEnum.map(card => (
+                    <option id='credit-card-option'>{card.name}</option>
 
-                    ))}
-
-
-                </select>
+                ))}
 
 
+            </select>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            <button className="button" type="submit">Add</button>
 
         </form>
 
