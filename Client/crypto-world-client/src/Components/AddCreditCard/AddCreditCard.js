@@ -6,12 +6,12 @@ import './AddCreditCard.css'
 const AddCreditCard = () => {
 
 
-    const cardEnum = [
+    const cardEnum = Object.freeze([
         { name: 'PAYPAL' },
         { name: 'SKRILL' },
         { name: 'REVOLUT' },
         { name: 'BINANCE' }
-    ];
+    ]);
 
 
 
