@@ -4,9 +4,9 @@
     background-repeat: no-repeat;
     background-position: left 8px top 2px;
     padding-left: 45px;
-    
+
     background-size: 22px;
-} 
+}
 
 
 #expiration-year {
@@ -15,23 +15,23 @@
     background-repeat: no-repeat;
     background-position: left 9px top 2px;
     padding-left: 45px;
-    
+
     background-size: 28px;
-} 
+}
 
 
-#balance{
+#balance {
     background-image: url('../../Images/money-icon.png');
     background-repeat: no-repeat;
     background-position: left 9px top 2px;
     padding-left: 45px;
-    
+
     background-size: 28px;
 
 }
 
 
-#credit-card{
+#credit-card {
 
     background-image: url('../../Images/credit-card-icon.jpg');
     background-repeat: no-repeat;
@@ -40,28 +40,29 @@
     padding-right: 130px;
     padding-bottom: 16px;
     border-radius: 8px;
-    
+
     background-size: 44px;
 
 }
 
-#credit-card-option{
+#credit-card-option {
     font-size: 15px;
 }
 
-button{
+button {
     height: 40px;
-  width: 200px;
-  margin-top: 25px;
-  background: #ddd;
-  font-size: 25px;
-  border: 1px solid rgb(10, 70, 228);
-  border-radius: 8px;
-  cursor: pointer;
-  background-color: rgb(13, 164, 252);
-   
-  
-  color: white;
-  font-family: CoinbaseSans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;;
-  font-weight: 500;
+    width: 200px;
+    margin-top: 45px;
+    background: #ddd;
+    font-size: 25px;
+    border: 1px solid rgb(10, 70, 228);
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: rgb(13, 164, 252);
+
+
+    color: white;
+    font-family: CoinbaseSans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    ;
+    font-weight: 500;
 }
