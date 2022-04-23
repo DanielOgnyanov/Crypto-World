@@ -7,6 +7,7 @@ const AddCreditCard = () => {
 
 
     const cardEnum = Object.freeze([
+        
         { name: 'PAYPAL' },
         { name: 'SKRILL' },
         { name: 'REVOLUT' },
