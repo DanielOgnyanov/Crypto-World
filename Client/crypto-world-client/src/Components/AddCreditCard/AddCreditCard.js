@@ -17,7 +17,7 @@ const AddCreditCard = () => {
 
     return (
 
-        <form >
+        <form id='form-credit-card'>
             <label htmlFor="Iban" >Iban</label>
             <input name='iban' autoComplete="on" placeholder='Iban' type="text" id='iban' />
 
@@ -40,7 +40,7 @@ const AddCreditCard = () => {
 
             </select>
 
-            <button className="button" type="submit">Add</button>
+            <button className="button" type="submit" id='button-credit-card'>Add</button>
 
         </form>
 

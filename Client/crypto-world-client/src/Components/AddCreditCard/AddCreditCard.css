@@ -1,3 +1,10 @@
+#form-credit-card{
+    height: 450px;
+    width: 400px;
+}
+
+
+
 #iban {
 
     background-image: url('../../Images/iban-icon.png');
@@ -49,16 +56,17 @@
     font-size: 15px;
 }
 
-button {
+#button-credit-card {
     height: 40px;
     width: 200px;
-    margin-top: 40px;
     background: #ddd;
     font-size: 25px;
     border: 1px solid rgb(10, 70, 228);
     border-radius: 8px;
     cursor: pointer;
     background-color: rgb(13, 164, 252);
+
+    margin-top: 50px;
 
 
     color: white;
