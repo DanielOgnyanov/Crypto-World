@@ -41,7 +41,7 @@ const AddCreditCard = () => {
 
             </select>
 
-            <button className="button" type="submit" id='button-credit-card'>Add</button>
+            <button className="button" type="submit" id='button-credit-card'>Add Card</button>
 
         </form>
 
