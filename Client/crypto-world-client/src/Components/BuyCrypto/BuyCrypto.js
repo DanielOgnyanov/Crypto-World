@@ -1,3 +1,6 @@
+import './BuyCrypto.css'
+
+
 const BuyCrypto = () => {
 
 
@@ -8,6 +11,14 @@ const BuyCrypto = () => {
 
     return (
 
+        <form>
+
+            
+
+
+
+
+        </form>
 
 
 
