@@ -11,9 +11,9 @@ const BuyCrypto = () => {
 
     return (
 
-        <form>
+        <form id='buy-crypto-form'>
 
-            
+            <label htmlFor='Username Confirm'></label>
 
 
 
