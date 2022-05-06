@@ -18,6 +18,9 @@ const BuyCrypto = () => {
                 type="text" id='username-confirm' />
 
             <label htmlFor='deposit'>Deposit</label>
+            <input name='deposit' autoComplete="on" placeholder='deposit'
+                type="text" id='deposit' />
+
 
 
 
