@@ -4,7 +4,7 @@ import './BuyCrypto.css'
 const BuyCrypto = () => {
 
     const cryptoEnum = Object.freeze([
-        
+
         { name: 'Bitcoin' },
         { name: 'Ethereum' },
         { name: 'Binance' },
@@ -36,7 +36,14 @@ const BuyCrypto = () => {
                 type="text" id='deposit' />
 
 
+            <select className='credit-card' id='credit-card'>
+                {cryptoEnum.map(card => (
+                    <option id='credit-card-option'>{cryptoEnum.name}</option>
 
+                ))}
+
+
+            </select>
 
 
 
