@@ -14,7 +14,7 @@ const BuyCrypto = () => {
         { name: 'Ripple' },
         { name: 'Dotcoin' },
         { name: 'DogeCoin' },
-        { name: 'USDC' },
+        { name: 'USDC' }
     ]);
 
 
