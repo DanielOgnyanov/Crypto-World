@@ -3,6 +3,20 @@ import './BuyCrypto.css'
 
 const BuyCrypto = () => {
 
+    const cryptoEnum = Object.freeze([
+        
+        { name: 'Bitcoin' },
+        { name: 'Ethereum' },
+        { name: 'Binance' },
+        { name: 'Cardano' },
+        { name: 'Tether' },
+        { name: 'SOL' },
+        { name: 'Ripple' },
+        { name: 'Dotcoin' },
+        { name: 'DogeCoin' },
+        { name: 'USDC' },
+    ]);
+
 
 
 
@@ -20,6 +34,8 @@ const BuyCrypto = () => {
             <label htmlFor='deposit'>Deposit</label>
             <input name='deposit' autoComplete="on" placeholder='deposit'
                 type="text" id='deposit' />
+
+
 
 
 
