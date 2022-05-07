@@ -45,6 +45,8 @@ const BuyCrypto = () => {
 
             </select>
 
+            <button className="button" type="submit" >Buy Crypto</button>
+
 
 
 
