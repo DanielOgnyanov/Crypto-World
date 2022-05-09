@@ -24,7 +24,7 @@ const Header = () => {
             <Link className='button' to="/home" data-toggle="collapse">Home</Link>
             <Link className='button' to="#" data-toggle="collapse">Admin</Link>
 
-            <Link className='button' to="#">Add Credit Card</Link>
+            <Link className='button' to="/add-credit-card">Add Credit Card</Link>
             <Link className='button' to="#">Buy Crypto</Link>
             <Link className='button' to="#">Sell Crypto</Link>
 
@@ -52,12 +52,26 @@ const Header = () => {
             <nav className="topnav">
                 <Link className='button' to="/" ><img src={logoImg} alt=""></img></Link>
 
-                {user.username
+                <div className='userNavigation'>
 
-                    ? userNavigation
-                    : guestNavigation
+                    <Link className='button' to="/home" data-toggle="collapse">Home</Link>
+                    <Link className='button' to="#" data-toggle="collapse">Admin</Link>
 
-                }
+                    <Link className='button' to="/add-credit-card">Add Credit Card</Link>
+                    <Link className='button' to="#">Buy Crypto</Link>
+                    <Link className='button' to="#">Sell Crypto</Link>
+
+                </div>
+
+                <div className='guestNavigation'>
+
+                    <Link className='button' to="/login">Sign In</Link>
+
+                    <button onClick={handleClick} type='submit'>Create Account</button>
+
+
+                </div>
+
             </nav>
 
 
