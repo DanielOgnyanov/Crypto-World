@@ -43,7 +43,7 @@ const BuyCrypto = () => {
 
             <select className='crypto-asset' id='crypto-asset'>
                 {cryptoEnum.map(asset => (
-                    <option >{asset.name}</option>
+                    <option id='crypto-asset-option'>{asset.name}</option>
 
                 ))}
 
