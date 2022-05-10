@@ -1,11 +1,15 @@
-#buy-crypto-form{
+#buy-crypto-form {}
+
+#username-confirm {
+
+
+    background-image: url('../../Images/user-icon-1.png');
+    background-repeat: no-repeat;
+    background-position: left 8px top 2px;
+    padding-left: 45px;
+
+    background-size: 22px;
 
 }
 
-#username-confirm{
-    
-}
-
-#deposit{
-    
-}
+#deposit {}
