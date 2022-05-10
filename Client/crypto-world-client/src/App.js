@@ -8,6 +8,7 @@ import Login from './Components/Login/Login'
 import GetStarted from './Components/GetStarted/GetStarted'
 import HomePage from './Components/HomePage/HomePage'
 import AddCreditCard from './Components/AddCreditCard/AddCreditCard';
+import BuyCrypto from './Components/BuyCrypto/BuyCrypto';
 import { AuthProvider } from './Context/AuthContext';
 
 
@@ -27,6 +28,7 @@ function App() {
 
           <Route path="/home" element={<HomePage />} />
           <Route path="/add-credit-card" element = {<AddCreditCard/>}/>
+          <Route path = "/buy-crypto" element = {<BuyCrypto/>}/>
 
         </Routes>
 
