@@ -1,4 +1,3 @@
-#buy-crypto-form {}
 
 #username-confirm {
 
@@ -19,4 +18,18 @@
     padding-left: 45px;
 
     background-size: 28px;
+}
+
+#crypto-asset {
+    background-image: url('../../Images/crypto-icon.webp');
+    background-repeat: no-repeat;
+    background-position: left 5px top 2px;
+    padding-left: 160px;
+    padding-right: 160px;
+    padding-bottom: 16px;
+    border-radius: 8px;
+
+    background-size: 33px;
+
+    font-size: 15px;
 }

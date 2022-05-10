@@ -28,15 +28,20 @@ const BuyCrypto = () => {
         <form id='buy-crypto-form'>
 
             <label htmlFor='username-confirm'>Username Confirm</label>
+
             <input name='username-confirm' autoComplete="on" placeholder='username-confirm'
                 type="text" id='username-confirm' />
 
             <label htmlFor='deposit'>Deposit</label>
-            <input name='deposit' autoComplete="on" placeholder='deposit'
+
+            <input name='deposit' autoComplete="on" placeholder='Deposit'
                 type="text" id='deposit' />
 
 
-            <select className='credit-card' id='credit-card'>
+
+            <label htmlFor='crypto-asset'>Crypto Asset</label>
+
+            <select className='crypto-asset' id='crypto-asset'>
                 {cryptoEnum.map(card => (
                     <option id='credit-card-option'>{cryptoEnum.name}</option>
 
