@@ -22,22 +22,31 @@ const SellCrypto = () => {
 
     return (
 
-       <form>
-           <label htmlFor='username-confirm'>Username Confirm</label>
+        <form>
+            <label htmlFor='username-confirm'>Username Confirm</label>
 
-           <input name='username-confirm' autoComplete="on" placeholder='Username Confirm'
+            <input name='username-confirm' autoComplete="on" placeholder='Username Confirm'
                 type="text" id='username-confirm' />
 
 
 
 
+            <label htmlFor='crypto-asset'>Crypto Asset</label>
+
+            <select >
+                {cryptoEnum.map(asset => (
+                    <option id='crypto-asset-option'>{asset.name}</option>
+
+                ))}
+
+
+            </select>
 
 
 
 
 
-
-       </form>
+        </form>
 
 
 
