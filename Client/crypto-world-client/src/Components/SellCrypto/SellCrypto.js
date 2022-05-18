@@ -1,6 +1,18 @@
 const SellCrypto = () => {
 
-    
+    const cryptoEnum = Object.freeze([
+
+        { name: 'Bitcoin' },
+        { name: 'Ethereum' },
+        { name: 'Binance' },
+        { name: 'Cardano' },
+        { name: 'Tether' },
+        { name: 'SOL' },
+        { name: 'Ripple' },
+        { name: 'Dotcoin' },
+        { name: 'DogeCoin' },
+        { name: 'USDC' }
+    ]);
 
 
 
@@ -15,6 +27,8 @@ const SellCrypto = () => {
 
            <input name='username-confirm' autoComplete="on" placeholder='Username Confirm'
                 type="text" id='username-confirm' />
+
+
 
 
 
