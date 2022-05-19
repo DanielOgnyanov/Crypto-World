@@ -42,7 +42,7 @@ const SellCrypto = () => {
 
             </select>
 
-
+            <button className="button" type="submit" >Sell Crypto</button>
 
 
 
