@@ -59,7 +59,7 @@ const Header = () => {
 
                     <Link className='button' to="/add-credit-card">Add Credit Card</Link>
                     <Link className='button' to="/buy-crypto">Buy Crypto</Link>
-                    <Link className='button' to="#">Sell Crypto</Link>
+                    <Link className='button' to="sell-crypto">Sell Crypto</Link>
 
                 </div>
 
