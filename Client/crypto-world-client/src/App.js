@@ -9,6 +9,7 @@ import GetStarted from './Components/GetStarted/GetStarted'
 import HomePage from './Components/HomePage/HomePage'
 import AddCreditCard from './Components/AddCreditCard/AddCreditCard';
 import BuyCrypto from './Components/BuyCrypto/BuyCrypto';
+import SellCrypto from './Components/SellCrypto/SellCrypto';
 import { AuthProvider } from './Context/AuthContext';
 
 
@@ -29,6 +30,7 @@ function App() {
           <Route path="/home" element={<HomePage />} />
           <Route path="/add-credit-card" element = {<AddCreditCard/>}/>
           <Route path = "/buy-crypto" element = {<BuyCrypto/>}/>
+          <Route path = "/sell-crypto" element = {<SellCrypto/>}/>
 
         </Routes>
 
