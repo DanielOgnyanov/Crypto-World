@@ -10,6 +10,7 @@ import HomePage from './Components/HomePage/HomePage'
 import AddCreditCard from './Components/AddCreditCard/AddCreditCard';
 import BuyCrypto from './Components/BuyCrypto/BuyCrypto';
 import SellCrypto from './Components/SellCrypto/SellCrypto';
+import AdminPanel from './Components/AdminPanel/AdminPanel';
 import { AuthProvider } from './Context/AuthContext';
 
 
@@ -31,6 +32,7 @@ function App() {
           <Route path="/add-credit-card" element = {<AddCreditCard/>}/>
           <Route path = "/buy-crypto" element = {<BuyCrypto/>}/>
           <Route path = "/sell-crypto" element = {<SellCrypto/>}/>
+          <Route path = "/admin" element = {<AdminPanel/>}/>
 
         </Routes>
 
