@@ -8,7 +8,7 @@ const AdminPanel = () => {
 
     return (
 
-        <form>
+        <form id="last-buy">
             <h3>Last buy</h3>
 
 
