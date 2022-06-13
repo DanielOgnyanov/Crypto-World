@@ -1,3 +1,5 @@
+import ChangeUserRole from '../AdminPanel/ChangeUserRole/ChangeUserRole'
+
 const AdminPanel = () => {
 
 
@@ -8,7 +10,7 @@ const AdminPanel = () => {
 
     return (
 
-       
+       <ChangeUserRole/>
         
 
 
