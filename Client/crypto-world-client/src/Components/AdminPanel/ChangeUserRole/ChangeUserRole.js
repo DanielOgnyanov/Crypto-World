@@ -18,6 +18,17 @@ const ChangeUserRole = () => {
 
 
 
+        <select className='user-role' >
+                {roleEnum.map(role => (
+                    <option >{role.name}</option>
+
+                ))}
+
+
+            </select>
+
+
+
 
 
 
