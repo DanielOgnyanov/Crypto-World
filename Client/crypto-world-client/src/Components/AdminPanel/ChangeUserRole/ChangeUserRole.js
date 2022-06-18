@@ -29,6 +29,10 @@ const ChangeUserRole = () => {
 
 
 
+            <button className="button" type="submit" >Change Role</button>
+
+
+
 
 
 
