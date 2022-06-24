@@ -29,7 +29,7 @@ const ChangeUserRole = () => {
 
 
 
-            <button className="button" type="submit" >Change Role</button>
+            <button className="button" type="submit" id="button-change-user-role">Change Role</button>
 
         </form>
 

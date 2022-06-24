@@ -2,3 +2,25 @@
     height: 450px;
     width: 400px;
 }
+
+
+
+
+#button-change-user-role {
+    height: 40px;
+    width: 200px;
+    background: #ddd;
+    font-size: 25px;
+    border: 1px solid rgb(10, 70, 228);
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: rgb(13, 164, 252);
+
+    margin-top: 60px;
+
+
+    color: white;
+    font-family: CoinbaseSans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    ;
+    font-weight: 450;
+}
