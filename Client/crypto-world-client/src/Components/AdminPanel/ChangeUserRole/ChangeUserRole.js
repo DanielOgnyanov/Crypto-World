@@ -14,11 +14,11 @@ const ChangeUserRole = () => {
 
         <form id="form-change-user-role">
             <label htmlFor="Username" >Username</label>
-            <input name='username' autoComplete="on" placeholder='Username' type="text" id='login-username' />
+            <input name='username' autoComplete="on" placeholder='Username' type="text" id='username-change-role' />
 
 
 
-            <select className='user-role' >
+            <select className='select-role' >
                 {roleEnum.map(role => (
                     <option >{role.name}</option>
 
