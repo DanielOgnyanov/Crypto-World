@@ -7,7 +7,7 @@ const LoggedUsersInfo = () => {
 
     return (
 
-        
+        <p>Count all logged user: </p>
 
 
 
