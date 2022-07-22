@@ -1,4 +1,5 @@
 import ChangeUserRole from '../AdminPanel/ChangeUserRole/ChangeUserRole'
+import LoggedUsersInfo from '../AdminPanel/LoggedUsersInfo/LoggedUsers'
 
 const AdminPanel = () => {
 
@@ -11,7 +12,8 @@ const AdminPanel = () => {
     return (
 
        <ChangeUserRole/>
-        
+
+       
 
 
     );
