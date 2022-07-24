@@ -11,7 +11,11 @@ const AdminPanel = () => {
 
     return (
 
-       <ChangeUserRole/>
+        <div>
+         <ChangeUserRole/>
+         <LoggedUsersInfo/>
+        </div>
+       
 
        
 
