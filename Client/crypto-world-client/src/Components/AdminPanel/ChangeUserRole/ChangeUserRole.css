@@ -1,21 +1,17 @@
 #form-change-user-role{
-    height: 250px;
-    width: 350px;
+    height: 370px;
+    width: 370px;
 }
 
 
 #username-change-role{
+    
+    background-image: url('../../../Images/user-icon-1.png');
     background-repeat: no-repeat;
-    background-position: left 8px top 4px;
-    padding-left: 120px;
-    padding-right: 120px;
-    padding-bottom: 16px;
-    border-radius: 8px;
+    background-position: left 8px top 2px;
+    padding-left: 45px;
 
-    background-size: 40px;
-
-    font-size: 15px;
-
+    background-size: 22px;
 }
 
 
