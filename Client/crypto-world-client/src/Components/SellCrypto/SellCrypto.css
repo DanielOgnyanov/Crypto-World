@@ -14,3 +14,19 @@
     background-size: 28px;
 
 }
+
+
+
+#crypto-asset {
+    background-image: url('../../Images/crypto-icon.webp');
+    background-repeat: no-repeat;
+    background-position: left 5px top 2px;
+    padding-left: 130px;
+    padding-right: 130px;
+    padding-bottom: 16px;
+    border-radius: 8px;
+
+    background-size: 33px;
+
+    font-size: 15px;
+}
