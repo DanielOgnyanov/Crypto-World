@@ -29,8 +29,9 @@ const SellCrypto = () => {
                 type="text" id='username-confirm' />
 
             <label htmlFor='sell-value'>Sell Value</label>
+
             <input name='sell-value' autoComplete="on" placeholder='Sell Value'
-                type="text"  />
+                type="number"  id="sell-value"/>
 
 
             <label htmlFor='crypto-asset'>Crypto Asset</label>
