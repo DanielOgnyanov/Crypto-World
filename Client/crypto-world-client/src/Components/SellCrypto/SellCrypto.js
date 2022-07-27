@@ -1,3 +1,7 @@
+import './SellCrypto.css'
+
+
+
 const SellCrypto = () => {
 
     const cryptoEnum = Object.freeze([
