@@ -1,4 +1,8 @@
-const LoggedUsersInfo = () => {
+import './LoggedUsers.css'
+
+
+
+const LoggedUsers = () => {
 
 
 
@@ -7,11 +11,19 @@ const LoggedUsersInfo = () => {
 
     return (
 
-        <p>Count all logged user: </p>
+
+        <form id='form-logged-user-admin-panel'>
+
+            <label>Count all logged user  : </label>
+
+
+        </form>
+
+
 
 
 
     );
 }
 
-export default LoggedUsersInfo;
+export default LoggedUsers;
