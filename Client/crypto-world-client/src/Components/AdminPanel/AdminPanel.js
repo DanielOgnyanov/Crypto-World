@@ -1,5 +1,5 @@
 import ChangeUserRole from '../AdminPanel/ChangeUserRole/ChangeUserRole'
-import LoggedUsersInfo from '../AdminPanel/LoggedUsersInfo/LoggedUsers'
+import LoggedUsers from '../AdminPanel/LoggedUsersInfo/LoggedUsers'
 
 const AdminPanel = () => {
 
@@ -13,7 +13,12 @@ const AdminPanel = () => {
 
         <div >
          <ChangeUserRole/>
-         <LoggedUsersInfo/>
+
+         
+         <LoggedUsers/>
+
+         
+        
         </div>
        
 
