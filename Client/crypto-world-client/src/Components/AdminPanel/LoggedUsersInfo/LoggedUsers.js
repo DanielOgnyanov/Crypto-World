@@ -12,14 +12,17 @@ const LoggedUsers = () => {
     return (
 
 
-        <form id='form-logged-user-admin-panel'>
+        
+            <form id='form-logged-user-admin-panel'>
 
-            <label>Count all logged user: </label>
-
-            
+                <label>Count all logged user: </label>
 
 
-        </form>
+
+
+            </form>
+
+        
 
 
 
