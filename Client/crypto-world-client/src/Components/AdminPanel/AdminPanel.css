@@ -1,3 +1,10 @@
-#last-buy{
+#container {
+    display: flex;
     
+}  
+
+
+#logged-users {
+
+    flex: 1;
 }
