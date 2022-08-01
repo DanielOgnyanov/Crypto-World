@@ -11,18 +11,22 @@ const AdminPanel = () => {
 
     return (
 
-        <div >
-         <ChangeUserRole/>
+        <div className='container'>
 
-         
-         <LoggedUsers/>
+            <div className='change-user-role'>
+                <ChangeUserRole />
 
-         
-        
+            </div>
+
+            <div className='logged-users'>
+                <LoggedUsers />
+            </div>
+
+
         </div>
-       
 
-       
+
+
 
 
     );
