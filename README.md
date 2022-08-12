@@ -8,4 +8,3 @@ for example Bitcoin, Ethereum, Binance , Solana , Xrp , Cardano, Polkadot , Doge
 
 The application is build from scratch with BE in Java and FE in ReactJs. If you want check the src folder for more info about the source code, and the different
 implementation of the functionality. I’m currently working on it.
-Soon will be added the guest and home page image in description.
