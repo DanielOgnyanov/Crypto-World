@@ -10,7 +10,7 @@
     margin-left: 78px;
     padding-bottom: 108px;
     height: 208px;
-    flex: 0 0 50%;
+    flex: 0 0 65%;
 }
 
 
@@ -19,4 +19,5 @@
     margin-right: 78px;
     margin-left: 68px;
     padding-bottom: 108px;
+    flex: 1;
 }
