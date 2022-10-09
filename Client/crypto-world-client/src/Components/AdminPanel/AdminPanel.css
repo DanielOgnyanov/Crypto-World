@@ -7,11 +7,11 @@
 #logged-users {
 
     
-    flex: 0 0 50%;
+    flex: 0 0 65%;
 }
 
 
 #change-user-role{
     
-    flex: 1;
+    flex: 2;
 }
