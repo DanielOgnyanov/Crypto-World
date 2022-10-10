@@ -1,3 +1,7 @@
+import './LastBuy.css'
+
+
+
 const LastBuy = () => {
 
 
