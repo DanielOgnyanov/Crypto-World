@@ -1,5 +1,6 @@
 import ChangeUserRole from '../AdminPanel/ChangeUserRole/ChangeUserRole'
 import LoggedUsers from '../AdminPanel/LoggedUsersInfo/LoggedUsers'
+import './AdminPanel.css'
 
 const AdminPanel = () => {
 
@@ -11,7 +12,7 @@ const AdminPanel = () => {
 
     return (
 
-        <div className='container' id='container '>
+        <div className='container' id='container'>
 
             <div className='change-user-role' id='change-user-role'>
                 <ChangeUserRole />
