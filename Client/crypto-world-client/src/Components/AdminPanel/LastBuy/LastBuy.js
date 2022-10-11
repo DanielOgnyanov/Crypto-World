@@ -4,7 +4,7 @@ import './LastBuy.css'
 
 const LastBuy = () => {
 
-
+<p>Last user buy: </p>
 
 
 
