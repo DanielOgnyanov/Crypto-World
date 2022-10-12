@@ -4,7 +4,7 @@ import './TopFiveCryptoBuy.css'
 
 const LastBuy = () => {
 
-<p>Last user buy: </p>
+<p>Top 5 Crypto Buy</p>
 
 
 
