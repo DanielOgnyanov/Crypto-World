@@ -4,7 +4,13 @@ import './TopFiveCryptoBuy.css'
 
 const LastBuy = () => {
 
-<p>Top 5 Crypto Buy</p>
+
+    <form>
+        <p>Top 5 Crypto Buy</p>
+
+        
+    </form>
+
 
 
 
@@ -20,4 +26,4 @@ const LastBuy = () => {
 }
 
 
-export default LastBuy ;
+export default LastBuy;
