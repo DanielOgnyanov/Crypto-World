@@ -11,6 +11,8 @@ const LastBuy = () => {
         <label htmlFor="Username" >Username</label>
         <input name='username' autoComplete="on" placeholder='Username' type="text"/>
 
+        <button className="button" type="submit" id="button-find-user-last-five-buy">Change Role</button>
+
 
     </form>
 
