@@ -1,5 +1,6 @@
 import ChangeUserRole from '../AdminPanel/ChangeUserRole/ChangeUserRole'
 import LoggedUsers from '../AdminPanel/LoggedUsersInfo/LoggedUsers'
+import TopFiveCryptoBuy from '../AdminPanel/TopFiveCryptoBuy/TopFiveCryptoBuy'
 import './AdminPanel.css'
 
 const AdminPanel = () => {
