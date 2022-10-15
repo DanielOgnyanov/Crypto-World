@@ -25,7 +25,7 @@ const AdminPanel = () => {
             </div>
 
             <div className='user-top-five-buy'>
-
+                <TopFiveCryptoBuy/>
             </div>
 
 
