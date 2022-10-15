@@ -24,7 +24,7 @@ const AdminPanel = () => {
                 <LoggedUsers />
             </div>
 
-            <div className='user-top-five-buy'>
+            <div className='user-top-five-buy' id='user-top-five-buy'>
                 <TopFiveCryptoBuy/>
             </div>
 
