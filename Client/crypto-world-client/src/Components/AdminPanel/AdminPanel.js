@@ -23,6 +23,10 @@ const AdminPanel = () => {
                 <LoggedUsers />
             </div>
 
+            <div className='user-top-five-buy'>
+
+            </div>
+
 
         </div>
 
