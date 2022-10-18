@@ -1,17 +1,34 @@
 #container {
-    display: flex;
+    display:inline-flex;
+    
     
 }  
 
-#logged-users {
 
-    flex: 1;
+
+#user-top-five-buy{
+    
+    
+
 }
-
 
 
 #change-user-role{
     
-    flex: 0 0 50%;
+    
+    
 }
+
+
+#logged-users {
+
+    
+    
+}
+
+
+
+
+
+
 

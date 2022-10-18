@@ -15,6 +15,11 @@ const AdminPanel = () => {
 
         <div className='container' id='container'>
 
+
+            <div className='user-top-five-buy' id='user-top-five-buy'>
+                <TopFiveCryptoBuy />
+            </div>
+
             <div className='change-user-role' id='change-user-role'>
                 <ChangeUserRole />
 
@@ -24,9 +29,7 @@ const AdminPanel = () => {
                 <LoggedUsers />
             </div>
 
-            <div className='user-top-five-buy' id='user-top-five-buy'>
-                <TopFiveCryptoBuy/>
-            </div>
+
 
 
         </div>
