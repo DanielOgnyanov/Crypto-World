@@ -18,7 +18,7 @@
 
 #change-user-role{
     
-    float:left;
+    
     width:50%;
     
 }
@@ -26,7 +26,7 @@
 
 #logged-users {
 
-    float:right;
+    float:left;
     width:25%;
     
 }
