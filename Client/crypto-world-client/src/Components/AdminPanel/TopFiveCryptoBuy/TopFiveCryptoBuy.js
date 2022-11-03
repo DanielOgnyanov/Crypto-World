@@ -5,14 +5,14 @@ import './TopFiveCryptoBuy.css'
 const TopFiveCryptoBuy = () => {
 
     const topFiveCrypto = [
-        {id: 1, coinName: 'Bitcoin'},
-        {id: 2, coinName: 'Ethereum'}
-        
-      ];
+        { id: 1, coinName: 'Bitcoin' },
+        { id: 2, coinName: 'Ethereum' }
+
+    ];
 
 
 
- 
+
 
 
 
@@ -21,8 +21,8 @@ const TopFiveCryptoBuy = () => {
     return (
 
         <form id='form-top-five-crypto-buy'>
-            
-            
+
+
 
             <label htmlFor="Username" >Username</label>
             <input name='username' autoComplete="on" placeholder='Username' type="text" />
