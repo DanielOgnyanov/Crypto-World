@@ -4,9 +4,15 @@ import './TopFiveCryptoBuy.css'
 
 const TopFiveCryptoBuy = () => {
 
+    const topFiveCrypto = [
+        {id: 1, coinName: 'Bitcoin'},
+        {id: 2, coinName: 'Ethereum'}
+        
+      ];
 
 
 
+ 
 
 
 
@@ -25,6 +31,7 @@ const TopFiveCryptoBuy = () => {
 
 
             <p>Top 5 Crypto Buy</p>
+
 
 
         </form>
