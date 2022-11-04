@@ -5,6 +5,17 @@
 }
 
 
+#username-top-five-crypto{
+    
+    background-image: url('../../../Images/user-icon-1.png');
+    background-repeat: no-repeat;
+    background-position: left 8px top 2px;
+    padding-left: 35px;
+
+    background-size: 20px;
+}
+
+
 
 
 
