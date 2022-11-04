@@ -13,7 +13,7 @@ const AdminPanel = () => {
 
     return (
 
-        <div className='container' id='container'>
+        <div className='container-admin-panel' id='container-admin-panel'>
 
 
             <div className='user-top-five-buy' id='user-top-five-buy'>
