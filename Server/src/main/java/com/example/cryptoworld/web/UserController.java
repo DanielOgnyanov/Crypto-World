@@ -73,6 +73,12 @@ public class UserController {
 
         }
 
+        if (userService.existByEmail(userRegistrationDto.getEmail())){
+            return new ResponseEntity<>("Email already exist", HttpStatus.BAD_REQUEST);
+
+
+        }
+
 
         return new ResponseEntity<>("New user registered", HttpStatus.OK);
 
