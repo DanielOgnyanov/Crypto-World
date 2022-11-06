@@ -68,6 +68,10 @@ public class UserController {
     public ResponseEntity<String> createUserAccount(@RequestBody UserRegistrationDto userRegistrationDto){
 
 
+        if(userService.existByUsername(userRegistrationDto.getUsername())){
+             return new ResponseEntity<>("Username already exist", HttpStatus.BAD_REQUEST);
+
+        }
 
 
         return new ResponseEntity<>("New user registered", HttpStatus.OK);
