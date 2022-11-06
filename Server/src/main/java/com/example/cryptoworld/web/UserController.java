@@ -6,6 +6,7 @@ import com.example.cryptoworld.models.binding.LoginDto;
 import com.example.cryptoworld.models.binding.UserRegistrationDto;
 import com.example.cryptoworld.models.entities.UserEntity;
 import com.example.cryptoworld.models.entities.WalletEntity;
+import com.example.cryptoworld.models.service.UserRegistrationServiceModel;
 import com.example.cryptoworld.service.UserService;
 import com.example.cryptoworld.service.WalletService;
 import org.modelmapper.ModelMapper;
@@ -78,6 +79,9 @@ public class UserController {
 
 
         }
+
+        userService.register
+                (modelMapper.map(userRegistrationDto, UserRegistrationServiceModel.class));
 
 
         return new ResponseEntity<>("New user registered", HttpStatus.OK);
