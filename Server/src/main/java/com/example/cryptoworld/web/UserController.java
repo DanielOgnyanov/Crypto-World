@@ -65,7 +65,7 @@ public class UserController {
         return new ResponseEntity<>(wallet, HttpStatus.OK);
     }
 
-    @PostMapping("/create")
+    @PostMapping("/register")
     public ResponseEntity<String> createUserAccount(@RequestBody UserRegistrationDto userRegistrationDto){
 
 
