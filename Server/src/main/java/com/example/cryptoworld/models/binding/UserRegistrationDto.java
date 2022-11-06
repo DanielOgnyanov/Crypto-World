@@ -7,7 +7,7 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-public class UserRegistrationBindingModel {
+public class UserRegistrationDto {
 
 
     private String username;
@@ -18,7 +18,7 @@ public class UserRegistrationBindingModel {
     private EnumCountry country;
 
 
-    public UserRegistrationBindingModel() {
+    public UserRegistrationDto() {
     }
 
     @NotEmpty
