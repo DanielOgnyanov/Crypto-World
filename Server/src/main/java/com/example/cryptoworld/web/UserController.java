@@ -83,6 +83,14 @@ public class UserController {
         userService.register
                 (modelMapper.map(userRegistrationDto, UserRegistrationServiceModel.class));
 
+        Authentication authentication =
+                authenticationManager
+                        .authenticate
+                                (new UsernamePasswordAuthenticationToken
+                                        (userRegistrationDto.getUsername(), userRegistrationDto.getPassword()));
+
+        SecurityContextHolder.getContext().setAuthentication(authentication);
+
 
         return new ResponseEntity<>("New user registered", HttpStatus.OK);
 
