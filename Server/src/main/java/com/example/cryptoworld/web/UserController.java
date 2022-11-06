@@ -3,10 +3,9 @@ package com.example.cryptoworld.web;
 
 import com.example.cryptoworld.models.binding.LoginCheckDto;
 import com.example.cryptoworld.models.binding.LoginDto;
-import com.example.cryptoworld.models.binding.UserRegistrationBindingModel;
+import com.example.cryptoworld.models.binding.UserRegistrationDto;
 import com.example.cryptoworld.models.entities.UserEntity;
 import com.example.cryptoworld.models.entities.WalletEntity;
-import com.example.cryptoworld.models.service.UserRegistrationServiceModel;
 import com.example.cryptoworld.service.UserService;
 import com.example.cryptoworld.service.WalletService;
 import org.modelmapper.ModelMapper;
@@ -16,12 +15,7 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-
-import javax.validation.Valid;
 
 @RestController
 @CrossOrigin
@@ -70,118 +64,128 @@ public class UserController {
         return new ResponseEntity<>(wallet, HttpStatus.OK);
     }
 
+    @PostMapping("/create")
+    public ResponseEntity<String> createUserAccount(@RequestBody UserRegistrationDto userRegistrationDto){
+
+
+
+
+        return new ResponseEntity<>("New user registered", HttpStatus.OK);
+
+    }
+
 
 
     // OLD CODE
 
     // Model Attribute
 
-    @ModelAttribute("registrationBindingModel")
-    public UserRegistrationBindingModel createBindingModel() {
-        return new UserRegistrationBindingModel();
-    }
-
-    // END
-
-
-    // GetMapping
-
-    @GetMapping("/create")
-    public String create(Model model) {
-
-        if (!model.containsAttribute("registrationBindingModel")) {
-            model.addAttribute("registrationBindingModel", new UserRegistrationBindingModel());
-        }
-
-        if (!model.containsAttribute("registrationBindingModel")) {
-            model.addAttribute("registrationBindingModel", new UserRegistrationBindingModel());
-            model.addAttribute("userNameExist", false);
-        }
-
-        if (!model.containsAttribute("registrationBindingModel")) {
-            model.addAttribute("registrationBindingModel", new UserRegistrationBindingModel());
-            model.addAttribute("emailExist", false);
-        }
-
-        if (!model.containsAttribute("registrationBindingModel")) {
-            model.addAttribute("registrationBindingModel", new UserRegistrationBindingModel());
-            model.addAttribute("passwordIsNotEqual", false);
-        }
-
-        return "create-account";
-    }
-
-    @GetMapping("/login")
-    public String sign(Model model) {
-
-        if (!model.containsAttribute("notLogged")) {
-            model.addAttribute("notLogged", false);
-        }
-
-
-        return "login";
-    }
-
-    // END
-
-
-    //PostMapping
-
-    @PostMapping("/create")
-    public String createAccount(@Valid UserRegistrationBindingModel registrationBindingModel,
-                                BindingResult bindingResult,
-                                RedirectAttributes redirectAttributes) {
-
-
-        if (bindingResult.hasErrors()) {
-            redirectAttributes.addFlashAttribute("registrationBindingModel", registrationBindingModel);
-            redirectAttributes.addFlashAttribute(
-                    "org.springframework.validation.BindingResult.registrationBindingModel", bindingResult);
-
-            return "redirect:create";
-        }
-
-
-        if (userService.existByUsername(registrationBindingModel.getUsername())) {
-            redirectAttributes.addFlashAttribute("registrationBindingModel", registrationBindingModel);
-            redirectAttributes.addFlashAttribute("userNameExist", true);
-
-            return "redirect:create";
-        }
-
-
-        if (userService.existByEmail(registrationBindingModel.getEmail())) {
-            redirectAttributes.addFlashAttribute("registrationBindingModel", registrationBindingModel);
-            redirectAttributes.addFlashAttribute("emailExist", true);
-            return "redirect:create";
-        }
-
-        if (!registrationBindingModel.getPassword().equals(registrationBindingModel.getConfirmPassword())) {
-            redirectAttributes.addFlashAttribute("registrationBindingModel", registrationBindingModel);
-            redirectAttributes.addFlashAttribute("passwordIsNotEqual", true);
-            return "redirect:create";
-        }
-
-
-        userService.register
-                (modelMapper.map(registrationBindingModel, UserRegistrationServiceModel.class));
-
-
-        return "redirect:login";
-
-
-    }
-
-
-    @PostMapping("/login-error")
-    public String failedLogin(@ModelAttribute("username")
-                                      String username,
-                              RedirectAttributes attributes) {
-
-        attributes.addFlashAttribute("username", username);
-        attributes.addFlashAttribute("notLogged", true);
-        return "redirect:login";
-
-
-    }
+    // @ModelAttribute("registrationBindingModel")
+    //    public UserRegistrationBindingModel createBindingModel() {
+    //        return new UserRegistrationBindingModel();
+    //    }
+    //
+    //    // END
+    //
+    //
+    //    // GetMapping
+    //
+    //    @GetMapping("/create")
+    //    public String create(Model model) {
+    //
+    //        if (!model.containsAttribute("registrationBindingModel")) {
+    //            model.addAttribute("registrationBindingModel", new UserRegistrationBindingModel());
+    //        }
+    //
+    //        if (!model.containsAttribute("registrationBindingModel")) {
+    //            model.addAttribute("registrationBindingModel", new UserRegistrationBindingModel());
+    //            model.addAttribute("userNameExist", false);
+    //        }
+    //
+    //        if (!model.containsAttribute("registrationBindingModel")) {
+    //            model.addAttribute("registrationBindingModel", new UserRegistrationBindingModel());
+    //            model.addAttribute("emailExist", false);
+    //        }
+    //
+    //        if (!model.containsAttribute("registrationBindingModel")) {
+    //            model.addAttribute("registrationBindingModel", new UserRegistrationBindingModel());
+    //            model.addAttribute("passwordIsNotEqual", false);
+    //        }
+    //
+    //        return "create-account";
+    //    }
+    //
+    //    @GetMapping("/login")
+    //    public String sign(Model model) {
+    //
+    //        if (!model.containsAttribute("notLogged")) {
+    //            model.addAttribute("notLogged", false);
+    //        }
+    //
+    //
+    //        return "login";
+    //    }
+    //
+    //    // END
+    //
+    //
+    //    //PostMapping
+    //
+    //    @PostMapping("/create")
+    //    public String createAccount(@Valid UserRegistrationBindingModel registrationBindingModel,
+    //                                BindingResult bindingResult,
+    //                                RedirectAttributes redirectAttributes) {
+    //
+    //
+    //        if (bindingResult.hasErrors()) {
+    //            redirectAttributes.addFlashAttribute("registrationBindingModel", registrationBindingModel);
+    //            redirectAttributes.addFlashAttribute(
+    //                    "org.springframework.validation.BindingResult.registrationBindingModel", bindingResult);
+    //
+    //            return "redirect:create";
+    //        }
+    //
+    //
+    //        if (userService.existByUsername(registrationBindingModel.getUsername())) {
+    //            redirectAttributes.addFlashAttribute("registrationBindingModel", registrationBindingModel);
+    //            redirectAttributes.addFlashAttribute("userNameExist", true);
+    //
+    //            return "redirect:create";
+    //        }
+    //
+    //
+    //        if (userService.existByEmail(registrationBindingModel.getEmail())) {
+    //            redirectAttributes.addFlashAttribute("registrationBindingModel", registrationBindingModel);
+    //            redirectAttributes.addFlashAttribute("emailExist", true);
+    //            return "redirect:create";
+    //        }
+    //
+    //        if (!registrationBindingModel.getPassword().equals(registrationBindingModel.getConfirmPassword())) {
+    //            redirectAttributes.addFlashAttribute("registrationBindingModel", registrationBindingModel);
+    //            redirectAttributes.addFlashAttribute("passwordIsNotEqual", true);
+    //            return "redirect:create";
+    //        }
+    //
+    //
+    //        userService.register
+    //                (modelMapper.map(registrationBindingModel, UserRegistrationServiceModel.class));
+    //
+    //
+    //        return "redirect:login";
+    //
+    //
+    //    }
+    //
+    //
+    //    @PostMapping("/login-error")
+    //    public String failedLogin(@ModelAttribute("username")
+    //                                      String username,
+    //                              RedirectAttributes attributes) {
+    //
+    //        attributes.addFlashAttribute("username", username);
+    //        attributes.addFlashAttribute("notLogged", true);
+    //        return "redirect:login";
+    //
+    //
+    //    }
 }
