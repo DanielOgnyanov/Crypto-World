@@ -12,6 +12,7 @@ import com.example.cryptoworld.repository.RoleRepository;
 import com.example.cryptoworld.repository.UserRepository;
 import com.example.cryptoworld.repository.WalletRepository;
 import com.example.cryptoworld.service.CountryService;
+import com.example.cryptoworld.service.LoginService;
 import com.example.cryptoworld.service.RoleService;
 import com.example.cryptoworld.service.UserService;
 import org.modelmapper.ModelMapper;
@@ -23,7 +24,6 @@ import org.springframework.stereotype.Service;
 import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -38,13 +38,14 @@ public class UserServiceImpl implements UserService {
     private final RoleService roleService;
     private final CountryService countryService;
     private final WalletRepository walletRepository;
+    private final LoginService loginService;
 
     public UserServiceImpl(UserRepository userRepository,
                            ModelMapper modelMapper,
                            PasswordEncoder passwordEncoder,
                            RoleRepository roleRepository,
                            CryptoWorldUserService cryptoWorldUserService, RoleService roleService,
-                           CountryService countryService, WalletRepository walletRepository) {
+                           CountryService countryService, WalletRepository walletRepository, LoginService loginService) {
         this.userRepository = userRepository;
         this.modelMapper = modelMapper;
         this.passwordEncoder = passwordEncoder;
@@ -54,6 +55,7 @@ public class UserServiceImpl implements UserService {
         this.roleService = roleService;
         this.countryService = countryService;
         this.walletRepository = walletRepository;
+        this.loginService = loginService;
     }
 
 
@@ -101,6 +103,7 @@ public class UserServiceImpl implements UserService {
         walletRepository.save(walletInitWhenUserRegister);
 
 
+        loginService.setUserLoginInDb(userEntity.getUsername());
 
     }
 
