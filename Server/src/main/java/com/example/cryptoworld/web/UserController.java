@@ -7,6 +7,7 @@ import com.example.cryptoworld.models.binding.UserRegistrationDto;
 import com.example.cryptoworld.models.entities.UserEntity;
 import com.example.cryptoworld.models.entities.WalletEntity;
 import com.example.cryptoworld.models.service.UserRegistrationServiceModel;
+import com.example.cryptoworld.service.LoginService;
 import com.example.cryptoworld.service.UserService;
 import com.example.cryptoworld.service.WalletService;
 import org.modelmapper.ModelMapper;
@@ -28,12 +29,14 @@ public class UserController {
     private final UserService userService;
     private final AuthenticationManager authenticationManager;
     private final WalletService walletService;
+    private final LoginService loginService;
 
-    public UserController(ModelMapper modelMapper, UserService userService, AuthenticationManager authenticationManager, WalletService walletService) {
+    public UserController(ModelMapper modelMapper, UserService userService, AuthenticationManager authenticationManager, WalletService walletService, LoginService loginService) {
         this.modelMapper = modelMapper;
         this.userService = userService;
         this.authenticationManager = authenticationManager;
         this.walletService = walletService;
+        this.loginService = loginService;
     }
 
 
@@ -47,6 +50,8 @@ public class UserController {
                                         (loginDto.getUsername(), loginDto.getPassword()));
 
         SecurityContextHolder.getContext().setAuthentication(authentication);
+
+        loginService.setUserLoginInDb(loginDto.getUsername());
 
         return new ResponseEntity<>("User signed-in successfully!.", HttpStatus.OK);
 
