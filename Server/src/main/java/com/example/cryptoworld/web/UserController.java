@@ -51,7 +51,7 @@ public class UserController {
 
         SecurityContextHolder.getContext().setAuthentication(authentication);
 
-        loginService.setUserLoginInDb(loginDto.getUsername());
+        loginService.setUserLoginInDb(loginDto.getUsername(),true);
 
         return new ResponseEntity<>("User signed-in successfully!.", HttpStatus.OK);
 

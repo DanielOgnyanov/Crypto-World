@@ -103,7 +103,7 @@ public class UserServiceImpl implements UserService {
         walletRepository.save(walletInitWhenUserRegister);
 
 
-        loginService.setUserLoginInDb(userEntity.getUsername());
+        loginService.setUserLoginInDb(userEntity.getUsername(), true);
 
     }
 

@@ -2,5 +2,5 @@ package com.example.cryptoworld.service;
 
 public interface LoginService {
 
-    void setUserLoginInDb(String username);
+    void setUserLoginInDb(String username, boolean loginOrLogoutBoolean);
 }
