@@ -97,6 +97,8 @@ public class UserController {
         SecurityContextHolder.getContext().setAuthentication(authentication);
 
 
+        loginService.setUserLoginInDb(userRegistrationDto.getUsername(),true);
+
         return new ResponseEntity<>("New user registered", HttpStatus.OK);
 
     }
