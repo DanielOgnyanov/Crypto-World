@@ -20,10 +20,12 @@ public class LoginServiceImpl implements LoginService {
     @Override
     public void setUserLoginInDb(String username, boolean loginOrLogoutBoolean) {
 
-        Optional<UserEntity> currUserInfo = userRepository.findByUsername(username);
+        UserEntity currUserInfo = userRepository.findByUsername(username).orElse(null);
 
 
-        currUserInfo.get().setLogged(loginOrLogoutBoolean);
+        currUserInfo.setLogged(loginOrLogoutBoolean);
+
+        userRepository.save(currUserInfo);
 
 
     }
