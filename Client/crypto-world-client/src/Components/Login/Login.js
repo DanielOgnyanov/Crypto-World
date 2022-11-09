@@ -21,6 +21,12 @@ const Login = () => {
         let username = formData.get('username');
         let password = formData.get('password');
 
+        
+        if(username.length < 3 && username.length > 20){
+
+        }
+        
+        
         authService
             .login(username, password)
             .then((authData) => {

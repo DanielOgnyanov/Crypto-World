@@ -1,7 +1,7 @@
 const baseUrl = 'http://localhost:8000';
 
 export const login = async (username, password) => {
-    let res = await fetch(`${baseUrl}/api/auth/login`, {
+    let res = await fetch(`${baseUrl}/api/user/login`, {
         method: 'POST',
         headers: {
             'content-type': 'application/json'
