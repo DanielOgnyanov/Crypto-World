@@ -22,7 +22,7 @@ const Login = () => {
         let item = e.target.value;
 
         if (item.length < 3 || item.length > 20) {
-            console.log(item)
+            
             setUserError(true);
 
         } else {
