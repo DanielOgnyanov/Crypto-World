@@ -47,6 +47,8 @@ const Login = () => {
             setPassError(false);
 
         }
+
+        setPass(item);
     }
 
 
