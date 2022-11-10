@@ -17,16 +17,18 @@ const Login = () => {
     const [userError, setUserError] = useState(false);
     const [passError, setPassError] = useState(false);
 
-    function userHandler(e){
+    function userHandler(e) {
 
         let item = e.target.value;
 
-        if (item.length > 3 && item.length < 20) {
+        
 
-            setUser(true);
+        if (item.length < 3) {
+            console.log(item)
+            setUserError(true);
 
-        }else{
-            setUser(false);
+        } else {
+            setUserError(false);
         }
 
     }
@@ -36,18 +38,15 @@ const Login = () => {
 
     const onLoginFormSubmitHandler = (e) => {
         e.preventDefault();
-        
-       
 
-       
+
+
+
 
         let formData = new FormData(e.currentTarget);
 
         let username = formData.get('username');
         let password = formData.get('password');
-
-
-        
 
 
         authService
@@ -71,13 +70,13 @@ const Login = () => {
     return (
 
 
-        <form id='login-form' onSubmit={onLoginFormSubmitHandler}>
+        <form id='login-form'  >
             <p htmlFor="name">Sign In</p>
 
 
             <label htmlFor="username" >Username</label>
             <input name='username' autoComplete="on" placeholder='Username' type="text" id='login-username' onChange={userHandler} />
-            {userError?<span>Username lenght need to be between 3 and 20 symbols</span>:""}
+            {userError ? <span>Username lenght need to be between 3 and 20 symbols</span> : ""}
 
             <label htmlFor="password">Password</label>
             <input name='password' autoComplete="on" placeholder='Password' type="password" id='login-password' />
