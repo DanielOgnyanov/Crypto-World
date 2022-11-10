@@ -1,6 +1,7 @@
 import * as authService from '../../Services/authService'
 import { useNavigate } from "react-router-dom";
-import {useAuthContext}  from '../../Context/AuthContext';
+import { useAuthContext } from '../../Context/AuthContext';
+import React, { useState } from 'react'
 import './Login.css'
 
 
@@ -10,29 +11,45 @@ const Login = () => {
     const { login } = useAuthContext();
     const history = useNavigate();
 
-    
-    
-    
+
+
+
     const onLoginFormSubmitHandler = (e) => {
         e.preventDefault();
+        
+        const [user, setUser] = useState("");
+        const [pass, setPass] = useState("");
+
+        const [userError, setUserError] = useState(false);
+        const [passError, setPassError] = useState(false);
+
+        function userHandler(e){
+
+            let item = e.target.value;
+
+            if (item.length > 3 && item.length < 20) {
+
+                setUser(true);
+
+            }
+
+        }
 
         let formData = new FormData(e.currentTarget);
 
         let username = formData.get('username');
         let password = formData.get('password');
 
-        
-        if(username.length < 3 && username.length > 20){
 
-        }
         
-        
+
+
         authService
             .login(username, password)
             .then((authData) => {
 
                 login(authData);
-                
+
 
 
                 history('/home')
@@ -40,7 +57,7 @@ const Login = () => {
             .catch(error => {
 
                 console.log(error);
-            
+
             })
 
     };
