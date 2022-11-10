@@ -31,6 +31,8 @@ const Login = () => {
 
                 setUser(true);
 
+            }else{
+                setUser(false);
             }
 
         }
