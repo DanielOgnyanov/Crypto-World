@@ -11,31 +11,35 @@ const Login = () => {
     const { login } = useAuthContext();
     const history = useNavigate();
 
+    const [user, setUser] = useState("");
+    const [pass, setPass] = useState("");
+
+    const [userError, setUserError] = useState(false);
+    const [passError, setPassError] = useState(false);
+
+    function userHandler(e){
+
+        let item = e.target.value;
+
+        if (item.length > 3 && item.length < 20) {
+
+            setUser(true);
+
+        }else{
+            setUser(false);
+        }
+
+    }
+
 
 
 
     const onLoginFormSubmitHandler = (e) => {
         e.preventDefault();
         
-        const [user, setUser] = useState("");
-        const [pass, setPass] = useState("");
+       
 
-        const [userError, setUserError] = useState(false);
-        const [passError, setPassError] = useState(false);
-
-        function userHandler(e){
-
-            let item = e.target.value;
-
-            if (item.length > 3 && item.length < 20) {
-
-                setUser(true);
-
-            }else{
-                setUser(false);
-            }
-
-        }
+       
 
         let formData = new FormData(e.currentTarget);
 
@@ -72,7 +76,7 @@ const Login = () => {
 
 
             <label htmlFor="username" >Username</label>
-            <input name='username' autoComplete="on" placeholder='Username' type="text" id='login-username' />
+            <input name='username' autoComplete="on" placeholder='Username' type="text" id='login-username' onChange={userHandler} />
             {userError?<span>Username lenght need to be between 3 and 20 symbols</span>:""}
 
             <label htmlFor="password">Password</label>
