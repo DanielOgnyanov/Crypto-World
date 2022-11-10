@@ -34,6 +34,22 @@ const Login = () => {
     }
 
 
+    function passwordHandler(e){
+
+        let item = e.target.value;
+
+        if(item.length < 5){
+
+            setPassError(true);
+
+        } else {
+
+            setPassError(false);
+
+        }
+    }
+
+
 
 
     const onLoginFormSubmitHandler = (e) => {
