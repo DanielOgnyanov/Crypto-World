@@ -73,7 +73,7 @@ const Login = () => {
 
             <label htmlFor="username" >Username</label>
             <input name='username' autoComplete="on" placeholder='Username' type="text" id='login-username' />
-
+            {userError?<span>Username lenght need to be between 3 and 20 symbols</span>:""}
 
             <label htmlFor="password">Password</label>
             <input name='password' autoComplete="on" placeholder='Password' type="password" id='login-password' />
