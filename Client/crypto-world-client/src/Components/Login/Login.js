@@ -21,15 +21,15 @@ const Login = () => {
 
         let item = e.target.value;
 
-        
-
-        if (item.length < 3) {
+        if (item.length < 3 || item.length > 20) {
             console.log(item)
             setUserError(true);
 
         } else {
             setUserError(false);
         }
+
+        setUser(item);
 
     }
 
@@ -39,23 +39,16 @@ const Login = () => {
     const onLoginFormSubmitHandler = (e) => {
         e.preventDefault();
 
-
-
-
-
         let formData = new FormData(e.currentTarget);
 
         let username = formData.get('username');
         let password = formData.get('password');
-
 
         authService
             .login(username, password)
             .then((authData) => {
 
                 login(authData);
-
-
 
                 history('/home')
             })
