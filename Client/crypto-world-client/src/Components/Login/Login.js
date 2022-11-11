@@ -91,7 +91,7 @@ const Login = () => {
             <input name='password' autoComplete="on" placeholder='Password' type="password" id='login-password' onChange={passwordHandler}/>
             {passError ? <span id='span-info' >Password lenght must be atleast 5 symbols</span> : ""}
 
-            <button disabled={userError} className="button" type="submit" >Sign In</button>
+            <button disabled={userError || passError} className="button" type="submit" >Sign In</button>
         </form>
 
 
