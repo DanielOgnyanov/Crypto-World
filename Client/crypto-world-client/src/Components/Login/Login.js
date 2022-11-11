@@ -12,7 +12,7 @@ const Login = () => {
     const history = useNavigate();
 
     const [user, setUser] = useState("");
-    const [pass, setPass] = useState("");
+    const [passord, setPass] = useState("");
 
     const [userError, setUserError] = useState(false);
     const [passError, setPassError] = useState(false);
@@ -54,16 +54,12 @@ const Login = () => {
 
 
 
-    const onLoginFormSubmitHandler = (e) => {
-        e.preventDefault();
+    const onLoginFormSubmitHandler = () => {
+        
 
-        let formData = new FormData(e.currentTarget);
-
-        let username = formData.get('username');
-        let password = formData.get('password');
 
         authService
-            .login(username, password)
+            .login(user, passord)
             .then((authData) => {
 
                 login(authData);
@@ -81,7 +77,7 @@ const Login = () => {
     return (
 
 
-        <form id='login-form'  onChange={onLoginFormSubmitHandler}>
+        <form id='login-form'  onSubmit={onLoginFormSubmitHandler}>
             <p htmlFor="name">Sign In</p>
 
 
