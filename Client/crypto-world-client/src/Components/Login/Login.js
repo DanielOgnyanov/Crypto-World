@@ -27,6 +27,8 @@ const Login = () => {
 
         } else {
             setUserError(false);
+            console.log("error")
+            return;
         }
 
         setUser(item);
@@ -89,7 +91,7 @@ const Login = () => {
             <input name='password' autoComplete="on" placeholder='Password' type="password" id='login-password' onChange={passwordHandler}/>
             {passError ? <span id='span-info' >Password lenght must be atleast 5 symbols</span> : ""}
 
-            <button className="button" type="submit">Sign In</button>
+            <button disabled={userError} className="button" type="submit" >Sign In</button>
         </form>
 
 
