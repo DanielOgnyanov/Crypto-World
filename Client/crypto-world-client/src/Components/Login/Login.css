@@ -94,6 +94,8 @@ form button:hover {
 
 #span-info{
 
-    font-size: 10px;
+    background-color: rgb(205, 92, 92);
+
+    font-size: 12px;
 
 }
