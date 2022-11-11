@@ -54,8 +54,8 @@ const Login = () => {
 
 
 
-    const onLoginFormSubmitHandler = () => {
-        
+    const onLoginFormSubmitHandler = (e) => {
+        e.preventDefault();
 
 
         authService
