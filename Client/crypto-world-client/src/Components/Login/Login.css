@@ -90,3 +90,10 @@ form button {
 form button:hover {
     opacity: 0.9;
 } 
+
+
+#span-info{
+
+    font-size: 10px;
+
+}
