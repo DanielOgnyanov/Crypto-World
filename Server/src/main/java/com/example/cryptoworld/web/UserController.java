@@ -83,6 +83,9 @@ public class UserController {
         return new ResponseEntity<>("Username is free", HttpStatus.OK);
     }
 
+    
+
+
     @PostMapping("/register")
     public ResponseEntity<String> createUserAccount(@RequestBody UserRegistrationDto userRegistrationDto){
 
