@@ -95,12 +95,6 @@ public class UserController {
     @PostMapping("/register")
     public ResponseEntity<String> createUserAccount(@RequestBody UserRegistrationDto userRegistrationDto) {
 
-        if (userService.existByEmail(userRegistrationDto.getEmail())) {
-            return new ResponseEntity<>("Email already exist", HttpStatus.BAD_REQUEST);
-
-
-        }
-
         userService.register
                 (modelMapper.map(userRegistrationDto, UserRegistrationServiceModel.class));
 
