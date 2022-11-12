@@ -9,4 +9,14 @@ export const findIfUsernameIsTakenInDb = async (username) => {
         },
         body: JSON.stringify({ username })
     });
+
+    let jsonResult = await res.json();
+
+    let isTaken = false;
+
+    if (res.ok) {
+        return isTaken(false);
+    } else {
+        isTaken(true);
+    }
 }
