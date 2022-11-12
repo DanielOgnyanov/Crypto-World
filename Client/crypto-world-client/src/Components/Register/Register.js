@@ -41,7 +41,7 @@ const Register = () => {
       
       
       <label htmlFor="fullname">Full Name</label>
-      <input name='fullname' placeholder='Full Name' type="text" id='text2'></input>
+      <input name='fullname' placeholder='Full Name' type="text" id='text2' onChange={fullNamehandler}></input>
       {fullNameError ? <span id='span-info-register'>Full name length must be between 5 and 20 characters.</span> : ""}
       
       <label htmlFor="email">Email</label>
