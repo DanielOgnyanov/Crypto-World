@@ -19,8 +19,17 @@ const Register = () => {
 
   function usernameHandle(e){
 
+    let item = e.target.value.trim();
 
-    
+    if(item.length < 3 || item.length > 20){
+
+      setUsernameError(true);
+
+    } else {
+
+      setUsernameError(false);
+
+    }
   }
 
 
