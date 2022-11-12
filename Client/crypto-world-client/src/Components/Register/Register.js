@@ -1,6 +1,6 @@
 import './Register.css'
 import React, { useState } from 'react'
-import * as UserInfoService from '../../Services/UserInfoService'
+import * as userInfoService from '../../Services/UserInfoService'
 
 
 
@@ -29,6 +29,8 @@ const Register = () => {
     } else {
 
       setUsernameError(false);
+
+      userInfoService.findIfUsernameIsTakenInDb(item);
 
     }
 
