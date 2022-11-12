@@ -17,7 +17,7 @@ const Register = () => {
 
 
 
-  function usernameHandle(e){
+  function usernameHandler(e){
 
     let item = e.target.value.trim();
 
@@ -62,7 +62,8 @@ const Register = () => {
       
       
       <label htmlFor="username" >Username</label>
-      <input name='username' placeholder='Username' type="text" id='text1'></input>
+      <input name='username' placeholder='Username' type="text" id='text1' onChange={usernameHandler}></input>
+      {usernameError ? <span>Username lenght need to be between 3 and 20 symbols.</span> : ""}
       
       
       
