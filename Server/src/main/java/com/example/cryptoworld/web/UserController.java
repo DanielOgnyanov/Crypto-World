@@ -4,6 +4,7 @@ package com.example.cryptoworld.web;
 import com.example.cryptoworld.models.dto.LoginCheckDto;
 import com.example.cryptoworld.models.dto.LoginDto;
 import com.example.cryptoworld.models.dto.UserRegistrationDto;
+import com.example.cryptoworld.models.dto.UsernameDto;
 import com.example.cryptoworld.models.entities.UserEntity;
 import com.example.cryptoworld.models.entities.WalletEntity;
 import com.example.cryptoworld.models.service.UserRegistrationServiceModel;
@@ -72,7 +73,7 @@ public class UserController {
 
 
     @GetMapping("/")
-    public ResponseEntity<String> findIfUsernameIsTaken(@RequestBody ){
+    public ResponseEntity<String> findIfUsernameIsTaken(@RequestBody UsernameDto usernameDto){
 
     }
 
