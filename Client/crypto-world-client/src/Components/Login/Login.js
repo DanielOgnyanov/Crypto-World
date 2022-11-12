@@ -27,8 +27,7 @@ const Login = () => {
 
         } else {
             setUserError(false);
-            console.log("error")
-            return;
+            
         }
 
         setUser(item);
