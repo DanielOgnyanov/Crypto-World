@@ -13,6 +13,10 @@ const Register = () => {
 
   function fullNamehandler(e){
 
+    let item = e.target.value.trim();
+
+    
+
   }
 
 
