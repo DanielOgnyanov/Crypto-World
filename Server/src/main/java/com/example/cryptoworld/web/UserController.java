@@ -39,7 +39,7 @@ public class UserController {
 
 
     @PostMapping("/login")
-    public ResponseEntity<String> authenticateUser(@RequestBody LoginDto loginDto){
+    public ResponseEntity<String> authenticateUser(@RequestBody LoginDto loginDto) {
 
         Authentication authentication =
                 authenticationManager
@@ -49,7 +49,7 @@ public class UserController {
 
         SecurityContextHolder.getContext().setAuthentication(authentication);
 
-        loginService.setUserLoginInDb(loginDto.getUsername(),true);
+        loginService.setUserLoginInDb(loginDto.getUsername(), true);
 
         return new ResponseEntity<>("User signed-in successfully!.", HttpStatus.OK);
 
@@ -61,7 +61,7 @@ public class UserController {
         UserEntity user = userService.findByUsername(loginCheckDto.getUsername());
         WalletEntity wallet = walletService.getUserWallet(loginCheckDto.getUsername());
 
-        if(!user.isLogged()) {
+        if (!user.isLogged()) {
             return new ResponseEntity<>(wallet, HttpStatus.UNAUTHORIZED);
         }
 
@@ -70,9 +70,9 @@ public class UserController {
 
 
     @GetMapping("/username/check")
-    public ResponseEntity<String> findIfUsernameIsTaken(@RequestBody UsernameDto usernameDto){
+    public ResponseEntity<String> findIfUsernameIsTaken(@RequestBody UsernameDto usernameDto) {
 
-        if (userService.existByUsername(usernameDto.getUsername())){
+        if (userService.existByUsername(usernameDto.getUsername())) {
             return new ResponseEntity<>("Username already exist", HttpStatus.CONFLICT);
         }
 
@@ -81,9 +81,9 @@ public class UserController {
     }
 
     @GetMapping("/email/check")
-    public ResponseEntity<String> findIfEmailIsTaken(@RequestBody EmailDto emailDto){
+    public ResponseEntity<String> findIfEmailIsTaken(@RequestBody EmailDto emailDto) {
 
-        if (userService.existByUsername(emailDto.getEmail())){
+        if (userService.existByUsername(emailDto.getEmail())) {
             return new ResponseEntity<>("This email is used by another person", HttpStatus.CONFLICT);
         }
 
@@ -92,15 +92,10 @@ public class UserController {
     }
 
 
-
-
-    
-
-
     @PostMapping("/register")
-    public ResponseEntity<String> createUserAccount(@RequestBody UserRegistrationDto userRegistrationDto){
+    public ResponseEntity<String> createUserAccount(@RequestBody UserRegistrationDto userRegistrationDto) {
 
-        if (userService.existByEmail(userRegistrationDto.getEmail())){
+        if (userService.existByEmail(userRegistrationDto.getEmail())) {
             return new ResponseEntity<>("Email already exist", HttpStatus.BAD_REQUEST);
 
 
@@ -118,12 +113,11 @@ public class UserController {
         SecurityContextHolder.getContext().setAuthentication(authentication);
 
 
-        loginService.setUserLoginInDb(userRegistrationDto.getUsername(),true);
+        loginService.setUserLoginInDb(userRegistrationDto.getUsername(), true);
 
         return new ResponseEntity<>("New user registered", HttpStatus.OK);
 
     }
-
 
 
     // OLD CODE
