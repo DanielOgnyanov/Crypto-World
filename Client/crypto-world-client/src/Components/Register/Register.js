@@ -7,10 +7,12 @@ import React, { useState } from 'react'
 
 const Register = () => {
 
+  const [fullName, setFullname] = useState("");
+
 
 
   function fullNamehandler(e){
-    
+
   }
 
 
