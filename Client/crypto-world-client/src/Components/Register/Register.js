@@ -7,6 +7,11 @@ import React, { useState } from 'react'
 
 const Register = () => {
 
+
+  const[username, setUsername] = useState("");
+  const[usernameError, setUsernameError] = useState("");
+
+
   const [fullName, setFullname] = useState("");
   const [fullNameError, setFullNameError] = useState(false);
 
