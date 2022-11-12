@@ -9,10 +9,10 @@ import * as userInfoService from '../../Services/UserInfoService'
 const Register = () => {
 
 
-  const[username, setUsername] = useState("");
-  const[usernameError, setUsernameError] = useState("");
+  const [username, setUsername] = useState("");
+  const [usernameError, setUsernameError] = useState("");
 
-  const[isTakenUsername, setIsTakenUsername] = useState("");
+  const [isTakenUsername, setIsTakenUsername] = useState("");
 
 
   const [fullName, setFullname] = useState("");
@@ -20,11 +20,11 @@ const Register = () => {
 
 
 
-  function usernameHandler(e){
+  function usernameHandler(e) {
 
     let item = e.target.value.trim();
 
-    if(item.length < 3 || item.length > 20){
+    if (item.length < 3 || item.length > 20) {
 
       setUsernameError(true);
 
@@ -32,9 +32,17 @@ const Register = () => {
 
       setUsernameError(false);
 
-      if(userInfoService.findIfUsernameIsTakenInDb(item)){
+      if (userInfoService.findIfUsernameIsTakenInDb(item)) {
+
+        setIsTakenUsername(true);
+      } else {
+
+        setIsTakenUsername(false);
 
       }
+
+
+
 
     }
 
@@ -43,11 +51,11 @@ const Register = () => {
 
 
 
-  function fullNamehandler(e){
+  function fullNamehandler(e) {
 
     let item = e.target.value.trim();
 
-    if(item.length < 5 || item.length > 20){
+    if (item.length < 5 || item.length > 20) {
 
       setFullNameError(true);
     } else {
@@ -68,25 +76,25 @@ const Register = () => {
 
     <form id='form-register'>
       <p htmlFor="name">Create Account</p>
-      
-      
+
+
       <label htmlFor="username" >Username</label>
       <input name='username' placeholder='Username' type="text" id='text1' onChange={usernameHandler}></input>
       {usernameError ? <span id='span-info-register'>Username lenght need to be between 3 and 20 symbols.</span> : ""}
-      
-      
-      
+      {isTakenUsername ? <span id='span-info-register'>Username is used by another person.</span> : ""}
+
+
       <label htmlFor="fullname">Full Name</label>
       <input name='fullname' placeholder='Full Name' type="text" id='text2' onChange={fullNamehandler}></input>
       {fullNameError ? <span id='span-info-register'>Full name length must be between 5 and 20 characters.</span> : ""}
-      
-      
+
+
       <label htmlFor="email">Email</label>
       <input name='email' placeholder='Email' type="email" id='text3'></input>
-      
+
       <label htmlFor="password">Password</label>
       <input name='password' placeholder='Password' type="password" id='text4'></input>
-      
+
       <label htmlFor="confirmPassword">Confirm Password</label>
       <input name='confirmPassword' placeholder='Confirm Password' type="password" id='text4'></input>
 
