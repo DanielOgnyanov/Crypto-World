@@ -72,19 +72,19 @@ public class UserController {
     }
 
 
-    @GetMapping("/")
+    @GetMapping("/username/check")
     public ResponseEntity<String> findIfUsernameIsTaken(@RequestBody UsernameDto usernameDto){
 
+        if (userService.existByUsername(usernameDto.getUsername())){
+            return new ResponseEntity<>("Username already exist", HttpStatus.CONFLICT);
+        }
+
+
+        return new ResponseEntity<>("Username is free", HttpStatus.OK);
     }
 
     @PostMapping("/register")
     public ResponseEntity<String> createUserAccount(@RequestBody UserRegistrationDto userRegistrationDto){
-
-
-        if(userService.existByUsername(userRegistrationDto.getUsername())){
-             return new ResponseEntity<>("Username already exist", HttpStatus.BAD_REQUEST);
-
-        }
 
         if (userService.existByEmail(userRegistrationDto.getEmail())){
             return new ResponseEntity<>("Email already exist", HttpStatus.BAD_REQUEST);
