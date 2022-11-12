@@ -70,6 +70,12 @@ public class UserController {
         return new ResponseEntity<>(wallet, HttpStatus.OK);
     }
 
+
+    @GetMapping("/")
+    public ResponseEntity<String> findIfUsernameIsTaken(){
+
+    }
+
     @PostMapping("/register")
     public ResponseEntity<String> createUserAccount(@RequestBody UserRegistrationDto userRegistrationDto){
 
