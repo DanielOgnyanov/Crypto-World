@@ -1,10 +1,7 @@
 package com.example.cryptoworld.web;
 
 
-import com.example.cryptoworld.models.dto.LoginCheckDto;
-import com.example.cryptoworld.models.dto.LoginDto;
-import com.example.cryptoworld.models.dto.UserRegistrationDto;
-import com.example.cryptoworld.models.dto.UsernameDto;
+import com.example.cryptoworld.models.dto.*;
 import com.example.cryptoworld.models.entities.UserEntity;
 import com.example.cryptoworld.models.entities.WalletEntity;
 import com.example.cryptoworld.models.service.UserRegistrationServiceModel;
@@ -82,6 +79,20 @@ public class UserController {
 
         return new ResponseEntity<>("Username is free", HttpStatus.OK);
     }
+
+    @GetMapping("/email/check")
+    public ResponseEntity<String> findIfEmailIsTaken(@RequestBody EmailDto emailDto){
+
+        if (userService.existByUsername(emailDto.getEmail())){
+            return new ResponseEntity<>("This email is used by another person", HttpStatus.CONFLICT);
+        }
+
+
+        return new ResponseEntity<>("Email is free", HttpStatus.OK);
+    }
+
+
+
 
     
 
