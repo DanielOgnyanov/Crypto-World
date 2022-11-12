@@ -8,6 +8,7 @@ import React, { useState } from 'react'
 const Register = () => {
 
   const [fullName, setFullname] = useState("");
+  const [fullNameError, setFullNameError] = useState(false);
 
 
 
@@ -15,7 +16,10 @@ const Register = () => {
 
     let item = e.target.value.trim();
 
-    
+    if(item.length < 5 || item.length > 20){
+
+      setFullNameError(true);
+    }
 
   }
 
