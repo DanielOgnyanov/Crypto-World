@@ -30,6 +30,8 @@ const Register = () => {
       setUsernameError(false);
 
     }
+
+    setUsername(item)
   }
 
 
