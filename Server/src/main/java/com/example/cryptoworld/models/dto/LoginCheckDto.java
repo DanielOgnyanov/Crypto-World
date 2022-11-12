@@ -1,4 +1,4 @@
-package com.example.cryptoworld.models.binding;
+package com.example.cryptoworld.models.dto;
 
 public class LoginCheckDto {
 

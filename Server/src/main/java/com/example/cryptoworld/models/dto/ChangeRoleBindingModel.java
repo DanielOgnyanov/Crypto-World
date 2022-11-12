@@ -1,4 +1,4 @@
-package com.example.cryptoworld.models.binding;
+package com.example.cryptoworld.models.dto;
 
 import com.example.cryptoworld.models.enums.EnumAddOrRemove;
 

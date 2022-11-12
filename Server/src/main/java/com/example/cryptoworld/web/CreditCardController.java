@@ -1,6 +1,6 @@
 package com.example.cryptoworld.web;
 
-import com.example.cryptoworld.models.binding.AddCreditCardBindingModel;
+import com.example.cryptoworld.models.dto.AddCreditCardBindingModel;
 import com.example.cryptoworld.models.service.AddCreditCardServiceModel;
 import com.example.cryptoworld.service.CreditCartService;
 import com.example.cryptoworld.service.UserService;

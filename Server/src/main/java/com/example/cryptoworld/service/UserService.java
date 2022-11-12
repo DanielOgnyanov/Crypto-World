@@ -1,12 +1,11 @@
 package com.example.cryptoworld.service;
 
-import com.example.cryptoworld.models.binding.ChangeRoleBindingModel;
+import com.example.cryptoworld.models.dto.ChangeRoleBindingModel;
 import com.example.cryptoworld.models.entities.UserEntity;
 import com.example.cryptoworld.models.service.UserRegistrationServiceModel;
 import com.example.cryptoworld.models.view.UserView;
 
 import java.util.List;
-import java.util.Optional;
 
 public interface UserService {
     void initializeUsers();

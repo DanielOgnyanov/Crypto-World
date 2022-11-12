@@ -1,6 +1,6 @@
 package com.example.cryptoworld.web;
 
-import com.example.cryptoworld.models.binding.LogDepositBindingModel;
+import com.example.cryptoworld.models.dto.LogDepositBindingModel;
 import com.example.cryptoworld.models.entities.UserEntity;
 import com.example.cryptoworld.models.service.LogDepositServiceModel;
 import com.example.cryptoworld.service.CreditCartService;

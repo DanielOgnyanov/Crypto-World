@@ -1,6 +1,6 @@
 package com.example.cryptoworld.service.Impl;
 
-import com.example.cryptoworld.models.binding.ChangeRoleBindingModel;
+import com.example.cryptoworld.models.dto.ChangeRoleBindingModel;
 import com.example.cryptoworld.models.entities.RoleEntity;
 import com.example.cryptoworld.models.entities.UserEntity;
 import com.example.cryptoworld.models.entities.WalletEntity;
