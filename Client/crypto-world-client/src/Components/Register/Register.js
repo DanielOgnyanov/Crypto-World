@@ -35,7 +35,7 @@ const Register = () => {
   return (
 
 
-    <form>
+    <form id='form-register'>
       <p htmlFor="name">Create Account</p>
       
       
