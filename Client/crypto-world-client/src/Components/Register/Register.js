@@ -1,5 +1,6 @@
 import './Register.css'
 import React, { useState } from 'react'
+import * as UserInfoService from '../../Services/UserInfoService'
 
 
 
