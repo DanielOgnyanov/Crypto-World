@@ -19,7 +19,9 @@ const Register = () => {
     if(item.length < 5 || item.length > 20){
 
       setFullNameError(true);
-    }
+    } 
+
+    setFullname(item);
 
   }
 
