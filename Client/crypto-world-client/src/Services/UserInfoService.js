@@ -3,7 +3,7 @@ const baseUrl = 'http://localhost:8000';
 export const findIfUsernameIsTakenInDb = async (username) => {
 
     let res = await fetch(`${baseUrl}/api/user/username/check`, {
-        method: 'POST',
+        method: 'GET',
         mode: 'no-cors',
         headers: {
             'content-type': 'application/json'
