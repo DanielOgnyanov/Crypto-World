@@ -12,11 +12,11 @@ export const findIfUsernameIsTakenInDb = async (username) => {
 
     let jsonResult = await res.json();
 
-    let isTaken = false;
+    
 
     if (res.ok) {
-        return isTaken(false);
+         return jsonResult;
     } else {
-        isTaken(true);
+        throw jsonResult.message;
     }
 }
