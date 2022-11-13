@@ -4,8 +4,9 @@ export const findIfUsernameIsTakenInDb = async (username) => {
 
     let res = await fetch(`${baseUrl}/api/user/username/check`, {
         method: 'POST',
-        mode:'no-cors',
+        
         headers: {
+             
             'content-type': 'application/json'
         },
         body: JSON.stringify({ username })
