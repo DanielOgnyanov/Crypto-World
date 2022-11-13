@@ -32,16 +32,16 @@ const Register = () => {
 
       setUsernameError(false);
 
-      userInfoService.findIfUsernameIsTakenInDb(item).then((item) =>{
+      userInfoService.findIfUsernameIsTakenInDb(item).then((item) => {
 
         userInfoService.findIfUsernameIsTakenInDb(item);
 
-        console.log(item)
-      }).catch(error =>{
+
+      }).catch(error => {
         console.log(error);
       })
 
-    
+
 
 
 
