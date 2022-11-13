@@ -69,7 +69,7 @@ public class UserController {
     }
 
 
-    @GetMapping("/username/check")
+    @PostMapping("/username/check")
     public ResponseEntity<String> findIfUsernameIsTaken(@RequestBody UsernameDto usernameDto) {
 
         if (userService.existByUsername(usernameDto.getUsername())) {
