@@ -37,6 +37,7 @@ const Register = () => {
         userInfoService.findIfUsernameIsTakenInDb(item);
 
 
+        setIsTakenUsername(false);
       }).catch(error => {
 
         setIsTakenUsername(true);
