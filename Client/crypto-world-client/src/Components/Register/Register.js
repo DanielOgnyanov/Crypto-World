@@ -38,6 +38,8 @@ const Register = () => {
 
 
       }).catch(error => {
+
+        setIsTakenUsername(true);
         console.log(error);
       })
 
