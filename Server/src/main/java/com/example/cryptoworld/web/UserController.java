@@ -74,9 +74,9 @@ public class UserController {
     public ResponseEntity<String> findIfUsernameIsTaken(@RequestBody UsernameDto usernameDto) {
 
         if (userService.existByUsername(usernameDto.getUsername())) {
-            throw new ResponseStatusException(HttpStatus.CONFLICT,"Username already exist");
+            throw new ResponseStatusException(HttpStatus.CONFLICT, "Username already exist");
 
-            //new ResponseEntity<>("Username already exist", HttpStatus.CONFLICT);
+
         }
 
 
