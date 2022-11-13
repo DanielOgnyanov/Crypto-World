@@ -12,7 +12,7 @@ const Register = () => {
   const [username, setUsername] = useState("");
   const [usernameError, setUsernameError] = useState("");
 
-  const [isTakenUsername, setIsTakenUsername] = useState("");
+  const [isTakenUsername, setIsTakenUsername] = useState(false);
 
 
   const [fullName, setFullname] = useState("");
@@ -32,14 +32,16 @@ const Register = () => {
 
       setUsernameError(false);
 
-      if (userInfoService.findIfUsernameIsTakenInDb(item)) {
+      userInfoService.findIfUsernameIsTakenInDb(item).then((item) =>{
 
-        setIsTakenUsername(true);
-      } else {
+        userInfoService.findIfUsernameIsTakenInDb(item);
 
-        setIsTakenUsername(false);
+        console.log(item)
+      }).catch(error =>{
+        console.log(error);
+      })
 
-      }
+    
 
 
 
