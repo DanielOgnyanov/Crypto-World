@@ -16,6 +16,7 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
 
 @RestController
 @CrossOrigin
@@ -73,11 +74,13 @@ public class UserController {
     public ResponseEntity<String> findIfUsernameIsTaken(@RequestBody UsernameDto usernameDto) {
 
         if (userService.existByUsername(usernameDto.getUsername())) {
-            return new ResponseEntity<>("Username already exist", HttpStatus.CONFLICT);
+            throw new ResponseStatusException(HttpStatus.CONFLICT,"Username already exist");
+
+            //new ResponseEntity<>("Username already exist", HttpStatus.CONFLICT);
         }
 
 
-        return new ResponseEntity<>("Username is free", HttpStatus.OK);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 
     @GetMapping("/email/check")
