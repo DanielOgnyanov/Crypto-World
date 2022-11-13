@@ -32,7 +32,7 @@ public class ApplicationSecurityConfiguration extends WebSecurityConfigurerAdapt
     @Override
     protected void configure(HttpSecurity http) throws Exception {
 
-        http.csrf().and().cors().disable();
+        http.csrf().disable();
         http
                 .authorizeRequests()
                 .antMatchers("/api/user/login").permitAll()
