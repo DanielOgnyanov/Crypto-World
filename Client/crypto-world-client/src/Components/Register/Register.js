@@ -19,6 +19,7 @@ const Register = () => {
 
   const regex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
   const[emailError, setEmailError] = useState(false);
+  const[email, SetEmail] = useState("");
 
 
 
@@ -74,7 +75,11 @@ const Register = () => {
 
     let item = e.target.value.trim();
 
-    if(item.match(regex))
+    if(item.match(regex)){
+      setEmailError(false);
+    } else {
+      setEmailError(true)
+    }
 
 
 
