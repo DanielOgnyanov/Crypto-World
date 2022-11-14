@@ -43,15 +43,6 @@ const Register = () => {
         setIsTakenUsername(true);
         console.log(error);
       })
-
-
-
-
-
-
-
-
-
     }
 
     setUsername(item)
@@ -77,8 +68,6 @@ const Register = () => {
   }
 
 
-
-
   return (
 
 
@@ -90,11 +79,7 @@ const Register = () => {
       <input name='username' placeholder='Username' type="text" id='text1' onChange={usernameHandler}></input>
 
       {usernameError ? <span id='span-info-register'>Username lenght need to be between 3 and 20 symbols.</span> : ""}
-
-      {isTakenUsername ? <span id='span-info-register'>Username is used by another person.</span>
-        : ""}
-
-
+      {isTakenUsername ? <span id='span-info-register'>Username is used by another person.</span> : ""}
 
 
       <label htmlFor="fullname">Full Name</label>
