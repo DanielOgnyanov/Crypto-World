@@ -17,7 +17,7 @@ export const findIfUsernameIsTakenInDb = async (username) => {
     
 
     if (res.ok) {
-        console.log("true")
+        
         return res.message;
     } else {
         throw jsonResult.message;
