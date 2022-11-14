@@ -26,6 +26,24 @@ export const findIfUsernameIsTakenInDb = async (username) => {
 
 export const checkIfTheEmailIsNotTaken = async (email) =>{
 
+    let res = await fetch(`${baseUrl}/api/user/email/check`, {
+        method: 'POST',
+        
+        headers: {
+             
+            'content-type': 'application/json'
+        },
+        body: JSON.stringify({ email })
+    });
+
+    let jsonResult = await res.json();
 
     
+
+    if (res.ok) {
+        return res.message;
+    } else {
+        throw jsonResult.message;
+    }
+
 }
