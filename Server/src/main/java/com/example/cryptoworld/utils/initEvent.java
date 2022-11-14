@@ -1,4 +1,4 @@
-package com.example.cryptoworld.utils.event;
+package com.example.cryptoworld.utils;
 
 import org.springframework.context.ApplicationEvent;
 

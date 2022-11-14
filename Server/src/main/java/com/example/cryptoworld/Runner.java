@@ -1,6 +1,6 @@
 package com.example.cryptoworld;
 
-import com.example.cryptoworld.utils.event.initEvent;
+import com.example.cryptoworld.utils.initEvent;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.context.ApplicationEventPublisher;

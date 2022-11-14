@@ -4,7 +4,7 @@ import com.example.cryptoworld.service.CountryService;
 import com.example.cryptoworld.service.CryptoService;
 import com.example.cryptoworld.service.RoleService;
 import com.example.cryptoworld.service.UserService;
-import com.example.cryptoworld.utils.event.initEvent;
+import com.example.cryptoworld.utils.initEvent;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;
 
