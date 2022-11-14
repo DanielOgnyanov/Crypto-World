@@ -4,7 +4,7 @@ import com.example.cryptoworld.service.CountryService;
 import com.example.cryptoworld.service.CryptoService;
 import com.example.cryptoworld.service.RoleService;
 import com.example.cryptoworld.service.UserService;
-import com.example.cryptoworld.utils.initEvent;
+import com.example.cryptoworld.utils.InitEvent;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;
 
@@ -36,7 +36,7 @@ public class DatabaseInit  {
     //    }
 
 
-    @EventListener(initEvent.class)
+    @EventListener(InitEvent.class)
     public void run () throws IOException {
         countryService.InitCountryInDb();
         roleService.InitRoleInDb();

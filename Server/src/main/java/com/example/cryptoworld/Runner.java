@@ -1,6 +1,6 @@
 package com.example.cryptoworld;
 
-import com.example.cryptoworld.utils.initEvent;
+import com.example.cryptoworld.utils.InitEvent;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.context.ApplicationEventPublisher;
@@ -17,7 +17,7 @@ public class Runner implements ApplicationRunner {
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
-        initEvent initEvent=new initEvent(this);
+        InitEvent initEvent=new InitEvent(this);
         applicationEventPublisher.publishEvent(initEvent);
     }
 }
