@@ -20,7 +20,7 @@ const Register = () => {
   const regex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
   const[email, setEmail] = useState("");
   const[emailError, setEmailError] = useState(false);
-  const[emailIsFree, setEmailIsFree] = useState(false);
+  const[emailIsFree, setEmailIsFree] = useState(true);
   
 
 
@@ -42,10 +42,10 @@ const Register = () => {
         userInfoService.findIfUsernameIsTakenInDb(item);
 
 
-        setIsTakenUsername(false);
+        setIsTakenUsername(true);
       }).catch(error => {
 
-        setIsTakenUsername(true);
+        setIsTakenUsername(false);
         console.log(error);
       })
     }
@@ -123,7 +123,7 @@ const Register = () => {
       <label htmlFor="email">Email</label>
       <input name='email' placeholder='Email' type="email" id='text3' onChange={emailHandler}></input>
       {emailError ? <span id='span-info-register'>Email is not valid.</span> : ""}
-      {emailIsFree ? <span id='span-info-register'>Email used by another person.</span> : ""}
+      {emailIsFree ? "" : <span id='span-info-register'>Email is used by another person.</span>}
 
       <label htmlFor="password">Password</label>
       <input name='password' placeholder='Password' type="password" id='text4'></input>
