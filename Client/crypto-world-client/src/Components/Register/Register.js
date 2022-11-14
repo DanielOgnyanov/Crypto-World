@@ -18,8 +18,10 @@ const Register = () => {
   const [fullNameError, setFullNameError] = useState(false);
 
   const regex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
-  const[emailError, setEmailError] = useState(false);
   const[email, setEmail] = useState("");
+  const[emailError, setEmailError] = useState(false);
+  const[emailIsFree, setEmailIsFree] = useState(false);
+  
 
 
 
@@ -75,10 +77,21 @@ const Register = () => {
 
     let item = e.target.value.trim();
 
-    if(item.match(regex)){
-      setEmailError(false);
-    } else {
+    if(!item.match(regex)){
       setEmailError(true);
+    } else {
+      setEmailError(false);
+
+      userInfoService.checkIfTheEmailIsNotTaken(item).then((item) =>{
+
+        userInfoService.checkIfTheEmailIsNotTaken(item);
+
+        setEmailIsFree(true);
+      }).catch(error =>{
+
+        setEmailIsFree(false);
+        console.log(error);
+      })
     }
 
     setEmail(item);
