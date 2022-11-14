@@ -18,6 +18,7 @@ const Register = () => {
   const [fullNameError, setFullNameError] = useState(false);
 
   const regex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
+  
 
 
 
@@ -70,6 +71,10 @@ const Register = () => {
 
 
   function emailHandler(e) {
+
+    let item = e.target.value.trim();
+
+    if(item.match(regex))
 
 
 
