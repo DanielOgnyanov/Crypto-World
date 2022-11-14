@@ -92,7 +92,10 @@ public class UserController {
     public ResponseEntity<String> findIfEmailIsTaken(@RequestBody EmailDto emailDto) {
 
         if (userService.existByUsername(emailDto.getEmail())) {
-            return new ResponseEntity<>("This email is used by another person", HttpStatus.CONFLICT);
+            throw new ResponseStatusException(HttpStatus.CONFLICT, "This email is used by another person");
+
+
+
         }
 
 
