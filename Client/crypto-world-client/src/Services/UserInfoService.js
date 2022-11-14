@@ -22,3 +22,10 @@ export const findIfUsernameIsTakenInDb = async (username) => {
         throw jsonResult.message;
     }
 }
+
+
+export const checkIfTheEmailIsNotTaken = async (email) =>{
+
+
+    
+}
