@@ -89,17 +89,17 @@ public class UserController {
     }
 
     @PostMapping("/email/check")
-    public ResponseEntity<String> findIfEmailIsTaken(@RequestBody EmailDto emailDto) {
+    public ResponseEntity<CustomMessage> findIfEmailIsTaken(@RequestBody EmailDto emailDto) {
 
         if (userService.existByUsername(emailDto.getEmail())) {
             throw new ResponseStatusException(HttpStatus.CONFLICT, "This email is used by another person");
-
-
-
         }
 
+        CustomMessage customMessage = new CustomMessage();
+        customMessage.setMessage("Email is free.");
 
-        return new ResponseEntity<>("Email is free", HttpStatus.OK);
+
+        return new ResponseEntity<CustomMessage>(customMessage, HttpStatus.OK);
     }
 
 
