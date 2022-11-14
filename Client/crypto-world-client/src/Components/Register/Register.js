@@ -108,7 +108,7 @@ const Register = () => {
 
 
       <label htmlFor="email">Email</label>
-      <input name='email' placeholder='Email' type="email" id='text3'></input>
+      <input name='email' placeholder='Email' type="email" id='text3' onChange={emailHandler}></input>
       {emailError ? <span id='span-info-register'>Email is not valid.</span> : ""}
 
       <label htmlFor="password">Password</label>
