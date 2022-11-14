@@ -8,6 +8,8 @@ import com.example.cryptoworld.models.service.UserRegistrationServiceModel;
 import com.example.cryptoworld.service.LoginService;
 import com.example.cryptoworld.service.UserService;
 import com.example.cryptoworld.service.WalletService;
+import com.example.cryptoworld.utils.CustomMessage;
+import org.json.JSONObject;
 import org.modelmapper.ModelMapper;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.HttpStatus;
@@ -17,6 +19,8 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
+
+import java.util.HashMap;
 
 @RestController
 @CrossOrigin
@@ -71,16 +75,17 @@ public class UserController {
 
 
     @PostMapping("/username/check")
-    public ResponseEntity<String> findIfUsernameIsTaken(@RequestBody UsernameDto usernameDto) {
+    public ResponseEntity<CustomMessage> findIfUsernameIsTaken(@RequestBody UsernameDto usernameDto) {
 
         if (userService.existByUsername(usernameDto.getUsername())) {
-            throw new ResponseStatusException(HttpStatus.CONFLICT, "Username already exist");
-
-
+            throw new ResponseStatusException(HttpStatus.CONFLICT, "Username already exist.");
         }
 
+        CustomMessage customMessage = new CustomMessage();
+        customMessage.setMessage("Username is free.");
 
-        return new ResponseEntity<>(HttpStatus.OK);
+
+        return new ResponseEntity<CustomMessage>(customMessage, HttpStatus.OK);
     }
 
     @GetMapping("/email/check")
