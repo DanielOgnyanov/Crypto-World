@@ -91,7 +91,7 @@ public class UserController {
     @PostMapping("/email/check")
     public ResponseEntity<CustomMessage> findIfEmailIsTaken(@RequestBody EmailDto emailDto) {
 
-        if (userService.existByUsername(emailDto.getEmail())) {
+        if (userService.existByEmail(emailDto.getEmail())) {
             throw new ResponseStatusException(HttpStatus.CONFLICT, "This email is used by another person");
         }
 
