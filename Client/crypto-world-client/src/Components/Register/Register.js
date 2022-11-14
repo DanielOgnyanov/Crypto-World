@@ -11,12 +11,13 @@ const Register = () => {
 
   const [username, setUsername] = useState("");
   const [usernameError, setUsernameError] = useState("");
-
   const [isTakenUsername, setIsTakenUsername] = useState(false);
 
 
   const [fullName, setFullname] = useState("");
   const [fullNameError, setFullNameError] = useState(false);
+
+  const regex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
 
 
 
@@ -68,8 +69,10 @@ const Register = () => {
   }
 
 
-  function emailhandler(e){
-    
+  function emailHandler(e) {
+
+
+
   }
 
 
