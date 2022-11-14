@@ -123,6 +123,7 @@ const Register = () => {
       <label htmlFor="email">Email</label>
       <input name='email' placeholder='Email' type="email" id='text3' onChange={emailHandler}></input>
       {emailError ? <span id='span-info-register'>Email is not valid.</span> : ""}
+      {emailIsFree ? <span id='span-info-register'>Email used by another person.</span> : ""}
 
       <label htmlFor="password">Password</label>
       <input name='password' placeholder='Password' type="password" id='text4'></input>
