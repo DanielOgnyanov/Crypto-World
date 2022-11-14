@@ -18,7 +18,7 @@ const Register = () => {
   const [fullNameError, setFullNameError] = useState(false);
 
   const regex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
-  
+  const[emailError, setEmailError] = useState(false);
 
 
 
