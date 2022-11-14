@@ -50,7 +50,7 @@ const Register = () => {
 
 
 
-  function fullNamehandler(e) {
+  function fullNameHandler(e) {
 
     let item = e.target.value.trim();
 
@@ -65,6 +65,11 @@ const Register = () => {
 
     setFullname(item);
 
+  }
+
+
+  function emailhandler(e){
+    
   }
 
 
@@ -83,7 +88,7 @@ const Register = () => {
 
 
       <label htmlFor="fullname">Full Name</label>
-      <input name='fullname' placeholder='Full Name' type="text" id='text2' onChange={fullNamehandler}></input>
+      <input name='fullname' placeholder='Full Name' type="text" id='text2' onChange={fullNameHandler}></input>
       {fullNameError ? <span id='span-info-register'>Full name length must be between 5 and 20 characters.</span> : ""}
 
 
