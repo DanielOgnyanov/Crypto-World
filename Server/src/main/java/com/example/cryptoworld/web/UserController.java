@@ -88,7 +88,7 @@ public class UserController {
         return new ResponseEntity<CustomMessage>(customMessage, HttpStatus.OK);
     }
 
-    @GetMapping("/email/check")
+    @PostMapping("/email/check")
     public ResponseEntity<String> findIfEmailIsTaken(@RequestBody EmailDto emailDto) {
 
         if (userService.existByUsername(emailDto.getEmail())) {
