@@ -151,7 +151,7 @@ const Register = () => {
       {passError ? <span id='span-info-register' >Password lenght must be atleast 5 symbols</span> : ""}
 
       <label htmlFor="confirmPassword">Confirm Password</label>
-      <input name='confirmPassword' placeholder='Confirm Password' type="password" id='text4'></input>
+      <input name='confirmPassword' placeholder='Confirm Password' type="password" id='text4' onChange={passwordHandler}></input>
       {passError ? <span id='span-info-register' >Password lenght must be atleast 5 symbols</span> : ""}
 
       <button>Create</button>
