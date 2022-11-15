@@ -102,6 +102,21 @@ const Register = () => {
   }
 
   function passwordHandler(e){
+    
+    let item = e.target.value.trim();
+
+        if(item.length < 5){
+
+            setPassError(true);
+
+        } else {
+
+            setPassError(false);
+
+        }
+
+        setPass(item);
+    }
 
   }
 
