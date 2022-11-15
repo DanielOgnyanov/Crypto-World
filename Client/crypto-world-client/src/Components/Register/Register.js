@@ -101,22 +101,21 @@ const Register = () => {
     setEmail(item);
   }
 
-  function passwordHandler(e){
-    
+  function passwordHandler(e) {
+
     let item = e.target.value.trim();
 
-        if(item.length < 5){
+    if (item.length < 5) {
 
-            setPassError(true);
+      setPassError(true);
 
-        } else {
+    } else {
 
-            setPassError(false);
+      setPassError(false);
 
-        }
-
-        setPass(item);
     }
+
+    setPass(item);
 
   }
 
@@ -145,8 +144,8 @@ const Register = () => {
       {emailError ? <span id='span-info-register'>Email is not valid.</span> : ""}
       {emailIsFree ? "" : <span id='span-info-register'>Email is used by another person.</span>}
 
-      
-      
+
+
       <label htmlFor="password">Password</label>
       <input name='password' placeholder='Password' type="password" id='text4'></input>
 
