@@ -23,6 +23,9 @@ const Register = () => {
   const [emailIsFree, setEmailIsFree] = useState(true);
 
 
+  const [passord, setPass] = useState("");
+
+
 
 
   function usernameHandler(e) {
@@ -98,7 +101,7 @@ const Register = () => {
   }
 
   function passwordHandler(e){
-    
+
   }
 
 
