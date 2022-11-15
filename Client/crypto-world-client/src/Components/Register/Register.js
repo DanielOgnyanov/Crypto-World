@@ -24,6 +24,7 @@ const Register = () => {
 
 
   const [passord, setPass] = useState("");
+  const [passError, setPassError] = useState(false);
 
 
 
