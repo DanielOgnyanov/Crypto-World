@@ -23,7 +23,7 @@ const Register = () => {
   const [emailIsFree, setEmailIsFree] = useState(true);
 
 
-  const passowrdRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@#$%^&+=]).{5,}$/;
+  const passowrdRegex = /^(.*[A-z])(.*[0-9])([@#$%^&+=!?])$/;
   const [password, setPass] = useState("");
   const [passError, setPassError] = useState(false);
 
@@ -109,7 +109,7 @@ const Register = () => {
 
     let item = e.target.value.trim();
 
-    if (item.length < 5) {
+    if (!item.match(passowrdRegex)) {
 
       setPassError(true);
 
@@ -155,8 +155,8 @@ const Register = () => {
       {passError ? <span id='span-info-register' >Password lenght must be atleast 5 symbols</span> : ""}
 
       <label htmlFor="confirmPassword">Confirm Password</label>
-      <input name='confirmPassword' placeholder='Confirm Password' type="password" id='text4' onChange={passwordHandler}></input>
-      {passError ? <span id='span-info-register' >Password lenght must be atleast 5 symbols</span> : ""}
+      <input name='confirmPassword' placeholder='Confirm Password' type="password" id='text4'></input>
+      
 
       <button>Create</button>
     </form>
