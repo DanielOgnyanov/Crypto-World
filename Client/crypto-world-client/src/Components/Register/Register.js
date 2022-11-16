@@ -28,7 +28,7 @@ const Register = () => {
   const [passError, setPassError] = useState(false);
 
   const [confirmPassword, setConfirmPassword] = useState("");
-  const [confirmPasswordError, seConfirmPasswordError] = useState("");
+  const [confirmPasswordError, setConfirmPasswordError] = useState(false);
 
 
 
@@ -130,9 +130,12 @@ const Register = () => {
 
     if(item.length < 5){
 
+      setConfirmPasswordError(true);
 
     } else {
-      
+
+      setConfirmPasswordError(false);
+
     }
 
 
