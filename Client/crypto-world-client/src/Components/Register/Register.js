@@ -128,7 +128,7 @@ const Register = () => {
 
     let item = e.target.value.trim();
 
-    if(item.length < 5){
+    if(item.length < 5 || !item.match(passowrdRegex)){
 
       setConfirmPasswordError(true);
 
@@ -137,6 +137,8 @@ const Register = () => {
       setConfirmPasswordError(false);
 
     }
+
+    setConfirmPassword(item);
 
 
 
