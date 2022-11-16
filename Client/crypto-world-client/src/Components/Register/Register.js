@@ -139,10 +139,10 @@ const Register = () => {
 
     }
 
-    setConfirmPassword(item);
+    
 
 
-    if(confirmPassword.match(password)){
+    if(item.match(password)){
 
       setIsPasswordMatch(true);
 
@@ -152,8 +152,8 @@ const Register = () => {
       
     }
 
-
-
+    setConfirmPassword(item);
+    
   }
 
 
@@ -190,7 +190,7 @@ const Register = () => {
       <label htmlFor="confirmPassword">Confirm Password</label>
       <input name='confirmPassword' placeholder='Confirm Password' type="password" id='text4' onChange={confirmPassowrdHandler}></input>
       {confirmPasswordError ? <span id='span-info-register'>Confirm Password must be atleast 5 symbols.</span> : ""}
-
+      {}
       <button>Create</button>
     </form>
 
