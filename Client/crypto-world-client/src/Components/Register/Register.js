@@ -23,8 +23,10 @@ const Register = () => {
   const [emailIsFree, setEmailIsFree] = useState(true);
 
 
-  const [passord, setPass] = useState("");
+  const [password, setPass] = useState("");
   const [passError, setPassError] = useState(false);
+
+  const [confirmPassword, setConfirmPassword] = useState("");
 
 
 
