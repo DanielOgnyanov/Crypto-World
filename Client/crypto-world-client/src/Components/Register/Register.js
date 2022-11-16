@@ -141,6 +141,11 @@ const Register = () => {
     setConfirmPassword(item);
 
 
+    if(confirmPassword.match(password)){
+      
+    }
+
+
 
   }
 
