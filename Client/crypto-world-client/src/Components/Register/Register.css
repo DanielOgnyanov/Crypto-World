@@ -112,7 +112,11 @@ form button {
 
 #span-info-register{
 
+    width: 345px;
+
+    
     display: inline-block;
+    
 
     background-color: rgb(205, 92, 92);
     border: 1px solid  rgb(0, 2, 5);;
