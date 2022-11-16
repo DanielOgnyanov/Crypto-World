@@ -27,6 +27,7 @@ const Register = () => {
   const [passError, setPassError] = useState(false);
 
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [confirmPasswordError, seConfirmPasswordError] = useState("");
 
 
 
