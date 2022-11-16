@@ -109,7 +109,7 @@ const Register = () => {
 
     let item = e.target.value.trim();
 
-    if (!item.match(passowrdRegex)) {
+    if (item.length < 5 || !item.match(passowrdRegex)) {
 
       setPassError(true);
 
