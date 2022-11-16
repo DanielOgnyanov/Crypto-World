@@ -128,7 +128,14 @@ const Register = () => {
 
     let item = e.target.value.trim();
 
-    
+    if(item.length < 5){
+
+
+    } else {
+      
+    }
+
+
 
   }
 
