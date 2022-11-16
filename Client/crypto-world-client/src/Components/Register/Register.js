@@ -29,7 +29,7 @@ const Register = () => {
 
   const [confirmPassword, setConfirmPassword] = useState("");
   const [confirmPasswordError, setConfirmPasswordError] = useState(false);
-  const [matchPassowrd, setMatchPassowd] = useState(false);
+  const [isPasswordMatch, setIsPasswordMatch] = useState(false);
 
 
 
@@ -144,6 +144,12 @@ const Register = () => {
 
     if(confirmPassword.match(password)){
 
+      setIsPasswordMatch(true);
+
+    } else {
+
+      setIsPasswordMatch(false);
+      
     }
 
 
