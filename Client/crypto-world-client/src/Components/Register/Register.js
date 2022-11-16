@@ -124,6 +124,15 @@ const Register = () => {
   }
 
 
+  function confirmPassowrdHandler(e){
+
+    let item = e.target.value.trim();
+
+    
+
+  }
+
+
   return (
 
 
