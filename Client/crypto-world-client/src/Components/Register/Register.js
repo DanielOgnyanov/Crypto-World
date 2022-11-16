@@ -23,6 +23,7 @@ const Register = () => {
   const [emailIsFree, setEmailIsFree] = useState(true);
 
 
+  const passowrdRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@#$%^&+=]).{8,}$/;
   const [password, setPass] = useState("");
   const [passError, setPassError] = useState(false);
 
