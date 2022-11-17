@@ -125,4 +125,5 @@ form button {
 #span-green-tick{
     position: absolute;
     margin-left: 18px;
+    background-color: rgb(50,205,50);
 }
