@@ -1,6 +1,6 @@
 #form-register {
     height: 580px;
-    width: 430px;
+    width: 460px;
     margin-top: 80px;
     margin-left: 500px;
     margin-bottom: 200px;
@@ -124,5 +124,5 @@ form button {
 
 #span-green-tick{
     position: absolute;
-    margin-left: 15px;
+    margin-left: 18px;
 }
