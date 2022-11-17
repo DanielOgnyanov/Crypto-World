@@ -32,7 +32,7 @@ const Register = () => {
 
   const [confirmPassword, setConfirmPassword] = useState("");
   const [confirmPasswordError, setConfirmPasswordError] = useState(false);
-  const [isPasswordMatch, setIsPasswordMatch] = useState(false);
+  const [isPasswordMatch, setIsPasswordMatch] = useState(true);
 
 
 
