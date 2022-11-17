@@ -32,7 +32,7 @@ const Register = () => {
 
   const [confirmPassword, setConfirmPassword] = useState("");
   const [confirmPasswordError, setConfirmPasswordError] = useState(false);
-  const [isPasswordMatch, setIsPasswordMatch] = useState(true);
+  const [isPasswordMatch, setIsPasswordMatch] = useState(false);
 
 
 
@@ -172,12 +172,12 @@ const Register = () => {
 
       {usernameError ? <span id='span-info-register'>Username lenght need to be between 3 and 20 symbols.</span> : ""}
       {isTakenUsername ? <span id='span-info-register'>Username is used by another person.</span> : ""}
-
+      
 
       <label htmlFor="fullname">Full Name</label>
       <input name='fullname' placeholder='Full Name' type="text" id='text2' onChange={fullNameHandler}></input>
       {fullNameError ? <span id='span-info-register'>Full name length must be between 5 and 20 characters.</span> : ""}
-
+      
 
       <label htmlFor="email">Email</label>
       <input name='email' placeholder='Email' type="email" id='text3' onChange={emailHandler}></input>
@@ -189,11 +189,14 @@ const Register = () => {
       <label htmlFor="password">Password</label>
       <input name='password' placeholder='Password' type="password" id='text4' onChange={passwordHandler}></input>
       {passError ? <span id='span-info-register' >Password lenght must be atleast 5 symbols and contains letters , numebrs and special symbols.</span> : ""}
+      
+
 
       <label htmlFor="confirmPassword">Confirm Password</label>
       <input name='confirmPassword' placeholder='Confirm Password' type="password" id='text4' onChange={confirmPassowrdHandler}></input>
       {confirmPasswordError ? <span id='span-info-register'>Confirm Password lenght must be atleast 5 symbols and contains letters , numebrs and special symbols.</span> : ""}
       {isPasswordMatch ?  "" : <span id='span-info-register'>Password not match.</span>}
+      {!confirmPasswordError && isPasswordMatch ? <span>&#10003;</span> : ""}
 
 
       <button>Create</button>
