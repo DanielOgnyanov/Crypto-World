@@ -198,7 +198,7 @@ const Register = () => {
       <input name='confirmPassword' placeholder='Confirm Password' type="password" id='text4' onChange={confirmPassowrdHandler}></input>
       {confirmPasswordError ? <span id='span-info-register'>Confirm Password lenght must be atleast 5 symbols and contains letters , numebrs and special symbols.</span> : ""}
       {isPasswordMatch ?  "" : <span id='span-info-register'>Password not match.</span> }
-      {!confirmPasswordError && isInputIsCorrect ? <span id='span-green-tick'>&#10004;</span> : "" }
+      {!confirmPasswordError && isInputIsCorrectConfirmPassword ? <span id='span-green-tick'>&#10004;</span> : "" }
 
 
       <button>Create</button>
