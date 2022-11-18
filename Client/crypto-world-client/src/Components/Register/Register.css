@@ -100,10 +100,10 @@ form p {
   padding-bottom: 10px;
   background: #ddd;
   font-size: 25px;
-  border: 1px solid rgb(10, 70, 228);
+  border: 1px solid rgb(255, 255, 255);
   border-radius: 8px;
   cursor: pointer;
-  background-image: linear-gradient(to right, #25aae1, #4481eb, #04befe, #3f86ed);
+  background-color: #009B77;
    
   
   color: white;
