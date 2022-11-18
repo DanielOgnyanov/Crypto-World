@@ -9,7 +9,8 @@ import * as userInfoService from '../../Services/UserInfoService'
 const Register = () => {
 
 
-  const [isUsernameIsCorrect, setIsusernameIsCorrect] = useState(false);
+  const [isUsernameIsCorrect, setIsUsernameIsCorrect] = useState(false);
+  const [isEmailCorrect, setIsEmailCorrect] = useState(false);
   const [isFullNameCorrect , setIsFullNameCorrect] = useState(false);
   const [isPasswordCorrect, setIsPasswordCorrect] = useState(false);
   const [isInputIsCorrectConfirmPassword, setIsInputIsCorrectConfirmPassword] = useState(false);
