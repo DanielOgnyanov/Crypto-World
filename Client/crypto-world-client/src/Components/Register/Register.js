@@ -78,6 +78,7 @@ const Register = () => {
     } else {
 
       setFullNameError(false);
+      setIsFullNameCorrect(true);
 
     }
 
