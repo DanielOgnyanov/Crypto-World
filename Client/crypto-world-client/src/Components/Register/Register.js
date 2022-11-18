@@ -10,6 +10,7 @@ const Register = () => {
 
 
   const [isInputIsCorrectConfirmPassword, setIsInputIsCorrectConfirmPassword] = useState(false);
+  const [isPasswordCorrect, setIsPasswordCorrect] = useState(false);
 
 
   const [username, setUsername] = useState("");
@@ -116,7 +117,7 @@ const Register = () => {
     if (item.length < 5 || !item.match(passowrdRegex)) {
 
       setPassError(true);
-      setIsInputIsCorrect(true);
+      
 
     } else {
 
@@ -191,7 +192,7 @@ const Register = () => {
       <label htmlFor="password">Password</label>
       <input name='password' placeholder='Password' type="password" id='text4' onChange={passwordHandler}></input>
       {passError ? <span id='span-info-register' >Password lenght must be atleast 5 symbols and contains letters , numebrs and special symbols.</span> : ""}
-      {!passError && isInputIsCorrect ? <span id='span-green-tick'>&#10004;</span> : ""}
+      {!passError  ? <span id='span-green-tick'>&#10004;</span> : ""}
 
 
       <label htmlFor="confirmPassword">Confirm Password</label>
