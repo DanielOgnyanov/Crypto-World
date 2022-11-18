@@ -204,7 +204,7 @@ const Register = () => {
       {!confirmPasswordError && isInputIsCorrectConfirmPassword ? <span id='span-green-tick'>&#10004;</span> : "" }
 
 
-      <button id='register-form-button'>Create</button>
+      <button id='register-form-button'>Register</button>
     </form>
 
 
