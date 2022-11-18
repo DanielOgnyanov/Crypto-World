@@ -9,7 +9,7 @@ import * as userInfoService from '../../Services/UserInfoService'
 const Register = () => {
 
 
-  const [isInputIsCorrect, setIsInputIsCorrect] = useState(false);
+  const [isInputIsCorrectConfirmPassword, setIsInputIsCorrectConfirmPassword] = useState(false);
 
 
   const [username, setUsername] = useState("");
@@ -116,6 +116,7 @@ const Register = () => {
     if (item.length < 5 || !item.match(passowrdRegex)) {
 
       setPassError(true);
+      setIsInputIsCorrect(true);
 
     } else {
 
@@ -190,14 +191,14 @@ const Register = () => {
       <label htmlFor="password">Password</label>
       <input name='password' placeholder='Password' type="password" id='text4' onChange={passwordHandler}></input>
       {passError ? <span id='span-info-register' >Password lenght must be atleast 5 symbols and contains letters , numebrs and special symbols.</span> : ""}
-      
+      {!passError && isInputIsCorrect ? <span id='span-green-tick'>&#10004;</span> : ""}
 
 
       <label htmlFor="confirmPassword">Confirm Password</label>
       <input name='confirmPassword' placeholder='Confirm Password' type="password" id='text4' onChange={confirmPassowrdHandler}></input>
       {confirmPasswordError ? <span id='span-info-register'>Confirm Password lenght must be atleast 5 symbols and contains letters , numebrs and special symbols.</span> : ""}
       {isPasswordMatch ?  "" : <span id='span-info-register'>Password not match.</span> }
-      {confirmPasswordError===false && isInputIsCorrect===true? <span id='span-green-tick'>&#10004;</span> : "" }
+      {!confirmPasswordError && isInputIsCorrect ? <span id='span-green-tick'>&#10004;</span> : "" }
 
 
       <button>Create</button>
