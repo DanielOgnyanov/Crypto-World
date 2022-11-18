@@ -91,7 +91,7 @@ form p {
 } 
 
 
-form button {
+#register-form-button {
 
   height: 40px;
   width: 200px;
