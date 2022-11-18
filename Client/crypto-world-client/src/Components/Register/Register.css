@@ -123,6 +123,7 @@ form button {
 }
 
 #span-green-tick{
+    float: right;
     position: absolute;
     margin-left: 18px;
     margin-top: 6px;
