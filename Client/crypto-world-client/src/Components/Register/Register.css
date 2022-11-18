@@ -94,7 +94,7 @@ form p {
 #register-form-button {
 
   height: 40px;
-  width: 200px;
+  width: 340px;
   margin-top: 25px;
   margin-bottom: 18px;
   padding-bottom: 10px;
@@ -103,7 +103,7 @@ form p {
   border: 1px solid rgb(255, 255, 255);
   border-radius: 8px;
   cursor: pointer;
-  background-color: #009B77;
+  background-color: rgb(15, 129, 15);
    
   
   color: white;
