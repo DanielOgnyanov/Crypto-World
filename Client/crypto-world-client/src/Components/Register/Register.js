@@ -149,7 +149,7 @@ const Register = () => {
     if(item.match(password)){
 
       setIsPasswordMatch(true);
-      setIsInputIsCorrect(true);
+      setIsInputIsCorrectConfirmPassword(true);
 
     } else {
 
