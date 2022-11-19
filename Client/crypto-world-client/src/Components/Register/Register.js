@@ -59,7 +59,7 @@ const Register = () => {
 
         setIsTakenUsername(false);
         setIsUsernameIsCorrect(true);
-        
+
       }).catch(error => {
 
         setIsTakenUsername(true);
@@ -106,6 +106,7 @@ const Register = () => {
         userInfoService.checkIfTheEmailIsNotTaken(item);
 
         setEmailIsFree(true);
+        setIsEmailCorrect(true);
       }).catch(error => {
 
         setEmailIsFree(false);
