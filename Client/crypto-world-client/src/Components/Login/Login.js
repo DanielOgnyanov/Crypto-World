@@ -1,4 +1,4 @@
-import * as authService from '../../Services/authService'
+import * as authService from '../../Services/AuthService'
 import { useNavigate } from "react-router-dom";
 import { useAuthContext } from '../../Context/AuthContext';
 import React, { useState } from 'react'
