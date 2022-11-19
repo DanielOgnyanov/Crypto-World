@@ -58,11 +58,11 @@ const Register = () => {
 
 
         setIsTakenUsername(false);
-        setIsUsernameIsCorrect(false);
+        setIsUsernameIsCorrect(true);
       }).catch(error => {
 
         setIsTakenUsername(true);
-        setIsUsernameIsCorrect(true);
+        setIsUsernameIsCorrect(false);
         console.log(error);
       })
     }
