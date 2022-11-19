@@ -182,7 +182,7 @@ const Register = () => {
 
       {usernameError ? <span id='span-info-register'>Username lenght need to be between 3 and 20 symbols.</span> : ""}
       {isTakenUsername ? <span id='span-info-register'>Username is used by another person.</span> : ""}
-      
+      {!usernameError && !isTakenUsername && isUsernameIsCorrect}
 
       <label htmlFor="fullname">Full Name</label>
       <input name='fullname' placeholder='Full Name' type="text" id='text2' onChange={fullNameHandler}></input>
