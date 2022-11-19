@@ -181,7 +181,7 @@ const Register = () => {
   return (
 
 
-    <form id='form-register'>
+    <form id='form-register' onSubmit={onRegisterFormSubmitHandler}>
       <p htmlFor="name">Create Account</p>
 
 
