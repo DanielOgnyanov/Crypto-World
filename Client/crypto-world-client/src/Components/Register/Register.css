@@ -5,7 +5,7 @@
     margin-left: 500px;
     margin-bottom: 200px;
     text-align: center;
-    
+    position: relative;
 
     border-radius: 20px;
     border-bottom: 2px solid white;
@@ -22,7 +22,7 @@
 }
 
 form input {
-
+    
     height: 30px;
     width: 300px;
     font-size: 18px;
@@ -32,7 +32,7 @@ form input {
 }    
 
 form label {
-
+    
     display: block;
     padding-top: 13px;
     padding-bottom: 10px;
@@ -127,8 +127,11 @@ form p {
 
 #span-green-tick{
 
-    float: right;
+    
     position: absolute;
+    float: right;
+    
+    
 
     margin-left: 18px;
     margin-top: 6px;
