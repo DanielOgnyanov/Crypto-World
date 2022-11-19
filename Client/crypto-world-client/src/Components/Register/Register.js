@@ -110,6 +110,7 @@ const Register = () => {
       }).catch(error => {
 
         setEmailIsFree(false);
+        setIsEmailCorrect(false);
         console.log(error);
       })
     }
