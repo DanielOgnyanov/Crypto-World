@@ -196,6 +196,7 @@ const Register = () => {
       <input name='email' placeholder='Email' type="email" id='text3' onChange={emailHandler}></input>
       {emailError ? <span id='span-info-register'>Email is not valid.</span> : ""}
       {emailIsFree ? "" : <span id='span-info-register'>Email is used by another person.</span>}
+      {!emailError && emailIsFree && isEmailCorrect}
 
 
 
