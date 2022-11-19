@@ -159,6 +159,7 @@ const Register = () => {
     } else {
 
       setIsPasswordMatch(false);
+      setIsInputIsCorrectConfirmPassword(false);
       
     }
 
