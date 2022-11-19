@@ -57,11 +57,11 @@ const Register = () => {
         userInfoService.findIfUsernameIsTakenInDb(item);
 
 
-        setIsTakenUsername(true);
+        setIsTakenUsername(false);
         setIsUsernameIsCorrect(false);
       }).catch(error => {
 
-        setIsTakenUsername(false);
+        setIsTakenUsername(true);
         setIsUsernameIsCorrect(true);
         console.log(error);
       })
