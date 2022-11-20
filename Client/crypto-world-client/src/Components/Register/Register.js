@@ -1,6 +1,7 @@
 import './Register.css'
 import React, { useState } from 'react'
 import * as userInfoService from '../../Services/UserInfoService'
+import * as register from '../../Services/RegisterService'
 
 
 
@@ -177,7 +178,10 @@ const Register = () => {
 
     e.preventDefault();
 
+
     
+
+
 
   }
 
