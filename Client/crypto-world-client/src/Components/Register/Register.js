@@ -127,7 +127,7 @@ const Register = () => {
     if (item.length < 5 || !item.match(passowrdRegex)) {
 
       setPassError(true);
-      
+      setIsPasswordCorrect(false);
 
     } else {
 
