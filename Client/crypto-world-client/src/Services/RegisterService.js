@@ -10,4 +10,12 @@ export const register = async (username, fullname, email, password) => {
         body: JSON.stringify({username, fullname, email, password})
     });
 
+    let jsonResult = await res.json();
+
+    if (res.ok) {
+        return jsonResult;
+    } else {
+        throw jsonResult.message;
+    }
+
 }
