@@ -239,11 +239,11 @@ const Register = () => {
 
 
       <button type= "submit" className= "button" disabled = {
-        isUsernameIsCorrect 
-        && isEmailCorrect 
-        && isFullNameCorrect 
-        && isPasswordCorrect 
-        && isInputIsCorrectConfirmPassword}
+           !isUsernameIsCorrect 
+        || !isEmailCorrect 
+        || !isFullNameCorrect 
+        || !isPasswordCorrect 
+        || !isInputIsCorrectConfirmPassword}
        id='register-form-button'>Register</button>
     </form>
 
