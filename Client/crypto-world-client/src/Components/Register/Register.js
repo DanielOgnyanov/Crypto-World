@@ -238,7 +238,7 @@ const Register = () => {
       {!confirmPasswordError && isInputIsCorrectConfirmPassword ? <span id='span-green-tick'>&#10004;</span> : "" }
 
 
-      <button disabled = {
+      <button type='submit' disabled = {
         isUsernameIsCorrect 
         && isEmailCorrect 
         && isFullNameCorrect 
