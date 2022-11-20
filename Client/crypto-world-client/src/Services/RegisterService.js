@@ -13,7 +13,7 @@ export const register = async (username, fullname, email, password) => {
     let jsonResult = await res.json();
 
     if (res.ok) {
-        return jsonResult;
+        return res;
     } else {
         throw jsonResult.message;
     }
