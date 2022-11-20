@@ -81,6 +81,7 @@ const Register = () => {
     if (item.length < 5 || item.length > 20) {
 
       setFullNameError(true);
+      setIsFullNameCorrect(false);
     } else {
 
       setFullNameError(false);
@@ -188,7 +189,7 @@ const Register = () => {
     }).catch(error =>{
 
       console.log(error);
-      
+
     })
 
 
