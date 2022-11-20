@@ -184,6 +184,10 @@ const Register = () => {
     .then((username, fullName, email, password) => {
 
       registerService.register(username, fullName, email, password);
+
+    }).catch(error =>{
+
+      console.log(error);
       
     })
 
