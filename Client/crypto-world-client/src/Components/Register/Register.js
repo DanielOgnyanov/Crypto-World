@@ -175,6 +175,10 @@ const Register = () => {
 
   const onRegisterFormSubmitHandler = (e) => {
 
+    e.preventDefault();
+
+    
+
   }
 
 
