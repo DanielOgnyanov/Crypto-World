@@ -2,6 +2,7 @@ import './Register.css'
 import React, { useState } from 'react'
 import * as userInfoService from '../../Services/UserInfoService'
 import * as registerService from '../../Services/RegisterService'
+import * as utils from '../../Utils'
 
 
 
