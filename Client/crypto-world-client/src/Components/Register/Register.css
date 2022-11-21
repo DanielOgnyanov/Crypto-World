@@ -47,6 +47,13 @@ form p {
     font-size: 20px;
 } 
 
+
+#select-country {
+
+    height: 30px;
+    width: 300px;
+}
+
 #text1 {
 
     background-image: url('../../Images/user-icon-1.png');

@@ -227,7 +227,7 @@ const Register = () => {
 
       <label htmlFor = "country">Country</label>
 
-      <select placeholder='Country'>
+      <select placeholder='Country' id='select-country'>
 
       </select>
 
