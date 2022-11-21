@@ -53,6 +53,8 @@ form p {
     height: 37px;
     width: 350px;
     border-radius: 8px;
+
+    background-image: url('../../Images/country-icon.png');
 }
 
 #text1 {
