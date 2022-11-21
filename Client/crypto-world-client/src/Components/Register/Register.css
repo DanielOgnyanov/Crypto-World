@@ -60,14 +60,16 @@ form p {
     padding-left: 45px;
     background-size: 32px;
 
-    font-size: 14px;
-    color: #a9a9a9;
+    font-size: 19px;
+    color: #888585;
     opacity: 1;
+    
 }
 
 #option-non-default-country {
-    font-size: 14px;
+    font-size: 18px;
 }
+
 #text1 {
 
     background-image: url('../../Images/user-icon-1.png');
