@@ -227,7 +227,8 @@ const Register = () => {
 
       <label htmlFor = "country">Country</label>
 
-      <select placeholder='Country' id='select-country'>
+      <select  id='select-country'>
+        <option value="" disabled selected hidden>Country</option>
 
       </select>
 
