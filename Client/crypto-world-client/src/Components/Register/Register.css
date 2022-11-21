@@ -61,6 +61,17 @@ form p {
     background-size: 32px;
 }
 
+
+#option-default-country{
+    color: #a9a9a9;
+    opacity: 1;
+    font-size: 14px;
+
+}
+
+#option-non-default-country {
+    font-size: 14px;
+}
 #text1 {
 
     background-image: url('../../Images/user-icon-1.png');

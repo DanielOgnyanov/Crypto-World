@@ -228,10 +228,10 @@ const Register = () => {
       <label htmlFor = "country">Country</label>
 
       <select  id='select-country'>
-        <option value="" disabled selected hidden>Country</option>
+        <option id='option-default-country' value=""  selected hidden>Country</option>
 
         {utils.country.map(country => (
-          <option>{country.name}</option>
+          <option id='option-non-default-country'>{country.name}</option>
         ))}
 
       </select>
