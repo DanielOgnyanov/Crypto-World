@@ -225,7 +225,11 @@ const Register = () => {
       {!emailError && emailIsFree && isEmailCorrect ? <span id='span-green-tick'>&#10004;</span> : ""}
 
 
-      <label htmlFor='country'>Country</label>
+      <label htmlFor = "country">Country</label>
+
+      <select placeholder='Country'>
+
+      </select>
 
 
 
