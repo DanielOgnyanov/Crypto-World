@@ -55,6 +55,10 @@ form p {
     border-radius: 8px;
 
     background-image: url('../../Images/country-icon.png');
+    background-repeat: no-repeat;
+    background-position: left 8px top 2px;
+    padding-left: 45px;
+    background-size: 32px;
 }
 
 #text1 {
