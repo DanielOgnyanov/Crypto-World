@@ -225,6 +225,9 @@ const Register = () => {
       {!emailError && emailIsFree && isEmailCorrect ? <span id='span-green-tick'>&#10004;</span> : ""}
 
 
+      <label htmlFor='country'>Country</label>
+
+
 
       <label htmlFor="password">Password</label>
       <input name='password' placeholder='Password' type="password" id='text4' onChange={passwordHandler}></input>
