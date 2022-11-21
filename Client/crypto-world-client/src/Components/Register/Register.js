@@ -227,9 +227,9 @@ const Register = () => {
 
       <label htmlFor = "country">Country</label>
 
-      <select className='country-list'  id='select-country'>
+      <select   id='select-country'>
         
-        <option id='option-default-country' value=""  selected hidden>Country</option>
+        <option  value=""  selected hidden id='option-default-country'>Country</option>
 
         {utils.country.map(country => (
           <option id='option-non-default-country'>{country.name}</option>

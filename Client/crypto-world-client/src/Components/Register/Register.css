@@ -59,14 +59,10 @@ form p {
     background-position: left 8px top 2px;
     padding-left: 45px;
     background-size: 32px;
-}
 
-
-#option-default-country{
+    font-size: 14px;
     color: #a9a9a9;
     opacity: 1;
-    font-size: 14px;
-
 }
 
 #option-non-default-country {
