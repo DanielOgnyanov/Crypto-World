@@ -48,7 +48,7 @@ form p {
 } 
 
 
-#select-country {
+ select {
 
     height: 37px;
     width: 350px;
@@ -59,15 +59,12 @@ form p {
     background-position: left 8px top 2px;
     padding-left: 45px;
     background-size: 32px;
-
-    font-size: 19px;
-    color: #888585;
-    opacity: 1;
     
 }
 
+
 #option-non-default-country {
-    font-size: 16px;
+    font-size: 18px;
     color: black;
 }
 
