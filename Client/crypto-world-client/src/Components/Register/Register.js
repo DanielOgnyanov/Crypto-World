@@ -209,10 +209,10 @@ const Register = () => {
 
 
     registerService
-      .register(username, fullName, email, password)
-      .then((username, fullName, email, password) => {
+      .register(username, fullName, email, country, password)
+      .then((username, fullName, email, country, password) => {
 
-        registerService.register(username, fullName, email, password);
+        registerService.register(username, fullName, email, country, password);
 
       }).catch(error => {
 
@@ -254,7 +254,7 @@ const Register = () => {
 
       <label htmlFor="country">Country</label>
 
-      <select defaultValue = "Country" id='select-country' onChange={countryHandler}>
+      <select defaultValue="Country" id='select-country' onChange={countryHandler}>
 
         <option value="Country" disabled  >Country</option>
 
@@ -287,7 +287,8 @@ const Register = () => {
         || !isEmailCorrect
         || !isFullNameCorrect
         || !isPasswordCorrect
-        || !isInputIsCorrectConfirmPassword}
+        || !isInputIsCorrectConfirmPassword
+        || !isCountryCorrect}
         id='register-form-button'>Register</button>
     </form>
 
