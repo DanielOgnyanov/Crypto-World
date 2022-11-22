@@ -13,7 +13,7 @@ const Register = () => {
 
   const [isUsernameIsCorrect, setIsUsernameIsCorrect] = useState(false);
   const [isEmailCorrect, setIsEmailCorrect] = useState(false);
-  const [isFullNameCorrect , setIsFullNameCorrect] = useState(false);
+  const [isFullNameCorrect, setIsFullNameCorrect] = useState(false);
   const [isPasswordCorrect, setIsPasswordCorrect] = useState(false);
   const [isInputIsCorrectConfirmPassword, setIsInputIsCorrectConfirmPassword] = useState(false);
 
@@ -121,6 +121,11 @@ const Register = () => {
     setEmail(item);
   }
 
+
+  function countryHandler(e) {
+    
+  }
+
   function passwordHandler(e) {
 
     let item = e.target.value.trim();
@@ -142,11 +147,11 @@ const Register = () => {
   }
 
 
-  function confirmPassowrdHandler(e){
+  function confirmPassowrdHandler(e) {
 
     let item = e.target.value.trim();
 
-    if(item.length < 5 || !item.match(passowrdRegex)){
+    if (item.length < 5 || !item.match(passowrdRegex)) {
 
       setConfirmPasswordError(true);
 
@@ -156,10 +161,10 @@ const Register = () => {
 
     }
 
-    
 
 
-    if(item.match(password)){
+
+    if (item.match(password)) {
 
       setIsPasswordMatch(true);
       setIsInputIsCorrectConfirmPassword(true);
@@ -168,7 +173,7 @@ const Register = () => {
 
       setIsPasswordMatch(false);
       setIsInputIsCorrectConfirmPassword(false);
-      
+
     }
 
     setConfirmPassword(item);
@@ -182,16 +187,16 @@ const Register = () => {
 
 
     registerService
-    .register(username, fullName, email, password)
-    .then((username, fullName, email, password) => {
+      .register(username, fullName, email, password)
+      .then((username, fullName, email, password) => {
 
-      registerService.register(username, fullName, email, password);
+        registerService.register(username, fullName, email, password);
 
-    }).catch(error =>{
+      }).catch(error => {
 
-      console.log(error);
+        console.log(error);
 
-    })
+      })
 
 
 
@@ -225,10 +230,10 @@ const Register = () => {
       {!emailError && emailIsFree && isEmailCorrect ? <span id='span-green-tick'>&#10004;</span> : ""}
 
 
-      <label htmlFor = "country">Country</label>
+      <label htmlFor="country">Country</label>
 
-      <select  id='select-country'>
-        
+      <select id='select-country'>
+
         <option value="" disabled selected>Country</option>
 
         {utils.country.map(country => (
@@ -248,17 +253,17 @@ const Register = () => {
       <label htmlFor="confirmPassword">Confirm Password</label>
       <input name='confirmPassword' placeholder='Confirm Password' type="password" id='text4' onChange={confirmPassowrdHandler}></input>
       {confirmPasswordError ? <span id='span-info-register'>Confirm Password lenght must be atleast 5 symbols and contains letters , numebrs and special symbols.</span> : ""}
-      {isPasswordMatch ?  "" : <span id='span-info-register'>Password not match.</span> }
-      {!confirmPasswordError && isInputIsCorrectConfirmPassword ? <span id='span-green-tick'>&#10004;</span> : "" }
+      {isPasswordMatch ? "" : <span id='span-info-register'>Password not match.</span>}
+      {!confirmPasswordError && isInputIsCorrectConfirmPassword ? <span id='span-green-tick'>&#10004;</span> : ""}
 
 
-      <button type= "submit" className= "button" disabled = {
-           !isUsernameIsCorrect 
-        || !isEmailCorrect 
-        || !isFullNameCorrect 
-        || !isPasswordCorrect 
+      <button type="submit" className="button" disabled={
+        !isUsernameIsCorrect
+        || !isEmailCorrect
+        || !isFullNameCorrect
+        || !isPasswordCorrect
         || !isInputIsCorrectConfirmPassword}
-       id='register-form-button'>Register</button>
+        id='register-form-button'>Register</button>
     </form>
 
 
