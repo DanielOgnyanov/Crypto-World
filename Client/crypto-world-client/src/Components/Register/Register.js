@@ -264,6 +264,9 @@ const Register = () => {
 
       </select>
 
+      {countryError ? <span id='span-info-register'>Please select you country.</span> : ""}
+      
+
 
 
       <label htmlFor="password">Password</label>
