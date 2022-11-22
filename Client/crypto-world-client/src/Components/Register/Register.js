@@ -31,6 +31,9 @@ const Register = () => {
   const [emailIsFree, setEmailIsFree] = useState(true);
 
 
+  const [country, setCountry] = useState("");
+
+
   const passowrdRegex = /^(.*[A-z])(.*[0-9])([@#$%^&+=!?])$/;
   const [password, setPass] = useState("");
   const [passError, setPassError] = useState(false);
@@ -126,7 +129,13 @@ const Register = () => {
 
     let item = e.target.value
 
-    if()
+    if(item === null) {
+
+
+    } else {
+
+
+    }
 
   }
 
