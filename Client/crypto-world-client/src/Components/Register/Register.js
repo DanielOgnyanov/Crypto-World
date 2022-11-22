@@ -123,7 +123,11 @@ const Register = () => {
 
 
   function countryHandler(e) {
-    
+
+    let item = e.target.value
+
+    if()
+
   }
 
   function passwordHandler(e) {
