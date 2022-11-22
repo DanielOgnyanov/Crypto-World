@@ -14,6 +14,7 @@ const Register = () => {
   const [isUsernameIsCorrect, setIsUsernameIsCorrect] = useState(false);
   const [isEmailCorrect, setIsEmailCorrect] = useState(false);
   const [isFullNameCorrect, setIsFullNameCorrect] = useState(false);
+  
   const [isPasswordCorrect, setIsPasswordCorrect] = useState(false);
   const [isInputIsCorrectConfirmPassword, setIsInputIsCorrectConfirmPassword] = useState(false);
 
@@ -32,6 +33,7 @@ const Register = () => {
 
 
   const [country, setCountry] = useState("");
+  const [countryError, setCountryError] = useState(false);
 
 
   const passowrdRegex = /^(.*[A-z])(.*[0-9])([@#$%^&+=!?])$/;
