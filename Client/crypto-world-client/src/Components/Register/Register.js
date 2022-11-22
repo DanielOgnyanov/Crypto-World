@@ -254,12 +254,12 @@ const Register = () => {
 
       <label htmlFor="country">Country</label>
 
-      <select id='select-country' onChange={countryHandler}>
+      <select defaultValue = "Country" id='select-country' onChange={countryHandler}>
 
-        <option value="" disabled selected>Country</option>
+        <option value="Country" disabled  >Country</option>
 
         {utils.country.map(country => (
-          <option id='option-non-default-country'>{country.name}</option>
+          <option key={country.name} value={country.name} id='option-non-default-country'>{country.name}</option>
         ))}
 
       </select>
