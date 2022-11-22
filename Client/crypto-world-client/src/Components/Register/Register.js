@@ -265,7 +265,7 @@ const Register = () => {
       </select>
 
       {countryError ? <span id='span-info-register'>Please select you country.</span> : ""}
-      
+      {!countryError && isCountryCorrect ? <span id='span-green-tick'>&#10004;</span> : ""}
 
 
 
