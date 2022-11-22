@@ -229,7 +229,7 @@ const Register = () => {
 
       <select  id='select-country'>
         
-        <option id='option-default-value' disabled = {true} value = "">Country</option>
+        <option value="" disabled selected>Country</option>
 
         {utils.country.map(country => (
           <option id='option-non-default-country'>{country.name}</option>
