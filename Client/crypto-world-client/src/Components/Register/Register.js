@@ -246,7 +246,7 @@ const Register = () => {
       {!fullNameError && isFullNameCorrect ? <span id='span-green-tick'>&#10004;</span> : ""}
 
       <label htmlFor="email">Email</label>
-      <input name='email' placeholder='Email' type="email" id='text3' onChange={emailHandler}></input>
+      <input name='email' placeholder='Email' type="email" id='email-input' onChange={emailHandler}></input>
       {emailError ? <span id='span-info-register'>Email is not valid.</span> : ""}
       {emailIsFree ? "" : <span id='span-info-register'>Email is used by another person.</span>}
       {!emailError && emailIsFree && isEmailCorrect ? <span id='span-green-tick'>&#10004;</span> : ""}
