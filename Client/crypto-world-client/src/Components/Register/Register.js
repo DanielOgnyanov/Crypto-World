@@ -252,7 +252,7 @@ const Register = () => {
 
       <label htmlFor="country">Country</label>
 
-      <select id='select-country'>
+      <select id='select-country' onChange={countryHandler}>
 
         <option value="" disabled selected>Country</option>
 
