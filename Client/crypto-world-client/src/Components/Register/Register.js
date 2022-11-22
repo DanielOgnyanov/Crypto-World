@@ -144,6 +144,8 @@ const Register = () => {
 
     }
 
+    setCountry(item);
+
   }
 
   function passwordHandler(e) {
