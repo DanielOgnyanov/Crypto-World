@@ -131,10 +131,15 @@ const Register = () => {
 
     let item = e.target.value
 
-    if(item === null) {
+    if (item === null) {
 
+      setCountryError(true);
+      setIsCountryCorrect(false);
 
     } else {
+
+      setCountryError(false);
+      setIsCountryCorrect(true);
 
 
     }
