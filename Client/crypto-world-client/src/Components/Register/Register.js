@@ -14,7 +14,7 @@ const Register = () => {
   const [isUsernameIsCorrect, setIsUsernameIsCorrect] = useState(false);
   const [isEmailCorrect, setIsEmailCorrect] = useState(false);
   const [isFullNameCorrect, setIsFullNameCorrect] = useState(false);
-  
+  const [isCountryCorrect, setIsCountryCorrect] = useState(false);
   const [isPasswordCorrect, setIsPasswordCorrect] = useState(false);
   const [isInputIsCorrectConfirmPassword, setIsInputIsCorrectConfirmPassword] = useState(false);
 
