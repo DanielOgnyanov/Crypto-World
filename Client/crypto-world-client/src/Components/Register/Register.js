@@ -270,13 +270,13 @@ const Register = () => {
 
 
       <label htmlFor="password">Password</label>
-      <input name='password' placeholder='Password' type="password" id='text4' onChange={passwordHandler}></input>
+      <input name='password' placeholder='Password' type="password" id='password-input' onChange={passwordHandler}></input>
       {passError ? <span id='span-info-register' >Password lenght must be atleast 5 symbols and contains letters , numebrs and special symbols.</span> : ""}
       {!passError && isPasswordCorrect ? <span id='span-green-tick'>&#10004;</span> : ""}
 
 
       <label htmlFor="confirmPassword">Confirm Password</label>
-      <input name='confirmPassword' placeholder='Confirm Password' type="password" id='text4' onChange={confirmPassowrdHandler}></input>
+      <input name='confirmPassword' placeholder='Confirm Password' type="password" id='password-input' onChange={confirmPassowrdHandler}></input>
       {confirmPasswordError ? <span id='span-info-register'>Confirm Password lenght must be atleast 5 symbols and contains letters , numebrs and special symbols.</span> : ""}
       {isPasswordMatch ? "" : <span id='span-info-register'>Password not match.</span>}
       {!confirmPasswordError && isInputIsCorrectConfirmPassword ? <span id='span-green-tick'>&#10004;</span> : ""}
