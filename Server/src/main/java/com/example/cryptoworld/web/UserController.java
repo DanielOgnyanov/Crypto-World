@@ -127,7 +127,7 @@ public class UserController {
         }
 
 
-        return new ResponseEntity<>("New user registered", HttpStatus.OK);
+        return new ResponseEntity<>(HttpStatus.OK);
 
     }
 
