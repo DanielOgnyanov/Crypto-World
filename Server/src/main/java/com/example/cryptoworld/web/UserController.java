@@ -104,7 +104,7 @@ public class UserController {
 
 
     @PostMapping("/register")
-    public ResponseEntity<String> createUserAccount(@RequestBody UserRegistrationDto userRegistrationDto) {
+    public ResponseEntity<CustomMessage> createUserAccount(@RequestBody UserRegistrationDto userRegistrationDto) {
 
         try {
             userService.register
@@ -123,11 +123,14 @@ public class UserController {
 
         } catch (Exception e) {
 
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Please check all input field");
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Please check all input fields");
         }
 
+        CustomMessage customMessage = new CustomMessage();
+        customMessage.setMessage("New user added.");
 
-        return new ResponseEntity<>(HttpStatus.OK);
+
+        return new ResponseEntity<CustomMessage>(customMessage,HttpStatus.OK);
 
     }
 
