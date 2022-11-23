@@ -234,26 +234,26 @@ const Register = () => {
       <p htmlFor="name">Create Account</p>
 
 
-      <label htmlFor="username" >Username</label>
+      <label htmlFor="username" id='label-register'>Username</label>
       <input name='username' placeholder='Username' type="text" id='username-input' onChange={usernameHandler}></input>
 
       {usernameError ? <span id='span-info-register'>Username lenght need to be between 3 and 20 symbols.</span> : ""}
       {isTakenUsername ? <span id='span-info-register'>Username is used by another person.</span> : ""}
       {!usernameError && !isTakenUsername && isUsernameIsCorrect ? <span id='span-green-tick'>&#10004;</span> : ""}
 
-      <label htmlFor="fullname">Full Name</label>
+      <label htmlFor="fullname" id='label-register'>Full Name</label>
       <input name='fullname' placeholder='Full Name' type="text" id='fullname-input' onChange={fullNameHandler}></input>
       {fullNameError ? <span id='span-info-register'>Full name length must be between 5 and 20 characters.</span> : ""}
       {!fullNameError && isFullNameCorrect ? <span id='span-green-tick'>&#10004;</span> : ""}
 
-      <label htmlFor="email">Email</label>
+      <label htmlFor="email" id='label-register'>Email</label>
       <input name='email' placeholder='Email' type="email" id='email-input' onChange={emailHandler}></input>
       {emailError ? <span id='span-info-register'>Email is not valid.</span> : ""}
       {emailIsFree ? "" : <span id='span-info-register'>Email is used by another person.</span>}
       {!emailError && emailIsFree && isEmailCorrect ? <span id='span-green-tick'>&#10004;</span> : ""}
 
 
-      <label htmlFor="country">Country</label>
+      <label htmlFor="country" id='label-register'>Country</label>
 
       <select defaultValue="Country" id='select-country' onChange={countryHandler}>
 
@@ -270,13 +270,13 @@ const Register = () => {
 
 
 
-      <label htmlFor="password">Password</label>
+      <label htmlFor="password" id='label-register'>Password</label>
       <input name='password' placeholder='Password' type="password" id='password-input' onChange={passwordHandler}></input>
       {passError ? <span id='span-info-register' >Password lenght must be atleast 5 symbols and contains letters , numebrs and special symbols.</span> : ""}
       {!passError && isPasswordCorrect ? <span id='span-green-tick'>&#10004;</span> : ""}
 
 
-      <label htmlFor="confirmPassword">Confirm Password</label>
+      <label htmlFor="confirmPassword" id='label-register'>Confirm Password</label>
       <input name='confirmPassword' placeholder='Confirm Password' type="password" id='password-input' onChange={confirmPassowrdHandler}></input>
       {confirmPasswordError ? <span id='span-info-register'>Confirm Password lenght must be atleast 5 symbols and contains letters , numebrs and special symbols.</span> : ""}
       {isPasswordMatch ? "" : <span id='span-info-register'>Password not match.</span>}

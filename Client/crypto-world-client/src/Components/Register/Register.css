@@ -31,7 +31,7 @@ form input {
     
 }    
 
-form label {
+#label-register {
     
     display: block;
     padding-top: 13px;
