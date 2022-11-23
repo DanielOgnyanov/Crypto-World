@@ -106,25 +106,25 @@ public class UserController {
     @PostMapping("/register")
     public ResponseEntity<String> createUserAccount(@RequestBody UserRegistrationDto userRegistrationDto) {
 
-        try{
+        try {
+            userService.register
+                    (modelMapper.map(userRegistrationDto, UserRegistrationServiceModel.class));
+
+            Authentication authentication =
+                    authenticationManager
+                            .authenticate
+                                    (new UsernamePasswordAuthenticationToken
+                                            (userRegistrationDto.getUsername(), userRegistrationDto.getPassword()));
+
+            SecurityContextHolder.getContext().setAuthentication(authentication);
+
+
+            loginService.setUserLoginInDb(userRegistrationDto.getUsername(), true);
 
         } catch () {
 
         }
 
-        userService.register
-                (modelMapper.map(userRegistrationDto, UserRegistrationServiceModel.class));
-
-        Authentication authentication =
-                authenticationManager
-                        .authenticate
-                                (new UsernamePasswordAuthenticationToken
-                                        (userRegistrationDto.getUsername(), userRegistrationDto.getPassword()));
-
-        SecurityContextHolder.getContext().setAuthentication(authentication);
-
-
-        loginService.setUserLoginInDb(userRegistrationDto.getUsername(), true);
 
         return new ResponseEntity<>("New user registered", HttpStatus.OK);
 
