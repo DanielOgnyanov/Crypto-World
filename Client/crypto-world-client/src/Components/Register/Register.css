@@ -34,8 +34,11 @@ form input {
 #label-register {
     
     display: block;
-    padding-top: 13px;
-    padding-bottom: 10px;
+    text-align: left;
+    clear: both;
+    float:left;
+    margin-left:25px;
+
     
 }  
 
