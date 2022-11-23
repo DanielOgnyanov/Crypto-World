@@ -106,6 +106,12 @@ public class UserController {
     @PostMapping("/register")
     public ResponseEntity<String> createUserAccount(@RequestBody UserRegistrationDto userRegistrationDto) {
 
+        try{
+
+        } catch () {
+
+        }
+
         userService.register
                 (modelMapper.map(userRegistrationDto, UserRegistrationServiceModel.class));
 
