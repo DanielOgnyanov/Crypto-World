@@ -123,7 +123,7 @@ public class UserController {
 
         } catch (Exception e) {
 
-            throw  new ResponseStatusException(HttpStatus.BAD_REQUEST, "Please check all input field");
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Please check all input field");
         }
 
 
