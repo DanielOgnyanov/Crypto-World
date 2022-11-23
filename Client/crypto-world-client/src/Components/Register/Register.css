@@ -48,7 +48,7 @@ form p {
 } 
 
 
- select {
+#select-country {
 
     height: 37px;
     width: 350px;
