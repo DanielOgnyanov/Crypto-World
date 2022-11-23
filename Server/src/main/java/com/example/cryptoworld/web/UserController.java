@@ -121,8 +121,9 @@ public class UserController {
 
             loginService.setUserLoginInDb(userRegistrationDto.getUsername(), true);
 
-        } catch () {
+        } catch (Exception e) {
 
+            throw  new ResponseStatusException(HttpStatus.BAD_REQUEST, "Please check all input field");
         }
 
 
