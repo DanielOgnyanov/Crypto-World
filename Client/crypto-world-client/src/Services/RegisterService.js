@@ -1,13 +1,13 @@
 const baseUrl = 'http://localhost:8000';
 
-export const register = async (username, fullName, country, email, password) => {
+export const register = async (username, fullName, email, password, country) => {
 
     let res = await fetch(`${baseUrl}/api/user/register`, {
         method: 'POST',
         headers: {
             'content-type': 'application/json'
         },
-        body: JSON.stringify({username, fullName, country, email, password})
+        body: JSON.stringify({username, fullName, email, password, country})
     });
 
     let jsonResult = await res.json();
