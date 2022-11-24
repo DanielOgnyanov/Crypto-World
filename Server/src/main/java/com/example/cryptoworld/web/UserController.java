@@ -111,14 +111,6 @@ public class UserController {
             userService.register
                     (modelMapper.map(userRegistrationDto, UserRegistrationServiceModel.class));
 
-            Authentication authentication =
-                    authenticationManager
-                            .authenticate
-                                    (new UsernamePasswordAuthenticationToken
-                                            (userRegistrationDto.getUsername(), userRegistrationDto.getPassword()));
-
-            SecurityContextHolder.getContext().setAuthentication(authentication);
-
 
             loginService.setUserLoginInDb(userRegistrationDto.getUsername(), true);
 
@@ -131,7 +123,7 @@ public class UserController {
         customMessage.setMessage("New user added.");
 
 
-        return new ResponseEntity<CustomMessage>(customMessage,HttpStatus.OK);
+        return new ResponseEntity<CustomMessage>(customMessage, HttpStatus.OK);
 
     }
 
