@@ -106,6 +106,7 @@ public class UserController {
     @PostMapping("/register")
     public ResponseEntity<CustomMessage> createUserAccount(@RequestBody UserRegistrationDto userRegistrationDto) {
 
+        System.out.println();
         try {
             userService.register
                     (modelMapper.map(userRegistrationDto, UserRegistrationServiceModel.class));
@@ -123,7 +124,7 @@ public class UserController {
 
         } catch (Exception e) {
 
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Please check all input fields");
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, e.getMessage());
         }
 
         CustomMessage customMessage = new CustomMessage();
