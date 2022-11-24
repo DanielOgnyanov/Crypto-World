@@ -210,8 +210,8 @@ const Register = () => {
 
 
     registerService
-      .register(username, fullName, email, country, password)
-      .then((username, fullName, email, country, password) => {
+      .register(username, fullName, email, country, password, confirmPassword)
+      .then((username, fullName, email, country, password, confirmPassword) => {
 
         registerService.register(username, fullName, email, country, password, confirmPassword);
 
