@@ -213,7 +213,7 @@ const Register = () => {
       .register(username, fullName, email, country, password)
       .then((username, fullName, email, country, password) => {
 
-        registerService.register(username, fullName, email, country, password);
+        registerService.register(username, fullName, email, country, password, confirmPassword);
 
       }).catch(error => {
 
