@@ -115,9 +115,7 @@ public class UserController {
             userService.register
                     (modelMapper.map(userRegistrationDto, UserRegistrationServiceModel.class));
 
-
             return new ResponseEntity<CustomMessage>(customMessage, HttpStatus.OK);
-
 
         } catch (Exception e) {
 
