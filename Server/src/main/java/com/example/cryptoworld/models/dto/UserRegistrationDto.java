@@ -18,10 +18,6 @@ public class UserRegistrationDto {
     private String confirmPassword;
 
 
-
-    public UserRegistrationDto() {
-    }
-
     public String getUsername() {
         return username;
     }
