@@ -22,8 +22,6 @@ public class UserRegistrationDto {
     public UserRegistrationDto() {
     }
 
-    @NotEmpty
-    @Size(min = 3, max = 20)
     public String getUsername() {
         return username;
     }
@@ -32,8 +30,6 @@ public class UserRegistrationDto {
         this.username = username;
     }
 
-    @NotEmpty
-    @Size(min = 5, max = 30)
     public String getFullName() {
         return fullName;
     }
@@ -41,8 +37,7 @@ public class UserRegistrationDto {
     public void setFullName(String fullName) {
         this.fullName = fullName;
     }
-    @NotEmpty
-    @Email
+
     public String getEmail() {
         return email;
     }
@@ -51,8 +46,14 @@ public class UserRegistrationDto {
         this.email = email;
     }
 
-    @NotEmpty
-    @Size(min = 5, max = 20)
+    public EnumCountry getCountry() {
+        return country;
+    }
+
+    public void setCountry(EnumCountry country) {
+        this.country = country;
+    }
+
     public String getPassword() {
         return password;
     }
@@ -61,22 +62,11 @@ public class UserRegistrationDto {
         this.password = password;
     }
 
-    @NotEmpty
-    @Size(min = 5, max = 20)
     public String getConfirmPassword() {
         return confirmPassword;
     }
 
     public void setConfirmPassword(String confirmPassword) {
         this.confirmPassword = confirmPassword;
-    }
-
-    @NotNull
-    public EnumCountry getCountry() {
-        return country;
-    }
-
-    public void setCountry(EnumCountry country) {
-        this.country = country;
     }
 }
