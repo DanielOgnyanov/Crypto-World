@@ -111,7 +111,7 @@ public class UserController {
             userService.register
                     (modelMapper.map(userRegistrationDto, UserRegistrationServiceModel.class));
 
-            loginService.setUserLoginInDb(userRegistrationDto.getUsername(), true);
+
 
         } catch (Exception e) {
 
