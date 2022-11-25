@@ -9,6 +9,7 @@ public class UserRegistrationServiceModel {
     private String fullName;
     private String email;
     private String password;
+    private String confirmPassword;
     private EnumCountry country;
 
 
@@ -37,6 +38,14 @@ public class UserRegistrationServiceModel {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getConfirmPassword() {
+        return confirmPassword;
+    }
+
+    public void setConfirmPassword(String confirmPassword) {
+        this.confirmPassword = confirmPassword;
     }
 
     public String getPassword() {
