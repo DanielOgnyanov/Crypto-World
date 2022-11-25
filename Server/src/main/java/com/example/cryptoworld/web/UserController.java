@@ -9,7 +9,6 @@ import com.example.cryptoworld.service.LoginService;
 import com.example.cryptoworld.service.UserService;
 import com.example.cryptoworld.service.WalletService;
 import com.example.cryptoworld.utils.CustomMessage;
-import org.json.JSONObject;
 import org.modelmapper.ModelMapper;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.HttpStatus;
