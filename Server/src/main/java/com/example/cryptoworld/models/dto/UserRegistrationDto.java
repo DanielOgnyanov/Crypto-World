@@ -13,9 +13,10 @@ public class UserRegistrationDto {
     private String username;
     private String fullName;
     private String email;
+    private EnumCountry country;
     private String password;
     private String confirmPassword;
-    private EnumCountry country;
+
 
 
     public UserRegistrationDto() {
