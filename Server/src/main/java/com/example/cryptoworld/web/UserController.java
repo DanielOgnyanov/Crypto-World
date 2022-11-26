@@ -106,20 +106,19 @@ public class UserController {
     public ResponseEntity<CustomMessage> createUserAccount(@RequestBody UserRegistrationDto userRegistrationDto) {
 
 
-
         CustomMessage customMessage = new CustomMessage();
         customMessage.setMessage("New user added.");
 
-      //  try {
-            userService.register
-                    (modelMapper.map(userRegistrationDto, UserRegistrationServiceModel.class));
+        //  try {
+        userService.register
+                (modelMapper.map(userRegistrationDto, UserRegistrationServiceModel.class));
 
-            return new ResponseEntity<CustomMessage>(customMessage, HttpStatus.OK);
+        return new ResponseEntity<CustomMessage>(customMessage, HttpStatus.OK);
 
-       // } catch (Exception e) {
+        // } catch (Exception e) {
 
-       //     throw new ResponseStatusException(HttpStatus.BAD_REQUEST, e.getMessage());
-     //   }
+        //     throw new ResponseStatusException(HttpStatus.BAD_REQUEST, e.getMessage());
+        //   }
 
 
     }

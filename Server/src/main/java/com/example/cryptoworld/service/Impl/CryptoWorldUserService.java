@@ -48,7 +48,7 @@ public class CryptoWorldUserService implements UserDetailsService {
 
         return new User(
                 userEntity.getUsername(),
-               userEntity.getPassword(),
+                userEntity.getPassword(),
                 authorities
         );
     }
