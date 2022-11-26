@@ -12,18 +12,7 @@ public class UserRegistrationServiceModel {
     private String password;
     private String confirmPassword;
 
-    public UserRegistrationServiceModel(String username,
-                                        String fullName,
-                                        String email,
-                                        EnumCountry country,
-                                        String password,
-                                        String confirmPassword) {
-        this.username = username;
-        this.fullName = fullName;
-        this.email = email;
-        this.country = country;
-        this.password = password;
-        this.confirmPassword = confirmPassword;
+    public UserRegistrationServiceModel() {
     }
 
     public String getUsername() {
