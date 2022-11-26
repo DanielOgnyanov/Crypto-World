@@ -105,7 +105,7 @@ public class UserController {
     @PostMapping("/register")
     public ResponseEntity<CustomMessage> createUserAccount(@RequestBody UserRegistrationDto userRegistrationDto) {
 
-        System.out.println();
+
 
         CustomMessage customMessage = new CustomMessage();
         customMessage.setMessage("New user added.");
