@@ -15,15 +15,6 @@ public class UserRegistrationServiceModel {
     public UserRegistrationServiceModel() {
     }
 
-    public UserRegistrationServiceModel(String username, String fullName, String email, EnumCountry country, String password, String confirmPassword) {
-        this.username = username;
-        this.fullName = fullName;
-        this.email = email;
-        this.country = country;
-        this.password = password;
-        this.confirmPassword = confirmPassword;
-    }
-
     public String getUsername() {
         return username;
     }
@@ -48,12 +39,12 @@ public class UserRegistrationServiceModel {
         this.email = email;
     }
 
-    public String getConfirmPassword() {
-        return confirmPassword;
+    public EnumCountry getCountry() {
+        return country;
     }
 
-    public void setConfirmPassword(String confirmPassword) {
-        this.confirmPassword = confirmPassword;
+    public void setCountry(EnumCountry country) {
+        this.country = country;
     }
 
     public String getPassword() {
@@ -64,11 +55,11 @@ public class UserRegistrationServiceModel {
         this.password = password;
     }
 
-    public EnumCountry getCountry() {
-        return country;
+    public String getConfirmPassword() {
+        return confirmPassword;
     }
 
-    public void setCountry(EnumCountry country) {
-        this.country = country;
+    public void setConfirmPassword(String confirmPassword) {
+        this.confirmPassword = confirmPassword;
     }
 }

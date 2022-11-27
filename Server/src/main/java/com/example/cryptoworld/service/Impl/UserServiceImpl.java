@@ -78,9 +78,9 @@ public class UserServiceImpl implements UserService {
 
         UserEntity userEntity = modelMapper.map(userRegistrationServiceModel, UserEntity.class);
 
-
+        System.out.println();
         userEntity.setPassword(passwordEncoder.encode(userRegistrationServiceModel.getPassword()));
-
+        System.out.println();
 
 
         userEntity.addRole(userRole);
