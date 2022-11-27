@@ -44,6 +44,10 @@ public class ApplicationSecurityConfiguration extends WebSecurityConfigurerAdapt
                 .anyRequest()
                 .authenticated()
                 .and()
+                .formLogin()
+                .loginPage("/login")
+                .defaultSuccessUrl("/home")
+                .and()
                 .httpBasic();
 
 
