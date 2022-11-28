@@ -5,6 +5,7 @@ export const register = async (username, fullName, email, country, password, con
     let res = await fetch(`${baseUrl}/api/user/register`, {
         method: 'POST',
         headers: {
+            
             'content-type': 'application/json'
         },
         body: JSON.stringify({username, fullName, email, country, password, confirmPassword})
