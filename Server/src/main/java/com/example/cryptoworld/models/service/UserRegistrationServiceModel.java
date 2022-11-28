@@ -12,8 +12,7 @@ public class UserRegistrationServiceModel {
     private String password;
     private String confirmPassword;
 
-    public UserRegistrationServiceModel() {
-    }
+
 
     public String getUsername() {
         return username;
