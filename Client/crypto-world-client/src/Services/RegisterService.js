@@ -16,9 +16,9 @@ export const register = async (username, fullName, email, country, password, con
 
        if(response.ok) {
         console.log("ok")
-        return response
+        return response.json()
        } else {
-        throw new response
+        throw new response.json()
        }
 
        
