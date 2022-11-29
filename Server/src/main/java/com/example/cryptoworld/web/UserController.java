@@ -103,19 +103,13 @@ public class UserController {
     @PostMapping("/register")
     public ResponseEntity<CustomMessage> createUserAccount(@RequestBody UserRegistrationDto userRegistrationDto) {
 
-        System.out.println();
         CustomMessage customMessage = new CustomMessage();
         customMessage.setMessage("New user added.");
-
 
         try {
             userService.register
                     (modelMapper.map(userRegistrationDto, UserRegistrationServiceModel.class));
-
-
         } catch (Exception e) {
-
-
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, e.getMessage());
         }
 
