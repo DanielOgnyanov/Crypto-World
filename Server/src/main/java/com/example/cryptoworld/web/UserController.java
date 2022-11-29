@@ -19,8 +19,6 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
-import java.util.HashMap;
-
 @RestController
 @CrossOrigin
 @RequestMapping("/api/user")
@@ -105,21 +103,23 @@ public class UserController {
     @PostMapping("/register")
     public ResponseEntity<CustomMessage> createUserAccount(@RequestBody UserRegistrationDto userRegistrationDto) {
 
-
+        System.out.println();
         CustomMessage customMessage = new CustomMessage();
         customMessage.setMessage("New user added.");
 
-        //  try {
-        userService.register
-                (modelMapper.map(userRegistrationDto, UserRegistrationServiceModel.class));
+
+        try {
+            userService.register
+                    (modelMapper.map(userRegistrationDto, UserRegistrationServiceModel.class));
+
+
+        } catch (Exception e) {
+
+
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, e.getMessage());
+        }
 
         return new ResponseEntity<CustomMessage>(customMessage, HttpStatus.OK);
-
-        // } catch (Exception e) {
-
-        //     throw new ResponseStatusException(HttpStatus.BAD_REQUEST, e.getMessage());
-        //   }
-
 
     }
 
