@@ -14,18 +14,18 @@ export const register = async (username, fullName, email, country, password, con
 
     res.then((response) => {
 
-       if(response.ok) {
-        console.log("ok")
-        return response.json()
-       } else {
-        throw new response.json()
-       }
+        if (response.ok) {
 
-       
+            return response.json().message();
+        } else {
+            throw new response.json().message()
+        }
+
+
 
     });
 
 
-   
+
 
 }
