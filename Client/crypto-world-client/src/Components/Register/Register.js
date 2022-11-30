@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import * as userInfoService from '../../Services/UserInfoService'
 import * as registerService from '../../Services/RegisterService'
 import * as utils from '../../Utils/Utils'
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 
 
@@ -12,7 +12,7 @@ import { useHistory } from "react-router-dom";
 const Register = () => {
 
   const [redirect , setRedirect] = useState(false);
-  let history = useHistory();
+  let history = useNavigate();
 
 
   const [isUsernameIsCorrect, setIsUsernameIsCorrect] = useState(false);
@@ -218,7 +218,7 @@ const Register = () => {
       .then(() => {
 
         setRedirect(true);
-        history.push("/home");
+        history("/home");
 
       }).catch(error => {
 
