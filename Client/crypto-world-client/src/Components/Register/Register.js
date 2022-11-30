@@ -10,6 +10,8 @@ import * as utils from '../../Utils/Utils'
 
 const Register = () => {
 
+  const [redirect , setRedirect] = useState(false);
+
 
   const [isUsernameIsCorrect, setIsUsernameIsCorrect] = useState(false);
   const [isEmailCorrect, setIsEmailCorrect] = useState(false);
