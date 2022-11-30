@@ -218,6 +218,7 @@ const Register = () => {
       .then(() => {
 
         setRedirect(true);
+        history.push("/home");
 
       }).catch(error => {
 
