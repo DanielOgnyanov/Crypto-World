@@ -12,6 +12,7 @@ import { useHistory } from "react-router-dom";
 const Register = () => {
 
   const [redirect , setRedirect] = useState(false);
+  let history = useHistory();
 
 
   const [isUsernameIsCorrect, setIsUsernameIsCorrect] = useState(false);
