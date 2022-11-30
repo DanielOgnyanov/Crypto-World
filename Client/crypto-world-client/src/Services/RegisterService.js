@@ -16,13 +16,12 @@ export const register = async (username, fullName, email, country, password, con
 
         if (!response.ok) {
             throw new response.status;
-        } 
-
-
+        }
+        
         return response.json();
 
     }).then((data) => {
-        console.log(data)
+        console.log(data);
     })
 
 
