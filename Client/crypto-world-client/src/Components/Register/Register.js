@@ -213,9 +213,9 @@ const Register = () => {
 
     registerService
       .register(username, fullName, email, country, password, confirmPassword)
-      .then((username, fullName, email, country, password, confirmPassword) => {
+      .then(() => {
 
-        
+        setRedirect(true);
 
       }).catch(error => {
 
