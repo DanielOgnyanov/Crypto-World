@@ -224,7 +224,7 @@ const Register = () => {
 
         console.log(error);
 
-      })
+      });
 
 
 
