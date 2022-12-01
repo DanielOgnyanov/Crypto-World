@@ -68,6 +68,7 @@ public class UserRegistrationDto {
         this.country = country;
     }
 
+    @Pattern(regexp = "/^(.*[A-z])(.*[0-9])([@#$%^&+=!?])$/")
     public String getPassword() {
         return password;
     }
