@@ -77,6 +77,7 @@ public class UserRegistrationDto {
         this.password = password;
     }
 
+    @Pattern(regexp = "/^(.*[A-z])(.*[0-9])([@#$%^&+=!?])$/")
     public String getConfirmPassword() {
         return confirmPassword;
     }
