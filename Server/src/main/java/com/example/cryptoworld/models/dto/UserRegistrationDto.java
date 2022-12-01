@@ -2,10 +2,7 @@ package com.example.cryptoworld.models.dto;
 
 import com.example.cryptoworld.models.enums.EnumCountry;
 
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+import javax.validation.constraints.*;
 
 public class UserRegistrationDto {
 
@@ -34,6 +31,8 @@ public class UserRegistrationDto {
         this.confirmPassword = confirmPassword;
     }
 
+    @Min(value = 3)
+    @Max(value = 20)
     public String getUsername() {
         return username;
     }
