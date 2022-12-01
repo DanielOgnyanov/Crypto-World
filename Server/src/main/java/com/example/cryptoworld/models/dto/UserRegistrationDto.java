@@ -20,7 +20,12 @@ public class UserRegistrationDto {
     public UserRegistrationDto() {
     }
 
-    public UserRegistrationDto(String username, String fullName, String email, EnumCountry country, String password, String confirmPassword) {
+    public UserRegistrationDto(String username,
+                               String fullName,
+                               String email,
+                               EnumCountry country,
+                               String password,
+                               String confirmPassword) {
         this.username = username;
         this.fullName = fullName;
         this.email = email;
