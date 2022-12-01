@@ -41,6 +41,8 @@ public class UserRegistrationDto {
         this.username = username;
     }
 
+    @Min(value = 5)
+    @Max(value = 20)
     public String getFullName() {
         return fullName;
     }
