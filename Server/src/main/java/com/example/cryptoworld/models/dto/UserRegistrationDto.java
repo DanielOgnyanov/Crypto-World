@@ -51,6 +51,7 @@ public class UserRegistrationDto {
         this.fullName = fullName;
     }
 
+    @Email
     public String getEmail() {
         return email;
     }
