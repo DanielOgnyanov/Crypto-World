@@ -110,6 +110,7 @@ public class UserController {
             userService.register
                     (modelMapper.map(userRegistrationDto, UserRegistrationServiceModel.class));
         } catch (Exception e) {
+
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, e.getMessage());
         }
 
