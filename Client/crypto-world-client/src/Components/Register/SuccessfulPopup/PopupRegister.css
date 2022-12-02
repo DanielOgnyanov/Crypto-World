@@ -21,6 +21,10 @@
     border-radius: 8px;
 }
 
+#check-mark-div{
+    background-color: rgb(152, 235, 18);
+}
+
 
 #span-tick{
     font-size: 100px;
