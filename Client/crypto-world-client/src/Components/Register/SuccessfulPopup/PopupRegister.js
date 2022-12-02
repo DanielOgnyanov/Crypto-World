@@ -1,6 +1,6 @@
 import Popup from 'reactjs-popup';
 
-export default function Popup() {
+const PopupRegister = () => {
 
 
     return(
