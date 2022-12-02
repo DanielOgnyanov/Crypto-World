@@ -13,7 +13,7 @@
 }
 
 
-#popup-inner{
+#popup-inner {
 
     position: relative;
     height: 300px;
@@ -24,7 +24,7 @@
     
 }
 
-#check-mark-div{
+#check-mark-div {
     
     background-color: rgb(152, 235, 18);
     border-radius: 8px;
@@ -32,14 +32,19 @@
 }
 
 
-#span-tick{
+#span-tick {
     
     margin-left: 110px;
     font-size: 100px;
 }
 
-#h3-success{
+#h3-success {
     font-size: 22px;
     margin-left: 110px;
+}
+
+#h4-info-text {
+
+    color: rgb(134, 123, 110);
 }
 
