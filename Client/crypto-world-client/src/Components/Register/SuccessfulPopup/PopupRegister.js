@@ -5,7 +5,14 @@ export const PopupRegister = () => {
 
 
     return(
-        <div>
+        <div id='popup'>
+
+            <div id='popup-inner'>
+
+            <span>Popup</span>
+            
+            </div>
+            
 
         </div>
     )
