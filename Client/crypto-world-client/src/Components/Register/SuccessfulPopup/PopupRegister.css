@@ -15,9 +15,9 @@
 
 #popup-inner{
 
-    position:relative;
-    height: 250px;
-    width: 250px;
+    position: relative;
+    height: 300px;
+    width: 300px;
     background-color: white;
     border: 1px solid rgb(255, 255, 255);
     border-radius: 8px;
@@ -32,6 +32,6 @@
 
 #span-tick{
     
-    justify-content: center;
+    text-align: center;
     font-size: 100px;
 }
