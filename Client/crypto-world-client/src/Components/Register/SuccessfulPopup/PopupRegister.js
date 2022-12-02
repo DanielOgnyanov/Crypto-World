@@ -11,6 +11,7 @@ export const PopupRegister = () => {
 
                 <div id='check-mark-div'> 
                 <span id='span-tick'>&#10004;</span>
+                <h3 id='h3-success'>Success</h3>
                 </div>
 
             

@@ -27,6 +27,7 @@
     
     background-color: rgb(152, 235, 18);
     border-radius: 8px;
+    
 }
 
 
@@ -35,3 +36,8 @@
     margin-left: 110px;
     font-size: 100px;
 }
+
+#h3-success{
+    font-size: 20px;
+}
+
