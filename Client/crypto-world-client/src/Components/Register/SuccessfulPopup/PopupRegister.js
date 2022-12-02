@@ -9,8 +9,8 @@ export const PopupRegister = () => {
 
             <div id='popup-inner'>
 
-            <span>Popup</span>
-            
+            <span>&#10003;</span>
+
             </div>
             
 
