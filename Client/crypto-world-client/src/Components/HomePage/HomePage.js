@@ -29,7 +29,7 @@ const HomePage = () => {
 
 
         <div className='home'>
-             <PopupRegister/>
+             
             <div className='chart'>
                 <Chart/>
             </div>
