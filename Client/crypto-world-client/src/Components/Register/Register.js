@@ -4,6 +4,7 @@ import * as userInfoService from '../../Services/UserInfoService'
 import * as registerService from '../../Services/RegisterService'
 import * as utils from '../../Utils/Utils'
 import { useNavigate } from "react-router-dom";
+import {PopupRegister} from '../Register/SuccessfulPopup/PopupRegister'
 
 
 
@@ -219,6 +220,7 @@ const Register = () => {
 
         setRedirect(true);
         history("/home");
+        <PopupRegister/>
 
       }).catch(error => {
 
