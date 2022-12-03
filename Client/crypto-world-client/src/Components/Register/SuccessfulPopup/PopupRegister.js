@@ -5,7 +5,7 @@ export const PopupRegister = (e) => {
 
 
     return (e.trigger) ? (
-        <div id='popup'>
+        <div className='popup' id='popup'>
 
             <div className='popup-inner' id='popup-inner'>
 
