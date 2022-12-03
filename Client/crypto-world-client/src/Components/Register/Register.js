@@ -219,8 +219,9 @@ const Register = () => {
       .then(() => {
 
         setRedirect(true);
-        history("/home");
         <PopupRegister/>
+        history("/home");
+        
 
       }).catch(error => {
 
@@ -288,7 +289,7 @@ const Register = () => {
       {confirmPasswordError ? <span id='span-info-register'>Confirm Password lenght must be atleast 5 symbols and contains letters , numebrs and special symbols.</span> : ""}
       {isPasswordMatch ? "" : <span id='span-info-register'>Password not match.</span>}
       {!confirmPasswordError && isInputIsCorrectConfirmPassword ? <span id='span-green-tick'>&#10004;</span> : ""}
-
+      {redirect ? <PopupRegister/> : ""}
 
       <button type="submit" className="button" disabled={
         !isUsernameIsCorrect
