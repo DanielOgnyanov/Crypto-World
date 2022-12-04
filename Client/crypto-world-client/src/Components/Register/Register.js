@@ -4,7 +4,7 @@ import * as userInfoService from '../../Services/UserInfoService'
 import * as registerService from '../../Services/RegisterService'
 import * as utils from '../../Utils/Utils'
 import { useNavigate } from "react-router-dom";
-import {PopupRegister} from '../Register/SuccessfulPopup/PopupRegister'
+import { PopupRegister } from '../Register/SuccessfulPopup/PopupRegister'
 
 
 
@@ -12,7 +12,7 @@ import {PopupRegister} from '../Register/SuccessfulPopup/PopupRegister'
 
 const Register = () => {
 
-  const [redirect , setRedirect] = useState(false);
+  const [redirect, setRedirect] = useState(false);
   let history = useNavigate();
 
 
@@ -220,8 +220,8 @@ const Register = () => {
 
         setRedirect(true);
         history("/home");
-        <PopupRegister/>
-        
+        <PopupRegister />
+
 
       }).catch(error => {
 
@@ -289,7 +289,7 @@ const Register = () => {
       {confirmPasswordError ? <span id='span-info-register'>Confirm Password lenght must be atleast 5 symbols and contains letters , numebrs and special symbols.</span> : ""}
       {isPasswordMatch ? "" : <span id='span-info-register'>Password not match.</span>}
       {!confirmPasswordError && isInputIsCorrectConfirmPassword ? <span id='span-green-tick'>&#10004;</span> : ""}
-      {redirect ? <PopupRegister/> : ""}
+      {redirect ? <PopupRegister /> : ""}
 
       <button type="submit" className="button" disabled={
         !isUsernameIsCorrect
