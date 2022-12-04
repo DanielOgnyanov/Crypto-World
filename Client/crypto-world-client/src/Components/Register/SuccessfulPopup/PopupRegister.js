@@ -19,5 +19,5 @@ export const PopupRegister = (e) => {
                 <button classNamem='continue-button' id='continue-button' onClick={() => e.setTrigger(false)}>Continue</button>
             </div>
         </div>
-    ) : ""
+    ) 
 };
