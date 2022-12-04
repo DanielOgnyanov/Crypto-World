@@ -219,8 +219,8 @@ const Register = () => {
       .then(() => {
 
         setRedirect(true);
-        <PopupRegister/>
         history("/home");
+        <PopupRegister/>
         
 
       }).catch(error => {
