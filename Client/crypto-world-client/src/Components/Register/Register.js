@@ -220,7 +220,7 @@ const Register = () => {
 
         setRedirect(true);
         history("/home");
-        <PopupRegister />
+        
 
 
       }).catch(error => {
