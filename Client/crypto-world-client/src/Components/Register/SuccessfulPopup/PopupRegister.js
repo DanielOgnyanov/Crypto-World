@@ -4,7 +4,7 @@ import './PopupRegister.css'
 export const PopupRegister = (e) => {
 
 
-    return (e)(
+    return (e) ?(
         <div className='popup' id='popup'>
 
             <div className='popup-inner' id='popup-inner'>
@@ -19,5 +19,5 @@ export const PopupRegister = (e) => {
                 <button classNamem='continue-button' id='continue-button' onClick={() => e.setTrigger(false)}>Continue</button>
             </div>
         </div>
-    )
+    ) : ""
 };
