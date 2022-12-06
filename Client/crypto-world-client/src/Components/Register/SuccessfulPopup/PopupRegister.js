@@ -1,10 +1,13 @@
+import { useState } from 'react';
 import Popup from 'reactjs-popup';
 import './PopupRegister.css'
 
 export const PopupRegister = (e) => {
 
+    const [open, setOpen] = useState(true);
+
     function closePopup(e){
-        e.setTrigger(false);
+        setOpen(false);
     }
 
 
