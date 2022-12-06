@@ -25,7 +25,7 @@ export const PopupRegister = (e) => {
 
                 <h4 className='h4-info-text' id='h4-info-text'>Congratulations, your account has been successfully created.</h4>
 
-                <button classNamem='continue-button' id='continue-button' onClick={closePopup}>Continue</button>
+                <button className='continue-button' id='continue-button' onClick={closePopup}>Continue</button>
             </div>
         </div>
      
