@@ -4,7 +4,7 @@ import './PopupRegister.css'
 export const PopupRegister = (e) => {
 
     function closePopup(e){
-        
+        e.setTrigger(false);
     }
 
 
@@ -20,7 +20,7 @@ export const PopupRegister = (e) => {
 
                 <h4 className='h4-info-text' id='h4-info-text'>Congratulations, your account has been successfully created.</h4>
 
-                <button classNamem='continue-button' id='continue-button' onClick={}>Continue</button>
+                <button classNamem='continue-button' id='continue-button' onClick={closePopup}>Continue</button>
             </div>
         </div>
     ) : ""
