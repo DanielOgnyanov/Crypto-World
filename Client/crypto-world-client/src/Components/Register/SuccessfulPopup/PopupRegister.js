@@ -1,17 +1,10 @@
-import { useState } from 'react';
 import Popup from 'reactjs-popup';
 import './PopupRegister.css'
 
 export const PopupRegister = (e) => {
 
-    const [open, setOpen] = useState(true);
 
-    function closePopup(e){
-        setOpen(false);
-    }
-
-
-    return (e) ? (
+    return (e.trigger) ? (
         <div className='popup' id='popup'>
 
             <div className='popup-inner' id='popup-inner'>
@@ -23,7 +16,7 @@ export const PopupRegister = (e) => {
 
                 <h4 className='h4-info-text' id='h4-info-text'>Congratulations, your account has been successfully created.</h4>
 
-                <button classNamem='continue-button' id='continue-button' onClick={closePopup}>Continue</button>
+                <button classNamem='continue-button' id='continue-button' onClick={() => setTrigger(false)}>Continue</button>
             </div>
         </div>
     ) : ""
