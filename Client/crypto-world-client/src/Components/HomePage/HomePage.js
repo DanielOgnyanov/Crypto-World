@@ -29,7 +29,7 @@ const HomePage = () => {
 
 
         <div className='home'>
-             <PopupRegister trigger={true} />
+             <PopupRegister open={true}/>
             <div className='chart'>
                 <Chart/>
             </div>
