@@ -1,10 +1,14 @@
 import Popup from 'reactjs-popup';
 import './PopupRegister.css'
 
-export const PopupRegister = (props) => {
+export const PopupRegister = (e) => {
+
+    function closePopup(e){
+        
+    }
 
 
-    return (props.trigger) ? (
+    return (e) ? (
         <div className='popup' id='popup'>
 
             <div className='popup-inner' id='popup-inner'>
@@ -16,7 +20,7 @@ export const PopupRegister = (props) => {
 
                 <h4 className='h4-info-text' id='h4-info-text'>Congratulations, your account has been successfully created.</h4>
 
-                <button classNamem='continue-button' id='continue-button' onClick={() => props.setTrigger(false)}>Continue</button>
+                <button classNamem='continue-button' id='continue-button' onClick={}>Continue</button>
             </div>
         </div>
     ) : ""
