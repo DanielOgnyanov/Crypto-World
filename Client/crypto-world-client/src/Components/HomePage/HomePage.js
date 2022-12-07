@@ -7,7 +7,7 @@ import  {PopupRegister}  from '../Register/SuccessfulPopup/PopupRegister';
 
 
 
-const HomePage = () => {
+const HomePage = (e) => {
 
     const cryptoPrices = cryptoService.getCryptoPrice;
 
