@@ -29,7 +29,7 @@ const HomePage = (e) => {
 
 
         <div className='home'>
-             <PopupRegister />
+             {e.redirect ? <PopupRegister /> : ""}
             <div className='chart'>
                 <Chart/>
             </div>
