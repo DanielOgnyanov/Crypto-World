@@ -8,13 +8,12 @@ import { PopupRegister } from '../Register/SuccessfulPopup/PopupRegister'
 
 
 
-
-
 const Register = () => {
 
-  
+
   const [redirect, setRedirect] = useState(false);
-  
+
+
   let history = useNavigate();
 
 
@@ -306,5 +305,6 @@ const Register = () => {
 
   );
 }
+
 
 export default Register;
