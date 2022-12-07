@@ -8,7 +8,7 @@ import  {PopupRegister}  from '../Register/SuccessfulPopup/PopupRegister';
 
 
 
-const HomePage = (e) => {
+const HomePage = () => {
 
     const cryptoPrices = cryptoService.getCryptoPrice;
 
@@ -30,7 +30,7 @@ const HomePage = (e) => {
 
 
         <div className='home'>
-             {e.redirect ? <PopupRegister /> : ""}
+             {redirect ? <PopupRegister /> : ""}
             <div className='chart'>
                 <Chart/>
             </div>
