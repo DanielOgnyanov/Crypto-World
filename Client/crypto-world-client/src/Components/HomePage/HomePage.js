@@ -21,8 +21,8 @@ const HomePage = () => {
 
 
 
-
-
+     
+    
 
     return (
 
@@ -31,7 +31,7 @@ const HomePage = () => {
 
         <div className='home'>
             
-             {IsRedirected ? <PopupRegister /> : ""}
+             {IsRedirected ? "" : <PopupRegister/>}
             <div className='chart'>
                 <Chart/>
             </div>
