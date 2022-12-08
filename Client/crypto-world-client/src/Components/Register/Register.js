@@ -7,16 +7,13 @@ import { useNavigate } from "react-router-dom";
 import { PopupRegister } from '../Register/SuccessfulPopup/PopupRegister'
 
 export const IsRedirected = () => {
-  const [redirect, setRedirect] = useState(false);
 
-  return redirect;
+  const [redirect, setRedirect] = useState(false);
+ 
+  return Boolean(redirect);
 };
 
 const Register = () => {
-
-
-  const [redirect, setRedirect] = useState(false);
-  
 
   let history = useNavigate();
 
@@ -223,7 +220,7 @@ const Register = () => {
       .register(username, fullName, email, country, password, confirmPassword)
       .then(() => {
 
-        setRedirect(true);
+        IsRedirected(true)
         history("/home");
 
 
