@@ -6,13 +6,17 @@ import * as utils from '../../Utils/Utils'
 import { useNavigate } from "react-router-dom";
 import { PopupRegister } from '../Register/SuccessfulPopup/PopupRegister'
 
+export const IsRedirected = () => {
+  const [redirect, setRedirect] = useState(false);
 
+  return redirect;
+};
 
 const Register = () => {
 
 
   const [redirect, setRedirect] = useState(false);
-
+  
 
   let history = useNavigate();
 
