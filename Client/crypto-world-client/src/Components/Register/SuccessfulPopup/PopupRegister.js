@@ -13,6 +13,7 @@ export const PopupRegister = (e) => {
     
     const {redirect} = e;
     
+    
 
     return (open && {redirect}) ?  (
 
