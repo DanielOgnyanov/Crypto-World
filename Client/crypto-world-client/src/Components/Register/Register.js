@@ -12,6 +12,7 @@ const Register = () => {
 
   const [redirect, setRedirect] = useState(false);
   let history = useNavigate();
+  console.log(redirect);
 
 
   const [isUsernameIsCorrect, setIsUsernameIsCorrect] = useState(false);
@@ -286,7 +287,7 @@ const Register = () => {
       {confirmPasswordError ? <span id='span-info-register'>Confirm Password lenght must be atleast 5 symbols and contains letters , numebrs and special symbols.</span> : ""}
       {isPasswordMatch ? "" : <span id='span-info-register'>Password not match.</span>}
       {!confirmPasswordError && isInputIsCorrectConfirmPassword ? <span id='span-green-tick'>&#10004;</span> : ""}
-      <PopupRegister redirect={redirect}  setRedirect={setRedirect}></PopupRegister>
+      {!redirect ? "" : <PopupRegister redirect={redirect}/>}
 
       <button type="submit" className="button" disabled={
         !isUsernameIsCorrect
