@@ -11,7 +11,7 @@ export const PopupRegister = (e) => {
     )
 
 
-    return (open) ?  (
+    return (open && e.redirect) ?  (
 
         
         <div className='popup' id='popup'>
