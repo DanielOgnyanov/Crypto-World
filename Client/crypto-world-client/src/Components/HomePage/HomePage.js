@@ -16,11 +16,6 @@ const HomePage = () => {
         [{ id: 1, name: "Bitcoin", price: 45000 },
         { id: 2, name: "Ethereum", price: 3000 }];
 
-
-
-
-
-
      
     
 
@@ -31,7 +26,7 @@ const HomePage = () => {
 
         <div className='home'>
             
-             {IsRedirected ? "" : <PopupRegister/>}
+             <PopupRegister/>
             <div className='chart'>
                 <Chart/>
             </div>
