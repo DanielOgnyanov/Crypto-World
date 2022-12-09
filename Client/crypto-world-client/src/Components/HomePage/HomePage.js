@@ -2,7 +2,6 @@ import './HomePage.css'
 import * as cryptoService from '../../Services/CryptoService'
 import Chart from '../Chart/Chart';
 import WalletDetails  from '../WalletDetails/WalletDetails';
-import IsRedirected from '../Register/Register';
 import  {PopupRegister}  from '../Register/SuccessfulPopup/PopupRegister';
 
 
