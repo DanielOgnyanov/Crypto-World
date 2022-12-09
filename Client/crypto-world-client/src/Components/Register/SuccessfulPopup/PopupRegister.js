@@ -9,11 +9,12 @@ export const PopupRegister = (e) => {
     const closePopup =()=>(
         setOpen(false)
     )
-
     
     
+    const {redirect} = e;
+    
 
-    return (e.redirect) ?  (
+    return ({redirect}) ?  (
 
         
         <div className='popup' id='popup'>
