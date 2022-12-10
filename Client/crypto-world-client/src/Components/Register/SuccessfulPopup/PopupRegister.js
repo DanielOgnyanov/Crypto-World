@@ -2,17 +2,14 @@ import { useState } from 'react';
 import Popup from 'reactjs-popup';
 import './PopupRegister.css'
 
-export const PopupRegister = (e) => {
+
+export const PopupRegister = ({redirect}) => {
 
 
     const [open, setOpen] = useState(true);
     const closePopup =()=>(
         setOpen(false)
     )
-    
-    
-    const {redirect} = e;
-    
     
 
     return (open && {redirect}) ?  (
