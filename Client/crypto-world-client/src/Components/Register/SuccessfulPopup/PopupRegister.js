@@ -3,16 +3,19 @@ import Popup from 'reactjs-popup';
 import './PopupRegister.css'
 
 
-export const PopupRegister = ({redirect}) => {
+const PopupRegister = (e) => {
 
 
     const [open, setOpen] = useState(true);
     const closePopup =()=>(
         setOpen(false)
     )
-    
 
-    return (open && {redirect}) ?  (
+    const {name} = e.name;
+    
+    console.log(name)
+
+    return (open) ?  (
 
         
         <div className='popup' id='popup'>
@@ -32,3 +35,5 @@ export const PopupRegister = ({redirect}) => {
      
     ) : ""
 };
+
+export default PopupRegister;
