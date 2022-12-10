@@ -12,7 +12,6 @@ const Register = () => {
 
   const [redirect, setRedirect] = useState(false);
   let history = useNavigate();
-  console.log(redirect);
 
 
   const [isUsernameIsCorrect, setIsUsernameIsCorrect] = useState(false);
