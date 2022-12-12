@@ -2,12 +2,14 @@ import './HomePage.css'
 import * as cryptoService from '../../Services/CryptoService'
 import Chart from '../Chart/Chart';
 import WalletDetails  from '../WalletDetails/WalletDetails';
-import  PopupRegister  from '../Register/SuccessfulPopup/PopupRegister';
+import PopupRegister  from '../Register/SuccessfulPopup/PopupRegister';
+import Register from '../Register/Register';
 
 
 
 
-const HomePage = () => {
+
+const HomePage = (e) => {
 
     const cryptoPrices = cryptoService.getCryptoPrice;
 
@@ -16,7 +18,9 @@ const HomePage = () => {
         { id: 2, name: "Ethereum", price: 3000 }];
 
      
-    
+        
+        console.log(e.name)
+       
 
     return (
 
@@ -24,8 +28,8 @@ const HomePage = () => {
 
 
         <div className='home'>
+           
             
-             <PopupRegister/>
             <div className='chart'>
                 <Chart/>
             </div>
