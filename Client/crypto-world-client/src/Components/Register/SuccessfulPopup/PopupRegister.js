@@ -12,8 +12,10 @@ const PopupRegister = (e) => {
         setOpen(false)
     )
 
+    console.log(e.redirect)
 
-    return (open) ? (
+
+    return (open && e.redirect) ? (
 
 
         <div className='popup' id='popup'>
