@@ -23,9 +23,11 @@ const HomePage = (e) => {
     console.log(localUser);
     const[firstLogin, setFirstLogin] = useState(0);
 
-    if(!localUser === null){
+    if(localUser !== null){
         setFirstLogin(1);
     }
+
+    console.log(firstLogin)
     
 
 
@@ -35,7 +37,7 @@ const HomePage = (e) => {
 
 
         <div className='home'>
-            {!localUser === null && firstLogin === 0 ? <PopupRegister /> : ""}
+            {localUser !== null && firstLogin === 0 ? <PopupRegister /> : ""}
 
             
 
