@@ -1,8 +1,8 @@
 import './HomePage.css'
 import * as cryptoService from '../../Services/CryptoService'
 import Chart from '../Chart/Chart';
-import WalletDetails  from '../WalletDetails/WalletDetails';
-import PopupRegister  from '../Register/SuccessfulPopup/PopupRegister';
+import WalletDetails from '../WalletDetails/WalletDetails';
+import PopupRegister from '../Register/SuccessfulPopup/PopupRegister';
 
 
 
@@ -17,8 +17,11 @@ const HomePage = (e) => {
         [{ id: 1, name: "Bitcoin", price: 45000 },
         { id: 2, name: "Ethereum", price: 3000 }];
 
-     
-       
+
+    const localUser = JSON.parse(localStorage.getItem("usernameRegisterService"));
+
+
+
 
     return (
 
@@ -26,16 +29,16 @@ const HomePage = (e) => {
 
 
         <div className='home'>
-           
-            <PopupRegister/>
-           
-            
+
+            <PopupRegister />
+
+
             <div className='chart'>
-                <Chart/>
+                <Chart />
             </div>
 
             <div className='wallet-details'>
-                <WalletDetails/>
+                <WalletDetails />
             </div>
 
             <table className="table">
