@@ -23,7 +23,9 @@ const HomePage = (e) => {
     console.log(localUser);
     const[firstLogin, setFirstLogin] = useState(0);
 
-    
+    if(!localUser === null){
+        setFirstLogin(1);
+    }
     
 
 
