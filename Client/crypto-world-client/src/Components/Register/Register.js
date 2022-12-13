@@ -4,20 +4,20 @@ import * as userInfoService from '../../Services/UserInfoService'
 import * as registerService from '../../Services/RegisterService'
 import * as utils from '../../Utils/Utils'
 import { useNavigate } from "react-router-dom";
-import PopupRegister  from '../Register/SuccessfulPopup/PopupRegister'
+import PopupRegister from '../Register/SuccessfulPopup/PopupRegister'
 
 
 
 
 const Register = (e) => {
 
-  const [redirect, setRedirect] = useState(true);
+
   let history = useNavigate();
-  
 
 
-  
- 
+
+
+
   const [isUsernameIsCorrect, setIsUsernameIsCorrect] = useState(false);
   const [isEmailCorrect, setIsEmailCorrect] = useState(false);
   const [isFullNameCorrect, setIsFullNameCorrect] = useState(false);
@@ -220,7 +220,7 @@ const Register = (e) => {
       .register(username, fullName, email, country, password, confirmPassword)
       .then(() => {
 
-        setRedirect(true);
+
         history("/home");
 
 
@@ -242,7 +242,7 @@ const Register = (e) => {
 
     <form id='form-register' onSubmit={onRegisterFormSubmitHandler}>
       <p htmlFor="name">Create Account</p>
-      
+
 
 
       <label htmlFor="username" id='label-register'>Username</label>
@@ -292,8 +292,8 @@ const Register = (e) => {
       {confirmPasswordError ? <span id='span-info-register'>Confirm Password lenght must be atleast 5 symbols and contains letters , numebrs and special symbols.</span> : ""}
       {isPasswordMatch ? "" : <span id='span-info-register'>Password not match.</span>}
       {!confirmPasswordError && isInputIsCorrectConfirmPassword ? <span id='span-green-tick'>&#10004;</span> : ""}
-      <PopupRegister redirect={redirect}/>
-      
+
+
 
       <button type="submit" className="button" disabled={
         !isUsernameIsCorrect
