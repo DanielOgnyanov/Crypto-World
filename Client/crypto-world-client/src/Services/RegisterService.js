@@ -17,7 +17,7 @@ export const register = async (username, fullName, email, country, password, con
         if (!response.ok) {
             throw new response.status;
         }
-        localStorage.setItem("username" ,JSON.stringify (username));
+        localStorage.setItem("usernameRegisterService" ,JSON.stringify (username));
         
         return response.json();
 
