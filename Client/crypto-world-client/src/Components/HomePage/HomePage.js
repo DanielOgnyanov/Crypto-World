@@ -22,6 +22,8 @@ const HomePage = (e) => {
     const localUser = JSON.parse(localStorage.getItem("usernameRegisterService"));
     console.log(localUser);
     const[firstLogin, setFirstLogin] = useState(0);
+
+    
     
 
 
@@ -31,8 +33,9 @@ const HomePage = (e) => {
 
 
         <div className='home'>
+            {!localUser === null && firstLogin === 0 ? <PopupRegister /> : ""}
 
-            <PopupRegister />
+            
 
 
             <div className='chart'>
