@@ -3,6 +3,7 @@ import * as cryptoService from '../../Services/CryptoService'
 import Chart from '../Chart/Chart';
 import WalletDetails from '../WalletDetails/WalletDetails';
 import PopupRegister from '../Register/SuccessfulPopup/PopupRegister';
+import { useState } from 'react';
 
 
 
@@ -19,8 +20,9 @@ const HomePage = (e) => {
 
 
     const localUser = JSON.parse(localStorage.getItem("usernameRegisterService"));
-
-
+    console.log(localUser);
+    const[firstLogin, setFirstLogin] = useState(0);
+    
 
 
     return (
