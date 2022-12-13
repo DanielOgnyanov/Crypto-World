@@ -8,10 +8,12 @@ import PopupRegister  from '../Register/SuccessfulPopup/PopupRegister'
 import HomePage from '../HomePage/HomePage'
 
 
+
 const Register = (e) => {
 
   const [redirect, setRedirect] = useState(true);
   let history = useNavigate();
+  
 
 
   
