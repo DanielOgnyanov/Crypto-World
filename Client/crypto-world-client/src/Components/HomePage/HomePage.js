@@ -21,8 +21,6 @@ const HomePage = (e) => {
 
     const localUser = JSON.parse(localStorage.getItem("usernameRegisterService"));
 
-    const [firstLogin, setFirstLogin] = useState(false);
-
 
 
     return (
