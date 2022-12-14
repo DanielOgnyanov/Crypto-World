@@ -235,7 +235,7 @@ const Register = (e) => {
   return (
 
     <>
-      <div>
+      <div className='popup-register'>
         {redirect ? <PopupRegister /> : ""}
       </div>
 
