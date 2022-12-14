@@ -24,24 +24,6 @@ const HomePage = (e) => {
     const [firstLogin, setFirstLogin] = useState(false);
 
 
-    useEffect(() => {
-
-        if (localUser !== null) {
-            setFirstLogin(true);
-        }
-
-    });
-
-
-
-
-
-
-    console.log(localUser);
-    console.log(firstLogin);
-
-
-
 
     return (
 
