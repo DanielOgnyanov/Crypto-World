@@ -1,3 +1,4 @@
+import './SuccessfulPopup/PopupRegister.css'
 import './Register.css'
 import React, { useState } from 'react'
 import * as userInfoService from '../../Services/UserInfoService'
@@ -9,9 +10,10 @@ import PopupRegister from '../Register/SuccessfulPopup/PopupRegister'
 
 
 
+
 const Register = (e) => {
 
-  const[redirect, setRedirect] = useState(true);
+  const [redirect, setRedirect] = useState(true);
 
   const [isUsernameIsCorrect, setIsUsernameIsCorrect] = useState(false);
   const [isEmailCorrect, setIsEmailCorrect] = useState(false);
@@ -216,7 +218,7 @@ const Register = (e) => {
       .then(() => {
 
         setRedirect(true);
-        history("/home");
+
 
       }).catch(error => {
 
@@ -232,9 +234,15 @@ const Register = (e) => {
 
   return (
 
-
+      <>
+      <div>
+      {redirect ? <PopupRegister /> : ""}
+      </div>
+        
+      
     <form id='form-register' onSubmit={onRegisterFormSubmitHandler}>
       <p htmlFor="name">Create Account</p>
+      
 
 
 
@@ -297,6 +305,8 @@ const Register = (e) => {
         || !isCountryCorrect}
         id='register-form-button'>Register</button>
     </form>
+
+    </>
 
 
   );
