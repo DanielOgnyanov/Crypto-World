@@ -19,9 +19,6 @@ const HomePage = (e) => {
         { id: 2, name: "Ethereum", price: 3000 }];
 
 
-    const localUser = JSON.parse(localStorage.getItem("usernameRegisterService"));
-
-
 
     return (
 
