@@ -22,9 +22,6 @@ const HomePage = (e) => {
 
     return (
 
-
-
-
         <div className='home'>
 
             <div className='chart'>
@@ -59,10 +56,6 @@ const HomePage = (e) => {
             </table>
 
         </div>
-
-
-
-
     );
 }
 
