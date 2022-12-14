@@ -3,7 +3,7 @@ import * as cryptoService from '../../Services/CryptoService'
 import Chart from '../Chart/Chart';
 import WalletDetails from '../WalletDetails/WalletDetails';
 import PopupRegister from '../Register/SuccessfulPopup/PopupRegister';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 
 
@@ -20,15 +20,27 @@ const HomePage = (e) => {
 
 
     const localUser = JSON.parse(localStorage.getItem("usernameRegisterService"));
+
+    const [firstLogin, setFirstLogin] = useState(false);
+
+
+    useEffect(() => {
+
+        if (localUser !== null) {
+            setFirstLogin(true);
+        }
+
+    });
+
+
+
+
+
+
     console.log(localUser);
-    const[firstLogin, setFirstLogin] = useState(0);
+    console.log(firstLogin);
 
-    if(localUser !== null){
-        setFirstLogin(1);
-    }
 
-    console.log(firstLogin)
-    
 
 
     return (
@@ -37,10 +49,6 @@ const HomePage = (e) => {
 
 
         <div className='home'>
-            {localUser !== null && firstLogin === 0 ? <PopupRegister /> : ""}
-
-            
-
 
             <div className='chart'>
                 <Chart />
