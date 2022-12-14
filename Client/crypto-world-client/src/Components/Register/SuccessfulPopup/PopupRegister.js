@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import Popup from 'reactjs-popup';
 import './PopupRegister.css'
-import HomePage from '../../HomePage/HomePage';
 import { useNavigate } from 'react-router-dom';
 
 
@@ -16,13 +15,7 @@ const PopupRegister = (e) => {
         history("/home")
     );
 
-
-
-
-
     return (open) ? (
-
-
 
         <div className='popup' id='popup'>
 
