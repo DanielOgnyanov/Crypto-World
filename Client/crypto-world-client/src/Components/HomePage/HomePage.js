@@ -22,7 +22,7 @@ const HomePage = (e) => {
 
     return (
 
-        <div className='home'>
+        <div className='home' id='home'>
 
             <div className='chart'>
                 <Chart />
