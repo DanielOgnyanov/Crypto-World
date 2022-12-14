@@ -12,8 +12,9 @@ import PopupRegister from '../Register/SuccessfulPopup/PopupRegister'
 const Register = (e) => {
 
 
-  const[redirect, setRedirect] = useState(true);
+  
   let history = useNavigate();
+  const[redirect, setRedirect] = useState(true);
 
   const [isUsernameIsCorrect, setIsUsernameIsCorrect] = useState(false);
   const [isEmailCorrect, setIsEmailCorrect] = useState(false);
