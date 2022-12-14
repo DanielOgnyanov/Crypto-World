@@ -218,10 +218,8 @@ const Register = (e) => {
       .register(username, fullName, email, country, password, confirmPassword)
       .then(() => {
 
-
+        setRedirect(true);
         history("/home");
-
-
 
       }).catch(error => {
 
