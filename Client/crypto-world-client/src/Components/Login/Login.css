@@ -68,7 +68,7 @@ form p {
 } 
 
 
-form button {
+#login-button {
 
   height: 40px;
   width: 200px;
