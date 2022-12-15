@@ -20,7 +20,22 @@
     font-size: 17px;
 }
 
-#login-username {
+#login-p {
+
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 20px;
+} 
+
+#login-label {
+
+    display: block;
+    padding-top: 13px;
+    padding-bottom: 10px;
+    
+}  
+
+#login-username-input {
 
     background-image: url('../../Images/user-icon-1.png');
     background-repeat: no-repeat;
@@ -31,7 +46,7 @@
 } 
 
 
-#login-password {
+#login-password-input {
 
     background-image: url('../../Images/pass-icon.png');
     background-repeat: no-repeat;
@@ -73,21 +88,10 @@
 
  
 
-#login-label {
-
-    display: block;
-    padding-top: 13px;
-    padding-bottom: 10px;
-    
-}  
 
 
-#login-p {
 
-    margin-bottom: 20px;
-    font-weight: bold;
-    font-size: 20px;
-} 
+
 
 
 
