@@ -20,32 +20,6 @@
     font-size: 17px;
 }
 
-form input {
-
-    height: 30px;
-    width: 300px;
-    font-size: 18px;
-    border-radius: 8px;
-    
-    
-}    
-
-form label {
-
-    display: block;
-    padding-top: 13px;
-    padding-bottom: 10px;
-    
-}  
-
-
-form p {
-
-    margin-bottom: 20px;
-    font-weight: bold;
-    font-size: 20px;
-} 
-
 #login-username {
 
     background-image: url('../../Images/user-icon-1.png');
@@ -87,11 +61,6 @@ form p {
   
 }
 
-form button:hover {
-    opacity: 0.9;  
-} 
-
-
 #span-info{
 
     background-color: rgb(205, 92, 92);
@@ -101,3 +70,31 @@ form button:hover {
     font-size: 12px;
 
 }
+
+ 
+
+#login-label {
+
+    display: block;
+    padding-top: 13px;
+    padding-bottom: 10px;
+    
+}  
+
+
+form p {
+
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 20px;
+} 
+
+
+
+
+
+form button:hover {
+    opacity: 0.9;  
+} 
+
+
