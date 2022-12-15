@@ -80,6 +80,10 @@
   
 }
 
+form button:hover {
+    opacity: 0.9;  
+} 
+
 #span-info{
 
     background-color: rgb(205, 92, 92);
@@ -89,20 +93,5 @@
     font-size: 12px;
 
 }
-
- 
-
-
-
-
-
-
-
-
-
-
-form button:hover {
-    opacity: 0.9;  
-} 
 
 
