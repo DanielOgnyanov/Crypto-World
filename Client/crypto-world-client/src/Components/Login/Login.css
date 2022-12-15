@@ -75,20 +75,20 @@ form p {
   margin-top: 25px;
   background: #ddd;
   font-size: 25px;
-  border: 1px solid rgb(10, 70, 228);
+  border: 1px solid rgb(255, 255, 255);
   border-radius: 8px;
   cursor: pointer;
-  background-color: rgb(13, 164, 252);
+  background-color: rgb(15, 129, 15);
    
   
   color: white;
   font-family: CoinbaseSans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;;
   font-weight: 500;
-
+  
 }
 
 form button:hover {
-    opacity: 0.9;
+    opacity: 0.9;  
 } 
 
 
