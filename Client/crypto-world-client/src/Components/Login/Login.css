@@ -1,10 +1,11 @@
 #login-form {
-    height: 375px;
+    max-height: 420px;
     width: 425px;
     margin-top: 80px;
     margin-left: 500px;
     margin-bottom: 200px;
     text-align: center;
+    position: relative;
 
     border-radius: 20px;
     border-bottom: 2px solid  rgb(0, 0, 0);
