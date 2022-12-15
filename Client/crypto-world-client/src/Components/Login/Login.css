@@ -1,6 +1,6 @@
 #login-form {
-    height: 410px;
-    width: 425px;
+    height: 425px;
+    width: 445px;
     margin-top: 80px;
     margin-left: 500px;
     margin-bottom: 200px;
@@ -23,7 +23,7 @@
 
 #login-p {
 
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     font-weight: bold;
     font-size: 20px;
 } 
