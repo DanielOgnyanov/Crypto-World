@@ -3,7 +3,7 @@ html ,body {
   overflow-x: hidden;
   width: 100vw;
   height: 100vh;
-  background-image: url('./Images/World-Crypto-Data_Background.jpg');
+  background-color: white;
   background-size: "cover";
   background-repeat: no-repeat;
   min-height:100%;
