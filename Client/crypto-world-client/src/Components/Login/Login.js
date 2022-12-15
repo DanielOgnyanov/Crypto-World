@@ -82,11 +82,11 @@ const Login = () => {
             <p htmlFor="name">Sign In</p>
 
 
-            <label htmlFor="username" >Username</label>
+            <label htmlFor="username" id='login-label'>Username</label>
             <input name='username' autoComplete="on" placeholder='Username' type="text" id='login-username' onChange={userHandler} />
             {userError ? <span id='span-info' >Username lenght need to be between 3 and 20 symbols</span> : ""}
 
-            <label htmlFor="password">Password</label>
+            <label htmlFor="password" id='login-label'>Password</label>
             <input name='password' autoComplete="on" placeholder='Password' type="password" id='login-password' onChange={passwordHandler}/>
             {passError ? <span id='span-info' >Password lenght must be atleast 5 symbols</span> : ""}
 
