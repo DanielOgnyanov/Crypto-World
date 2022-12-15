@@ -37,6 +37,7 @@
 
 #login-username-input {
 
+    height: 35px;
     background-image: url('../../Images/user-icon-1.png');
     background-repeat: no-repeat;
     background-position: left 8px top 2px;
@@ -47,7 +48,8 @@
 
 
 #login-password-input {
-
+    
+    height: 35px;
     background-image: url('../../Images/pass-icon.png');
     background-repeat: no-repeat;
     background-position: left 9px top 2px;
