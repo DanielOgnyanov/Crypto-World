@@ -79,7 +79,7 @@ const Login = () => {
 
 
         <form id='login-form'  onSubmit={onLoginFormSubmitHandler}>
-            <p htmlFor="name">Sign In</p>
+            <p htmlFor="name" id='login-p'>Sign In</p>
 
 
             <label htmlFor="username" id='login-label'>Username</label>
