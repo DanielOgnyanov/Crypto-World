@@ -241,7 +241,7 @@ const Register = (e) => {
 
 
       <form id='form-register' onSubmit={onRegisterFormSubmitHandler}>
-        <p htmlFor="name">Create Account</p>
+        <p htmlFor="name" id='register-p'>Create Account</p>
 
         <label htmlFor="username" id='label-register'>Username</label>
         <input name='username' placeholder='Username' type="text" id='username-input' onChange={usernameHandler}></input>

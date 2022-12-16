@@ -21,6 +21,13 @@
     font-size: 17px;
 }
 
+#register-p {
+
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 20px;
+} 
+
 form input {
     
     height: 30px;
@@ -38,14 +45,6 @@ form input {
     padding-bottom: 10px;
     
 }  
-
-
-form p {
-
-    margin-bottom: 20px;
-    font-weight: bold;
-    font-size: 20px;
-} 
 
 
 #select-country {
@@ -118,7 +117,7 @@ form p {
 #register-form-button {
 
   height: 40px;
-  width: 340px;
+  width: 345px;
   margin-top: 48px;
   margin-bottom: 38px;
   padding-bottom: 10px;
