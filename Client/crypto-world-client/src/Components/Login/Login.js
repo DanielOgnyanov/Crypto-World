@@ -19,7 +19,7 @@ const Login = () => {
 
     function userHandler(e) {
 
-        let item = e.target.value.trim();
+        let item = e.target.value;
 
         if (item.length < 3 || item.length > 20) {
             
