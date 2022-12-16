@@ -19,9 +19,11 @@ const Login = () => {
 
     function userHandler(e) {
 
-        let item = e.target.value;
+        let item = e.target.value.trim();
 
-        if (item.length < 3 || item.length > 20) {
+        console.log(item)
+
+        if (item === "") {
             
             setUserError(true);
 
