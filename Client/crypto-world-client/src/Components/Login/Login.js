@@ -16,6 +16,7 @@ const Login = () => {
 
     
     const [inputUsernameError, setInputUsernameError] = useState(false);
+    const [inputPasswordError, setInputPasswordError] = useState(false);
 
     function userHandler(e) {
 
@@ -87,7 +88,7 @@ const Login = () => {
 
             <label htmlFor="username" id='login-label'>Username</label>
             <input name='username' autoComplete="on" placeholder='Username' type="text" id='login-username-input' onChange={userHandler} />
-            {inputError ? <span id='span-info' >Input cannot be empty</span> : ""}
+            {inputUsernameError ? <span id='span-info' >Input cannot be empty</span> : ""}
 
             <label htmlFor="password" id='login-label'>Password</label>
             <input name='password' autoComplete="on" placeholder='Password' type="password" id='login-password-input' onChange={passwordHandler}/>
