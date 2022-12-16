@@ -20,12 +20,12 @@ const Login = () => {
     const [wrongCredentialsError , setWrongCredentialsError] = useState(false);
 
     function userHandler(e) {
-
+        
         let item = e.target.value.trim();
-
         console.log(item)
+        
 
-        if (item === "") {
+        if (item === "" || item.length === 0) {
             
             setInputUsernameError(true);
 
@@ -43,7 +43,7 @@ const Login = () => {
 
         let item = e.target.value.trim();
 
-        if(item === ""){
+        if(item === ""|| item.length === 0){
 
             setInputPasswordError(true);
 
@@ -55,6 +55,7 @@ const Login = () => {
 
         setPass(item);
     }
+    
 
 
 
@@ -77,6 +78,10 @@ const Login = () => {
 
     };
 
+
+    console.log(inputUsernameError);
+
+   
     return (
 
 
@@ -94,7 +99,7 @@ const Login = () => {
             {inputPasswordError ? <span id='span-info' >Input cannot be empty</span> : ""}
             {wrongCredentialsError ? <span id='span-info' >Wrong Username or Password !</span> : ""}
 
-            <button disabled={!inputUsernameError || !inputPasswordError} className="button" type="submit" id='login-button'>Sign In</button>
+            <button disabled={inputUsernameError || inputPasswordError} className="button" type="submit" id='login-button'>Sign In</button>
         </form>
         </>
 
