@@ -25,13 +25,10 @@ const Login = () => {
         console.log(item)
         
 
-        if (item === "" || item.length === 0) {
+        if (item.length === 0) {
             
             setInputUsernameError(true);
 
-        } else {
-            setInputUsernameError(false);
-            
         }
 
         setUser(item);
@@ -43,14 +40,10 @@ const Login = () => {
 
         let item = e.target.value.trim();
 
-        if(item === ""|| item.length === 0){
+        if(item.length === 0){
 
             setInputPasswordError(true);
-
-        } else {
-
-            setInputPasswordError(false);
-
+            
         }
 
         setPass(item);
@@ -79,7 +72,7 @@ const Login = () => {
     };
 
 
-    console.log(inputUsernameError);
+    console.log(inputUsernameError)
 
    
     return (
