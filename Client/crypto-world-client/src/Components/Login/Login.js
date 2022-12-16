@@ -17,7 +17,12 @@ const Login = () => {
     
     const [inputUsernameError, setInputUsernameError] = useState(false);
     const [inputPasswordError, setInputPasswordError] = useState(false);
+    const [isValidSubmit, setIsValidSubmit] = useState(false)
     const [wrongCredentialsError , setWrongCredentialsError] = useState(false);
+
+    
+
+    
 
     function userHandler(e) {
         
@@ -51,18 +56,8 @@ const Login = () => {
     
 
 
-
-
     const onLoginFormSubmitHandler = (e) => {
         e.preventDefault();
-
-        if(user.length === 0){
-            setInputUsernameError(true);
-        }
-
-        if(password.length === 0){
-            setInputPasswordError(true);
-        }
 
 
         authService
@@ -80,7 +75,7 @@ const Login = () => {
     };
 
 
-    console.log(inputUsernameError)
+    
 
    
     return (
@@ -100,7 +95,7 @@ const Login = () => {
             {inputPasswordError ? <span id='span-info' >Input cannot be empty</span> : ""}
             {wrongCredentialsError ? <span id='span-info' >Wrong Username or Password !</span> : ""}
 
-            <button disabled={inputUsernameError || inputPasswordError} className="button" type="submit" id='login-button'>Sign In</button>
+            <button disabled={inputPasswordError} className="button" type="submit" id='login-button'>Sign In</button>
         </form>
         </>
 
