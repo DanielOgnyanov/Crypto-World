@@ -12,7 +12,7 @@ const Login = () => {
     const history = useNavigate();
 
     const [user, setUser] = useState("");
-    const [passord, setPass] = useState("");
+    const [password, setPassword] = useState("");
 
     
     const [inputUsernameError, setInputUsernameError] = useState(false);
@@ -46,7 +46,7 @@ const Login = () => {
             
         }
 
-        setPass(item);
+        setPassword(item);
     }
     
 
@@ -55,6 +55,14 @@ const Login = () => {
 
     const onLoginFormSubmitHandler = (e) => {
         e.preventDefault();
+
+        if(user.length === 0){
+            setInputUsernameError(true);
+        }
+
+        if(password.length === 0){
+            setInputPasswordError(true);
+        }
 
 
         authService
