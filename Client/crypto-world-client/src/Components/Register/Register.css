@@ -28,6 +28,14 @@
     font-size: 20px;
 } 
 
+#label-register {
+    
+    display:block;
+    padding-top: 13px;
+    padding-bottom: 10px;
+    
+} 
+
 form input {
     
     height: 30px;
@@ -37,14 +45,7 @@ form input {
     
     
 }    
-
-#label-register {
-    
-    display:block;
-    padding-top: 13px;
-    padding-bottom: 10px;
-    
-}  
+ 
 
 
 #select-country {
