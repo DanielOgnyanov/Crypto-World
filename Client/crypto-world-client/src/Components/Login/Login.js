@@ -25,10 +25,10 @@ const Login = () => {
 
         if (item === "") {
             
-            setInputError(true);
+            setInputUsernameError(true);
 
         } else {
-            setInputError(false);
+            setInputUsernameError(false);
             
         }
 
