@@ -34,6 +34,8 @@ const Login = () => {
             
             setInputUsernameError(true);
 
+        } else {
+            setIsValidSubmit(true);
         }
 
         setUser(item);
@@ -49,7 +51,10 @@ const Login = () => {
 
             setInputPasswordError(true);
             
+        }else {
+            setIsValidSubmit(true);
         }
+
 
         setPassword(item);
     }
