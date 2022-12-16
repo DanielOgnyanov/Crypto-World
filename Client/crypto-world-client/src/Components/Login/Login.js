@@ -15,7 +15,7 @@ const Login = () => {
     const [passord, setPass] = useState("");
 
     
-    const [inputError, setInputError] = useState(false);
+    const [inputUsernameError, setInputUsernameError] = useState(false);
 
     function userHandler(e) {
 
