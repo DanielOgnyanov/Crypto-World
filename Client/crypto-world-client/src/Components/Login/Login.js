@@ -14,8 +14,8 @@ const Login = () => {
     const [user, setUser] = useState("");
     const [passord, setPass] = useState("");
 
-    const [userError, setUserError] = useState(false);
-    const [passError, setPassError] = useState(false);
+    
+    const [inputError, setInputError] = useState(false);
 
     function userHandler(e) {
 
@@ -25,10 +25,10 @@ const Login = () => {
 
         if (item === "") {
             
-            setUserError(true);
+            setInputError(true);
 
         } else {
-            setUserError(false);
+            setInputError(false);
             
         }
 
@@ -43,11 +43,11 @@ const Login = () => {
 
         if(item === ""){
 
-            setPassError(true);
+            setInputError(true);
 
         } else {
 
-            setPassError(false);
+            setInputError(false);
 
         }
 
