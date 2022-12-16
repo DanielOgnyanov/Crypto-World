@@ -92,6 +92,7 @@ const Login = () => {
             <label htmlFor="password" id='login-label'>Password</label>
             <input name='password' autoComplete="on" placeholder='Password' type="password" id='login-password-input' onChange={passwordHandler}/>
             {inputPasswordError ? <span id='span-info' >Input cannot be empty</span> : ""}
+            {wrongCredentialsError ? <span id='span-info' >Wrong Username or Password !</span> : ""}
 
             <button disabled={!inputUsernameError || !inputPasswordError} className="button" type="submit" id='login-button'>Sign In</button>
         </form>
