@@ -41,7 +41,7 @@ const Login = () => {
 
         let item = e.target.value.trim();
 
-        if(item.length < 5){
+        if(item === ""){
 
             setPassError(true);
 
