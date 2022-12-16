@@ -5,7 +5,7 @@ export const login = async (username, password) => {
     let res = fetch(`${baseUrl}/api/user/login`, {
         method: 'POST',
         headers: {
-            'content-type': 'application/json'
+            'Content-Type': 'application/json'
         },
         body: JSON.stringify({ username, password })
     });
