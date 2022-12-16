@@ -70,7 +70,7 @@ const Login = () => {
                 history('/home')
             })
             .catch(error => {
-
+                setWrongCredentialsError(true);
                 console.log(error);
 
             })
