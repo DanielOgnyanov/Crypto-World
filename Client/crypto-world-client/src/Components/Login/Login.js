@@ -66,8 +66,6 @@ const Login = () => {
             .login(user, passord)
             .then((authData) => {
 
-                login(authData);
-
                 history('/home')
             })
             .catch(error => {
@@ -94,7 +92,7 @@ const Login = () => {
             <input name='password' autoComplete="on" placeholder='Password' type="password" id='login-password-input' onChange={passwordHandler}/>
             {inputPasswordError ? <span id='span-info' >Input cannot be empty</span> : ""}
 
-            <button disabled={!inputError} className="button" type="submit" id='login-button'>Sign In</button>
+            <button disabled={!inputUsernameError || !inputPasswordError} className="button" type="submit" id='login-button'>Sign In</button>
         </form>
         </>
 
