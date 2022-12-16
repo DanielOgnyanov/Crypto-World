@@ -91,7 +91,7 @@ const Login = () => {
 
             <label htmlFor="password" id='login-label'>Password</label>
             <input name='password' autoComplete="on" placeholder='Password' type="password" id='login-password-input' onChange={passwordHandler}/>
-            {inputError ? <span id='span-info' >Password lenght must be atleast 5 symbols</span> : ""}
+            {inputError ? <span id='span-info' >Input cannot be empty</span> : ""}
 
             <button disabled={!inputError} className="button" type="submit" id='login-button'>Sign In</button>
         </form>
