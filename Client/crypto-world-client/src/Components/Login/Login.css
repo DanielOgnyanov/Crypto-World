@@ -1,5 +1,6 @@
 #login-form {
-    height: 425px;
+    min-height: 425px;
+    max-height: 475px;
     width: 445px;
     margin-top: 80px;
     margin-left: 500px;
@@ -68,6 +69,7 @@
   height: 40px;
   width: 350px;
   margin-top: 70px;
+  margin-bottom: 38px;
   background: #ddd;
   font-size: 25px;
   text-align: center;
