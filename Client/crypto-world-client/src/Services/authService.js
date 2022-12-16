@@ -10,12 +10,13 @@ export const login = async (username, password) => {
         body: JSON.stringify({ username, password })
     });
 
-    if (res.ok) {
-        return jsonResult;
-    } else {
-        throw jsonResult.message;
-    }
-};
+    
+    res.then((response) =>{
+        
+        if (!response.ok) {
+            throw new response.status;
+        }
+    })
 
 
 export const getUser = () => {
