@@ -17,7 +17,6 @@ const Login = () => {
     
     const [inputUsernameError, setInputUsernameError] = useState(false);
     const [inputPasswordError, setInputPasswordError] = useState(false);
-    const [isValidSubmit, setIsValidSubmit] = useState(false)
     const [wrongCredentialsError , setWrongCredentialsError] = useState(false);
 
     
@@ -34,8 +33,6 @@ const Login = () => {
             
             setInputUsernameError(true);
 
-        } else {
-            setIsValidSubmit(true);
         }
 
         setUser(item);
@@ -51,8 +48,6 @@ const Login = () => {
 
             setInputPasswordError(true);
             
-        }else {
-            setIsValidSubmit(true);
         }
 
 
@@ -100,7 +95,7 @@ const Login = () => {
             {inputPasswordError ? <span id='span-info' >Input cannot be empty</span> : ""}
             {wrongCredentialsError ? <span id='span-info' >Wrong Username or Password !</span> : ""}
 
-            <button disabled={inputPasswordError} className="button" type="submit" id='login-button'>Sign In</button>
+            <button disabled={!isValidSubmit} className="button" type="submit" id='login-button'>Sign In</button>
         </form>
         </>
 
