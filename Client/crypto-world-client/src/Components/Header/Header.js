@@ -64,7 +64,7 @@ const Header = () => {
 
                 </div>
 
-                <div  >
+                <div >
 
                     <Link id='navigation-a' to="/login">Sign In</Link>
 
