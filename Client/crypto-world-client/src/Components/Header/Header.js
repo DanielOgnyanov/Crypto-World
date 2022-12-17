@@ -66,7 +66,7 @@ const Header = () => {
 
                 <div  >
 
-                    <Link  to="/login">Sign In</Link>
+                    <Link id='navigation-a' to="/login">Sign In</Link>
 
                     <button onClick={handleClick} type='submit' id='navigation-button'>Create Account</button>
 
