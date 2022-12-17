@@ -30,10 +30,6 @@
 
 
 
-
-
-
-
 #navigation-button {
   float: right;
   padding: 6px;
@@ -42,9 +38,9 @@
   margin-bottom: 8px;
   background: #ddd;
   font-size: 17px;
-  border: 1px solid rgb(10, 70, 228);
+  border: 1px solid rgb(255, 255, 255);
   cursor: pointer;
-  background-color: rgb(13, 164, 252);
+  background-color: rgb(15, 129, 15);
   border-radius: 10px;
   
   color: white;
