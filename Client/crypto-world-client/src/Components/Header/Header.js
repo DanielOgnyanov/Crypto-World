@@ -50,7 +50,7 @@ const Header = () => {
 
         <header>
             <nav id='navigation'>
-              
+
 
                 <div >
 
@@ -60,7 +60,7 @@ const Header = () => {
                     <Link id='navigation-a' to="/add-credit-card">Add Credit Card</Link>
                     <Link id='navigation-a' to="/buy-crypto">Buy Crypto</Link>
                     <Link id='navigation-a' to="sell-crypto">Sell Crypto</Link>
-                    
+
 
                 </div>
 
