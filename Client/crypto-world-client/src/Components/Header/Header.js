@@ -52,21 +52,21 @@ const Header = () => {
             <nav id='navigation'>
               
 
-                <div className='userNavigation' id='navigation-a-position '>
+                <div >
 
-                    <Link className='button' to="/home" data-toggle="collapse">Home</Link>
-                    <Link className='button' to="/admin" data-toggle="collapse">Admin</Link>
+                    <Link id='navigation-a' to="/home" data-toggle="collapse">Home</Link>
+                    <Link id='navigation-a' to="/admin" data-toggle="collapse">Admin</Link>
 
-                    <Link className='button' to="/add-credit-card">Add Credit Card</Link>
-                    <Link className='button' to="/buy-crypto">Buy Crypto</Link>
-                    <Link className='button' to="sell-crypto">Sell Crypto</Link>
+                    <Link id='navigation-a' to="/add-credit-card">Add Credit Card</Link>
+                    <Link id='navigation-a' to="/buy-crypto">Buy Crypto</Link>
+                    <Link id='navigation-a' to="sell-crypto">Sell Crypto</Link>
                     
 
                 </div>
 
-                <div  id='navigation-a-position '>
+                <div  >
 
-                    <Link id='navigation-button' to="/login">Sign In</Link>
+                    <Link  to="/login">Sign In</Link>
 
                     <button onClick={handleClick} type='submit'>Create Account</button>
 
