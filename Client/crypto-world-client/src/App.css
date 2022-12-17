@@ -3,7 +3,7 @@ html ,body {
   overflow-x: hidden;
   width: 100vw;
   height: 100vh;
-  background-color: white;
+  background-color: rgb(199, 191, 191);
   background-size: "cover";
   background-repeat: no-repeat;
   min-height:100%;
