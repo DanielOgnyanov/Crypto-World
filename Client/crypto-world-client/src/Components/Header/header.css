@@ -6,7 +6,7 @@
 }
 
 
-.topnav img {
+#navigation-img {
 
   display: inline;
   margin-top: 0px;
@@ -25,7 +25,7 @@
 
 }
 
-.topnav a:hover {
+#navigation-a a:hover {
   
   background-color: rgb(27, 168, 250);
   color: white;
