@@ -49,7 +49,7 @@ const Header = () => {
     return (
 
         <header>
-            <nav className="topnav">
+            <nav className="topnav" >
                 <Link className='button' to="/" ><img src={logoImg} alt=""></img></Link>
 
                 <div className='userNavigation'>
