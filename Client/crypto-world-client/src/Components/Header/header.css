@@ -32,7 +32,7 @@
   
 }
 
-.topnav a {
+.navigation-a-position  {
   float: left;
   margin-top: 18px;
   margin-left: 30px;
@@ -50,7 +50,7 @@
 
 
 
-.topnav button {
+#navigation-button {
   float: right;
   padding: 6px;
   margin-top: 27px;

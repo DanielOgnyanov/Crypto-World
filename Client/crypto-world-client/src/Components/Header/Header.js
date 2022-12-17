@@ -50,9 +50,9 @@ const Header = () => {
 
         <header>
             <nav id='navigation'>
-                <Link className='button' to="/" id='navigation-img' ><img src={logoImg} alt=""></img></Link>
+              
 
-                <div className='userNavigation'>
+                <div className='userNavigation' id='navigation-a-position '>
 
                     <Link className='button' to="/home" data-toggle="collapse">Home</Link>
                     <Link className='button' to="/admin" data-toggle="collapse">Admin</Link>
@@ -64,9 +64,9 @@ const Header = () => {
 
                 </div>
 
-                <div className='guestNavigation'>
+                <div  id='navigation-a-position '>
 
-                    <Link className='button' to="/login">Sign In</Link>
+                    <Link id='navigation-button' to="/login">Sign In</Link>
 
                     <button onClick={handleClick} type='submit'>Create Account</button>
 
