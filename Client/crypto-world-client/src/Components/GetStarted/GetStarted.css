@@ -1,6 +1,7 @@
 #container {
     display: flex;
     margin-top: 50px;
+    margin-bottom: 50px;
     border-top: 2px solid rgb(0, 0, 0);
 }   
 
