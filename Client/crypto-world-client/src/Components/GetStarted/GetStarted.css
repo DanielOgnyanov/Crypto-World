@@ -1,5 +1,6 @@
 #container {
     display: flex;
+    height: 600px;
     margin-top: 50px;
     margin-bottom: 50px;
     border-top: 1px solid rgb(0, 0, 0);
