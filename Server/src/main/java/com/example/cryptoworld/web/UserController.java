@@ -41,7 +41,7 @@ public class UserController {
 
 
     @PostMapping("/login")
-    public ResponseEntity<String> authenticateUser(@RequestBody LoginDto loginDto) {
+    public ResponseEntity<CustomMessage> authenticateUser(@RequestBody LoginDto loginDto) {
 
         CustomMessage customMessage = new CustomMessage();
         customMessage.setMessage("User is logged.");
@@ -63,7 +63,7 @@ public class UserController {
         }
 
 
-        return new ResponseEntity<>("User signed-in successfully!.", HttpStatus.OK);
+        return new ResponseEntity<CustomMessage>(customMessage, HttpStatus.OK);
 
     }
 
