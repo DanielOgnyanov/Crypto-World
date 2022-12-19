@@ -43,6 +43,12 @@ public class UserController {
     @PostMapping("/login")
     public ResponseEntity<String> authenticateUser(@RequestBody LoginDto loginDto) {
 
+        try {
+
+        } catch (){
+
+        }
+
         Authentication authentication =
                 authenticationManager
                         .authenticate
