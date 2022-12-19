@@ -57,6 +57,7 @@ public class UserController {
             SecurityContextHolder.getContext().setAuthentication(authentication);
         } catch (Exception e){
 
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, e.getMessage());
         }
 
 
