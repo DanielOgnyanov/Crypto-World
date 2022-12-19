@@ -67,7 +67,7 @@ const Login = () => {
 
         authService
             .login(user, password)
-            .then((authData) => {
+            .then(() => {
 
                 history('/home')
             })
