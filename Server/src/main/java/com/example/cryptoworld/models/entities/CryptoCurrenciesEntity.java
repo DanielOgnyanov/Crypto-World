@@ -49,7 +49,7 @@ public class CryptoCurrenciesEntity extends BaseEntity{
         this.assetStringId = assetStringId;
     }
 
-    @Column(name = "volume_for_24_hour", columnDefinition = "Decimal(25,2)")
+    @Column(name = "volume_for_24_hour", columnDefinition = "Decimal(30,2)")
     public BigDecimal getVolumeFor24Hour() {
         return volumeFor24Hour;
     }
