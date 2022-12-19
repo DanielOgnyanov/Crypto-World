@@ -52,7 +52,7 @@ public class UserController {
                                             (loginDto.getUsername(), loginDto.getPassword()));
 
             SecurityContextHolder.getContext().setAuthentication(authentication);
-        } catch (){
+        } catch (Exception e){
 
         }
 
