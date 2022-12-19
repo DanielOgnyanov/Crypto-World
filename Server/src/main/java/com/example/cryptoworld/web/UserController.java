@@ -43,6 +43,9 @@ public class UserController {
     @PostMapping("/login")
     public ResponseEntity<String> authenticateUser(@RequestBody LoginDto loginDto) {
 
+        CustomMessage customMessage = new CustomMessage();
+        customMessage.setMessage("User is logged.");
+
         try {
 
             Authentication authentication =
