@@ -44,18 +44,21 @@ public class UserController {
     public ResponseEntity<String> authenticateUser(@RequestBody LoginDto loginDto) {
 
         try {
+
             Authentication authentication =
                     authenticationManager
                             .authenticate
                                     (new UsernamePasswordAuthenticationToken
                                             (loginDto.getUsername(), loginDto.getPassword()));
+
+            SecurityContextHolder.getContext().setAuthentication(authentication);
         } catch (){
 
         }
 
 
 
-        SecurityContextHolder.getContext().setAuthentication(authentication);
+
 
         loginService.setUserLoginInDb(loginDto.getUsername(), true);
 
