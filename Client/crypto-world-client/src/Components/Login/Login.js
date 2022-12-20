@@ -33,7 +33,7 @@ const Login = () => {
             setInputUsernameError(true);
 
         } else {
-            
+
             setInputUsernameError(false);
         }
 
@@ -65,15 +65,13 @@ const Login = () => {
         e.preventDefault();
 
         authService.login(user, password);
+        
+        const usernameGet = JSON.parse(localStorage.getItem("usernameLogin"));
 
-            const usernameGet = JSON.parse(localStorage.getItem("username"));
 
-            
 
-            if(usernameGet === null){
-                setWrongCredentialsError(true);
-            }
-            console.log(usernameGet);
+
+
 
     };
 
