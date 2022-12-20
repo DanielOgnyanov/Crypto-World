@@ -67,6 +67,8 @@ const Login = () => {
         authService
             .login(user, password);
 
+            const usernameGet = JSON.parse(localStorage.getItem("username"));
+
             if
 
 
