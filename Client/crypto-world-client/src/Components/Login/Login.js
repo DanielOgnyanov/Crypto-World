@@ -65,8 +65,12 @@ const Login = () => {
         e.preventDefault();
 
         authService.login(user, password);
-        
+
         const usernameGet = JSON.parse(localStorage.getItem("usernameLogin"));
+
+        if(usernameGet === null) {
+            setWrongCredentialsError(true);
+        }
 
 
 
