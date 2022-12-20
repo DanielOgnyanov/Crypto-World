@@ -23,8 +23,8 @@ export const login = async (username, password) => {
         localStorage.setItem("username" ,JSON.stringify (username));
 
         return response.json();
-    }).then((data) => {
-        console.log(data);
+    }).catch(error => {
+        console.log(error);
     });
 
 }
