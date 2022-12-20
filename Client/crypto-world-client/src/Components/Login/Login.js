@@ -26,7 +26,6 @@ const Login = () => {
     function userHandler(e) {
 
         let item = e.target.value.trim();
-        console.log(item)
 
 
         if (item.length === 0) {
@@ -66,16 +65,7 @@ const Login = () => {
         e.preventDefault();
 
         authService
-            .login(user, password)
-            .then(() => {
-
-                history('/home')
-            })
-            .catch(error => {
-                setWrongCredentialsError(true);
-                console.log(error);
-
-            })
+            .login(user, password);
 
 
     };
