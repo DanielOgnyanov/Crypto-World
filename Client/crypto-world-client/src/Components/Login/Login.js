@@ -70,6 +70,8 @@ const Login = () => {
 
         if(usernameGet === null) {
             setWrongCredentialsError(true);
+        } else {
+            history("/home")
         }
 
 
