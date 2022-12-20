@@ -18,9 +18,11 @@ export const login = async (username, password) => {
 
         if (!response.ok) {
             throw new Error(response.status);
+        } else {
+            localStorage.setItem("username" ,JSON.stringify (username));
         }
         
-        localStorage.setItem("username" ,JSON.stringify (username));
+        
 
         return response.json();
     }).catch(error => {
