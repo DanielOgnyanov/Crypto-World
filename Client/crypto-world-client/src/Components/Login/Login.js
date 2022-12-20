@@ -70,7 +70,7 @@ const Login = () => {
             const usernameGet = JSON.parse(localStorage.getItem("username"));
 
             if(usernameGet === null){
-                
+                setWrongCredentialsError(true);
             }
 
 
