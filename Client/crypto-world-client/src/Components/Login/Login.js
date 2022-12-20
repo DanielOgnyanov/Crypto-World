@@ -64,17 +64,16 @@ const Login = () => {
     const onLoginFormSubmitHandler = (e) => {
         e.preventDefault();
 
-        authService
-            .login(user, password);
+        authService.login(user, password);
 
             const usernameGet = JSON.parse(localStorage.getItem("username"));
 
+            
+
             if(usernameGet === null){
                 setWrongCredentialsError(true);
-            } else {
-                history("/home")
             }
-
+            console.log(usernameGet);
 
     };
 
