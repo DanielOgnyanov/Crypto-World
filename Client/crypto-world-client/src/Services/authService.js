@@ -8,7 +8,7 @@ export const login = async (username, password) => {
             "Content-Type": "application/json",
             "Access-Control-Allow-Headers": "*",
             "Access-Control-Allow-Origin": "*",
-            "Access-Control-Allow-Methods": "*" 
+            "Access-Control-Allow-Methods": "*"
         },
         body: JSON.stringify({ username, password })
     });
@@ -18,11 +18,11 @@ export const login = async (username, password) => {
 
         if (!response.ok) {
             throw new Error(response.status);
-        } else {
-            localStorage.setItem("username" ,JSON.stringify (username));
         }
-        
-        
+        localStorage.setItem("username", JSON.stringify(username));
+
+
+
 
         return response.json();
     }).catch(error => {
@@ -30,12 +30,12 @@ export const login = async (username, password) => {
     });
 
 }
-    export const getUser = () => {
-        let username = localStorage.getItem('username');
+export const getUser = () => {
+    let username = localStorage.getItem('username');
 
-        return username;
-    };
+    return username;
+};
 
-    export const isAuthenticated = () => {
-        return Boolean(getUser())
-    };
+export const isAuthenticated = () => {
+    return Boolean(getUser())
+};
