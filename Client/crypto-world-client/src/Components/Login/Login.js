@@ -69,7 +69,9 @@ const Login = () => {
 
             const usernameGet = JSON.parse(localStorage.getItem("username"));
 
-            if
+            if(usernameGet === null){
+                
+            }
 
 
     };
