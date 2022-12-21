@@ -40,7 +40,7 @@ const Header = () => {
 
         <div className='guestNavigation'>
 
-            <button onClick={signInHandler} id='navigation-button-signin' to="/login">Sign In</button>
+            <button onClick={signInHandler} type='submit' id='navigation-button-signin'>Sign In</button>
 
             <button onClick={handleClick} type='submit' id='navigation-button'>Create Account</button>
 
