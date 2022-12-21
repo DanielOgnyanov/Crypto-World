@@ -1,5 +1,4 @@
 import './Header.css'
-import logoImg from "../../Images/logo-nav-2.png"
 import { Link } from 'react-router-dom'
 import { useNavigate } from "react-router-dom";
 import { useAuthContext } from '../../Context/AuthContext';
