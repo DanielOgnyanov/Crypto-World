@@ -16,6 +16,10 @@ const Header = () => {
         history('/register');
     }
 
+    function signInHandler() {
+        history('/login')
+    }
+
     let userNavigation = (
 
         <div className='userNavigation'>
@@ -36,7 +40,7 @@ const Header = () => {
 
         <div className='guestNavigation'>
 
-            <Link id='navigation-a' to="/login">Sign In</Link>
+            <button id='navigation-a' to="/login">Sign In</button>
 
             <button onClick={handleClick} type='submit' id='navigation-button'>Create Account</button>
 
