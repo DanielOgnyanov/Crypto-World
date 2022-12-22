@@ -32,6 +32,7 @@
 
 #navigation-button {
   float: right;
+  height: 40px;
   padding: 6px;
   margin-top: 20px;
   margin-right: 110px;
