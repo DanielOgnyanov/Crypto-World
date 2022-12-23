@@ -1,16 +1,19 @@
 #container {
+    
     display: flex;
     height: 600px;
+
     margin-top: 50px;
     margin-left: 20px;
     margin-right: 20px;
     margin-bottom: 50px;
+
     border-top: 1px solid rgb(0, 0, 0);
     border-left: 1px solid rgb(0, 0, 0);
     border-right: 1px solid rgb(0, 0, 0);
     border-bottom: 1px solid rgb(0, 0, 0);
     border-radius: 10px;
-    background-color: white;
+    background-color: rgb(197, 223, 223);
 }   
 
 
