@@ -55,11 +55,10 @@
 
 
 #navigation-button-signin {
-
+  height: 35px;
   margin-left: 1090px;
   margin-top: 20px;
   margin-bottom: 8px;
-  height: 40px;
   font-size: 17px;
   font-weight:600;
   background-color: transparent;
