@@ -40,10 +40,10 @@
   font-size: 17px;
   border: 2px solid rgb(255, 255, 255);
   cursor: pointer;
-  background-color: rgb(192, 43, 17);
+  background-color: rgb(255, 255, 255);
   border-radius: 100px;
   
-  color: white;
+  color: rgb(54, 54, 105);
   text-align: center;
   font-family: CoinbaseSans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;;
   font-weight:600;
