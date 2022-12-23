@@ -54,7 +54,7 @@ const Header = () => {
         <header>
             <nav id='navigation'>
                 <div id='logo-header'>
-                    <span>Crypto World</span>
+                    <a>Crypto World</a>
 
                 </div>
                 {user.username 
