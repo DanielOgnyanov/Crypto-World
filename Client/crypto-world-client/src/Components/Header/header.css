@@ -47,6 +47,7 @@
   text-align: center;
   font-family: CoinbaseSans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;;
   font-weight:600;
+  padding-bottom: 4px;
 }
 
 #navigation-button-create:hover {
