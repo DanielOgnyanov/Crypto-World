@@ -49,6 +49,10 @@
   font-weight:600;
 }
 
+#navigation-button-create:hover {
+  opacity: 0.8;
+}
+
 
 #navigation-button-signin {
 
