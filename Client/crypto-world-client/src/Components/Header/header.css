@@ -65,8 +65,10 @@
   cursor: pointer;
   text-align: center;
   
-  
+}
 
+#navigation-button-signin:hover {
+  opacity: 0.8;
 }
 
 
