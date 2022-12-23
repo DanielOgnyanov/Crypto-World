@@ -54,6 +54,7 @@ const Header = () => {
         <header>
             <nav id='navigation'>
 
+
                 {user.username 
 
                 ? guestNavigation

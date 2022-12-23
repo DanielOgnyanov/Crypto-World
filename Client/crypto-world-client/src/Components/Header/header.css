@@ -5,6 +5,10 @@
   min-width: 1210px;
 }
 
+#logo-header {
+  background-image: url(../../Images/site-icon2.jpg);
+}
+
 #navigation-a {
   
   color: white;
