@@ -6,7 +6,7 @@ import { useAuthContext } from '../../Context/AuthContext';
 
 const Header = () => {
 
-    const { user } = useAuthContext();
+    const { isAuthenticated } = useAuthContext();
 
     const history = useNavigate();
 
@@ -60,7 +60,7 @@ const Header = () => {
 
 
 
-                {user.username
+                {isAuthenticated
 
                     ? guestNavigation
                     : userNavigation
