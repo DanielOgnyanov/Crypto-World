@@ -21,6 +21,8 @@ const Header = () => {
 
         <div className='userNavigation'>
 
+            <Link to="/"><span id='logo-header'>Crypto World</span></Link>
+
             <Link id='navigation-a' to="/home" data-toggle="collapse">Home</Link>
             <Link id='navigation-a' to="/admin" data-toggle="collapse">Admin</Link>
 
@@ -61,8 +63,8 @@ const Header = () => {
 
                 {isAuthenticated
 
-                    ? guestNavigation
-                    : userNavigation
+                    ? userNavigation
+                    : guestNavigation
 
                 }
 
