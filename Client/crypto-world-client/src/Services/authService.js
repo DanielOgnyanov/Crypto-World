@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 const baseUrl = 'http://localhost:8000';
 
 export const login = async (username, password) => {
@@ -32,8 +34,9 @@ export const login = async (username, password) => {
 
 }
 export const getUser = () => {
-    let username = localStorage.getItem('usernameLogin');
+    let username = useState(localStorage.getItem('usernameLogin') || false);
 
+    console.log(username);
     return username;
 };
 
