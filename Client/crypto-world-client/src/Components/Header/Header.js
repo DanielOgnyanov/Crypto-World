@@ -40,12 +40,15 @@ const Header = () => {
 
         <div className='guestNavigation'>
 
+            <span id='logo-header'>Crypto World</span>
+
             <button onClick={signInHandler} type='submit' id='navigation-button-signin'>Sign In</button>
 
             <button onClick={handleClick} type='submit' id='navigation-button-create'>Create Account</button>
 
 
         </div>
+
     );
 
 
@@ -54,7 +57,7 @@ const Header = () => {
         <header>
             <nav id='navigation'>
 
-                <span id='logo-header'>Crypto World</span>
+
 
 
                 {user.username
@@ -70,7 +73,7 @@ const Header = () => {
             </nav>
 
 
-        </header>
+        </header >
     );
 }
 
