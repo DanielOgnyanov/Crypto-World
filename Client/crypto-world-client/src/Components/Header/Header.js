@@ -30,7 +30,7 @@ const Header = () => {
             <Link id='navigation-a' to="/buy-crypto">Buy Crypto</Link>
             <Link id='navigation-a' to="/sell-crypto">Sell Crypto</Link>
 
-            <button>Logout</button>
+            <button id='logout-button'>Logout</button>
 
         </div>
 
