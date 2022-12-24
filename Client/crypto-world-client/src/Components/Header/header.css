@@ -9,13 +9,13 @@
   margin-left: 10px;
   color: white;
   font-size: 35px;
+  cursor:poitner;
   font-weight: 600;
   font-family:Brush Script MT, Brush Script Std, cursive;
 }
 
 #logo-header:hover {
     border-bottom: 1px solid rgb(255, 255, 255);
-    cursor:poitner;
 }
 
 
