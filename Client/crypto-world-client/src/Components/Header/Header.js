@@ -1,7 +1,7 @@
 import './Header.css'
 import { Link } from 'react-router-dom'
 import { useNavigate } from "react-router-dom";
-import { isAuthenticated } from '../../Services/AuthService';
+import { isAuthenticated, GetUser } from '../../Services/AuthService';
 
 
 const Header = () => {
@@ -10,7 +10,6 @@ const Header = () => {
 
 
     function handleClick() {
-
         history('/register');
     }
 
