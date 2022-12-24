@@ -32,7 +32,7 @@ export const login = async (username, password) => {
 
 }
 export const getUser = () => {
-    let username = localStorage.getItem('username');
+    let username = localStorage.getItem('usernameLogin');
 
     return username;
 };
