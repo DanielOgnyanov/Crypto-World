@@ -40,7 +40,7 @@ const Header = () => {
 
         <div className='guestNavigation'>
 
-          <Link to="/"><span id='logo-header'>Crypto World</span></Link>
+            <Link to="/"><span id='logo-header'>Crypto World</span></Link>
 
             <button onClick={signInHandler} type='submit' id='navigation-button-signin'>Sign In</button>
 
