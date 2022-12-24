@@ -1,4 +1,5 @@
 #navigation {
+  display: block;
   background-color: rgb(54, 54, 105);
   border-bottom: 2px solid rgb(0, 0, 0);
   overflow: hidden;
