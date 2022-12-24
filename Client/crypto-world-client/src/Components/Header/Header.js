@@ -53,20 +53,20 @@ const Header = () => {
 
         <header>
             <nav id='navigation'>
-                
-                    <span>Crypto World</span>
 
-                
-                {user.username 
+                <span id='logo-header'>Crypto World</span>
 
-                ? guestNavigation
-                : userNavigation
+
+                {user.username
+
+                    ? guestNavigation
+                    : userNavigation
 
                 }
 
 
 
-                
+
             </nav>
 
 
