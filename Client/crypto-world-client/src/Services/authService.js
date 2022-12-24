@@ -34,7 +34,7 @@ export const login = async (username, password) => {
 
 }
 export const GetUser = () => {
-    let username = useState(localStorage.getItem('usernameLogin') || false);
+    let username = JSON.parse(localStorage.getItem('usernameLogin'));
     return username;
 };
 
