@@ -33,13 +33,11 @@ export const login = async (username, password) => {
     });
 
 }
-export const getUser = () => {
+export const GetUser = () => {
     let username = useState(localStorage.getItem('usernameLogin') || false);
-
-    console.log(username);
     return username;
 };
 
 export const isAuthenticated = () => {
-    return Boolean(getUser())
+    return Boolean(GetUser())
 };
