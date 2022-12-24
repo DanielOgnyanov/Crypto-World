@@ -1,5 +1,4 @@
 #navigation {
-  display: block;
   background-color: rgb(54, 54, 105);
   border-bottom: 2px solid rgb(0, 0, 0);
   overflow: hidden;
@@ -74,7 +73,7 @@
 
 #navigation-button-signin {
   height: 35px;
-  margin-left: 1090px;
+  margin-left: 910px;
   margin-top: 20px;
   margin-bottom: 8px;
   font-size: 17px;
