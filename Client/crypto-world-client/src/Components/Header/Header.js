@@ -1,12 +1,10 @@
 import './Header.css'
 import { Link } from 'react-router-dom'
 import { useNavigate } from "react-router-dom";
-import { useAuthContext } from '../../Context/AuthContext';
+import { isAuthenticated } from '../../Services/AuthService';
 
 
 const Header = () => {
-
-    const { isAuthenticated } = useAuthContext();
 
     const history = useNavigate();
 
