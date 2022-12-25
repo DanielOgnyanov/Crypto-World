@@ -1,13 +1,14 @@
 import './Header.css'
 import { Link } from 'react-router-dom'
 import { useNavigate } from "react-router-dom";
+import { useState } from 'react';
 
 
 
 const Header = () => {
 
     const history = useNavigate();
-
+    const [isAuthenticated, setIsAuthenticated] = useState(false)M
 
     function handleClick() {
         history('/register');
