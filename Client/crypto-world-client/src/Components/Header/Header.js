@@ -39,7 +39,7 @@ const Header = () => {
             </div>
 
 
-            <button onClick={logout} id='logout-button'>Logout</button>
+            <button onClick={logout} type='submit' id='logout-button'>Logout</button>
 
         </div>
 
