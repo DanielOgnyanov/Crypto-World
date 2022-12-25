@@ -16,6 +16,7 @@ const Header = () => {
     }
 
     function signInHandler() {
+        setIsAuthenticated(true);
         history('/login')
     }
 
