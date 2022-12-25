@@ -9,7 +9,7 @@ const Header = () => {
 
     const history = useNavigate();
     const [isAuthenticated, setIsAuthenticated] = useState(false);
-    const usernameCheck = localStorage.getItem("usernameLogin");
+    const usernameCheck = JSON.parse(localStorage.getItem("usernameLogin"));
 
     function handleClick() {
         history('/register');
