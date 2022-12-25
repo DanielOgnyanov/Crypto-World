@@ -16,7 +16,11 @@ const Header = () => {
     }
 
     function signInHandler() {
-        setIsAuthenticated(true);
+
+        if (usernameCheck !== null) {
+            setIsAuthenticated(true);
+        }
+
         history('/login')
     }
 
