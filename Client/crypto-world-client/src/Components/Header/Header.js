@@ -1,7 +1,7 @@
 import './Header.css'
 import { Link } from 'react-router-dom'
 import { useNavigate } from "react-router-dom";
-import { isAuthenticated, GetUser } from '../../Services/AuthService';
+
 
 
 const Header = () => {
@@ -24,7 +24,7 @@ const Header = () => {
 
     }
 
-    console.log(JSON.parse(localStorage.getItem("usernameLogin")))
+    console.log()
 
     let userNavigation = (
 
