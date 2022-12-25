@@ -20,6 +20,7 @@ const Header = () => {
     function logout() {
 
         localStorage.removeItem("usernameLogin");
+        history('/')
 
     }
 
