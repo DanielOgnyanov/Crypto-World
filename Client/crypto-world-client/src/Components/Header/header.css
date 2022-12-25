@@ -100,8 +100,10 @@
   margin-left: 250px;
   border-radius: 100px;
   cursor: pointer;
-  font-weight:600;
+  font-weight:700;
   border: 2px solid rgb(255, 255, 255);
+  color: rgb(54, 54, 105);
+   
 }
 
 
