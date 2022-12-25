@@ -8,7 +8,8 @@ import { useState } from 'react';
 const Header = () => {
 
     const history = useNavigate();
-    const [isAuthenticated, setIsAuthenticated] = useState(false)M
+    const [isAuthenticated, setIsAuthenticated] = useState(false);
+    const usernameCheck = localStorage.getItem("usernameLogin");
 
     function handleClick() {
         history('/register');
