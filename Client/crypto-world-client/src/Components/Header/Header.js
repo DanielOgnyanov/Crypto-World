@@ -17,6 +17,10 @@ const Header = () => {
         history('/login')
     }
 
+    function logout() {
+        
+    }
+
     let userNavigation = (
 
         <div className='userNavigation'>
