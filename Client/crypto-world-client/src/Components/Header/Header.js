@@ -49,7 +49,6 @@ const Header = () => {
                 <Link id='navigation-a' to="/sell-crypto">Sell Crypto</Link>
             </div>
 
-
             <button onClick={logout} type='submit' id='logout-button'>Logout</button>
 
         </div>
@@ -66,7 +65,6 @@ const Header = () => {
             <button onClick={signInHandler} type='submit' id='navigation-button-signin'>Sign In</button>
 
             <button onClick={handleClick} type='submit' id='navigation-button-create'>Create Account</button>
-
 
         </div>
 
