@@ -38,7 +38,7 @@ const Header = () => {
 
         <div className='userNavigation'>
 
-            <Link to="/"><span id='logo-header'>Crypto World</span></Link>
+            <Link to="/home"><span id='logo-header'>Crypto World</span></Link>
 
             <div id='navigaion-a-div'>
                 <Link id='navigation-a' to="/home" data-toggle="collapse">Home</Link>
