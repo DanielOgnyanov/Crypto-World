@@ -33,11 +33,3 @@ export const login = async (username, password) => {
     });
 
 }
-export const GetUser = () => {
-    let username = JSON.parse(localStorage.getItem('usernameLogin'));
-    return username;
-};
-
-export const isAuthenticated = () => {
-    return Boolean(GetUser())
-};
