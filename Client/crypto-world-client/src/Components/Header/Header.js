@@ -23,6 +23,8 @@ const Header = () => {
 
     }
 
+    console.log(JSON.parse(localStorage.getItem("usernameLogin")))
+
     let userNavigation = (
 
         <div className='userNavigation'>
@@ -67,21 +69,12 @@ const Header = () => {
         <header>
             <nav id='navigation'>
 
+                {isAuthenticated
 
-
-
-
-
-                {userNavigation}
-
-
-
-
-
-
-
+                    ? userNavigation
+                    : guestNavigation
+                }
             </nav>
-
 
         </header >
     );
