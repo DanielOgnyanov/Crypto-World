@@ -32,8 +32,6 @@ const Header = () => {
 
     }
 
-    console.log()
-
     let userNavigation = (
 
         <div className='userNavigation'>
