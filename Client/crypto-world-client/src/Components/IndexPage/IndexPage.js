@@ -9,6 +9,7 @@ const IndexPage = () => {
         <div className='index-page'>
 
             <div className='get-started'>
+                <GetStarted/>
 
             </div>
 

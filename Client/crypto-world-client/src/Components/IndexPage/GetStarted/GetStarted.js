@@ -1,6 +1,6 @@
 import './GetStarted.css'
 import { Link } from 'react-router-dom'
-import IndexPageBg from '../IndexPageBg/IndexPageBg';
+import IndexPageBg from './IndexPageBg/IndexPageBg'
 
 
 

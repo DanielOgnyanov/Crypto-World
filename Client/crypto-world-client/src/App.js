@@ -5,7 +5,7 @@ import Header from './Components/Header/Header';
 import Footer from './Components/Footer/Footer';
 import Register from './Components/Register/Register';
 import Login from './Components/Login/Login'
-import GetStarted from './Components/GetStarted/GetStarted'
+import IndexPage from './Components/IndexPage/IndexPage';
 import HomePage from './Components/HomePage/HomePage'
 import AddCreditCard from './Components/AddCreditCard/AddCreditCard';
 import BuyCrypto from './Components/BuyCrypto/BuyCrypto';
@@ -23,7 +23,7 @@ function App() {
         <Header />
 
         <Routes>
-          <Route exact path="/" exact element={<GetStarted />} />
+          <Route exact path="/" exact element={<IndexPage />} />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
 
