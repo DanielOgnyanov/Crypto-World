@@ -1,4 +1,5 @@
 import './IndexPage.css'
+import GetStarted from './GetStarted/GetStarted';
 
 const IndexPage = () => {
 
