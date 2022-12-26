@@ -1,4 +1,4 @@
-
+import './TableCryptoPrice.css'
 
 const TableCryptoPrice = () => {
 
