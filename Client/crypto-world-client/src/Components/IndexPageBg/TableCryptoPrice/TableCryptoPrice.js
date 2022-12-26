@@ -9,6 +9,15 @@ const TableCryptoPrice = () => {
         <div id='container-crypto-price-table'>
 
 
+            <table>
+                <th>#</th>
+
+
+
+
+            </table>
+
+
 
 
         </div>
