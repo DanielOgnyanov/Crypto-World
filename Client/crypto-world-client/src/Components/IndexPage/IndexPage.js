@@ -1,4 +1,4 @@
-
+import './IndexPage.css'
 
 const IndexPage = () => {
 
