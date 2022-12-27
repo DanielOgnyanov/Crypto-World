@@ -1,6 +1,5 @@
 html ,body {
-  overflow-y: scroll;
-  overflow-x: hidden;
+  overflow: auto;
   width: 100vw;
   height: 100vh;
   background-image: url('./Images/purple-background-1.webp');
