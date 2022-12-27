@@ -10,6 +10,7 @@ const TableCryptoPrice = () => {
             
             <table id='table-price'>
                 <th>#</th>
+                <th>Name</th>
 
 
 
