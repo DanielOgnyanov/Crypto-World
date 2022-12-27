@@ -12,6 +12,10 @@ const IndexPage = () => {
                 <GetStarted />
             </div>
 
+            <div className='table-crypto-price'>
+
+            </div>
+
 
 
         </div>
