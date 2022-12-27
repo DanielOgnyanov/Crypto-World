@@ -1,4 +1,5 @@
 #container-crypto-price-table {
+    background-color: bisque;
     margin-top: 48px;
 }
 
@@ -6,5 +7,6 @@
 #table-price {
     height: 400px;
     width: 700px;
+    text-align:center;
 
 }
