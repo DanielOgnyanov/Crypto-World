@@ -4,13 +4,12 @@ import GetStarted from './GetStarted/GetStarted';
 const IndexPage = () => {
 
 
-    return(
+    return (
 
         <div className='index-page'>
 
             <div className='get-started'>
-                <GetStarted/>
-
+                <GetStarted />
             </div>
 
 
