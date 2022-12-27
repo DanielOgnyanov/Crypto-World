@@ -9,7 +9,7 @@ const TableCryptoPrice = () => {
         <div id='container-crypto-price-table'>
             
             <div id='table-price-div '>
-            <table >
+            <table id='table-price'>
                 <th>#</th>
                 <th>Name</th>
                 <th>Price</th>
