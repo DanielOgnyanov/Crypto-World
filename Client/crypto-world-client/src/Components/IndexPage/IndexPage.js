@@ -14,7 +14,7 @@ const IndexPage = () => {
             </div>
 
             <div className='table-crypto-price'>
-
+                <TableCryptoPrice/>
             </div>
 
 
