@@ -7,7 +7,7 @@ const IndexPage = () => {
 
     return (
 
-        <div className='index-page' id='container-index-page'>
+        <div className='index-page'>
 
             <div className='get-started'>
                 <GetStarted />
