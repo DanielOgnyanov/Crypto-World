@@ -15,13 +15,14 @@
 #table-price {
     background-color: transparent;
     color: black;
-    border-collapse: collapse;
+    border: 1px solid black;
     
 }
 
-#table-price td {
+#table-price th,td {
 
-    
-    border-bottom: 1px solid black;
-    padding-bottom: 5px;
+   padding: 8px;
+   text-align: left;
+   border-bottom: 1px solid #ddd;
+   
 }
