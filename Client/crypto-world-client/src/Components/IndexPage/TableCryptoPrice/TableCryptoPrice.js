@@ -23,7 +23,7 @@ const TableCryptoPrice = () => {
                         <td>$319,855,199,176</td>
 
                     </tr>
-                    
+
 
 
 
