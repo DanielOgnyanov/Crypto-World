@@ -15,5 +15,12 @@
 #table-price {
     background-color: transparent;
     color: black;
+    
+}
+
+#table-price td {
+
+    border-top: 1px solid black;
     border-bottom: 1px solid black;
+    padding-bottom: 5px;
 }
