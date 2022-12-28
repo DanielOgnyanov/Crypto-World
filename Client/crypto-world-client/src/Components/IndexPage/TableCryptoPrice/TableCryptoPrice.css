@@ -1,6 +1,5 @@
 #container-crypto-price-table {
-   
-    
+   background-color: transparent;
 }
 
 
@@ -15,7 +14,7 @@
 #table-price {
     background-color: transparent;
     color: black;
-    border: 1px solid black;
+    
     
 }
 
@@ -25,4 +24,5 @@
    text-align: left;
    border-bottom: 1px solid #ddd;
    
+
 }
