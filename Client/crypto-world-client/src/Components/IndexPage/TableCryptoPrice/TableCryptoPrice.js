@@ -16,6 +16,7 @@ const TableCryptoPrice = () => {
                     <th>Market Cap</th>
 
                     <tr>
+                        <td>1</td>
                         <td>Bitcoin</td>
                         
                     </tr>
