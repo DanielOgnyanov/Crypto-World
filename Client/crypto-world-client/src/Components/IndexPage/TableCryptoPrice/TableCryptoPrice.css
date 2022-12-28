@@ -12,10 +12,10 @@
 }
 
 #table-price {
+
     background-color: transparent;
-    color: black;
     border-collapse: collapse;
-    
+    color: black;
 }
 
 #table-price th,td {
