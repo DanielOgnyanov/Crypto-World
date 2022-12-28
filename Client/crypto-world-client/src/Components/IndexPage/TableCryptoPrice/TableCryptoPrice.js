@@ -10,15 +10,16 @@ const TableCryptoPrice = () => {
 
             <div id='table-price-div '>
                 <table id='table-price'>
-                    <th>#</th>
-                    <th>Name</th>
-                    <th>Price</th>
-                    <th>Market Cap</th>
-
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Market Cap</th>
+                    </tr>
                     <tr>
                         <td>1</td>
                         <td>Bitcoin</td>
-                        
+
                     </tr>
 
 
