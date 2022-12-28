@@ -14,7 +14,7 @@
 #table-price {
     background-color: transparent;
     color: black;
-    
+    border-collapse: collapse;
     
 }
 
@@ -23,6 +23,7 @@
    padding: 8px;
    text-align: left;
    border-bottom: 1px solid #ddd;
+   border-collapse: collapse;
    
 
 }
