@@ -25,6 +25,7 @@ const HomePage = (e) => {
         <div className='home' id='home'>
 
             <div className='user-info-welcome'>
+                <UserDetails/>
 
             </div>
 
