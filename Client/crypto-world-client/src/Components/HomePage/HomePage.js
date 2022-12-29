@@ -31,8 +31,8 @@ const HomePage = (e) => {
                 <WalletDetails />
             </div>
 
-            <table className="table" id='table-homepage'>
-                <thead className="table-light">
+            <table id='table-homepage'>
+                <thead >
                     <tr>
                         <th scope="col">#</th>
                         <th scope="col">Crypto Name</th>
