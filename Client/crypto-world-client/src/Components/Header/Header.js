@@ -23,15 +23,14 @@ const Header = () => {
             setIsAuthenticated(true);
             history('/home')
         }
-        
+
     }
 
     function logout() {
-
+        
         localStorage.removeItem("usernameLogin");
         setIsAuthenticated(false);
         history('/')
-
     }
 
     let userNavigation = (
