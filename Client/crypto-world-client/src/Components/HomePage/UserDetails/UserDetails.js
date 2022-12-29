@@ -7,6 +7,8 @@ const UserDetails = () => {
     return(
         <div className='user-info'>
 
+            <span>Welcome </span>
+
 
         </div>
     );
