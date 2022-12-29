@@ -23,6 +23,7 @@ const Header = () => {
             setIsAuthenticated(true);
             history('/home')
         }
+        
     }
 
     function logout() {
