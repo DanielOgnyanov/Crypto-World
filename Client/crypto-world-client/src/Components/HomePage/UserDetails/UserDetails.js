@@ -7,7 +7,7 @@ const UserDetails = () => {
     return(
         <div className='user-info'>
 
-            <span>Welcome </span>
+            <span id='user-details-welcome'>Welcome </span>
 
 
         </div>
