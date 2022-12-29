@@ -23,6 +23,10 @@ const HomePage = (e) => {
 
         <div className='home' id='home'>
 
+            <div>
+                
+            </div>
+
             <div className='chart'>
                 <Chart />
             </div>
