@@ -32,7 +32,7 @@ const HomePage = (e) => {
                 <WalletDetails />
             </div>
 
-            <table className="table">
+            <table className="table" id='table-homepage'>
                 <thead className="table-light">
                     <tr>
                         <th scope="col">#</th>
