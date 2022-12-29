@@ -21,6 +21,7 @@ const Header = () => {
 
         if (usernameCheck !== null) {
             setIsAuthenticated(true);
+            history('/home')
         }
     }
 
