@@ -5,9 +5,9 @@ const UserDetails = () => {
 
 
     return(
-        <div className='user-info'>
+        <div className='user-info' id='user-details-welcome'>
 
-            <span id='user-details-welcome'>Welcome </span>
+            <span >Welcome </span>
 
 
         </div>
