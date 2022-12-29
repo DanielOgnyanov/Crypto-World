@@ -23,8 +23,8 @@ const HomePage = (e) => {
 
         <div className='home' id='home'>
 
-            <div>
-                
+            <div className='user-info-welcome'>
+
             </div>
 
             <div className='chart'>
