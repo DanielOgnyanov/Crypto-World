@@ -10,7 +10,7 @@ const UserDetails = () => {
     return(
         <div className='user-info' id='user-details-welcome'>
 
-            <span>Welcome </span>
+            <span>Welcome {currentUsername}</span>
 
 
         </div>
