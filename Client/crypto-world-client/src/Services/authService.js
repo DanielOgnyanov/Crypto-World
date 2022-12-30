@@ -54,6 +54,7 @@ export const logout = async (username) => {
 
         localStorage.removeItem("usernameLogin");
 
+        return response.json();
     })
 
 }
