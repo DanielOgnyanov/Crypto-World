@@ -38,6 +38,7 @@ export const login = async (username, password) => {
 export const logout = async (username) => {
 
     let res = fetch(`${baseUrl}/api/user/logout`, {
+        method: 'POST'
 
     });
 
