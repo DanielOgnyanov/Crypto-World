@@ -45,4 +45,9 @@ export const logout = async (username) => {
         body: JSON.stringify({ username })
     });
 
+
+    res.then((response) => {
+
+    })
+
 }
