@@ -28,7 +28,7 @@ const Header = () => {
 
     function logout() {
         
-        localStorage.removeItem("usernameLogin");
+        
         setIsAuthenticated(false);
         history('/')
     }
