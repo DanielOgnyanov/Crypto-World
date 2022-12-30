@@ -29,7 +29,7 @@ const Header = () => {
 
     function logout() {
         
-        
+        authService.logout(usernameCheck);
         setIsAuthenticated(false);
         history('/')
     }
