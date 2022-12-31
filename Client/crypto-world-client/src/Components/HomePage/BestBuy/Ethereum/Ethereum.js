@@ -7,3 +7,5 @@ const Ethereum = (e) => {
 
     );
 }
+
+export default Ethereum;
