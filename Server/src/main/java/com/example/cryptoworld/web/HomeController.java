@@ -34,21 +34,4 @@ public class HomeController {
 
         return cryptoService.getAllCrypto();
     }
-
-
-    // old code
-    @GetMapping("/")
-    public String index() {
-
-        return "index";
-    }
-
-    @GetMapping("/home")
-    public String home(Model model) {
-
-        model.addAttribute("wallet" , walletService.getAll());
-        model.addAttribute("crypto", cryptoService.getAllCrypto());
-        model.addAttribute("card",creditCartService.getCardByOwner());
-        return "home";
-    }
 }
