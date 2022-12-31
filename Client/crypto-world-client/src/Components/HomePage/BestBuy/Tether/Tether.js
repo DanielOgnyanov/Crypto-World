@@ -1,4 +1,4 @@
-
+import './Tether.css'
 
 const Tether = (e) => {
 
