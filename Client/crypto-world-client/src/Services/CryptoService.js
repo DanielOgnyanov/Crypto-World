@@ -1,7 +1,7 @@
 const baseUrl = 'http://localhost:8000';
 
 export const getCryptoPrice = async () => {
-    let res = await fetch(`${baseUrl}/api/getCryptoPrice`, {
+    let res = fetch(`${baseUrl}/api/getCryptoPrice`, {
         method: 'GET',
         headers: {
             'content-type': 'application/json'
