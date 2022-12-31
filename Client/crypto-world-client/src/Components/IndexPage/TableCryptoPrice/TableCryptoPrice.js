@@ -1,4 +1,5 @@
 import './TableCryptoPrice.css'
+import * as cryptoService from '../../../Services/CryptoService'
 
 const TableCryptoPrice = () => {
 
