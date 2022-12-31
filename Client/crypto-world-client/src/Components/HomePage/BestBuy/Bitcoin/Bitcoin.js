@@ -1,4 +1,4 @@
-
+import './Bitcoin.css'
 
 const Bitcoin= (e) => {
 
