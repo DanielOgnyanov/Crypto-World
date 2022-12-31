@@ -17,5 +17,7 @@ export const getCryptoPrice = async () => {
         }
 
         return response.json();
-    })
+    }).catch(error => {
+        console.log(error);
+    });
 };
