@@ -11,9 +11,4 @@ export const getCryptoPrice = async () => {
 
     
 
-    if (res.ok) {
-        return jsonResult;
-    } else {
-        throw jsonResult.message;
-    }
 };
