@@ -1,9 +1,9 @@
-
+import './BestBuy.css'
 
 const BestBuy = (e) => {
 
     return(
-        
+
     );
 }
 
