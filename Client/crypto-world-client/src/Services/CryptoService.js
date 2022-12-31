@@ -9,7 +9,7 @@ export const getCryptoPrice = async () => {
         body: JSON.stringify()
     });
 
-    let jsonResult = await res.json();
+    
 
     if (res.ok) {
         return jsonResult;
