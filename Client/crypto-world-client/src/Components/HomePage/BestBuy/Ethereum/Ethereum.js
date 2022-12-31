@@ -1,4 +1,4 @@
-
+import './Ethereum.css'
 
 
 const Ethereum = (e) => {
