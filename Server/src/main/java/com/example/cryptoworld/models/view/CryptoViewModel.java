@@ -37,4 +37,12 @@ public class CryptoViewModel {
     public void setPrice(double price) {
         this.price = price;
     }
+
+    public BigDecimal getVolumeFor24Hour() {
+        return volumeFor24Hour;
+    }
+
+    public void setVolumeFor24Hour(BigDecimal volumeFor24Hour) {
+        this.volumeFor24Hour = volumeFor24Hour;
+    }
 }
