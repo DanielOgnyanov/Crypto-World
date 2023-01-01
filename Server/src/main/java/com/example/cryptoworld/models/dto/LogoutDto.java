@@ -7,5 +7,7 @@ public class LogoutDto {
     public LogoutDto() {
     }
 
-
+    public String getUsername() {
+        return username;
+    }
 }
