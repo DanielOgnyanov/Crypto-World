@@ -1,10 +1,13 @@
 package com.example.cryptoworld.models.view;
 
+import java.math.BigDecimal;
+
 public class CryptoViewModel {
 
     private Long id;
     private String name;
     private double price;
+    private BigDecimal volumeFor24Hour;
 
 
     public CryptoViewModel() {
