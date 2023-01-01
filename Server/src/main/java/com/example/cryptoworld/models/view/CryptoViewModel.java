@@ -6,8 +6,9 @@ public class CryptoViewModel {
 
     private Long id;
     private String name;
-    private double price;
     private BigDecimal volumeFor24Hour;
+    private double price;
+
 
 
     public CryptoViewModel() {
