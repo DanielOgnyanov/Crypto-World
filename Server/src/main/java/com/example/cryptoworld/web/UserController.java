@@ -130,5 +130,8 @@ public class UserController {
 
 
     @PostMapping("/logout")
+    ResponseEntity<CustomMessage> logout (RequestBody ){
+
+    }
 
 }
