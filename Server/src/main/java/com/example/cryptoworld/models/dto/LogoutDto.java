@@ -4,5 +4,8 @@ public class LogoutDto {
 
     private String username;
 
+    public LogoutDto() {
+    }
+
 
 }
