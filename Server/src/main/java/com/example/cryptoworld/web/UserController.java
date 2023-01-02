@@ -132,6 +132,11 @@ public class UserController {
     @PostMapping("/logout")
     ResponseEntity<CustomMessage> logout (@RequestBody LogoutDto logoutDto){
 
+        CustomMessage customMessage = new CustomMessage();
+        customMessage.setMessage("User is logged.");
+
+
+
     }
 
 }
