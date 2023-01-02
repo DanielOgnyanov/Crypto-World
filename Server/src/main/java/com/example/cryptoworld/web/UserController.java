@@ -144,7 +144,7 @@ public class UserController {
             loginService.setUserLoginInDb(logoutDto.getUsername(), false);
 
         }catch (Exception e){
-
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, e.getMessage());
         }
 
         return new ResponseEntity<CustomMessage>(customMessage, HttpStatus.OK);
