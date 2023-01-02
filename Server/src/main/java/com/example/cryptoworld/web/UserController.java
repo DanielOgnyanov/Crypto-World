@@ -141,7 +141,7 @@ public class UserController {
 
         try{
 
-        }catch (){
+        }catch (Exception e){
 
         }
 
