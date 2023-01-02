@@ -136,7 +136,7 @@ public class UserController {
     ResponseEntity<CustomMessage> logout (@RequestBody LogoutDto logoutDto){
 
         CustomMessage customMessage = new CustomMessage();
-        customMessage.setMessage("User is logged.");
+        customMessage.setMessage("Logout success.");
 
         SecurityContextHolder.getContext().getAuthentication().setAuthenticated(false);
 
