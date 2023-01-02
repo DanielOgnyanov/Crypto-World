@@ -139,6 +139,11 @@ public class UserController {
         customMessage.setMessage("Logout success.");
 
 
+        try{
+
+        }catch (){
+
+        }
 
         SecurityContextHolder.getContext().getAuthentication().setAuthenticated(false);
         loginService.setUserLoginInDb(logoutDto.getUsername(), true);
