@@ -135,6 +135,8 @@ public class UserController {
         CustomMessage customMessage = new CustomMessage();
         customMessage.setMessage("User is logged.");
 
+        SecurityContextHolder.getContext().getAuthentication().setAuthenticated(false);
+
 
         return new ResponseEntity<CustomMessage>(customMessage, HttpStatus.OK);
     }
