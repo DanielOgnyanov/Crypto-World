@@ -136,7 +136,7 @@ public class UserController {
         customMessage.setMessage("User is logged.");
 
 
-
+        return new ResponseEntity<CustomMessage>(customMessage, HttpStatus.OK);
     }
 
 }
