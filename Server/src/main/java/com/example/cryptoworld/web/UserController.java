@@ -141,7 +141,7 @@ public class UserController {
 
         try{
             SecurityContextHolder.getContext().getAuthentication().setAuthenticated(false);
-            loginService.setUserLoginInDb(logoutDto.getUsername(), true);
+            loginService.setUserLoginInDb(logoutDto.getUsername(), false);
 
         }catch (Exception e){
 
