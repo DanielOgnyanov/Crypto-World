@@ -140,13 +140,12 @@ public class UserController {
 
 
         try{
+            SecurityContextHolder.getContext().getAuthentication().setAuthenticated(false);
+            loginService.setUserLoginInDb(logoutDto.getUsername(), true);
 
         }catch (Exception e){
 
         }
-
-        SecurityContextHolder.getContext().getAuthentication().setAuthenticated(false);
-        loginService.setUserLoginInDb(logoutDto.getUsername(), true);
 
         return new ResponseEntity<CustomMessage>(customMessage, HttpStatus.OK);
     }
