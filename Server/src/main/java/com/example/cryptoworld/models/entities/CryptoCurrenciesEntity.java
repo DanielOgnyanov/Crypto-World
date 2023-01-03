@@ -68,4 +68,12 @@ public class CryptoCurrenciesEntity extends BaseEntity{
     public void setPrice(double price) {
         this.price = price;
     }
+
+    public Blob getLogoImage() {
+        return logoImage;
+    }
+
+    public void setLogoImage(Blob logoImage) {
+        this.logoImage = logoImage;
+    }
 }
