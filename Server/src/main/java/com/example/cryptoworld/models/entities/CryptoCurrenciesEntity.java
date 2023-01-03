@@ -5,6 +5,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import java.math.BigDecimal;
+import java.sql.Blob;
 
 @Entity
 @Table(name = "crypto_currencies")
@@ -14,6 +15,7 @@ public class CryptoCurrenciesEntity extends BaseEntity{
     private String assetStringId;
     private BigDecimal volumeFor24Hour;
     private double price;
+    private Blob logoImage;
 
 
     public CryptoCurrenciesEntity() {
