@@ -69,6 +69,7 @@ public class CryptoCurrenciesEntity extends BaseEntity{
         this.price = price;
     }
 
+    @Column(name = "logo_image")
     public Blob getLogoImage() {
         return logoImage;
     }
