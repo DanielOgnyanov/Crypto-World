@@ -94,6 +94,8 @@ public class RealTimeCryptoPriceServiceImpl implements RealTimeCryptoPriceServic
 
         switch (cryptoName){
 
+            case "Bitcoin":
+
         }
 
     }
