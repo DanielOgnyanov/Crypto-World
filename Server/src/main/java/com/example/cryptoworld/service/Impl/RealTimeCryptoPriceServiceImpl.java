@@ -96,6 +96,7 @@ public class RealTimeCryptoPriceServiceImpl implements RealTimeCryptoPriceServic
 
             case "Bitcoin":
                 imagePath = "src\\main\\resources\\static\\images\\logo-bitcoin.png";
+                break;
 
         }
 
