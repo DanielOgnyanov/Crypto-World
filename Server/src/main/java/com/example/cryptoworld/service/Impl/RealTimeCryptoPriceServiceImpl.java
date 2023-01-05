@@ -86,7 +86,7 @@ public class RealTimeCryptoPriceServiceImpl implements RealTimeCryptoPriceServic
         }
     }
 
-    private void setCryptoLogo(String name) {
+    private void setCryptoLogo(String cryptoName) {
 
     }
 
