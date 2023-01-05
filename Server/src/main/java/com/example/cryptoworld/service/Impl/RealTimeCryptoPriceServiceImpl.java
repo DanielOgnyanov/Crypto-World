@@ -89,7 +89,7 @@ public class RealTimeCryptoPriceServiceImpl implements RealTimeCryptoPriceServic
 
     private void setCryptoLogo(String cryptoName) {
 
-        String imagePath
+        String imagePath = "";
         File cryptoLogo = new File();
 
     }
