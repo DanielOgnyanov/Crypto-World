@@ -86,6 +86,10 @@ public class RealTimeCryptoPriceServiceImpl implements RealTimeCryptoPriceServic
         }
     }
 
+    private void setCryptoLogo(String name) {
+
+    }
+
     private void setNewPriceToCrypto(String name, String assetId, BigDecimal volume24Hour, BigDecimal price) {
 
         CryptoCurrenciesEntity curr =
