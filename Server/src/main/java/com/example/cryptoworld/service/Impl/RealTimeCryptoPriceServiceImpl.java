@@ -92,7 +92,7 @@ public class RealTimeCryptoPriceServiceImpl implements RealTimeCryptoPriceServic
         String imagePath = "";
         File cryptoLogo = new File(imagePath);
 
-        switch (){
+        switch (cryptoName){
 
         }
 
