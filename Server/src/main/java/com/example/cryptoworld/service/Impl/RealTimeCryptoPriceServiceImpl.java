@@ -95,6 +95,7 @@ public class RealTimeCryptoPriceServiceImpl implements RealTimeCryptoPriceServic
         switch (cryptoName){
 
             case "Bitcoin":
+                imagePath = "src\\main\\resources\\static\\images\\logo-bitcoin.png";
 
         }
 
