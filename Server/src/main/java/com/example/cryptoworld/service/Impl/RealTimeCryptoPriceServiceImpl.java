@@ -100,6 +100,7 @@ public class RealTimeCryptoPriceServiceImpl implements RealTimeCryptoPriceServic
             case "Ethereum":
                 imagePath = "src\\main\\resources\\static\\images\\ethereum-logo.png";
                 break;
+            case "Cardano":
 
         }
 
