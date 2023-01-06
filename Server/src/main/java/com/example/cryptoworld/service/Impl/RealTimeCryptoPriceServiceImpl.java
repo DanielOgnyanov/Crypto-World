@@ -15,6 +15,7 @@ import org.springframework.stereotype.Service;
 import java.io.File;
 import java.io.IOException;
 import java.math.BigDecimal;
+import java.sql.Blob;
 
 @Service
 public class RealTimeCryptoPriceServiceImpl implements RealTimeCryptoPriceService {
@@ -74,10 +75,10 @@ public class RealTimeCryptoPriceServiceImpl implements RealTimeCryptoPriceServic
 
             } else if (cryptoRepository.count() >= 0 && cryptoRepository.count() < 10) {
 
-                setCryptoLogo(name);
+               File logo =  setCryptoLogo(name);
 
                 CryptoCurrenciesEntity currenciesEntity =
-                        new CryptoCurrenciesEntity(name, assetId, volume24Hour, price.doubleValue());
+                        new CryptoCurrenciesEntity(name, assetId, volume24Hour, price.doubleValue(), (Blob) logo);
 
                 cryptoRepository.save(currenciesEntity);
 
