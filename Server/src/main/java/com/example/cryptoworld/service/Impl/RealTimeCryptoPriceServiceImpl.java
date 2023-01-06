@@ -118,6 +118,7 @@ public class RealTimeCryptoPriceServiceImpl implements RealTimeCryptoPriceServic
             case "Dotcoin":
                 imagePath = "src\\main\\resources\\static\\images\\dotcoin-logo.png";
                 break;
+            case "USDC":
 
 
 
