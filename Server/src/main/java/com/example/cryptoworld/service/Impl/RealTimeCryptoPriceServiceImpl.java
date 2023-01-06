@@ -107,6 +107,7 @@ public class RealTimeCryptoPriceServiceImpl implements RealTimeCryptoPriceServic
                 imagePath = "src\\main\\resources\\static\\images\\tether-logo.png";
                 break;
 
+
         }
 
         return cryptoLogo;
