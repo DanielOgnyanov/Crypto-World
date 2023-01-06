@@ -21,7 +21,14 @@ public class CryptoCurrenciesEntity extends BaseEntity{
     public CryptoCurrenciesEntity() {
     }
 
-
+    public CryptoCurrenciesEntity(String name, String assetStringId,
+                                  BigDecimal volumeFor24Hour, double price, byte[] logoImage) {
+        this.name = name;
+        this.assetStringId = assetStringId;
+        this.volumeFor24Hour = volumeFor24Hour;
+        this.price = price;
+        this.logoImage = logoImage;
+    }
 
     public CryptoCurrenciesEntity(String currencies, double price) {
         this.name = currencies;
@@ -65,11 +72,11 @@ public class CryptoCurrenciesEntity extends BaseEntity{
     }
 
     @Column(name = "logo_image")
-    public Blob getLogoImage() {
+    public byte[] getLogoImage() {
         return logoImage;
     }
 
-    public void setLogoImage(Blob logoImage) {
+    public void setLogoImage(byte[] logoImage) {
         this.logoImage = logoImage;
     }
 }
