@@ -15,20 +15,13 @@ public class CryptoCurrenciesEntity extends BaseEntity{
     private String assetStringId;
     private BigDecimal volumeFor24Hour;
     private double price;
-    private Blob logoImage;
+    private byte[] logoImage;
 
 
     public CryptoCurrenciesEntity() {
     }
 
-    public CryptoCurrenciesEntity(String name, String assetStringId,
-                                  BigDecimal volumeFor24Hour, double price, Blob logoImage) {
-        this.name = name;
-        this.assetStringId = assetStringId;
-        this.volumeFor24Hour = volumeFor24Hour;
-        this.price = price;
-        this.logoImage = logoImage;
-    }
+
 
     public CryptoCurrenciesEntity(String currencies, double price) {
         this.name = currencies;
