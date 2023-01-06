@@ -87,7 +87,7 @@ public class RealTimeCryptoPriceServiceImpl implements RealTimeCryptoPriceServic
         }
     }
 
-    private void setCryptoLogo(String cryptoName) {
+    private File setCryptoLogo(String cryptoName) {
 
         String imagePath = "";
         File cryptoLogo = new File(imagePath);
@@ -99,6 +99,8 @@ public class RealTimeCryptoPriceServiceImpl implements RealTimeCryptoPriceServic
                 break;
 
         }
+
+        return cryptoLogo;
 
     }
 
