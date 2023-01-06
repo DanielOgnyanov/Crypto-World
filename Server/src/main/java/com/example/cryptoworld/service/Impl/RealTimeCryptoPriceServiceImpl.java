@@ -103,6 +103,7 @@ public class RealTimeCryptoPriceServiceImpl implements RealTimeCryptoPriceServic
             case "Cardano":
                 imagePath = "src\\main\\resources\\static\\images\\cardano-logo.png";
                 break;
+            case "Tether":
 
         }
 
