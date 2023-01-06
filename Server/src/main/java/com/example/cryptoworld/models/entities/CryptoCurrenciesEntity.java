@@ -21,11 +21,13 @@ public class CryptoCurrenciesEntity extends BaseEntity{
     public CryptoCurrenciesEntity() {
     }
 
-    public CryptoCurrenciesEntity(String name, String assetStringId, BigDecimal volumeFor24Hour, double price) {
+    public CryptoCurrenciesEntity(String name, String assetStringId,
+                                  BigDecimal volumeFor24Hour, double price, Blob logoImage) {
         this.name = name;
         this.assetStringId = assetStringId;
         this.volumeFor24Hour = volumeFor24Hour;
         this.price = price;
+        this.logoImage = logoImage;
     }
 
     public CryptoCurrenciesEntity(String currencies, double price) {
