@@ -109,6 +109,7 @@ public class RealTimeCryptoPriceServiceImpl implements RealTimeCryptoPriceServic
             case "SOL":
                 imagePath = "src\\main\\resources\\static\\images\\solana-logo.png";
                 break;
+            case "Ripple":
 
 
 
