@@ -106,6 +106,7 @@ public class RealTimeCryptoPriceServiceImpl implements RealTimeCryptoPriceServic
             case "Tether":
                 imagePath = "src\\main\\resources\\static\\images\\tether-logo.png";
                 break;
+            case "SOL":
 
 
         }
