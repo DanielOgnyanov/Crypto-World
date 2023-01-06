@@ -99,6 +99,7 @@ public class RealTimeCryptoPriceServiceImpl implements RealTimeCryptoPriceServic
                 break;
             case "Ethereum":
                 imagePath = "src\\main\\resources\\static\\images\\ethereum-logo.png";
+                break;
 
         }
 
