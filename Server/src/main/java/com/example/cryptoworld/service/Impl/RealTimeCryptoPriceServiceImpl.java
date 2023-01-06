@@ -30,7 +30,6 @@ public class RealTimeCryptoPriceServiceImpl implements RealTimeCryptoPriceServic
     }
 
 
-
     @Override
     public void getRealTimePrice() throws IOException {
 
@@ -75,7 +74,7 @@ public class RealTimeCryptoPriceServiceImpl implements RealTimeCryptoPriceServic
 
             } else if (cryptoRepository.count() >= 0 && cryptoRepository.count() < 10) {
 
-               File logo =  setCryptoLogo(name);
+                File logo = setCryptoLogo(name);
 
                 CryptoCurrenciesEntity currenciesEntity =
                         new CryptoCurrenciesEntity(name, assetId, volume24Hour, price.doubleValue(), logo.toString().trim().getBytes());
@@ -93,7 +92,7 @@ public class RealTimeCryptoPriceServiceImpl implements RealTimeCryptoPriceServic
         String imagePath = "";
         File cryptoLogo = new File(imagePath);
 
-        switch (cryptoName){
+        switch (cryptoName) {
 
             case "Bitcoin":
                 imagePath = "src\\main\\resources\\static\\images\\logo-bitcoin.png";
@@ -122,7 +121,6 @@ public class RealTimeCryptoPriceServiceImpl implements RealTimeCryptoPriceServic
             case "USDC":
                 imagePath = "src\\main\\resources\\static\\images\\usdc-logo.png";
                 break;
-
 
 
         }
