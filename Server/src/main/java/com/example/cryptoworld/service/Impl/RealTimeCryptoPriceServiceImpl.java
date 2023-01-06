@@ -112,6 +112,7 @@ public class RealTimeCryptoPriceServiceImpl implements RealTimeCryptoPriceServic
             case "Ripple":
                 imagePath = "src\\main\\resources\\static\\images\\xrp-logo.png";
                 break;
+            case "DogeCoin":
 
 
 
