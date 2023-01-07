@@ -10,6 +10,8 @@ const Header = () => {
 
     const history = useNavigate();
     const usernameCheck = JSON.parse(localStorage.getItem("usernameLogin"));
+    const [isAuthenticated , setIsAuthenticated] = useState(false);
+    
 
     function registerHandler() {
         history('/register');
@@ -66,7 +68,7 @@ const Header = () => {
         <header>
             <nav id='navigation'>
 
-                {usernameCheck
+                {isAuthenticated
 
                     ? userNavigation
                     : guestNavigation
