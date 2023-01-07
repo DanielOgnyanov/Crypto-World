@@ -12,7 +12,7 @@ const PopupRegister = (e) => {
     const [open, setOpen] = useState(true);
     const closePopup = () => (
         setOpen(false),
-        history("/home")
+        history("/login")
     );
 
     return (open) ? (
