@@ -12,6 +12,7 @@ const Header = () => {
     const usernameCheck = JSON.parse(localStorage.getItem("usernameLogin"));
     const [isAuthenticated , setIsAuthenticated] = useState(false);
     
+    
     function userCheck() {
         if(usernameCheck !== null) {
             setIsAuthenticated(true);
