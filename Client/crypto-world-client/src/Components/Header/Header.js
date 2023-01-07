@@ -12,6 +12,9 @@ const Header = () => {
     const usernameCheck = JSON.parse(localStorage.getItem("usernameLogin"));
     const [isAuthenticated , setIsAuthenticated] = useState(false);
     
+    if(usernameCheck !== null) {
+        setIsAuthenticated(true);
+    }
 
     function registerHandler() {
         history('/register');
