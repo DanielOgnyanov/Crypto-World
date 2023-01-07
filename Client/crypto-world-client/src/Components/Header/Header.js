@@ -16,7 +16,6 @@ const Header = () => {
     }
 
     function signInHandler() {
-
         history('/login')
 
     }
