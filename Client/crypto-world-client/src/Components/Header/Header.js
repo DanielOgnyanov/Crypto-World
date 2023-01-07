@@ -20,11 +20,6 @@ const Header = () => {
 
         history('/login')
 
-        if (usernameCheck !== null) {
-            setIsAuthenticated(true);
-            history('/home')
-        }
-
     }
 
     function logout() {
