@@ -9,7 +9,6 @@ import * as authService from '../../Services/AuthService'
 const Header = () => {
 
     const history = useNavigate();
-    const [isAuthenticated, setIsAuthenticated] = useState(false);
     const usernameCheck = JSON.parse(localStorage.getItem("usernameLogin"));
 
     function registerHandler() {
