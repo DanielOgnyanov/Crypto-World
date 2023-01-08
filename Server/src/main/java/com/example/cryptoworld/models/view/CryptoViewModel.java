@@ -47,4 +47,12 @@ public class CryptoViewModel {
     public void setVolumeFor24Hour(BigDecimal volumeFor24Hour) {
         this.volumeFor24Hour = volumeFor24Hour;
     }
+
+    public byte[] getLogoImage() {
+        return logoImage;
+    }
+
+    public void setLogoImage(byte[] logoImage) {
+        this.logoImage = logoImage;
+    }
 }
