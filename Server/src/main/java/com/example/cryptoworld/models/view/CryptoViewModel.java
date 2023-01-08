@@ -8,6 +8,7 @@ public class CryptoViewModel {
     private String name;
     private BigDecimal volumeFor24Hour;
     private double price;
+    private byte[] logoImage;
 
 
 
