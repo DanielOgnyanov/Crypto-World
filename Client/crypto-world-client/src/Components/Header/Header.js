@@ -18,8 +18,6 @@ const Header = () => {
             setIsAuthenticated(true);
         }
     })  
-
-    console.log(isAuthenticated)
     
 
     function registerHandler() {
