@@ -1,7 +1,7 @@
 import './Header.css'
 import { Link } from 'react-router-dom'
 import { useNavigate } from "react-router-dom";
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import * as authService from '../../Services/AuthService'
 
 
@@ -13,11 +13,14 @@ const Header = () => {
     const [isAuthenticated , setIsAuthenticated] = useState(false);
     
     
-    function userCheck() {
+    
+   function userCheck() {
         if(usernameCheck !== null) {
             setIsAuthenticated(true);
         }
     }
+
+    console.log(isAuthenticated)
     
 
     function registerHandler() {
