@@ -13,12 +13,14 @@ const Header = () => {
     const [isAuthenticated , setIsAuthenticated] = useState(false);
     
     
-    
-   function userCheck() {
+    useEffect(() =>{
         if(usernameCheck !== null) {
             setIsAuthenticated(true);
         }
-    }
+    })  
+  
+        
+   
 
     console.log(isAuthenticated)
     
