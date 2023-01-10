@@ -68,7 +68,7 @@ public class ApplicationSecurityConfiguration extends WebSecurityConfigurerAdapt
         return super.authenticationManagerBean();
     }
 
-    @Override
+    @Bean
     public void addCorsMapping(CorsRegistry registry) {
 
         registry.addMapping()
