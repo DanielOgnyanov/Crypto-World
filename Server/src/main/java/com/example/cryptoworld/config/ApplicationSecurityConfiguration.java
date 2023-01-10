@@ -72,7 +72,7 @@ public class ApplicationSecurityConfiguration extends WebSecurityConfigurerAdapt
     public void addCorsMapping(CorsRegistry registry) {
 
         registry.addMapping("/api/**")
-                .allowedOrigins("http://localhost:3000")
+                .allowedOrigins("http://localhost:3000");
     }
 
 
