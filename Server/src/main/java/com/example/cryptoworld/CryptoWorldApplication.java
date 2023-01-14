@@ -16,6 +16,9 @@ public class CryptoWorldApplication {
 
     @Bean
     public WebMvcConfigurer corsConfigurer() {
+        return new WebMvcConfigurer() {
+
+        }
 
     }
 
