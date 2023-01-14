@@ -75,7 +75,7 @@ public class ApplicationSecurityConfiguration extends WebSecurityConfigurerAdapt
 
             @Override
             public void addCorsMappings(CorsRegistry registry) {
-                registry.addMapping("/api/user/logout")
+                registry.addMapping("/api/**")
                         .allowedOrigins("http://localhost:3000");
             }
         };
