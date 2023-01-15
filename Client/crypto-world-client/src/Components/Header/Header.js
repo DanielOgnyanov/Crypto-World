@@ -76,7 +76,6 @@ const Header = () => {
             <nav id='navigation'>
 
                 {isAuthenticated
-
                     ? userNavigation
                     : guestNavigation
                 }
