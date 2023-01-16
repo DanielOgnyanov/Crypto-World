@@ -21,7 +21,7 @@ public class CryptoWorldApplication {
 
             @Override
             public void addCorsMappings(CorsRegistry registry) {
-                registry.addMapping("/api/user/logout")
+                registry.addMapping("/**")
                         .allowedOrigins("http://localhost:3000");
             }
         };
