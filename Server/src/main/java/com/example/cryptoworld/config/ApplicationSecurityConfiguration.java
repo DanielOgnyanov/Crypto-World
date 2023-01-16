@@ -69,18 +69,5 @@ public class ApplicationSecurityConfiguration extends WebSecurityConfigurerAdapt
         return super.authenticationManagerBean();
     }
 
-    @Bean
-    public WebMvcConfigurer corsConfigurer() {
-        return new WebMvcConfigurer() {
-
-            @Override
-            public void addCorsMappings(CorsRegistry registry) {
-                registry.addMapping("/api/user/logout")
-                        .allowedOrigins("http://localhost:3000");
-            }
-        };
-
-    }
-
 
 }
