@@ -79,7 +79,6 @@ const Header = () => {
                     : guestNavigation
                 }
             </nav>
-
         </header >
     );
 }
