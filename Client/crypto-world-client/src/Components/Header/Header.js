@@ -73,7 +73,6 @@ const Header = () => {
     return (
         <header>
             <nav id='navigation'>
-
                 {isAuthenticated
                     ? userNavigation
                     : guestNavigation
