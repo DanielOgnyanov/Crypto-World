@@ -76,6 +76,7 @@ const Header = () => {
                 
                     ? userNavigation
                     : guestNavigation
+                    
                 }
             </nav>
         </header >
