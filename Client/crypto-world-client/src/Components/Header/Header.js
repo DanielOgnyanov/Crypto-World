@@ -14,9 +14,11 @@ const Header = () => {
 
 
     useEffect(() => {
+
         if (usernameCheck !== null) {
             setIsAuthenticated(true);
         }
+        
     })
 
     function registerHandler() {
