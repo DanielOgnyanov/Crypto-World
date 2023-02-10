@@ -28,9 +28,11 @@ const Chart = () => {
 
   let cardano = usersWalletJson[3]['price']
 
+  let tether = usersWalletJson[4]['price']
 
 
-  const dataArr = [bitcoin, ethereum, bnb, cardano]
+
+  const dataArr = [bitcoin, ethereum, bnb, cardano,tether]
 
   for (let i = 0; i < dataArr.length; i++) {
     portfolioValue += dataArr[i];
