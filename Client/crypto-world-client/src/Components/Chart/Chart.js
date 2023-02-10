@@ -37,6 +37,16 @@ const Chart = () => {
 
   let tether = usersWalletJson[4]['price']
 
+  let solana = usersWalletJson[5]['price']
+
+  let xrp = usersWalletJson[6]['price']
+
+  let polkadot = usersWalletJson[7]['price']
+
+  let dogecoin = usersWalletJson[8]['price']
+
+  let usdcoin = usersWalletJson[9]['price']
+
 
 
   const dataArr = [bitcoin, ethereum, bnb, cardano,tether]
