@@ -7,27 +7,29 @@ import * as userWalletService from '../../Services/UserWalletService'
 const Chart = () => {
 
 
-  const usersWalletJson = [{ id: 1, name: "Bitcoin", price: 45000 },
+  const usersWalletJson =
+    [
+      { id: 1, name: "Bitcoin", price: 45000 },
+      { id: 2, name: "Ethereum", price: 3000 },
+      { id: 3, name: "BNB", price: 300 }
+    ];
 
-  { id: 2, name: "Ethereum", price: 3000 },
-  {id: 3, name: "BNB", price: 300}];
 
-  
 
   let portfolioValue = 0;
 
-  let bitcoin =  usersWalletJson[0]['price'];
-  
+  let bitcoin = usersWalletJson[0]['price'];
+
 
   let ethereum = usersWalletJson[1]['price'];
 
   let bnb = usersWalletJson[2]['price']
 
-  
+
 
   const dataArr = [bitcoin, ethereum, bnb]
 
-  for(let i = 0; i < dataArr.length; i++){
+  for (let i = 0; i < dataArr.length; i++) {
     portfolioValue += dataArr[i];
 
   }
