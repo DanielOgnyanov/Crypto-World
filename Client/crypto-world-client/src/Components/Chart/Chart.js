@@ -7,13 +7,20 @@ import * as userWalletService from '../../Services/UserWalletService'
 const Chart = () => {
 
 
+  // Demo Price
   const usersWalletJson =
     [
       { id: 1, name: "Bitcoin", price: 45000 },
       { id: 2, name: "Ethereum", price: 3000 },
       { id: 3, name: "BNB", price: 300 },
       { id: 4, name: "Cardano", price: 1000 },
-      { id: 5, name: "Tether", price: 1000 }
+      { id: 5, name: "Tether", price: 1000 },
+      { id: 6, name: "Solana", price: 3000 },
+      { id: 7, name: "Xrp", price: 4000 },
+      { id: 8, name: "Polkadot", price: 5000 },
+      { id: 9, name: "Dogecoin", price: 4000 },
+      { id: 10, name: "Usdcoin", price: 3000 }
+      
     ];
 
 
