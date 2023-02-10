@@ -21,14 +21,15 @@ const Chart = () => {
 
   let bitcoin = usersWalletJson[0]['price'];
 
-
   let ethereum = usersWalletJson[1]['price'];
 
   let bnb = usersWalletJson[2]['price']
 
+  let cardano = usersWalletJson[3]['price']
 
 
-  const dataArr = [bitcoin, ethereum, bnb]
+
+  const dataArr = [bitcoin, ethereum, bnb, cardano]
 
   for (let i = 0; i < dataArr.length; i++) {
     portfolioValue += dataArr[i];
