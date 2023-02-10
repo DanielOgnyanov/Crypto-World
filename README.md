@@ -8,3 +8,8 @@ for example Bitcoin, Ethereum, Binance , Solana , Xrp , Cardano, Polkadot , Doge
 
 The application is build from scratch with Be in Java and Fe in ReactJs. If you want check the src folder for more info about the source code, and the different
 implementation of the functionality.I’m currently working on it.
+
+Index page
+
+
+![Index_page](https://user-images.githubusercontent.com/72673385/218183824-43888a00-5dc1-4ab9-be85-b6f3214d28df.PNG)
