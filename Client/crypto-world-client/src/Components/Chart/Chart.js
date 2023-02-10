@@ -7,7 +7,8 @@ import * as userWalletService from '../../Services/UserWalletService'
 const Chart = () => {
 
 
-  // Demo Price
+  // Demo Price after i add real time price fetching the backend
+
   const usersWalletJson =
     [
       { id: 1, name: "Bitcoin", price: 45000 },
@@ -49,7 +50,7 @@ const Chart = () => {
 
 
 
-  const dataArr = [bitcoin, ethereum, bnb, cardano,tether]
+  const dataArr = [bitcoin, ethereum, bnb, cardano, tether, solana, xrp, polkadot, dogecoin, usdcoin]
 
   for (let i = 0; i < dataArr.length; i++) {
     portfolioValue += dataArr[i];
