@@ -16,10 +16,7 @@ const HomePage = (e) => {
 
     const cryptoItem =
         [{ id: 1, name: "Bitcoin", price: 45000 },
-         { id: 2, name: "Ethereum", price: 3000 },
-         { id: 3, name: "BNB", price: 4000}
-    
-        ];
+         { id: 2, name: "Ethereum", price: 3000 }];
 
 
 
