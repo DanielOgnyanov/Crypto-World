@@ -45,7 +45,6 @@ export const logout = async (username) => {
     });
 
 
-
     res.then((response) => {
 
         if (!response.ok) {
