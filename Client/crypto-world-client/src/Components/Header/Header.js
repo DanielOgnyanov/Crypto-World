@@ -9,9 +9,9 @@ import * as authService from '../../Services/AuthService'
 const Header = () => {
 
     const history = useNavigate();
-    const usernameCheck = JSON.parse(localStorage.getItem("usernameLogin"));
     const [isAuthenticated, setIsAuthenticated] = useState(false);
-
+    const usernameCheck = JSON.parse(localStorage.getItem("usernameLogin"));
+    
     useEffect(() => {
 
         if (!usernameCheck) {
