@@ -17,6 +17,8 @@ const Header = () => {
 
         if (usernameCheck !== null) {
             setIsAuthenticated(true);
+        } else {
+            setIsAuthenticated(false);
         }
         
     })
