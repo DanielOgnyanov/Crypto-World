@@ -47,6 +47,7 @@ public class ApplicationSecurityConfiguration extends WebSecurityConfigurerAdapt
                 .antMatchers(HttpMethod.OPTIONS, "/**").permitAll()
                 .anyRequest()
                 .authenticated()
+                .antMatchers("/api/user/logout")
                 .and()
                 .httpBasic();
 
