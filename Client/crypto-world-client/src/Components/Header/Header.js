@@ -12,16 +12,16 @@ const Header = () => {
     const usernameCheck = JSON.parse(localStorage.getItem("usernameLogin"));
     const [isAuthenticated, setIsAuthenticated] = useState(false);
 
-
     useEffect(() => {
 
-        if (usernameCheck !== null) {
+        if (!usernameCheck) {
             setIsAuthenticated(true);
         } else {
             setIsAuthenticated(false);
         }
         
     })
+    
 
     function registerHandler() {
         history('/register');
@@ -74,6 +74,8 @@ const Header = () => {
 
     );
 
+    console.log(isAuthenticated)
+
 
     return (
         
@@ -85,6 +87,7 @@ const Header = () => {
                 
                     ? userNavigation
                     : guestNavigation
+                    
                     
                 }
                 
