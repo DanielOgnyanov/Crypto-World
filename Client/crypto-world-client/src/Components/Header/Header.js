@@ -19,10 +19,10 @@ const Header = () => {
         } else {
             setIsAuthenticated(false);
         }
-        
+
     })
 
-    
+
 
     function registerHandler() {
         history('/register');
@@ -51,7 +51,7 @@ const Header = () => {
                 <Link id='navigation-a' to="/add-credit-card">Add Credit Card</Link>
                 <Link id='navigation-a' to="/buy-crypto">Buy Crypto</Link>
                 <Link id='navigation-a' to="/sell-crypto">Sell Crypto</Link>
-                
+
             </div>
 
             <button onClick={logout} type='submit' id='logout-button'>Logout</button>
@@ -79,24 +79,24 @@ const Header = () => {
 
 
     return (
-        
+
         <header>
-            
+
             <nav id='navigation'>
-                
+
                 {isAuthenticated
-                
+
                     ? userNavigation
                     : guestNavigation
-                    
-                    
+
+
                 }
-                
+
             </nav>
-            
-            
+
+
         </header >
-        
+
     );
 }
 
