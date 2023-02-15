@@ -11,16 +11,17 @@ const Header = () => {
     const history = useNavigate();
     const [isAuthenticated, setIsAuthenticated] = useState(false);
     const usernameCheck = JSON.parse(localStorage.getItem("usernameLogin"));
-    
+
     useEffect(() => {
 
-        if (!usernameCheck) {
+        if (usernameCheck !== null) {
             setIsAuthenticated(true);
         } else {
             setIsAuthenticated(false);
         }
         
     })
+
     
 
     function registerHandler() {
