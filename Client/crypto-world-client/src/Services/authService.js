@@ -49,9 +49,9 @@ export const logout = async (username) => {
 
         if (!response.ok) {
             throw new Error(response.status);
+        } else {
+            localStorage.removeItem("usernameLogin");
         }
-
-        localStorage.removeItem("usernameLogin");
 
         return response.json();
     }).catch(error => {
