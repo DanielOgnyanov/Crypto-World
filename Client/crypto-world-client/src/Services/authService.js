@@ -34,21 +34,25 @@ export const login = async (username, password) => {
 }
 
 
-export const logout = async (username) => {
+export const logout = async (usernameLogout) => {
 
     let res = fetch(`${baseUrl}/api/user/logout`, {
         method: 'POST',
         headers: {
             "Content-Type": "application/json",
+            "Access-Control-Allow-Methods": "*",
+            "Access-Control-Allow-Origin": "*",
             "Access-Control-Allow-Methods": "*"
         },
-        body: JSON.stringify({ username })
+        body: JSON.stringify({usernameLogout})
     });
 
 
     res.then((response) => {
 
+
         if (!response.ok) {
+            console.log(usernameLogout)
             throw new Error(response.status);
         } else {
             localStorage.removeItem("usernameLogin");
