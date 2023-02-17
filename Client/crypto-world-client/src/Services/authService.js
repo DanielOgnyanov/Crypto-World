@@ -39,10 +39,12 @@ export const logout = async (usernameLogout) => {
     let res = fetch(`${baseUrl}/api/user/logout`, {
         method: 'POST',
         headers: {
+          
             "Content-Type": "application/json",
-            "Access-Control-Allow-Methods": "*",
+            "Access-Control-Allow-Headers": "*",
             "Access-Control-Allow-Origin": "*",
             "Access-Control-Allow-Methods": "*"
+            
         },
         body: JSON.stringify({usernameLogout})
     });
