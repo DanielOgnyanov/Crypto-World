@@ -2,12 +2,12 @@ package com.example.cryptoworld.models.dto;
 
 public class LogoutDto {
 
-    private String username;
+    private String usernameLogout;
 
     public LogoutDto() {
     }
 
-    public String getUsername() {
-        return username;
+    public String getUsernameLogout() {
+        return usernameLogout;
     }
 }
