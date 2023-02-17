@@ -40,10 +40,8 @@ export const logout = async (usernameLogout) => {
         method: 'POST',
         headers: {
           
-            "Content-Type": "application/json",
-            "Access-Control-Allow-Headers": "*",
-            "Access-Control-Allow-Origin": "*",
-            "Access-Control-Allow-Methods": "*"
+            "Content-Type": "application/json"
+            
             
         },
         body: JSON.stringify({usernameLogout})
