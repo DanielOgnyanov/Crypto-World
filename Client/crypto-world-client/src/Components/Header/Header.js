@@ -23,7 +23,6 @@ const Header = () => {
     })
 
 
-
     function registerHandler() {
         history('/register');
     }
@@ -75,7 +74,7 @@ const Header = () => {
 
     );
 
-    console.log(isAuthenticated)
+
 
 
     return (
