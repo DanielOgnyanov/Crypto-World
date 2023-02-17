@@ -45,7 +45,7 @@ public class ApplicationSecurityConfiguration extends WebSecurityConfigurerAdapt
                 .antMatchers("/api/home/cryptoPrice").permitAll()
                 .antMatchers("/css/**","/js/**","/images/**").permitAll()
                 .antMatchers(HttpMethod.OPTIONS, "/**").permitAll()
-                .antMatchers("/api/user/logout").authenticated()
+                .antMatchers("/api/user/logout").permitAll()
                 .anyRequest()
                 .authenticated()
                 .and()
