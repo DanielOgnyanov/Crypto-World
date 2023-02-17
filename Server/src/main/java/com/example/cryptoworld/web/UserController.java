@@ -140,7 +140,7 @@ public class UserController {
 
         try{
             SecurityContextHolder.getContext().getAuthentication().setAuthenticated(false);
-            loginService.setUserLoginInDb(logoutDto.getUsername(), false);
+            loginService.setUserLoginInDb(logoutDto.getUsernameLogout(), false);
 
         }catch (Exception e){
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, e.getMessage());
