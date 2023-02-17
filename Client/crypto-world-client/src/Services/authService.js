@@ -36,6 +36,7 @@ export const login = async (username, password) => {
 
 export const logout = async (usernameLogout) => {
 
+    console.log(usernameLogout)
     let res = fetch(`${baseUrl}/api/user/logout`, {
         method: 'POST',
         headers: {
@@ -52,7 +53,6 @@ export const logout = async (usernameLogout) => {
 
 
         if (!response.ok) {
-            console.log(usernameLogout)
             throw new Error(response.status);
         } else {
             localStorage.removeItem("usernameLogin");
