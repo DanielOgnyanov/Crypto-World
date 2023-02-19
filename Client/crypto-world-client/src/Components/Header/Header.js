@@ -25,14 +25,17 @@ const Header = () => {
     function logout() {
         authService.logout(usernameCheck);
         history('/')
+        window.location.reload();
     }
 
     useEffect(() => {
 
         if (usernameCheck !== null) {
             setIsAuthenticated(true);
+            
         } else {
             setIsAuthenticated(false);
+            
         }
 
     }, [isAuthenticated])
