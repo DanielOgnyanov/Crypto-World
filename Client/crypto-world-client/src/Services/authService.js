@@ -40,17 +40,16 @@ export const logout = async (usernameLogout) => {
     let res = fetch(`${baseUrl}/api/user/logout`, {
         method: 'POST',
         headers: {
-          
+
             "Content-Type": "application/json"
-            
-            
+
+
         },
-        body: JSON.stringify({usernameLogout})
+        body: JSON.stringify({ usernameLogout })
     });
 
 
     res.then((response) => {
-
 
         if (!response.ok) {
             throw new Error(response.status);
