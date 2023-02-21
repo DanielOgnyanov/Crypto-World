@@ -12,6 +12,18 @@ const Header = () => {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
     const [usernameCheck, setUsernameCheck] = useState(JSON.parse(localStorage.getItem("usernameLogin")))
 
+    useEffect(() => {
+
+        if (usernameCheck !== null) {
+            setIsAuthenticated(true);
+            
+            
+        } else {
+            setIsAuthenticated(false);
+            
+        }
+
+    }, [isAuthenticated])
 
 
     function registerHandler() {
@@ -28,21 +40,9 @@ const Header = () => {
         window.location.reload();
     }
 
-    useEffect(() => {
-
-        if (usernameCheck !== null) {
-            setIsAuthenticated(true);
-            
-        } else {
-            setIsAuthenticated(false);
-            
-        }
-
-    }, [isAuthenticated])
-
     let userNavigation = (
 
-        <div className='userNavigation'>
+        <div className='userNavigation' >
 
             <Link to="/home"><span id='logo-header'>Crypto World</span></Link>
 
@@ -66,7 +66,7 @@ const Header = () => {
 
     let guestNavigation = (
 
-        <div className='guestNavigation'>
+        <div className='guestNavigation' >
 
             <Link to="/"><span id='logo-header'>Crypto World</span></Link>
 
