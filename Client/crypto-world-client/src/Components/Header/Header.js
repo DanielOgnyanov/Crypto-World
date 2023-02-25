@@ -10,9 +10,10 @@ const Header = () => {
 
     const history = useNavigate();
     const [isAuthenticated, setIsAuthenticated] = useState(false);
-    const [usernameCheck, setUsernameCheck] = useState(JSON.parse(localStorage.getItem("usernameLogin")))
 
     useEffect(() => {
+
+        const [usernameCheck, setUsernameCheck] = useState(JSON.parse(localStorage.getItem("usernameLogin")))
 
         if (usernameCheck !== null) {
             setIsAuthenticated(true);
