@@ -146,6 +146,7 @@ public class UserController {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, e.getMessage());
         }
 
+
         return new ResponseEntity<CustomMessage>(customMessage, HttpStatus.OK);
     }
 
