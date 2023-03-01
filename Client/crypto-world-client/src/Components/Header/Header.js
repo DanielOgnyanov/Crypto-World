@@ -16,14 +16,12 @@ const Header = () => {
 
 
         if (usernameCheck !== null) {
-            setIsAuthenticated(true);
-
-        } else {
             setIsAuthenticated(false);
-
         }
 
     }, [isAuthenticated])
+
+    console.log(isAuthenticated)
 
 
     function registerHandler() {
