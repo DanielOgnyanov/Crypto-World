@@ -13,7 +13,6 @@ const Header = () => {
     const usernameCheck = useState(JSON.parse(localStorage.getItem("usernameLogin")));
 
     useEffect(() => {
-
         if (usernameCheck[0] !== null) {
             setIsAuthenticated(true);
         } else {
