@@ -11,7 +11,6 @@ implementation of the functionality.I’m currently working on it.Soon will be a
 
 Index page
 
-
 ![Index_page](https://user-images.githubusercontent.com/72673385/218183824-43888a00-5dc1-4ab9-be85-b6f3214d28df.PNG)
 
 
