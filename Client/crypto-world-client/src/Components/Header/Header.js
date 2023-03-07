@@ -14,16 +14,13 @@ const Header = () => {
 
     useEffect(() => {
         
-        if (usernameCheck[0] !== null) {
+    if (usernameCheck[0] !== null) {
             setIsAuthenticated(true);
         } else {
             setIsAuthenticated(false)
         }
 
-    }, [isAuthenticated])
-
-    console.log(isAuthenticated)
-    console.log(usernameCheck[0])
+    }, [isAuthenticated] )
 
 
     function registerHandler() {
