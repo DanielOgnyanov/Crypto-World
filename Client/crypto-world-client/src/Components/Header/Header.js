@@ -34,7 +34,6 @@ const Header = () => {
     function logout() {
         authService.logout(usernameCheck);
         history('/')
-        window.location.reload();
     }
 
     let userNavigation = (
