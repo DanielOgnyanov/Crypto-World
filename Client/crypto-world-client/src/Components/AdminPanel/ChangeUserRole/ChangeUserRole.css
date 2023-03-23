@@ -1,4 +1,4 @@
-#form-change-user-role{
+#form-change-user-role {
     min-height: 250px;
     max-height: 475px;
     width: 490px;
@@ -6,38 +6,44 @@
     margin-left: 500px;
     margin-bottom: 200px;
     text-align: center;
-    position: relative;
 
     border-radius: 20px;
-    border-bottom: 2px solid  rgb(0, 0, 0);
-    border-top: 2px solid  rgb(0, 0, 0);
-    border-right: 2px solid  rgb(0, 0, 0);
+    border-bottom: 2px solid rgb(0, 0, 0);
+    border-top: 2px solid rgb(0, 0, 0);
+    border-right: 2px solid rgb(0, 0, 0);
     border-left: 2px solid rgb(0, 0, 0);
-    
+
     background-color: rgb(40, 40, 77);
     color: white;
-    
-    font-family: CoinbaseSans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;;
+
+    font-family: CoinbaseSans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    ;
     font-weight: bold;
     font-size: 17px;
 }
 
+#admin-labels {
+  padding-left: 30px;
+   
+}
 
-#username-change-role{
-    
+
+#username-change-role {
+
     background-image: url('../../../Images/user-icon-1.png');
     background-repeat: no-repeat;
     background-position: left 8px top 2px;
     padding-left: 45px;
     margin-top: 15px;
     margin-bottom: 15px;
+    
 
     background-size: 22px;
 }
 
 
-#role-select{
-    
+#role-select {
+
     background-image: url('../../../Images/role-change.jpg');
     background-repeat: no-repeat;
     background-position: left 5px top 2px;
