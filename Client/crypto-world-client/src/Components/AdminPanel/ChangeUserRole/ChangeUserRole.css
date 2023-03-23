@@ -39,6 +39,7 @@
     background-image: url('../../../Images/user-icon-1.png');
     background-repeat: no-repeat;
     background-position: left 8px top 2px;
+
     padding-left: 45px;
     margin-top: 25px;
     margin-bottom: 15px;
@@ -53,8 +54,9 @@
     background-image: url('../../../Images/role-change.jpg');
     background-repeat: no-repeat;
     background-position: left 5px top 2px;
-    padding-left: 140px;
-    padding-right: 140px;
+
+    padding-left: 139px;
+    padding-right: 139px;
     padding-bottom: 14px;
     border-radius: 8px;
 
