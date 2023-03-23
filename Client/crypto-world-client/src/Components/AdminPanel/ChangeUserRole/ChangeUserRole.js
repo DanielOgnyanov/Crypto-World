@@ -17,13 +17,10 @@ const ChangeUserRole = () => {
 
         <form id="form-change-user-role">
 
-            <label  id='admin-labels'>Username</label>
+            <p>Change Role</p>
+
+            <label id='admin-labels'>Username</label>
             <input name='username' autoComplete="on" placeholder='Username' type="text" id='username-change-role' />
-
-
-
-
-
 
 
             <label id='admin-labels'>Role Select</label>
