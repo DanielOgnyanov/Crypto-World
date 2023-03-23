@@ -17,7 +17,7 @@ const ChangeUserRole = () => {
 
         <form id="form-change-user-role">
 
-            <label htmlFor="Username" >Username</label>
+            <label  id='admin-labels'>Username</label>
             <input name='username' autoComplete="on" placeholder='Username' type="text" id='username-change-role' />
 
 
@@ -26,7 +26,7 @@ const ChangeUserRole = () => {
 
 
 
-            <label htmlFor='crypto-asset'>Role Select</label>
+            <label id='admin-labels'>Role Select</label>
 
             <select htmlFor='role-select' id='role-select' >
                 {roleEnum.map(role => (
