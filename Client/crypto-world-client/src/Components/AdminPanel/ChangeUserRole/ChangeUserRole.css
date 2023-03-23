@@ -23,8 +23,9 @@
 }
 
 #admin-labels {
-  padding-left: 30px;
-   
+    display: inline-block;
+    padding-right: 30px;
+
 }
 
 
@@ -36,7 +37,7 @@
     padding-left: 45px;
     margin-top: 15px;
     margin-bottom: 15px;
-    
+
 
     background-size: 22px;
 }
