@@ -19,11 +19,12 @@
     font-family: CoinbaseSans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
     ;
     font-weight: bold;
-    font-size: 17px;
+    font-size: 15px;
 }
 
 #p-change-role{
     font-weight: bold;
+    font-size: 20px;
 }
 
 #admin-labels {
