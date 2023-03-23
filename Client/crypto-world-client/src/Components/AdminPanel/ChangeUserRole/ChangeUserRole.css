@@ -22,6 +22,10 @@
     font-size: 17px;
 }
 
+#p-change-role{
+    font-weight: bold;
+}
+
 #admin-labels {
     display: inline-block;
     padding-right: 30px;

@@ -17,7 +17,7 @@ const ChangeUserRole = () => {
 
         <form id="form-change-user-role">
 
-            <p>Change Role</p>
+            <p id='p-change-role'>Change Role</p>
 
             <label id='admin-labels'>Username</label>
             <input name='username' autoComplete="on" placeholder='Username' type="text" id='username-change-role' />
