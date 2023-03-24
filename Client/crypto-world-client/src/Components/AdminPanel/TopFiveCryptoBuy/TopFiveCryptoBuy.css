@@ -28,6 +28,10 @@
     font-size: 20px;
 }
 
+#label-top-five-crypto-by-user{
+    padding-right: 15px;
+}
+
 #username-top-five-crypto{
     
     background-image: url('../../../Images/user-icon-1.png');
