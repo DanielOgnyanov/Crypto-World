@@ -28,6 +28,7 @@
 #admin-labels {
     display: inline-block;
     padding-right: 30px;
+    margin-bottom: 10px;
 
 }
 
@@ -39,7 +40,6 @@
     background-position: left 8px top 2px;
 
     padding-left: 45px;
-    margin-top: 25px;
     margin-bottom: 15px;
 
 
