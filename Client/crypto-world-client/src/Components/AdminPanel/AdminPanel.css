@@ -1,23 +1,18 @@
 #container-admin-panel {
     display: flex;
-    
-    
-    
-    
-}  
-
-
-#change-user-role{
-    
-
-    margin-left: 100px;
-    
 }
 
 
-#user-top-five-buy{
-    
-   
+#change-user-role {
+
+    margin-top: 100px;
+    margin-left: 120px;
+
+
+}
+
+
+#user-top-five-buy {
 
 }
 
@@ -25,13 +20,6 @@
 #logged-users {
 
     margin-top: 30px;
-    
-    
+
+
 }
-
-
-
-
-
-
-
