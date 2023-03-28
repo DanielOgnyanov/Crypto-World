@@ -16,9 +16,9 @@ const AdminPanel = () => {
         <div className='container-admin-panel' id='container-admin-panel'>
 
 
-            <div className='user-top-five-buy' id='user-top-five-buy'>
+            <section className='user-top-five-buy' id='user-top-five-buy'>
                 <TopFiveCryptoBuy />
-            </div>
+            </section>
 
             <div className='change-user-role' id='change-user-role'>
                 <ChangeUserRole />
