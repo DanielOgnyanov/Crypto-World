@@ -20,10 +20,10 @@ const AdminPanel = () => {
                 <TopFiveCryptoBuy />
             </section>
 
-            <div className='change-user-role' id='change-user-role'>
+            <section className='change-user-role' id='change-user-role'>
                 <ChangeUserRole />
 
-            </div>
+            </section>
 
             <div className='logged-users' id='logged-users'>
                 <LoggedUsers />
