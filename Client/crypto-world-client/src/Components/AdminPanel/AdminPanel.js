@@ -25,9 +25,9 @@ const AdminPanel = () => {
 
             </section>
 
-            <div className='logged-users' id='logged-users'>
+            <section className='logged-users' id='logged-users'>
                 <LoggedUsers />
-            </div>
+            </section>
 
 
 
