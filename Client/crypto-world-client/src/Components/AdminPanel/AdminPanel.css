@@ -1,5 +1,6 @@
 #container-admin-panel {
-    display: inline-block;
+    display: flex;
+    
     
     
     
@@ -8,17 +9,15 @@
 
 #change-user-role{
     
-    float: left;
-    width:675px;
-  
+
+    margin-left: 100px;
     
 }
 
 
 #user-top-five-buy{
     
-    float: left;
-    width:200px;
+   
 
 }
 
