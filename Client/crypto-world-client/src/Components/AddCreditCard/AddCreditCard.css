@@ -19,7 +19,14 @@
     
     font-family: CoinbaseSans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;;
     font-weight: bold;
-    font-size: 17px;
+    font-size: 15x;
+}
+
+
+#p-add-credit-card{
+
+    font-weight: bold;
+    font-size: 18x;
 }
 
 #add-credit-card-label {
