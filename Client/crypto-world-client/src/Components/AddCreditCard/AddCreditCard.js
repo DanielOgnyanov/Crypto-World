@@ -19,17 +19,17 @@ const AddCreditCard = () => {
     return (
 
         <form id='form-credit-card'>
-            <label htmlFor="Iban" >Iban</label>
+            <label htmlFor="Iban" id='add-credit-card-label'>Iban</label>
             <input name='iban' autoComplete="on" placeholder='Iban' type="text" id='iban' />
 
 
-            <label htmlFor="expiration-year">Expiration Year</label>
+            <label htmlFor="expiration-year" id='add-credit-card-label'>Expiration Year</label>
             <input name='expiration-year' autoComplete="on" placeholder='Expiration Year' type="number" id='expiration-year' />
 
-            <label htmlFor="balance">Balance</label>
+            <label htmlFor="balance" id='add-credit-card-label'>Balance</label>
             <input name='balance' autoComplete="on" placeholder='Balance' type="number" id='balance' />
 
-            <label htmlFor="credit-card">Credit Card</label>
+            <label htmlFor="credit-card" id='add-credit-card-label'>Credit Card</label>
 
 
             <select className='credit-card' id='credit-card'>
