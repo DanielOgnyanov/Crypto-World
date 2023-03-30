@@ -23,6 +23,11 @@
     font-size: 15x;
 }
 
+#p-buy-crypto {
+    font-weight: bold;
+    font-size: 20px;
+}
+
 #buy-crypto-label {
 
     display: block;
