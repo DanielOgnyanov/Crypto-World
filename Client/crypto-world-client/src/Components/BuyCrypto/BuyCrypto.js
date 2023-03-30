@@ -27,6 +27,8 @@ const BuyCrypto = () => {
 
         <form id='form-buy-crypto'>
 
+            <p>Buy Crypto Asset</p>
+
             <label htmlFor='username-confirm' id='buy-crypto-label'>Username Confirm</label>
 
             <input name='username-confirm' autoComplete="on" placeholder='Username Confirm'
