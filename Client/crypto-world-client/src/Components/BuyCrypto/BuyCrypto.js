@@ -27,7 +27,7 @@ const BuyCrypto = () => {
 
         <form id='form-buy-crypto'>
 
-            <p>Buy Crypto Asset</p>
+            <p id='p-buy-crypto'>Buy Crypto Asset</p>
 
             <label htmlFor='username-confirm' id='buy-crypto-label'>Username Confirm</label>
 
