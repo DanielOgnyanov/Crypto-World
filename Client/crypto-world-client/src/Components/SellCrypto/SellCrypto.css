@@ -23,6 +23,14 @@
     font-size: 15x;
 }
 
+#sell-crypto-label {
+
+    display: block;
+    padding-top: 13px;
+    padding-bottom: 20px;
+
+}
+
 
 #sell-value{
 
