@@ -23,6 +23,12 @@
     font-size: 15x;
 }
 
+#p-sell-crypto {
+    
+    font-weight: bold;
+    font-size: 20px;
+}
+
 #sell-crypto-label {
 
     display: block;
