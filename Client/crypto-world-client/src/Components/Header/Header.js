@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from 'react';
 import * as authService from '../../Services/AuthService'
+import { useAuthContext } from '../../Context/AuthContext';
 
 
 
@@ -11,6 +12,8 @@ const Header = () => {
     const history = useNavigate();
     const [isAuthenticated, setIsAuthenticated] = useState();
     const usernameCheck = useState(JSON.parse(localStorage.getItem("usernameLogin")));
+
+    const { user } = useAuthContext();
 
     useEffect(() => {
         
