@@ -24,9 +24,6 @@ export const login = async (username, password) => {
         }
 
 
-        localStorage.setItem("usernameLogin", JSON.stringify(username));
-
-
         return response.json();
     }).catch(error => {
         console.log(error);
