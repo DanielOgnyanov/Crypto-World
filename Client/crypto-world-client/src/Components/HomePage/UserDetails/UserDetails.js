@@ -7,6 +7,8 @@ const UserDetails = () => {
 
     const { user } = useAuthContext();
 
+    console.log(user.username)
+
 
     return(
         <div className='user-info' id='user-details-welcome'>
