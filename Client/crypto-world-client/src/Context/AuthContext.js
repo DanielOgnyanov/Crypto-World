@@ -3,13 +3,13 @@ import useLocalStorage from '../Hooks/LocalStorage';
 
 
 const initialAuthState = {
-    usernameLogin: ''
+    username: ''
 };
 
 export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
-    const [user, setUser] = useLocalStorage('usernameLogin', initialAuthState);
+    const [user, setUser] = useLocalStorage('username', initialAuthState);
 
     const login = (authData) => {
         setUser(authData);
