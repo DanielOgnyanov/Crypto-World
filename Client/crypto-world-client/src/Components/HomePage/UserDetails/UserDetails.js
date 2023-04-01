@@ -11,7 +11,7 @@ const UserDetails = () => {
     return(
         <div className='user-info' id='user-details-welcome'>
 
-            <span>Welcome {currentUsername}</span>
+            <span>Welcome {user.username}</span>
 
 
         </div>
