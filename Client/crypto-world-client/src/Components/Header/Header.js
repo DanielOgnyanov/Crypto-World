@@ -23,7 +23,7 @@ const Header = () => {
     }
 
     function logout() {
-        authService.logout(usernameCheck);
+        authService.logout(user.username);
         history('/')
     }
 
@@ -72,7 +72,7 @@ const Header = () => {
 
             <nav id='navigation'>
 
-                {isAuthenticated
+                {user.username
 
                     ? userNavigation
                     : guestNavigation
