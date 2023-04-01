@@ -10,20 +10,8 @@ import { useAuthContext } from '../../Context/AuthContext';
 const Header = () => {
 
     const history = useNavigate();
-    const [isAuthenticated, setIsAuthenticated] = useState();
-    const usernameCheck = useState(JSON.parse(localStorage.getItem("usernameLogin")));
 
     const { user } = useAuthContext();
-
-    useEffect(() => {
-        
-    if (usernameCheck[0] !== null) {
-            setIsAuthenticated(true);
-        } else {
-            setIsAuthenticated(false)
-        }
-
-    }, [isAuthenticated] )
 
 
     function registerHandler() {
