@@ -1,10 +1,11 @@
+import { useAuthContext } from '../../../Context/AuthContext';
 import './UserDetails.css'
 
 
 const UserDetails = () => {
 
 
-    const currentUsername = JSON.parse(localStorage.getItem("usernameLogin"))
+    const { user } = useAuthContext();
 
 
     return(
