@@ -8,7 +8,6 @@ import './Login.css'
 
 const Login = () => {
 
-    const { login } = useAuthContext();
     const history = useNavigate();
 
     const [user, setUser] = useState("");
@@ -64,7 +63,7 @@ const Login = () => {
     const onLoginFormSubmitHandler = (e) => {
         e.preventDefault();
 
-        authService.login(user, password);
+        authService.Login(user, password);
 
         const usernameGet = JSON.parse(localStorage.getItem("usernameLogin"));
 
