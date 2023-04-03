@@ -64,7 +64,7 @@ const Login = () => {
     const onLoginFormSubmitHandler = (e) => {
         e.preventDefault();
 
-        authService.login(user, password).then((authData) => login(authData));
+        authService.login(user, password);
 
         const usernameGet = JSON.parse(localStorage.getItem("usernameLogin"));
 
