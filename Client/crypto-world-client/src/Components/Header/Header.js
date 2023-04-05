@@ -23,7 +23,7 @@ const Header = () => {
     }
 
     function logout() {
-        authService.logout(user.username);
+        authService.Logout(user.username);
         history('/')
     }
 
