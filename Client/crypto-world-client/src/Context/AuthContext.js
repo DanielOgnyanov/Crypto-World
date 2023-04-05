@@ -9,7 +9,7 @@ const initialAuthState = {
 export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
-    const [user, setUser] = useLocalStorage('username', initialAuthState);
+    const [user, setUser] = useLocalStorage('user', initialAuthState);
 
     const loginData = (authData) => {
         setUser(authData);
