@@ -34,7 +34,7 @@ export const Login = async (username, password) => {
 }
 
 
-export const logout = async (usernameLogout) => {
+export const Logout = async (usernameLogout) => {
     
     const { logoutData } = useAuthContext();
 
