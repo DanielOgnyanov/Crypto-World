@@ -1,6 +1,7 @@
 import './IndexPage.css'
 import GetStarted from './GetStarted/GetStarted';
 import TableCryptoPrice from './TableCryptoPrice/TableCryptoPrice';
+import { useAuthContext } from '../../Context/AuthContext';
 
 const IndexPage = () => {
 
