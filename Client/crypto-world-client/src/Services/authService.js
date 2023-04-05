@@ -54,8 +54,6 @@ export const logout = async (usernameLogout) => {
 
         if (!response.ok) {
             throw new Error(response.status);
-        } else {
-            localStorage.removeItem("usernameLogin");
         }
 
         return response.json();
