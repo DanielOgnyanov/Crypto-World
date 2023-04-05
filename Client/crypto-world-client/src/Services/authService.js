@@ -3,7 +3,6 @@ import { useAuthContext } from "../Context/AuthContext";
 
 const baseUrl = 'http://localhost:8000';
 
-
 export const Login = async (username, password) => {
     const { loginData } = useAuthContext();
 
@@ -36,8 +35,9 @@ export const Login = async (username, password) => {
 
 
 export const logout = async (usernameLogout) => {
+    
+    const { logoutData } = useAuthContext();
 
-    console.log(usernameLogout)
     let res = fetch(`${baseUrl}/api/user/logout`, {
         method: 'POST',
         headers: {
@@ -55,6 +55,8 @@ export const logout = async (usernameLogout) => {
         if (!response.ok) {
             throw new Error(response.status);
         }
+
+        logoutData();
 
         return response.json();
     }).catch(error => {
