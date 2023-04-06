@@ -8,6 +8,7 @@ import { useAuthContext } from '../../Context/AuthContext';
 
 
 const Header = () => {
+    const { logoutData } = useAuthContext();
 
     const history = useNavigate();
 
