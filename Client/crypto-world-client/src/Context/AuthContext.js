@@ -15,12 +15,12 @@ export const AuthProvider = ({ children }) => {
         setUser(authData);
     }
 
-    const logoutData = () => {
+    const logout = () => {
         setUser(initialAuthState);
     };
 
     return (
-        <AuthContext.Provider value={{ user, loginData, logoutData, isAuthenticated:  user.username }}>
+        <AuthContext.Provider value={{ user, login, logoutData, isAuthenticated:  user.username }}>
             {children}
         </AuthContext.Provider>
     );
