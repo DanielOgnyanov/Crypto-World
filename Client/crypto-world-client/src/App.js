@@ -27,7 +27,7 @@ function App() {
           <Route exact path="/" exact element={<IndexPage />} />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/logout" element={<Logout />} />
+          
 
 
           <Route path="/home" element={<HomePage />} />
@@ -35,6 +35,7 @@ function App() {
           <Route path = "/buy-crypto" element = {<BuyCrypto/>}/>
           <Route path = "/sell-crypto" element = {<SellCrypto/>}/>
           <Route path = "/admin" element = {<AdminPanel/>}/>
+          <Route path="/logout" element={<Logout />} />
 
         </Routes>
 
