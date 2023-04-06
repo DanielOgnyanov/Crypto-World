@@ -5,6 +5,7 @@ import Header from './Components/Header/Header';
 import Footer from './Components/Footer/Footer';
 import Register from './Components/Register/Register';
 import Login from './Components/Login/Login'
+import Logout from './Components/Logout/Logout';
 import IndexPage from './Components/IndexPage/IndexPage';
 import HomePage from './Components/HomePage/HomePage'
 import AddCreditCard from './Components/AddCreditCard/AddCreditCard';
@@ -26,6 +27,7 @@ function App() {
           <Route exact path="/" exact element={<IndexPage />} />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/logout" element={<Logout />} />
 
 
           <Route path="/home" element={<HomePage />} />
