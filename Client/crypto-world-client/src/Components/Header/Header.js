@@ -1,14 +1,12 @@
 import './Header.css'
 import { Link } from 'react-router-dom'
 import { useNavigate } from "react-router-dom";
-import { useEffect, useState } from 'react';
 import * as authService from '../../Services/AuthService'
 import { useAuthContext } from '../../Context/AuthContext';
 
 
 
 const Header = () => {
-    const { logoutData } = useAuthContext();
 
     const history = useNavigate();
 
@@ -21,11 +19,6 @@ const Header = () => {
 
     function signInHandler() {
         history('/login')
-    }
-
-    function logout() {
-        authService.logout(user.username);
-        history('/')
     }
 
     let userNavigation = (
@@ -45,7 +38,7 @@ const Header = () => {
 
             </div>
 
-            <button onClick={logout} type='submit' id='logout-button'>Logout</button>
+           <Link id='navigation-a' to="/logout"><button type='submit' id='logout-button'>Logout</button></Link> 
 
         </div>
 
