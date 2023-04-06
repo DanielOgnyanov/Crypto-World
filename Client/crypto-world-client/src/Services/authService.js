@@ -34,9 +34,9 @@ export const Login = async (username, password) => {
 }
 
 
-export const Logout = async (usernameLogout) => {
+export const logout = async (usernameLogout) => {
     
-    const { logoutData } = useAuthContext();
+    
 
     let res = fetch(`${baseUrl}/api/user/logout`, {
         method: 'POST',
@@ -56,7 +56,6 @@ export const Logout = async (usernameLogout) => {
         if (!response.ok) {
             throw new Error(response.status);
         }
-
        
 
         return response.json();

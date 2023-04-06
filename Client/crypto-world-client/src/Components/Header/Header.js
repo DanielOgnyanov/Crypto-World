@@ -24,7 +24,7 @@ const Header = () => {
     }
 
     function logout() {
-        authService.Logout(user.username);
+        authService.logout(user.username);
         history('/')
     }
 
