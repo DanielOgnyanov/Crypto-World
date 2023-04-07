@@ -34,8 +34,6 @@ export const login = async (username, password) => {
 
 
 export const logout = async (usernameLogout) => {
-    
-    
 
     let res = fetch(`${baseUrl}/api/user/logout`, {
         method: 'POST',
