@@ -9,8 +9,8 @@ import './Login.css'
 const Login = () => {
 
     const history = useNavigate();
-
-    const [user, setUser] = useState("");
+    const {user, login } = useAuthContext();
+    const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
 
 
@@ -36,7 +36,7 @@ const Login = () => {
             setInputUsernameError(false);
         }
 
-        setUser(item);
+        setUsername(item);
 
     }
 
@@ -63,11 +63,11 @@ const Login = () => {
     const onLoginFormSubmitHandler = (e) => {
         e.preventDefault();
 
-        authService.Login(user, password);
+        authService.login(username, password).then((username) => login(username));
+       
+        
 
-        const usernameGet = JSON.parse(localStorage.getItem("usernameLogin"));
-
-        if(usernameGet === null) {
+        if(user.username === null) {
             setWrongCredentialsError(true);
         } else {
             history("/home")
@@ -101,7 +101,7 @@ const Login = () => {
                 {inputPasswordError ? <span id='span-info' >Input cannot be empty</span> : ""}
                 {wrongCredentialsError ? <span id='span-info' >Wrong Username or Password !</span> : ""}
 
-                <button disabled={inputUsernameError || inputPasswordError || password.length === 0 || user.length === 0} className="button" type="submit" id='login-button'>Sign In</button>
+                <button disabled={inputUsernameError || inputPasswordError || password.length === 0 || username.length === 0} className="button" type="submit" id='login-button'>Sign In</button>
             </form>
         </>
 
