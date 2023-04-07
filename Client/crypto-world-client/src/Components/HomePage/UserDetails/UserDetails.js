@@ -8,9 +8,6 @@ const UserDetails = () => {
 
     const currentUser =  authService.getUser();
 
-    
-
-
     return(
         <div className='user-info' id='user-details-welcome'>
 
