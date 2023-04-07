@@ -63,7 +63,7 @@ const Login = () => {
     const onLoginFormSubmitHandler = (e) => {
         e.preventDefault();
 
-        
+        console.log(authService.isAuthenticated)
         
             authService.login(username, password)
             .then(() => {
@@ -72,10 +72,8 @@ const Login = () => {
                 console.log(error);
             })
 
-            console.log(user.username)
-
         
-
+        console.log(authService.isAuthenticated)
 
         if (user.username === null) {
             setWrongCredentialsError(true);
