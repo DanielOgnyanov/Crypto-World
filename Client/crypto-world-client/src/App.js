@@ -35,7 +35,7 @@ function App() {
           <Route path = "/buy-crypto" element = {<BuyCrypto/>}/>
           <Route path = "/sell-crypto" element = {<SellCrypto/>}/>
           <Route path = "/admin" element = {<AdminPanel/>}/>
-          <Route path="/" element={<Logout />} />
+          <Route path="/logout" element={<Logout/>} />
 
         </Routes>
 
