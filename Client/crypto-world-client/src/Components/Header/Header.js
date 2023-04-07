@@ -38,7 +38,7 @@ const Header = () => {
 
             </div>
 
-           <Link id='navigation-a' to="/logout"><button type='submit' id='logout-button'>Logout</button></Link> 
+           <Link id='navigation-a' to="/"><button type='submit' id='logout-button'>Logout</button></Link> 
 
         </div>
 
@@ -66,10 +66,10 @@ const Header = () => {
 
             <nav id='navigation'>
 
-                {authService.isAuthenticated
+                {Boolean(authService.isAuthenticated)
 
-                    ? guestNavigation
-                    : userNavigation
+                    ? userNavigation 
+                    : guestNavigation
 
                 }
 
