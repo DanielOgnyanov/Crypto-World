@@ -1,19 +1,20 @@
 import { useAuthContext } from '../../../Context/AuthContext';
+import * as authService from '../../../Services/AuthService';
 import './UserDetails.css'
 
 
 const UserDetails = () => {
 
 
-    const { user } = useAuthContext();
+    const currentUser =  authService.getUser();
 
-    console.log(user.username)
+    
 
 
     return(
         <div className='user-info' id='user-details-welcome'>
 
-            <span>Welcome {user.username}</span>
+            <span>Welcome {currentUser}</span>
 
 
         </div>
