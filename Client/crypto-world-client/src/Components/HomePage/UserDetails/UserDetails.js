@@ -7,6 +7,7 @@ const UserDetails = () => {
 
 
     const currentUser =  authService.getUser();
+    console.log(Boolean(authService.isAuthenticated))
 
     return(
         <div className='user-info' id='user-details-welcome'>
