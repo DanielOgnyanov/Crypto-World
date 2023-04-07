@@ -9,7 +9,7 @@ import './Login.css'
 const Login = () => {
 
     const history = useNavigate();
-    const {user, login } = useAuthContext();
+    const { user, login } = useAuthContext();
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
 
@@ -63,11 +63,21 @@ const Login = () => {
     const onLoginFormSubmitHandler = (e) => {
         e.preventDefault();
 
-        authService.login(username, password).then((username) => login(username));
-       
+        
+        
+            authService.login(username, password)
+            .then(() => {
+                login(username);
+            }).catch(error =>{
+                console.log(error);
+            })
+
+            console.log(user.username)
+
         
 
-        if(user.username === null) {
+
+        if (user.username === null) {
             setWrongCredentialsError(true);
         } else {
             history("/home")
