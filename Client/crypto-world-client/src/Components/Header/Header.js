@@ -66,10 +66,10 @@ const Header = () => {
 
             <nav id='navigation'>
 
-                {user.username
+                {authService.isAuthenticated
 
-                    ? userNavigation
-                    : guestNavigation
+                    ? guestNavigation
+                    : userNavigation
 
                 }
 
