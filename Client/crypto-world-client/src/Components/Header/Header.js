@@ -10,8 +10,6 @@ const Header = () => {
 
     const history = useNavigate();
 
-    const { user } = useAuthContext();
-
 
     function registerHandler() {
         history('/register');
@@ -66,7 +64,7 @@ const Header = () => {
 
             <nav id='navigation'>
 
-                {Boolean(authService.isAuthenticated)
+                {Boolean(authService.getUser)
 
                     ? userNavigation 
                     : guestNavigation
