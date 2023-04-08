@@ -9,6 +9,7 @@ import { useAuthContext } from '../../Context/AuthContext';
 const Header = () => {
 
     const history = useNavigate();
+    
 
 
     function registerHandler() {
@@ -64,7 +65,7 @@ const Header = () => {
 
             <nav id='navigation'>
 
-                {Boolean(authService.getUser)
+                {Boolean(authService.getUser.length)
 
                     ? userNavigation 
                     : guestNavigation
