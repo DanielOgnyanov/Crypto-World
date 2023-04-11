@@ -65,7 +65,7 @@ const Header = () => {
 
             <nav id='navigation'>
 
-                {Boolean(authService.getUser.length)
+                {Boolean(authService.isAuthenticated())
 
                     ? userNavigation 
                     : guestNavigation
