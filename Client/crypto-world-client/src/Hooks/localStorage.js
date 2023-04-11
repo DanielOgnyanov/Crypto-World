@@ -18,9 +18,8 @@ const useLocalStorage = (key, initialValue) => {
     const setItem = (value) => {
 
         try {
-            localStorage.setItem(key, JSON.stringify(value))
-
-            setState(value);
+            localStorage.removeItem(value);
+            
         } catch (err) {
             console.log(err);
         }
