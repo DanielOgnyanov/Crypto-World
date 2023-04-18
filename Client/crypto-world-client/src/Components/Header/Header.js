@@ -10,7 +10,11 @@ const Header = () => {
 
     const history = useNavigate();
     
-
+    const { user, login,logout } = useAuthContext();
+    logout();
+    let prova = localStorage.getItem("user");
+    console.log(prova)
+    console.log(Boolean(authService.getUser()))
 
     function registerHandler() {
         history('/register');
@@ -65,7 +69,7 @@ const Header = () => {
 
             <nav id='navigation'>
 
-                {Boolean(authService.isAuthenticated())
+                {Boolean(authService.getUser())
 
                     ? userNavigation 
                     : guestNavigation
