@@ -11,10 +11,8 @@ const Header = () => {
     const history = useNavigate();
     
     const { user, login,logout } = useAuthContext();
-    logout();
-    let prova = localStorage.getItem("user");
-    console.log(prova)
-    console.log(Boolean(authService.getUser()))
+   
+
 
     function registerHandler() {
         history('/register');
