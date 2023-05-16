@@ -11,7 +11,6 @@ const Header = () => {
     const history = useNavigate();
     
     const { user, login,logout } = useAuthContext();
-   
 
 
     function registerHandler() {
