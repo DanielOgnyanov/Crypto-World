@@ -63,9 +63,10 @@ export const logout = async (usernameLogout) => {
 }
 
 export const getUser = () => {
-    let username = JSON.parse(localStorage.getItem('user'));
+    let username = localStorage.getItem('user');
     
-    return username;
+
+    return username[0].username;
 };
 
 export const isAuthenticated = () => {
