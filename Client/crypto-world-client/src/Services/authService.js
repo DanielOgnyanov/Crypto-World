@@ -63,7 +63,7 @@ export const logout = async (usernameLogout) => {
 }
 
 export const getUser = () => {
-    let username = localStorage.getItem('user');
+    let username = JSON.parse(localStorage.getItem('user'));
     
     return username;
 };
