@@ -1,7 +1,7 @@
 import './BitcoinRealTimePrice.css'
 import * as cryptoService from '../../../Services/CryptoService'
 
-const TableCryptoPrice = () => {
+const BitcoinRealTimePrice = () => {
 
 
 
@@ -33,4 +33,4 @@ const TableCryptoPrice = () => {
 }
 
 
-export default TableCryptoPrice;
+export default BitcoinRealTimePrice;
