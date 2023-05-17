@@ -1,6 +1,6 @@
 import './IndexPage.css'
 import GetStarted from './GetStarted/GetStarted';
-import TableCryptoPrice from './TableCryptoPrice/TableCryptoPrice';
+import BitcoinRealTimePrice from './TableCryptoPrice/BitcoinRealTimePrice';
 import { useAuthContext } from '../../Context/AuthContext';
 
 const IndexPage = () => {
@@ -15,7 +15,7 @@ const IndexPage = () => {
             </div>
 
             <div className='table-crypto-price'>
-                <TableCryptoPrice/>
+                <BitcoinRealTimePrice/>
             </div>
 
 
