@@ -16,6 +16,11 @@
     border-radius: 10px;
 
     box-shadow: 0 0 8px #000;;
+
+}
+
+#container-crypto-price-table:hover {
+    transform: scale(1.1);
 }
 
 
@@ -45,7 +50,7 @@
 #buy-button {
 
     height: 40px;
-    width: 80px;
+    width: 100px;
 
     display:block;
     margin:auto;
@@ -56,6 +61,10 @@
     border-width: 1px 1px 1px 1px;
     color: white;
     cursor: pointer;
+
+
+    font-size: 18px;
+    font-weight: 300;
 }
 
 #buy-button:hover {
