@@ -9,7 +9,7 @@ const BitcoinRealTimePrice = () => {
 
        <div id='container-crypto-price-table'>
 
-        
+        <p id='item-name-position'>Bitcoin</p>
 
        </div>
 
