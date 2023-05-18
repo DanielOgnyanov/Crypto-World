@@ -30,3 +30,9 @@
     margin:auto;
     width: 50px;
 }
+
+
+#real-time-price {
+    display:block;
+    margin:auto;
+}
