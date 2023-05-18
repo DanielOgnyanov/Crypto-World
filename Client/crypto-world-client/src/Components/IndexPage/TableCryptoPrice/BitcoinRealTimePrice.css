@@ -44,4 +44,10 @@
 
     height: 40px;
     width: 80px;
+
+    display:block;
+    margin:auto;
+
+    background-color: rgb(15, 129, 15);
+    border-radius: 10px;
 }
