@@ -10,7 +10,7 @@ const BitcoinRealTimePrice = () => {
 
        <div id='container-crypto-price-table'>
 
-        <img src = {BitcoinImg}></img>
+        <img id='bitcoin-logo' src = {BitcoinImg}></img>
         <p id='item-name-position'>Bitcoin</p>
 
        </div>
