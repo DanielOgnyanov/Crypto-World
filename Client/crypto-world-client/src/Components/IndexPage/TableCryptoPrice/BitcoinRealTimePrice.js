@@ -14,7 +14,7 @@ const BitcoinRealTimePrice = () => {
 
         <p id='item-name-position'>Bitcoin</p>
 
-        <p id='real-time-price'>28.000.00</p>
+        <p id='real-time-price'>28.000.00 $</p>
 
         <button id='buy-button'>Buy</button>
 
