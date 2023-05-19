@@ -12,6 +12,7 @@ const EthereumRealTimePrice = () => {
        <div id='eth-container'>
 
         <img>{EthereumImg}</img>
+        <p>Ethereum</p>
         
 
        </div>
