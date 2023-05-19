@@ -1,6 +1,6 @@
 import './BitcoinRealTimePrice.css'
-import * as cryptoService from '../../../Services/CryptoService'
-import BitcoinImg from '../../../Images/Bitcoin.png'
+import * as cryptoService from '../../../../Services/CryptoService'
+import BitcoinImg from '../../../../Images/Bitcoin.png'
 
 const BitcoinRealTimePrice = () => {
 
