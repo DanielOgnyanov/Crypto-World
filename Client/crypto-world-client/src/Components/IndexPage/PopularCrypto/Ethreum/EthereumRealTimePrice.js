@@ -11,7 +11,7 @@ const EthereumRealTimePrice = () => {
 
        <div id='eth-container'>
 
-        <img>{EthereumImg}</img>
+        <img id='eth-logo' src = {EthereumImg}></img>
         <p>Ethereum</p>
         
 
