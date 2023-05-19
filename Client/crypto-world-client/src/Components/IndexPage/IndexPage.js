@@ -1,6 +1,6 @@
 import './IndexPage.css'
 import GetStarted from './GetStarted/GetStarted';
-import BitcoinRealTimePrice from './PopularCrypto/BitcoinRealTimePrice';
+import BitcoinRealTimePrice from './PopularCrypto/Bitcoin/BitcoinRealTimePrice';
 import { useAuthContext } from '../../Context/AuthContext';
 
 const IndexPage = () => {
