@@ -1,4 +1,5 @@
 import './EthereumRealTimePrice.css'
+import EthereumImg from '../../../../Images/Ethereum.png'
 
 
 
@@ -8,7 +9,7 @@ const EthereumRealTimePrice = () => {
 
     return (
 
-       <div >
+       <div id='eth-container'>
 
         
 
