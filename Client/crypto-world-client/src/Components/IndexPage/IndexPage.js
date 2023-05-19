@@ -18,6 +18,7 @@ const IndexPage = () => {
             <div className='table-crypto-price'>
                 <p id='p-popular-crypto'>Popular Crypto</p>
                 <BitcoinRealTimePrice/>
+                <EthereumRealTimePrice/>
             </div>
 
 
