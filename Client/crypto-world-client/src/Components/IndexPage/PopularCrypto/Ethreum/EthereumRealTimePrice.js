@@ -1,4 +1,6 @@
+import '../Utils/Utils.css'
 import './EthereumRealTimePrice.css'
+
 import EthereumImg from '../../../../Images/Ethereum.png'
 
 
@@ -11,7 +13,7 @@ const EthereumRealTimePrice = () => {
 
        <div id='eth-container'>
 
-        <img id='eth-logo' src = {EthereumImg}></img>
+        <img id='logo-position' src = {EthereumImg}></img>
 
         <p id='item-name-position'>Ethereum</p>
 
