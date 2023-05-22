@@ -21,29 +21,3 @@
 #container-crypto-price-table:hover {
     transform: scale(1.1);
 }
-
-
-#buy-button {
-
-    height: 40px;
-    width: 100px;
-
-    display:block;
-    margin:auto;
-
-    background-color: rgb(15, 129, 15);
-    border-radius: 10px;
-    border: solid rgb(255, 255, 255);
-    border-width: 1px 1px 1px 1px;
-    color: white;
-    cursor: pointer;
-
-
-    font-size: 18px;
-    font-weight: 300;
-}
-
-#buy-button:hover {
-
-    opacity: 0.9;
-}
