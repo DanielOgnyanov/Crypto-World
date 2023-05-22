@@ -1,6 +1,8 @@
 import './BitcoinRealTimePrice.css'
+import '../Utils/Utils.css'
 import * as cryptoService from '../../../../Services/CryptoService'
 import BitcoinImg from '../../../../Images/Bitcoin.png'
+
 
 const BitcoinRealTimePrice = () => {
 
@@ -10,7 +12,7 @@ const BitcoinRealTimePrice = () => {
 
        <div id='container-crypto-price-table'>
 
-        <img id='bitcoin-logo' src = {BitcoinImg}></img>
+        <img id='logo-position' src = {BitcoinImg}></img>
 
         <p id='item-name-position'>Bitcoin</p>
 
