@@ -15,8 +15,10 @@ const IndexPage = () => {
                 <GetStarted />
             </div>
 
+            <p id='p-popular-crypto'>Popular Crypto</p>
+
             <div id='container-popular-crypto'>
-                <p id='p-popular-crypto'>Popular Crypto</p>
+                
                 <BitcoinRealTimePrice/>
                 <EthereumRealTimePrice/>
             </div>
