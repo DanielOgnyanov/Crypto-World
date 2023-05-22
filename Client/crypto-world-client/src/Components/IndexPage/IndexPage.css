@@ -4,6 +4,11 @@
 }
 
 
+#container-popular-crypto {
+    display: flex;
+}
+
+
 #p-popular-crypto {
     margin-top: 150px;
     text-align: center;
