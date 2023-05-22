@@ -15,7 +15,7 @@ const IndexPage = () => {
                 <GetStarted />
             </div>
 
-            <div className='table-crypto-price'>
+            <div id='container-popular-crypto'>
                 <p id='p-popular-crypto'>Popular Crypto</p>
                 <BitcoinRealTimePrice/>
                 <EthereumRealTimePrice/>
