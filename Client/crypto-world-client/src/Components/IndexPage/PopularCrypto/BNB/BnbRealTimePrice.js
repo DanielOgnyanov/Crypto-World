@@ -1,3 +1,4 @@
+import './BnbRealTimePrice.css'
 import '../Utils/Utils.css'
 
 
