@@ -8,6 +8,14 @@ const BnbRealTimePrice = () => {
 
     return (
 
+        <div id='bnb-container'>
+
+
+
+
+
+
+        </div>
        
 );
 
