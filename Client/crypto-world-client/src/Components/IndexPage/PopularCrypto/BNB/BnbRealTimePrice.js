@@ -19,8 +19,6 @@ const BnbRealTimePrice = () => {
 
             <button id='buy-button'>Buy</button>
 
-
-
         </div>
 
     );
