@@ -11,6 +11,7 @@ const BnbRealTimePrice = () => {
 
         <div id='bnb-container'>
 
+            <img id='logo-position' src={BNBImg}></img>
 
             <p id='item-name-position'>BNB</p>
 
