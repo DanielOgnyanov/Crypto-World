@@ -1,3 +1,6 @@
+import '../Utils/Utils.css'
+
+
 const BnbRealTimePrice = () => {
 
 
