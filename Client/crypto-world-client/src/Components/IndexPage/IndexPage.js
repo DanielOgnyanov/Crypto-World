@@ -2,6 +2,7 @@ import './IndexPage.css'
 import GetStarted from './GetStarted/GetStarted';
 import BitcoinRealTimePrice from './PopularCrypto/Bitcoin/BitcoinRealTimePrice';
 import EthereumRealTimePrice from './PopularCrypto/Ethreum/EthereumRealTimePrice';
+import BnbRealTimePrice from './PopularCrypto/BNB/BnbRealTimePrice';
 import { useAuthContext } from '../../Context/AuthContext';
 
 const IndexPage = () => {
@@ -18,9 +19,14 @@ const IndexPage = () => {
             <p id='p-popular-crypto'>Popular Crypto</p>
 
             <div id='container-popular-crypto'>
+
+                <BitcoinRealTimePrice />
+                <EthereumRealTimePrice />
                 
-                <BitcoinRealTimePrice/>
-                <EthereumRealTimePrice/>
+            </div>
+
+            <div id='container-popular-crypto'>
+                <BnbRealTimePrice />
             </div>
 
 
