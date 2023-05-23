@@ -1,5 +1,6 @@
 import './BnbRealTimePrice.css'
 import '../Utils/Utils.css'
+import BNBImg from '../../../../Images/BNB.png'
 
 
 const BnbRealTimePrice = () => {
