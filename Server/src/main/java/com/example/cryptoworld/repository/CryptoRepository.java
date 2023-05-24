@@ -16,6 +16,6 @@ public interface CryptoRepository extends JpaRepository<CryptoCurrenciesEntity, 
     @Query("select c from CryptoCurrenciesEntity as c where c.assetStringId like :assetId")
     CryptoCurrenciesEntity getCryptoByAssetStringId(String assetId);
 
-    @Query("Select * from crypto_world_db.crypto_currencies where id in (1 , 3 , 5, 6)")
+    @Query("Select p from CryptoCurrenciesEntity as p where id in (1 , 3 , 5, 6)")
     List<CryptoCurrenciesEntity> getPopularCrypto();
 }
