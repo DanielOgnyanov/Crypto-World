@@ -4,4 +4,10 @@ public class PopularCryptoViewModel {
 
     private String name;
     private double price;
+
+    public PopularCryptoViewModel() {
+    }
+
+
+
 }
