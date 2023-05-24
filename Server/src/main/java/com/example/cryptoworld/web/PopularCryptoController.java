@@ -1,13 +1,16 @@
 package com.example.cryptoworld.web;
 
 
+import com.example.cryptoworld.models.service.UserRegistrationServiceModel;
 import com.example.cryptoworld.models.view.PopularCryptoViewModel;
 import com.example.cryptoworld.service.PopularCryptoService;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 
@@ -29,6 +32,9 @@ public class PopularCryptoController {
     public ResponseEntity<List<PopularCryptoViewModel>> getPopularCrypto() {
 
 
-        return
+        List<PopularCryptoViewModel> findPopularCryptoInDb = popularCryptoService.getPopularCrypto();
+
+
+        return new ResponseEntity<List<PopularCryptoViewModel>>(findPopularCryptoInDb, HttpStatus.OK);
     }
 }
