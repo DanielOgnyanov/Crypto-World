@@ -5,10 +5,12 @@ import com.example.cryptoworld.models.view.PopularCryptoViewModel;
 import com.example.cryptoworld.repository.CryptoRepository;
 import com.example.cryptoworld.service.PopularCryptoService;
 import org.modelmapper.ModelMapper;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Service
 public class PopularCryptoServiceImpl implements PopularCryptoService {
 
     private final CryptoRepository cryptoRepository;
