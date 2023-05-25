@@ -2,10 +2,12 @@ import './BitcoinRealTimePrice.css'
 import '../Utils/Utils.css'
 import * as cryptoService from '../../../../Services/CryptoService'
 import BitcoinImg from '../../../../Images/Bitcoin.png'
+import { getPopularCryptoPrice } from '../../../../Services/CryptoService'
 
 
 const BitcoinRealTimePrice = () => {
 
+    
 
 
     return (
