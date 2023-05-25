@@ -21,3 +21,15 @@ export const getCryptoPrice = async () => {
         console.log(error);
     });
 };
+
+
+export const getPopularCryptoPrice = async () => {
+
+    let res = fetch(`${baseUrl}/api/index/popular/crypto`, {
+        method: 'GET',
+        headers: {
+            'content-type': 'application/json'
+        },
+        body: JSON.stringify()
+    });
+}
