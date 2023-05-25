@@ -31,4 +31,17 @@ export const getPopularCryptoPrice = async () => {
             'content-type': 'application/json'
         }
     });
+
+    res.then((response) => {
+
+        if (!response.ok) {
+            throw new response.status;
+        }
+        
+        return response.json();
+
+    }).then((data) => {
+        console.log(data);
+    })
+
 }
