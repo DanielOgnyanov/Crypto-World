@@ -29,7 +29,6 @@ export const getPopularCryptoPrice = async () => {
         method: 'GET',
         headers: {
             'content-type': 'application/json'
-        },
-        body: JSON.stringify()
+        }
     });
 }
