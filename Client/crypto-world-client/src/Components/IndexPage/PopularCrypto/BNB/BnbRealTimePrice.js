@@ -5,6 +5,29 @@ import BNBImg from '../../../../Images/BNB.png'
 
 const BnbRealTimePrice = () => {
 
+    const [data, setData] = useState([]);
+    const [filteredPrice, setFilteredPrice] = useState('');
+
+    useEffect(() => {
+        getPopularCryptoPrice()
+          .then(fetchResult => {
+            setData(fetchResult);
+          })
+          .catch(error => {
+            console.error('Error fetching data:', error);
+          });
+      }, []);
+    
+      
+      useEffect(() => {
+        
+        const filteredData = data.filter(item => item.name === 'Binance');
+    
+        if (filteredData.length > 0) {
+          const price = filteredData[0].price.toFixed(2);
+          setFilteredPrice(price);
+        }
+      }, [data]);
 
 
     return (
