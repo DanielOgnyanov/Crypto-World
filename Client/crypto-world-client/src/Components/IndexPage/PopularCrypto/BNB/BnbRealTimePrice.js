@@ -1,6 +1,8 @@
 import './BnbRealTimePrice.css'
 import '../Utils/Utils.css'
 import BNBImg from '../../../../Images/BNB.png'
+import { getPopularCryptoPrice } from '../../../../Services/CryptoService'
+import { useState, useEffect } from 'react';
 
 
 const BnbRealTimePrice = () => {
