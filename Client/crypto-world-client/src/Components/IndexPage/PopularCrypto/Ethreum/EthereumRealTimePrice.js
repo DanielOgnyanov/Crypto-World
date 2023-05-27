@@ -14,14 +14,24 @@ const EthereumRealTimePrice = () => {
 
 
     useEffect(() => {
-        getPopularCryptoPrice()
-          .then(fetchResult => {
-            setData(fetchResult);
-          })
-          .catch(error => {
-            console.error('Error fetching data:', error);
-          });
-      }, []);
+      const fetchData = async () => {
+        try {
+          const fetchResult = await getPopularCryptoPrice();
+          setData(fetchResult);
+        } catch (error) {
+          console.error('Error fetching data:', error);
+        }
+      };
+  
+      
+      fetchData();
+  
+      
+      const interval = setInterval(fetchData, 55000); 
+  
+      
+      return () => clearInterval(interval);
+    }, []);
     
       
       useEffect(() => {
