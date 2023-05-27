@@ -9,7 +9,30 @@ import EthereumImg from '../../../../Images/Ethereum.png'
 
 const EthereumRealTimePrice = () => {
 
+    const [data, setData] = useState([]);
+    const [filteredPrice, setFilteredPrice] = useState('');
 
+
+    useEffect(() => {
+        getPopularCryptoPrice()
+          .then(fetchResult => {
+            setData(fetchResult);
+          })
+          .catch(error => {
+            console.error('Error fetching data:', error);
+          });
+      }, []);
+    
+      
+      useEffect(() => {
+        
+        const filteredData = data.filter(item => item.name === 'Ethereum');
+    
+        if (filteredData.length > 0) {
+          const price = filteredData[0].price.toFixed(2);
+          setFilteredPrice(price);
+        }
+      }, [data]);
 
     return (
 
