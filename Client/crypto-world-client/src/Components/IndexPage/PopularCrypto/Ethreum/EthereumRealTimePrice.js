@@ -1,5 +1,7 @@
 import '../Utils/Utils.css'
 import './EthereumRealTimePrice.css'
+import { getPopularCryptoPrice } from '../../../../Services/CryptoService'
+import { useState, useEffect } from 'react';
 
 import EthereumImg from '../../../../Images/Ethereum.png'
 
