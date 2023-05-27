@@ -3,7 +3,7 @@ import '../Utils/Utils.css'
 import * as cryptoService from '../../../../Services/CryptoService'
 import BitcoinImg from '../../../../Images/Bitcoin.png'
 import { getPopularCryptoPrice } from '../../../../Services/CryptoService'
-import { useEffect } from 'react'
+import { useState, useEffect } from 'react';
 
 
 const BitcoinRealTimePrice = () => {
@@ -16,7 +16,15 @@ const BitcoinRealTimePrice = () => {
         .then(fetchResult => {
             setData(fetchResult);
         })
-    }, []);
+    }, [data]);
+
+
+    if(data && data.length > 0) {
+        console.log(data.keys)
+    }
+
+    
+    
 
     
 
