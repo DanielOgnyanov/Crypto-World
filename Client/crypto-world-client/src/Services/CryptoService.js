@@ -24,24 +24,24 @@ export const getCryptoPrice = async () => {
 
 
 export const getPopularCryptoPrice = async () => {
-
-    let res = fetch(`${baseUrl}/api/index/popular/crypto`, {
+    try {
+      const response = await fetch(`${baseUrl}/api/index/popular/crypto`, {
         method: 'GET',
         headers: {
-            'content-type': 'application/json'
-        }
-    });
-
-    res.then((response) => {
-
-        if (!response.ok) {
-            throw new response.status;
-        }
-        
-        return response.json();
-
-    }).then((data) => {
-        console.log(data);
-    })
-
-}
+          'content-type': 'application/json',
+        },
+      });
+  
+      if (!response.ok) {
+        throw new Error(response.status);
+      }
+  
+      const data = await response.json();
+      console.log(data);
+  
+      return data;
+    } catch (error) {
+      console.error('Error fetching data:', error);
+      throw error;
+    }
+  };
