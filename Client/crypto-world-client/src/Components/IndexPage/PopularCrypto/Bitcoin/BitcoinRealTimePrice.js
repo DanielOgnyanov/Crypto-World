@@ -7,7 +7,9 @@ import { getPopularCryptoPrice } from '../../../../Services/CryptoService'
 
 const BitcoinRealTimePrice = () => {
 
-    const allPricePopularCrypto = getPopularCryptoPrice();
+    const [data, setData] = useState([]);
+
+    
 
     
 
