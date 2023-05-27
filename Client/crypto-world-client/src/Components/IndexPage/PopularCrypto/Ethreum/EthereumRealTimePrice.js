@@ -42,7 +42,7 @@ const EthereumRealTimePrice = () => {
 
         <p id='item-name-position'>Ethereum</p>
 
-        <p id='real-time-price'>1.800.00 $</p>
+        <p id='real-time-price'>{filteredPrice} $</p>
 
         <button id='buy-button'>Buy</button>
         
