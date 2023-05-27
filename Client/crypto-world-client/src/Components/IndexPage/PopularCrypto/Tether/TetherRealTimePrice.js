@@ -1,5 +1,7 @@
 import '../Utils/Utils.css'
 import './TetherRealTimePrice.css'
+import { getPopularCryptoPrice } from '../../../../Services/CryptoService'
+import { useState, useEffect } from 'react';
 
 import TetherImg from '../../../../Images/Tether.png'
 
@@ -7,7 +9,29 @@ import TetherImg from '../../../../Images/Tether.png'
 
 const TetherRealTimePrice = () => {
 
+    const [data, setData] = useState([]);
+    const [filteredPrice, setFilteredPrice] = useState('');
 
+    useEffect(() => {
+        getPopularCryptoPrice()
+          .then(fetchResult => {
+            setData(fetchResult);
+          })
+          .catch(error => {
+            console.error('Error fetching data:', error);
+          });
+      }, []);
+    
+      
+      useEffect(() => {
+        
+        const filteredData = data.filter(item => item.name === 'Tether');
+    
+        if (filteredData.length > 0) {
+          const price = filteredData[0].price.toFixed(2);
+          setFilteredPrice(price);
+        }
+      }, [data]);
 
     return (
 
@@ -17,7 +41,7 @@ const TetherRealTimePrice = () => {
 
         <p id='item-name-position'>Tether</p>
 
-        <p id='real-time-price'>1.00 $</p>
+        <p id='real-time-price'>{filteredPrice} $</p>
 
         <button id='buy-button'>Buy</button>
         
