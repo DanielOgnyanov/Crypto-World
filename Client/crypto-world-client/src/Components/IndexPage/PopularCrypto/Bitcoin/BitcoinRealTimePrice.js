@@ -9,25 +9,28 @@ import { useState, useEffect } from 'react';
 const BitcoinRealTimePrice = () => {
 
     const [data, setData] = useState([]);
+    const [filteredPrice, setFilteredPrice] = useState('');
 
     useEffect(() => {
-        
         getPopularCryptoPrice()
-        .then(fetchResult => {
+          .then(fetchResult => {
             setData(fetchResult);
-        })
-    }, [data]);
-
-
-    if(data && data.length > 0) {
-        console.log(data.keys)
-    }
-
+          })
+          .catch(error => {
+            console.error('Error fetching data:', error);
+          });
+      }, []);
     
+      
+      useEffect(() => {
+        
+        const filteredData = data.filter(item => item.name === 'Bitcoin');
     
-
-    
-
+        if (filteredData.length > 0) {
+          const price = filteredData[0].price.toFixed(2);
+          setFilteredPrice(price);
+        }
+      }, [data]);
 
     return (
 
@@ -37,7 +40,7 @@ const BitcoinRealTimePrice = () => {
 
         <p id='item-name-position'>Bitcoin</p>
 
-        <p id='real-time-price'>28.000.00 $</p>
+        <p id='real-time-price'>{filteredPrice} $</p>
 
         <button id='buy-button'>Buy</button>
 
