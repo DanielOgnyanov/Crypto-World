@@ -1,6 +1,14 @@
-#container-index-page {
+#container-index-page {}
 
-    
+
+#crypto-information {
+
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    margin-left: 150px;
+    margin-right: 150px;
 }
 
 #bold-text {
