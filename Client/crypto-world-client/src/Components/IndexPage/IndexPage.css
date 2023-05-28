@@ -3,6 +3,10 @@
     
 }
 
+#bold-text {
+    font-weight: bold;
+}
+
 
 #container-popular-crypto {
     display: flex;
