@@ -8,9 +8,11 @@
 
 
 #crypto-girl-img {
+
     
-    
-    
+    width:200px;
+    height: auto;
+
 }
 
 
@@ -28,8 +30,8 @@
 
 
     border-radius: 10px;
-    
- 
+
+
 }
 
 #bold-text-welcome {

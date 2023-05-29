@@ -19,11 +19,18 @@ const IndexPage = () => {
             </div>
 
 
-            <div>
+            <div id='information-div'>
+
+
+                <div className='crypto-girl'>
+
+                    <img id='crypto-girl-img' src={cryptoGirlImg}></img>
+
+                </div>
 
                 <div id='crypto-information'>
 
-                    <img id='crypto-girl-img' src={cryptoGirlImg}></img>
+
 
                     <p><span id='bold-text-welcome'>Welcome to Crypto World</span>, <br></br> your go-to destination for <span id='bold-text'>crypto trading</span> and market information.
                         Stay updated with real-time data, charts, and analysis. Discover a wide range of <span id='bold-text'>cryptocurrencies</span>, explore trading pairs, and diversify your portfolio.
