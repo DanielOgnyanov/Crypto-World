@@ -8,7 +8,7 @@
 }
 
 #crypto-girl-div {
-    
+    filter:  hue-rotate(280deg);
 }
 
 
@@ -17,7 +17,9 @@
     width: 500px;
     margin-top: 150px;
     margin-left: 100px;
-    
+    border-radius: 10px;
+ 
+  
  
 }
 
