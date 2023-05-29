@@ -5,7 +5,7 @@ import EthereumRealTimePrice from './PopularCrypto/Ethreum/EthereumRealTimePrice
 import BnbRealTimePrice from './PopularCrypto/BNB/BnbRealTimePrice';
 import TetherRealTimePrice from './PopularCrypto/Tether/TetherRealTimePrice';
 import { useAuthContext } from '../../Context/AuthContext';
-import cryptoGirlImg from '../../Images/crypto-img-index-page.jpg'
+import cryptoGirlImg from '../../Images/crypto-girl-image.png'
 
 const IndexPage = () => {
 
@@ -22,7 +22,7 @@ const IndexPage = () => {
             <div id='information-div'>
 
 
-                <div className='crypto-girl'>
+                <div id='crypto-girl-div'>
 
                     <img id='crypto-girl-img' src={cryptoGirlImg}></img>
 
