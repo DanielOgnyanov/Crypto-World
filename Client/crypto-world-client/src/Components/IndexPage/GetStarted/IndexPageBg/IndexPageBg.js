@@ -12,7 +12,7 @@ const IndexPageBg = () => {
 
 
         <div className='index-page-bg' id='indexPageBg-div'>
-            <img src={imgGetStarted} ></img>
+            <img id='img-bg' src={imgGetStarted} ></img>
 
 
         </div>
