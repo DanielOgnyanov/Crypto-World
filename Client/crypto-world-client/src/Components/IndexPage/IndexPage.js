@@ -68,7 +68,9 @@ const IndexPage = () => {
 
             <div id='information-div'>
 
-                <div className='hold-and-earn'>
+                <div className='hold-and-earn-img'>
+
+                    <img src={holdEarnImg}></img>
 
                 </div>
 
