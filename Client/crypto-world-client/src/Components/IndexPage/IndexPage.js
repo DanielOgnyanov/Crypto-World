@@ -68,6 +68,10 @@ const IndexPage = () => {
 
             <div id='information-div'>
 
+                <div className='hold-and-earn'>
+
+                </div>
+
 
 
             </div>
