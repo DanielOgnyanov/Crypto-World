@@ -70,7 +70,7 @@ const IndexPage = () => {
 
                 <div className='hold-and-earn-img'>
 
-                    <img src={holdEarnImg}></img>
+                    <img id='hold-and-earn-img' src={holdEarnImg}></img>
 
                 </div>
 
