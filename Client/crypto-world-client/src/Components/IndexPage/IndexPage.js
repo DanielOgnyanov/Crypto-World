@@ -76,7 +76,7 @@ const IndexPage = () => {
 
 
                 <div id='crypto-information'>
-                <p id="hold-earn-text">Discover the potential of "<strong>hold and earn</strong>" crypto with our platform.
+                <p id="hold-earn-text">Discover the potential of "<span id='bold-text-hold-and-earn'>hold and earn</span>" crypto with our platform.
                 By holding onto your chosen cryptocurrencies, you can unlock a variety of earning opportunities.
                 Stake your assets in proof-of-stake networks, lend them to borrowers for interest, or participate in yield farming on decentralized platforms.
                 Take advantage of the power of compounding and watch your crypto portfolio grow.
