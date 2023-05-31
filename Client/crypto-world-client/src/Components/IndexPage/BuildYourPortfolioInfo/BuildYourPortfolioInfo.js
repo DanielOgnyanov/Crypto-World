@@ -10,8 +10,8 @@ const BuildYourPortfolioInfo = () => {
      <>
      
      <p id='p-build-your-crypto-portfolio'>Build your crypto portfolio</p>
-     
-     <span>Start your first trade with these easy steps.</span>
+
+     <span id='span-info'>Start your first trade with these easy steps.</span>
      
      
      
