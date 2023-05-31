@@ -1,3 +1,7 @@
+import './BuildYourPortfolioInfo.css'
+
+
+
 const BuildYourPortfolioInfo = () => {
 
 
@@ -5,7 +9,7 @@ const BuildYourPortfolioInfo = () => {
 
      <>
      
-     <p>Build your crypto portfolio</p>
+     <p id='p-build-your-crypto-portfolio'>Build your crypto portfolio</p>
      
      
      
