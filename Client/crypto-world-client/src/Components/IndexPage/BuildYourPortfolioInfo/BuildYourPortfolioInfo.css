@@ -5,6 +5,8 @@
     font-size: 29px;
 }
 
-#span-info {
-    text-align: center;
+#span-step-info {
+    display: flex;
+    justify-content: center;
+
 }
