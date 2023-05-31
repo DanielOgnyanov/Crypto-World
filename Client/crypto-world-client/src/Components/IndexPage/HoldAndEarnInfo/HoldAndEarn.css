@@ -1,0 +1,22 @@
+#p-hold-earn {
+    margin-top: 100px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 38px;
+    color: rgb(5, 175, 5);
+}
+
+
+#hold-and-earn-img {
+    width: 500px;
+    margin-top: 150px;
+    margin-left: 20px;
+    margin-bottom: 150px;
+    border-radius: 10px;
+}
+
+#bold-text-hold-and-earn {
+    color: rgb(5, 175, 5);
+    font-weight: bold;
+    font-size: 20px;
+}
