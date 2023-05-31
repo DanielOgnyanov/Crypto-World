@@ -1,3 +1,6 @@
+import cryptoGirlImg from '../../../Images/crypto-girl-image.PNG'
+
+
 const Welcome = () => {
 
 
