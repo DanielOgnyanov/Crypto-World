@@ -7,6 +7,7 @@ import TetherRealTimePrice from './PopularCrypto/Tether/TetherRealTimePrice';
 import { useAuthContext } from '../../Context/AuthContext';
 import HoldAndEarn from './HoldAndEarnInfo/HoldAndEarn';
 import Welcome from './WelcomeInfo/Welcome';
+import BuildYourPortfolioInfo from './BuildYourPortfolioInfo/BuildYourPortfolioInfo'
 
 const IndexPage = () => {
 
@@ -42,10 +43,16 @@ const IndexPage = () => {
 
 
             <p id='p-hold-earn'>Hold and Earn</p>
-            
+
             <div id='information-div'>
                 <HoldAndEarn />
             </div>
+
+           
+                <div>
+                    <BuildYourPortfolioInfo/>
+                </div>
+           
 
 
 
