@@ -8,7 +8,6 @@ const HoldAndEarn = () => {
     return (
 
         <>
-
             <div className='hold-and-earn-img'>
 
                 <img id='hold-and-earn-img' src={holdEarnImg}></img>
@@ -27,9 +26,6 @@ const HoldAndEarn = () => {
             </div>
 
         </>
-
-
-
 
     );
 
