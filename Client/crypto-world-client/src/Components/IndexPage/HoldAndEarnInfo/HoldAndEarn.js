@@ -1,4 +1,4 @@
-
+import './HoldAndEarn.css'
 import holdEarnImg from '../../../Images/hold-and-earn-img.PNG'
 
 
