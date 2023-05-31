@@ -5,7 +5,7 @@ import EthereumRealTimePrice from './PopularCrypto/Ethreum/EthereumRealTimePrice
 import BnbRealTimePrice from './PopularCrypto/BNB/BnbRealTimePrice';
 import TetherRealTimePrice from './PopularCrypto/Tether/TetherRealTimePrice';
 import { useAuthContext } from '../../Context/AuthContext';
-import holdEarnImg from '../../Images/hold-and-earn-img.PNG'
+import HoldAndEarn from './HoldAndEarnInfo/HoldAndEarn';
 import Welcome from './WelcomeInfo/Welcome';
 
 const IndexPage = () => {
