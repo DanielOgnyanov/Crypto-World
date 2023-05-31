@@ -1,3 +1,4 @@
+import './Welcome.css'
 import cryptoGirlImg from '../../../Images/crypto-girl-image.PNG'
 
 
