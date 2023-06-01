@@ -1,5 +1,5 @@
 import './BuildYourPortfolioInfo.css'
-
+import verifyImg from '../../../Images/verify-img.jpg'
 
 
 const BuildYourPortfolioInfo = () => {
