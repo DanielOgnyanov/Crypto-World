@@ -17,10 +17,13 @@
 #info-display-block-inline {
     display: flex;
     align-items: center;
+    margin-top: 150px;
 }
 
 #img-step {
+    
     margin-right: 10px; 
+    margin-left: 300px;
 }
 
 #p-step-title {
