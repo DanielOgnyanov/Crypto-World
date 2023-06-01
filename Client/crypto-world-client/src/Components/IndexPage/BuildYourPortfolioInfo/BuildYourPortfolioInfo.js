@@ -1,5 +1,6 @@
 import './BuildYourPortfolioInfo.css'
 import verifyImg from '../../../Images/verify-img.jpg'
+import fundImf from '../../../Images/fund-img.jpg'
 
 
 const BuildYourPortfolioInfo = () => {
@@ -22,6 +23,10 @@ const BuildYourPortfolioInfo = () => {
                 
             </div>
             <p id='p-text'>Complete the identity verification process to secure your account and transactions.</p>
+
+            <div id='info-display-block-inline'>
+
+            </div>
 
 
 
