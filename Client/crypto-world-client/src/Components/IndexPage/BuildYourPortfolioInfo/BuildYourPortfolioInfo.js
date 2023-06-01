@@ -26,7 +26,9 @@ const BuildYourPortfolioInfo = () => {
                 <img id='img-step' src={fundImg}></img>
 
                 <p id='p-step-title'>Fund your account</p>
+               
             </div>
+            <p id='p-text'>Add funds to your crypto account to start trading crypto. You can add funds with a variety of payment methods.</p>
 
 
 
