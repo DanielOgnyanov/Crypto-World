@@ -16,9 +16,12 @@ const BuildYourPortfolioInfo = () => {
             <div id='info-display-block-inline'>
                 <img id='img-step' src={verifyImg}></img>
 
-                <p id='p-step-title'>Verify your identity</p>
+                <p id='p-step-title'>Verify your identity</p> 
+                <br>
+                </br>
+                
             </div>
-
+            <p id='p-text'>Complete the identity verification process to secure your account and transactions.</p>
 
 
 
