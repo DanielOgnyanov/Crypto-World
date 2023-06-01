@@ -14,9 +14,17 @@
 
 }
 
-#p-step-title {
+#info-display-block-inline {
+    display: flex;
+    align-items: center;
+}
 
+#img-step {
+    margin-right: 10px; 
+}
+
+#p-step-title {
     font-weight: 500;
     font-size: 17px;
-    margin-left: 400px;
+    margin: 0; 
 }

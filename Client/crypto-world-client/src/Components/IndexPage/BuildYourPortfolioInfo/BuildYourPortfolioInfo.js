@@ -7,20 +7,25 @@ const BuildYourPortfolioInfo = () => {
 
     return (
 
-     <>
-     
-     <p id='p-build-your-crypto-portfolio'>Build your crypto portfolio</p>
+        <>
 
-     <span id='span-step-info'>Start your first trade with these easy steps.</span>
+            <p id='p-build-your-crypto-portfolio'>Build your crypto portfolio</p>
 
-     <p id='p-step-title'>Verify your identity</p>
-    
-     
-     
-     
-     
-     
-     </>
+            <span id='span-step-info'>Start your first trade with these easy steps.</span>
+
+            <div id='info-display-block-inline'>
+                <img id='img-step' src={verifyImg}></img>
+
+                <p id='p-step-title'>Verify your identity</p>
+            </div>
+
+
+
+
+
+
+
+        </>
 
 
 
