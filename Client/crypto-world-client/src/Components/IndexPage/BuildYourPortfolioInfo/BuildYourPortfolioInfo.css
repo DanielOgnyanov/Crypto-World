@@ -17,17 +17,18 @@
 #info-display-block-inline {
     display: flex;
     align-items: center;
-    margin-top: 150px;
+    margin-top: 70px;
 }
 
 #img-step {
-    
+    width: 120px;
     margin-right: 10px; 
     margin-left: 300px;
 }
 
 #p-step-title {
     font-weight: 500;
-    font-size: 17px;
-    margin: 0; 
+    font-size: 19px;
+    margin: 0;
+    margin-left: 30px; 
 }
