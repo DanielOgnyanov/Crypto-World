@@ -1,4 +1,4 @@
-import './Price.css'
+import './Prices.css'
 
 
 const Prices = () => {
