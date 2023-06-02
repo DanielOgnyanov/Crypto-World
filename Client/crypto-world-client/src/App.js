@@ -12,6 +12,7 @@ import AddCreditCard from './Components/AddCreditCard/AddCreditCard';
 import BuyCrypto from './Components/BuyCrypto/BuyCrypto';
 import SellCrypto from './Components/SellCrypto/SellCrypto';
 import AdminPanel from './Components/AdminPanel/AdminPanel';
+import Prices from './Components/IndexPage/Prices/Prices';
 import { AuthProvider } from './Context/AuthContext';
 
 
@@ -25,6 +26,7 @@ function App() {
 
         <Routes>
           <Route exact path="/" exact element={<IndexPage />} />
+          <Route path='/prices' element = {<Prices/>}/>
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
           
