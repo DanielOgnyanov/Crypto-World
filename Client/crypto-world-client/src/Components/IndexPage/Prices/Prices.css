@@ -1,18 +1,17 @@
 #div-span-info {
     margin-top: 100px;
     margin-left: 100px;
+    margin-bottom: 100px;
 
 }
 
 
 
 #span-text {
-    
+
     font-size: 35px;
     font-weight: 500;
-    
-   
-    
+
 }
 
 
@@ -20,6 +19,11 @@
 
 
 #special-font-market-cap {
+    font-weight: bold;
+    color: #0074a2
+}
+
+#special-font-percentage {
     font-weight: bold;
     color: #0074a2
 }
