@@ -1,8 +1,14 @@
-#info-span-text {
+#div-span-info {
+    margin-top: 100px;
+}
+
+
+
+#span-text {
+    
     font-size: 25px;
     font-weight: bold;
-    margin-top: 100px;
-    margin-bottom: 100px;
+    
    
     
 }

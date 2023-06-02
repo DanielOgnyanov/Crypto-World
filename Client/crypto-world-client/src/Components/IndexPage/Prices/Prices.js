@@ -13,10 +13,25 @@ const Prices = () => {
 
 
 
+
         <>
 
-            <span id='info-span-text'>The cryptocurrency market cap today is <span id='special-font-market-cap'>€1.09T</span>,
-                a <span>+0.63%</span> change from 24 hours ago.</span>
+            <div id="sector-span">
+                <span id="span-text">The cryptocurrency market cap today is
+
+                    <span id="special-font-market-cap">&nbsp;€1.09T</span>
+
+                    , a<br />
+
+                    <span>&nbsp;+0.63%</span>
+
+                    &nbsp; change from 24 hours ago.
+
+                </span>
+            </div>
+
+
+
 
             <table>
                 <thead>
