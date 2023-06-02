@@ -1,5 +1,9 @@
 #info-span-text {
     font-size: 25px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    
 }
 
 
@@ -9,4 +13,4 @@
 #special-font-market-cap {
     font-weight: bold;
     color: #0074a2
-  }
+}
