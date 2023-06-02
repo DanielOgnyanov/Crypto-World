@@ -23,7 +23,7 @@ const Prices = () => {
 
                     , a<br />
 
-                    <span>&nbsp;+0.63%</span>
+                    <span id='special-font-percentage'>&nbsp;+0.63%</span>
 
                     &nbsp; change from 24 hours ago.
 
