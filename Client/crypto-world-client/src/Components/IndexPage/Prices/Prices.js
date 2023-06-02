@@ -15,7 +15,8 @@ const Prices = () => {
 
         <>
 
-            <p>The global cryptocurrency market cap today is €1.09T, a +0.59% change from 4 hours ago.</p>
+            <span id='info-span-text'>The cryptocurrency market cap today is <span id='special-font-market-cap'>€1.09T</span>,
+                a <span>+0.63%</span> change from 24 hours ago.</span>
 
             <table>
                 <thead>
