@@ -1,3 +1,6 @@
+import './Price.css'
+
+
 const Prices = () => {
 
 
