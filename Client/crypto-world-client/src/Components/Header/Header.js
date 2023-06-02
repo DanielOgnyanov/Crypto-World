@@ -51,6 +51,8 @@ const Header = () => {
 
             <Link to="/"><span id='logo-header'>Crypto World</span></Link>
 
+            <Link to="/" id='prices'>Prices</Link>
+
             <button onClick={signInHandler} type='submit' id='navigation-button-signin'>Sign In</button>
 
             <button onClick={registerHandler} type='submit' id='navigation-button-create'>Create Account</button>
