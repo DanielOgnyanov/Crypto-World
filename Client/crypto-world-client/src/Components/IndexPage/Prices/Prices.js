@@ -16,7 +16,7 @@ const Prices = () => {
 
         <>
 
-            <div id="sector-span">
+            <div id="div-span-info">
                 <span id="span-text">The cryptocurrency market cap today is
 
                     <span id="special-font-market-cap">&nbsp;€1.09T</span>
