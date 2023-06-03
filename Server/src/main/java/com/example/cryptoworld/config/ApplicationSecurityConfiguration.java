@@ -44,6 +44,7 @@ public class ApplicationSecurityConfiguration extends WebSecurityConfigurerAdapt
                 .antMatchers("/api/user/email/check").permitAll()
                 .antMatchers("/api/home/cryptoPrice").permitAll()
                 .antMatchers("/api/index/popular/crypto").permitAll()
+                .antMatchers("/api/crypto/marketCap24Hour").permitAll()
                 .antMatchers("/css/**","/js/**","/images/**").permitAll()
                 .antMatchers(HttpMethod.OPTIONS, "/**").permitAll()
                 .antMatchers("/api/user/logout").permitAll()
