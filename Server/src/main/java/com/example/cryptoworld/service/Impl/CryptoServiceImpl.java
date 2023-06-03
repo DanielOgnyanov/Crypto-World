@@ -8,6 +8,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -44,7 +45,18 @@ public class CryptoServiceImpl implements CryptoService {
     }
 
     @Override
-    public double cryptoMarketCap24Hour() {
-        return 0;
+    public BigDecimal cryptoMarketCap24Hour() {
+
+        double
+
+        List<CryptoViewModel> allCrypto = cryptoRepository.findAll()
+                .stream()
+                .map(crypto -> modelMapper.map(crypto, CryptoViewModel.class))
+                .collect(Collectors.toList());
+
+
+
+
+        return ;
     }
 }
