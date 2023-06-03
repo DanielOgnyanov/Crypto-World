@@ -9,4 +9,6 @@ public interface CryptoService {
     void InitCryptoInDb() throws IOException;
 
     List<CryptoViewModel> getAllCrypto();
+
+    double cryptoMarketCap24Hour ();
 }

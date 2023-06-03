@@ -42,4 +42,9 @@ public class CryptoServiceImpl implements CryptoService {
                 .map(crypto -> modelMapper.map(crypto, CryptoViewModel.class))
                 .collect(Collectors.toList());
     }
+
+    @Override
+    public double cryptoMarketCap24Hour() {
+        return 0;
+    }
 }
