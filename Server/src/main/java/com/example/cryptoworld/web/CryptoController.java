@@ -26,7 +26,7 @@ public class CryptoController {
     }
 
 
-    @GetMapping("/popular/crypto")
+    @GetMapping("/marketCap24Hour")
     public ResponseEntity<BigDecimal> getMarketCap24Hour() {
 
         BigDecimal marketCap24Hour = cryptoService.cryptoMarketCap24Hour();
