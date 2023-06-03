@@ -62,6 +62,6 @@ public class CryptoServiceImpl implements CryptoService {
         }
 
 
-        return ;
+        return marketCapAllCrypto24Hour;
     }
 }
