@@ -54,8 +54,10 @@ public class CryptoServiceImpl implements CryptoService {
                 .map(crypto -> modelMapper.map(crypto, CryptoViewModel.class))
                 .collect(Collectors.toList());
 
+        for(CryptoViewModel crypto : allCrypto) {
 
-
+            crypto.getPrice()
+        }
 
 
         return ;
