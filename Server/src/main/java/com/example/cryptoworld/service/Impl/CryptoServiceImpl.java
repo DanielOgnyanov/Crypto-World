@@ -56,7 +56,9 @@ public class CryptoServiceImpl implements CryptoService {
 
         for(CryptoViewModel crypto : allCrypto) {
 
-            crypto.getPrice()
+            BigDecimal currentPrice = BigDecimal.valueOf(crypto.getPrice());
+
+            marketCapAllCrypto24Hour = marketCapAllCrypto24Hour.add(currentPrice);
         }
 
 
