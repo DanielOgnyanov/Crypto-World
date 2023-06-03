@@ -47,12 +47,13 @@ public class CryptoServiceImpl implements CryptoService {
     @Override
     public BigDecimal cryptoMarketCap24Hour() {
 
-        double
+        BigDecimal marketCapAllCrypto24Hour = new BigDecimal(0.0);
 
         List<CryptoViewModel> allCrypto = cryptoRepository.findAll()
                 .stream()
                 .map(crypto -> modelMapper.map(crypto, CryptoViewModel.class))
                 .collect(Collectors.toList());
+
 
 
 
