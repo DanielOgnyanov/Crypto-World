@@ -5,6 +5,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.Optional;
 
@@ -18,4 +19,7 @@ public interface CryptoRepository extends JpaRepository<CryptoCurrenciesEntity, 
 
     @Query("Select p from CryptoCurrenciesEntity as p where id in (1 , 3 , 5, 6)")
     List<CryptoCurrenciesEntity> getPopularCrypto();
+
+    @Query("Select Sum(a.price) from CryptoCurrenciesEntity as a")
+    BigDecimal cryptoMarketCap24Hour();
 }
