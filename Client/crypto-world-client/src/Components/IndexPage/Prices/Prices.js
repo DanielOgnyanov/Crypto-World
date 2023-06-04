@@ -15,6 +15,16 @@ const Prices = () => {
           }
         };
     
+    
+        fetchData();
+    
+        const interval = setInterval(fetchData, 55000); // Todo: set time for updating the price
+    
+    
+        return () => clearInterval(interval);
+      }, []);
+    
+    
 
 
 
