@@ -5,7 +5,16 @@ const Prices = () => {
 
     const [data, setData] = useState([]);
 
-
+    useEffect(() => {
+        const fetchData = async () => {
+          try {
+            const fetchResult = await getPopularCryptoPrice();
+            setData(fetchResult);
+          } catch (error) {
+            console.error('Error fetching data:', error);
+          }
+        };
+    
 
 
 
