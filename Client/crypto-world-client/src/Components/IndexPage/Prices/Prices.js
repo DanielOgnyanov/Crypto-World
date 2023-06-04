@@ -1,3 +1,5 @@
+import { getMarketCap24Hour } from '../../../Services/CryptoService';
+import { useState, useEffect } from 'react';
 import './Prices.css'
 
 
@@ -8,7 +10,7 @@ const Prices = () => {
     useEffect(() => {
         const fetchData = async () => {
           try {
-            const fetchResult = await getPopularCryptoPrice();
+            const fetchResult = await getMarketCap24Hour();
             setData(fetchResult);
           } catch (error) {
             console.error('Error fetching data:', error);
