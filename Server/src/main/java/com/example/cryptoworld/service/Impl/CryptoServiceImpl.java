@@ -47,8 +47,7 @@ public class CryptoServiceImpl implements CryptoService {
     @Override
     public BigDecimal cryptoMarketCap24Hour() {
 
-        BigDecimal marketCapAllCrypto24Hour =cryptoRepository.cryptoMarketCap24Hour();
-
+        BigDecimal marketCapAllCrypto24Hour = cryptoRepository.cryptoMarketCap24Hour();
 
 
         return marketCapAllCrypto24Hour;
