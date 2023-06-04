@@ -3,7 +3,7 @@ import './Prices.css'
 
 const Prices = () => {
 
-    const [data, setData] = useState([]);
+    const [data, setData] = useState('');
 
     useEffect(() => {
         const fetchData = async () => {
@@ -38,7 +38,7 @@ const Prices = () => {
             <div id="div-span-info">
                 <span id="span-text">The cryptocurrency market cap today is
 
-                    <span id="special-font-market-cap">&nbsp;€1.09T</span>
+                    <span id="special-font-market-cap">&nbsp;${data}</span>
 
                     , a<br />
 
