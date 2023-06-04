@@ -3,7 +3,7 @@ import './Prices.css'
 
 const Prices = () => {
 
-
+    const [data, setData] = useState([]);
 
 
 
