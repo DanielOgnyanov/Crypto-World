@@ -2,6 +2,7 @@ package com.example.cryptoworld.service.Impl;
 
 import com.example.cryptoworld.models.view.CryptoViewModel;
 import com.example.cryptoworld.repository.CryptoRepository;
+import com.example.cryptoworld.repository.MarketCapRepository;
 import com.example.cryptoworld.service.CryptoService;
 import com.example.cryptoworld.service.RealTimeCryptoPriceService;
 import org.modelmapper.ModelMapper;
@@ -17,11 +18,13 @@ public class CryptoServiceImpl implements CryptoService {
 
 
     private final CryptoRepository cryptoRepository;
+    private final MarketCapRepository marketCapRepository;
     private final ModelMapper modelMapper;
     private final RealTimeCryptoPriceService realTimeCryptoPriceService;
 
-    public CryptoServiceImpl(CryptoRepository cryptoRepository, ModelMapper modelMapper, RealTimeCryptoPriceService realTimeCryptoPriceService) {
+    public CryptoServiceImpl(CryptoRepository cryptoRepository, MarketCapRepository marketCapRepository, ModelMapper modelMapper, RealTimeCryptoPriceService realTimeCryptoPriceService) {
         this.cryptoRepository = cryptoRepository;
+        this.marketCapRepository = marketCapRepository;
         this.modelMapper = modelMapper;
         this.realTimeCryptoPriceService = realTimeCryptoPriceService;
     }
