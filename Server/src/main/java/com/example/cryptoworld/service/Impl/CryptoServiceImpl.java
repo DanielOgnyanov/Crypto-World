@@ -63,6 +63,9 @@ public class CryptoServiceImpl implements CryptoService {
 
             allMarketCap4HourEntity.setNewMarketCap(marketCapAllCrypto4Hour);
             marketCapRepository.save(allMarketCap4HourEntity);
+            counterFirstInsert++;
+        } else {
+
         }
 
 
