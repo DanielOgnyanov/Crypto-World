@@ -11,5 +11,5 @@ public interface CryptoService {
 
     List<CryptoViewModel> getAllCrypto();
 
-    BigDecimal cryptoMarketCap24Hour ();
+    BigDecimal cryptoMarketCap4Hour ();
 }
