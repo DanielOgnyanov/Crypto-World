@@ -1,5 +1,6 @@
 package com.example.cryptoworld.service.Impl;
 
+import com.example.cryptoworld.models.entities.AllMarketCap4HourEntity;
 import com.example.cryptoworld.models.view.CryptoViewModel;
 import com.example.cryptoworld.repository.CryptoRepository;
 import com.example.cryptoworld.repository.MarketCapRepository;
@@ -48,11 +49,17 @@ public class CryptoServiceImpl implements CryptoService {
     }
 
     @Override
-    public BigDecimal cryptoMarketCap24Hour() {
+    public BigDecimal cryptoMarketCap4Hour() {
 
-        BigDecimal marketCapAllCrypto24Hour = cryptoRepository.cryptoMarketCap24Hour();
+        BigDecimal marketCapAllCrypto4Hour = cryptoRepository.cryptoMarketCap24Hour();
+
+        AllMarketCap4HourEntity newMarketCapValue = new AllMarketCap4HourEntity();
+
+        newMarketCapValue.setNewMarketCap(marketCapAllCrypto4Hour);
+
+        marketCapRepository.save(newMarketCapValue);
 
 
-        return marketCapAllCrypto24Hour;
+        return marketCapAllCrypto4Hour;
     }
 }

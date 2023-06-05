@@ -19,6 +19,8 @@ public class AllMarketCap4HourEntity extends BaseEntity{
         this.oldMarketCap = oldMarketCap;
     }
 
+    public AllMarketCap4HourEntity() {
+    }
 
     @Column(name = "new_market_cap", columnDefinition = "Decimal(20,5) default '0.00000'")
     public BigDecimal getNewMarketCap() {
