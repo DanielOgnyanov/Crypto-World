@@ -29,7 +29,7 @@ public class CryptoController {
     @GetMapping("/marketCap24Hour")
     public ResponseEntity<BigDecimal> getMarketCap24Hour() {
 
-        BigDecimal marketCap24Hour = cryptoService.cryptoMarketCap24Hour();
+        BigDecimal marketCap24Hour = cryptoService.cryptoMarketCap4Hour();
 
 
         return new ResponseEntity<>(marketCap24Hour, HttpStatus.OK);
