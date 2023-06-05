@@ -52,6 +52,7 @@ public class CryptoServiceImpl implements CryptoService {
     public BigDecimal cryptoMarketCap4Hour() {
 
         BigDecimal marketCapAllCrypto4Hour = cryptoRepository.cryptoMarketCap24Hour();
+
         int counterFirstInsert = 0;
         BigDecimal oldMarketCapValue = BigDecimal.valueOf(0);
 
@@ -62,6 +63,7 @@ public class CryptoServiceImpl implements CryptoService {
         if (counterFirstInsert == 0) {
 
             allMarketCap4HourEntity.setNewMarketCap(marketCapAllCrypto4Hour);
+            allMarketCap4HourEntity.setOldMarketCap(oldMarketCapValue);
             marketCapRepository.save(allMarketCap4HourEntity);
             counterFirstInsert++;
         } else {
