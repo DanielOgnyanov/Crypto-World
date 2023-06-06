@@ -14,15 +14,10 @@ public class AllMarketCap4HourEntity extends BaseEntity{
     private BigDecimal oldMarketCap;
 
 
-    public AllMarketCap4HourEntity(BigDecimal newMarketCap, BigDecimal oldMarketCap) {
-        this.newMarketCap = new BigDecimal("0.00000");
-        this.oldMarketCap = new BigDecimal("0.00000");
-    }
-
     public AllMarketCap4HourEntity() {
     }
 
-    @Column(name = "new_market_cap", columnDefinition = "Decimal(20,5) default '0.00000'")
+    @Column(name = "new_market_cap", columnDefinition = "Decimal(10,5) default '0.00000'")
     public BigDecimal getNewMarketCap() {
         return newMarketCap;
     }
@@ -32,7 +27,7 @@ public class AllMarketCap4HourEntity extends BaseEntity{
     }
 
 
-    @Column(name = "old_market_cap", columnDefinition = "Decimal(20,5) default '0.00000'")
+    @Column(name = "old_market_cap", columnDefinition = "Decimal(10,5) default '0.00000'")
     public BigDecimal getOldMarketCap() {
         return oldMarketCap;
     }
