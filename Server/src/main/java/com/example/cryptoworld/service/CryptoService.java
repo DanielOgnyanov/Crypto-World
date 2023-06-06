@@ -12,4 +12,6 @@ public interface CryptoService {
     List<CryptoViewModel> getAllCrypto();
 
     BigDecimal cryptoMarketCap4Hour ();
+
+    double calculateTheMarketDifferenceInPercentage();
 }

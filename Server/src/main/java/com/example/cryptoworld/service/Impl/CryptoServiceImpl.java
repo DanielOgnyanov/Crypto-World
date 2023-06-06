@@ -80,4 +80,9 @@ public class CryptoServiceImpl implements CryptoService {
 
         return marketCapAllCrypto4Hour;
     }
+
+    @Override
+    public double calculateTheMarketDifferenceInPercentage() {
+        return 0;
+    }
 }
