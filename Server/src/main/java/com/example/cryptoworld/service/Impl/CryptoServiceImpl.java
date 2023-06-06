@@ -59,7 +59,7 @@ public class CryptoServiceImpl implements CryptoService {
     }
 
     @Override
-    public double calculateTheMarketDifferenceInPercentage() {
+    public BigDecimal calculateTheMarketDifferenceInPercentage() {
 
         BigDecimal allMarketCap = cryptoRepository.cryptoMarketCap4Hour();
 
@@ -105,6 +105,6 @@ public class CryptoServiceImpl implements CryptoService {
         }
 
 
-        return percentageDifference.doubleValue();
+        return percentageDifference;
     }
 }

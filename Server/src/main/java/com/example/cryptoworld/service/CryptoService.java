@@ -13,5 +13,5 @@ public interface CryptoService {
 
     BigDecimal cryptoMarketCap4Hour ();
 
-    double calculateTheMarketDifferenceInPercentage();
+    BigDecimal calculateTheMarketDifferenceInPercentage();
 }
