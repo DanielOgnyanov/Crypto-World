@@ -34,4 +34,14 @@ public class CryptoController {
 
         return new ResponseEntity<>(marketCap24Hour, HttpStatus.OK);
     }
+
+
+    @GetMapping("/marketCapDifferenceInPercentage")
+
+    public ResponseEntity<BigDecimal> getMarketCapPercentageDifference() {
+
+        BigDecimal percentageDifference = cryptoService.calculateTheMarketDifferenceInPercentage();
+
+        return new ResponseEntity<>(percentageDifference, HttpStatus.OK);
+    }
 }
