@@ -13,7 +13,7 @@ public interface MarketCapRepository extends JpaRepository<AllMarketCap4HourEnti
     @Query("SELECT a.newMarketCap FROM AllMarketCap4HourEntity a WHERE a.id = (SELECT MAX(b.id) FROM AllMarketCap4HourEntity b)")
     BigDecimal findNewMarketCap();
 
-    @Query("SELECT b.oldMarketCap FROM AllMarketCap4HourEntity b")
+    @Query("SELECT b.oldMarketCap FROM AllMarketCap4HourEntity b WHERE b.id = (SELECT MAX(c.id) FROM AllMarketCap4HourEntity c)")
     BigDecimal findOldMarketCap();
 
 
