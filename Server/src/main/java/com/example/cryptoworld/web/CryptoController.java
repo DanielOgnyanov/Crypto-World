@@ -35,6 +35,7 @@ public class CryptoController {
             BigDecimal marketCap24Hour = cryptoService.cryptoMarketCap4Hour();
 
             return new ResponseEntity<>(marketCap24Hour, HttpStatus.OK);
+
         } catch (Exception e) {
 
             throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, e.getMessage());
