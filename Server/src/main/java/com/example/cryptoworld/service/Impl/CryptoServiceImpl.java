@@ -59,9 +59,9 @@ public class CryptoServiceImpl implements CryptoService {
         AllMarketCap4HourEntity allMarketCap4HourEntity = new AllMarketCap4HourEntity();
 
 
-        boolean checkValue = marketCapRepository.findNewMarketCap().equals(BigDecimal.valueOf(0));
+        BigDecimal checkValue = marketCapRepository.findNewMarketCap();
 
-        if (checkValue) {
+        if (checkValue == null) {
 
             allMarketCap4HourEntity.setNewMarketCap(marketCapAllCrypto4Hour);
             allMarketCap4HourEntity.setOldMarketCap(oldMarketCapValue);
