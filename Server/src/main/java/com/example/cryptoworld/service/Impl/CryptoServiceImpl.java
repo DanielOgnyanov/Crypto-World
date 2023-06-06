@@ -110,6 +110,6 @@ public class CryptoServiceImpl implements CryptoService {
 
 
 
-        return 0;
+        return percentageDifference.doubleValue();
     }
 }
