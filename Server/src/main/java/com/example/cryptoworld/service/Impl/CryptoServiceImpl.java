@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -89,6 +90,21 @@ public class CryptoServiceImpl implements CryptoService {
 
 
         BigDecimal percentageDifference = BigDecimal.ZERO;
+
+        BigDecimal findOldMarketCap = marketCapRepository.findOldMarketCap();
+
+        BigDecimal findNewMarketCap = marketCapRepository.findNewMarketCap();
+
+        if(findOldMarketCap.compareTo(BigDecimal.ZERO) != 0) {
+
+            BigDecimal difference = findNewMarketCap.subtract(findOldMarketCap);
+
+            percentageDifference = difference.divide(findOldMarketCap, 2, RoundingMode.HALF_UP)
+                    .multiply(BigDecimal.valueOf(100));
+
+        }
+
+
 
 
 
