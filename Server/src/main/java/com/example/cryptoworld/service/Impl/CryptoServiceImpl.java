@@ -84,7 +84,13 @@ public class CryptoServiceImpl implements CryptoService {
             allMarketCap4HourEntity.setNewMarketCap(allMarketCap);
 
         }
+
         marketCapRepository.save(allMarketCap4HourEntity);
+
+
+        BigDecimal percentageDifference = BigDecimal.ZERO;
+
+
 
 
 
