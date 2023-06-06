@@ -30,10 +30,17 @@ public class CryptoController {
     @GetMapping("/marketCap4Hour")
     public ResponseEntity<BigDecimal> getMarketCap24Hour() {
 
-        BigDecimal marketCap24Hour = cryptoService.cryptoMarketCap4Hour();
+        try {
 
+            BigDecimal marketCap24Hour = cryptoService.cryptoMarketCap4Hour();
 
-        return new ResponseEntity<>(marketCap24Hour, HttpStatus.OK);
+            return new ResponseEntity<>(marketCap24Hour, HttpStatus.OK);
+        } catch (Exception e) {
+
+            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, e.getMessage());
+
+        }
+
     }
 
 
@@ -41,17 +48,15 @@ public class CryptoController {
 
     public ResponseEntity<BigDecimal> getMarketCapPercentageDifference() {
 
-        try{
+        try {
             BigDecimal percentageDifference = cryptoService.calculateTheMarketDifferenceInPercentage();
             return new ResponseEntity<>(percentageDifference, HttpStatus.OK);
         } catch (Exception e) {
 
             String errorMessage = "Error occurred while calculating market cap difference percentage: " + e.getMessage();
 
-            throw  new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, e.getMessage());
+            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, e.getMessage());
         }
-
-
 
 
     }
