@@ -9,7 +9,8 @@ import java.math.BigDecimal;
 
 @Repository
 public interface MarketCapRepository extends JpaRepository<AllMarketCap4HourEntity, Long> {
-    @Query("SELECT a.newMarketCap FROM AllMarketCap4HourEntity a")
+
+    @Query("SELECT a.newMarketCap FROM AllMarketCap4HourEntity a WHERE a.id = (SELECT MAX(b.id) FROM AllMarketCap4HourEntity b)")
     BigDecimal findNewMarketCap();
 
     @Query("SELECT b.oldMarketCap FROM AllMarketCap4HourEntity b")
