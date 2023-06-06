@@ -29,7 +29,7 @@ public class SchedulingConfig {
         logSellService.deleteLowestSell();
     }
 
-    @Scheduled(cron = "0 0 0 25 12 ?") // TODO SET "*/50 * * * * *"
+    @Scheduled(cron = "*/10 * * * * *") // TODO SET "*/10 * * * * *"
     public void realTimeCryptoPriceUpdate() throws IOException {
         realTimeCryptoPriceService.getRealTimePrice();
 
