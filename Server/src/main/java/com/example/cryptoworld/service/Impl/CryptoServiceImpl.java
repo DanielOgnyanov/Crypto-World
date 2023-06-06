@@ -51,8 +51,16 @@ public class CryptoServiceImpl implements CryptoService {
     @Override
     public BigDecimal cryptoMarketCap4Hour() {
 
-        BigDecimal marketCapAllCrypto4Hour = cryptoRepository.cryptoMarketCap24Hour();
+        BigDecimal marketCapAllCrypto4Hour = cryptoRepository.cryptoMarketCap4Hour();
 
+
+        return marketCapAllCrypto4Hour;
+    }
+
+    @Override
+    public double calculateTheMarketDifferenceInPercentage() {
+
+        BigDecimal marketCapAllCrypto4Hour = cryptoRepository.cryptoMarketCap4Hour();
 
         BigDecimal oldMarketCapValue = BigDecimal.valueOf(0);
 
@@ -76,13 +84,6 @@ public class CryptoServiceImpl implements CryptoService {
 
         }
         marketCapRepository.save(allMarketCap4HourEntity);
-
-
-        return marketCapAllCrypto4Hour;
-    }
-
-    @Override
-    public double calculateTheMarketDifferenceInPercentage() {
         return 0;
     }
 }

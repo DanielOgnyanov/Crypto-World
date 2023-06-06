@@ -21,5 +21,5 @@ public interface CryptoRepository extends JpaRepository<CryptoCurrenciesEntity, 
     List<CryptoCurrenciesEntity> getPopularCrypto();
 
     @Query("Select Sum(a.price) from CryptoCurrenciesEntity as a")
-    BigDecimal cryptoMarketCap24Hour();
+    BigDecimal cryptoMarketCap4Hour();
 }
