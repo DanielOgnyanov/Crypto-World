@@ -95,7 +95,7 @@ public class CryptoServiceImpl implements CryptoService {
 
         BigDecimal findNewMarketCap = marketCapRepository.findNewMarketCap();
 
-        if(findOldMarketCap.compareTo(BigDecimal.ZERO) != 0) {
+        if (findOldMarketCap.compareTo(BigDecimal.ZERO) != 0) {
 
             BigDecimal difference = findNewMarketCap.subtract(findOldMarketCap);
 
@@ -103,11 +103,6 @@ public class CryptoServiceImpl implements CryptoService {
                     .multiply(BigDecimal.valueOf(100));
 
         }
-
-
-
-
-
 
 
         return percentageDifference.doubleValue();
