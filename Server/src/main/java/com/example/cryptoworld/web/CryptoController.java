@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -40,8 +41,18 @@ public class CryptoController {
 
     public ResponseEntity<BigDecimal> getMarketCapPercentageDifference() {
 
-        BigDecimal percentageDifference = cryptoService.calculateTheMarketDifferenceInPercentage();
+        try{
+            BigDecimal percentageDifference = cryptoService.calculateTheMarketDifferenceInPercentage();
+            return new ResponseEntity<>(percentageDifference, HttpStatus.OK);
+        } catch (Exception e) {
 
-        return new ResponseEntity<>(percentageDifference, HttpStatus.OK);
+            String errorMessage = "Error occurred while calculating market cap difference percentage: " + e.getMessage();
+
+            throw  new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, e.getMessage());
+        }
+
+
+
+
     }
 }
