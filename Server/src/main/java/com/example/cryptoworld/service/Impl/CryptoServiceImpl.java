@@ -100,7 +100,7 @@ public class CryptoServiceImpl implements CryptoService {
 
             BigDecimal difference = findNewMarketCap.subtract(findOldMarketCap);
 
-            percentageDifference = difference.divide(findOldMarketCap, 2, RoundingMode.HALF_UP)
+            percentageDifference = difference.divide(findOldMarketCap, 6, RoundingMode.HALF_UP)
                     .multiply(BigDecimal.valueOf(100));
 
         }
