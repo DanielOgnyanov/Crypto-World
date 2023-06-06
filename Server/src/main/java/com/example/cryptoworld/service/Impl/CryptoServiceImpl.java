@@ -60,7 +60,7 @@ public class CryptoServiceImpl implements CryptoService {
     @Override
     public double calculateTheMarketDifferenceInPercentage() {
 
-        BigDecimal marketCapAllCrypto4Hour = cryptoRepository.cryptoMarketCap4Hour();
+        BigDecimal allMarketCap = cryptoRepository.cryptoMarketCap4Hour();
 
         BigDecimal oldMarketCapValue = BigDecimal.valueOf(0);
 
@@ -71,19 +71,23 @@ public class CryptoServiceImpl implements CryptoService {
 
         if (checkValue == null) {
 
-            allMarketCap4HourEntity.setNewMarketCap(marketCapAllCrypto4Hour);
+            allMarketCap4HourEntity.setNewMarketCap(allMarketCap);
             allMarketCap4HourEntity.setOldMarketCap(oldMarketCapValue);
 
         } else {
+            // Here i find the new value to set it as old value market cap and update the new value.
 
-            BigDecimal findNewMarketCapValue = marketCapRepository.findNewMarketCap(); // Here i find the new value to set it as old value market cap and update the new value.
+            BigDecimal findNewMarketCapValue = marketCapRepository.findNewMarketCap();
 
             allMarketCap4HourEntity.setOldMarketCap(findNewMarketCapValue);
 
-            allMarketCap4HourEntity.setNewMarketCap(marketCapAllCrypto4Hour);
+            allMarketCap4HourEntity.setNewMarketCap(allMarketCap);
 
         }
         marketCapRepository.save(allMarketCap4HourEntity);
+
+
+
         return 0;
     }
 }
