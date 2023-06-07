@@ -37,7 +37,7 @@ const Prices = () => {
         const fetchData = async () => {
           try {
             const fetchResult = await getPercentageDifferenceInMarketCap();
-            setData(fetchResult);
+            setMarketCapDifference(fetchResult);
           } catch (error) {
             console.error('Error fetching data:', error);
           }
