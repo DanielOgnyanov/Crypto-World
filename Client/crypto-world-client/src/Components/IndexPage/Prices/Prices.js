@@ -1,4 +1,4 @@
-import { getMarketCap24Hour } from '../../../Services/CryptoService';
+import { getMarketCap24Hour, getPercentageDifferenceInMarketCap } from '../../../Services/CryptoService';
 import { useState, useEffect } from 'react';
 import './Prices.css'
 
@@ -31,6 +31,25 @@ const Prices = () => {
       const formatPrice = (price) => {
         return parseFloat(price).toLocaleString(); 
       };
+
+
+      useEffect(() => {
+        const fetchData = async () => {
+          try {
+            const fetchResult = await getPercentageDifferenceInMarketCap();
+            setData(fetchResult);
+          } catch (error) {
+            console.error('Error fetching data:', error);
+          }
+        };
+    
+    
+        fetchData();
+    
+        const interval = setInterval(fetchData, 55000); 
+    
+        return () => clearInterval(interval);
+      }, []);
 
 
     return (
