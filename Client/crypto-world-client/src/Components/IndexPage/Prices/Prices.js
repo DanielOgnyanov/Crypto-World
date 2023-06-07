@@ -21,7 +21,7 @@ const Prices = () => {
     
         fetchData();
     
-        const interval = setInterval(fetchData, 55000); // Todo: set time for updating the price
+        const interval = setInterval(fetchData, 20000); // Todo: set time for updating the price
     
     
         return () => clearInterval(interval);
@@ -46,7 +46,7 @@ const Prices = () => {
     
         fetchData();
     
-        const interval = setInterval(fetchData, 55000); 
+        const interval = setInterval(fetchData, 20000); 
     
         return () => clearInterval(interval);
       }, []);
