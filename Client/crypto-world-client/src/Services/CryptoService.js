@@ -49,7 +49,7 @@ export const getPopularCryptoPrice = async () => {
 
   export const getMarketCap24Hour = async () => {
     try {
-      const response = await fetch(`${baseUrl}/api/crypto/marketCap24Hour`, {
+      const response = await fetch(`${baseUrl}/api/crypto/marketCap4Hour`, {
         method: 'GET',
         headers: {
           'content-type': 'application/json',
