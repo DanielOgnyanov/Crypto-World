@@ -66,7 +66,7 @@ const Prices = () => {
 
                     , a<br />
 
-                    <span id='special-font-percentage'>&nbsp;+0.63%</span>
+                    <span id='special-font-percentage'>&nbsp;{marketCapDifference}%</span>
 
                     &nbsp; change from 24 hours ago.
 
