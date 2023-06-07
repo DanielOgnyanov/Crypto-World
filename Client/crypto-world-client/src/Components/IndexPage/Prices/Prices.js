@@ -10,46 +10,46 @@ const Prices = () => {
 
     useEffect(() => {
         const fetchData = async () => {
-          try {
-            const fetchResult = await getMarketCap24Hour();
-            setData(fetchResult);
-          } catch (error) {
-            console.error('Error fetching data:', error);
-          }
+            try {
+                const fetchResult = await getMarketCap24Hour();
+                setData(fetchResult);
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
         };
-    
-    
+
+
         fetchData();
-    
+
         const interval = setInterval(fetchData, 20000); // Todo: set time for updating the price
-    
-    
+
+
         return () => clearInterval(interval);
-      }, []);
-    
-    
-      const formatPrice = (price) => {
-        return parseFloat(price).toLocaleString(); 
-      };
+    }, []);
 
 
-      useEffect(() => {
+    const formatPrice = (price) => {
+        return parseFloat(price).toLocaleString();
+    };
+
+
+    useEffect(() => {
         const fetchData = async () => {
-          try {
-            const fetchResult = await getPercentageDifferenceInMarketCap();
-            setMarketCapDifference(fetchResult);
-          } catch (error) {
-            console.error('Error fetching data:', error);
-          }
+            try {
+                const fetchResult = await getPercentageDifferenceInMarketCap();
+                setMarketCapDifference(fetchResult);
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
         };
-    
-    
+
+
         fetchData();
-    
-        const interval = setInterval(fetchData, 20000); 
-    
+
+        const interval = setInterval(fetchData, 20000);
+
         return () => clearInterval(interval);
-      }, []);
+    }, []);
 
 
     return (
