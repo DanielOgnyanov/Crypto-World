@@ -6,6 +6,7 @@ import './Prices.css'
 const Prices = () => {
 
     const [data, setData] = useState('');
+    const [marketCapDifference, setMarketCapDifference] = useState('');
 
     useEffect(() => {
         const fetchData = async () => {
