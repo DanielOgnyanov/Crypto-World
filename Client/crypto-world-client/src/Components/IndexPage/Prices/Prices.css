@@ -34,11 +34,12 @@
   #table-container th {
     background-color: #ffffff;
     text-align: left;
-    padding: 8px;
+    padding: 25px;
   }
   
   #table-container td {
-    padding: 12px;
+    padding: 25px;
+    border-bottom: 1px solid #ddd;
   }
   
   #table-container tr:nth-child(even) {
