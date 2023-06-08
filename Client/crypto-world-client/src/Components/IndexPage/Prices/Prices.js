@@ -32,6 +32,8 @@ const Prices = () => {
         return parseFloat(price).toLocaleString();
     };
 
+    console.log(data)
+
 
     useEffect(() => {
         const fetchData = async () => {
@@ -75,6 +77,7 @@ const Prices = () => {
 
 
 
+             <div id='table-container'>
 
             <table>
                 <thead>
@@ -97,6 +100,8 @@ const Prices = () => {
 
                 </tbody>
             </table>
+
+            </div>  
 
         </>
 
