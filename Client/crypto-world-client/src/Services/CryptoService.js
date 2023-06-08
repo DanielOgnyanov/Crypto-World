@@ -93,3 +93,28 @@ export const getPopularCryptoPrice = async () => {
       throw error;
     }
   };
+
+
+
+  export const getByNameCryptoPrice = async (cryptoName) => {
+    try {
+      const response = await fetch(`${baseUrl}/api/crypto/price/by/name`, {
+        method: 'POST',
+        headers: {
+          'content-type': 'application/json',
+        },
+        body: JSON.stringify({ name: cryptoName }),
+      });
+  
+      if (!response.ok) {
+        throw new Error(response.status);
+      }
+  
+      const data = await response.json();
+  
+      return data;
+    } catch (error) {
+      console.error('Error fetching data:', error);
+      throw error;
+    }
+  };
