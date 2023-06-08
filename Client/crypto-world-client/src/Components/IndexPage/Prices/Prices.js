@@ -7,7 +7,7 @@ const Prices = () => {
 
     const [data, setData] = useState('');
     const [marketCapDifference, setMarketCapDifference] = useState('');
-    const [prices, setPrices] = useState('');
+    const [prices, setPrices] = useState([]);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -59,7 +59,7 @@ const Prices = () => {
         const fetchData = async () => {
             try {
                 const fetchResult = await getAllCryptoPrices();
-                setMarketCapDifference(fetchResult);
+                setPrices(fetchResult);
             } catch (error) {
                 console.error('Error fetching data:', error);
             }
