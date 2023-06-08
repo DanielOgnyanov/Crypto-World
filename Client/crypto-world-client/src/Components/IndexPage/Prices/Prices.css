@@ -25,3 +25,26 @@
     display: flex;
     justify-content: center;
 }
+
+#table-container table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  #table-container th {
+    background-color: #9fdd86;
+    text-align: left;
+    padding: 10px;
+  }
+  
+  #table-container td {
+    padding: 8px;
+  }
+  
+  #table-container tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  #table-container tr:hover {
+    background-color: #e5e5e5;
+  }
