@@ -27,18 +27,18 @@
 }
 
 #table-container table {
+    width: 80%; /* Adjust the width as needed */
     border-collapse: collapse;
-    width: 100%;
   }
   
   #table-container th {
-    background-color: #9fdd86;
+    background-color: #ffffff;
     text-align: left;
-    padding: 10px;
+    padding: 8px;
   }
   
   #table-container td {
-    padding: 8px;
+    padding: 12px;
   }
   
   #table-container tr:nth-child(even) {
