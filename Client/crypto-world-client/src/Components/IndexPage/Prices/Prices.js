@@ -1,4 +1,4 @@
-import { getMarketCap24Hour, getPercentageDifferenceInMarketCap } from '../../../Services/CryptoService';
+import { getMarketCap24Hour, getPercentageDifferenceInMarketCap, getByNameCryptoPrice } from '../../../Services/CryptoService';
 import { useState, useEffect } from 'react';
 import './Prices.css'
 
