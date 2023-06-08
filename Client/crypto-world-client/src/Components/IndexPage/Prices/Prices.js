@@ -130,7 +130,7 @@ const Prices = () => {
                         <td>1</td>
                         <td>Bitcoin</td>
                         <td>$58,752.34</td>
-                        <td></td>
+                        <td> <div id='chart-1D' style={getChartStyle()}></div></td>
                         <td>$1,094,208,374,559</td>
                     </tr>
 
