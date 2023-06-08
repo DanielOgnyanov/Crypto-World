@@ -1,4 +1,4 @@
-import { getMarketCap24Hour, getPercentageDifferenceInMarketCap, getByNameCryptoPrice } from '../../../Services/CryptoService';
+import { getMarketCap24Hour, getPercentageDifferenceInMarketCap, getAllCryptoPrices } from '../../../Services/CryptoService';
 import { useState, useEffect } from 'react';
 import './Prices.css'
 
@@ -7,6 +7,7 @@ const Prices = () => {
 
     const [data, setData] = useState('');
     const [marketCapDifference, setMarketCapDifference] = useState('');
+    const [prices, setPrices] = useState('');
 
     useEffect(() => {
         const fetchData = async () => {
@@ -32,7 +33,7 @@ const Prices = () => {
         return parseFloat(price).toLocaleString();
     };
 
-    console.log(data)
+    
 
 
     useEffect(() => {
@@ -52,6 +53,27 @@ const Prices = () => {
 
         return () => clearInterval(interval);
     }, []);
+
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const fetchResult = await getAllCryptoPrices();
+                setMarketCapDifference(fetchResult);
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
+        };
+
+
+        fetchData();
+
+        const interval = setInterval(fetchData, 20000);
+
+        return () => clearInterval(interval);
+    }, []);
+
+
 
 
     return (
