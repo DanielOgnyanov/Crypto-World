@@ -39,7 +39,7 @@
   
   #table-container td {
     padding: 25px;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 2px solid #ddd;
   }
   
   #table-container tr:nth-child(even) {
