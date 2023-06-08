@@ -96,14 +96,14 @@ export const getPopularCryptoPrice = async () => {
 
 
 
-  export const getByNameCryptoPrice = async (cryptoName) => {
+  export const getAllCryptoPrice = async () => {
     try {
-      const response = await fetch(`${baseUrl}/api/crypto/price/by/name`, {
-        method: 'POST',
+      const response = await fetch(`${baseUrl}/api/crypto/prices`, {
+        method: 'GET',
         headers: {
           'content-type': 'application/json',
         },
-        body: JSON.stringify({ name: cryptoName }),
+        
       });
   
       if (!response.ok) {
