@@ -96,7 +96,7 @@ export const getPopularCryptoPrice = async () => {
 
 
 
-  export const getAllCryptoPrice = async () => {
+  export const getAllCryptoPrices = async () => {
     try {
       const response = await fetch(`${baseUrl}/api/crypto/prices`, {
         method: 'GET',
