@@ -32,9 +32,10 @@
   }
   
   #table-container th {
-    background-color: #ffffff;
+    
     text-align: left;
     padding: 25px;
+    border-bottom: 2px solid #ddd;
   }
   
   #table-container td {
