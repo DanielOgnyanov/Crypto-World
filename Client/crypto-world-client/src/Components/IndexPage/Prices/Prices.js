@@ -75,6 +75,20 @@ const Prices = () => {
 
 
 
+    const getChartStyle = (cryptoPrice, previousPrice) => {
+
+        if(cryptoPrice) {
+
+            const percentage = cryptoPrice / 100;
+            const color = cryptoPrice > previousPrice ? 'green' : 'red';
+            
+            return {
+                background: `linear-gradient(to right, ${color} ${percentage}%, transparent ${percentage}%)`
+            };
+        }
+        return{};
+    } 
+
 
     return (
 
