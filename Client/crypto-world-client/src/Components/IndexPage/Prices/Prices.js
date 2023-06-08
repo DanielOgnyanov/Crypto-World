@@ -33,7 +33,7 @@ const Prices = () => {
         return parseFloat(price).toLocaleString();
     };
 
-    
+
 
 
     useEffect(() => {
@@ -77,17 +77,17 @@ const Prices = () => {
 
     const getChartStyle = (cryptoPrice, previousPrice) => {
 
-        if(cryptoPrice) {
+        if (cryptoPrice) {
 
             const percentage = cryptoPrice / 100;
             const color = cryptoPrice > previousPrice ? 'green' : 'red';
-            
+
             return {
                 background: `linear-gradient(to right, ${color} ${percentage}%, transparent ${percentage}%)`
             };
         }
-        return{};
-    } 
+        return {};
+    }
 
 
     return (
@@ -113,31 +113,31 @@ const Prices = () => {
 
 
 
-             <div id='table-container'>
+            <div id='table-container'>
 
-            <table>
-                <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>Name</th>
-                        <th>Price</th>
-                        <th>Chart</th>
-                        <th>Market Cap</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Bitcoin</td>
-                        <td>$58,752.34</td>
-                        <td> <div id='chart-1D' style={getChartStyle()}></div></td>
-                        <td>$1,094,208,374,559</td>
-                    </tr>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Name</th>
+                            <th>Price</th>
+                            <th>Chart</th>
+                            <th>Market Cap</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Bitcoin</td>
+                            <td>$58,752.34</td>
+                            <td> <div id='chart-1D' style={getChartStyle()}></div></td>
+                            <td>$1,094,208,374,559</td>
+                        </tr>
 
-                </tbody>
-            </table>
+                    </tbody>
+                </table>
 
-            </div>  
+            </div>
 
         </>
 
