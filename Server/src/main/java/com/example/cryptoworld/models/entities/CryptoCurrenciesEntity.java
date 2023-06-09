@@ -72,7 +72,7 @@ public class CryptoCurrenciesEntity extends BaseEntity{
         this.price = price;
     }
 
-    @Column(name = "old_price_track", columnDefinition = "default '0.00000'")
+    @Column(name = "old_price_track")
     public double getOldPriceTrack() {
         return oldPriceTrack;
     }
