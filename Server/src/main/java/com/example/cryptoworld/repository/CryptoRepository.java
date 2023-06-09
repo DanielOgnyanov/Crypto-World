@@ -25,5 +25,5 @@ public interface CryptoRepository extends JpaRepository<CryptoCurrenciesEntity, 
 
 
     @Query("Select b from CryptoCurrenciesEntity as b where b.name like :name")
-    double getCurrentPrice (double name);
+    double getCurrentPrice (String name);
 }
