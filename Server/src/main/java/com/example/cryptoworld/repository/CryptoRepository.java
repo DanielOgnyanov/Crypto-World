@@ -1,6 +1,7 @@
 package com.example.cryptoworld.repository;
 
 import com.example.cryptoworld.models.entities.CryptoCurrenciesEntity;
+import com.example.cryptoworld.models.view.CryptoTableViewModel;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -26,4 +27,7 @@ public interface CryptoRepository extends JpaRepository<CryptoCurrenciesEntity, 
 
     @Query("Select b.price from CryptoCurrenciesEntity as b where b.name like :name")
     double getCurrentPrice (String name);
+
+    @Query("Select d.name ,d.price ,d.oldPriceTrack, d.volumeFor24Hour from CryptoCurrenciesEntity as d")
+    List<CryptoTableViewModel> getAllCryptoPrices();
 }
