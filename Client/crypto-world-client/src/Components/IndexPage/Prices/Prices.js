@@ -7,7 +7,7 @@ const Prices = () => {
 
     const [data, setData] = useState('');
     const [marketCapDifference, setMarketCapDifference] = useState('');
-    const [prices, setPrices] = useState([]);
+    const [crypto, setCrypto] = useState([]);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -59,7 +59,7 @@ const Prices = () => {
         const fetchData = async () => {
             try {
                 const fetchResult = await getAllCryptoPrices();
-                setPrices(fetchResult);
+                setCrypto(fetchResult);
             } catch (error) {
                 console.error('Error fetching data:', error);
             }
@@ -126,13 +126,17 @@ const Prices = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Bitcoin</td>
-                            <td>$58,752.34</td>
-                            <td> <div id='chart-1D' style={getChartStyle()}></div></td>
-                            <td>$1,094,208,374,559</td>
-                        </tr>
+                    {crypto.map((crypto, index) => (
+                            <tr key={crypto.id}>
+                                <td>{index + 1}</td>
+                                <td>{crypto.name}</td>
+                                <td>${formatPrice(crypto.price)}</td>
+                                <td>
+                                    <div id={`chart-1D-${crypto.id}`} style={getChartStyle(crypto.price, crypto.oldPriceTrack)}></div>
+                                </td>
+                                <td>${formatPrice(crypto.marketCap)}</td>
+                            </tr>
+                        ))}
 
                     </tbody>
                 </table>
