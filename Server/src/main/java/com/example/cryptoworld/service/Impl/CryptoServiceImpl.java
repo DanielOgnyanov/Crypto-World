@@ -1,6 +1,7 @@
 package com.example.cryptoworld.service.Impl;
 
 import com.example.cryptoworld.models.entities.AllMarketCap4HourEntity;
+import com.example.cryptoworld.models.entities.CryptoCurrenciesEntity;
 import com.example.cryptoworld.models.view.CryptoTableViewModel;
 import com.example.cryptoworld.models.view.CryptoViewModel;
 import com.example.cryptoworld.repository.CryptoRepository;
@@ -113,8 +114,9 @@ public class CryptoServiceImpl implements CryptoService {
     @Override
     public List<CryptoTableViewModel> getAllPrices() {
 
-        List<CryptoTableViewModel> getAllPrices = cryptoRepository.getAllCryptoPrices();
 
-        return getAllPrices;
+        return cryptoRepository.getAllCryptoPrices().stream()
+                .map(crypto -> modelMapper.map(crypto, CryptoTableViewModel.class))
+                .collect(Collectors.toList());
     }
 }
