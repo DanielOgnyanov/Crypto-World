@@ -34,14 +34,7 @@ public class RealTimeCryptoPriceServiceImpl implements RealTimeCryptoPriceServic
     public void getRealTimePrice() throws IOException {
 
         //  call
-        OkHttpClient client = new OkHttpClient();
-
-        Request request = new Request.Builder()
-                .url(infoUtils.getAPI_URL())
-                .addHeader(infoUtils.getAPI_NAME(), infoUtils.getPRIVATE_KEY())
-                .build();
-
-        Response response = client.newCall(request).execute();
+        Response response = getResponse();
 
         // end
 
@@ -88,6 +81,27 @@ public class RealTimeCryptoPriceServiceImpl implements RealTimeCryptoPriceServic
 
 
         }
+    }
+
+    private Response getResponse() throws IOException {
+
+        try{
+            OkHttpClient client = new OkHttpClient();
+
+            Request request = new Request.Builder()
+                    .url(infoUtils.getAPI_URL())
+                    .addHeader(infoUtils.getAPI_NAME(), infoUtils.getPRIVATE_KEY())
+                    .build();
+
+            return client.newCall(request).execute();
+
+
+        }catch (IOException e) {
+
+            throw  new IOException(e.getMessage()
+                    + "Error occurred while executing the request to fetch crypto information");
+        }
+
     }
 
     private File setCryptoLogo(String cryptoName) {
