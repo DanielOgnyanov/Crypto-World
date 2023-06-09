@@ -80,7 +80,7 @@ public class RealTimeCryptoPriceServiceImpl implements RealTimeCryptoPriceServic
 
                 CryptoCurrenciesEntity currenciesEntity =
                         new CryptoCurrenciesEntity(name, assetId, volume24Hour, price.doubleValue(),
-                                oldPriceDefaultValue ,logo.toString().trim().getBytes());
+                                oldPriceDefaultValue, logo.toString().trim().getBytes());
 
                 cryptoRepository.save(currenciesEntity);
 
@@ -144,7 +144,6 @@ public class RealTimeCryptoPriceServiceImpl implements RealTimeCryptoPriceServic
         curr.setPrice(price.doubleValue());
 
         curr.setVolumeFor24Hour(volume24Hour);
-
 
 
         cryptoRepository.save(curr);
