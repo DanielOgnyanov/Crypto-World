@@ -136,13 +136,15 @@ public class RealTimeCryptoPriceServiceImpl implements RealTimeCryptoPriceServic
         CryptoCurrenciesEntity curr =
                 cryptoRepository.getCryptoByAssetStringId(assetId);
 
-        double getCurrentPrice =
+        double getCurrentPrice = cryptoRepository.getCurrentPrice(name);
+
+        curr.setOldPriceTrack(getCurrentPrice);
 
         curr.setPrice(price.doubleValue());
 
         curr.setVolumeFor24Hour(volume24Hour);
 
-        curr.setOldPriceTrack();
+
 
         cryptoRepository.save(curr);
 
