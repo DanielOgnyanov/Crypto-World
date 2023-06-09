@@ -1,8 +1,9 @@
 package com.example.cryptoworld.web;
 
 
-import com.example.cryptoworld.models.view.PopularCryptoViewModel;
+import com.example.cryptoworld.models.view.CryptoTableViewModel;
 import com.example.cryptoworld.service.CryptoService;
+import com.example.cryptoworld.service.RealTimeCryptoPriceService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -21,9 +22,11 @@ public class CryptoController {
 
 
     private final CryptoService cryptoService;
+    private final RealTimeCryptoPriceService realTimeCryptoPriceService;
 
-    public CryptoController(CryptoService cryptoService) {
+    public CryptoController(CryptoService cryptoService, RealTimeCryptoPriceService realTimeCryptoPriceService) {
         this.cryptoService = cryptoService;
+        this.realTimeCryptoPriceService = realTimeCryptoPriceService;
     }
 
 
@@ -61,4 +64,29 @@ public class CryptoController {
 
 
     }
+
+
+    @GetMapping("/prices")
+
+    public ResponseEntity<List<CryptoTableViewModel>> getAllCryptoPrices() {
+
+        try {
+
+            List<CryptoTableViewModel> currentPrices = cryptoService.getAllPrices();
+
+            return new ResponseEntity<List<CryptoTableViewModel>>(currentPrices , HttpStatus.OK);
+
+
+        } catch (Exception e) {
+
+            String errorMessage = "Error occurred while fetching crypto prices: " + e.getMessage();
+
+            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, e.getMessage());
+        }
+
+
+    }
+
+
+
 }

@@ -1,5 +1,6 @@
 package com.example.cryptoworld.service;
 
+import com.example.cryptoworld.models.view.CryptoTableViewModel;
 import com.example.cryptoworld.models.view.CryptoViewModel;
 
 import java.io.IOException;
@@ -14,4 +15,6 @@ public interface CryptoService {
     BigDecimal cryptoMarketCap4Hour ();
 
     BigDecimal calculateTheMarketDifferenceInPercentage();
+
+    List<CryptoTableViewModel> getAllPrices();
 }
