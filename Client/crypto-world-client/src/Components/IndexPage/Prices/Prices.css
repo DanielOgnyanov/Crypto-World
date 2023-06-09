@@ -54,5 +54,9 @@
 
   #chart-1D {
     height: 10px;
-    width: 10px;
+    width: 100%;
+  }
+
+  #chart-1D-progress {
+    height: 100%;
   }

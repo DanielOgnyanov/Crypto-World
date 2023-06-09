@@ -83,7 +83,8 @@ const Prices = () => {
             const color = cryptoPrice > previousPrice ? 'green' : 'red';
 
             return {
-                background: `linear-gradient(to right, ${color} ${percentage}%, transparent ${percentage}%)`
+                background: `linear-gradient(to right, ${color} ${percentage}%, transparent ${percentage}%)`,
+                height: '10px',
             };
         }
         return {};
