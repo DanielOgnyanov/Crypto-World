@@ -79,7 +79,8 @@ public class RealTimeCryptoPriceServiceImpl implements RealTimeCryptoPriceServic
                 File logo = setCryptoLogo(name);
 
                 CryptoCurrenciesEntity currenciesEntity =
-                        new CryptoCurrenciesEntity(name, assetId, volume24Hour, price.doubleValue(), logo.toString().trim().getBytes());
+                        new CryptoCurrenciesEntity(name, assetId, volume24Hour, price.doubleValue(),
+                                oldPriceDefaultValue ,logo.toString().trim().getBytes());
 
                 cryptoRepository.save(currenciesEntity);
 
