@@ -15,6 +15,7 @@ public class CryptoCurrenciesEntity extends BaseEntity{
     private String assetStringId;
     private BigDecimal volumeFor24Hour;
     private double price;
+    private double oldPriceTrack;
     private byte[] logoImage;
 
 
@@ -69,6 +70,15 @@ public class CryptoCurrenciesEntity extends BaseEntity{
 
     public void setPrice(double price) {
         this.price = price;
+    }
+
+
+    public double getOldPriceTrack() {
+        return oldPriceTrack;
+    }
+
+    public void setOldPriceTrack(double oldPriceTrack) {
+        this.oldPriceTrack = oldPriceTrack;
     }
 
     @Column(name = "logo_image")
