@@ -89,6 +89,8 @@ const Prices = () => {
         return {};
     }
 
+    console.log(crypto)
+
 
     return (
 
@@ -134,7 +136,7 @@ const Prices = () => {
                                 <td>
                                     <div id={`chart-1D-${crypto.id}`} style={getChartStyle(crypto.price, crypto.oldPriceTrack)}></div>
                                 </td>
-                                <td>${formatPrice(crypto.marketCap)}</td>
+                                <td>${formatPrice(crypto.volumeFor24Hour)}</td>
                             </tr>
                         ))}
 
