@@ -24,6 +24,6 @@ public interface CryptoRepository extends JpaRepository<CryptoCurrenciesEntity, 
     BigDecimal cryptoMarketCap4Hour();
 
 
-    @Query("Select b from CryptoCurrenciesEntity as b where b.name like :name")
+    @Query("Select b.price from CryptoCurrenciesEntity as b where b.name like :name")
     double getCurrentPrice (String name);
 }
