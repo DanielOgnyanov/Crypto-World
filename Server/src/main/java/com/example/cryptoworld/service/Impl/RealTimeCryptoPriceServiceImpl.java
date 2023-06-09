@@ -68,6 +68,8 @@ public class RealTimeCryptoPriceServiceImpl implements RealTimeCryptoPriceServic
 
             BigDecimal price = currentCryptoObject.getBigDecimal("price_usd");
 
+            double oldPriceDefaultValue = 0;
+
             if (cryptoRepository.count() == 10) {
 
                 setNewPriceToCrypto(name, assetId, volume24Hour, price);
@@ -134,9 +136,13 @@ public class RealTimeCryptoPriceServiceImpl implements RealTimeCryptoPriceServic
         CryptoCurrenciesEntity curr =
                 cryptoRepository.getCryptoByAssetStringId(assetId);
 
+        double getCurrentPrice =
+
         curr.setPrice(price.doubleValue());
 
         curr.setVolumeFor24Hour(volume24Hour);
+
+        curr.setOldPriceTrack();
 
         cryptoRepository.save(curr);
 
