@@ -1,7 +1,7 @@
 import { getMarketCap24Hour, getPercentageDifferenceInMarketCap, getAllCryptoPrices } from '../../../Services/CryptoService';
 import { useState, useEffect, useRef } from 'react';
 import './Prices.css'
-import Chart from 'chart.js';
+import Chart from 'chart.js/auto';
 
 
 const Prices = () => {
@@ -10,6 +10,8 @@ const Prices = () => {
     const [marketCapDifference, setMarketCapDifference] = useState('');
     const [crypto, setCrypto] = useState([]);
     const chartRef = useRef(null);
+
+    
 
     useEffect(() => {
         const fetchData = async () => {
@@ -75,44 +77,33 @@ const Prices = () => {
         return () => clearInterval(interval);
     }, []);
 
+    
+
     useEffect(() => {
-
-        if (chartRef.current && crypto.length > 0) {
-            const cryptoNames = crypto.map((crypto) => crypto.name);
-            const cryptoPrices = crypto.map((crypto) => crypto.price);
-
-            const chartConfig = {
-                type: 'line',
-                data: {
-                    labels: cryptoNames,
-                    datasets: [{
-                        label: 'Price',
-                        data: cryptoPrices,
-                        backgroundColor: 'rgba(0, 123, 255, 0.4)',
-                        borderColor: 'rgba(0, 123, 255, 1)',
-                        borderWidth: 2,
-                        pointRadius: 0,
-                        fill: true,
-                    }],
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    scales: {
-                        y: {
-                            ticks: {
-                                callback: (value) => `$${value}`,
-                            },
-                        },
-                    },
-                },
-            };
-
-            new Chart(chartRef.current, chartConfig);
-        }
-    }, [crypto]);
-
-
+        crypto.forEach((crypto) => {
+          const chartCanvas = document.getElementById(`chart-${crypto.id}`);
+          if (chartCanvas) {
+            const chartData = [crypto.price];
+            const chartLabels = [crypto.name];
+      
+            new Chart(chartCanvas, {
+              type: 'line',
+              data: {
+                labels: chartLabels,
+                datasets: [
+                  {
+                    label: 'Price',
+                    data: chartData,
+                    borderColor: crypto.price > crypto.oldPriceTrack ? 'green' : 'red',
+                    fill: false,
+                  },
+                ],
+              },
+            });
+          }
+        });
+      }, [crypto]);
+    
 
 
 
@@ -158,7 +149,7 @@ const Prices = () => {
                                 <td>{crypto.name}</td>
                                 <td>${formatPrice(crypto.price)}</td>
                                 <td>
-                                    <canvas ref={chartRef}></canvas>
+                                <canvas id={`chart-${crypto.id}`} width="100" height="30"></canvas>
                                 </td>
                                 <td>${formatPrice(crypto.volumeFor24Hour)}</td>
                             </tr>
