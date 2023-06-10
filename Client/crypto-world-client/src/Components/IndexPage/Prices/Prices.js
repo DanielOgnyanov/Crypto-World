@@ -1,6 +1,7 @@
 import { getMarketCap24Hour, getPercentageDifferenceInMarketCap, getAllCryptoPrices } from '../../../Services/CryptoService';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import './Prices.css'
+import Chart from 'chart.js';
 
 
 const Prices = () => {
@@ -8,6 +9,7 @@ const Prices = () => {
     const [data, setData] = useState('');
     const [marketCapDifference, setMarketCapDifference] = useState('');
     const [crypto, setCrypto] = useState([]);
+    const chartRef = useRef(null);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -73,24 +75,45 @@ const Prices = () => {
         return () => clearInterval(interval);
     }, []);
 
+    useEffect(() => {
 
+        if (chartRef.current && crypto.length > 0) {
+            const cryptoNames = crypto.map((crypto) => crypto.name);
+            const cryptoPrices = crypto.map((crypto) => crypto.price);
 
-    const getChartStyle = (cryptoPrice, previousPrice) => {
-
-        if (cryptoPrice) {
-
-            const percentage = cryptoPrice / 100;
-            const color = cryptoPrice > previousPrice ? 'green' : 'red';
-
-            return {
-                background: `linear-gradient(to right, ${color} ${percentage}%, transparent ${percentage}%)`,
-                height: '10px',
+            const chartConfig = {
+                type: 'line',
+                data: {
+                    labels: cryptoNames,
+                    datasets: [{
+                        label: 'Price',
+                        data: cryptoPrices,
+                        backgroundColor: 'rgba(0, 123, 255, 0.4)',
+                        borderColor: 'rgba(0, 123, 255, 1)',
+                        borderWidth: 2,
+                        pointRadius: 0,
+                        fill: true,
+                    }],
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            ticks: {
+                                callback: (value) => `$${value}`,
+                            },
+                        },
+                    },
+                },
             };
-        }
-        return {};
-    }
 
-    console.log(crypto)
+            new Chart(chartRef.current, chartConfig);
+        }
+    }, [crypto]);
+
+
+
 
 
     return (
@@ -129,13 +152,13 @@ const Prices = () => {
                         </tr>
                     </thead>
                     <tbody>
-                    {crypto.map((crypto, index) => (
+                        {crypto.map((crypto, index) => (
                             <tr key={crypto.id}>
                                 <td>{index + 1}</td>
                                 <td>{crypto.name}</td>
                                 <td>${formatPrice(crypto.price)}</td>
                                 <td>
-                                    <div id={`chart-1D-${crypto.id}`} style={getChartStyle(crypto.price, crypto.oldPriceTrack)}></div>
+                                    <canvas ref={chartRef}></canvas>
                                 </td>
                                 <td>${formatPrice(crypto.volumeFor24Hour)}</td>
                             </tr>

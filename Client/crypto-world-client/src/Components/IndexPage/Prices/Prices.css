@@ -1,62 +1,60 @@
 #div-span-info {
-    margin-top: 100px;
-    margin-left: 150px;
-    margin-bottom: 100px;
+  margin-top: 100px;
+  margin-left: 150px;
+  margin-bottom: 100px;
 
 }
 
 #span-text {
-    font-size: 35px;
-    font-weight: 500;
+  font-size: 35px;
+  font-weight: 500;
 }
 
 #special-font-market-cap {
-    font-weight: bold;
-    color: #0074a2
+  font-weight: bold;
+  color: #0074a2
 }
 
 #special-font-percentage {
-    font-weight: bold;
-    color: rgb(59, 155, 74);
+  font-weight: bold;
+  color: rgb(59, 155, 74);
 }
 
 
 #table-container {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 #table-container table {
-    width: 80%; /* Adjust the width as needed */
-    border-collapse: collapse;
-  }
-  
-  #table-container th {
-    
-    text-align: left;
-    padding: 25px;
-    border-bottom: 2px solid #d9b7e5;
-  }
-  
-  #table-container td {
-    padding: 25px;
-    border-bottom: 2px solid #d9b7e5;
-  }
-  
-  #table-container tr:nth-child(even) {
-    background-color: #f9f9f9;
-  }
-  
-  #table-container tr:hover {
-    background-color: #e5e5e5;
-  }
+  width: 80%;
+  /* Adjust the width as needed */
+  border-collapse: collapse;
+}
+
+#table-container th {
+
+  text-align: left;
+  padding: 25px;
+  border-bottom: 2px solid #d9b7e5;
+}
+
+#table-container td {
+  padding: 25px;
+  border-bottom: 2px solid #d9b7e5;
+}
+
+#table-container tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+#table-container tr:hover {
+  background-color: #e5e5e5;
+}
 
 
-  #chart-1D {
-    height: 10px;
-    width: 100%;
-  }
-
-  #chart-1D-progress {
-    height: 100%;
-  }
+#chart-1D {
+  width: 10px;
+ 
+  
+}
