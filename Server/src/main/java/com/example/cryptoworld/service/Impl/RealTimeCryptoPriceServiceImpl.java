@@ -16,6 +16,8 @@ import java.io.File;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.sql.Blob;
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class RealTimeCryptoPriceServiceImpl implements RealTimeCryptoPriceService {
@@ -63,6 +65,8 @@ public class RealTimeCryptoPriceServiceImpl implements RealTimeCryptoPriceServic
 
             double oldPriceDefaultValue = 0;
 
+            List<Double> historyOfPrice = new ArrayList<>();
+
             if (cryptoRepository.count() == 10) {
 
                 setNewPriceToCrypto(name, assetId, volume24Hour, price);
@@ -73,7 +77,11 @@ public class RealTimeCryptoPriceServiceImpl implements RealTimeCryptoPriceServic
 
                 CryptoCurrenciesEntity currenciesEntity =
                         new CryptoCurrenciesEntity(name, assetId, volume24Hour, price.doubleValue(),
-                                oldPriceDefaultValue, logo.toString().trim().getBytes());
+                                oldPriceDefaultValue, historyOfPrice, logo.toString().trim().getBytes());
+
+                historyOfPrice.add(price.doubleValue());
+                currenciesEntity.setHistoryOfPrice(historyOfPrice);
+
 
                 cryptoRepository.save(currenciesEntity);
 
@@ -85,7 +93,7 @@ public class RealTimeCryptoPriceServiceImpl implements RealTimeCryptoPriceServic
 
     private Response getResponse() throws IOException {
 
-        try{
+        try {
             OkHttpClient client = new OkHttpClient();
 
             Request request = new Request.Builder()
@@ -96,9 +104,9 @@ public class RealTimeCryptoPriceServiceImpl implements RealTimeCryptoPriceServic
             return client.newCall(request).execute();
 
 
-        }catch (IOException e) {
+        } catch (IOException e) {
 
-            throw  new IOException(e.getMessage()
+            throw new IOException(e.getMessage()
                     + "Error occurred while executing the request to fetch crypto information");
         }
 
