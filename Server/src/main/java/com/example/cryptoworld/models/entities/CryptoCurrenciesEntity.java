@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 import java.math.BigDecimal;
 import java.sql.Blob;
+import java.util.List;
 
 @Entity
 @Table(name = "crypto_currencies")
@@ -16,6 +17,7 @@ public class CryptoCurrenciesEntity extends BaseEntity{
     private BigDecimal volumeFor24Hour;
     private double price;
     private double oldPriceTrack;
+    private List<Double> historyOfPrice;
     private byte[] logoImage;
 
 
@@ -81,6 +83,15 @@ public class CryptoCurrenciesEntity extends BaseEntity{
 
     public void setOldPriceTrack(double oldPriceTrack) {
         this.oldPriceTrack = oldPriceTrack;
+    }
+
+
+    public List<Double> getHistoryOfPrice() {
+        return historyOfPrice;
+    }
+
+    public void setHistoryOfPrice(List<Double> historyOfPrice) {
+        this.historyOfPrice = historyOfPrice;
     }
 
     @Column(name = "logo_image")
