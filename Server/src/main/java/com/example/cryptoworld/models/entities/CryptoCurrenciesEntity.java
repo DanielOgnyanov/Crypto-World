@@ -86,6 +86,7 @@ public class CryptoCurrenciesEntity extends BaseEntity{
     }
 
 
+    @Column(name = "history_of_price")
     public List<Double> getHistoryOfPrice() {
         return historyOfPrice;
     }
