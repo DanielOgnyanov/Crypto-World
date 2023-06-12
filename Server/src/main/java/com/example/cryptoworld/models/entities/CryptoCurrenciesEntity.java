@@ -24,14 +24,19 @@ public class CryptoCurrenciesEntity extends BaseEntity{
     public CryptoCurrenciesEntity() {
     }
 
-    public CryptoCurrenciesEntity(String name, String assetStringId,
-                                  BigDecimal volumeFor24Hour, double price,
-                                  double oldPriceTrack, byte[] logoImage) {
+    public CryptoCurrenciesEntity(String name,
+                                  String assetStringId,
+                                  BigDecimal volumeFor24Hour,
+                                  double price,
+                                  double oldPriceTrack,
+                                  List<Double> historyOfPrice,
+                                  byte[] logoImage) {
         this.name = name;
         this.assetStringId = assetStringId;
         this.volumeFor24Hour = volumeFor24Hour;
         this.price = price;
         this.oldPriceTrack = oldPriceTrack;
+        this.historyOfPrice = historyOfPrice;
         this.logoImage = logoImage;
     }
 
