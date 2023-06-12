@@ -159,6 +159,8 @@ public class RealTimeCryptoPriceServiceImpl implements RealTimeCryptoPriceServic
 
         curr.setVolumeFor24Hour(volume24Hour);
 
+        curr.getHistoryOfPrice().add(price.doubleValue());
+
 
         cryptoRepository.save(curr);
 
