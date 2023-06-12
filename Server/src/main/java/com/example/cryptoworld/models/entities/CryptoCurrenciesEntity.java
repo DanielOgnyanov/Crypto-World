@@ -90,7 +90,7 @@ public class CryptoCurrenciesEntity extends BaseEntity{
     }
 
     @ElementCollection(fetch = FetchType.EAGER)
-    @CollectionTable(name = "price_history", joinColumns = @JoinColumn(name = "crypto_id"))
+    @CollectionTable(name = "price_history", joinColumns = @JoinColumn(name = "name"))
     @Column(name = "price")
     public List<Double> getHistoryOfPrice() {
         return historyOfPrice;
