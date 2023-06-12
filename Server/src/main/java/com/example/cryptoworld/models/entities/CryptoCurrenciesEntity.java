@@ -1,9 +1,7 @@
 package com.example.cryptoworld.models.entities;
 
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.math.BigDecimal;
 import java.sql.Blob;
 import java.util.ArrayList;
@@ -91,8 +89,9 @@ public class CryptoCurrenciesEntity extends BaseEntity{
         this.oldPriceTrack = oldPriceTrack;
     }
 
-
-    @Column(name = "history_of_price")
+    @ElementCollection(fetch = FetchType.EAGER)
+    @CollectionTable(name = "price_history", joinColumns = @JoinColumn(name = "crypto_id"))
+    @Column(name = "price")
     public List<Double> getHistoryOfPrice() {
         return historyOfPrice;
     }
