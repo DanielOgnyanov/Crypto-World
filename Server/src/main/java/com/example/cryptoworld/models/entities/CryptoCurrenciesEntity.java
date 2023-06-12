@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 import java.math.BigDecimal;
 import java.sql.Blob;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -36,7 +37,7 @@ public class CryptoCurrenciesEntity extends BaseEntity{
         this.volumeFor24Hour = volumeFor24Hour;
         this.price = price;
         this.oldPriceTrack = oldPriceTrack;
-        this.historyOfPrice = historyOfPrice;
+        this.historyOfPrice = new ArrayList<>();
         this.logoImage = logoImage;
     }
 
