@@ -3,6 +3,7 @@ package com.example.cryptoworld.service.Impl;
 
 import com.example.cryptoworld.config.InfoUtils;
 import com.example.cryptoworld.models.entities.CryptoCurrenciesEntity;
+import com.example.cryptoworld.models.entities.PriceHistoryEntity;
 import com.example.cryptoworld.repository.CryptoRepository;
 import com.example.cryptoworld.service.RealTimeCryptoPriceService;
 import com.squareup.okhttp.OkHttpClient;
@@ -16,6 +17,7 @@ import java.io.File;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.sql.Blob;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -65,7 +67,7 @@ public class RealTimeCryptoPriceServiceImpl implements RealTimeCryptoPriceServic
 
             double oldPriceDefaultValue = 0;
 
-            List<Double> historyOfPrice = new ArrayList<>();
+
 
             if (cryptoRepository.count() == 10) {
 
@@ -75,12 +77,25 @@ public class RealTimeCryptoPriceServiceImpl implements RealTimeCryptoPriceServic
 
                 File logo = setCryptoLogo(name);
 
-                CryptoCurrenciesEntity currenciesEntity =
-                        new CryptoCurrenciesEntity(name, assetId, volume24Hour, price.doubleValue(),
-                                oldPriceDefaultValue, historyOfPrice, logo.toString().trim().getBytes());
 
-                historyOfPrice.add(price.doubleValue());
-                currenciesEntity.setHistoryOfPrice(historyOfPrice);
+
+                CryptoCurrenciesEntity currenciesEntity = new CryptoCurrenciesEntity();
+                currenciesEntity.setName(name);
+                currenciesEntity.setAssetStringId(assetId);
+                currenciesEntity.setVolumeFor24Hour(volume24Hour);
+                currenciesEntity.setPrice(price.doubleValue());
+                currenciesEntity.setOldPriceTrack(oldPriceDefaultValue);
+                currenciesEntity.setLogoImage(logo.toString().trim().getBytes());
+
+                PriceHistoryEntity priceHistoryEntity = new PriceHistoryEntity();
+
+                priceHistoryEntity.setPrice(price.doubleValue());
+                priceHistoryEntity.setRecordedAt(LocalDateTime.now());
+
+
+                currenciesEntity.setHistoryOfPrice(priceHistoryEntity);
+
+                cryptoRepository.save(currenciesEntity);
 
 
                 cryptoRepository.save(currenciesEntity);
