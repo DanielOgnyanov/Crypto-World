@@ -16,7 +16,7 @@ public class CryptoCurrenciesEntity extends BaseEntity{
     private BigDecimal volumeFor24Hour;
     private double price;
     private double oldPriceTrack;
-    private PriceHistoryEntity historyOfPrice;
+    private List<PriceHistoryEntity> historyOfPrice;
     private byte[] logoImage;
 
 
@@ -28,7 +28,7 @@ public class CryptoCurrenciesEntity extends BaseEntity{
                                   BigDecimal volumeFor24Hour,
                                   double price,
                                   double oldPriceTrack,
-                                  PriceHistoryEntity historyOfPrice,
+                                  List<PriceHistoryEntity> historyOfPrice,
                                   byte[] logoImage) {
         this.name = name;
         this.assetStringId = assetStringId;
@@ -91,11 +91,11 @@ public class CryptoCurrenciesEntity extends BaseEntity{
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name = "crypto_currency_name")
-    public PriceHistoryEntity getHistoryOfPrice() {
+    public List<PriceHistoryEntity> getHistoryOfPrice() {
         return historyOfPrice;
     }
 
-    public void setHistoryOfPrice(PriceHistoryEntity historyOfPrice) {
+    public void setHistoryOfPrice(List<PriceHistoryEntity> historyOfPrice) {
         this.historyOfPrice = historyOfPrice;
     }
 

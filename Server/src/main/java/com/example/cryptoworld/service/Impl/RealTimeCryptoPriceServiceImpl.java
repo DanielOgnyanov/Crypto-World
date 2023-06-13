@@ -85,15 +85,12 @@ public class RealTimeCryptoPriceServiceImpl implements RealTimeCryptoPriceServic
                 currenciesEntity.setOldPriceTrack(oldPriceDefaultValue);
                 currenciesEntity.setLogoImage(logo.toString().trim().getBytes());
 
-                PriceHistoryEntity priceHistoryEntity = new PriceHistoryEntity();
 
+                PriceHistoryEntity priceHistoryEntity = new PriceHistoryEntity();
                 priceHistoryEntity.setPrice(price.doubleValue());
                 priceHistoryEntity.setRecordedAt(LocalDateTime.now());
 
-
-                currenciesEntity.setHistoryOfPrice(priceHistoryEntity);
-
-                cryptoRepository.save(currenciesEntity);
+                currenciesEntity.getHistoryOfPrice().add(priceHistoryEntity);
 
 
                 cryptoRepository.save(currenciesEntity);
@@ -186,7 +183,7 @@ public class RealTimeCryptoPriceServiceImpl implements RealTimeCryptoPriceServic
         priceHistoryEntity.setRecordedAt(LocalDateTime.now());
 
 
-        currentEntity.setHistoryOfPrice(priceHistoryEntity);
+        currentEntity.getHistoryOfPrice().add(priceHistoryEntity);
 
 
         cryptoRepository.save(currentEntity);
