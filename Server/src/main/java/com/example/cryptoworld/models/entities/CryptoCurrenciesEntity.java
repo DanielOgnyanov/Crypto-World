@@ -90,7 +90,7 @@ public class CryptoCurrenciesEntity extends BaseEntity{
     }
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-    @JoinColumn(name = "crypto_Currency_id")
+    @JoinColumn(name = "crypto_currency_id")
     public PriceHistoryEntity getHistoryOfPrice() {
         return historyOfPrice;
     }
