@@ -68,7 +68,6 @@ public class RealTimeCryptoPriceServiceImpl implements RealTimeCryptoPriceServic
             double oldPriceDefaultValue = 0;
 
 
-
             if (cryptoRepository.count() == 10) {
 
                 setNewPriceToCrypto(name, assetId, volume24Hour, price);
@@ -76,7 +75,6 @@ public class RealTimeCryptoPriceServiceImpl implements RealTimeCryptoPriceServic
             } else if (cryptoRepository.count() >= 0 && cryptoRepository.count() < 10) {
 
                 File logo = setCryptoLogo(name);
-
 
 
                 CryptoCurrenciesEntity currenciesEntity = new CryptoCurrenciesEntity();
@@ -171,21 +169,27 @@ public class RealTimeCryptoPriceServiceImpl implements RealTimeCryptoPriceServic
 
     private void setNewPriceToCrypto(String name, String assetId, BigDecimal volume24Hour, BigDecimal price) {
 
-        CryptoCurrenciesEntity curr =
+        CryptoCurrenciesEntity currentEntity =
                 cryptoRepository.getCryptoByAssetStringId(assetId);
 
         double getCurrentPrice = cryptoRepository.getCurrentPrice(name);
 
-        curr.setOldPriceTrack(getCurrentPrice);
+        currentEntity.setOldPriceTrack(getCurrentPrice);
 
-        curr.setPrice(price.doubleValue());
+        currentEntity.setPrice(price.doubleValue());
 
-        curr.setVolumeFor24Hour(volume24Hour);
+        currentEntity.setVolumeFor24Hour(volume24Hour);
 
-        curr.getHistoryOfPrice().add(price.doubleValue());
+        PriceHistoryEntity priceHistoryEntity = new PriceHistoryEntity();
+
+        priceHistoryEntity.setPrice(price.doubleValue());
+        priceHistoryEntity.setRecordedAt(LocalDateTime.now());
 
 
-        cryptoRepository.save(curr);
+        currentEntity.setHistoryOfPrice(priceHistoryEntity);
+
+
+        cryptoRepository.save(currentEntity);
 
     }
 }
