@@ -12,8 +12,7 @@ public class PriceHistoryEntity extends BaseEntity {
     private LocalDateTime recordedAt;
 
 
-    public PriceHistoryEntity(LocalDateTime recordedAt) {
-        this.recordedAt = LocalDateTime.now();
+    public PriceHistoryEntity() {
     }
 
     @ManyToOne(fetch = FetchType.LAZY)
