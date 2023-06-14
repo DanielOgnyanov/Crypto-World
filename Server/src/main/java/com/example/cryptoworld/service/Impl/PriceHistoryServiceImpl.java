@@ -14,8 +14,5 @@ public class PriceHistoryServiceImpl implements PriceHistoryService {
     }
 
 
-    @Override
-    public void setPriceHistory() {
 
-    }
 }
