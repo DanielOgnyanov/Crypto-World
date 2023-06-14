@@ -65,8 +65,6 @@ public class RealTimeCryptoPriceServiceImpl implements RealTimeCryptoPriceServic
 
             BigDecimal price = currentCryptoObject.getBigDecimal("price_usd");
 
-            double oldPriceDefaultValue = 0;
-
 
             if (cryptoRepository.count() == 10) {
 
@@ -82,15 +80,13 @@ public class RealTimeCryptoPriceServiceImpl implements RealTimeCryptoPriceServic
                 currenciesEntity.setAssetStringId(assetId);
                 currenciesEntity.setVolumeFor24Hour(volume24Hour);
                 currenciesEntity.setPrice(price.doubleValue());
-                currenciesEntity.setOldPriceTrack(oldPriceDefaultValue);
+                currenciesEntity.setOldPriceTrack(0);
                 currenciesEntity.setLogoImage(logo.toString().trim().getBytes());
 
-
                 PriceHistoryEntity priceHistoryEntity = new PriceHistoryEntity();
+                priceHistoryEntity.setName(name);
                 priceHistoryEntity.setPrice(price.doubleValue());
                 priceHistoryEntity.setRecordedAt(LocalDateTime.now());
-
-                currenciesEntity.getHistoryOfPrice().add(priceHistoryEntity);
 
 
                 cryptoRepository.save(currenciesEntity);
@@ -176,14 +172,6 @@ public class RealTimeCryptoPriceServiceImpl implements RealTimeCryptoPriceServic
         currentEntity.setPrice(price.doubleValue());
 
         currentEntity.setVolumeFor24Hour(volume24Hour);
-
-        PriceHistoryEntity priceHistoryEntity = new PriceHistoryEntity();
-
-        priceHistoryEntity.setPrice(price.doubleValue());
-        priceHistoryEntity.setRecordedAt(LocalDateTime.now());
-
-
-        currentEntity.getHistoryOfPrice().add(priceHistoryEntity);
 
 
         cryptoRepository.save(currentEntity);
