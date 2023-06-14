@@ -7,7 +7,7 @@ import java.time.LocalDateTime;
 @Table(name = "price_history")
 public class PriceHistoryEntity extends BaseEntity {
 
-    private CryptoCurrenciesEntity cryptoCurrency;
+    private String name;
     private Double price;
     private LocalDateTime recordedAt;
 
@@ -15,14 +15,13 @@ public class PriceHistoryEntity extends BaseEntity {
     public PriceHistoryEntity() {
     }
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "crypto_currency_name" , referencedColumnName = "name")
-    public CryptoCurrenciesEntity getCryptoCurrency() {
-        return cryptoCurrency;
+    @Column(name = "name")
+    public String getName() {
+        return name;
     }
 
-    public void setCryptoCurrency(CryptoCurrenciesEntity cryptoCurrency) {
-        this.cryptoCurrency = cryptoCurrency;
+    public void setName(String name) {
+        this.name = name;
     }
 
     @Column(name = "price")
