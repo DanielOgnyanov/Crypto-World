@@ -69,33 +69,42 @@ public class RealTimeCryptoPriceServiceImpl implements RealTimeCryptoPriceServic
             if (cryptoRepository.count() == 10) {
 
                 setNewPriceToCrypto(name, assetId, volume24Hour, price);
+                setPriceHistoryInDataBase(name, price);
 
             } else if (cryptoRepository.count() >= 0 && cryptoRepository.count() < 10) {
 
                 File logo = setCryptoLogo(name);
 
-                CryptoCurrenciesEntity currenciesEntity = new CryptoCurrenciesEntity();
-                currenciesEntity.setName(name);
-                currenciesEntity.setAssetStringId(assetId);
-                currenciesEntity.setVolumeFor24Hour(volume24Hour);
-                currenciesEntity.setPrice(price.doubleValue());
-                currenciesEntity.setOldPriceTrack(0);
-                currenciesEntity.setLogoImage(logo.toString().trim().getBytes());
+                initCryptoInDataBase(name, assetId, volume24Hour, price, logo);
 
-                cryptoRepository.save(currenciesEntity);
-
-                PriceHistoryEntity priceHistoryEntity = new PriceHistoryEntity();
-                priceHistoryEntity.setName(name);
-                priceHistoryEntity.setPrice(price.doubleValue());
-                priceHistoryEntity.setRecordedAt(LocalDateTime.now());
-
-                priceHistoryRepository.save(priceHistoryEntity);
+                setPriceHistoryInDataBase(name, price);
 
 
             }
 
 
         }
+    }
+
+    private void initCryptoInDataBase(String name, String assetId, BigDecimal volume24Hour, BigDecimal price, File logo) {
+        CryptoCurrenciesEntity currenciesEntity = new CryptoCurrenciesEntity();
+        currenciesEntity.setName(name);
+        currenciesEntity.setAssetStringId(assetId);
+        currenciesEntity.setVolumeFor24Hour(volume24Hour);
+        currenciesEntity.setPrice(price.doubleValue());
+        currenciesEntity.setOldPriceTrack(0);
+        currenciesEntity.setLogoImage(logo.toString().trim().getBytes());
+
+        cryptoRepository.save(currenciesEntity);
+    }
+
+    private void setPriceHistoryInDataBase(String name, BigDecimal price) {
+        PriceHistoryEntity priceHistoryEntity = new PriceHistoryEntity();
+        priceHistoryEntity.setName(name);
+        priceHistoryEntity.setPrice(price.doubleValue());
+        priceHistoryEntity.setRecordedAt(LocalDateTime.now());
+
+        priceHistoryRepository.save(priceHistoryEntity);
     }
 
     private Response getResponse() throws IOException {
