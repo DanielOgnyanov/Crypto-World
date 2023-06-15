@@ -10,11 +10,9 @@ import java.util.List;
 public class PriceHistoryServiceImpl implements PriceHistoryService {
 
     private final PriceHistoryRepository priceHistoryRepository;
-    private final PriceHistoryService priceHistoryService;
 
-    public PriceHistoryServiceImpl(PriceHistoryRepository priceHistoryRepository, PriceHistoryService priceHistoryService) {
+    public PriceHistoryServiceImpl(PriceHistoryRepository priceHistoryRepository) {
         this.priceHistoryRepository = priceHistoryRepository;
-        this.priceHistoryService = priceHistoryService;
     }
 
 
