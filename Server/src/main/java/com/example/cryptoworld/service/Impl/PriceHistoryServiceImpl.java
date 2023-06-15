@@ -5,6 +5,7 @@ import com.example.cryptoworld.service.PriceHistoryService;
 
 import java.util.List;
 
+@Service
 public class PriceHistoryServiceImpl implements PriceHistoryService {
 
     private final PriceHistoryRepository priceHistoryRepository;
