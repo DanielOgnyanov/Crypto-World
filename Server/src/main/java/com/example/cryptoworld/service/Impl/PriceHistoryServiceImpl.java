@@ -3,6 +3,8 @@ package com.example.cryptoworld.service.Impl;
 import com.example.cryptoworld.repository.PriceHistoryRepository;
 import com.example.cryptoworld.service.PriceHistoryService;
 
+import java.util.List;
+
 public class PriceHistoryServiceImpl implements PriceHistoryService {
 
     private final PriceHistoryRepository priceHistoryRepository;
@@ -14,5 +16,8 @@ public class PriceHistoryServiceImpl implements PriceHistoryService {
     }
 
 
-
+    @Override
+    public List<Object[]> groupedCryptoByName() {
+        return priceHistoryRepository.groupedCryptoByName();
+    }
 }
