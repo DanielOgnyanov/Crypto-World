@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 
@@ -22,7 +23,6 @@ public class PriceHistoryController {
     }
 
 
-
     @GetMapping("/list")
 
     public ResponseEntity<List<Object[]>> getListOfPriceHistory() {
@@ -35,9 +35,11 @@ public class PriceHistoryController {
 
         } catch (Exception e) {
 
+            String errorMessage = "Error occurred while fetching crypto prices list: " + e.getMessage();
+
+            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, e.getMessage());
         }
 
 
-        return
     }
 }
