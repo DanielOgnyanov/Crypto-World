@@ -92,6 +92,10 @@ public class CryptoServiceImpl implements CryptoService {
         marketCapRepository.save(allMarketCap4HourEntity);
 
 
+        return calculateMarketCapPercentageDifference();
+    }
+
+    private BigDecimal calculateMarketCapPercentageDifference() {
         BigDecimal percentageDifference = BigDecimal.ZERO;
 
         BigDecimal findOldMarketCap = marketCapRepository.findOldMarketCap();
@@ -106,8 +110,6 @@ public class CryptoServiceImpl implements CryptoService {
                     .multiply(BigDecimal.valueOf(100));
 
         }
-
-
         return percentageDifference;
     }
 
