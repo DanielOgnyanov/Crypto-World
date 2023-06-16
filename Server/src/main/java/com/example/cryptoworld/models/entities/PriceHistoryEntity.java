@@ -27,7 +27,7 @@ public class PriceHistoryEntity extends BaseEntity {
         this.name = name;
     }
 
-    @ElementCollection
+    @ElementCollection(fetch = FetchType.EAGER)
     @CollectionTable(name = "crypto_prices", joinColumns = @JoinColumn(name = "price_history_id"))
     @Column(name = "price")
     public List<Double> getPrice() {
