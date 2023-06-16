@@ -2,13 +2,14 @@ package com.example.cryptoworld.models.entities;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Table(name = "price_history")
 public class PriceHistoryEntity extends BaseEntity {
 
     private String name;
-    private Double price;
+    private List<Double> price;
     private LocalDateTime recordedAt;
 
 
@@ -24,12 +25,14 @@ public class PriceHistoryEntity extends BaseEntity {
         this.name = name;
     }
 
+    @ElementCollection
+    @CollectionTable(name = "crypto_prices", joinColumns = @JoinColumn(name = "price_history_id"))
     @Column(name = "price")
-    public Double getPrice() {
+    public List<Double> getPrice() {
         return price;
     }
 
-    public void setPrice(Double price) {
+    public void setPrice(List<Double> price) {
         this.price = price;
     }
 
