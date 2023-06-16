@@ -12,4 +12,6 @@ public interface PriceHistoryRepository extends JpaRepository<PriceHistoryEntity
 
     @Query("SELECT p FROM PriceHistoryEntity p")
     List<Object[]> groupedCryptoByName();
+
+    PriceHistoryEntity findByName(String name);
 }
