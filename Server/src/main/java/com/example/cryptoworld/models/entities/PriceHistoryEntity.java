@@ -2,6 +2,7 @@ package com.example.cryptoworld.models.entities;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -14,6 +15,7 @@ public class PriceHistoryEntity extends BaseEntity {
 
 
     public PriceHistoryEntity() {
+        price = new ArrayList<>();
     }
 
     @Column(name = "name")
