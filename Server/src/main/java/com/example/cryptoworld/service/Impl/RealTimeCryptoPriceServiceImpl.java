@@ -101,7 +101,7 @@ public class RealTimeCryptoPriceServiceImpl implements RealTimeCryptoPriceServic
     private void setPriceHistoryInDataBase(String name, BigDecimal price) {
         PriceHistoryEntity priceHistoryEntity = new PriceHistoryEntity();
         priceHistoryEntity.setName(name);
-        priceHistoryEntity.setPrice(price.doubleValue());
+        priceHistoryEntity.getPrice().add(price.doubleValue());
         priceHistoryEntity.setRecordedAt(LocalDateTime.now());
 
         priceHistoryRepository.save(priceHistoryEntity);
