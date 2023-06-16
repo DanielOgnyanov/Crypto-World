@@ -10,12 +10,12 @@ import java.util.List;
 public class PriceHistoryEntity extends BaseEntity {
 
     private String name;
-    private List<Double> price;
+    private Double price;
     private LocalDateTime recordedAt;
 
 
     public PriceHistoryEntity() {
-        price = new ArrayList<>();
+
     }
 
     @Column(name = "name")
@@ -27,14 +27,11 @@ public class PriceHistoryEntity extends BaseEntity {
         this.name = name;
     }
 
-    @ElementCollection(fetch = FetchType.EAGER)
-    @CollectionTable(name = "crypto_prices", joinColumns = @JoinColumn(name = "price_history_id"))
-    @Column(name = "price")
-    public List<Double> getPrice() {
+    public Double getPrice() {
         return price;
     }
 
-    public void setPrice(List<Double> price) {
+    public void setPrice(Double price) {
         this.price = price;
     }
 
