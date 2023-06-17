@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import Chart from 'chart.js/auto';
-import { getMarketCap24Hour, getPercentageDifferenceInMarketCap, getAllCryptoPrices } from '../../../Services/CryptoService';
+import { getMarketCap24Hour, getPercentageDifferenceInMarketCap, getAllCryptoPrices, getListOfCryptoPrices } from '../../../Services/CryptoService';
 import './Prices.css';
 import { Line } from 'react-chartjs-2'
 
@@ -78,6 +78,23 @@ const Prices = () => {
   };
   
   
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const fetchResult = await getListOfCryptoPrices();
+        setChartListPrice(fetchResult)
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+
+    fetchData();
+
+    const interval = setInterval(fetchData, 20000);
+
+    return () => clearInterval(interval);
+  }, []);
+
 
   
  
