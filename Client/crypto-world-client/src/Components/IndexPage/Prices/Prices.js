@@ -64,7 +64,7 @@ const Prices = () => {
     return () => clearInterval(interval);
   }, []);
 
-
+  
   const chartData = {
     labels: [],
     datasets: [
@@ -75,8 +75,15 @@ const Prices = () => {
       },
     ],
   };
+  
+  
 
-
+  
+ 
+  backendData.forEach((value, index) => {
+    chartData.labels.push(`Label ${index + 1}`);
+    chartData.datasets[0].data.push(value);
+  });
 
   return (
     <>
