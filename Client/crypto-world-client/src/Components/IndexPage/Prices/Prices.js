@@ -76,11 +76,6 @@ const Prices = () => {
     ],
   };
 
-  const updateChart = (price) => {
-    chartData.labels.push('');
-    chartData.datasets[0].data.push(price);
-  };
-
 
 
   return (
