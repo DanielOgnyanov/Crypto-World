@@ -66,7 +66,7 @@ const Prices = () => {
   }, []);
 
 
-  const chartData = {
+  const [chartData, setChartData] = useState({
     labels: [],
     datasets: [
       {
@@ -75,7 +75,7 @@ const Prices = () => {
         fill: false,
       },
     ],
-  };
+  });
 
 
   useEffect(() => {
@@ -83,6 +83,13 @@ const Prices = () => {
       try {
         const fetchResult = await getListOfCryptoPrices();
         setChartListPrice(fetchResult)
+
+        fetchResult.forEach((crypto, index) => {
+          chartData.labels.push(crypto.name);
+          chartData.datasets[0].data.push(crypto.price);
+        });
+
+        setChartData({ ...chartData });
       } catch (error) {
         console.error('Error fetching data:', error);
       }
@@ -134,7 +141,7 @@ const Prices = () => {
                 <td>{crypto.name}</td>
                 <td>${formatPrice(crypto.price)}</td>
                 <td>
-                  <Line data={chartData} options={{ responsive: true, maintainAspectRatio: false }} />
+                <Line data={chartData} options={{ responsive: true, maintainAspectRatio: false }} />
                 </td>
                 <td>${formatPrice(crypto.volumeFor24Hour)}</td>
               </tr>
