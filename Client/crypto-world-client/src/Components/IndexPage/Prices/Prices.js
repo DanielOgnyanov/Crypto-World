@@ -8,6 +8,7 @@ const Prices = () => {
   const [data, setData] = useState('');
   const [marketCapDifference, setMarketCapDifference] = useState('');
   const [crypto, setCrypto] = useState([]);
+  const [chartListPrice, setChartListPrice] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
