@@ -101,16 +101,7 @@ const Prices = () => {
 
     return () => clearInterval(interval);
   }, []);
-
-
-
-
-    chartListPrice.forEach((value, index) => {
-
-    chartData.labels.push(`Label ${index + 1}`);
-    chartData.datasets[0].data.push(value);
-    
-  });
+  
 
   return (
     <>
