@@ -65,7 +65,7 @@ const Prices = () => {
     return () => clearInterval(interval);
   }, []);
 
-  
+
   const chartData = {
     labels: [],
     datasets: [
@@ -76,8 +76,8 @@ const Prices = () => {
       },
     ],
   };
-  
-  
+
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -96,11 +96,13 @@ const Prices = () => {
   }, []);
 
 
-  
- 
-  backendData.forEach((value, index) => {
+
+
+    chartListPrice.forEach((value, index) => {
+
     chartData.labels.push(`Label ${index + 1}`);
     chartData.datasets[0].data.push(value);
+    
   });
 
   return (
@@ -132,7 +134,7 @@ const Prices = () => {
                 <td>{crypto.name}</td>
                 <td>${formatPrice(crypto.price)}</td>
                 <td>
-                <Line data={chartData} options={{ responsive: true, maintainAspectRatio: false }} />
+                  <Line data={chartData} options={{ responsive: true, maintainAspectRatio: false }} />
                 </td>
                 <td>${formatPrice(crypto.volumeFor24Hour)}</td>
               </tr>
