@@ -101,7 +101,8 @@ const Prices = () => {
 
     return () => clearInterval(interval);
   }, []);
-  
+
+
 
   return (
     <>
@@ -132,7 +133,7 @@ const Prices = () => {
                 <td>{crypto.name}</td>
                 <td>${formatPrice(crypto.price)}</td>
                 <td>
-                <Line data={chartData} options={{ responsive: true, maintainAspectRatio: false }} />
+                  <Line data={chartData} options={{ responsive: true, maintainAspectRatio: false }} />
                 </td>
                 <td>${formatPrice(crypto.volumeFor24Hour)}</td>
               </tr>
