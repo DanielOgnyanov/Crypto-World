@@ -123,7 +123,7 @@ export const getPopularCryptoPrice = async () => {
 
   export const getListOfCryptoPrices = async () => {
     try {
-      const response = await fetch(`${baseUrl}//api/price/history/list`, {
+      const response = await fetch(`${baseUrl}/api/price/history/list`, {
         method: 'GET',
         headers: {
           'content-type': 'application/json',
