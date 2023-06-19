@@ -40,7 +40,6 @@ public class PriceHistoryController {
 
 
     }
-
     @RequestMapping(value = "/list", method = RequestMethod.OPTIONS)
     public ResponseEntity<?> handleOptionsRequest() {
         HttpHeaders headers = new HttpHeaders();
