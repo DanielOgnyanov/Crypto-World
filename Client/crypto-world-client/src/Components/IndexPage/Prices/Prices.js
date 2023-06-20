@@ -84,11 +84,6 @@ const Prices = () => {
         const fetchResult = await getListOfCryptoPrices();
         setChartListPrice(fetchResult)
 
-        fetchResult.forEach((crypto, index) => {
-          chartData.labels.push(crypto.name);
-          chartData.datasets[0].data.push(crypto.price);
-        });
-
         setChartData({ ...chartData });
       } catch (error) {
         console.error('Error fetching data:', error);
@@ -102,7 +97,7 @@ const Prices = () => {
     return () => clearInterval(interval);
   }, []);
 
-
+console.log(chartListPrice)
 
   return (
     <>
