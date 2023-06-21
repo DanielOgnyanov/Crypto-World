@@ -95,9 +95,6 @@ const Prices = () => {
           return null;
         });
 
-        console.log('Updated labels:', updatedLabels);
-        console.log('Updated data:', updatedData);
-
         setUpdatedLabels(labels);
         setUpdatedData(data);
 
@@ -155,7 +152,7 @@ const Prices = () => {
                 <td>{crypto.name}</td>
                 <td>${formatPrice(crypto.price)}</td>
                 <td>
-
+                  
                   <Line
                     data={{
                       labels: updatedLabels[index],
@@ -167,7 +164,7 @@ const Prices = () => {
                         },
                       ],
                     }}
-                    options={{ responsive: true, maintainAspectRatio: false }}
+                    options={{ responsive: true, maintainAspectRatio: false,}}
                   />
                 </td>
                 <td>${formatPrice(crypto.volumeFor24Hour)}</td>
