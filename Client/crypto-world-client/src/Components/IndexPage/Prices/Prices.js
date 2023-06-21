@@ -8,7 +8,8 @@ const Prices = () => {
   const [data, setData] = useState('');
   const [marketCapDifference, setMarketCapDifference] = useState('');
   const [crypto, setCrypto] = useState([]);
-  const [chartListPrice, setChartListPrice] = useState([]);
+  const [updatedLabels, setUpdatedLabels] = useState([]);
+  const [updatedData, setUpdatedData] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -67,7 +68,7 @@ const Prices = () => {
 
 
 
- 
+
   const [chartData, setChartData] = useState({
     labels: [],
     datasets: [
@@ -78,25 +79,28 @@ const Prices = () => {
       },
     ],
   });
-  
+
   useEffect(() => {
     const fetchData = async () => {
       try {
         const fetchResult = await getListOfCryptoPrices();
-  
+
         console.log('Fetched data:', fetchResult);
-  
-        const updatedLabels = fetchResult.map((crypto) => crypto[0].name);
-        const updatedData = fetchResult.map((crypto) => {
+
+        const labels = fetchResult.map((crypto) => crypto[0].name);
+        const data = fetchResult.map((crypto) => {
           if (crypto[0].price && crypto[0].price.length > 0) {
             return crypto[0].price;
           }
           return null;
         });
-  
+
         console.log('Updated labels:', updatedLabels);
         console.log('Updated data:', updatedData);
-  
+
+        setUpdatedLabels(labels);
+        setUpdatedData(data);
+
         setChartData((prevChartData) => ({
           ...prevChartData,
           labels: updatedLabels,
@@ -111,16 +115,16 @@ const Prices = () => {
         console.error('Error fetching data:', error);
       }
     };
-  
+
     fetchData();
-  
-    const interval = setInterval(fetchData, 20000);
-  
+
+    const interval = setInterval(fetchData, 50000);
+
     return () => clearInterval(interval);
   }, []);
 
- 
-  
+
+
 
   return (
     <>
@@ -151,8 +155,20 @@ const Prices = () => {
                 <td>{crypto.name}</td>
                 <td>${formatPrice(crypto.price)}</td>
                 <td>
-                  
-                  <Line data={chartData} options={{ responsive: true, maintainAspectRatio: false }} />
+
+                  <Line
+                    data={{
+                      labels: updatedLabels[index],
+                      datasets: [
+                        {
+                          data: updatedData[index],
+                          borderColor: 'green',
+                          fill: false,
+                        },
+                      ],
+                    }}
+                    options={{ responsive: true, maintainAspectRatio: false }}
+                  />
                 </td>
                 <td>${formatPrice(crypto.volumeFor24Hour)}</td>
               </tr>
