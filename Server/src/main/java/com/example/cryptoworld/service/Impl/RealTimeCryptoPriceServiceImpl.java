@@ -108,7 +108,7 @@ public class RealTimeCryptoPriceServiceImpl implements RealTimeCryptoPriceServic
 
         priceHistoryEntity.setName(name);
         priceHistoryEntity.getPrice().add(price.doubleValue());
-        priceHistoryEntity.setRecordedAt(LocalDateTime.now());
+        priceHistoryEntity.getRecordedAt().add(LocalDateTime.now());
 
         priceHistoryRepository.save(priceHistoryEntity);
     }
