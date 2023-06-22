@@ -11,7 +11,7 @@ public class PriceHistoryEntity extends BaseEntity {
 
     private String name;
     private List<Double> price;
-    private LocalDateTime recordedAt;
+    private List<LocalDateTime> recordedAt;
 
 
     public PriceHistoryEntity() {
@@ -38,12 +38,14 @@ public class PriceHistoryEntity extends BaseEntity {
         this.price = price;
     }
 
+    @ElementCollection(fetch = FetchType.EAGER)
+    @CollectionTable(name = "crypto_recordAt", joinColumns = @JoinColumn(name = "price_history_id"))
     @Column(name = "recorded_at")
-    public LocalDateTime getRecordedAt() {
+    public List<LocalDateTime> getRecordedAt() {
         return recordedAt;
     }
 
-    public void setRecordedAt(LocalDateTime recordedAt) {
+    public void setRecordedAt(List<LocalDateTime> recordedAt) {
         this.recordedAt = recordedAt;
     }
 }
