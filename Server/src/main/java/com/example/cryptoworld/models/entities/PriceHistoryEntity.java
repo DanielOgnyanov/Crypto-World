@@ -16,6 +16,7 @@ public class PriceHistoryEntity extends BaseEntity {
 
     public PriceHistoryEntity() {
         price = new ArrayList<>();
+        recordedAt = new ArrayList<>();
     }
 
     @Column(name = "name")
