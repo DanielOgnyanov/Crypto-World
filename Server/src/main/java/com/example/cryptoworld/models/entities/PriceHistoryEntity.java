@@ -1,6 +1,8 @@
 package com.example.cryptoworld.models.entities;
 
 import org.hibernate.annotations.BatchSize;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -30,10 +32,10 @@ public class PriceHistoryEntity extends BaseEntity {
         this.name = name;
     }
 
-    @ElementCollection(fetch = FetchType.EAGER)
-    @BatchSize(size = 10)
+    @ElementCollection(fetch = FetchType.LAZY)
     @CollectionTable(name = "crypto_prices", joinColumns = @JoinColumn(name = "price_history_id"))
     @Column(name = "price")
+    @Fetch(FetchMode.SUBSELECT)
     public List<Double> getPrice() {
         return price;
     }
@@ -42,10 +44,10 @@ public class PriceHistoryEntity extends BaseEntity {
         this.price = price;
     }
 
-    @ElementCollection(fetch = FetchType.EAGER)
-    @BatchSize(size = 10)
+    @ElementCollection(fetch = FetchType.LAZY)
     @CollectionTable(name = "crypto_recordAt", joinColumns = @JoinColumn(name = "price_history_id"))
     @Column(name = "recorded_at")
+    @Fetch(FetchMode.SUBSELECT)
     public List<LocalDateTime> getRecordedAt() {
         return recordedAt;
     }
