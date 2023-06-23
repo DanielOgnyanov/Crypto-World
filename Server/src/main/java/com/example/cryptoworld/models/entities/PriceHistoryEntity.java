@@ -37,7 +37,6 @@ public class PriceHistoryEntity extends BaseEntity {
     @ElementCollection(fetch = FetchType.EAGER)
     @CollectionTable(name = "crypto_prices", joinColumns = @JoinColumn(name = "price_history_id"))
     @Column(name = "price")
-
     public List<Double> getPrice() {
         return price;
     }
@@ -46,10 +45,9 @@ public class PriceHistoryEntity extends BaseEntity {
         this.price = price;
     }
 
-    @ElementCollection(fetch = FetchType.LAZY)
+    @ElementCollection(fetch = FetchType.EAGER)
     @CollectionTable(name = "crypto_recordAt", joinColumns = @JoinColumn(name = "price_history_id"))
     @Column(name = "recorded_at")
-
     public Set<LocalDateTime> getRecordedAt() {
         return recordedAt;
     }
