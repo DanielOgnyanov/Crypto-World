@@ -7,7 +7,9 @@ import org.hibernate.annotations.FetchMode;
 import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "price_history")
@@ -15,12 +17,12 @@ public class PriceHistoryEntity extends BaseEntity {
 
     private String name;
     private List<Double> price;
-    private List<LocalDateTime> recordedAt;
+    private Set<LocalDateTime> recordedAt;
 
 
     public PriceHistoryEntity() {
         price = new ArrayList<>();
-        recordedAt = new ArrayList<>();
+        recordedAt = new LinkedHashSet<>();
     }
 
     @Column(name = "name")
@@ -32,10 +34,10 @@ public class PriceHistoryEntity extends BaseEntity {
         this.name = name;
     }
 
-    @ElementCollection(fetch = FetchType.LAZY)
+    @ElementCollection(fetch = FetchType.EAGER)
     @CollectionTable(name = "crypto_prices", joinColumns = @JoinColumn(name = "price_history_id"))
     @Column(name = "price")
-    @Fetch(FetchMode.SUBSELECT)
+
     public List<Double> getPrice() {
         return price;
     }
@@ -47,12 +49,12 @@ public class PriceHistoryEntity extends BaseEntity {
     @ElementCollection(fetch = FetchType.LAZY)
     @CollectionTable(name = "crypto_recordAt", joinColumns = @JoinColumn(name = "price_history_id"))
     @Column(name = "recorded_at")
-    @Fetch(FetchMode.SUBSELECT)
-    public List<LocalDateTime> getRecordedAt() {
+
+    public Set<LocalDateTime> getRecordedAt() {
         return recordedAt;
     }
 
-    public void setRecordedAt(List<LocalDateTime> recordedAt) {
+    public void setRecordedAt(Set<LocalDateTime> recordedAt) {
         this.recordedAt = recordedAt;
     }
 }
