@@ -87,7 +87,15 @@ const Prices = () => {
 
         console.log('Fetched data:', fetchResult);
 
-        const labels = fetchResult.map((crypto) => crypto[0].name);
+        const labels = fetchResult.map((crypto) => {
+          if (crypto[0].recordedAt && crypto[0].recordedAt.length > 0) {
+            return crypto[0].recordedAt;
+          }
+          return null;
+
+        });
+
+
         const data = fetchResult.map((crypto) => {
           if (crypto[0].price && crypto[0].price.length > 0) {
             return crypto[0].price;
@@ -152,7 +160,7 @@ const Prices = () => {
                 <td>{crypto.name}</td>
                 <td>${formatPrice(crypto.price)}</td>
                 <td>
-                  
+
                   <Line
                     data={{
                       labels: updatedLabels[index],
@@ -164,7 +172,7 @@ const Prices = () => {
                         },
                       ],
                     }}
-                    options={{ responsive: true, maintainAspectRatio: false,}}
+                    options={{ responsive: true, maintainAspectRatio: false, }}
                   />
                 </td>
                 <td>${formatPrice(crypto.volumeFor24Hour)}</td>
