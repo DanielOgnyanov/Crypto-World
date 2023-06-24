@@ -1,5 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
-import Chart from 'chart.js/auto';
+import { useState, useEffect } from 'react';
 import { getMarketCap24Hour, getPercentageDifferenceInMarketCap, getAllCryptoPrices, getListOfCryptoPrices } from '../../../Services/CryptoService';
 import './Prices.css';
 import { Line } from 'react-chartjs-2'
@@ -89,7 +88,11 @@ const Prices = () => {
 
         const labels = fetchResult.map((crypto) => {
           if (crypto[0].recordedAt && crypto[0].recordedAt.length > 0) {
-            return crypto[0].recordedAt;
+            const dateTimeString = crypto[0].recordedAt;
+            const dateTime = new Date(dateTimeString);
+            const formattedTime = dateTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+  
+            return crypto[0].recordedAt.map((time) => new Date(time).toLocaleTimeString());;
           }
           return null;
 
@@ -106,6 +109,7 @@ const Prices = () => {
         setUpdatedLabels(labels);
         setUpdatedData(data);
 
+        console.log('Formatted Time', updatedLabels)
         setChartData((prevChartData) => ({
           ...prevChartData,
           labels: updatedLabels,
