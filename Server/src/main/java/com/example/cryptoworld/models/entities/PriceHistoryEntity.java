@@ -6,10 +6,7 @@ import org.hibernate.annotations.FetchMode;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.LinkedHashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 @Entity
 @Table(name = "price_history")
@@ -22,7 +19,7 @@ public class PriceHistoryEntity extends BaseEntity {
 
     public PriceHistoryEntity() {
         price = new ArrayList<>();
-        recordedAt = new LinkedHashSet<>();
+        recordedAt = new HashSet<>();
     }
 
     @Column(name = "name")
