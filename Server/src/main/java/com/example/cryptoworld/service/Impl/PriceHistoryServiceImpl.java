@@ -1,5 +1,6 @@
 package com.example.cryptoworld.service.Impl;
 
+import com.example.cryptoworld.models.entities.PriceHistoryEntity;
 import com.example.cryptoworld.repository.PriceHistoryRepository;
 import com.example.cryptoworld.service.PriceHistoryService;
 import org.springframework.stereotype.Service;

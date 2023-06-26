@@ -1,5 +1,6 @@
 package com.example.cryptoworld.web;
 
+import com.example.cryptoworld.models.entities.PriceHistoryEntity;
 import com.example.cryptoworld.service.PriceHistoryService;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;

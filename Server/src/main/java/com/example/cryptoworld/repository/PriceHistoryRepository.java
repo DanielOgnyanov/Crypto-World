@@ -10,7 +10,7 @@ import java.util.List;
 @Repository
 public interface PriceHistoryRepository extends JpaRepository<PriceHistoryEntity, Long> {
 
-    @Query("SELECT p FROM PriceHistoryEntity p ORDER BY p.price DESC")
+    @Query("SELECT p FROM PriceHistoryEntity p")
     List<Object[]> groupedCryptoByName();
 
     PriceHistoryEntity findByName(String name);
