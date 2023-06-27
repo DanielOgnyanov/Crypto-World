@@ -44,6 +44,7 @@ public class PriceHistoryEntity extends BaseEntity {
 
     @ElementCollection(fetch = FetchType.EAGER)
     @CollectionTable(name = "crypto_recordAt", joinColumns = @JoinColumn(name = "price_history_id"))
+    @OrderBy("recordedAt ASC")
     @Column(name = "recorded_at")
     public Set<LocalDateTime> getRecordedAt() {
         return recordedAt;
