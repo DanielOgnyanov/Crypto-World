@@ -88,5 +88,24 @@ public class CryptoController {
     }
 
 
+    @GetMapping("/logos")
+    public ResponseEntity<List<byte[]>> getLogos() {
+
+        try {
+
+
+
+
+        } catch (Exception e) {
+
+            String errorMessage = "Error occurred while fetching crypto logo: " + e.getMessage();
+
+            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, e.getMessage());
+        }
+
+
+    }
+
+
 
 }
