@@ -93,6 +93,9 @@ public class CryptoController {
 
         try {
 
+            List<byte[]> getLogos = cryptoService.getLogos();
+
+            return new ResponseEntity<List<byte[]>>(getLogos, HttpStatus.OK);
 
 
 
