@@ -124,6 +124,6 @@ public class CryptoServiceImpl implements CryptoService {
 
     @Override
     public List<byte[]> getLogos() {
-        return null;
+        return cryptoRepository.getLogos();
     }
 }
