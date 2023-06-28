@@ -17,4 +17,6 @@ public interface CryptoService {
     BigDecimal calculateTheMarketDifferenceInPercentage();
 
     List<CryptoTableViewModel> getAllPrices();
+
+    List<byte[]> getLogos();
 }
