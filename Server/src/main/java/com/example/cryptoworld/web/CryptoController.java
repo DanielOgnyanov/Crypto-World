@@ -89,13 +89,13 @@ public class CryptoController {
 
 
     @GetMapping("/logos")
-    public ResponseEntity<List<byte[]>> getLogos() {
+    public ResponseEntity<List<String>> getLogos() {
 
         try {
 
-            List<byte[]> getLogos = cryptoService.getLogos();
+            List<String> getLogos = cryptoService.getLogos();
 
-            return new ResponseEntity<List<byte[]>>(getLogos, HttpStatus.OK);
+            return new ResponseEntity<List<String>>(getLogos, HttpStatus.OK);
 
 
 
