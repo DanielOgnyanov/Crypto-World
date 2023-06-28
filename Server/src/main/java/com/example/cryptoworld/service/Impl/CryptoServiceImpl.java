@@ -121,4 +121,9 @@ public class CryptoServiceImpl implements CryptoService {
                 .map(crypto -> modelMapper.map(crypto, CryptoTableViewModel.class))
                 .collect(Collectors.toList());
     }
+
+    @Override
+    public List<byte[]> getLogos() {
+        return null;
+    }
 }
