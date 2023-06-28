@@ -30,7 +30,4 @@ public interface CryptoRepository extends JpaRepository<CryptoCurrenciesEntity, 
 
     @Query("Select d from CryptoCurrenciesEntity as d")
     List<CryptoCurrenciesEntity> getAllCryptoPrices();
-
-    @Query("Select f.logoImage from CryptoCurrenciesEntity as f")
-    List<byte[]> getLogos();
 }

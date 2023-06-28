@@ -123,7 +123,11 @@ public class CryptoServiceImpl implements CryptoService {
     }
 
     @Override
-    public List<byte[]> getLogos() {
+    public List<String> getLogos() {
+
+        List<CryptoCurrenciesEntity> cryptoCurrencies = cryptoRepository.findAll();
+
+
         return cryptoRepository.getLogos();
     }
 }

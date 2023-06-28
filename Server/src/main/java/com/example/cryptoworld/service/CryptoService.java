@@ -18,5 +18,5 @@ public interface CryptoService {
 
     List<CryptoTableViewModel> getAllPrices();
 
-    List<byte[]> getLogos();
+    List<String> getLogos();
 }
