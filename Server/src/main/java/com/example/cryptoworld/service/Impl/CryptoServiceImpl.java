@@ -16,6 +16,8 @@ import java.io.IOException;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Base64;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -134,8 +136,9 @@ public class CryptoServiceImpl implements CryptoService {
        for(CryptoCurrenciesEntity cryptoCurrency : cryptoCurrencies) {
            byte[] logoImage = cryptoCurrency.getLogoImage();
 
+
            if(logoImage != null) {
-               String base64Image = ImageUtils.convertByteToBase64(logoImage);
+               String base64Image = Base64.getEncoder().encodeToString(logoImage);
                logoImages.add(base64Image);
            }
        }
