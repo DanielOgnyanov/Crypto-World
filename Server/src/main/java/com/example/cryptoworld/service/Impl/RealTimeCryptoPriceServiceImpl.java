@@ -13,7 +13,9 @@ import com.squareup.okhttp.Response;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.springframework.stereotype.Service;
-
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.io.File;
 import java.io.IOException;
 import java.math.BigDecimal;
@@ -73,9 +75,9 @@ public class RealTimeCryptoPriceServiceImpl implements RealTimeCryptoPriceServic
 
             } else if (cryptoRepository.count() >= 0 && cryptoRepository.count() < 10) {
 
-                File logo = setCryptoLogo(name);
 
-                initCryptoInDataBase(name, assetId, volume24Hour, price, logo);
+
+                initCryptoInDataBase(name, assetId, volume24Hour, price);
 
                 setPriceHistoryInDataBase(name, price);
 
@@ -86,14 +88,22 @@ public class RealTimeCryptoPriceServiceImpl implements RealTimeCryptoPriceServic
         }
     }
 
-    private void initCryptoInDataBase(String name, String assetId, BigDecimal volume24Hour, BigDecimal price, File logo) {
+    private byte[] readImageFile(String imagePath) throws IOException {
+
+        Path imageFilePath = Paths.get(imagePath);
+        return Files.readAllBytes(imageFilePath);
+    }
+
+    private void initCryptoInDataBase(String name, String assetId, BigDecimal volume24Hour, BigDecimal price) throws IOException {
+
         CryptoCurrenciesEntity currenciesEntity = new CryptoCurrenciesEntity();
+
         currenciesEntity.setName(name);
         currenciesEntity.setAssetStringId(assetId);
         currenciesEntity.setVolumeFor24Hour(volume24Hour);
         currenciesEntity.setPrice(price.doubleValue());
         currenciesEntity.setOldPriceTrack(0);
-        currenciesEntity.setLogoImage(logo.toString().trim().getBytes());
+        currenciesEntity.setLogoImage(setCryptoLogo(name));
 
         cryptoRepository.save(currenciesEntity);
     }
@@ -134,7 +144,7 @@ public class RealTimeCryptoPriceServiceImpl implements RealTimeCryptoPriceServic
 
     }
 
-    private File setCryptoLogo(String cryptoName) {
+    private byte[] setCryptoLogo(String cryptoName) throws IOException {
 
         String imagePath = "";
         File cryptoLogo = new File(imagePath);
@@ -172,7 +182,7 @@ public class RealTimeCryptoPriceServiceImpl implements RealTimeCryptoPriceServic
 
         }
 
-        return cryptoLogo;
+        return readImageFile(imagePath);
 
     }
 
