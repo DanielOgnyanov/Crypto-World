@@ -8,7 +8,6 @@ import com.example.cryptoworld.repository.CryptoRepository;
 import com.example.cryptoworld.repository.MarketCapRepository;
 import com.example.cryptoworld.service.CryptoService;
 import com.example.cryptoworld.service.RealTimeCryptoPriceService;
-import com.example.cryptoworld.utils.ImageUtils;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
@@ -16,7 +15,6 @@ import java.io.IOException;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Base64;
 import java.util.List;
 import java.util.stream.Collectors;

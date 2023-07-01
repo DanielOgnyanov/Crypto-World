@@ -103,7 +103,9 @@ public class RealTimeCryptoPriceServiceImpl implements RealTimeCryptoPriceServic
         currenciesEntity.setVolumeFor24Hour(volume24Hour);
         currenciesEntity.setPrice(price.doubleValue());
         currenciesEntity.setOldPriceTrack(0);
-        currenciesEntity.setLogoImage(setCryptoLogo(name));
+
+        byte[] bytes = setCryptoLogo(name);
+        currenciesEntity.setLogoImage(bytes);
 
         cryptoRepository.save(currenciesEntity);
     }
