@@ -149,7 +149,7 @@ public class RealTimeCryptoPriceServiceImpl implements RealTimeCryptoPriceServic
     private byte[] setCryptoLogo(String cryptoName) throws IOException {
 
         String imagePath = "";
-        File cryptoLogo = new File(imagePath);
+
 
         switch (cryptoName) {
 
@@ -184,7 +184,8 @@ public class RealTimeCryptoPriceServiceImpl implements RealTimeCryptoPriceServic
 
         }
 
-        return readImageFile(imagePath);
+        Path imageFilePath = Paths.get(imagePath);
+        return Files.readAllBytes(imageFilePath);
 
     }
 
