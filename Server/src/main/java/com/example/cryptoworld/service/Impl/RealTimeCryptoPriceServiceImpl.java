@@ -13,11 +13,8 @@ import com.squareup.okhttp.Response;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.springframework.stereotype.Service;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.io.File;
-import java.io.IOException;
+
+import java.io.*;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
@@ -88,12 +85,6 @@ public class RealTimeCryptoPriceServiceImpl implements RealTimeCryptoPriceServic
         }
     }
 
-    private byte[] readImageFile(String imagePath) throws IOException {
-
-        Path imageFilePath = Paths.get(imagePath);
-        return Files.readAllBytes(imageFilePath);
-    }
-
     private void initCryptoInDataBase(String name, String assetId, BigDecimal volume24Hour, BigDecimal price) throws IOException {
 
         CryptoCurrenciesEntity currenciesEntity = new CryptoCurrenciesEntity();
@@ -104,8 +95,8 @@ public class RealTimeCryptoPriceServiceImpl implements RealTimeCryptoPriceServic
         currenciesEntity.setPrice(price.doubleValue());
         currenciesEntity.setOldPriceTrack(0);
 
-        byte[] bytes = setCryptoLogo(name);
-        currenciesEntity.setLogoImage(bytes);
+
+        currenciesEntity.setLogoImage();
 
         cryptoRepository.save(currenciesEntity);
     }
@@ -146,7 +137,7 @@ public class RealTimeCryptoPriceServiceImpl implements RealTimeCryptoPriceServic
 
     }
 
-    private byte[] setCryptoLogo(String cryptoName) throws IOException {
+    private String setCryptoLogo(String cryptoName) throws IOException {
 
         String imagePath = "";
 
@@ -184,8 +175,8 @@ public class RealTimeCryptoPriceServiceImpl implements RealTimeCryptoPriceServic
 
         }
 
-        Path imageFilePath = Paths.get(imagePath);
-        return Files.readAllBytes(imageFilePath);
+
+        return imagePath;
 
     }
 
