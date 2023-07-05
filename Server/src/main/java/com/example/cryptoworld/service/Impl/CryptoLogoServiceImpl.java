@@ -1,5 +1,6 @@
 package com.example.cryptoworld.service.Impl;
 import com.example.cryptoworld.config.InfoUtils;
+import com.example.cryptoworld.models.entities.CryptoCurrenciesEntity;
 import com.example.cryptoworld.repository.CryptoRepository;
 import com.example.cryptoworld.service.CryptoLogoService;
 import com.squareup.okhttp.OkHttpClient;
@@ -37,6 +38,15 @@ public class CryptoLogoServiceImpl implements CryptoLogoService {
 
             String assetId = cryptoObject.getString("asset_id");
             String iconUrl = cryptoObject.getString("url");
+
+            CryptoCurrenciesEntity currentEntity = cryptoRepository.getCryptoByAssetStringId(assetId);
+
+            currentEntity.setLogoImage(iconUrl);
+
+            cryptoRepository.save(currentEntity);
+
+
+
 
 
 
