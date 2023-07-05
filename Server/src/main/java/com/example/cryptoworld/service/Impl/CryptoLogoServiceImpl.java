@@ -42,9 +42,12 @@ public class CryptoLogoServiceImpl implements CryptoLogoService {
 
             CryptoCurrenciesEntity currentEntity = cryptoRepository.getCryptoByAssetStringId(assetId);
 
-            currentEntity.setLogoImage(iconUrl);
+            if (currentEntity != null) {
 
-            cryptoRepository.save(currentEntity);
+                currentEntity.setLogoImage(iconUrl);
+                cryptoRepository.save(currentEntity);
+
+            }
 
 
         }
