@@ -22,6 +22,10 @@ public class InfoUtils {
         return API_URL;
     }
 
+    public String getAPI_URL_LOGOS() {
+        return API_URL_LOGOS;
+    }
+
     public String getAPI_NAME() {
         return API_NAME;
     }
