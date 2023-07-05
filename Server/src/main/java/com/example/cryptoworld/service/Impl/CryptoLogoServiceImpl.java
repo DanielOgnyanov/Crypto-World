@@ -1,5 +1,4 @@
 package com.example.cryptoworld.service.Impl;
-
 import com.example.cryptoworld.config.InfoUtils;
 import com.example.cryptoworld.repository.CryptoRepository;
 import com.example.cryptoworld.service.CryptoLogoService;
@@ -16,18 +15,37 @@ public class CryptoLogoServiceImpl implements CryptoLogoService {
     private final CryptoRepository cryptoRepository;
     private final InfoUtils infoUtils;
 
-    public CryptoLogoServiceImpl(CryptoRepository cryptoRepository, InfoUtils infoUtils) throws IOException {
+    public CryptoLogoServiceImpl(CryptoRepository cryptoRepository, InfoUtils infoUtils) {
         this.cryptoRepository = cryptoRepository;
         this.infoUtils = infoUtils;
     }
 
 
-    Response response = fetchCryptoLogo();
+    @Override
+    public void initAllLogoInDb() throws IOException {
+
+        Response response = fetchCryptoLogo();
 
 
-    String jsonDataAsString = response.body().string();
+        String jsonDataAsString = response.body().string();
 
-    JSONArray jsonArray = new JSONArray(jsonDataAsString);
+        JSONArray jsonArray = new JSONArray(jsonDataAsString);
+
+        for (int i = 0; i < jsonArray.length(); i++) {
+
+            JSONObject cryptoObject = jsonArray.getJSONObject(i);
+
+            String assetId = cryptoObject.getString("asset_id");
+            String iconUrl = cryptoObject.getString("url");
+
+
+
+
+        }
+
+    }
+
+
 
 
 
@@ -50,6 +68,7 @@ public class CryptoLogoServiceImpl implements CryptoLogoService {
                     + "Error occurred while executing the request to fetch crypto information");
         }
     }
+
 
 
 }
