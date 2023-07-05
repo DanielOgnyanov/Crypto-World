@@ -9,9 +9,11 @@ import com.squareup.okhttp.Request;
 import com.squareup.okhttp.Response;
 import org.json.JSONArray;
 import org.json.JSONObject;
+import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 
+@Service
 public class CryptoLogoServiceImpl implements CryptoLogoService {
 
     private final CryptoRepository cryptoRepository;
