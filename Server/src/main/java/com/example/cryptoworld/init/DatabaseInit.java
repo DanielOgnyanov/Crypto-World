@@ -1,9 +1,6 @@
 package com.example.cryptoworld.init;
 
-import com.example.cryptoworld.service.CountryService;
-import com.example.cryptoworld.service.CryptoService;
-import com.example.cryptoworld.service.RoleService;
-import com.example.cryptoworld.service.UserService;
+import com.example.cryptoworld.service.*;
 import com.example.cryptoworld.utils.InitEvent;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;
@@ -17,12 +14,14 @@ public class DatabaseInit  {
     private final RoleService roleService;
     private final CryptoService cryptoService;
     private final UserService userService;
+    private final CryptoLogoService cryptoLogoService;
 
-    public DatabaseInit(CountryService countryService, RoleService roleService, CryptoService cryptoService, UserService userService) {
+    public DatabaseInit(CountryService countryService, RoleService roleService, CryptoService cryptoService, UserService userService, CryptoLogoService cryptoLogoService) {
         this.countryService = countryService;
         this.roleService = roleService;
         this.cryptoService = cryptoService;
         this.userService = userService;
+        this.cryptoLogoService = cryptoLogoService;
     }
 
     //extends CommandLineRunner
@@ -42,6 +41,7 @@ public class DatabaseInit  {
         roleService.InitRoleInDb();
         cryptoService.InitCryptoInDb();
         userService.initializeUsers();
+        cryptoLogoService.initAllLogoInDb();
 
     }
 
