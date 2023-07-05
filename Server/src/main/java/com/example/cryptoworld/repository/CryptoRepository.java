@@ -15,8 +15,6 @@ public interface CryptoRepository extends JpaRepository<CryptoCurrenciesEntity, 
 
     Optional<CryptoCurrenciesEntity> findByName(String cryptoName);
 
-    Optional<CryptoCurrenciesEntity> findByAssetStringId(String assetId);
-
     @Query("select c from CryptoCurrenciesEntity as c where c.assetStringId like :assetId")
     CryptoCurrenciesEntity getCryptoByAssetStringId(String assetId);
 
