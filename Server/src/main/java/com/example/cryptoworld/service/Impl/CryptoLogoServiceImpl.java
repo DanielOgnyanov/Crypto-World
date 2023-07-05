@@ -19,17 +19,10 @@ public class CryptoLogoServiceImpl implements CryptoLogoService {
         this.infoUtils = infoUtils;
     }
 
-    Response response = getResponse();
 
 
 
-
-
-
-
-
-    private Response getResponse() throws IOException {
-
+    private Response fetchCryptoLogo() throws IOException {
         try {
             OkHttpClient client = new OkHttpClient();
 
@@ -46,6 +39,7 @@ public class CryptoLogoServiceImpl implements CryptoLogoService {
             throw new IOException(e.getMessage()
                     + "Error occurred while executing the request to fetch crypto information");
         }
-
     }
+
+
 }
