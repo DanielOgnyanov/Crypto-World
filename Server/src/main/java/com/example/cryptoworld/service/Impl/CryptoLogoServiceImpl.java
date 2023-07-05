@@ -6,6 +6,7 @@ import com.example.cryptoworld.service.CryptoLogoService;
 import com.squareup.okhttp.OkHttpClient;
 import com.squareup.okhttp.Request;
 import com.squareup.okhttp.Response;
+import org.json.JSONArray;
 
 import java.io.IOException;
 
@@ -20,6 +21,12 @@ public class CryptoLogoServiceImpl implements CryptoLogoService {
     }
 
 
+    Response response = fetchCryptoLogo();
+
+
+    String jsonDataAsString = response.body().string();
+
+    JSONArray jsonArray = new JSONArray(jsonDataAsString);
 
 
     private Response fetchCryptoLogo() throws IOException {
