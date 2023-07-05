@@ -1,6 +1,7 @@
 package com.example.cryptoworld.web;
 
 
+import com.example.cryptoworld.models.entities.CryptoCurrenciesEntity;
 import com.example.cryptoworld.models.view.CryptoTableViewModel;
 import com.example.cryptoworld.service.CryptoService;
 import com.example.cryptoworld.service.RealTimeCryptoPriceService;
@@ -89,13 +90,13 @@ public class CryptoController {
 
 
     @GetMapping("/logos")
-    public ResponseEntity<List<String>> getLogos() {
+    public ResponseEntity<List<CryptoCurrenciesEntity>> getLogos() {
 
         try {
 
-            List<String> getLogos = cryptoService.getLogos();
+            List<CryptoCurrenciesEntity> getLogos = cryptoService.getLogos();
 
-            return new ResponseEntity<List<String>>(getLogos, HttpStatus.OK);
+            return new ResponseEntity<List<CryptoCurrenciesEntity>>(getLogos, HttpStatus.OK);
 
 
 
