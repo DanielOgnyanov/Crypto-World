@@ -17,7 +17,7 @@ public class CryptoCurrenciesEntity extends BaseEntity{
     private double price;
     private double oldPriceTrack;
 
-    private byte[] logoImage;
+    private String logoImage;
 
 
     public CryptoCurrenciesEntity() {
@@ -28,7 +28,7 @@ public class CryptoCurrenciesEntity extends BaseEntity{
                                   BigDecimal volumeFor24Hour,
                                   double price,
                                   double oldPriceTrack,
-                                  byte[] logoImage) {
+                                  String logoImage) {
         this.name = name;
         this.assetStringId = assetStringId;
         this.volumeFor24Hour = volumeFor24Hour;
@@ -88,11 +88,11 @@ public class CryptoCurrenciesEntity extends BaseEntity{
     }
 
     @Column(name = "logo_image")
-    public byte[] getLogoImage() {
+    public String getLogoImage() {
         return logoImage;
     }
 
-    public void setLogoImage(byte[] logoImage) {
+    public void setLogoImage(String logoImage) {
         this.logoImage = logoImage;
     }
 }
