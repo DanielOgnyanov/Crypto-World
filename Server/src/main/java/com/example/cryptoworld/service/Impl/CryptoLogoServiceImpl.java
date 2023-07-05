@@ -1,4 +1,5 @@
 package com.example.cryptoworld.service.Impl;
+
 import com.example.cryptoworld.config.InfoUtils;
 import com.example.cryptoworld.models.entities.CryptoCurrenciesEntity;
 import com.example.cryptoworld.repository.CryptoRepository;
@@ -46,19 +47,9 @@ public class CryptoLogoServiceImpl implements CryptoLogoService {
             cryptoRepository.save(currentEntity);
 
 
-
-
-
-
-
         }
 
     }
-
-
-
-
-
 
     private Response fetchCryptoLogo() throws IOException {
         try {
@@ -78,7 +69,6 @@ public class CryptoLogoServiceImpl implements CryptoLogoService {
                     + "Error occurred while executing the request to fetch crypto information");
         }
     }
-
 
 
 }
