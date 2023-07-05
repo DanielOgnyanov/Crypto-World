@@ -125,23 +125,11 @@ public class CryptoServiceImpl implements CryptoService {
     }
 
     @Override
-    public List<String> getLogos() {
+    public List<CryptoCurrenciesEntity> getLogos() {
 
-        List<CryptoCurrenciesEntity> cryptoCurrencies = cryptoRepository.findAll();
-
-        List<String> logoImages = new ArrayList<>();
-
-       for(CryptoCurrenciesEntity cryptoCurrency : cryptoCurrencies) {
-           byte[] logoImage = cryptoCurrency.getLogoImage();
+        List<CryptoCurrenciesEntity> getLogos = cryptoRepository.findAll();
 
 
-           if(logoImage != null) {
-               String base64Image = Base64.getEncoder().encodeToString(logoImage);
-               logoImages.add(base64Image);
-           }
-       }
-
-
-        return logoImages;
+        return getLogos;
     }
 }

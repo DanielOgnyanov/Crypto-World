@@ -1,5 +1,6 @@
 package com.example.cryptoworld.service;
 
+import com.example.cryptoworld.models.entities.CryptoCurrenciesEntity;
 import com.example.cryptoworld.models.view.CryptoTableViewModel;
 import com.example.cryptoworld.models.view.CryptoViewModel;
 
@@ -18,5 +19,5 @@ public interface CryptoService {
 
     List<CryptoTableViewModel> getAllPrices();
 
-    List<String> getLogos();
+    List<CryptoCurrenciesEntity> getLogos();
 }
