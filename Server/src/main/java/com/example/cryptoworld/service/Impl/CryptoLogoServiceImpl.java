@@ -7,6 +7,7 @@ import com.squareup.okhttp.OkHttpClient;
 import com.squareup.okhttp.Request;
 import com.squareup.okhttp.Response;
 import org.json.JSONArray;
+import org.json.JSONObject;
 
 import java.io.IOException;
 
@@ -29,12 +30,14 @@ public class CryptoLogoServiceImpl implements CryptoLogoService {
     JSONArray jsonArray = new JSONArray(jsonDataAsString);
 
 
+
+
     private Response fetchCryptoLogo() throws IOException {
         try {
             OkHttpClient client = new OkHttpClient();
 
             Request request = new Request.Builder()
-                    .url(infoUtils.getAPI_URL())
+                    .url(infoUtils.getAPI_URL_LOGOS())
                     .addHeader(infoUtils.getAPI_NAME(), infoUtils.getPRIVATE_KEY())
                     .build();
 
