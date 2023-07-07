@@ -8,7 +8,7 @@ public class InfoUtils {
     private  String API_URL =
             "https://rest.coinapi.io/v1/assets?filter_asset_id=BTC;ETH;BNB;USDT;SOL;XRP;ADA;USDC;DOT;DOGE";
 
-    private String API_URL_LOGOS = "https://rest.coinapi.io/v1/assets/icons/32";
+    private String API_URL_LOGOS = "https://rest.coinapi.io/v1/assets?filter_asset_id=BTC;ETH;BNB;USDT;SOL;XRP;ADA;USDC;DOT;DOGE/icons/32";
 
     private  String API_NAME = "X-CoinAPI-Key";
 
