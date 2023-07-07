@@ -134,48 +134,6 @@ public class RealTimeCryptoPriceServiceImpl implements RealTimeCryptoPriceServic
 
     }
 
-    private String setCryptoLogo(String cryptoName) throws IOException {
-
-        String imagePath = "";
-
-
-        switch (cryptoName) {
-
-            case "Bitcoin":
-                imagePath = "src\\main\\resources\\static\\images\\logo-bitcoin.png";
-                break;
-            case "Ethereum":
-                imagePath = "src\\main\\resources\\static\\images\\ethereum-logo.png";
-                break;
-            case "Cardano":
-                imagePath = "src\\main\\resources\\static\\images\\cardano-logo.png";
-                break;
-            case "Tether":
-                imagePath = "src\\main\\resources\\static\\images\\tether-logo.png";
-                break;
-            case "SOL":
-                imagePath = "src\\main\\resources\\static\\images\\solana-logo.png";
-                break;
-            case "Ripple":
-                imagePath = "src\\main\\resources\\static\\images\\xrp-logo.png";
-                break;
-            case "DogeCoin":
-                imagePath = "src\\main\\resources\\static\\images\\dogecoin-logo.png";
-                break;
-            case "Dotcoin":
-                imagePath = "src\\main\\resources\\static\\images\\dotcoin-logo.png";
-                break;
-            case "USDC":
-                imagePath = "src\\main\\resources\\static\\images\\usdc-logo.png";
-                break;
-
-
-        }
-
-
-        return imagePath;
-
-    }
 
     private void setNewPriceToCrypto(String name, String assetId, BigDecimal volume24Hour, BigDecimal price) {
 
