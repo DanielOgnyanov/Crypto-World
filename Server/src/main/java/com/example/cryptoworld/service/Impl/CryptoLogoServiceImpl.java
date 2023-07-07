@@ -40,17 +40,17 @@ public class CryptoLogoServiceImpl implements CryptoLogoService {
             JSONObject cryptoObject = jsonArray.getJSONObject(i);
 
             String assetId = cryptoObject.getString("asset_id");
-            String iconUrl = cryptoObject.getString("url");
+            String iconUrl = cryptoObject.getString("id_icon");
 
             CryptoCurrenciesEntity currentEntity = cryptoRepository.getCryptoByAssetStringId(assetId);
 
-
             if (currentEntity != null) {
-
                 currentEntity.setLogoImage(iconUrl);
                 cryptoRepository.save(currentEntity);
 
             }
+
+
 
         }
 
