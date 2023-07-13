@@ -50,6 +50,31 @@ public class CryptoLogoServiceImpl implements CryptoLogoService {
 
             }
 
+            // set missing icons from fetch
+
+            if (currentEntity.getAssetStringId().equals("SOL") ||
+                    currentEntity.getAssetStringId().equals("BNB") ||
+                    currentEntity.getAssetStringId().equals("USDC")) {
+
+                switch (currentEntity.getAssetStringId()) {
+                    case "SOL":
+                        currentEntity.setLogoImage("https://s2.coinmarketcap.com/static/img/coins/64x64/5426.png");
+                        break;
+
+                    case "BNB":
+                        currentEntity.setLogoImage("https://s2.coinmarketcap.com/static/img/coins/64x64/1839.png");
+                        break;
+
+                    case "USDC":
+                        currentEntity.setLogoImage("https://s2.coinmarketcap.com/static/img/coins/64x64/3408.png");
+                        break;
+
+                }
+
+                cryptoRepository.save(currentEntity);
+
+            }
+
 
         }
 
