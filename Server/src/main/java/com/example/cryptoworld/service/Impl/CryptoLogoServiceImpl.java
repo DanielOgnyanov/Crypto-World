@@ -45,32 +45,32 @@ public class CryptoLogoServiceImpl implements CryptoLogoService {
             CryptoCurrenciesEntity currentEntity = cryptoRepository.getCryptoByAssetStringId(assetId);
 
             if (currentEntity != null) {
-                currentEntity.setLogoImage(iconUrl);
-                cryptoRepository.save(currentEntity);
 
-            }
 
-            // set missing icons from fetch
+                // set missing icons from fetch
 
-            if (currentEntity.getAssetStringId().equals("SOL") ||
-                    currentEntity.getAssetStringId().equals("BNB") ||
-                    currentEntity.getAssetStringId().equals("USDC")) {
+                if (currentEntity.getAssetStringId().equals("SOL") ||
+                        currentEntity.getAssetStringId().equals("BNB") ||
+                        currentEntity.getAssetStringId().equals("USDC")) {
 
-                switch (currentEntity.getAssetStringId()) {
-                    case "SOL":
-                        currentEntity.setLogoImage("https://s2.coinmarketcap.com/static/img/coins/64x64/5426.png");
-                        break;
+                    switch (currentEntity.getAssetStringId()) {
+                        case "SOL":
+                            currentEntity.setLogoImage("https://s2.coinmarketcap.com/static/img/coins/64x64/5426.png");
+                            break;
 
-                    case "BNB":
-                        currentEntity.setLogoImage("https://s2.coinmarketcap.com/static/img/coins/64x64/1839.png");
-                        break;
+                        case "BNB":
+                            currentEntity.setLogoImage("https://s2.coinmarketcap.com/static/img/coins/64x64/1839.png");
+                            break;
 
-                    case "USDC":
-                        currentEntity.setLogoImage("https://s2.coinmarketcap.com/static/img/coins/64x64/3408.png");
-                        break;
+                        case "USDC":
+                            currentEntity.setLogoImage("https://s2.coinmarketcap.com/static/img/coins/64x64/3408.png");
+                            break;
+
+                    }
+
 
                 }
-
+                currentEntity.setLogoImage(iconUrl);
                 cryptoRepository.save(currentEntity);
 
             }
