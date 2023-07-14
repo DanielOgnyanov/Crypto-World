@@ -12,6 +12,8 @@ import org.json.JSONObject;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
+import java.util.List;
+import java.util.Optional;
 
 @Service
 public class CryptoLogoServiceImpl implements CryptoLogoService {
@@ -49,27 +51,36 @@ public class CryptoLogoServiceImpl implements CryptoLogoService {
 
                 // set missing icons from fetch
 
-                if (currentEntity.getAssetStringId().equals("SOL") ||
-                        currentEntity.getAssetStringId().equals("BNB") ||
-                        currentEntity.getAssetStringId().equals("USDC")) {
 
-                    switch (currentEntity.getAssetStringId()) {
+                List<CryptoCurrenciesEntity> allCrypto = cryptoRepository.findAll();
+
+                for (int j = 0; j < allCrypto.size(); j++) {
+
+                    switch (allCrypto.get(j).getAssetStringId()) {
+
                         case "SOL":
-                            currentEntity.setLogoImage("https://s2.coinmarketcap.com/static/img/coins/64x64/5426.png");
+
+                            allCrypto.get(j).setLogoImage("https://s2.coinmarketcap.com/static/img/coins/64x64/5426.png");
                             break;
 
                         case "BNB":
-                            currentEntity.setLogoImage("https://s2.coinmarketcap.com/static/img/coins/64x64/1839.png");
+                            allCrypto.get(j).setLogoImage("https://s2.coinmarketcap.com/static/img/coins/64x64/1839.png");
                             break;
 
                         case "USDC":
-                            currentEntity.setLogoImage("https://s2.coinmarketcap.com/static/img/coins/64x64/3408.png");
+                            allCrypto.get(j).setLogoImage("https://s2.coinmarketcap.com/static/img/coins/64x64/3408.png");
                             break;
 
                     }
 
+                    cryptoRepository.save(allCrypto.get(j));
 
                 }
+
+
+
+
+
                 currentEntity.setLogoImage(iconUrl);
                 cryptoRepository.save(currentEntity);
 
