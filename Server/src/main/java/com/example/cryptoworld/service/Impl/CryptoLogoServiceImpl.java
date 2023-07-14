@@ -78,9 +78,6 @@ public class CryptoLogoServiceImpl implements CryptoLogoService {
                 }
 
 
-
-
-
                 currentEntity.setLogoImage(iconUrl);
                 cryptoRepository.save(currentEntity);
 
