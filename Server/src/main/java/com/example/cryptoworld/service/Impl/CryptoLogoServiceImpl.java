@@ -1,5 +1,4 @@
 package com.example.cryptoworld.service.Impl;
-
 import com.example.cryptoworld.config.InfoUtils;
 import com.example.cryptoworld.models.entities.CryptoCurrenciesEntity;
 import com.example.cryptoworld.repository.CryptoRepository;
@@ -10,10 +9,9 @@ import com.squareup.okhttp.Response;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.springframework.stereotype.Service;
-
 import java.io.IOException;
 import java.util.List;
-import java.util.Optional;
+
 
 @Service
 public class CryptoLogoServiceImpl implements CryptoLogoService {
@@ -37,6 +35,10 @@ public class CryptoLogoServiceImpl implements CryptoLogoService {
 
         JSONArray jsonArray = new JSONArray(jsonDataAsString);
 
+        // set missing icons from fetch
+
+        setMissingIconsFromFetch();
+
         for (int i = 0; i < jsonArray.length(); i++) {
 
             JSONObject cryptoObject = jsonArray.getJSONObject(i);
@@ -48,36 +50,6 @@ public class CryptoLogoServiceImpl implements CryptoLogoService {
 
             if (currentEntity != null) {
 
-
-                // set missing icons from fetch
-
-
-                List<CryptoCurrenciesEntity> allCrypto = cryptoRepository.findAll();
-
-                for (int j = 0; j < allCrypto.size(); j++) {
-
-                    switch (allCrypto.get(j).getAssetStringId()) {
-
-                        case "SOL":
-
-                            allCrypto.get(j).setLogoImage("https://s2.coinmarketcap.com/static/img/coins/64x64/5426.png");
-                            break;
-
-                        case "BNB":
-                            allCrypto.get(j).setLogoImage("https://s2.coinmarketcap.com/static/img/coins/64x64/1839.png");
-                            break;
-
-                        case "USDC":
-                            allCrypto.get(j).setLogoImage("https://s2.coinmarketcap.com/static/img/coins/64x64/3408.png");
-                            break;
-
-                    }
-
-                    cryptoRepository.save(allCrypto.get(j));
-
-                }
-
-
                 currentEntity.setLogoImage(iconUrl);
                 cryptoRepository.save(currentEntity);
 
@@ -86,6 +58,33 @@ public class CryptoLogoServiceImpl implements CryptoLogoService {
 
         }
 
+    }
+
+    private void setMissingIconsFromFetch() {
+        List<CryptoCurrenciesEntity> allCrypto = cryptoRepository.findAll();
+
+        for (int j = 0; j < allCrypto.size(); j++) {
+
+            switch (allCrypto.get(j).getAssetStringId()) {
+
+                case "SOL":
+
+                    allCrypto.get(j).setLogoImage("https://s2.coinmarketcap.com/static/img/coins/64x64/5426.png");
+                    break;
+
+                case "BNB":
+                    allCrypto.get(j).setLogoImage("https://s2.coinmarketcap.com/static/img/coins/64x64/1839.png");
+                    break;
+
+                case "USDC":
+                    allCrypto.get(j).setLogoImage("https://s2.coinmarketcap.com/static/img/coins/64x64/3408.png");
+                    break;
+
+            }
+
+            cryptoRepository.save(allCrypto.get(j));
+
+        }
     }
 
     private Response fetchCryptoLogo() throws IOException {
