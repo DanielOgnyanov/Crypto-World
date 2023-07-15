@@ -46,7 +46,7 @@ const BnbRealTimePrice = () => {
 
         <div id='bnb-container'>
 
-            <img id='logo-position' src={BNBImg}></img>
+            <img id='logo-position' src='https://s2.coinmarketcap.com/static/img/coins/64x64/1839.png' alt='BNB Logo'></img>
 
             <p id='item-name-position'>BNB</p>
 
