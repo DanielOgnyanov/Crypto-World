@@ -39,6 +39,7 @@ const BnbRealTimePrice = () => {
           const price = filteredData[0].price.toFixed(2);
           setFilteredPrice(price);
         }
+        
       }, [data]);
 
 
