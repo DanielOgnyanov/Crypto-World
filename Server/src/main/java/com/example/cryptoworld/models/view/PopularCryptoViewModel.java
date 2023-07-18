@@ -4,6 +4,7 @@ public class PopularCryptoViewModel {
 
     private String name;
     private double price;
+    private String logoImage;
 
     public PopularCryptoViewModel() {
     }
@@ -22,5 +23,13 @@ public class PopularCryptoViewModel {
 
     public void setPrice(double price) {
         this.price = price;
+    }
+
+    public String getLogoImage() {
+        return logoImage;
+    }
+
+    public void setLogoImage(String logoImage) {
+        this.logoImage = logoImage;
     }
 }
