@@ -37,12 +37,14 @@ const BnbRealTimePrice = () => {
         const filteredData = data.filter(item => item.name === 'Binance');
         setImage(filteredData[0].logoImage)
     
+        console.log(filteredData)
         if (filteredData.length > 0) {
           const price = filteredData[0].price.toFixed(2);
           setFilteredPrice(price);
         }
         
       }, [data]);
+
 
 
     return (
