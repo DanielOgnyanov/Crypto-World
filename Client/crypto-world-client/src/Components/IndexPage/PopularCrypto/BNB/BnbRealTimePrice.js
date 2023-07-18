@@ -1,6 +1,5 @@
 import './BnbRealTimePrice.css'
 import '../Utils/Utils.css'
-import BNBImg from '../../../../Images/BNB.png'
 import { getPopularCryptoPrice } from '../../../../Services/CryptoService'
 import { useState, useEffect } from 'react';
 
@@ -9,6 +8,7 @@ const BnbRealTimePrice = () => {
 
     const [data, setData] = useState([]);
     const [filteredPrice, setFilteredPrice] = useState('');
+    const [image , setImage] = useState('');
     
 
     useEffect(() => {
@@ -35,6 +35,7 @@ const BnbRealTimePrice = () => {
       useEffect(() => {
         
         const filteredData = data.filter(item => item.name === 'Binance');
+        setImage(filteredData[0].logoImage)
     
         if (filteredData.length > 0) {
           const price = filteredData[0].price.toFixed(2);
@@ -48,7 +49,7 @@ const BnbRealTimePrice = () => {
 
         <div id='bnb-container'>
 
-            <img id='logo-position' src={data.logoImage} alt='BNB Logo'></img>
+            <img id='logo-position' src={image} alt='BNB Logo'></img>
 
             <p id='item-name-position'>BNB</p>
 
