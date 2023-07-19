@@ -11,6 +11,7 @@ const TetherRealTimePrice = () => {
 
     const [data, setData] = useState([]);
     const [filteredPrice, setFilteredPrice] = useState('');
+    const [image, setImage] = useState('');
 
     useEffect(() => {
       const fetchData = async () => {
@@ -39,6 +40,7 @@ const TetherRealTimePrice = () => {
     
         if (filteredData.length > 0) {
           const price = filteredData[0].price.toFixed(2);
+          setImage(filteredData[0].logoImage)
           setFilteredPrice(price);
         }
       }, [data]);
@@ -47,7 +49,7 @@ const TetherRealTimePrice = () => {
 
        <div id='tether-container'>
 
-        <img id='logo-position' src = {TetherImg}></img>
+        <img id='logo-position' src = {image}></img>
 
         <p id='item-name-position'>Tether</p>
 
