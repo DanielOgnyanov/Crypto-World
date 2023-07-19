@@ -1,7 +1,7 @@
 import './BitcoinRealTimePrice.css'
 import '../Utils/Utils.css'
 import * as cryptoService from '../../../../Services/CryptoService'
-import BitcoinImg from '../../../../Images/Bitcoin.png'
+
 import { getPopularCryptoPrice } from '../../../../Services/CryptoService'
 import { useState, useEffect } from 'react';
 

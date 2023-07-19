@@ -3,8 +3,6 @@ import './TetherRealTimePrice.css'
 import { getPopularCryptoPrice } from '../../../../Services/CryptoService'
 import { useState, useEffect } from 'react';
 
-import TetherImg from '../../../../Images/Tether.png'
-
 
 
 const TetherRealTimePrice = () => {
