@@ -10,6 +10,7 @@ const BitcoinRealTimePrice = () => {
 
   const [data, setData] = useState([]);
   const [filteredPrice, setFilteredPrice] = useState('');
+  const [image, setImage] = useState('');
 
   useEffect(() => {
     const fetchData = async () => {
@@ -37,6 +38,7 @@ const BitcoinRealTimePrice = () => {
 
     if (filteredData.length > 0) {
       const price = filteredData[0].price.toFixed(2);
+      setImage(filteredData[0].logoImage)
       setFilteredPrice(price);
     }
   }, [data]);
@@ -45,7 +47,7 @@ const BitcoinRealTimePrice = () => {
 
     <div id='container-crypto-price-table'>
 
-      <img id='logo-position' src={BitcoinImg}></img>
+      <img id='logo-position' src={image}></img>
 
       <p id='item-name-position'>Bitcoin</p>
 
