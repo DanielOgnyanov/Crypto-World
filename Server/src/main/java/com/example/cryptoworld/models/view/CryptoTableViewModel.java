@@ -9,6 +9,8 @@ public class CryptoTableViewModel {
     private BigDecimal volumeFor24Hour;
     private double price;
     private double oldPriceTrack;
+    private String logoImage;
+
 
     public CryptoTableViewModel() {
     }
@@ -51,5 +53,13 @@ public class CryptoTableViewModel {
 
     public void setOldPriceTrack(double oldPriceTrack) {
         this.oldPriceTrack = oldPriceTrack;
+    }
+
+    public String getLogoImage() {
+        return logoImage;
+    }
+
+    public void setLogoImage(String logoImage) {
+        this.logoImage = logoImage;
     }
 }
