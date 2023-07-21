@@ -161,7 +161,7 @@ const Prices = () => {
             {crypto.map((crypto, index) => (
               <tr key={crypto.id}>
                 <td>{index + 1}</td>
-                <td>{crypto.name}</td>
+                <td>{crypto.name} </td>
                 <td>${formatPrice(crypto.price)}</td>
                 <td>
 
