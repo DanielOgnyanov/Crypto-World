@@ -91,7 +91,7 @@ const Prices = () => {
             const dateTimeString = crypto[0].recordedAt;
             const dateTime = new Date(dateTimeString);
             const formattedTime = dateTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-  
+
             return crypto[0].recordedAt.map((time) => new Date(time).toLocaleTimeString());;
           }
           return null;
@@ -161,7 +161,11 @@ const Prices = () => {
             {crypto.map((crypto, index) => (
               <tr key={crypto.id}>
                 <td>{index + 1}</td>
-                <td>  {crypto.name + " " + crypto.logoImage}  </td>
+                <td>
+                  <img src={crypto.logoImage} alt={crypto.name} />
+                  {crypto.name}
+
+                </td>
                 <td>${formatPrice(crypto.price)}</td>
                 <td>
 
