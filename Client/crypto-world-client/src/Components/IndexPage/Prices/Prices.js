@@ -162,8 +162,10 @@ const Prices = () => {
               <tr key={crypto.id}>
                 <td>{index + 1}</td>
                 <td>
-                  <img src={crypto.logoImage} alt={crypto.name} />
-                  {crypto.name}
+                  <div id="logo-img-container">
+                    <img src={crypto.logoImage} alt={crypto.name} id="logo-img" />
+                    <span>{crypto.name}</span>
+                  </div>
 
                 </td>
                 <td>${formatPrice(crypto.price)}</td>
