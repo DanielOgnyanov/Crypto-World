@@ -52,9 +52,19 @@
   background-color: #e5e5e5;
 }
 
+#logo-img-container {
+  display: flex;
+  align-items: center;
+}
 
-#chart-1D {
-  width: 10px;
- 
-  
+#logo-img {
+  width: 30px; 
+  height: 30px; 
+  margin-right: 10px; 
+}
+
+
+#logo-img-container span {
+  font-size: 16px; 
+  font-weight: bold; 
 }
