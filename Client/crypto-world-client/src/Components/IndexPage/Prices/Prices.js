@@ -182,7 +182,15 @@ const Prices = () => {
                         },
                       ],
                     }}
-                    options={{ responsive: true, maintainAspectRatio: false, }}
+                    options={{ 
+                      responsive: true, 
+                      maintainAspectRatio: false, 
+                      plugins: {
+                        legend: {
+                          display: false,
+                        },
+                      },
+                    }}
                   />
                 </td>
                 <td>${formatPrice(crypto.volumeFor24Hour)}</td>
