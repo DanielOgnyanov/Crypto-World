@@ -164,7 +164,7 @@ const Prices = () => {
                 <td>
                   <div id="logo-img-container">
                     <img src={crypto.logoImage} alt={crypto.name} id="logo-img" />
-                    <span>{crypto.name}</span>
+                    <span> {crypto.name} </span>
                   </div>
 
                 </td>
