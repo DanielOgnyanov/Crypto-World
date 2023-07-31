@@ -51,7 +51,8 @@ const Header = () => {
 
             <Link to="/"><span id='logo-header'>Crypto World</span></Link>
 
-            <Link to="/prices" id='prices'>Prices</Link>
+            <Link to="/prices" id='guest-menu'>Prices</Link>
+            <Link to="/staking-rewards" id='guest-menu'>Staking Rewards</Link>
 
             <button onClick={signInHandler} type='submit' id='navigation-button-signin'>Sign In</button>
 
