@@ -114,14 +114,14 @@
 
 #guest-menu {
   color: white;
-  margin-left: 150px;
+  margin-left: 50px;
   font-family:CoinbaseSans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   text-decoration: none; 
   font-size: 15px;
   font-weight: 500;
 }
 
-#prices:hover {
+#guest-menu:hover {
   color: #d3c264; 
   transition: color 0.3s ease; 
 }
