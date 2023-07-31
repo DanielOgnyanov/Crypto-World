@@ -7,7 +7,9 @@ const StakingRewards = () => {
   
 
   return (
-
+ 
+    <>
+    </>
     
   );
 
