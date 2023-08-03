@@ -6,6 +6,10 @@ const StakingRewards = () => {
 
   const history = useNavigate();
 
+  function registerHandler() {
+    history('/register');
+}
+
   return (
 
     <div id='body-content'>
