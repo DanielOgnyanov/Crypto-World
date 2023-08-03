@@ -4,7 +4,7 @@ import './StakingRewards.css'
 
 const StakingRewards = () => {
 
-
+  const history = useNavigate();
 
   return (
 
