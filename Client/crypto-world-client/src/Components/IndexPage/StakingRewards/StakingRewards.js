@@ -33,6 +33,7 @@ const StakingRewards = () => {
       </div>
 
     </>
+    
   );
 
 }
