@@ -16,6 +16,7 @@ const StakingRewards = () => {
       <div id='body-content'>
 
         <h1 id='title'>
+          
           <span>
             <strong>Earn up to 24% </strong>
             yearly on your crypto
