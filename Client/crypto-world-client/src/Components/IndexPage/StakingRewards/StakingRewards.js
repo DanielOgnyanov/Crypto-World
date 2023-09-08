@@ -29,7 +29,7 @@ const StakingRewards = () => {
           Instantly unstake at any time with no penalties.
         </p>
 
-        <button onClick={registerHandler} type='submit' id='stacking-rewards-button-create'>Create Account</button>
+      <button onClick={registerHandler} type='submit' id='stacking-rewards-button-create'>Create Account</button>
 
       </div>
 
