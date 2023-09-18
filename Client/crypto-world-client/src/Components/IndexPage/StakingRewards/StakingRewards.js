@@ -32,6 +32,7 @@ const StakingRewards = () => {
         </p>
 
         
+        
         <button onClick={registerHandler} type='submit' id='stacking-rewards-button-create'>Create Account</button>
 
       </div>
