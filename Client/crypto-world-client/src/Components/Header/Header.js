@@ -13,7 +13,8 @@ const Header = () => {
     const { user, login,logout } = useAuthContext();
 
 
-     function registerHandler() {
+    
+    function registerHandler() {
         history('/register');
     }
 
