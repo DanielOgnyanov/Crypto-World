@@ -9,12 +9,12 @@ import { useAuthContext } from '../../Context/AuthContext';
 const Header = () => {
 
     const history = useNavigate();
-    
-    const { user, login,logout } = useAuthContext();
+
+    const { user, login, logout } = useAuthContext();
 
 
-    
-    
+
+
     function registerHandler() {
         history('/register');
     }
@@ -40,7 +40,7 @@ const Header = () => {
 
             </div>
 
-           <Link id='navigation-a' to="/logout"><button type='submit' id='logout-button'>Logout</button></Link> 
+            <Link id='navigation-a' to="/logout"><button type='submit' id='logout-button'>Logout</button></Link>
 
         </div>
 
@@ -73,7 +73,7 @@ const Header = () => {
 
                 {Boolean(authService.getUser())
 
-                    ? userNavigation 
+                    ? userNavigation
                     : guestNavigation
 
                 }
