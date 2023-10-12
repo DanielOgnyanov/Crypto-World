@@ -58,7 +58,7 @@ const Header = () => {
 
             <button onClick={signInHandler} type='submit' id='navigation-button-signin'>Sign In</button>
 
-            <button onClick={registerHandler} type='submit' id='navigation-button-create'>Create Account</button>
+            <button  onClick={registerHandler} type='submit' id='navigation-button-create'>Create Account</button>
 
         </div>
 
