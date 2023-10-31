@@ -15,7 +15,6 @@ const Header = () => {
 
 
 
-
     function registerHandler() {
         history('/register');
     }
