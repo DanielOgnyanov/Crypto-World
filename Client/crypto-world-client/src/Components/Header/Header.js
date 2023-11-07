@@ -17,7 +17,8 @@ const Header = () => {
 
     function registerHandler() {
    
-       history('/register');
+ 
+        history('/register');
     }
 
     function signInHandler() {
