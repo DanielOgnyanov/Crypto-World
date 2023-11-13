@@ -49,9 +49,9 @@ const IndexPage = () => {
             </div>
 
 
-            
-            
-    <div>
+
+
+            <div>
                 <BuildYourPortfolioInfo />
             </div>
 
