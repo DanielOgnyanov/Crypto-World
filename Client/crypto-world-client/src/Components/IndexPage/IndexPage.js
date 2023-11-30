@@ -48,9 +48,6 @@ const IndexPage = () => {
                 <HoldAndEarn />
             </div>
 
-
-
-
             <div>
                 <BuildYourPortfolioInfo />
             </div>
