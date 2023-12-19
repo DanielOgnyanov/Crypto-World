@@ -40,7 +40,6 @@ const IndexPage = () => {
                 <TetherRealTimePrice />
             </div>
 
-
             <p id='p-hold-earn'>Hold and Earn</p>
 
             <div id='information-div'>
