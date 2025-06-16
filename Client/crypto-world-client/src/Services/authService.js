@@ -63,10 +63,15 @@ export const logout = async (usernameLogout) => {
 }
 
 export const getUser = () => {
-    let username = localStorage.getItem('user');
-    
+      const data = localStorage.getItem('user');
+  if (!data) return null;
 
-    return username[0].username;
+  try {
+    return JSON.parse(data); // returns object like { username: 'daniel' }
+  } catch (e) {
+    console.error("Error parsing user:", e);
+    return null;
+  }
 };
 
 export const isAuthenticated = () => {
