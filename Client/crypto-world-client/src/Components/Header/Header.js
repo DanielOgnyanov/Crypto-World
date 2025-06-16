@@ -7,10 +7,13 @@ import { useAuthContext } from '../../Context/AuthContext';
 
 
 const Header = () => {
+    const userCheck = authService.getUser();
 
     const history = useNavigate();
 
     const { user, login, logout } = useAuthContext();
+
+    
 
 
 
@@ -73,13 +76,12 @@ const Header = () => {
 
             <nav id='navigation'>
 
-                {Boolean(authService.getUser())
+                {Boolean(userCheck)
 
                     ? userNavigation
                     : guestNavigation
 
                 }
-
             </nav>
 
 
