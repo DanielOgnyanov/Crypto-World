@@ -1,166 +1,110 @@
 #form-register {
-    max-height: 830px;
-    width: 485px;
-    margin-top: 80px;
-    margin-left: 500px;
-    margin-bottom: 200px;
-    text-align: center;
-    position: relative;
-
-    border-radius: 20px;
-    border-bottom: 2px solid white;
-    border-top: 2px solid white;
-    border-right: 2px solid white;
-    border-left: 2px solid white;
-    
-    background-color: rgb(40, 40, 77);
-    color: white;
-    
-    font-family: CoinbaseSans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;;
-    font-weight: bold;
-    font-size: 17px;
+  max-width: 450px;
+  margin: 80px auto;
+  padding: 40px 30px;
+  background-color: #1e1e2f;
+  color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  font-family: 'Segoe UI', sans-serif;
 }
 
 #register-p {
-
-    margin-bottom: 20px;
-    font-weight: bold;
-    font-size: 20px;
-} 
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
 
 #label-register {
-    
-    display:block;
-    padding-top: 13px;
-    padding-bottom: 10px;
-    
-} 
+  display: block;
+  margin: 16px 0 8px;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: left;
+}
 
-form input {
-    
-    height: 30px;
-    width: 300px;
-    font-size: 18px;
-    border-radius: 8px;
-    
-    
-}    
- 
-
-
+form input,
 #select-country {
-
-    height: 37px;
-    width: 350px;
-    border-radius: 8px;
-
-    background-image: url('../../Images/country-icon.png');
-    background-repeat: no-repeat;
-    background-position: left 8px top 2px;
-    padding-left: 45px;
-    background-size: 32px;
-
-    font-size: 18px;
-    
-    
+  width: 100%;
+  padding: 10px 12px 10px 45px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f8f8f8;
+  background-repeat: no-repeat;
+  background-position: 10px center;
+  background-size: 20px;
+  box-sizing: border-box;
+  margin-bottom: 12px;
+  outline: none;
 }
 
-
-#option-non-default-country {
-    font-size: 18px;
-    color: black;
-}
-
+/* Input icon styles */
 #username-input {
-
-    background-image: url('../../Images/user-icon-1.png');
-    background-repeat: no-repeat;
-    background-position: left 8px top 2px;
-    padding-left: 45px;
-    
-    background-size: 22px;
-} 
-
+  background-image: url('../../Images/user-icon-1.png');
+}
 
 #fullname-input {
-
-    background-image: url('../../Images/full-name-icon.jpg');
-    background-repeat: no-repeat;
-    background-position: left 0px top 2px;
-    padding-left: 45px;
-    
-    background-size: 45px;
-} 
-
-
-#email-input {
-
-    background-image: url('../../Images/email-icon.png');
-    background-repeat: no-repeat;
-    background-position: left 9px top 2px;
-    padding-left: 45px;
-    
-    background-size: 28px;
-} 
-
-
-#password-input {
-
-    background-image: url('../../Images/pass-icon.png');
-    background-repeat: no-repeat;
-    background-position: left 9px top 2px;
-    padding-left: 45px;
-    
-    background-size: 28px;
-} 
-
-
-#register-form-button {
-
-  height: 40px;
-  width: 345px;
-  margin-top: 48px;
-  margin-bottom: 38px;
-  padding-bottom: 10px;
-  background: #ddd;
-  font-size: 25px;
-  border: 1px solid rgb(255, 255, 255);
-  border-radius: 8px;
-  cursor: pointer;
-  background-color: rgb(15, 129, 15);
-   
-  
-  color: white;
-  font-family: CoinbaseSans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;;
-  font-weight: 500;
-
-}     
-
-
-#span-info-register{
-
-    width: 345px;
-    margin-top: 8px;
-    display: inline-block;
-    background-color: rgb(205, 92, 92);
-    border: 1px solid  rgb(0, 2, 5);
-    border-radius: 5px;
-
-    font-size: 12px;
+  background-image: url('../../Images/full-name-icon.jpg');
+  background-size: 30px;
 }
 
-#span-green-tick{
+#email-input {
+  background-image: url('../../Images/email-icon.png');
+  background-size: 24px;
+}
 
-    
-    position: absolute;
-    float: right;
-    
-    
+#password-input {
+  background-image: url('../../Images/pass-icon.png');
+  background-size: 24px;
+}
 
-    margin-left: 18px;
-    margin-top: 6px;
+#select-country {
+  background-image: url('../../Images/country-icon.png');
+  background-size: 26px;
+}
 
-    border: 1px solid rgb(255, 255, 255);;
-    border-radius: 22px;
-    background-color: rgb(11, 148, 11);
+#option-non-default-country {
+  font-size: 14px;
+  color: black;
+}
+
+#register-form-button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 25px;
+  background-color: #27ae60;
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+#register-form-button:hover {
+  background-color: #219150;
+}
+
+#span-info-register {
+  margin-top: 15px;
+  padding: 6px 12px;
+  background-color: #e74c3c;
+  color: #fff;
+  border-radius: 6px;
+  font-size: 13px;
+  display: inline-block;
+  border: 1px solid #c0392b;
+}
+
+#span-green-tick {
+  position: absolute;
+  right: 30px;
+  top: 12px;
+  width: 20px;
+  height: 20px;
+  background-color: #0b940b;
+  border-radius: 50%;
+  border: 2px solid white;
 }
