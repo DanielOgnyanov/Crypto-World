@@ -1,138 +1,134 @@
 #navigation {
-  height: 65px;
-  background-color: rgb(54, 54, 105);
-  border-bottom: 1px solid rgb(0, 0, 0);
-  overflow: hidden;
+  height: 70px;
+  background-color: rgb(40, 40, 77);
+  border-bottom: 2px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 #logo-header {
-  margin-top: 10px;
-  margin-left: 10px;
+  font-size: 30px;
+  font-weight: 700;
   color: white;
-  font-size: 35px;
-  cursor:poitner;
-  font-weight: 600;
-  font-family:Brush Script MT, Brush Script Std, cursive;
+  font-family: 'Segoe UI', sans-serif;
+  cursor: pointer;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+  transition: all 0.3s ease;
 }
 
 #logo-header:hover {
-    border-bottom: 1px solid rgb(255, 255, 255);
+  color: #27ae60;
+  transform: scale(1.05);
+  border-bottom: 2px solid #27ae60;
 }
 
 #navigaion-a-div {
-  display: inline-block;
-  margin-top: 20px;
-  margin-left: 200px;
-  
+  display: flex;
+  gap: 25px;
+  align-items: center;
 }
 
 #navigation-a {
-  
   color: white;
-  margin-top: 18px;
-  margin-left: 30px;
-  margin-bottom: 8px;
-  color:rgb(255, 255, 255);
-  text-align: center;
-  padding: 10px 14px;
   text-decoration: none;
-  font-size: 14px;
-  font-family:CoinbaseSans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-  font-weight: 650;
-  
-}
-
-#navigation-a:hover {
-    font-size:14px;
-    border-bottom: 1px solid rgb(255, 255, 255);
-    cursor:poitner;
-}
-
-#navigation-button-signin {
-  float: right;
-  height: 35px;
-  margin-top: 10px;
-  margin-right: 30px;
-  font-size: 17px;
-  font-weight:600;
-  background-color: transparent;
-  color: white;
-  border: 2px solid rgb(255, 255, 255);
-  border-radius: 100px;
-  cursor: pointer;
-  text-align: center;
-  
-}
-
-#navigation-button-signin:hover {
-  opacity: 0.8;
-}
-
-
-#navigation-button-create {
-  float: right;
-  height: 35px;
-  margin-top: 10px;
-  margin-right: 30px;
-  background: #ddd;
-  font-size: 17px;
-  border: 2px solid rgb(255, 255, 255);
-  cursor: pointer;
-  background-color: rgb(255, 255, 255);
-  border-radius: 100px;
-  
-  color: rgb(54, 54, 105);
-  text-align: center;
-  font-family: CoinbaseSans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;;
-  font-weight:600;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: CoinbaseSans, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  transition: all 0.3s ease;
   padding-bottom: 4px;
 }
 
-#navigation-button-create:hover {
-  opacity: 0.8;
+#navigation-a:hover {
+  color: #f1c40f;
+  border-bottom: 2px solid #f1c40f;
+  cursor: pointer;
 }
 
-#logout-button {
-  height: 30px;
-  margin-left: 250px;
-  border-radius: 100px;
+#navigation {
+  height: 70px;
+  background-color: rgb(40, 40, 77);
+  border-bottom: 2px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px;
+  position: relative;
+}
+
+#auth-buttons {
+  display: flex;
+  gap: 10px;
+  position: absolute;
+  top: 15px;
+  right: 30px;
+}
+
+#navigation-button-signin,
+#navigation-button-create {
+  height: 38px;
+  padding: 0 18px;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 25px;
+  border: 2px solid white;
   cursor: pointer;
-  font-weight:700;
-  font-size: 13px;
-  border: 2px solid rgb(255, 255, 255);
-  color: rgb(54, 54, 105);
-   
+  font-family: CoinbaseSans, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#navigation-button-signin {
+  background-color: transparent;
+  color: white;
+}
+
+#navigation-button-signin:hover {
+  background-color: white;
+  color: rgb(40, 40, 77);
+}
+
+#navigation-button-create {
+  background-color: white;
+  color: rgb(40, 40, 77);
+}
+
+#navigation-button-create:hover {
+  background-color: #27ae60;
+  color: white;
+}
+
+
+#logout-button {
+  height: 35px;
+  padding: 0 16px;
+  margin-left: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 25px;
+  border: 2px solid white;
+  color: rgb(40, 40, 77);
+  background-color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 #logout-button:hover {
-  opacity: 0.8;
+  background-color: #c0392b;
+  color: white;
 }
-
 
 #guest-menu {
   color: white;
-  margin-left: 50px;
-  font-family:CoinbaseSans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-  text-decoration: none; 
   font-size: 15px;
   font-weight: 500;
+  text-decoration: none;
+  margin-left: 25px;
+  font-family: CoinbaseSans, sans-serif;
+  transition: color 0.3s ease;
 }
 
 #guest-menu:hover {
-  color: #d3c264; 
-  transition: color 0.3s ease; 
+  color: #f39c12;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-

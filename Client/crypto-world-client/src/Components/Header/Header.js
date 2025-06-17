@@ -54,18 +54,21 @@ const Header = () => {
 
     let guestNavigation = (
 
-        <div className='guestNavigation' >
+      <div className="guestNavigation" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: '70px', backgroundColor: 'rgb(40, 40, 77)', padding: '0 30px', borderBottom: '2px solid white' }}>
 
-            <Link to="/"><span id='logo-header'>Crypto World</span></Link>
+  <Link to="/" id="logo-header">Crypto World</Link>
 
-            <Link to="/prices" id='guest-menu'>Prices</Link>
-            <Link to="/staking-rewards" id='guest-menu'>Staking Rewards</Link>
+  <div style={{ display: 'flex', gap: '25px', alignItems: 'center' }}>
+    <Link to="/prices" id="guest-menu">Prices</Link>
+    <Link to="/staking-rewards" id="guest-menu">Staking Rewards</Link>
+  </div>
 
-            <button onClick={signInHandler} type='submit' id='navigation-button-signin'>Sign In</button>
+  <div id="auth-buttons">
+    <button onClick={signInHandler} type="submit" id="navigation-button-signin">Sign In</button>
+    <button onClick={registerHandler} type="submit" id="navigation-button-create">Create Account</button>
+  </div>
 
-            <button  onClick={registerHandler} type='submit' id='navigation-button-create'>Create Account</button>
-
-        </div>
+</div>
 
     );
 
