@@ -26,7 +26,7 @@ function App() {
         <Header />
 
         <Routes>
-          <Route exact path="/" exact element={<IndexPage />} />
+          <Route exact path="/"  element={<IndexPage />} />
           <Route path='/prices' element = {<Prices/>}/>
           <Route path='/staking-rewards' element = {<StakingRewards/>}/>
           <Route path="/register" element={<Register />} />

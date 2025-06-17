@@ -63,17 +63,16 @@ export const logout = async (usernameLogout) => {
 }
 
 export const getUser = () => {
-      const data = localStorage.getItem('user');
-  if (!data) return null;
+  const data = localStorage.getItem("user");
+  if (!data || data === "null" || data === "undefined") return null;
 
   try {
-    return JSON.parse(data); // returns object like { username: 'daniel' }
+    const user = JSON.parse(data);
+    return user && typeof user === "object" && user.username ? user : null;
   } catch (e) {
-    console.error("Error parsing user:", e);
     return null;
   }
 };
-
 export const isAuthenticated = () => {
 return Boolean(getUser());
 };
