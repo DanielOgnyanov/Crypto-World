@@ -1,67 +1,67 @@
-#form-top-five-crypto-buy{
+#form-top-five-crypto-buy {
+  min-height: 220px;
+  max-height: 275px;
+  width: 420px;
+  text-align: center;
 
-    min-height: 200px;
-    max-height: 275px;
-    width: 490px;
-    text-align: center;
+  border-radius: 16px;
+  border: 2px solid white;
 
-    border-radius: 20px;
-    border-bottom: 2px solid rgb(0, 0, 0);
-    border-top: 2px solid rgb(0, 0, 0);
-    border-right: 2px solid rgb(0, 0, 0);
-    border-left: 2px solid rgb(0, 0, 0);
+  background-color: #1e1e2f;
+  color: white;
 
-    background-color: rgb(40, 40, 77);
-    color: white;
+  font-family: CoinbaseSans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-weight: 500;
+  font-size: 15px;
 
-    font-family: CoinbaseSans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-    ;
-    font-weight: bold;
-    font-size: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  padding: 25px 20px;
+  margin: 20px auto;
 }
 
 #p-top-five-crypto-by-user {
-    font-weight: bold;
-    font-size: 20px;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 20px;
 }
 
-#label-top-five-crypto-by-user{
-    padding-right: 15px;
+#label-top-five-crypto-by-user {
+  display: inline-block;
+  margin-bottom: 10px;
+  font-size: 14px;
 }
 
-#username-top-five-crypto{
-    
-    background-image: url('../../../Images/user-icon-1.png');
-    background-repeat: no-repeat;
-    background-position: left 8px top 2px;
-    padding-left: 35px;
-    margin-bottom: 15px;
+#username-top-five-crypto {
+  background-image: url('../../../Images/user-icon-1.png');
+  background-repeat: no-repeat;
+  background-position: left 10px center;
+  background-size: 20px;
 
-    background-size: 20px;
+  padding-left: 40px;
+  height: 35px;
+  width: 80%;
+  margin: 10px auto 20px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  background-color: white;
+  color: black;
 }
-
-
-
-
-
 
 #button-find-user-last-five-buy {
-    height: 40px;
-    width: 200px;
-    margin-top: 40px;
-    margin-bottom: 38px;
-    background: #ddd;
-    font-size: 25px;
-    text-align: center;
-    border: 1px solid rgb(255, 255, 255);
-    border-radius: 8px;
-    cursor: pointer;
-    background-color: rgb(15, 129, 15);
-    padding-bottom: 10px;
+  width: 80%;
+  height: 40px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 100px;
+  cursor: pointer;
+  background-color: #27ae60;
+  color: white;
+  transition: all 0.3s ease;
+}
 
-
-    color: white;
-    font-family: CoinbaseSans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-    ;
-    font-weight: 500;
+#button-find-user-last-five-buy:hover {
+  background-color: #219653;
+  opacity: 0.9;
 }

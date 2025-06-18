@@ -1,94 +1,99 @@
-#navigation {
-  height: 70px;
-  background-color: rgb(40, 40, 77);
-  border-bottom: 2px solid white;
+/* Shared Navigation Wrapper */
+.guestNavigation,
+.userNavigation {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  height: 70px;
+  background-color: rgb(40, 40, 77);
   padding: 0 30px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  border-bottom: 2px solid white;
 }
 
 #logo-header {
-  font-size: 30px;
-  font-weight: 700;
-  color: white;
+  font-size: 36px;
+  font-weight: 800;
+  background: linear-gradient(135deg, #00feba, #5b8cfc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   font-family: 'Segoe UI', sans-serif;
   cursor: pointer;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
-  transition: all 0.3s ease;
+  text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, text-shadow 0.3s ease;
+  margin-right: 80px;
 }
 
 #logo-header:hover {
-  color: #27ae60;
-  transform: scale(1.05);
-  border-bottom: 2px solid #27ae60;
+  transform: scale(1.08);
+  text-shadow: 0px 2px 8px rgba(0, 255, 179, 0.5);
+  /* border-bottom: 2px solid #27ae60; <-- removed */
 }
 
-#navigaion-a-div {
+/* Guest Menu Links Wrapper */
+#guest-menu-wrapper {
   display: flex;
-  gap: 25px;
+  gap: 30px;
   align-items: center;
+  margin-right: auto;
 }
 
+/* Guest Menu Link Styling */
+#guest-menu,
 #navigation-a {
   color: white;
+  font-family: CoinbaseSans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   text-decoration: none;
-  font-size: 16px;
-  font-weight: 600;
-  font-family: CoinbaseSans, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-  transition: all 0.3s ease;
-  padding-bottom: 4px;
-}
-
-#navigation-a:hover {
-  color: #f1c40f;
-  border-bottom: 2px solid #f1c40f;
-  cursor: pointer;
-}
-
-#navigation {
-  height: 70px;
-  background-color: rgb(40, 40, 77);
-  border-bottom: 2px solid white;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 30px;
-  position: relative;
-}
-
-#auth-buttons {
-  display: flex;
-  gap: 10px;
-  position: absolute;
-  top: 15px;
-  right: 30px;
-}
-
-#navigation-button-signin,
-#navigation-button-create {
-  height: 38px;
-  padding: 0 18px;
   font-size: 15px;
   font-weight: 600;
-  border-radius: 25px;
-  border: 2px solid white;
-  cursor: pointer;
-  font-family: CoinbaseSans, sans-serif;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  padding: 6px 10px;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
 }
 
+#guest-menu:hover,
+#navigation-a:hover {
+  color: #d3c264;
+  border-bottom: 1px solid #d3c264;
+}
+
+/* User Navigation Links Wrapper */
+#navigaion-a-div {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  margin-right: auto;
+}
+
+/* Guest Auth Buttons Wrapper */
+#auth-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+/* Shared Button Base Style */
+#navigation-button-signin,
+#navigation-button-create,
+#logout-button {
+  height: 35px;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 0 20px;
+  border-radius: 100px;
+  border: 2px solid white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Sign In */
 #navigation-button-signin {
   background-color: transparent;
   color: white;
 }
 
 #navigation-button-signin:hover {
-  background-color: white;
-  color: rgb(40, 40, 77);
+  opacity: 0.8;
 }
 
+/* Create Account */
 #navigation-button-create {
   background-color: white;
   color: rgb(40, 40, 77);
@@ -99,36 +104,13 @@
   color: white;
 }
 
-
+/* Logout Button */
 #logout-button {
-  height: 35px;
-  padding: 0 16px;
-  margin-left: 20px;
-  font-size: 14px;
-  font-weight: 600;
-  border-radius: 25px;
-  border: 2px solid white;
-  color: rgb(40, 40, 77);
   background-color: white;
-  cursor: pointer;
-  transition: all 0.3s ease;
+  color: rgb(40, 40, 77);
+  margin-left: 40px;
 }
 
 #logout-button:hover {
-  background-color: #c0392b;
-  color: white;
-}
-
-#guest-menu {
-  color: white;
-  font-size: 15px;
-  font-weight: 500;
-  text-decoration: none;
-  margin-left: 25px;
-  font-family: CoinbaseSans, sans-serif;
-  transition: color 0.3s ease;
-}
-
-#guest-menu:hover {
-  color: #f39c12;
+  opacity: 0.85;
 }
