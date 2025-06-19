@@ -1,38 +1,80 @@
-import './GetStarted.css'
-import { Link } from 'react-router-dom'
-import IndexPageBg from './IndexPageBg/IndexPageBg'
-import { useSpring, animated, config } from '@react-spring/web'
+import React from 'react';
+import { useSpring, animated, useSprings } from '@react-spring/web';
+import { Link } from 'react-router-dom';
+import './GetStarted.css';
+
+const cryptoAssets = [
+  { name: 'Bitcoin', color: '#f7931a' },
+  { name: 'Ethereum', color: '#3c3c3d' },
+  { name: 'Binance', color: '#f3ba2f' },
+  { name: 'Cardano', color: '#0033ad' },
+  { name: 'Tether', color: '#26a17b' },
+  { name: 'Solana', color: '#00ffa3' },
+  { name: 'Ripple', color: '#346aa9' },
+  { name: 'Polkadot', color: '#e6007a' },
+  { name: 'Dogecoin', color: '#c2a633' },
+  { name: 'USDC', color: '#2775ca' },
+];
+
+// Random helper function
+const getRandom = (min, max) => Math.random() * (max - min) + min;
 
 const GetStarted = () => {
-const containerSpring = useSpring({
-    from: { opacity: 0, transform: 'translateY(30px)' },
-    to: { opacity: 1, transform: 'translateY(0)' },
-    config: config.gentle,
-    delay: 200
-  });
-
-  const buttonSpring = useSpring({
-    from: { opacity: 0, transform: 'scale(0.9)' },
-    to: { opacity: 1, transform: 'scale(1)' },
-    config: config.wobbly,
-    delay: 600
-  });
+  // Slower animation and smaller floating area (10% to 85% so it doesn't fill entire height)
+  const [springs] = useSprings(cryptoAssets.length, index => ({
+    from: {
+      x: getRandom(10, 85),
+      y: getRandom(10, 60),
+      opacity: 0,
+      scale: 0.8,
+    },
+    to: async (next) => {
+      while (true) {
+        await next({
+          x: getRandom(10, 85),
+          y: getRandom(10, 60),
+          opacity: 1,
+          scale: 1.1,
+          config: { mass: 1, tension: 60, friction: 20 }, // slower and smooth
+          delay: getRandom(0, 3000),
+        });
+        await next({
+          opacity: 0.6,
+          scale: 0.9,
+          config: { mass: 1, tension: 50, friction: 25 },
+          delay: getRandom(1500, 3000),
+        });
+      }
+    },
+  }));
 
   return (
-    <div id="container">
-      <animated.div className="getStarted" id="getStarted-div" style={containerSpring}>
-        <h1>Buy Bitcoin & Crypto Asset</h1>
-        <p>
-          Sign up today and <strong>buy top 10 cryptocurrencies</strong>, <br />
-          easily and fast. Get started with as little as <strong>$10.</strong>
-        </p>
-
-        <animated.div className="getStartedButton" id="getStartedButton-div" style={buttonSpring}>
-          <Link className="button" to="/register">Get Started</Link>
+    <div className="getStartedContainer">
+      {/* Floating crypto asset names */}
+      {springs.map((styles, i) => (
+        <animated.div
+          key={cryptoAssets[i].name}
+          className="floatingCrypto"
+          style={{
+            ...styles,
+            position: 'absolute',
+            top: styles.y.to(y => `${y}%`),
+            left: styles.x.to(x => `${x}%`),
+            transform: styles.scale.to(s => `scale(${s})`),
+            backgroundColor: cryptoAssets[i].color,
+            boxShadow: `0 4px 10px ${cryptoAssets[i].color}80`,
+          }}
+        >
+          {cryptoAssets[i].name}
         </animated.div>
-      </animated.div>
+      ))}
 
-      <IndexPageBg />
+      {/* Get Started Button */}
+      <div className="buttonWrapper">
+        <Link to="/register" className="getStartedButton">
+          Get Started
+        </Link>
+      </div>
     </div>
   );
 };

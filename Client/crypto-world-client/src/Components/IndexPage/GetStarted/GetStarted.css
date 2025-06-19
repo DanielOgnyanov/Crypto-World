@@ -1,50 +1,69 @@
-#container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 60px 20px;
+.getStartedContainer {
   position: relative;
-  min-height: 100vh;
-  background-color: #121e36;
-  color: white;
-}
-
-#getStarted-div {
-  background-color: rgb(40, 40, 77);
-  padding: 50px 30px;
-  border-radius: 20px;
-  text-align: center;
-  max-width: 500px;
-  width: 100%;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-}
-
-#getStarted-div h1 {
-  font-size: 32px;
-  margin-bottom: 20px;
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(135deg, #00feba, #5b8cfc);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-#getStarted-div p {
-  font-size: 18px;
-  line-height: 1.6;
-  margin-bottom: 30px;
-}
-
-#getStartedButton-div .button {
-  padding: 12px 30px;
-  font-size: 16px;
-  font-weight: bold;
+  height: 400px;
+  width: 1200px;
+  margin-left: 100px;
+  margin-right: 100px;
+  margin-top: 50px;
   border-radius: 50px;
-  background-color: #27ae60;
+  background: linear-gradient(-45deg, #1e3c72, #2a5298, #00feba, #5b8cfc);
+  background-size: 400% 400%;
+  animation: gradientShift 20s ease infinite;
+  overflow: hidden;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: white;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
+  padding-bottom: 120px; /* To keep space below for button */
+}
+@keyframes gradientShift {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
 }
 
-#getStartedButton-div .button:hover {
-  background-color: #1e874b;
+/* Floating crypto asset boxes */
+.floatingCrypto {
+  font-weight: 700;
+  font-size: 18px;
+  padding: 8px 14px;
+  border-radius: 14px;
+  white-space: nowrap;
+  user-select: none;
+  pointer-events: none;
+  color: white;
+  text-shadow: 0 0 6px rgba(0, 0, 0, 0.6);
+  transition: box-shadow 0.3s ease;
+}
+
+/* Button wrapper to keep it fixed and centered but not full width */
+.buttonWrapper {
+  position: fixed;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: auto;
+  padding: 0 20px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 50px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+/* Get Started Button */
+.getStartedButton {
+  display: inline-block;
+  background-color: #00feba;
+  color: #0b1e36;
+  font-weight: 700;
+  font-size: 20px;
+  padding: 14px 48px;
+  border-radius: 40px;
+  text-decoration: none;
+  box-shadow: 0 8px 16px rgba(0, 255, 186, 0.4);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  user-select: none;
+}
+
+.getStartedButton:hover {
+  background-color: #00c6a9;
+  box-shadow: 0 12px 20px rgba(0, 198, 169, 0.6);
 }
