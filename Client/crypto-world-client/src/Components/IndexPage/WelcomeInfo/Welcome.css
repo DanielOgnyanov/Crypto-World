@@ -1,42 +1,68 @@
-#crypto-girl-div {
-    filter:  hue-rotate(280deg);
+.welcome-section {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 40px;
+  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+  color: #ffffff;
+  gap: 40px;
+  border-radius: 20px;
+  margin: 40px auto;
+  max-width: 1200px;
 }
 
-#crypto-girl-img {
-
-    width: 500px;
-    margin-top: 150px;
-    margin-left: 20px;
-    border-radius: 10px;
- 
+.welcome-image-wrapper {
+  flex: 1 1 350px;
+  display: flex;
+  justify-content: center;
 }
 
+.welcome-image {
+  max-width: 300px;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
 
-#crypto-information {
+.welcome-content {
+  flex: 1 1 500px;
+  max-width: 600px;
+}
 
-    font-family: Open Sans, Arial, sans-serif, cursive;
+.welcome-content h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #00feba;
+}
+
+.welcome-content .highlight {
+  color: #ffffff;
+  background-color: #00feba;
+  padding: 4px 10px;
+  border-radius: 8px;
+  margin-left: 4px;
+}
+
+.welcome-content p {
+  line-height: 1.6;
+  margin-bottom: 16px;
+  font-size: 1rem;
+  color: #e0f7ff;
+}
+
+@media screen and (max-width: 768px) {
+  .welcome-section {
+    flex-direction: column;
     text-align: center;
-    justify-content: center;
-    align-items: center;
-    font-size: 20px;
-    margin-top: 150px;
-    margin-left: 200px;
-    margin-right: 150px;
-    margin-bottom: 250px;
+    padding: 40px 20px;
+  }
 
+  .welcome-content h2 {
+    font-size: 1.6rem;
+  }
 
-    border-radius: 10px;
-
-
-}
-
-#bold-text-welcome {
-    color: rgb(54, 54, 105);
-    font-weight: bold;
-    font-size: 29px;
-}
-
-#bold-text {
-    color: rgb(54, 54, 105);
-    font-weight: bold;
+  .welcome-content p {
+    font-size: 0.95rem;
+  }
 }
