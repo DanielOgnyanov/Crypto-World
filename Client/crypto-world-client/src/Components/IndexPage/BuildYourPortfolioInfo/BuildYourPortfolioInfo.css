@@ -1,39 +1,64 @@
-#p-build-your-crypto-portfolio {
-    text-align: center;
-    color: rgb(54, 54, 105);
-    font-weight: bold;
-    font-size: 29px;
+.build-portfolio-section {
+  padding: 60px 60px;
+  background-color: #0a0f1c;
+  border-radius: 50px;
+  color: #ffffff;
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-#span-step-info {
-    display: flex;
-    justify-content: center;
-    font-weight: 500;
-    line-height: 58px;
-    font-size: 17px;
-
+.build-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+   margin-top: -10px;
+  margin-bottom: 30px;
+  color: #00feba;
 }
 
-#info-display-block-inline {
-    display: flex;
-    align-items: center;
-    margin-top: 70px;
+.build-subtitle {
+  font-size: 1.2rem;
+  color: #ccc;
+  margin-bottom: 40px;
 }
 
-#img-step {
-    width: 100px;
-    margin-right: 10px; 
-    margin-left: 400px;
+.steps-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
 }
 
-#p-step-title {
-    font-weight: 500;
-    font-size: 21px;
-    margin: 0;
-    margin-left: 30px; 
+.step-card {
+  background-color: #121829;
+  border-radius: 16px;
+  margin-top: 25px;
+  padding: 24px;
+  width: 280px;
+  box-shadow: 0 8px 24px rgba(0, 255, 186, 0.1);
+  transition: transform 0.3s ease;
 }
 
-#p-text {
-    margin-top: 10px;
-    margin-left: 540px;
+.step-card:hover {
+  transform: translateY(-6px);
+}
+
+.step-image {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 16px;
+}
+
+.step-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #038361;
+  margin-bottom: 12px;
+}
+
+.step-description {
+  font-size: 0.95rem;
+  color: #aaa;
+  line-height: 1.5;
 }

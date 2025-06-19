@@ -24,3 +24,11 @@
   font-weight: bold;
   font-size: 38px;
 }
+
+#portfolio-section-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 60px 0;
+}

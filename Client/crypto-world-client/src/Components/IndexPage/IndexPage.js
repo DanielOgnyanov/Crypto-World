@@ -12,12 +12,11 @@ import BuildYourPortfolioInfo from "./BuildYourPortfolioInfo/BuildYourPortfolioI
 const IndexPage = () => {
   return (
     <div className="index-page" id="container-index-page ">
-      <div className="get-started">
-        <GetStarted />
-      </div>
-
       <div id="information-div">
         <Welcome />
+      </div>
+      <div className="get-started">
+        <GetStarted />
       </div>
 
       <p id="p-popular-crypto">Popular Crypto</p>
@@ -29,13 +28,11 @@ const IndexPage = () => {
         <TetherRealTimePrice />
       </div>
 
-      
-
       <div id="information-div">
         <HoldAndEarn />
       </div>
 
-      <div>
+      <div id="portfolio-section-container">
         <BuildYourPortfolioInfo />
       </div>
     </div>
