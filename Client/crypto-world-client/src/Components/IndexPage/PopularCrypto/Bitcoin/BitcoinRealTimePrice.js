@@ -2,8 +2,11 @@ import "../Utils/Utils.css";
 import "../Utils/CryptoCard.css";
 import { getPopularCryptoPrice } from "../../../../Services/CryptoService";
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const BitcoinRealTimePrice = () => {
+  const navigate = useNavigate();
+
   const [data, setData] = useState([]);
   const [filteredPrice, setFilteredPrice] = useState("");
   const [image, setImage] = useState("");
@@ -37,7 +40,9 @@ const BitcoinRealTimePrice = () => {
       <img className="crypto-logo" src={image} alt="Bitcoin Logo" />
       <p className="crypto-name">Bitcoin</p>
       <p className="crypto-price">${filteredPrice}</p>
-      <button className="buy-btn">Buy</button>
+      <button className="buy-btn" onClick={() => navigate("/register")}>
+        Buy
+      </button>
     </div>
   );
 };

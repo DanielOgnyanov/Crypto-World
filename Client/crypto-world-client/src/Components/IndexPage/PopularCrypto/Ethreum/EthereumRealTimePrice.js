@@ -1,12 +1,14 @@
-import '../Utils/Utils.css';
-import '../Utils/CryptoCard.css'
-import { getPopularCryptoPrice } from '../../../../Services/CryptoService';
-import { useState, useEffect } from 'react';
+import "../Utils/Utils.css";
+import "../Utils/CryptoCard.css";
+import { getPopularCryptoPrice } from "../../../../Services/CryptoService";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const EthereumRealTimePrice = () => {
+  const navigate = useNavigate();
   const [data, setData] = useState([]);
-  const [filteredPrice, setFilteredPrice] = useState('');
-  const [image, setImage] = useState('');
+  const [filteredPrice, setFilteredPrice] = useState("");
+  const [image, setImage] = useState("");
 
   useEffect(() => {
     const fetchData = async () => {
@@ -14,7 +16,7 @@ const EthereumRealTimePrice = () => {
         const fetchResult = await getPopularCryptoPrice();
         setData(fetchResult);
       } catch (error) {
-        console.error('Error fetching data:', error);
+        console.error("Error fetching data:", error);
       }
     };
 
@@ -24,7 +26,7 @@ const EthereumRealTimePrice = () => {
   }, []);
 
   useEffect(() => {
-    const filteredData = data.filter(item => item.name === 'Ethereum');
+    const filteredData = data.filter((item) => item.name === "Ethereum");
     if (filteredData.length > 0) {
       const price = filteredData[0].price.toFixed(2);
       setImage(filteredData[0].logoImage);
@@ -34,12 +36,13 @@ const EthereumRealTimePrice = () => {
 
   return (
     <div className="crypto-price-card">
-  <img className="crypto-logo" src={image} alt="Ethereum Logo" />
-  <p className="crypto-name">Ethereum</p>
-  <p className="crypto-price">{filteredPrice} $</p>
-  <button className="buy-btn">Buy</button>
-</div>
-
+      <img className="crypto-logo" src={image} alt="Ethereum Logo" />
+      <p className="crypto-name">Ethereum</p>
+      <p className="crypto-price">{filteredPrice} $</p>
+      <button className="buy-btn" onClick={() => navigate("/register")}>
+        Buy
+      </button>
+    </div>
   );
 };
 

@@ -1,12 +1,14 @@
-import '../Utils/Utils.css'
-import '../Utils/CryptoCard.css'
-import { getPopularCryptoPrice } from '../../../../Services/CryptoService'
-import { useState, useEffect } from 'react';
+import "../Utils/Utils.css";
+import "../Utils/CryptoCard.css";
+import { getPopularCryptoPrice } from "../../../../Services/CryptoService";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const TetherRealTimePrice = () => {
+  const navigate = useNavigate();
   const [data, setData] = useState([]);
-  const [filteredPrice, setFilteredPrice] = useState('');
-  const [image, setImage] = useState('');
+  const [filteredPrice, setFilteredPrice] = useState("");
+  const [image, setImage] = useState("");
 
   useEffect(() => {
     const fetchData = async () => {
@@ -14,7 +16,7 @@ const TetherRealTimePrice = () => {
         const fetchResult = await getPopularCryptoPrice();
         setData(fetchResult);
       } catch (error) {
-        console.error('Error fetching data:', error);
+        console.error("Error fetching data:", error);
       }
     };
 
@@ -26,7 +28,7 @@ const TetherRealTimePrice = () => {
   }, []);
 
   useEffect(() => {
-    const filteredData = data.filter(item => item.name === 'Tether');
+    const filteredData = data.filter((item) => item.name === "Tether");
 
     if (filteredData.length > 0) {
       const price = filteredData[0].price.toFixed(2);
@@ -40,7 +42,9 @@ const TetherRealTimePrice = () => {
       <img className="crypto-logo" src={image} alt="Tether Logo" />
       <p className="crypto-name">Tether</p>
       <p className="crypto-price">{filteredPrice} $</p>
-      <button className="buy-btn">Buy</button>
+      <button className="buy-btn" onClick={() => navigate("/register")}>
+        Buy
+      </button>
     </div>
   );
 };
