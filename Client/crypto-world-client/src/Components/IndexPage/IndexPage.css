@@ -10,13 +10,17 @@
 
 
 #container-popular-crypto {
-    display: flex;
+  display: flex;
+  justify-content: center; /* centers cards horizontally */
+  gap: 24px;               /* space between cards */
+  flex-wrap: nowrap;       /* keep cards in one row */
+  padding: 40px 0;         /* space top and bottom */
+  overflow-x: auto;        /* horizontal scroll if too wide */
 }
 
-
 #p-popular-crypto {
-    margin-top: 100px;
-    text-align: center;
-    font-weight: bold;
-    font-size: 38px;
+  margin-top: 100px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 38px;
 }

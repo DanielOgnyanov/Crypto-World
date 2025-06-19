@@ -1,66 +1,48 @@
 import '../Utils/Utils.css'
-import './TetherRealTimePrice.css'
+import '../Utils/CryptoCard.css'
 import { getPopularCryptoPrice } from '../../../../Services/CryptoService'
 import { useState, useEffect } from 'react';
 
-
-
 const TetherRealTimePrice = () => {
+  const [data, setData] = useState([]);
+  const [filteredPrice, setFilteredPrice] = useState('');
+  const [image, setImage] = useState('');
 
-    const [data, setData] = useState([]);
-    const [filteredPrice, setFilteredPrice] = useState('');
-    const [image, setImage] = useState('');
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const fetchResult = await getPopularCryptoPrice();
+        setData(fetchResult);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
 
-    useEffect(() => {
-      const fetchData = async () => {
-        try {
-          const fetchResult = await getPopularCryptoPrice();
-          setData(fetchResult);
-        } catch (error) {
-          console.error('Error fetching data:', error);
-        }
-      };
-  
-      
-      fetchData();
-  
-      
-      const interval = setInterval(fetchData, 55000); 
-  
-      
-      return () => clearInterval(interval);
-    }, []);
-    
-      
-      useEffect(() => {
-        
-        const filteredData = data.filter(item => item.name === 'Tether');
-    
-        if (filteredData.length > 0) {
-          const price = filteredData[0].price.toFixed(2);
-          setImage(filteredData[0].logoImage)
-          setFilteredPrice(price);
-        }
-      }, [data]);
+    fetchData();
 
-    return (
+    const interval = setInterval(fetchData, 55000);
 
-       <div id='tether-container'>
+    return () => clearInterval(interval);
+  }, []);
 
-        <img id='logo-position' src = {image}></img>
+  useEffect(() => {
+    const filteredData = data.filter(item => item.name === 'Tether');
 
-        <p id='item-name-position'>Tether</p>
+    if (filteredData.length > 0) {
+      const price = filteredData[0].price.toFixed(2);
+      setImage(filteredData[0].logoImage);
+      setFilteredPrice(price);
+    }
+  }, [data]);
 
-        <p id='real-time-price'>{filteredPrice} $</p>
-
-        <button id='buy-button'>Buy</button>
-        
-
-       </div>
-
-);
-
-}
-
+  return (
+    <div className="crypto-price-card">
+      <img className="crypto-logo" src={image} alt="Tether Logo" />
+      <p className="crypto-name">Tether</p>
+      <p className="crypto-price">{filteredPrice} $</p>
+      <button className="buy-btn">Buy</button>
+    </div>
+  );
+};
 
 export default TetherRealTimePrice;

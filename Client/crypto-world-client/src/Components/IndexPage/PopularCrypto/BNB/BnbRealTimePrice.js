@@ -1,15 +1,12 @@
-import './BnbRealTimePrice.css'
 import '../Utils/Utils.css'
+import '../Utils/CryptoCard.css'
 import { getPopularCryptoPrice } from '../../../../Services/CryptoService'
 import { useState, useEffect } from 'react';
 
-
 const BnbRealTimePrice = () => {
-
   const [data, setData] = useState([]);
   const [filteredPrice, setFilteredPrice] = useState('');
   const [image, setImage] = useState('');
-
 
   useEffect(() => {
     const fetchData = async () => {
@@ -21,51 +18,31 @@ const BnbRealTimePrice = () => {
       }
     };
 
-
     fetchData();
 
-
     const interval = setInterval(fetchData, 55000);
-
 
     return () => clearInterval(interval);
   }, []);
 
-
   useEffect(() => {
-
     const filteredData = data.filter(item => item.name === 'Binance');
-
-
-
 
     if (filteredData.length > 0) {
       const price = filteredData[0].price.toFixed(2);
-      setImage(filteredData[0].logoImage)
+      setImage(filteredData[0].logoImage);
       setFilteredPrice(price);
     }
-
   }, [data]);
 
-
-
   return (
-
-    <div id='bnb-container'>
-
-      <img id='logo-position' src={image} alt='BNB Logo'></img>
-
-      <p id='item-name-position'>BNB</p>
-
-      <p id='real-time-price'>{filteredPrice} $</p>
-
-      <button id='buy-button'>Buy</button>
-
+    <div className="crypto-price-card">
+      <img className="crypto-logo" src={image} alt="BNB Logo" />
+      <p className="crypto-name">BNB</p>
+      <p className="crypto-price">{filteredPrice} $</p>
+      <button className="buy-btn">Buy</button>
     </div>
-
   );
-
-}
-
+};
 
 export default BnbRealTimePrice;
