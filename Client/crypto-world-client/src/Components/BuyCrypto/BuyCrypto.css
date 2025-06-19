@@ -1,97 +1,86 @@
-#form-buy-crypto {
-    min-height: 550px;
-    max-height: 475px;
-    width: 445px;
-    margin-top: 80px;
-    margin-left: 500px;
-    margin-bottom: 200px;
-    text-align: center;
-    position: relative;
-
-    border-radius: 20px;
-    border-bottom: 2px solid rgb(0, 0, 0);
-    border-top: 2px solid rgb(0, 0, 0);
-    border-right: 2px solid rgb(0, 0, 0);
-    border-left: 2px solid rgb(0, 0, 0);
-
-    background-color: rgb(40, 40, 77);
-    color: white;
-
-    font-family: CoinbaseSans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-    ;
-    font-weight: bold;
-    font-size: 15x;
+/* === Shared Form Container Style === */
+.form-container {
+  width: 445px;
+  padding: 30px 25px;
+  margin: 80px auto 100px auto;
+  background-color: #1e1e2f;
+  border: 2px solid rgb(255, 255, 255);
+  border-radius: 20px;
+  color: white;
+  text-align: center;
+  font-family: CoinbaseSans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-weight: bold;
+  font-size: 15px;
+  box-sizing: border-box;
 }
 
-#p-buy-crypto {
-    font-weight: bold;
-    font-size: 20px;
+/* === Title === */
+.form-container p {
+  font-size: 22px;
+  margin-bottom: 20px;
 }
 
-#buy-crypto-label {
-
-    display: block;
-    padding-top: 13px;
-    padding-bottom: 20px;
-
+/* === Labels === */
+.form-container label {
+  display: block;
+  text-align: left;
+  margin: 15px 0 5px 5px;
+  font-size: 14px;
 }
 
+/* === Inputs and Selects === */
+.form-container input,
+.form-container select {
+  width: 100%;
+  height: 35px;
+  padding-left: 45px;
+  font-size: 14px;
+  border-radius: 8px;
+  border: none;
+  box-sizing: border-box;
+  margin-bottom: 15px;
+}
+
+/* === Specific Icon Inputs === */
+#sell-value,
+#deposit {
+  background-image: url('../../Images/money-icon.png');
+  background-repeat: no-repeat;
+  background-position: left 9px top 2px;
+  background-size: 28px;
+}
 
 #username-confirm {
-
-    background-image: url('../../Images/user-icon-1.png');
-    background-repeat: no-repeat;
-    background-position: left 8px top 2px;
-    padding-left: 45px;
-
-    background-size: 22px;
-
-}
-
-#deposit {
-    background-image: url('../../Images/money-icon.png');
-    background-repeat: no-repeat;
-    background-position: left 9px top 2px;
-    padding-left: 45px;
-
-    background-size: 28px;
+  background-image: url('../../Images/user-icon-1.png');
+  background-repeat: no-repeat;
+  background-position: left 8px top 2px;
+  background-size: 22px;
 }
 
 #crypto-asset {
-    background-image: url('../../Images/crypto-icon.webp');
-    background-repeat: no-repeat;
-    background-position: left 5px top 2px;
-    padding-left: 130px;
-    padding-right: 130px;
-    padding-bottom: 16px;
-    border-radius: 8px;
-
-    background-size: 33px;
-
-    font-size: 15px;
+  background-image: url('../../Images/crypto-icon.webp');
+  background-repeat: no-repeat;
+  background-position: left 5px top 2px;
+  background-size: 33px;
+  padding-left: 50px;
 }
 
-#crypto-asset option {
-    font-size: 15px;
+/* === Button === */
+.form-container button {
+  width: 100%;
+  height: 40px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 100px;
+  cursor: pointer;
+  background-color: #27ae60;
+  color: white;
+  transition: all 0.3s ease;
+  margin-top: 20px;
 }
 
-#button-buy-crypto {
-    height: 40px;
-    width: 350px;
-    margin-top: 70px;
-    margin-bottom: 38px;
-    background: #ddd;
-    font-size: 25px;
-    text-align: center;
-    border: 1px solid rgb(255, 255, 255);
-    border-radius: 8px;
-    cursor: pointer;
-    background-color: rgb(15, 129, 15);
-    padding-bottom: 10px;
-
-
-    color: white;
-    font-family: CoinbaseSans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-    ;
-    font-weight: 500;
+.form-container button:hover {
+  background-color: #219653;
+  opacity: 0.9;
 }

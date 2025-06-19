@@ -43,8 +43,7 @@ const Header = () => {
           Sell Crypto
         </Link>
       </div>
-
-      <Link id="navigation-a" to="/logout">
+      <Link id="logout-link" to="/logout">
         <button type="submit" id="logout-button">
           Logout
         </button>
