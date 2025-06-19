@@ -1,62 +1,50 @@
 #container {
-    
-    display: flex;
-    height: 550px;
-
-    margin-top: 50px;
-    margin-left: 20px;
-    margin-right: 20px;
-    margin-bottom: 50px;
-
-   
-    border-radius: 10px;
-    background-color: rgb(255, 255, 255);
-    box-shadow: 0 0 8px #000;
-
-}   
-
-
-#getStarted-div  {
-
-    margin-top: 150px;
-    margin-left: 60px;
-    padding-bottom: 100px;
-    height: 208px;
-    flex: 0 1 50%;
-   
-    color:black;
-    
-
-    font-size:larger;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+  position: relative;
+  min-height: 100vh;
+  background-color: #121e36;
+  color: white;
 }
 
+#getStarted-div {
+  background-color: rgb(40, 40, 77);
+  padding: 50px 30px;
+  border-radius: 20px;
+  text-align: center;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
 
-#getStartedButton-div a {
+#getStarted-div h1 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #00feba, #5b8cfc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
-    margin-top: 15px;
-    margin-left: 138px;
-    margin-bottom: 50px;
+#getStarted-div p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
 
-    background-color: rgb(15, 129, 15);
-    border-radius: 10px;
-    border: solid rgb(255, 255, 255);
-    border-width: 1px 1px 1px 1px;
-    color: white;
-    padding: 10px 15px;
-    
-    text-decoration: none;
-    display: inline-block;
-    font-size: 10px;
+#getStartedButton-div .button {
+  padding: 12px 30px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 50px;
+  background-color: #27ae60;
+  color: white;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
 
-    font-family: CoinbaseSans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;;
-    font-weight: bold;
-    font-size: 20px;
-}   
-
-
-#getStartedButton-div a:hover {
-
-   opacity: 0.9;
-} 
+#getStartedButton-div .button:hover {
+  background-color: #1e874b;
+}
