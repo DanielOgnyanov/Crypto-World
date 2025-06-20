@@ -1,0 +1,29 @@
+.privacy-container {
+  max-width: 800px;
+  margin: 80px auto;
+  padding: 40px 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #0a0f1c;
+  color: #f0f0f0;
+  line-height: 1.7;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 255, 186, 0.05);
+}
+
+.privacy-container h1 {
+  font-size: 2.5rem;
+  color: #00feba;
+  margin-bottom: 12px;
+}
+
+.privacy-container h2 {
+  font-size: 1.5rem;
+  color: #03dac6;
+  margin-top: 32px;
+  margin-bottom: 12px;
+}
+
+.privacy-container p {
+  font-size: 1rem;
+  color: #ccc;
+}

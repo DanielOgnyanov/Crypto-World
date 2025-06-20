@@ -1,0 +1,64 @@
+.services-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #222;
+}
+
+.services-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: #004d40; /* dark teal */
+  text-align: center;
+}
+
+.services-intro {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  line-height: 1.6;
+  text-align: center;
+  color: #333;
+}
+
+.services-list {
+  list-style-type: disc;
+  padding-left: 1.2rem;
+  line-height: 1.8;
+  font-size: 1.1rem;
+  margin-bottom: 40px;
+  color: #444;
+}
+
+.services-subtitle {
+  margin-top: 32px;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #00796b; 
+  text-align: center;
+}
+
+.services-advice-intro {
+  font-size: 1rem;
+  color: #3d3c3c;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.services-advice-list {
+  list-style-type: disc;
+  padding-left: 1.2rem;
+  line-height: 1.8;
+  font-size: 1rem;
+  color: #302f2f;
+  margin-bottom: 32px;
+}
+
+.services-footer-note {
+  margin-top: 32px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-align: center;
+  color: #222;
+}

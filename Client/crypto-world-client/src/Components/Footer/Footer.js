@@ -1,18 +1,18 @@
-import './Footer.css'
-
+import './Footer.css';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
-        <footer >
+        <footer>
             <p>cryptoworld.com</p>
-           <ul >
-                <li>Home</li>
-                <li>Services</li>
-                <li>About</li>
-                <li>Terms</li>
-                <li>Privacy Policy</li>
+            <ul>
+                
+                <li><Link to="/services">Services</Link></li>
+                
+                <li><Link to="/terms">Terms</Link></li>
+                <li><Link to="/privacy">Privacy Policy</Link></li>
             </ul>
-            <span>&copy; Copyright 2021 Crypto World, Inc.</span>
+            <span>&copy; {new Date().getFullYear()} Crypto World, Inc.</span>
         </footer>
     );
 };
