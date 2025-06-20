@@ -1,9 +1,20 @@
-#user-details-welcome {
+.user-details-container {
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  padding: 20px 30px;
+  margin: 40px auto 20px;
+  max-width: 600px;
+  border-radius: 10px;
+  box-shadow: 0 0 12px rgba(0, 255, 186, 0.1);
+  text-align: center;
+  color: #ffffff;
+}
 
-    margin-top: 25px;
-    margin-left: 50px;
-    font-size: 18px;
-    font-weight: bold;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-family: cursive;
+.welcome-message {
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+.username {
+  font-weight: 700;
+  color: #00feba;
 }

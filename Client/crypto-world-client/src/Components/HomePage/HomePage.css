@@ -1,28 +1,58 @@
-#home{
-    background-color: transparent;
+.home {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  color: #ffffff;
 }
 
+.user-info-welcome,
+.chart,
+.wallet-details,
+.table-container {
+  margin-bottom: 40px;
+}
 
+.table-title {
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #3e524c;
+}
 
+.homepage-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #1f2937;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(0, 255, 186, 0.1);
+}
 
-#table-homepage {
+.homepage-table th,
+.homepage-table td {
+  padding: 16px 20px;
+  text-align: left;
+  font-size: 1rem;
+}
 
-margin-top: 100px;
-margin-left: 550px;
-margin-bottom: 100px;
-padding-bottom: 30px;
+.homepage-table thead {
+  background-color: #0f172a;
+}
 
+.homepage-table tbody tr {
+  border-bottom: 1px solid #374151;
+}
 
+.homepage-table tbody tr:hover {
+  background-color: #2d3748;
+  transition: background-color 0.3s ease;
+}
 
-background-color: rgb(40, 40, 77);
-color: #fff;
-border-radius: 20px;
+.homepage-table th {
+  color: #00feba;
+  font-weight: 600;
+}
 
-border-bottom: 2px solid white;
-border-top: 2px solid white;
-border-right: 2px solid white;
-border-left: 2px solid white;
-
-border-spacing: 30px;
-
+.homepage-table td {
+  color: #e5e7eb;
 }

@@ -1,35 +1,62 @@
-#div-wallet-details{
-
-    margin-top: 50px;
-    margin-right: 200px;
-    margin-left: 200px;
-    
-    
-    
-    border-radius: 20px;
-    border-bottom: 2px solid white;
-    border-top: 2px solid white;
-    border-right: 2px solid white;
-    border-left: 2px solid white;
-
-    background-color:  rgb(40, 40, 77);
-
-
-    font-family: CoinbaseSans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;;
-    font-weight: bold;
-    font-size: 17px;
-    font-weight: bold;
-    color: white;
-
-
+.wallet-details-container {
+  background-color: #0a0f1c;
+  padding: 40px 24px;
+  border-radius: 12px;
+  box-shadow: 0 0 16px rgba(0, 255, 186, 0.05);
+  max-width: 800px;
+  margin: 60px auto;
+  color: #f0f0f0;
 }
 
-
-#title{
-    text-align: center;
+.wallet-title {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #00feba;
+  text-align: center;
 }
 
-#info-row{
+.wallet-info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
 
-    margin-left: 30px;
+.wallet-info-item {
+  background: #111728;
+  padding: 16px 20px;
+  border-radius: 8px;
+  border: 1px solid #1f2b40;
+  transition: transform 0.3s ease;
+}
+
+.wallet-info-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 10px rgba(0, 255, 186, 0.1);
+}
+
+.label {
+  display: block;
+  font-size: 0.95rem;
+  color: #aaa;
+  margin-bottom: 8px;
+}
+
+.value {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+@media (max-width: 600px) {
+  .wallet-info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .wallet-title {
+    font-size: 1.6rem;
+  }
+
+  .value {
+    font-size: 1rem;
+  }
 }
