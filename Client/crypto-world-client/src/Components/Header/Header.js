@@ -1,7 +1,7 @@
 import "./Header.css";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import * as authService from "../../Services/AuthService";
+import * as authService from "../../Services/AuthService.js"
 import { useAuthContext } from "../../Context/AuthContext";
 
 const Header = () => {
