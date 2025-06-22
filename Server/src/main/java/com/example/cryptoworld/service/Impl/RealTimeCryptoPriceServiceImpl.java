@@ -1,7 +1,5 @@
 package com.example.cryptoworld.service.Impl;
 
-
-import com.example.cryptoworld.config.InfoUtils;
 import com.example.cryptoworld.models.entities.CryptoCurrenciesEntity;
 import com.example.cryptoworld.models.entities.PriceHistoryEntity;
 import com.example.cryptoworld.repository.CryptoRepository;
@@ -10,146 +8,105 @@ import com.example.cryptoworld.service.RealTimeCryptoPriceService;
 import com.squareup.okhttp.OkHttpClient;
 import com.squareup.okhttp.Request;
 import com.squareup.okhttp.Response;
-import org.json.JSONArray;
 import org.json.JSONObject;
 import org.springframework.stereotype.Service;
 
-import java.io.*;
+import java.io.IOException;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.HashMap;
+import java.util.Map;
 
 @Service
 public class RealTimeCryptoPriceServiceImpl implements RealTimeCryptoPriceService {
 
     private final CryptoRepository cryptoRepository;
-    private final InfoUtils infoUtils;
     private final PriceHistoryRepository priceHistoryRepository;
 
-    public RealTimeCryptoPriceServiceImpl(CryptoRepository cryptoRepository, InfoUtils infoUtils, PriceHistoryRepository priceHistoryRepository) {
+    public RealTimeCryptoPriceServiceImpl(CryptoRepository cryptoRepository,
+                                          PriceHistoryRepository priceHistoryRepository) {
         this.cryptoRepository = cryptoRepository;
-
-        this.infoUtils = infoUtils;
         this.priceHistoryRepository = priceHistoryRepository;
     }
 
-
     @Override
     public void getRealTimePrice() throws IOException {
-
-        //  call
+        // API call
         Response response = getResponse();
-
-        // end
-
-
-        // Json data
-
         String jsonDataAsString = response.body().string();
+        JSONObject priceJson = new JSONObject(jsonDataAsString);
 
-        JSONArray jsonArray = new JSONArray(jsonDataAsString);
+        // Manually map CoinGecko IDs to readable names and correct asset string IDs
+        Map<String, String[]> cryptoMap = new HashMap<>();
+        cryptoMap.put("bitcoin", new String[]{"Bitcoin", "BTC"});
+        cryptoMap.put("ethereum", new String[]{"Ethereum", "ETH"});
+        cryptoMap.put("binancecoin", new String[]{"Binance", "BNB"});
+        cryptoMap.put("tether", new String[]{"Tether", "USDT"});
+        cryptoMap.put("solana", new String[]{"Solana", "SOL"});
+        cryptoMap.put("ripple", new String[]{"XRP", "XRP"});
+        cryptoMap.put("cardano", new String[]{"Cardano", "ADA"});
+        cryptoMap.put("usd-coin", new String[]{"USDC", "USDC"});
+        cryptoMap.put("polkadot", new String[]{"Polkadot", "DOT"});
+        cryptoMap.put("dogecoin", new String[]{"Dogecoin", "DOGE"});
 
-        for (Object value : jsonArray) {
+        for (Map.Entry<String, String[]> entry : cryptoMap.entrySet()) {
+            String coingeckoId = entry.getKey();
+            String name = entry.getValue()[0];
+            String assetStringId = entry.getValue()[1];
 
-            JSONObject currentCryptoObject = new JSONObject(value.toString());
-
-            String name = (String) currentCryptoObject.get("name");
-
-            if (name.equals("Binance Coin")) {
-                name = "Binance";
-            }
-
-            String assetId = (String) currentCryptoObject.get("asset_id");
-
-            BigDecimal volume24Hour = currentCryptoObject.getBigDecimal("volume_1day_usd");
-
-            BigDecimal price = currentCryptoObject.getBigDecimal("price_usd");
-
+            BigDecimal price = priceJson.getJSONObject(coingeckoId).getBigDecimal("usd");
 
             if (cryptoRepository.count() == 10) {
-
-                setNewPriceToCrypto(name, assetId, volume24Hour, price);
+                setNewPriceToCrypto(name, assetStringId, price);
                 setPriceHistoryInDataBase(name, price);
-
             } else if (cryptoRepository.count() >= 0 && cryptoRepository.count() < 10) {
-
-
-
-                initCryptoInDataBase(name, assetId, volume24Hour, price);
-
+                initCryptoInDataBase(name, assetStringId, price);
                 setPriceHistoryInDataBase(name, price);
-
-
             }
-
-
         }
-    }
-
-    private void initCryptoInDataBase(String name, String assetId, BigDecimal volume24Hour, BigDecimal price) throws IOException {
-
-        CryptoCurrenciesEntity currenciesEntity = new CryptoCurrenciesEntity();
-
-        currenciesEntity.setName(name);
-        currenciesEntity.setAssetStringId(assetId);
-        currenciesEntity.setVolumeFor24Hour(volume24Hour);
-        currenciesEntity.setPrice(price.doubleValue());
-        currenciesEntity.setOldPriceTrack(0);
-
-        cryptoRepository.save(currenciesEntity);
-    }
-
-    private void setPriceHistoryInDataBase(String name, BigDecimal price) {
-        PriceHistoryEntity priceHistoryEntity = priceHistoryRepository.findByName(name);
-
-        if(priceHistoryEntity == null) {
-            priceHistoryEntity = new PriceHistoryEntity();
-        }
-
-
-        priceHistoryEntity.setName(name);
-        priceHistoryEntity.getPrice().add(price.doubleValue());
-        priceHistoryEntity.getRecordedAt().add(LocalDateTime.now());
-
-        priceHistoryRepository.save(priceHistoryEntity);
     }
 
     private Response getResponse() throws IOException {
+        OkHttpClient client = new OkHttpClient();
+        String url = "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,binancecoin,tether,solana,ripple,cardano,usd-coin,polkadot,dogecoin&vs_currencies=usd";
 
-        try {
-            OkHttpClient client = new OkHttpClient();
+        Request request = new Request.Builder()
+                .url(url)
+                .build();
 
-            Request request = new Request.Builder()
-                    .url(infoUtils.getAPI_URL())
-                    .addHeader(infoUtils.getAPI_NAME(), infoUtils.getPRIVATE_KEY())
-                    .build();
-
-            return client.newCall(request).execute();
-
-
-        } catch (IOException e) {
-
-            throw new IOException(e.getMessage()
-                    + "Error occurred while executing the request to fetch crypto information");
-        }
-
+        return client.newCall(request).execute();
     }
 
+    private void initCryptoInDataBase(String name, String assetId, BigDecimal price) {
+        CryptoCurrenciesEntity entity = new CryptoCurrenciesEntity();
+        entity.setName(name);
+        entity.setAssetStringId(assetId);
+        entity.setPrice(price.doubleValue());
+        entity.setOldPriceTrack(0);
+        cryptoRepository.save(entity);
+    }
 
-    private void setNewPriceToCrypto(String name, String assetId, BigDecimal volume24Hour, BigDecimal price) {
+    private void setPriceHistoryInDataBase(String name, BigDecimal price) {
+        PriceHistoryEntity priceHistory = priceHistoryRepository.findByName(name);
 
-        CryptoCurrenciesEntity currentEntity =
-                cryptoRepository.getCryptoByAssetStringId(assetId);
+        if (priceHistory == null) {
+            priceHistory = new PriceHistoryEntity();
+        }
 
-        double getCurrentPrice = cryptoRepository.getCurrentPrice(name);
+        priceHistory.setName(name);
+        priceHistory.getPrice().add(price.doubleValue());
+        priceHistory.getRecordedAt().add(LocalDateTime.now());
 
-        currentEntity.setOldPriceTrack(getCurrentPrice);
+        priceHistoryRepository.save(priceHistory);
+    }
 
-        currentEntity.setPrice(price.doubleValue());
+    private void setNewPriceToCrypto(String name, String assetId, BigDecimal price) {
+        CryptoCurrenciesEntity entity = cryptoRepository.getCryptoByAssetStringId(assetId);
+        double currentPrice = cryptoRepository.getCurrentPrice(name);
 
-        currentEntity.setVolumeFor24Hour(volume24Hour);
+        entity.setOldPriceTrack(currentPrice);
+        entity.setPrice(price.doubleValue());
 
-
-        cryptoRepository.save(currentEntity);
-
+        cryptoRepository.save(entity);
     }
 }

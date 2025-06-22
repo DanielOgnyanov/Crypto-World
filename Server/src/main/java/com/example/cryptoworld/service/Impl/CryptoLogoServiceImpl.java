@@ -1,110 +1,46 @@
 package com.example.cryptoworld.service.Impl;
-import com.example.cryptoworld.config.InfoUtils;
+
 import com.example.cryptoworld.models.entities.CryptoCurrenciesEntity;
 import com.example.cryptoworld.repository.CryptoRepository;
 import com.example.cryptoworld.service.CryptoLogoService;
-import com.squareup.okhttp.OkHttpClient;
-import com.squareup.okhttp.Request;
-import com.squareup.okhttp.Response;
-import org.json.JSONArray;
-import org.json.JSONObject;
 import org.springframework.stereotype.Service;
-import java.io.IOException;
-import java.util.List;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 @Service
 public class CryptoLogoServiceImpl implements CryptoLogoService {
 
     private final CryptoRepository cryptoRepository;
-    private final InfoUtils infoUtils;
 
-    public CryptoLogoServiceImpl(CryptoRepository cryptoRepository, InfoUtils infoUtils) {
+    public CryptoLogoServiceImpl(CryptoRepository cryptoRepository) {
         this.cryptoRepository = cryptoRepository;
-        this.infoUtils = infoUtils;
     }
-
 
     @Override
-    public void initAllLogoInDb() throws IOException {
+    public void initAllLogoInDb() {
+        // Static logo URLs mapped by asset string ID
+        Map<String, String> logoMap = new HashMap<>();
+        logoMap.put("BTC", "https://s2.coinmarketcap.com/static/img/coins/64x64/1.png");
+        logoMap.put("ETH", "https://s2.coinmarketcap.com/static/img/coins/64x64/1027.png");
+        logoMap.put("USDT", "https://s2.coinmarketcap.com/static/img/coins/64x64/825.png");
+        logoMap.put("XRP", "https://s2.coinmarketcap.com/static/img/coins/64x64/52.png");
+        logoMap.put("BNB", "https://s2.coinmarketcap.com/static/img/coins/64x64/1839.png");
+        logoMap.put("SOL", "https://s2.coinmarketcap.com/static/img/coins/64x64/5426.png");
+        logoMap.put("ADA", "https://s2.coinmarketcap.com/static/img/coins/64x64/2010.png");
+        logoMap.put("USDC", "https://s2.coinmarketcap.com/static/img/coins/64x64/3408.png");
+        logoMap.put("DOGE", "https://s2.coinmarketcap.com/static/img/coins/64x64/74.png");
+        logoMap.put("DOT", "https://s2.coinmarketcap.com/static/cloud/img/logo/polkadot/Polkadot_Logo_Animation_32x32.gif");
 
-        Response response = fetchCryptoLogo();
+        List<CryptoCurrenciesEntity> allCryptos = cryptoRepository.findAll();
 
-
-        String jsonDataAsString = response.body().string();
-
-        JSONArray jsonArray = new JSONArray(jsonDataAsString);
-
-        // set missing icons from fetch
-
-        setMissingIconsFromFetch();
-
-        for (int i = 0; i < jsonArray.length(); i++) {
-
-            JSONObject cryptoObject = jsonArray.getJSONObject(i);
-
-            String assetId = cryptoObject.getString("asset_id");
-            String iconUrl = cryptoObject.getString("url");
-
-            CryptoCurrenciesEntity currentEntity = cryptoRepository.getCryptoByAssetStringId(assetId);
-
-            if (currentEntity != null) {
-
-                currentEntity.setLogoImage(iconUrl);
-                cryptoRepository.save(currentEntity);
-
+        for (CryptoCurrenciesEntity crypto : allCryptos) {
+            String assetId = crypto.getAssetStringId().toUpperCase();
+            if (logoMap.containsKey(assetId)) {
+                crypto.setLogoImage(logoMap.get(assetId));
+                cryptoRepository.save(crypto);
             }
-
-
-        }
-
-    }
-
-    private void setMissingIconsFromFetch() {
-        List<CryptoCurrenciesEntity> allCrypto = cryptoRepository.findAll();
-
-        for (int j = 0; j < allCrypto.size(); j++) {
-
-            switch (allCrypto.get(j).getAssetStringId()) {
-
-                case "SOL":
-
-                    allCrypto.get(j).setLogoImage("https://s2.coinmarketcap.com/static/img/coins/64x64/5426.png");
-                    break;
-
-                case "BNB":
-                    allCrypto.get(j).setLogoImage("https://s2.coinmarketcap.com/static/img/coins/64x64/1839.png");
-                    break;
-
-                case "USDC":
-                    allCrypto.get(j).setLogoImage("https://s2.coinmarketcap.com/static/img/coins/64x64/3408.png");
-                    break;
-
-            }
-
-            cryptoRepository.save(allCrypto.get(j));
-
         }
     }
-
-    private Response fetchCryptoLogo() throws IOException {
-        try {
-            OkHttpClient client = new OkHttpClient();
-
-            Request request = new Request.Builder()
-                    .url(infoUtils.getAPI_URL_LOGOS())
-                    .addHeader(infoUtils.getAPI_NAME(), infoUtils.getPRIVATE_KEY())
-                    .build();
-
-            return client.newCall(request).execute();
-
-
-        } catch (IOException e) {
-
-            throw new IOException(e.getMessage()
-                    + "Error occurred while executing the request to fetch crypto information");
-        }
-    }
-
-
 }

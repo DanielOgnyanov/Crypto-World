@@ -13,7 +13,7 @@ public class CryptoCurrenciesEntity extends BaseEntity{
 
     private String name;
     private String assetStringId;
-    private BigDecimal volumeFor24Hour;
+
     private double price;
     private double oldPriceTrack;
 
@@ -25,13 +25,13 @@ public class CryptoCurrenciesEntity extends BaseEntity{
 
     public CryptoCurrenciesEntity(String name,
                                   String assetStringId,
-                                  BigDecimal volumeFor24Hour,
+
                                   double price,
                                   double oldPriceTrack,
                                   String logoImage) {
         this.name = name;
         this.assetStringId = assetStringId;
-        this.volumeFor24Hour = volumeFor24Hour;
+
         this.price = price;
         this.oldPriceTrack = oldPriceTrack;
         this.logoImage = logoImage;
@@ -60,14 +60,7 @@ public class CryptoCurrenciesEntity extends BaseEntity{
         this.assetStringId = assetStringId;
     }
 
-    @Column(name = "volume_for_24_hour", columnDefinition = "Decimal(30,2)")
-    public BigDecimal getVolumeFor24Hour() {
-        return volumeFor24Hour;
-    }
 
-    public void setVolumeFor24Hour(BigDecimal volumeFor24Hour) {
-        this.volumeFor24Hour = volumeFor24Hour;
-    }
 
     @Column(name = "price")
     public double getPrice() {
