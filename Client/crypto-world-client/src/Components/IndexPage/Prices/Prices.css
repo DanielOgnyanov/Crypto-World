@@ -1,70 +1,76 @@
-#div-span-info {
-  margin-top: 100px;
-  margin-left: 150px;
-  margin-bottom: 100px;
-
+.market-info {
+  margin-top: 60px;
+  margin-bottom: 60px;
+  font-size: 30px;
+  color: #000000;
+  text-align: center;
+  
 }
 
-#span-text {
-  font-size: 35px;
-  font-weight: 500;
-}
-
-#special-font-market-cap {
+.market-cap-value {
+  color: #2e7d32;
   font-weight: bold;
-  color: #0074a2
 }
 
-#special-font-percentage {
+.percentage-change {
   font-weight: bold;
-  color: rgb(59, 155, 74);
 }
 
-
-#table-container {
-  display: flex;
-  justify-content: center;
+.percentage-change.positive {
+  color: #4caf50;
 }
 
-#table-container table {
-  width: 80%;
-  /* Adjust the width as needed */
+.percentage-change.negative {
+  color: #e53935;
+}
+
+.table-container {
+  border: 1px solid rgb(68, 62, 62);
+  border-radius: 30px;
+  max-width: 1300px;
+  margin: 0 auto;
+  margin-bottom: 200px;
+  overflow-x: auto;
+}
+
+.crypto-table {
+  background-color: #ffffff;
+  width: 100%;
   border-collapse: collapse;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-#table-container th {
+.crypto-table thead {
+  background-color: #f5f5f5;
+  border-bottom: 2px solid #ddd;
+}
 
+.crypto-table th,
+.crypto-table td {
+  padding: 12px 15px;
   text-align: left;
-  padding: 25px;
-  border-bottom: 2px solid #d9b7e5;
+ 
 }
 
-#table-container td {
-  padding: 25px;
-  border-bottom: 2px solid #d9b7e5;
-}
-
-#table-container tr:nth-child(even) {
+.crypto-table tbody tr:hover {
   background-color: #f9f9f9;
 }
 
-#table-container tr:hover {
-  background-color: #e5e5e5;
-}
-
-#logo-img-container {
+.name-cell {
   display: flex;
   align-items: center;
+  gap: 10px;
 }
 
-#logo-img {
-  width: 30px; 
-  height: 30px; 
-  margin-right: 10px; 
+.crypto-logo {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  border-radius: 50%;
 }
 
-
-#logo-img-container span {
-  font-size: 16px; 
-  font-weight: bold; 
+.chart-cell {
+  width: 160px;
+  height: 60px;
+  padding: 5px 0;
 }

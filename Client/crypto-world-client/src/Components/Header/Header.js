@@ -88,7 +88,7 @@ const Header = () => {
   return (
     <header>
       <nav id="navigation">
-        {Boolean(userCheck) ? userNavigation : userNavigation}
+        {Boolean(userCheck) ? userNavigation : guestNavigation}
       </nav>
     </header>
   );
