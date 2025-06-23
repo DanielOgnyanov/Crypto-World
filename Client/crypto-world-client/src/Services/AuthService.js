@@ -4,63 +4,61 @@ import { useAuthContext } from "../Context/AuthContext";
 const baseUrl = 'http://localhost:8000';
 
 export const login = async (username, password) => {
-    
-
-    let res = fetch(`${baseUrl}/api/user/login`, {
-        method: 'POST',
-        headers: {
-            "Content-Type": "application/json",
-            "Access-Control-Allow-Headers": "*",
-            "Access-Control-Allow-Origin": "*",
-            "Access-Control-Allow-Methods": "*"
-        },
-        body: JSON.stringify({ username, password })
+  try {
+    const res = await fetch(`${baseUrl}/api/user/login`, {
+      method: 'POST',
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ username, password })
     });
 
+    if (!res.ok) {
+      throw new Error(`HTTP error! Status: ${res.status}`);
+    }
 
-    res.then((response) => {
+    const data = await res.json();
 
-        if (!response.ok) {
-            throw new Error(response.status);
-        }
+    const user = {
+      username,
+      accessToken: data.accessToken,
+    };
 
+    // Save to localStorage
+    localStorage.setItem("user", JSON.stringify(user));
 
-        return response.json();
-    }).catch(error => {
-        console.log(error);
-    });
+    return user;
+  } catch (error) {
+    console.error("Login error:", error);
+    throw error;
+  }
+};
 
-}
 
 
 export const logout = async (usernameLogout) => {
-
-    let res = fetch(`${baseUrl}/api/user/logout`, {
-        method: 'POST',
-        headers: {
-
-            "Content-Type": "application/json"
-
-
-        },
-        body: JSON.stringify({ usernameLogout })
+  try {
+    const res = await fetch(`${baseUrl}/api/user/logout`, {
+      method: 'POST',
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ usernameLogout })
     });
 
+    if (!res.ok) {
+      throw new Error(`Logout failed: ${res.status}`);
+    }
 
-    res.then((response) => {
+    localStorage.removeItem("user");
+    return await res.json();
 
-
-        if (!response.ok) {
-            throw new Error(response.status);
-        }
-       
-
-        return response.json();
-    }).catch(error => {
-        console.log(error);
-    });
-
-}
+  } catch (error) {
+    console.error("Logout error:", error);
+    localStorage.removeItem("user"); // Clear anyway
+    throw error;
+  }
+};
 
 export const getUser = () => {
   const data = localStorage.getItem("user");
@@ -73,6 +71,10 @@ export const getUser = () => {
     return null;
   }
 };
+
+/**
+ * Checks if user is authenticated
+ */
 export const isAuthenticated = () => {
-return Boolean(getUser());
+  return Boolean(getUser());
 };

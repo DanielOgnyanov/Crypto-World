@@ -1,15 +1,11 @@
 import "./Header.css";
-import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
-import * as authService from "../../Services/AuthService.js"
+import { Link, useNavigate } from "react-router-dom";
 import { useAuthContext } from "../../Context/AuthContext";
+import { getUser } from "../../Services/AuthService";
 
 const Header = () => {
-  const userCheck = authService.getUser();
-
   const history = useNavigate();
-
-  const { user, login, logout } = useAuthContext();
+   const user = getUser();
 
   function registerHandler() {
     history("/register");
@@ -19,20 +15,19 @@ const Header = () => {
     history("/login");
   }
 
-  let userNavigation = (
+  const userNavigation = (
     <div className="userNavigation">
       <Link to="/home">
         <span id="logo-header">Crypto World</span>
       </Link>
 
       <div id="navigaion-a-div">
-        <Link id="navigation-a" to="/home" data-toggle="collapse">
+        <Link id="navigation-a" to="/home">
           Home
         </Link>
-        <Link id="navigation-a" to="/admin" data-toggle="collapse">
+        <Link id="navigation-a" to="/admin">
           Admin
         </Link>
-
         <Link id="navigation-a" to="/add-credit-card">
           Add Credit Card
         </Link>
@@ -43,6 +38,7 @@ const Header = () => {
           Sell Crypto
         </Link>
       </div>
+
       <Link id="logout-link" to="/logout">
         <button type="submit" id="logout-button">
           Logout
@@ -51,7 +47,7 @@ const Header = () => {
     </div>
   );
 
-  let guestNavigation = (
+  const guestNavigation = (
     <div className="guestNavigation">
       <Link to="/" id="logo-header">
         Crypto World
@@ -86,11 +82,11 @@ const Header = () => {
   );
 
   return (
-    <header>
-      <nav id="navigation">
-        {Boolean(userCheck) ? userNavigation : guestNavigation}
-      </nav>
-    </header>
+   <header>
+    <nav id="navigation">
+      {user ? userNavigation : guestNavigation}
+    </nav>
+  </header>
   );
 };
 
