@@ -1,10 +1,10 @@
 .getStartedContainer {
   position: relative;
   height: 400px;
-  width: 1200px;
-  margin-left: 100px;
-  margin-right: 100px;
-  margin-top: 50px;
+   max-width: 1200px;        /* Max width for large screens */
+  width: 100%;              /* Responsive width */
+  margin: 50px auto 0 auto; /* Top margin, center horizontally */
+  padding: 0 20px;          /* Small padding for smaller screens */
   border-radius: 50px;
   background: linear-gradient(-45deg, #1e3c72, #2a5298, #00feba, #5b8cfc);
   background-size: 400% 400%;
@@ -13,7 +13,9 @@
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: white;
   padding-bottom: 120px; /* To keep space below for button */
+
 }
+
 @keyframes gradientShift {
   0% {background-position: 0% 50%;}
   50% {background-position: 100% 50%;}

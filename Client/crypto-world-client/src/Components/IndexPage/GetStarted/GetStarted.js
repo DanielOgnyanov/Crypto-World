@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSpring, animated, useSprings } from '@react-spring/web';
 import { Link } from 'react-router-dom';
-import './GetStarted.css';
+import './GetStarted.css'; // ✅ CORRECTED import path
 
 const cryptoAssets = [
   { name: 'Bitcoin', color: '#f7931a' },
@@ -49,7 +49,7 @@ const GetStarted = () => {
   }));
 
   return (
-    <div className="getStartedContainer">
+     <div className="getStartedContainer">
       {/* Floating crypto asset names */}
       {springs.map((styles, i) => (
         <animated.div
