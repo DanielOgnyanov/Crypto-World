@@ -5,9 +5,13 @@
   align-items: center;
   justify-content: space-between;
   height: 70px;
+  margin-left: 10px;
+  margin-right: 10px;
   background-color: rgb(40, 40, 77);
   padding: 0 30px;
+  margin-top: 10px;
   border-bottom: 2px solid white;
+  border-radius: 30px;
 }
 
 #logo-header {
