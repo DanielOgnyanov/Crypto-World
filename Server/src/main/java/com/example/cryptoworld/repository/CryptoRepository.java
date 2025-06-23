@@ -18,15 +18,16 @@ public interface CryptoRepository extends JpaRepository<CryptoCurrenciesEntity, 
     @Query("select c from CryptoCurrenciesEntity as c where c.assetStringId like :assetId")
     CryptoCurrenciesEntity getCryptoByAssetStringId(String assetId);
 
-    @Query("Select p from CryptoCurrenciesEntity as p where id in (1 , 3 , 5, 6)")
+    @Query("SELECT p FROM CryptoCurrenciesEntity p")
     List<CryptoCurrenciesEntity> getPopularCrypto();
+
 
     @Query("Select Sum(a.price) from CryptoCurrenciesEntity as a")
     BigDecimal cryptoMarketCap4Hour();
 
 
     @Query("Select b.price from CryptoCurrenciesEntity as b where b.name like :name")
-    double getCurrentPrice (String name);
+    Double getCurrentPrice (String name);
 
     @Query("Select d from CryptoCurrenciesEntity as d")
     List<CryptoCurrenciesEntity> getAllCryptoPrices();
