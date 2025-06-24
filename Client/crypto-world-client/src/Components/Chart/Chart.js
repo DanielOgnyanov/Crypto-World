@@ -1,26 +1,61 @@
 import 'chart.js/auto';
+import { useEffect, useState } from 'react';
 import { Doughnut } from 'react-chartjs-2';
 import './Chart.css';
+import { getUserWallet } from '../../Services/UserWalletService';
 
 const Chart = () => {
-  const usersWalletJson = [
-    { id: 1, name: "Bitcoin", price: 45000 },
-    { id: 2, name: "Ethereum", price: 3000 },
-    { id: 3, name: "BNB", price: 300 },
-    { id: 4, name: "Cardano", price: 1000 },
-    { id: 5, name: "Tether", price: 1000 },
-    { id: 6, name: "Solana", price: 3000 },
-    { id: 7, name: "Xrp", price: 4000 },
-    { id: 8, name: "Polkadot", price: 5000 },
-    { id: 9, name: "Dogecoin", price: 4000 },
-    { id: 10, name: "Usdcoin", price: 3000 }
+  const [wallet, setWallet] = useState(null);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchWallet = async () => {
+      try {
+        const data = await getUserWallet();
+        setWallet(data);
+      } catch (err) {
+        console.error('Failed to fetch wallet:', err);
+        setError('Could not load wallet data.');
+      }
+    };
+
+    fetchWallet();
+  }, []);
+
+  if (error) {
+    return <p className="chart-error">{error}</p>;
+  }
+
+  if (!wallet) {
+    return <p className="chart-loading">Loading chart...</p>;
+  }
+
+  const walletAssets = [
+    { name: 'Bitcoin', key: 'bitcoin' },
+    { name: 'Ethereum', key: 'ethereum' },
+    { name: 'BNB', key: 'binance' },
+    { name: 'Cardano', key: 'cardano' },
+    { name: 'Tether', key: 'tether' },
+    { name: 'Solana', key: 'solana' },
+    { name: 'Xrp', key: 'xrp' },
+    { name: 'Polkadot', key: 'polkadot' },
+    { name: 'Dogecoin', key: 'dogecoin' },
+    { name: 'Usdcoin', key: 'usdcoin' }
   ];
 
-  const dataArr = usersWalletJson.map(asset => asset.price);
+  const nonZeroAssets = walletAssets
+    .map(asset => ({
+      name: asset.name,
+      value: wallet[asset.key] || 0
+    }))
+    .filter(asset => asset.value > 0);
+
+  const dataArr = nonZeroAssets.map(asset => asset.value);
+  const labels = nonZeroAssets.map(asset => asset.name);
   const portfolioValue = dataArr.reduce((acc, val) => acc + val, 0);
 
   const chartData = {
-    labels: usersWalletJson.map(asset => asset.name),
+    labels,
     datasets: [
       {
         data: dataArr,
@@ -82,9 +117,17 @@ const Chart = () => {
       <div className='chart-details'>
         <p>Total Portfolio Value: <span>${portfolioValue.toLocaleString()}</span></p>
       </div>
-      <div className='chart-visual'>
-        <Doughnut data={chartData} options={chartOptions} />
-      </div>
+      {dataArr.length === 0 ? (
+        <div className='chart-visual no-data'>
+          <p style={{ color: '#ccc', fontStyle: 'italic' }}>
+            Your wallet is empty. Start adding crypto to see your portfolio.
+          </p>
+        </div>
+      ) : (
+        <div className='chart-visual'>
+          <Doughnut data={chartData} options={chartOptions} />
+        </div>
+      )}
     </div>
   );
 };

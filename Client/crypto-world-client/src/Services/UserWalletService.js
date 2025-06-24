@@ -10,7 +10,7 @@ export const getUserWallet = async () => {
   }
 
   const res = await fetch(`${baseUrl}/api/user/wallet`, {
-    method: 'POST', // changed from GET to POST
+    method: 'POST', 
     headers: {
       'Content-Type': 'application/json',
       'Authorization': `Bearer ${user.accessToken}`,
@@ -25,4 +25,41 @@ export const getUserWallet = async () => {
 
   return res.json();
 };
+
+
+
+export const addCard = async ({ iban, balance, expirationDate, typeCard }) => {
+  const userString = localStorage.getItem("user");
+
+  if (!userString) {
+    throw new Error("User not authenticated");
+  }
+
+  const user = JSON.parse(userString);
+  const token = user.accessToken;
+
+  const payload = {
+    iban: iban.replace(/\s+/g, ''),
+    balance: parseFloat(balance),
+    expirationDate,
+    typeCard
+  };
+
+  const response = await fetch(`${baseUrl}/card/add`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}`,  
+    },
+    body: JSON.stringify(payload)
+  });
+
+  if (!response.ok) {
+    const errorText = await response.text();
+    throw new Error(errorText || 'Failed to add card');
+  }
+
+  return await response.json();
+};
+
 
