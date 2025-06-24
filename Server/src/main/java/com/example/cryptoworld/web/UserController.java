@@ -1,6 +1,7 @@
 package com.example.cryptoworld.web;
 
 
+import com.example.cryptoworld.config.JwtTokenProvider;
 import com.example.cryptoworld.models.dto.*;
 import com.example.cryptoworld.models.entities.UserEntity;
 import com.example.cryptoworld.models.entities.WalletEntity;
@@ -10,6 +11,7 @@ import com.example.cryptoworld.service.UserService;
 import com.example.cryptoworld.service.WalletService;
 import com.example.cryptoworld.utils.CustomMessage;
 import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -20,6 +22,7 @@ import org.springframework.security.web.authentication.logout.SecurityContextLog
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
+
 import java.security.Security;
 
 @RestController
@@ -27,58 +30,74 @@ import java.security.Security;
 @RequestMapping("/api/user")
 public class UserController {
 
-
+    @Autowired
+    private JwtTokenProvider jwtTokenProvider;
     private final ModelMapper modelMapper;
     private final UserService userService;
     private final AuthenticationManager authenticationManager;
     private final WalletService walletService;
     private final LoginService loginService;
 
-    public UserController(ModelMapper modelMapper, UserService userService, AuthenticationManager authenticationManager, WalletService walletService, LoginService loginService) {
+
+    public UserController(ModelMapper modelMapper, UserService userService,
+                          AuthenticationManager authenticationManager, WalletService walletService,
+                          LoginService loginService) {
         this.modelMapper = modelMapper;
         this.userService = userService;
         this.authenticationManager = authenticationManager;
         this.walletService = walletService;
         this.loginService = loginService;
+
     }
 
 
     @PostMapping("/login")
-    public ResponseEntity<CustomMessage> authenticateUser(@RequestBody LoginDto loginDto) {
-
-        CustomMessage customMessage = new CustomMessage();
-        customMessage.setMessage("User is logged.");
+    public ResponseEntity<JwtAuthenticationResponse> authenticateUser(@RequestBody LoginDto loginDto) {
 
         try {
-
-            Authentication authentication =
-                    authenticationManager
-                            .authenticate
-                                    (new UsernamePasswordAuthenticationToken
-                                            (loginDto.getUsername(), loginDto.getPassword()));
+            Authentication authentication = authenticationManager.authenticate(
+                    new UsernamePasswordAuthenticationToken(
+                            loginDto.getUsername(),
+                            loginDto.getPassword()
+                    )
+            );
 
             SecurityContextHolder.getContext().setAuthentication(authentication);
+
+            // Generate JWT token
+            String jwt = jwtTokenProvider.generateToken(authentication);
+
+            // Save login state in DB
             loginService.setUserLoginInDb(loginDto.getUsername(), true);
 
-        } catch (Exception e){
+            // Create response with token and success message
+            JwtAuthenticationResponse response = new JwtAuthenticationResponse(jwt, "User is logged.");
 
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, e.getMessage());
+            return ResponseEntity.ok(response);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Invalid username or password.");
         }
-
-
-        return new ResponseEntity<CustomMessage>(customMessage, HttpStatus.OK);
-
     }
 
-    @GetMapping("/wallet")
+
+
+
+
+    @PostMapping("/wallet")
     public ResponseEntity<WalletEntity> getUserWallet(@RequestBody LoginCheckDto loginCheckDto) {
 
         UserEntity user = userService.findByUsername(loginCheckDto.getUsername());
-        WalletEntity wallet = walletService.getUserWallet(loginCheckDto.getUsername());
+        if (user == null) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
 
         if (!user.isLogged()) {
-            return new ResponseEntity<>(wallet, HttpStatus.UNAUTHORIZED);
+            return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
         }
+
+        WalletEntity wallet = walletService.getUserWallet(loginCheckDto.getUsername());
 
         return new ResponseEntity<>(wallet, HttpStatus.OK);
     }

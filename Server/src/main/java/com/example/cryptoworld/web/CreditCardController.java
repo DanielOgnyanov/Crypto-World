@@ -5,17 +5,15 @@ import com.example.cryptoworld.models.service.AddCreditCardServiceModel;
 import com.example.cryptoworld.service.CreditCartService;
 import com.example.cryptoworld.service.UserService;
 import org.modelmapper.ModelMapper;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.Map;
 
-@Controller
+@RestController
 @RequestMapping("/card")
 public class CreditCardController {
 
@@ -29,47 +27,32 @@ public class CreditCardController {
         this.userService = userService;
     }
 
-    @GetMapping("/add")
-    public String card(Model model) {
-        if (!model.containsAttribute("addCreditCardBindingModel")) {
-            model.addAttribute("addCreditCardBindingModel", new AddCreditCardBindingModel());
-        }
-
-        if (!model.containsAttribute("addCreditCardBindingModel")) {
-            model.addAttribute("addCreditCardBindingModel", new AddCreditCardBindingModel());
-            model.addAttribute("addOneCardCheck", false);
-        }
-        return "card";
-    }
-
-
     @PostMapping("/add")
-    public String addCardConfirm(@Valid AddCreditCardBindingModel addCreditCardBindingModel,
-                                 BindingResult bindingResult,
-                                 RedirectAttributes redirectAttributes) {
-
+    public ResponseEntity<?> addCardFromFrontend(
+            @Valid @RequestBody AddCreditCardBindingModel addCreditCardBindingModel,
+            BindingResult bindingResult) {
 
         if (bindingResult.hasErrors()) {
-            redirectAttributes.addFlashAttribute("addCreditCardBindingModel", addCreditCardBindingModel);
-            redirectAttributes.addFlashAttribute(
-                    "org.springframework.validation.BindingResult.addCreditCardBindingModel", bindingResult);
-
-            return "redirect:add";
+            return ResponseEntity
+                    .badRequest()
+                    .body(Map.of("error", "Invalid card data."));
         }
 
-        if (userService.creditCardCheckIfIsPresent(userService.checkUsernameOfLoggedUser())) {
-            redirectAttributes.addFlashAttribute("addCreditCardBindingModel", addCreditCardBindingModel);
-            redirectAttributes.addFlashAttribute("addOneCardCheck", true);
+        String username = userService.checkUsernameOfLoggedUser();
 
-            return "redirect:add";
+        if (userService.creditCardCheckIfIsPresent(username)) {
+            return ResponseEntity
+                    .status(HttpStatus.CONFLICT)
+                    .body(Map.of("error", "User already has a credit card."));
         }
 
+        AddCreditCardServiceModel serviceModel =
+                modelMapper.map(addCreditCardBindingModel, AddCreditCardServiceModel.class);
 
-        creditCartService.addCreditCard(modelMapper.map(addCreditCardBindingModel, AddCreditCardServiceModel.class));
+        creditCartService.addCreditCard(serviceModel);
 
-
-        return "redirect:/home";
+        return ResponseEntity
+                .ok(Map.of("message", "Card added successfully."));
     }
-
 
 }

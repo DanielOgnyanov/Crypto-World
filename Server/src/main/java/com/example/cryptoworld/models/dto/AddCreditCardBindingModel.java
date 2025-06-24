@@ -7,17 +7,25 @@ import java.math.BigDecimal;
 
 public class AddCreditCardBindingModel {
 
+    @NotNull(message = "IBAN cannot be empty!")
+    @Size(min = 15, max = 20, message = "IBAN must be between 15 and 20 characters!")
+    private String iban;
+
+    @NotNull(message = "Balance cannot be empty!")
+    @DecimalMin(value = "100", message = "Balance must be Positive and over 100!")
     private BigDecimal balance;
-    private int expirationYear;
-    private String Iban;
+
+    @NotNull(message = "Expiration date cannot be empty!")
+    @Pattern(regexp = "^(20\\d{2})-(0[1-9]|1[0-2])$", message = "Expiration date must be in the format YYYY-MM")
+    private String expirationDate;
+
+
+
+    @NotNull(message = "Card type cannot be empty!")
     private EnumCard typeCard;
 
+    public AddCreditCardBindingModel() {}
 
-    public AddCreditCardBindingModel() {
-    }
-
-    @NotNull(message = "Balance cannot be empty !")
-    @DecimalMin(value = "100", message = "Balance must be Positive and over 100!")
     public BigDecimal getBalance() {
         return balance;
     }
@@ -26,30 +34,22 @@ public class AddCreditCardBindingModel {
         this.balance = balance;
     }
 
-    @NotNull(message = "Expiration year cannot be empty !")
-    @Min(value = 2022, message = "Expiration year must be after 2021")
-    @Max(value = 2030,  message = "Expiration year maximum is 2030 !")
-
-    public int getExpirationYear() {
-        return expirationYear;
+    public String getExpirationDate() {
+        return expirationDate;
     }
 
-    public void setExpirationYear(int expirationYear) {
-        this.expirationYear = expirationYear;
+    public void setExpirationDate(String expirationDate) {
+        this.expirationDate = expirationDate;
     }
 
-    @NotNull(message = "Iban cannot be empty !")
-    @NotEmpty(message = "Iban cannot be empty !")
-    @Size(min = 15, max = 20, message = "Iban must be between 15 and 20 characters !")
     public String getIban() {
-        return Iban;
+        return iban;
     }
 
     public void setIban(String iban) {
-        Iban = iban;
+        this.iban = iban;
     }
 
-    @NotNull(message = "Type card cannot be empty !")
     public EnumCard getTypeCard() {
         return typeCard;
     }
