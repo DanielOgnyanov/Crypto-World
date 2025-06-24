@@ -2,6 +2,7 @@ package com.example.cryptoworld.models.entities;
 
 
 import com.example.cryptoworld.models.enums.EnumCard;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
@@ -12,7 +13,7 @@ public class CreditCardEntity extends BaseEntity{
 
     private String iban;
     private UserEntity owner;
-    private int expirationYear;
+    private int expirationDate;
     private BigDecimal balance;
     private EnumCard typeCard;
 
@@ -31,7 +32,8 @@ public class CreditCardEntity extends BaseEntity{
     }
 
     @ManyToOne
-    @JoinColumn(name = "owner_name", referencedColumnName = "full_name")
+    @JoinColumn(name = "user_id") // or whatever your join column is
+    @JsonBackReference
     public UserEntity getOwner() {
         return owner;
     }
@@ -41,13 +43,13 @@ public class CreditCardEntity extends BaseEntity{
     }
 
 
-    @Column(name = "expiration_year")
+    @Column(name = "expiration_date")
     public int getExpirationYear() {
-        return expirationYear;
+        return expirationDate;
     }
 
     public void setExpirationYear(int expirationYear) {
-        this.expirationYear = expirationYear;
+        this.expirationDate = expirationYear;
     }
 
 

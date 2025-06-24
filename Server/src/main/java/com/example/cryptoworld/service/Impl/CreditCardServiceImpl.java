@@ -36,24 +36,33 @@ public class CreditCardServiceImpl implements CreditCartService {
     @Override
     public void addCreditCard(AddCreditCardServiceModel addCreditCardServiceModel) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-
         String username = authentication.getName();
 
-
-        UserEntity userEntity = userRepository.findByUsername(username).orElse(null);
-
+        UserEntity userEntity = userRepository.findByUsername(username)
+                .orElseThrow(() -> new IllegalArgumentException("User not found: " + username));
 
         CreditCardEntity cardEntity = new CreditCardEntity();
-
         cardEntity.setBalance(addCreditCardServiceModel.getBalance());
-        cardEntity.setExpirationYear(addCreditCardServiceModel.getExpirationYear());
         cardEntity.setIban(addCreditCardServiceModel.getIban());
         cardEntity.setTypeCard(addCreditCardServiceModel.getTypeCard());
         cardEntity.setOwner(userEntity);
 
+        // Parse expiration year from "YYYY-MM" string
+        String expirationDate = addCreditCardServiceModel.getExpirationDate(); // e.g. "2027-12"
+        if (expirationDate != null && expirationDate.matches("^20\\d{2}-[01]\\d$")) {
+            try {
+                int expirationYear = Integer.parseInt(expirationDate.substring(0, 4));
+                cardEntity.setExpirationYear(expirationYear);
+            } catch (NumberFormatException e) {
+                throw new IllegalArgumentException("Invalid expiration year format: " + expirationDate);
+            }
+        } else {
+            throw new IllegalArgumentException("Expiration date must be in format YYYY-MM");
+        }
 
         creditCardRepository.save(cardEntity);
     }
+
 
     @Override
     public CreditCardEntity getByOwner(String owner) {

@@ -2,6 +2,7 @@ package com.example.cryptoworld.models.entities;
 
 
 import com.example.cryptoworld.models.enums.EnumCountry;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
 
@@ -122,6 +123,7 @@ public class UserEntity extends BaseEntity implements Serializable {
 
     @OneToMany(mappedBy = "owner")
     @LazyCollection(LazyCollectionOption.FALSE)
+    @JsonManagedReference
     public List<CreditCardEntity> getCard() {
         return card;
     }

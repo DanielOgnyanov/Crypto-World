@@ -7,7 +7,7 @@ import java.math.BigDecimal;
 public class AddCreditCardServiceModel {
 
     private BigDecimal balance;
-    private int expirationYear;
+    private String expirationDate;
     private String Iban;
     private EnumCard typeCard;
 
@@ -24,12 +24,12 @@ public class AddCreditCardServiceModel {
         this.balance = balance;
     }
 
-    public int getExpirationYear() {
-        return expirationYear;
+    public String getExpirationDate() {
+        return expirationDate;
     }
 
-    public void setExpirationYear(int expirationYear) {
-        this.expirationYear = expirationYear;
+    public void setExpirationDate(String expirationDate) {
+        this.expirationDate = expirationDate;
     }
 
     public String getIban() {
