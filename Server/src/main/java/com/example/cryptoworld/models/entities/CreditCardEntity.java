@@ -3,6 +3,7 @@ package com.example.cryptoworld.models.entities;
 
 import com.example.cryptoworld.models.enums.EnumCard;
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
@@ -33,7 +34,8 @@ public class CreditCardEntity extends BaseEntity{
 
     @ManyToOne
     @JoinColumn(name = "user_id") // or whatever your join column is
-    @JsonBackReference
+
+    @JsonManagedReference
     public UserEntity getOwner() {
         return owner;
     }

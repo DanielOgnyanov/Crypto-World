@@ -2,6 +2,7 @@ package com.example.cryptoworld.models.entities;
 
 
 import com.example.cryptoworld.models.enums.EnumCryptoTop10;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
 
@@ -20,6 +21,7 @@ public class LogDeposit extends BaseEntity{
 
     @ManyToOne
     @JoinColumn(name = "deposit_person", referencedColumnName = "full_name")
+    @JsonManagedReference
     public UserEntity getDepositPerson() {
         return depositPerson;
     }

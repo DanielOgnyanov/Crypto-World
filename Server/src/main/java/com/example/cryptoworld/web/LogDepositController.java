@@ -7,18 +7,16 @@ import com.example.cryptoworld.service.CreditCartService;
 import com.example.cryptoworld.service.LogDepositService;
 import com.example.cryptoworld.service.UserService;
 import org.modelmapper.ModelMapper;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
+import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.math.BigDecimal;
+import java.util.Map;
 
-@Controller
-@RequestMapping("/deposit")
+@RestController
+@RequestMapping("/api/deposit")
 public class LogDepositController {
 
     private final ModelMapper modelMapper;
@@ -26,108 +24,67 @@ public class LogDepositController {
     private final UserService userService;
     private final CreditCartService creditCartService;
 
-
     public LogDepositController(ModelMapper modelMapper,
                                 LogDepositService logDepositService,
-                                UserService userService, CreditCartService creditCartService) {
+                                UserService userService,
+                                CreditCartService creditCartService) {
         this.modelMapper = modelMapper;
         this.logDepositService = logDepositService;
         this.userService = userService;
         this.creditCartService = creditCartService;
     }
 
-    @GetMapping("/add")
-    public String card(Model model) {
-
-        if (!model.containsAttribute("logDepositBindingModel")) {
-            model.addAttribute("logDepositBindingModel", new LogDepositBindingModel());
-        }
-
-        if (!model.containsAttribute("logDepositBindingModel")) {
-            model.addAttribute("logDepositBindingModel", new LogDepositBindingModel());
-            model.addAttribute("userCheckIfIsPresent", false);
-        }
-
-        if (!model.containsAttribute("logDepositBindingModel")) {
-            model.addAttribute("logDepositBindingModel", new LogDepositBindingModel());
-            model.addAttribute("depositCheck", false);
-        }
-
-        if (!model.containsAttribute("logDepositBindingModel")) {
-            model.addAttribute("logDepositBindingModel", new LogDepositBindingModel());
-            model.addAttribute("creditCardCheck", false);
-        }
-
-        if (!model.containsAttribute("logDepositBindingModel")) {
-            model.addAttribute("logDepositBindingModel", new LogDepositBindingModel());
-            model.addAttribute("findIfUserInsertPersonalUsernameCheck", false);
-        }
-
-        return "log";
-    }
-
-
     @PostMapping("/add")
-    public String addDepositConfirm(@Valid LogDepositBindingModel logDepositBindingModel,
-                                    BindingResult bindingResult,
-                                    RedirectAttributes redirectAttributes) {
-
+    public ResponseEntity<?> addDeposit(@Valid @RequestBody LogDepositBindingModel logDepositBindingModel,
+                                        BindingResult bindingResult) {
 
         if (bindingResult.hasErrors()) {
-            redirectAttributes.addFlashAttribute("logDepositBindingModel", logDepositBindingModel);
-            redirectAttributes.addFlashAttribute(
-                    "org.springframework.validation.BindingResult.logDepositBindingModel", bindingResult);
-
-            return "redirect:add";
+            return ResponseEntity
+                    .badRequest()
+                    .body(Map.of("error", "Validation failed.", "details", bindingResult.getAllErrors()));
         }
 
+        String requestedUsername = logDepositBindingModel.getUsernameConfirm();
+        String loggedUsername = userService.checkUsernameOfLoggedUser();
 
-        if (!userService.existByUsername(logDepositBindingModel.getUsernameConfirm())) {
-            redirectAttributes.addFlashAttribute("logDepositBindingModel", logDepositBindingModel);
-            redirectAttributes.addFlashAttribute("userCheckIfIsPresent", true);
-
-            return "redirect:add";
+        // Check if user exists
+        if (!userService.existByUsername(requestedUsername)) {
+            return ResponseEntity
+                    .badRequest()
+                    .body(Map.of("error", "User does not exist."));
         }
 
-
-
-        if (!logDepositBindingModel.getUsernameConfirm()
-                .equals(userService.checkUsernameOfLoggedUser())) {
-            redirectAttributes.addFlashAttribute("logDepositBindingModel", logDepositBindingModel);
-            redirectAttributes.addFlashAttribute("findIfUserInsertPersonalUsernameCheck", true);
-
-            return "redirect:add";
+        // Check if it's the logged-in user
+        if (!requestedUsername.equals(loggedUsername)) {
+            return ResponseEntity
+                    .badRequest()
+                    .body(Map.of("error", "You can only deposit to your own account."));
         }
 
-
-
-        if (!userService.creditCardCheckIfIsPresent(logDepositBindingModel.getUsernameConfirm())) {
-            redirectAttributes.addFlashAttribute("logDepositBindingModel", logDepositBindingModel);
-            redirectAttributes.addFlashAttribute("creditCardCheck", true);
-
-            return "redirect:add";
+        // Check if user has a credit card
+        if (!userService.creditCardCheckIfIsPresent(requestedUsername)) {
+            return ResponseEntity
+                    .badRequest()
+                    .body(Map.of("error", "User does not have a credit card."));
         }
 
+        // Check if balance is enough
+        UserEntity userEntity = userService.findByUsername(requestedUsername);
+        BigDecimal cardBalance = userEntity.getCard().get(0).getBalance();
 
-        UserEntity userEntity =
-                userService.findByUsername(logDepositBindingModel.getUsernameConfirm());
-
-
-        double check = userEntity.getCard().get(0).getBalance().doubleValue();
-
-
-        if ( check <= logDepositBindingModel.getDeposit()) {
-
-            redirectAttributes.addFlashAttribute("logDepositBindingModel", logDepositBindingModel);
-            redirectAttributes.addFlashAttribute("depositCheck", true);
-
-            return "redirect:add";
+        if (cardBalance.compareTo(BigDecimal.valueOf(logDepositBindingModel.getDeposit())) < 0) {
+            return ResponseEntity
+                    .badRequest()
+                    .body(Map.of("error", "Insufficient credit card balance."));
         }
 
+        // Proceed with deposit
+        LogDepositServiceModel serviceModel =
+                modelMapper.map(logDepositBindingModel, LogDepositServiceModel.class);
 
-        logDepositService.addLogDeposit(modelMapper.map(logDepositBindingModel, LogDepositServiceModel.class));
+        logDepositService.addLogDeposit(serviceModel);
 
-
-        return "redirect:/home";
+        return ResponseEntity
+                .ok(Map.of("message", "Deposit successful."));
     }
 }

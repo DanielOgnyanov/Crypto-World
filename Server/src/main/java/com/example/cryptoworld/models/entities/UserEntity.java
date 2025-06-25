@@ -2,6 +2,7 @@ package com.example.cryptoworld.models.entities;
 
 
 import com.example.cryptoworld.models.enums.EnumCountry;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
@@ -121,9 +122,12 @@ public class UserEntity extends BaseEntity implements Serializable {
 
     // BIDIRECTIONAL RELATIONS WITH CREDIT_CARD ENTITY
 
+
+
     @OneToMany(mappedBy = "owner")
     @LazyCollection(LazyCollectionOption.FALSE)
-    @JsonManagedReference
+    @JsonBackReference
+
     public List<CreditCardEntity> getCard() {
         return card;
     }
@@ -137,6 +141,7 @@ public class UserEntity extends BaseEntity implements Serializable {
 
     @OneToMany(mappedBy = "depositPerson")
     @LazyCollection(LazyCollectionOption.FALSE)
+    @JsonBackReference
     public List<LogDeposit> getDepositSet() {
         return depositSet;
     }
