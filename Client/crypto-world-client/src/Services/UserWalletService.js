@@ -63,3 +63,45 @@ export const addCard = async ({ iban, balance, expirationDate, typeCard }) => {
 };
 
 
+
+
+
+
+export async function sendDeposit({ usernameConfirm, deposit, crypto }) {
+  try {
+    const userString = localStorage.getItem("user");
+    const user = JSON.parse(userString);
+    const token = user.accessToken;
+
+    if (!token) {
+      throw new Error('Authentication token not found.');
+    }
+
+    const response = await fetch(`${baseUrl}/api/deposit/add`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`
+      },
+      body: JSON.stringify({
+        usernameConfirm,
+        deposit,
+        crypto
+      })
+    });
+
+    const data = await response.json();
+
+    if (!response.ok) {
+      throw new Error(data.error || 'Deposit request failed.');
+    }
+
+    return data;
+  } catch (error) {
+    console.error('Deposit API error:', error.message);
+    throw error;
+  }
+}
+
+
+

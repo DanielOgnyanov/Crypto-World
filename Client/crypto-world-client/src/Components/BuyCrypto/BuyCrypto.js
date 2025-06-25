@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './BuyCrypto.css';
+import { sendDeposit } from '../../Services/UserWalletService'; 
 
 const BuyCrypto = () => {
   const [deposit, setDeposit] = useState('');
@@ -7,49 +8,40 @@ const BuyCrypto = () => {
   const [cryptoAsset, setCryptoAsset] = useState('');
 
   const cryptoEnum = [
-    { name: 'Bitcoin' },
-    { name: 'Ethereum' },
-    { name: 'Binance' },
-    { name: 'Cardano' },
-    { name: 'Tether' },
-    { name: 'SOL' },
-    { name: 'Ripple' },
-    { name: 'Dotcoin' },
-    { name: 'DogeCoin' },
-    { name: 'USDC' }
+    { name: 'Bitcoin' }, { name: 'Ethereum' }, { name: 'Binance' }, { name: 'Cardano' },
+    { name: 'Tether' }, { name: 'SOL' }, { name: 'Ripple' }, { name: 'Dotcoin' },
+    { name: 'DogeCoin' }, { name: 'USDC' }
   ];
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+ const handleSubmit = async (e) => {
+  e.preventDefault();
 
-    const value = parseFloat(deposit);
+  const value = parseFloat(deposit);
 
-    if (isNaN(value)) {
-      alert('Please enter a valid deposit value.');
-      return;
-    }
+  if (isNaN(value) || value <= 0 || !username || !cryptoAsset) {
+    alert('Please fill in all fields with valid values.');
+    return;
+  }
 
-    if (value <= 0) {
-      alert('Deposit cannot be negative.');
-      return;
-    }
-
-    if (!username || !cryptoAsset) {
-      alert('Please fill in all fields.');
-      return;
-    }
-
-    console.log('Buying:', {
-      username,
+  try {
+    const response = await sendDeposit({
+      usernameConfirm: username,
       deposit: value,
-      cryptoAsset
+      crypto: cryptoAsset
     });
 
-    
-    setDeposit('');
-    setUsername('');
-    setCryptoAsset('');
-  };
+    console.log('Deposit success:', response);
+    alert('Deposit successful!');
+  } catch (error) {
+    console.error('Deposit failed:', error.message);
+    alert('Deposit failed. Check console for details.');
+  }
+
+  setDeposit('');
+  setUsername('');
+  setCryptoAsset('');
+};
+
 
   return (
     <form id="form-buy-crypto" className="form-container" onSubmit={handleSubmit}>

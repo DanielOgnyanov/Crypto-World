@@ -72,50 +72,74 @@ const Chart = () => {
     ]
   };
 
-  const chartOptions = {
-    responsive: true,
-    maintainAspectRatio: false,
-    cutout: '65%',
-    plugins: {
-      title: {
-        display: true,
-        text: "Your Crypto Portfolio",
-        color: "#00feba",
+const chartOptions = {
+  responsive: true,
+  maintainAspectRatio: false,
+  cutout: '65%',
+  plugins: {
+    title: {
+      display: true,
+      text: "Your Crypto Portfolio",
+      color: "#00feba",
+      font: {
+        size: 26,
+        weight: "bold",
+      },
+      padding: {
+        bottom: 20
+      }
+    },
+    legend: {
+      display: true,
+      position: "bottom",
+      labels: {
+        color: "#ffffff",
         font: {
-          size: 26,
-          weight: "bold",
+          size: 14,
+          weight: "500"
         },
-        padding: {
-          bottom: 20
+        boxWidth: 18,
+        padding: 15,
+        generateLabels: function (chart) {
+          const data = chart.data;
+          if (data.labels.length && data.datasets.length) {
+            return data.labels.map((label, i) => {
+              const value = data.datasets[0].data[i];
+              return {
+                text: `${label}: ${value.toFixed(5)}`,
+                fillStyle: data.datasets[0].backgroundColor[i],
+                strokeStyle: data.datasets[0].backgroundColor[i],
+                index: i
+              };
+            });
+          }
+          return [];
         }
-      },
-      legend: {
-        display: true,
-        position: "bottom",
-        labels: {
-          color: "#ffffff",
-          font: {
-            size: 14,
-            weight: "500"
-          },
-          boxWidth: 18,
-          padding: 15,
+      }
+    },
+    tooltip: {
+      backgroundColor: "#222",
+      bodyColor: "#fff",
+      borderColor: "#00feba",
+      borderWidth: 1,
+      padding: 10,
+      callbacks: {
+        label: function (context) {
+          const label = context.label || '';
+          const value = context.raw;
+          return `${label}: ${value.toFixed(5)}`;
         }
-      },
-      tooltip: {
-        backgroundColor: "#222",
-        bodyColor: "#fff",
-        borderColor: "#00feba",
-        borderWidth: 1,
-        padding: 10
       }
     }
-  };
+  }
+};
+
 
   return (
     <div className='chart-container'>
       <div className='chart-details'>
-        <p>Total Portfolio Value: <span>${portfolioValue.toLocaleString()}</span></p>
+      <p>Total Portfolio Value In Crypto: <span>{portfolioValue.toLocaleString(undefined, { minimumFractionDigits: 5, maximumFractionDigits: 8 })}</span></p>
+
       </div>
       {dataArr.length === 0 ? (
         <div className='chart-visual no-data'>
