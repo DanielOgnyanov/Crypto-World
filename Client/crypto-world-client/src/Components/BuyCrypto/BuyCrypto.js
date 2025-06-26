@@ -34,7 +34,7 @@ const BuyCrypto = () => {
     alert('Deposit successful!');
   } catch (error) {
     console.error('Deposit failed:', error.message);
-    alert('Deposit failed. Check console for details.');
+    alert('Deposit failed: ' + error.message);
   }
 
   setDeposit('');

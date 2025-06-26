@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './SellCrypto.css';
+import { sellCrypto } from '../../Services/UserWalletService'; 
 
 const SellCrypto = () => {
   const [sellValue, setSellValue] = useState('');
@@ -19,36 +20,36 @@ const SellCrypto = () => {
     { name: 'USDC' }
   ];
 
-  const handleSubmit = (e) => {
+  
+  const isValidSellValue = (val) => {
+    
+    return /^\d*\.?\d+$/.test(val) && parseFloat(val) > 0;
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const value = parseFloat(sellValue);
-
-    if (isNaN(value)) {
-      alert('Please enter a valid sell amount.');
+    if (!isValidSellValue(sellValue) || !username || !cryptoAsset) {
+      alert('Please fill in all fields with valid values.');
       return;
     }
 
-    if (value <= 0) {
-      alert('Sell amount cannot be negative.');
-      return;
+    try {
+      const value = parseFloat(sellValue);
+
+      const result = await sellCrypto({
+        usernameConfirm: username,
+        sellValue: value,
+        crypto: cryptoAsset
+      });
+
+      alert(`Sold successfully.`);
+      setSellValue('');
+      setUsername('');
+      setCryptoAsset('');
+    } catch (error) {
+      alert('Failed to sell crypto: ' + error.message);
     }
-
-    if (!username || !cryptoAsset) {
-      alert('Please fill in all fields.');
-      return;
-    }
-
-    console.log('Selling:', {
-      username,
-      sellValue: value,
-      cryptoAsset
-    });
-
-    
-    setSellValue('');
-    setUsername('');
-    setCryptoAsset('');
   };
 
   return (
@@ -69,11 +70,16 @@ const SellCrypto = () => {
       <input
         name="sell-value"
         id="sell-value"
-        placeholder="Sell Value"
-        type="number"
+        placeholder="Sell Value (e.g., 0.003)"
+        type="text" 
         value={sellValue}
-        onChange={(e) => setSellValue(e.target.value)}
-        min="0"
+        onChange={(e) => {
+          
+          const val = e.target.value;
+          if (val === '' || /^\d*\.?\d*$/.test(val)) {
+            setSellValue(val);
+          }
+        }}
       />
 
       <label htmlFor="crypto-asset" id="sell-crypto-label">Crypto Asset</label>

@@ -105,3 +105,35 @@ export async function sendDeposit({ usernameConfirm, deposit, crypto }) {
 
 
 
+
+export const sellCrypto = async ({ usernameConfirm, sellValue, crypto }) => {
+  try {
+     const userString = localStorage.getItem("user");
+     const user = JSON.parse(userString);
+     const token = user.accessToken;
+
+    const response = await fetch(`${baseUrl}/api/sell/execute`, {
+      method: 'POST',
+     headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`
+      },
+      body: JSON.stringify({ usernameConfirm, sellValue, crypto })
+    });
+
+    if (!response.ok) {
+      const errorData = await response.json();
+      throw new Error(errorData.message || 'Sell request failed');
+    }
+
+    const result = await response.json();
+    return result;
+  } catch (err) {
+    console.error('Sell service error:', err.message);
+    throw err;
+  }
+};
+
+
+
+
