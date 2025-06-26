@@ -7,20 +7,17 @@ import com.example.cryptoworld.service.LogSellService;
 import com.example.cryptoworld.service.UserService;
 import com.example.cryptoworld.service.WalletService;
 import org.modelmapper.ModelMapper;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
+import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.HashMap;
+import java.util.Map;
 
-@Controller
-@RequestMapping("/sell")
+@RestController
+@RequestMapping("/api/sell")
 public class LogSellController {
-
 
     private final ModelMapper modelMapper;
     private final UserService userService;
@@ -28,7 +25,11 @@ public class LogSellController {
     private final LogSellService logSellService;
     private final WalletService walletService;
 
-    public LogSellController(ModelMapper modelMapper, UserService userService, CreditCartService creditCartService, LogSellService logSellService, WalletService walletService) {
+    public LogSellController(ModelMapper modelMapper,
+                             UserService userService,
+                             CreditCartService creditCartService,
+                             LogSellService logSellService,
+                             WalletService walletService) {
         this.modelMapper = modelMapper;
         this.userService = userService;
         this.creditCartService = creditCartService;
@@ -36,91 +37,58 @@ public class LogSellController {
         this.walletService = walletService;
     }
 
+    @PostMapping("/execute")
+    public ResponseEntity<?> sellCrypto(@RequestBody @Valid SellCryptoBindingModel sellCryptoBindingModel,
+                                        BindingResult bindingResult) {
 
-    @GetMapping("/add")
-    public String card(Model model) {
-
-        if (!model.containsAttribute("sellCryptoBindingModel")) {
-            model.addAttribute("sellCryptoBindingModel", new SellCryptoBindingModel());
-        }
-
-        if (!model.containsAttribute("sellCryptoBindingModel")) {
-            model.addAttribute("logDepositBindingModel", new SellCryptoBindingModel());
-            model.addAttribute("userCheckIfIsPresent", false);
-        }
-
-        if (!model.containsAttribute("sellCryptoBindingModel")) {
-            model.addAttribute("sellCryptoBindingModel", new SellCryptoBindingModel());
-            model.addAttribute("sellValueCheck", false);
-        }
-
-        if (!model.containsAttribute("sellCryptoBindingModel")) {
-            model.addAttribute("sellCryptoBindingModel", new SellCryptoBindingModel());
-            model.addAttribute("cryptoCheck", false);
-        }
-        if (!model.containsAttribute("sellCryptoBindingModel")) {
-            model.addAttribute("sellCryptoBindingModel", new SellCryptoBindingModel());
-            model.addAttribute("findIfUserInsertPersonalUsernameCheck", false);
-        }
-
-        return "sell";
-    }
-
-
-    @PostMapping("/add")
-    public String addDepositConfirm(@Valid SellCryptoBindingModel sellCryptoBindingModel,
-                                    BindingResult bindingResult,
-                                    RedirectAttributes redirectAttributes) {
-
+        Map<String, Object> response = new HashMap<>();
 
         if (bindingResult.hasErrors()) {
-            redirectAttributes.addFlashAttribute("sellCryptoBindingModel", sellCryptoBindingModel);
-            redirectAttributes.addFlashAttribute(
-                    "org.springframework.validation.BindingResult.sellCryptoBindingModel", bindingResult);
-
-            return "redirect:add";
+            response.put("status", "error");
+            response.put("message", "Validation failed");
+            response.put("errors", bindingResult.getAllErrors());
+            return ResponseEntity.badRequest().body(response);
         }
 
-        if (!userService.existByUsername(sellCryptoBindingModel.getUsernameConfirm())) {
-            redirectAttributes.addFlashAttribute("sellCryptoBindingModel", sellCryptoBindingModel);
-            redirectAttributes.addFlashAttribute("userCheckIfIsPresent", true);
+        String username = sellCryptoBindingModel.getUsernameConfirm();
 
-            return "redirect:add";
+        // Check if user exists
+        if (!userService.existByUsername(username)) {
+            response.put("status", "error");
+            response.put("message", "User does not exist");
+            return ResponseEntity.badRequest().body(response);
         }
 
-        if (!sellCryptoBindingModel.getUsernameConfirm()
-                .equals(userService.checkUsernameOfLoggedUser())) {
-            redirectAttributes.addFlashAttribute("sellCryptoBindingModel", sellCryptoBindingModel);
-            redirectAttributes.addFlashAttribute("findIfUserInsertPersonalUsernameCheck", true);
-
-            return "redirect:add";
+        // Check if logged user matches
+        if (!username.equals(userService.checkUsernameOfLoggedUser())) {
+            response.put("status", "error");
+            response.put("message", "Username confirmation mismatch");
+            return ResponseEntity.badRequest().body(response);
         }
 
-
-        if (!walletService.findUsersWallet(sellCryptoBindingModel.getUsernameConfirm())) {
-            redirectAttributes.addFlashAttribute("sellCryptoBindingModel", sellCryptoBindingModel);
-            redirectAttributes.addFlashAttribute("sellValueCheck", true);
-
-            return "redirect:add";
+        // Check if wallet exists
+        if (!walletService.findUsersWallet(username)) {
+            response.put("status", "error");
+            response.put("message", "User wallet not found");
+            return ResponseEntity.badRequest().body(response);
         }
 
-        double sellValueCheck =
-                walletService
-                        .sellValueCheck(sellCryptoBindingModel.getUsernameConfirm(),
-                                sellCryptoBindingModel.getCrypto().name());
-
-
-        if (sellValueCheck < sellCryptoBindingModel.getSellValue()) {
-
-            redirectAttributes.addFlashAttribute("sellCryptoBindingModel", sellCryptoBindingModel);
-            redirectAttributes.addFlashAttribute("sellValueCheck", true);
-
-            return "redirect:add";
+        // Check if sell amount is available
+        double availableValue = walletService.sellValueCheck(username, sellCryptoBindingModel.getCrypto().name());
+        if (availableValue < sellCryptoBindingModel.getSellValue()) {
+            response.put("status", "error");
+            response.put("message", "Insufficient crypto amount");
+            return ResponseEntity.badRequest().body(response);
         }
 
-        logSellService.sellLog(modelMapper.map(sellCryptoBindingModel, SellCryptoServiceModel.class));
+        // Proceed with sell and save to DB
+        SellCryptoServiceModel serviceModel = modelMapper.map(sellCryptoBindingModel, SellCryptoServiceModel.class);
+        logSellService.sellLog(serviceModel);  // Logs sell and should update wallet/db
 
+        response.put("status", "success");
+        response.put("message", "Sell completed successfully");
+        response.put("sellData", serviceModel);
 
-        return "redirect:/home";
+        return ResponseEntity.ok(response);
     }
 }

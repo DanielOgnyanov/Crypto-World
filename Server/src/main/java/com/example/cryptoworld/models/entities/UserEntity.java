@@ -155,6 +155,7 @@ public class UserEntity extends BaseEntity implements Serializable {
 
     @OneToMany(mappedBy = "sellPerson")
     @LazyCollection(LazyCollectionOption.FALSE)
+    @JsonBackReference
     public List<LogSell> getSellList() {
         return sellList;
     }
