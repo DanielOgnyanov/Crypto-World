@@ -72,9 +72,7 @@ export const getUser = () => {
   }
 };
 
-/**
- * Checks if user is authenticated
- */
+
 export const isAuthenticated = () => {
   return Boolean(getUser());
 };

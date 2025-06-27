@@ -11,7 +11,7 @@ const Register = () => {
 
   const [redirect, setRedirect] = useState(false);
 
-  // Validation states
+  
   const [isUsernameIsCorrect, setIsUsernameIsCorrect] = useState(false);
   const [isEmailCorrect, setIsEmailCorrect] = useState(false);
   const [isFullNameCorrect, setIsFullNameCorrect] = useState(false);
@@ -19,67 +19,80 @@ const Register = () => {
   const [isPasswordCorrect, setIsPasswordCorrect] = useState(false);
   const [isInputIsCorrectConfirmPassword, setIsInputIsCorrectConfirmPassword] = useState(false);
 
-  // Username and errors
+ 
   const [username, setUsername] = useState("");
   const [usernameError, setUsernameError] = useState(false);
   const [isTakenUsername, setIsTakenUsername] = useState(false);
 
-  // Full name and error
+ 
   const [fullName, setFullname] = useState("");
   const [fullNameError, setFullNameError] = useState(false);
 
-  // Email and errors
+  
   const regex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
   const [email, setEmail] = useState("");
   const [emailError, setEmailError] = useState(false);
   const [emailIsFree, setEmailIsFree] = useState(true);
 
-  // Country and error
+  
   const [country, setCountry] = useState("");
   const [countryError, setCountryError] = useState(false);
 
-  // Password and errors
+  
   const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@#$%^&+=!?]).{5,}$/;
   const [password, setPass] = useState("");
   const [passError, setPassError] = useState(false);
 
-  // Confirm password and errors
+
   const [confirmPassword, setConfirmPassword] = useState("");
   const [confirmPasswordError, setConfirmPasswordError] = useState(false);
   const [isPasswordMatch, setIsPasswordMatch] = useState(true);
 
-  // Username validation and async uniqueness check
-  async function usernameHandler(e) {
-    const value = e.target.value.trim();
-    setUsername(value);
 
-    if (value.length < 3 || value.length > 20) {
-      setUsernameError(true);
-      setIsUsernameIsCorrect(false);
-      setIsTakenUsername(false);
-      return;
-    } else {
-      setUsernameError(false);
+async function usernameHandler(e) {
+  const value = e.target.value.trim();
+  setUsername(value);
 
-      try {
-        await userInfoService.findIfUsernameIsTakenInDb(value);
-        // If no error, username is taken
-        setIsTakenUsername(true);
-        setIsUsernameIsCorrect(false);
-      } catch {
-        // Error means username is free (assuming your service rejects if taken)
-        setIsTakenUsername(false);
-        setIsUsernameIsCorrect(true);
-      }
-    }
+  if (value.length < 3 || value.length > 20) {
+    setUsernameError(true);
+    setIsUsernameIsCorrect(false);
+    setIsTakenUsername(false);
+    return;
+  } else {
+    setUsernameError(false);
   }
 
-  // Full name validation
+  try {
+    const response = await userInfoService.findIfUsernameIsTakenInDb(value);
+
+    if (response.isTaken) {
+      setIsTakenUsername(true);
+      setIsUsernameIsCorrect(false);
+    } else {
+      setIsTakenUsername(false);
+      setIsUsernameIsCorrect(true);
+    }
+
+  } catch (err) {
+    console.error('Username check error:', err.message);
+    setIsTakenUsername(false); // fallback: assume not taken
+    setIsUsernameIsCorrect(true); // you can choose to disable this if error is critical
+  }
+}
+
+
+
   function fullNameHandler(e) {
-    const value = e.target.value.trim();
+    const value = e.target.value;
     setFullname(value);
 
-    if (value.length < 5 || value.length > 20) {
+    const fullNameRegex = /^[A-Za-z\s]+$/;
+
+    if (
+      value.length < 5 ||
+      value.length > 20 ||
+      !fullNameRegex.test(value.trim())
+    ) {
       setFullNameError(true);
       setIsFullNameCorrect(false);
     } else {
@@ -88,7 +101,7 @@ const Register = () => {
     }
   }
 
-  // Email validation and async uniqueness check
+
   async function emailHandler(e) {
     const value = e.target.value.trim();
     setEmail(value);
@@ -103,18 +116,17 @@ const Register = () => {
 
       try {
         await userInfoService.checkIfTheEmailIsNotTaken(value);
-        // If no error, email is free
+
         setEmailIsFree(true);
         setIsEmailCorrect(true);
       } catch {
-        // Email taken
+
         setEmailIsFree(false);
         setIsEmailCorrect(false);
       }
     }
   }
 
-  // Country selection validation
   function countryHandler(e) {
     const value = e.target.value;
     setCountry(value);
@@ -128,7 +140,7 @@ const Register = () => {
     }
   }
 
-  // Password validation
+
   function passwordHandler(e) {
     const value = e.target.value.trim();
     setPass(value);
@@ -141,7 +153,7 @@ const Register = () => {
       setIsPasswordCorrect(true);
     }
 
-    // Check confirm password match when password changes
+
     if (confirmPassword && value === confirmPassword) {
       setIsPasswordMatch(true);
       setIsInputIsCorrectConfirmPassword(true);
@@ -152,7 +164,7 @@ const Register = () => {
     }
   }
 
-  // Confirm password validation
+
   function confirmPassowrdHandler(e) {
     const value = e.target.value.trim();
     setConfirmPassword(value);
@@ -175,7 +187,7 @@ const Register = () => {
     }
   }
 
-  // Form submit handler
+
   const onRegisterFormSubmitHandler = async (e) => {
     e.preventDefault();
 
@@ -187,7 +199,7 @@ const Register = () => {
       !isInputIsCorrectConfirmPassword ||
       !isCountryCorrect
     ) {
-      // You can optionally add a general error message here
+
       return;
     }
 
@@ -286,7 +298,7 @@ const Register = () => {
         {!isPasswordMatch && !confirmPasswordError && <span id='span-info-register'>Passwords do not match.</span>}
         {isPasswordMatch && !confirmPasswordError && isInputIsCorrectConfirmPassword && <span id='span-green-tick'>&#10004;</span>}
 
-         <button type="submit" className="button" disabled={
+        <button type="submit" className="button" disabled={
           !isUsernameIsCorrect
           || !isEmailCorrect
           || !isFullNameCorrect
