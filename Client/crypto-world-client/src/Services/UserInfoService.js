@@ -12,8 +12,8 @@ export const findIfUsernameIsTakenInDb = async (username) => {
   const jsonResult = await res.json();
 
   if (res.ok) {
-    // Assuming server returns { message: 'Username is available' }
-    return jsonResult; // return the full result
+     
+    return jsonResult;  
   } else {
     throw new Error(jsonResult.message || 'Something went wrong');
   }
