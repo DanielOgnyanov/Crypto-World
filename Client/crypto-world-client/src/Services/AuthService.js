@@ -82,12 +82,12 @@ export const isAuthenticated = () => {
 
 export const fetchLoggedUserCount = async () => {
     try {
-    const token = localStorage.getItem('token'); // Get JWT from storage
+    const token = localStorage.getItem('token'); 
 
-    const response = await fetch('http://localhost:8000/api/admin/logged', {
+    const response = await fetch('${baseUrl}/api/admin/logged', {
       method: 'GET',
       headers: {
-        'Authorization': `Bearer ${token}`, // ✅ Important!
+        'Authorization': `Bearer ${token}`, 
         'Content-Type': 'application/json',
       },
     });
