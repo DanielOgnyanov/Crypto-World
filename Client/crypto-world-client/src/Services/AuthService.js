@@ -24,7 +24,7 @@ export const login = async (username, password) => {
       accessToken: data.accessToken,
     };
 
-    // Save to localStorage
+    
     localStorage.setItem("user", JSON.stringify(user));
 
     return user;
@@ -75,4 +75,31 @@ export const getUser = () => {
 
 export const isAuthenticated = () => {
   return Boolean(getUser());
+};
+
+
+
+
+export const fetchLoggedUserCount = async () => {
+    try {
+    const token = localStorage.getItem('token'); // Get JWT from storage
+
+    const response = await fetch('http://localhost:8000/api/admin/logged', {
+      method: 'GET',
+      headers: {
+        'Authorization': `Bearer ${token}`, // ✅ Important!
+        'Content-Type': 'application/json',
+      },
+    });
+
+    if (!response.ok) {
+      throw new Error('Failed to fetch logged-in user count');
+    }
+
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error('Error fetching logged-in user count:', error);
+    return 0;
+  }
 };
