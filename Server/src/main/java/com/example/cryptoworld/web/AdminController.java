@@ -42,11 +42,11 @@ public class AdminController {
 
     @GetMapping("/logged")
 
-    public ResponseEntity<List<UserEntity>> getAllLoggedUser() {
+    public ResponseEntity<Integer> getAllLoggedUser() {
 
-        List<UserEntity> allLoggedUsers = adminService.getAllLoggedUser();
+        int loggedUserCount = adminService.getAllLoggedUser().size();
 
-        return new ResponseEntity<>(allLoggedUsers, HttpStatus.OK);
+        return new ResponseEntity<>(loggedUserCount, HttpStatus.OK);
 
     }
 
@@ -54,7 +54,7 @@ public class AdminController {
 
     // OLD CODE
 
-    @GetMapping("/setting")
+     @GetMapping("/setting")
 
     public String adminPanel(Model model) {
 

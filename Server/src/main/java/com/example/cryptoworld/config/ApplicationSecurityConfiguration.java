@@ -65,6 +65,8 @@ public class ApplicationSecurityConfiguration extends WebSecurityConfigurerAdapt
 
                 .antMatchers("/card/add").permitAll()
 
+                .antMatchers("/api/admin/logged").permitAll()
+
 
                 .anyRequest().authenticated();
 
