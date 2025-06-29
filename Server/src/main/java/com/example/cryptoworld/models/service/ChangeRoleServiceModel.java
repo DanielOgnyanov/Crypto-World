@@ -5,10 +5,18 @@ import com.example.cryptoworld.models.enums.EnumAddOrRemove;
 public class ChangeRoleServiceModel {
 
     private String username;
-    private EnumAddOrRemove addOrRemove;
-
+    private String roleName;
 
     public ChangeRoleServiceModel() {
+    }
+
+
+    public String getRoleName() {
+        return roleName;
+    }
+
+    public void setRoleName(String roleName) {
+        this.roleName = roleName;
     }
 
     public String getUsername() {
@@ -19,11 +27,4 @@ public class ChangeRoleServiceModel {
         this.username = username;
     }
 
-    public EnumAddOrRemove getAddOrRemove() {
-        return addOrRemove;
-    }
-
-    public void setAddOrRemove(EnumAddOrRemove addOrRemove) {
-        this.addOrRemove = addOrRemove;
-    }
 }

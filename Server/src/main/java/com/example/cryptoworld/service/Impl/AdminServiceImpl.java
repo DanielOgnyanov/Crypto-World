@@ -29,24 +29,21 @@ public class AdminServiceImpl implements AdminService {
     @Override
     public void changeRole(ChangeRoleServiceModel changeRoleServiceModel) {
 
-        UserEntity userEntity =
-                userService.findByUsername(changeRoleServiceModel.getUsername());
+        UserEntity userEntity = userService.findByUsername(changeRoleServiceModel.getUsername());
 
-        RoleEntity roleEntity = roleService.getRole(1L);
+        // Fetch the role entity by name
+        RoleEntity roleEntity = roleService.findByRoleName(changeRoleServiceModel.getRoleName());
 
-        if (changeRoleServiceModel.getAddOrRemove().name().equals("ADD")) {
-            userEntity.addRole(roleEntity);
-            userRepository.save(userEntity);
-        } else {
-            for (RoleEntity role : userEntity.getRoles()) {
-                if(role.getRole().name().equals("ADMIN")) {
-                    userEntity.removeRole(role);
-                    userRepository.save(userEntity);
-                    return;
-                }
-            }
-
+        if (roleEntity == null) {
+            throw new IllegalArgumentException("Invalid role name: " + changeRoleServiceModel.getRoleName());
         }
+
+        // Clear all current roles and assign the new one (if that's what you want)
+        userEntity.getRoles().clear();
+        userEntity.addRole(roleEntity);
+
+        // Save the updated user
+        userRepository.save(userEntity);
     }
 
     @Override

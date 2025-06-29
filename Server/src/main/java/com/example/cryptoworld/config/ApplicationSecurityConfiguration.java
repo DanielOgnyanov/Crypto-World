@@ -67,6 +67,8 @@ public class ApplicationSecurityConfiguration extends WebSecurityConfigurerAdapt
 
                 .antMatchers("/api/admin/logged").permitAll()
 
+                .antMatchers("/api/admin/role").permitAll()
+
 
                 .anyRequest().authenticated();
 

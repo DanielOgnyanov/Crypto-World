@@ -9,10 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.validation.Valid;
@@ -52,91 +49,13 @@ public class AdminController {
 
 
 
-    // OLD CODE
-
-     @GetMapping("/setting")
-
-    public String adminPanel(Model model) {
-
-        if (!model.containsAttribute("changeRoleBindingModel")) {
-            model.addAttribute("changeRoleBindingModel", new ChangeRoleBindingModel());
+    @PostMapping("/role")
+    public ResponseEntity<String> changeUserRole(@RequestBody ChangeRoleServiceModel changeRoleServiceModel) {
+        try {
+            adminService.changeRole(changeRoleServiceModel);
+            return ResponseEntity.ok("User role updated successfully.");
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body("Failed to update user role: " + e.getMessage());
         }
-
-        if (!model.containsAttribute("changeRoleBindingModel")) {
-            model.addAttribute("changeRoleBindingModel", new ChangeRoleBindingModel());
-            model.addAttribute("userCheckIfIsPresent", false);
-        }
-
-        if (!model.containsAttribute("changeRoleBindingModel")) {
-            model.addAttribute("changeRoleBindingModel", new ChangeRoleBindingModel());
-            model.addAttribute("findIfUserHaveThisRole", false);
-        }
-
-        if (!model.containsAttribute("changeRoleBindingModel")) {
-            model.addAttribute("changeRoleBindingModel", new ChangeRoleBindingModel());
-            model.addAttribute("removeRoleCheck", false);
-        }
-
-
-        // view add
-
-        model.addAttribute("logDeposit", logDepositService.getAllDepositOrderedDesc());
-
-        model.addAttribute("logSell", logSellService.getAllSellOrderDesc());
-
-        model.addAttribute("user", userService.getAllUsersOrderedByUsername());
-
-        model.addAttribute("userByCardBalance", creditCartService.getAllUserOrderedByBalance());
-
-        return "admin";
-    }
-
-
-    @PostMapping("/setting")
-    public String createAccount(@Valid ChangeRoleBindingModel changeRoleBindingModel,
-                                BindingResult bindingResult,
-                                RedirectAttributes redirectAttributes) {
-
-
-        if (bindingResult.hasErrors()) {
-            redirectAttributes.addFlashAttribute("changeRoleBindingModel", changeRoleBindingModel);
-            redirectAttributes.addFlashAttribute(
-                    "org.springframework.validation.BindingResult.changeRoleBindingModel", bindingResult);
-
-            return "redirect:setting";
-        }
-
-        if ((!userService.existByUsername(changeRoleBindingModel.getUsername()))) {
-            redirectAttributes.addFlashAttribute("changeRoleBindingModel", changeRoleBindingModel);
-            redirectAttributes.addFlashAttribute("userCheckIfIsPresent", true);
-
-            return "redirect:setting";
-        }
-
-
-        if (userService.checkIfUserHasRoleOrNot(changeRoleBindingModel) &&
-                !changeRoleBindingModel.getAddOrRemove().name().equals("REMOVE")) {
-
-            redirectAttributes.addFlashAttribute("changeRoleBindingModel", changeRoleBindingModel);
-            redirectAttributes.addFlashAttribute("findIfUserHaveThisRole", true);
-
-            return "redirect:setting";
-        }
-
-        if (!userService.checkIfUserHasRoleOrNot(changeRoleBindingModel) &&
-                changeRoleBindingModel.getAddOrRemove().name().equals("REMOVE")) {
-
-            redirectAttributes.addFlashAttribute("changeRoleBindingModel", changeRoleBindingModel);
-            redirectAttributes.addFlashAttribute("removeRoleCheck", true);
-
-            return "redirect:setting";
-        }
-
-
-        adminService.changeRole
-                (modelMapper.map(changeRoleBindingModel, ChangeRoleServiceModel.class));
-
-
-        return "redirect:setting";
     }
 }
