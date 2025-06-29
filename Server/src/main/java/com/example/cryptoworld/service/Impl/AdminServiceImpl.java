@@ -31,18 +31,18 @@ public class AdminServiceImpl implements AdminService {
 
         UserEntity userEntity = userService.findByUsername(changeRoleServiceModel.getUsername());
 
-        // Fetch the role entity by name
+
         RoleEntity roleEntity = roleService.findByRoleName(changeRoleServiceModel.getRoleName());
 
         if (roleEntity == null) {
             throw new IllegalArgumentException("Invalid role name: " + changeRoleServiceModel.getRoleName());
         }
 
-        // Clear all current roles and assign the new one (if that's what you want)
+
         userEntity.getRoles().clear();
         userEntity.addRole(roleEntity);
 
-        // Save the updated user
+
         userRepository.save(userEntity);
     }
 
