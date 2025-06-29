@@ -103,3 +103,32 @@ export const fetchLoggedUserCount = async () => {
     return 0;
   }
 };
+
+
+
+
+export async function changeUserRole(username, roleName) {
+    try {
+
+         const token = localStorage.getItem('token'); 
+
+        const response = await fetch('http://localhost:8000/api/admin/role', {
+            method: 'POST',
+            headers: {
+                'Authorization': `Bearer ${token}`, 
+                'Content-Type': 'application/json',
+                 
+            },
+            body: JSON.stringify({ username, roleName })
+        });
+
+        if (!response.ok) {
+            const errorText = await response.text();
+            throw new Error(errorText || 'Failed to change user role');
+        }
+
+        return await response.text();
+    } catch (error) {
+        throw error;
+    }
+}
