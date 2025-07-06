@@ -2,18 +2,63 @@
 
 
 
+💰 CryptoWorld – Real-Time Crypto Trading App
+CryptoWorld is a full-stack web application that allows users to register, add a credit card to their account, and buy or sell cryptocurrencies in real time.
 
-Project that permit to register and adding credit card to your account, buying and selling crypto in real time. The app permit to buy the top 10 crypto  at the moment,
-for example Bitcoin, Ethereum, Binance , Solana , Xrp , Cardano, Polkadot , Dogecoin, Tether and more will be added in the future.
-The application is build from scratch with Be in Java and Fe in ReactJs. If you want check the src folder for more info about the source code, and the different
-implementation of the functionality.I’m currently working on it.Soon will be added pictures of the admin panel,sell and buy options and real time crypto prices and updated index page.
+The app currently supports trading of the top 10 cryptocurrencies including:
+
+Bitcoin (BTC)
+
+Ethereum (ETH)
+
+Binance Coin (BNB)
+
+Solana (SOL)
+
+XRP
+
+Cardano (ADA)
+
+Polkadot (DOT)
+
+Dogecoin (DOGE)
+
+Tether (USDT)
+
+🛠️ Tech Stack
+
+Backend: Java (Spring Boot)
+
+Frontend: React.js
+
+Database: MySQL
 
 
-Index page
+📂 Project Structure
 
-![Index_page](https://user-images.githubusercontent.com/72673385/218183824-43888a00-5dc1-4ab9-be85-b6f3214d28df.PNG)
+The project is built from scratch. You can explore the src folder for details on:
+
+Backend API implementation
+
+Role-based authentication
+
+Real-time crypto price updates
+
+Buy/sell operations
+
+Admin panel features
 
 
-Homepage
+🚀 Features
 
-![Homepage](https://user-images.githubusercontent.com/72673385/218183977-34b18020-b8b4-4884-9941-ee40baec11a9.PNG)
+User registration and login
+
+Add/remove credit card
+
+Buy & sell cryptocurrencies in real time
+
+View real-time crypto prices and market data
+
+Admin panel for managing users and roles
+
+Role-based access (USER / ADMIN)
